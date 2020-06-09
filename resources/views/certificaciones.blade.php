@@ -130,7 +130,7 @@
         <div class="next" style="background-image: url('img/productos.jpg');  margin-top: 150px;">
         	<div class="next-text">
         		<p style="font-size: 17px;">CONOCE</p>
-        		<p><a href="bebidas.html">PRODUCTOS CASA MARTÍNEZ</a></p>
+        		<p><a href="/productos">PRODUCTOS CASA MARTÍNEZ</a></p>
         	</div>
         </div>
         <!--next section-->
