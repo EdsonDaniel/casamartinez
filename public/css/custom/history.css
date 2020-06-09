@@ -1,0 +1,62 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  background-color: black;
+  color: white;
+}
+
+.body-black{
+  background-color: black !important;
+  color: white !important;
+}
+
+.body-transparent{
+  background-color: rgba(153, 153, 153, 0.42) !important;
+  opacity: 0.5 !important;
+}
+
+
+
+.bg-image{
+  background: rgba(0, 0, 0, 0.55) url('/img/equipo.jpg') no-repeat center;
+  height: 100vh;
+  min-height: 350px;
+  background-size: cover;
+  color: white !important;
+  /*filter: opacity(0.5);*/
+}
+
+.container-image {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.centered {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Raleway', sans-serif !important;
+  letter-spacing: 4px;
+  font-size: 23px;
+  font-weight: bolder;
+}
+
+.right {
+  position: absolute;
+  top: 47%;
+  left: 73%;
+  transform: translate(-50%, -50%);
+  font-family: 'Raleway', sans-serif !important;
+  letter-spacing: 2px;
+  font-size: 18px;
+}
+
+.right a, ul{
+  text-decoration: none;
+  display: block;
+  list-style-type: none;
+  text-align: left;
+  color: white;
+}

@@ -1,0 +1,119 @@
+
+body{
+	background-color: black;
+	color: white;
+}
+.body-black{
+	background-color: black !important;
+	color: white !important;
+}
+
+.body-transparent{
+	background-color: rgba(153, 153, 153, 0.42) !important;
+	color: white !important;
+	opacity: 0.5 !important;
+}
+
+/****** philosophia*****************************/
+.philosophy{
+	background-color: black !important;
+	color: white !important;
+}
+.head-philosop{
+	background: black url('/img/filosofia.jpg') no-repeat center;
+	height: 100vh;
+  	min-height: 350px;
+	background-size: cover;
+}
+.div-img{
+	background: black url('/img/philosop2.jpg') no-repeat center;
+	height: 95vh;
+  	min-height: 350px;
+	background-size: cover;
+}
+
+.img-source{
+	color: #5C5C5C;
+	margin: 10px 15px;
+	text-align: right;
+	font-family: helvetica, sans-serif;
+	font-size: 12px;
+	letter-spacing: 1px;
+}
+
+/************* Cita **********************************/
+
+.block-cita{
+	margin: auto;
+	width: 820px;
+}
+
+
+/**********************cOROUSEL */
+.title-carousel{
+	font-weight: lighter;
+	font-family: 'Raleway', sans-serif;
+	font-size: 17px;
+	letter-spacing: 2px;
+}
+
+.title-carousel2{
+	font-weight: normal;
+	font-family: 'Raleway', sans-serif;
+	font-size: 17px;
+	letter-spacing: 2px;
+}
+
+
+.body-carousel{
+	font-family: 'Lora', serif;
+	font-size: 18px;
+}
+
+.img-car{
+	width: 20em;
+	height: 25em;
+
+}
+
+.div-carousel{
+	height: 80vh;
+}
+
+.carousel-title{
+	font-family: 'Raleway', sans-serif;
+	font-size: 22px;
+	padding-top: 4%;
+	letter-spacing: 3px;
+	font-weight: lighter !important;
+}
+
+.fondo-mezcal{
+	background: rgba(0, 0, 0, 0.55) url('/img/fondo-mezcal3.jpg') no-repeat center;
+	height: 100vh;
+  	min-height: 350px;
+	background-size: cover;
+	color: white !important;
+	/*opacity: 0.6;	*/
+	/*comentarios de prueba*/
+	/*otro comentario*/
+}
+
+.fondo-produccion{
+	background: rgba(0, 0, 0, 0.55) url('/img/produccion1.jpg') no-repeat center;
+	height: 100vh;
+  	min-height: 350px;
+	background-size: cover;
+	color: white !important;
+	/*opacity: 0.6;	*/
+}
+
+footer{
+	color: white !important;
+}
+
+
+
+.background-transparent{
+	background-color: rgba(153, 153, 153, 0.42);
+}

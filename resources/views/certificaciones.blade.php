@@ -1,0 +1,151 @@
+@extends('layouts.plantilla')
+
+@section('title')
+	Certificaciones
+@endsection
+
+@section('stylesheet')
+<link href="css/custom/campos.css" rel="stylesheet" type="text/css" />
+@endsection
+
+@section('id-container')
+  id="wh-bg"
+@endsection
+
+@section('content')
+
+<!--encabezado-->
+		<div class="bg-image container-image fade-scroll"style="background-image: url('img/certificaciones.jpg');">
+      		<div class="to-left bg-gray"></div>
+      	</div>
+      	<!--encabezado-->
+
+      	<!-- texto -->
+      	<div class="texto">
+      		<h3>CERTIFICACIONES</h3>
+      		<p>Contamos con certificación Orgánica bajo las normas NOP de EEUU y EU. y actualmente somos la primera marca de Mezcal en contar con Certificación Biodinámica.
+      		</p>
+      		<p>Certificados por <a href="https://imocert.bio/" style="color: #212529;">IMOCert</a></p>
+      	</div>
+      	<!-- texto -->
+
+      	<!--certificacion NOP-->
+      	<div class="container col-7 mb-0">
+      		<h2 class="carousel-title text-center mt-5 mb-0">CERTIFICACIÓN ORGÁNICA (NOP-USDA)</h2>
+      		<div class="row justify-content-md-center">
+      			<div class="media mt-5">
+      				<div class="media-body mt-0">
+      					<p class="body-carousel mr-2">Estados Unidos es el primer mercado mundial de Productos Ecológicos y cuenta con sus propias normas de Producción Orgánica creadas por su Ministerio de Agricultura. <a href="https://imocert.bio/?portfolio=national-organic-program-nop-usda" style="text-decoration: underline; color: #212529;" target="_blank"> (USDA-NOP: United States Department of Agriculture - National Organic Program standard).</a> </p>
+                        <p class="body-carousel mr-2">
+                        	La certificación orgánica (NOP-USDA) está basada en dichas normas y es sumamente necesaria para clientes que desean exportar su producción orgánica a Estados Unidos, incluso aunque tengan certificados para otros países.
+                        </p>
+                    </div>
+                    <img class="img-car-logo align-self-start" src="img/nopusda.png" alt="Generic placeholder image">
+                </div>
+            </div> 
+        </div>
+        <!--certificacion NOP-->
+
+        <hr style="margin-top: 80px; width: 80%;">
+
+        <!--certificacion Biodinamica -->
+      	<div class="container col-7" style="margin-top: 80px;">
+      		<h2 class="carousel-title text-center mt-5 mb-0">CERTIFICACIÓN BIODINÁMICA (DEMETER)</h2>
+      		<div class="row justify-content-md-center">
+      			<div class="media mt-5">
+      				<div class="media-body mt-0">
+      					<p class="body-carousel mr-5"><a href="https://imocert.bio/?portfolio=demeter" style="text-decoration: underline; color: #212529;" target="_blank"> Demeter</a> es una marca de certificación cuyo objetivo es identificar los productos agrícolas o ganaderos producidos conforme a los principios de la agricultura biodinámica, siendo un requisito previo indispensable estar certificado conforme al reglamento europeo de agricultura ecológica.
+      					</p>
+                        <p class="body-carousel mr-5">
+                        	La biodinámica se basa en crear en cada situación particular un agro-eco-sistema único al cual se le denomina organismo agrícola. Este va tomando la fuerza y salud propia en la medida en que se va convirtiendo en una individualidad agrícola completa. 
+                        </p>
+                    </div>
+                    <img class="align-self-start ml-3 mt-5" src="img/demeter.jpg" alt="Generic placeholder image" style="width: 23em;">
+                </div>
+            </div> 
+        </div>
+        <!--certificacion Biodinamica -->
+
+        <hr style="margin-top: 80px; width: 80%;" >
+
+        <!--imocert -->
+      	<div class="container col-7" style="margin-top: 80px;">
+      		<h2 class="carousel-title text-center mt-5 mb-0">ENTIDAD REGULADORA (IMOCERT)</h2>
+      		<div class="row justify-content-md-center">
+      			<div class="media mt-5">
+      				<div class="media-body mt-0">
+      					<p class="body-carousel mr-5"><a href="https://imocert.bio/?portfolio=demeter" style="text-decoration: underline; color: #212529;" target="_blank">IMOCERT</a> es una entidad de servicios de inspección y certificación ecológica, para los ámbitos de producción vegetal, de recolección silvestre, producción pecuaria, apicultura, manejo de bosques, artesanía, minería, insumos para la agricultura ecológica entre otros.
+      					</p>
+                        <p class="body-carousel mr-5">
+                        	Nos sentimos orgullosos de contar con el respaldo de ésta institución pionera en Latinoamérica, quién cuenta con gran experiencia en la inspección y certificación.
+                        </p>
+                    </div>
+                    <img class="align-self-start ml-3 mt-4" src="img/imocert.png" alt="Generic placeholder image" style="width: 23em;">
+                </div>
+            </div> 
+        </div>
+        <!--imocert -->
+
+         <hr style="margin-top: 80px; width: 80%;">
+
+
+         <!-- texto -->
+      	<div class="texto">
+      		<h3>PROGRAMAS</h3>
+      		<p>Contamos con dos programas de responsabilidad: 
+      		</p>
+      		<ul>
+      			<li>AgaVerde: Programa de responsabilidad ambiental.</li>
+      			<li>Bin Dop (Señor maguey en zapoteco): Programa de responsabilidad social.</li>
+      		</ul>
+      		
+      	</div>
+      	<!-- texto -->
+
+      	 <!-- RECONOCIMIENTOS -->
+      	<div class="texto">
+      		<h3>RECONOCIMIENTOS</h3>
+      		<p>Nos esforzamos día a día por mejorar y ofrecerle los productos de la más alta calidad. Fruto de nuestra dedicación y amor a nuestra profesión, se nos ha atribuido el honor de ser galardonados con  los siguientes reconocimientos otorgados por <a href="https://www.sfspiritscomp.com/about/" style="color: #4a4a4a; text-decoration: underline;">San Francisco World Spirits Competition:</a> 
+      		</p>
+      		<ul>
+      			<li><a href="https://www.sfspiritscomp.com/wp-content/uploads/2018/01/2011_SpiritsBrand.pdf#page=51" style="color: #4a4a4a;">2011 Mezcal Reposado</a>
+      			<ul>
+      				<li>Best in Show.</li>
+      				<li>Best aged white spirit.</li>
+      				<li>Double Gold Medal.</li>
+      				<li>Top 5 Best Spirits of the world</li>
+      			</ul>
+      			</li>
+      			<li style="margin-top: 30px;"><a style="color: #4a4a4a;" href="https://www.sfspiritscomp.com/wp-content/uploads/2018/01/2012_resultsByBrand.pdf#page=51">2012 Mezcal Joven</a>
+      				<ul>
+      					<li>Silver Medal.</li>
+      				</ul>
+      			</li>  
+      		</ul>
+      	</div>
+      	<!-- RECONOCIMIENTOS -->
+
+
+        <!--next section-->
+        <div class="next" style="background-image: url('img/productos.jpg');  margin-top: 150px;">
+        	<div class="next-text">
+        		<p style="font-size: 17px;">CONOCE</p>
+        		<p><a href="bebidas.html">PRODUCTOS CASA MARTÍNEZ</a></p>
+        	</div>
+        </div>
+        <!--next section-->
+    </div>
+
+
+@endsection
+
+
+@section('scripts')
+<!--change navbar bg color-->
+<script type="text/javascript">
+  $(window).scroll(function(){
+    var alto = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    $("nav").toggleClass('scrolled', $(this).scrollTop()>alto);
+  });
+</script>
+@endsection

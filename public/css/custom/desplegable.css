@@ -1,0 +1,23 @@
+
+ul.acorh li ul {
+max-height: 0;
+overflow: hidden;
+transition: .5s all ease-in;
+}
+ul.acorh li li a {
+
+font-size: 16px;
+
+}
+ul.acorc li li:last-child a {
+border-bottom: 0;
+}
+ul.acorh li:hover ul {
+max-height: 300px;
+transition: .5s all ease-in;
+}
+ul.acorh li a:hover {
+background: #666;
+color: #fff;
+}
+

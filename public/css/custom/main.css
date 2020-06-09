@@ -1,0 +1,140 @@
+body{
+	background-color: #f2f2f0;
+}
+
+
+.frases{
+	float: right;
+}
+.bottomright {
+  position: absolute;
+  bottom: 50px;
+  right: 60px;
+  font-size: 18px;
+  width: 500px;
+  color: white;
+}
+/**********************************************/
+
+
+/************imagenes************************/
+.img-vertical{
+	height: 450px;
+
+}
+
+.img-horizontal{
+	width: 390px;
+	height: 250px;
+
+}
+
+.img-bebidas{
+	text-align: center;
+	height: 400px;
+	
+}
+
+/* Animación imagenes*/
+.img-hover-zoom {
+  /*height: 300px !important; */
+  overflow: hidden !important; /* Removing this will break the effects */
+}
+
+
+/* Slow-motion Zoom Container */
+.img-hover-zoom--slowmo img{
+  transform-origin: 50% 65%;
+  transition: transform 1s;
+}
+
+/* The Transformation */
+.img-hover-zoom--slowmo:hover img {
+  transform: scale(1.02);
+}
+/*******************************************/
+
+
+/*Parrafos pagina principal*****************/
+
+.header-parrafo{
+	font-weight: lighter;
+	letter-spacing: 4px;
+	font-size: 19px;
+}
+
+.text-cita{
+	font-family: 'Lora', serif;
+	font-size: 20px;
+	font-weight: 450;
+}
+
+.text-home{
+	font-family: 'Lora', serif;
+	font-size: 1.1em;
+}
+
+.ref-cita{
+	font-family: 'Lora', serif;
+	font-size: 1.1em;
+}
+
+.more{
+	font-family: 'Lora', serif;
+	font-size: 1em;
+}
+
+/******************Seccion de bebidas***********************************/
+.div-fondo{
+	margin-top: 150px !important;
+	background-image: url('/img/portada.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: white;
+	
+}
+.title-bebidas{
+	font-size: 1.3em;
+	padding-top: 3%;
+	letter-spacing: 3px;
+}
+
+/*******************  footer  *******************************************************/
+.foot-page{
+	font-family: 'Libre Caslon Text', serif;
+	font-size: 12px;
+	color: #9B9B9B;
+}
+
+.tel-number{
+	font-family: 'Lora', serif;
+	font-size: 13px;
+	letter-spacing: 3px;
+	color: #4a4a4a;
+}
+
+.tel-number a{
+	color: #4a4a4a;
+	text-decoration: none;
+}
+
+.mail{
+	font-family: 'Raleway', sans-serif;
+	font-weight: lighter;
+	font-size: 15px;
+	letter-spacing: 2px;
+
+}
+
+.second-line{
+	font-family: 'Markazi Text', serif;
+	letter-spacing: 1px;
+	color: #9B9B9B;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+.body-transparent{
+	background-color: rgba(153, 153, 153, 0.42) !important;
+	opacity: 0.5 !important;
+}

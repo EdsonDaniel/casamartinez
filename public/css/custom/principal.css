@@ -1,0 +1,316 @@
+/*barra de navegación*/
+.nav-trn{
+	background: transparent ;
+	z-index: 99;
+	transition: 500ms ease;
+}
+
+.nav-trn2{
+	background-image: linear-gradient(rgba(243, 243, 241, 0.85), rgba(243, 243, 241, 0.95)) !important;
+	z-index: 99;
+	transition: 500ms ease;
+}
+.nav-trn2 a{
+	color: #4A4A4A !important;
+}
+
+/********Navbar degradado*/
+.nav-grad {
+  background-image: linear-gradient(rgba(64, 65, 47, 0.47), transparent);
+}
+/****************************/
+
+
+/*change on scroll*/
+
+.nav-trn.scrolled{
+	background-image: linear-gradient(rgba(243, 243, 241, 0.85), rgba(243, 243, 241, 0.95)) !important;
+	color: #4A4A4A !important;
+}
+
+.nav-trn.scrolled a{
+	color: #4A4A4A !important;
+}
+
+.nav-home{
+	font-size: 15px;
+	font-family: 'Lora', serif;
+	letter-spacing: 2px;
+
+}
+
+nav a{
+	color: white !important;
+}
+
+.nav-font{
+	font-family: 'Raleway', sans-serif !important;
+	letter-spacing: 2px;
+}
+
+/********************* dropdown ****************/
+
+.dropbtn {
+  padding: 16px;
+  font-size: 15px !important;
+  border: none;
+  /*font-weight: 900;*/
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+	margin-top: 0px;
+	display: none;
+  	position: absolute;
+  	background-color: transparent;
+  	min-width: 180px;
+  	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  	z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 0px 6px 8px 8px;
+  text-decoration: none;
+  display: block;
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+.dropdown-content a:hover {background-color: transparent;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: transparent;}
+
+/**************************************************************************************/
+
+.expand-icon a{
+	text-align: center;
+	font-size: 25px !important;
+	color: white;
+}
+
+
+
+/************ carousel en header***********************************/
+.header{
+  background-color: transparent !important;
+}
+
+.carousel-header{
+	margin-top: -102px;
+}
+
+.carousel-item {
+  height: 100vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+
+/*Parrafos pagina principal*****************/
+
+.text-cita{
+	font-family: 'Lora', serif;
+	font-size: 19px;
+}
+
+.text-home{
+	font-family: 'Lora', serif;
+	font-size: 1.1em;
+}
+
+.ref-cita{
+	font-family: 'Lora', serif;
+	font-size: 1.1em;
+}
+
+.more{
+	font-family: 'Lora', serif;
+	font-size: 1em;
+}
+
+.title-bebidas{
+	font-size: 1.3em;
+	padding-top: 3%;
+	letter-spacing: 3px;
+}
+
+
+/**********************cOROUSEL */
+.title-carousel{
+	font-weight: lighter;
+	font-family: 'Raleway', sans-serif;
+	font-size: 17px;
+	letter-spacing: 2px;
+}
+
+.title-carousel2{
+	font-weight: normal;
+	font-family: 'Raleway', sans-serif;
+	font-size: 17px;
+	letter-spacing: 2px;
+}
+
+
+.body-carousel{
+	font-family: 'Lora', serif;
+	font-size: 18px;
+}
+
+.img-car{
+	width: 20em;
+	height: 25em;
+
+}
+
+.img-car-logo{
+	width: 26em;
+	height: auto;
+}
+
+.div-carousel{
+	height: 80vh;
+}
+
+.carousel-title{
+	font-family: 'Raleway', sans-serif;
+	font-size: 22px;
+	padding-top: 3%;
+	letter-spacing: 3px;
+	font-weight: lighter !important;
+}
+
+.fondo-mezcal{
+	background: rgba(0, 0, 0, 0.55) url('/img/fondo-mezcal3.jpg') no-repeat center;
+	height: 100vh;
+  	min-height: 350px;
+	background-size: cover;
+	color: white !important;
+	/*opacity: 0.6;	*/
+	/*comentarios de prueba*/
+	/*otro comentario*/
+}
+
+.next{
+
+	background: rgba(0, 0, 0, 0.55) no-repeat center;
+	height: 50vh;
+  	min-height: 250px;
+	background-size: cover;
+	color: white !important;
+	position: relative;
+	/*opacity: 0.6;	*/
+	/*comentarios de prueba*/
+	/*otro comentario*/
+}
+
+.next-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 3px;
+  color: white;
+}
+.next-text p{
+	font-size: 15px;
+	font-weight: 500 !important;
+}
+.next-text a{
+	font-size: 24px;
+	text-decoration: none;
+	color: white;
+	font-weight: 500;
+}
+
+/*******************  footer  *******************************************************/
+.foot-page{
+	font-family: 'Libre Caslon Text', serif;
+	font-size: 12px;
+	color: #9B9B9B;
+}
+
+.tel-number{
+	font-family: 'Lora', serif;
+	font-size: 13px;
+	letter-spacing: 3px;
+	color: white;
+}
+
+.mail{
+	font-family: 'Raleway', sans-serif;
+	font-weight: lighter;
+	font-size: 15px;
+	letter-spacing: 2px;
+
+}
+
+.mail a{
+	text-decoration: none;
+}
+
+.second-line{
+	font-family: 'Markazi Text', serif;
+	letter-spacing: 1px;
+	color: #9B9B9B;
+	text-decoration: none;
+	font-size: 17px;
+	padding: 2px 0px 1px;
+}
+
+.second-line a{
+	color: #9B9B9B !important;
+}
+
+.body-transparent{
+	background-color: rgba(153, 153, 153, 0.42) !important;
+	opacity: 0.5 !important;
+}
+
+.to-left {
+  position: absolute;
+  top: 45%;
+  left: 19%;
+  transform: translate(-50%, -50%);
+  font-family: 'Raleway', sans-serif !important;
+  letter-spacing: 2px;
+  font-size: 23px;
+  font-weight: 500;
+}
+
+.bg-gray{
+	background-color: rgba(134, 136, 124, 0.16);
+
+}
+
+
+.body-white{
+	background-color: #f2f2f0 !important;
+}
+
+
+a{
+	color: inherit;
+}
+a:hover{
+	color: inherit;
+}
+
+/*carrito de compras*/
+#cart{
+	font-size: 25px;
+	margin: 8px 8px 0px;
+}
