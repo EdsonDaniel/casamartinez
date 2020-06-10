@@ -1,7 +1,7 @@
 @extends('layouts.plantilla')
 
 @section('title')
-	Casa Martínez-Iniciar sesión
+	Casa Martínez
 @endsection
 
 @section('stylesheet')
@@ -125,7 +125,7 @@
   </div>
 
   <div class="container">
-    <p class="text-center text-home mb-4"><a href="catalogo.html" style="color:white;">Ver todos los productos</a></p>
+    <p class="text-center text-home mb-4"><a href="/catalogo" style="color:white;">Ver todos los productos</a></p>
     <br>  
   </div> 
 </div>
