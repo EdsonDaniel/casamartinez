@@ -1,0 +1,145 @@
+body{
+  margin: 0;
+  color: white;
+  background-color: black;
+}
+
+.fondo-produccion{
+  background: rgba(0, 0, 0, 0.55) url('/img/produccion1.jpg') no-repeat center;
+  height: 100vh;
+    min-height: 350px;
+  background-size: cover;
+  color: white !important;
+  /*opacity: 0.6; */
+}
+
+a{
+  color: white;
+}
+
+input[type=email], input[type=password] {
+  width: 100%;
+  display: inline-block;
+  border: 1px solid rgba(247, 244, 244, 0.5);
+  box-sizing: border-box;
+  background-color: rgba(247, 244, 244, 0.5);
+}
+
+input:Focus{
+  background-color: rgba(247, 244, 244, 0.5) !important;
+  border: 1px solid rgba(247, 244, 244, 0.5) !important;
+  color: white !important
+}
+::-webkit-input-placeholder { color: white !important; } 
+
+button {
+  color: white;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  height: calc(2.25rem + 2px);
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.login{
+	margin-top: 1.5em;
+	border-radius: 0.25rem;
+	background-color: #214735;
+	font-family: 'Raleway', sans-serif;
+	font-size: 16px;
+	letter-spacing: 3px;
+	font-weight: lighter !important;
+}
+
+.imgcontainer {
+  text-align: center;
+}
+
+img.avatar {
+	margin-top: 5%;
+  width: 10%;
+  border-radius: 50%;
+}
+
+.container {
+  width: 30%;
+  margin: 1% auto 0%;
+  
+}
+
+span.psw {
+  float: right;
+  margin: 2% 0%;
+  font-size: 14px;
+  font-family: sans-serif;
+}
+.register{
+	font-size: 14px;
+}
+label{
+	font-family: 'Raleway', sans-serif;
+	font-size: 16px;
+	letter-spacing: 3px;
+	font-weight: lighter !important;
+	display: block;
+	text-align: left;
+}
+
+.label-text{
+	letter-spacing: normal !important;
+	display: inline-block;
+	margin: 2% 0%;
+	font-size: 14px;
+	font-family: sans-serif;
+}
+
+.footer{
+	font-size: 10px;
+	text-align: center;
+	margin-bottom: 1%;
+}
+
+ul{
+	margin: 5% 0 0;
+	padding: 0;
+}
+
+.footer li {
+	list-style-type: none;
+	display: inline-block;
+	padding: 2px;
+
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 1000px) {
+  span.psw {
+     display: block;
+     float: none;
+     margin-bottom: 0;
+  }
+  img.avatar {
+     width: 16%;
+  }
+
+  .container{
+  	width: 50%;
+  }
+}
+@media screen and (max-width: 720px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  img.avatar {
+     width: 25%;
+  }
+
+  .container{
+  	width: 100%;
+  }
+}
