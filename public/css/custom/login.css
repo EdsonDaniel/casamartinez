@@ -129,6 +129,10 @@ ul{
   .container{
   	width: 50%;
   }
+
+  .footer{
+    margin-top: 8%;
+  }
 }
 @media screen and (max-width: 720px) {
   span.psw {
@@ -141,6 +145,10 @@ ul{
 
   .container{
   	width: 100%;
+  }
+
+  .footer{
+    margin-top: 12%;
   }
 
 }
