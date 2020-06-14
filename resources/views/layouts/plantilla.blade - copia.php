@@ -60,8 +60,8 @@
                     <li style="margin-top: 5px;">
                         <a href="" class=""><span id="cart" class="fad fa-shopping-cart"></span></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="openNav()"><i class="far fa-bars" id="icon-menu"></i></a> 
+                    <li class="nav-item expand-icon">
+                        <a class="nav-link expand-icon" onmouseover="openNav()">...</a> 
                     </li>
                 </ul>
             </div>

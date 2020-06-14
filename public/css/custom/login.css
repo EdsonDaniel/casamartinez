@@ -131,7 +131,7 @@ ul{
   }
 
   .footer{
-    margin-top: 8%;
+    margin-top: 10%;
   }
 }
 @media screen and (max-width: 720px) {
@@ -148,7 +148,7 @@ ul{
   }
 
   .footer{
-    margin-top: 12%;
+    margin-top: 13%;
   }
 
 }
