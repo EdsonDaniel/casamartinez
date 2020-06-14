@@ -25,7 +25,7 @@
             <form action="{{ route('login') }}" method="post">
             @csrf
             
-            <div class="container">
+            <div class="contain">
                 <label for="name"><b>NOMBRE(S):</b></label>
                 <input class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" type="text" id="name" value="{{ old('name') }}" required autocomplete="name" autofocus name="name">
 
@@ -36,12 +36,12 @@
                 @enderror
             </div>
             
-            <div class="container">
+            <div class="contain">
                 <label for="apellidos"><b>APELLIDOS:</b></label>
                 <input id="apellidos" type="text" name="apellidos" class="form-control" required>
             </div>
 
-            <div class="container">
+            <div class="contain">
                 <label for="email"><b>E-MAIL:</b></label>
                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Correo electrónico">
                 @error('email')
@@ -51,7 +51,7 @@
                 @enderror
             </div>
 
-            <div class="container">
+            <div class="contain">
                 <label for="pass"><b>CONTRASEÑA:</b></label>
                 <input id="pass" type="password" placeholder="Contraseña" name="pass" class="form-control @error('password') is-invalid @enderror" name="pass" required autocomplete="current-password" >
                 @error('password')
@@ -61,12 +61,12 @@
                 @enderror
             </div>
 
-            <div class="container">
+            <div class="contain">
                 <label for="pass"><b>CONFIRMAR LA CONTRASEÑA:</b></label>
                 <input id="pass" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Confirma la Contraseña">
             </div>
 
-            <div class="container">
+            <div class="contain">
                 <button type="submit" class="login">REGISTRARSE</button>
                 <!--
                 <hr style="color: white !important; height: 3px; border-top: 1.5px solid rgba(255, 255, 255, 1);">
@@ -74,7 +74,7 @@
             -->
             </div>
 
-            <div class="container" style="text-align: center;">
+            <div class="contain" style="text-align: center;">
                 <span class="psw">
                     ¿Ya tienes cuenta? 
                     <a href="/login">
