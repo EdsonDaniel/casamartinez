@@ -230,9 +230,9 @@ button:focus{
 
 
 @media only screen and (max-width: 400px){
-  .sidenav a{font-size: 22px;}
-  #ic{font-size: 24px;}
-  .title-nav h2{font-size: 24px; max-width: 100%;}
+  .sidenav a{font-size: 24px;}
+  #ic{font-size: 26px;}
+  .title-nav h2{font-size: 25px; max-width: 100%;}
   .options{max-width: 100%;}
   .log-in{max-width: 100%;}
 }
