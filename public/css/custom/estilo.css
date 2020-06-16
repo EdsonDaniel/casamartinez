@@ -220,7 +220,7 @@ button:focus{
   .options{max-height: 390px;}
 }*/
 
-@media only screen and (min-width: 600px){
+@media only screen and (min-width: 550px){
   .sidenav a{font-size: 20px;}
   #ic{font-size: 22px;}
   .title-nav h2{font-size: 22px; max-width: 100%;}
@@ -234,12 +234,11 @@ button:focus{
 @media only screen and (max-width: 400px){
   .options{max-width: 100%;}
   .log-in{max-width: 100%;}
-  /*.sidenav a{font-size: 16px;}
-  #ic{font-size: 24px;}
+  .sidenav a{font-size: 15px;}
+  /*#ic{font-size: 22px;}
   .title-nav h2{font-size: 18px; max-width: 100%;}
-  .sidenav .closebtn{top: 40px; font-size: 18px;}
-  .boton button{font-size: 16px;}
-  */
+  .sidenav .closebtn{top: 40px; font-size: 18px;}*/
+  .boton button{font-size: 15px;}
 }
 
 
