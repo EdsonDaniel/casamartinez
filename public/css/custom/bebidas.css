@@ -19,6 +19,9 @@ nav a{
 	color: #4A4A4A;
 	font-size: 24px;
 	font-weight: normal;
+	margin: 10px 0;
+	padding-top: 60px;
+	color: #6F8555;
 }
 
 .img-centered{
@@ -76,7 +79,7 @@ h3{
 	font-family: 'Raleway', sans-serif !important;
 	letter-spacing: 4px;
 	font-size: 28px;
-	margin-top: 10px;
+	margin-top: 0px;
 	font-weight: normal;
 }
 

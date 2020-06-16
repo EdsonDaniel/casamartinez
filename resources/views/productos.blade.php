@@ -13,7 +13,7 @@
 @endsection
 
 @section('content')
-<div style="margin: 70px 20px 0px;">
+<div style="margin: 0px 20px;">
 	<div>
 		<h2 class="h2 text-center">MEZCAL</h2>
 		<img src="img/portada-mezcal2.jpg" class="img-centered">

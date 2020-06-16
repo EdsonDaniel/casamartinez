@@ -13,8 +13,8 @@
 @endsection
 
 @section('content')
-<div class="container" style="margin-top: 75px;">
-	<h3>PRODUCTOS CASA MARTÍNEZ</h3>
+<div class="container">
+	<h3 style="padding-top: 75px;">PRODUCTOS CASA MARTÍNEZ</h3>
 	<!--lista de productos-->
 	
 	<!--product 1-->
