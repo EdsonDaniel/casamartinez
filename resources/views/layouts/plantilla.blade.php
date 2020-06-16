@@ -13,7 +13,6 @@
     <link href="{{ asset('css/custom/principal.css') }}" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Markazi+Text&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/custom/estilo.css">
-    <link rel="stylesheet" href="css/custom/desplegable.css">
     <link rel="stylesheet" href="css/fonts/style.css">
     @yield('stylesheet')
 
@@ -70,47 +69,86 @@
     <!--NavBar-->
 
     <!--Sidebar-->
-    <div id="mySidenav" class="sidenav" onmouseover="openNav()" onmouseout="closeNav()">
-        <ul class="acorh">
-            <li><a href="bebidas.html">PRODUCTOS</a>
+    <div id="mySidenav" class="sidenav" >
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fas fa-times"></i></a>
+        <div id="login-section">
+            <div class="title-nav">
+                <h2>CASA MARTINEZ</h2>
+            </div>
+            
+            <div class="log-in">
+                <center>
+                    <a href="/login" id="ic"><i class="far fa-user"></i></a>
+                    <span><a href="/login">INICIAR SESIÓN</a></span>
+                </center>
+            </div>
+        </div>
+
+        <div class="options">
+            <div class="boton">
+                <a href="/productos">PRODUCTOS</a>
+                <button><i name="ic" class="fas fa-plus"></i></button>                
+            </div>
+            <div class="dropdown-container">
                 <ul>
-                    <li><a href="">Ignacio Martínez</a></li>
-                    <li><a href="">SiNái</a></li>
-                    <li><a href="">Habitante</a></li>
-                    <li><a href="">Origen Verde</a></li>
+                    <li><a href="">-Ignacio Martínez</a></li>
+                    <li><a href="">-SiNái</a></li>
+                    <li><a href="">-Habitante</a></li>
+                    <li><a href="">-Origen Verde</a></li>
                 </ul>
-            </li>
-            <li><a href="philosophy.html">FILOSOFÍA</a>
+            </div>
+
+            <div class="boton">
+                <a href="#">FILOSOFÍA</a>
+                <button><i name="ic" class="fas fa-plus"></i></button>
+            </div>
+            <div class="dropdown-container">
                 <ul>
-                    <li><a href="philosophy.html">Mezcal</a></li>
-                    <li><a href="history.html">Historia y equipo</a></li>
-                    <li><a href="campos.html">Campos de agave</a></li>
-                    <li><a href="">Certificaciones</a></li>
+                    <li><a href="/filosofia">-Introducción</a></li>
+                    <li><a href="/historia">-Historia, Colaboradores</a></li>
+                    <li><a href="/campos-de-maguey">-Campos de maguey</a></li>
+                    <li><a href="/certificaciones">-Certificaciones</a></li>
                 </ul>
-            </li>
-            <li><a href="#">PROCESOS</a>
-                <ul>
-                    <li><a href="URL31">Mezcal Joven</a></li>
-                    <li><a href="URL31">Mezcal Reposado</a></li>
-                    <li><a href="URL31">Mezcal Añejo</a></li>
-                    <li><a href="URL32">Origen Verde</a></li>
-                </ul>
-            </li>
-            <li><a href="#">TOURS</a>
-                <ul>
-                    <li><a href="URL31">Bin Dop</a></li>
-                    <li><a href="URL31">Productos Carmelita</a></li>
-                    <li><a href="URL31">AgaVerde</a></li>
-                    <li><a href="URL32">Campos de cultivo</a></li>
-                </ul>
-            </li>
-            <li><a href="#">CONTACTO</a>
-            </li>
-            <li><a href="#">FAQs</a>
-            </li>
-        </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-side">
+            <hr style="border-top: 1.2px solid rgba(155, 155, 155, 0.5);">
+            <a href="#">Contacto</a>
+            <a href="#">Ayuda</a>            
+        </div>
     </div>
     <!--Sidebar-->
+    <script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("boton");
+var i;
+var icon;
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var btn = this.lastElementChild;
+  icon = btn.firstElementChild;
+  icon.classList.toggle("fa-minus");
+  icon.classList.toggle("fa-plus");
+  
+  var dropdownContent = this.nextElementSibling;
+  btn = dropdownContent.firstElementChild;
+  var alt = btn.offsetHeight;
+  alt += 6;
+  alt = alt+"px"
+  /*console.log(alt);
+  console.log(dropdownContent.style.height);*/
+  if (dropdownContent.style.height === "") {
+    console.log(alt);
+  dropdownContent.style.height = alt;
+  } else {
+  dropdownContent.style.height = "";
+  }
+  });
+}
+</script>
 
   <!--container content-->
   

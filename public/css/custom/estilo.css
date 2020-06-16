@@ -2,6 +2,10 @@ body {
   transition: background-color 2s;
 }
 
+li{
+  list-style-type: none;
+}
+
 .sidenav {
   height: 100%;
   width: 0;
@@ -9,20 +13,21 @@ body {
   z-index: 1;
   top: 0;
   right: 0;
-  background-color: #111;
+  /*background-color: #111;*/
+  background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0,0,0, 0.85));
   overflow-x: hidden;
+  overflow-y: visible;
   transition: 0.8s;
-  padding-top: 60px;
 }
 
 .sidenav a {
-  padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 14px;
   font-family: 'Raleway', sans-serif;
-  color: #818181;
-  display: block;
+  color: #9b9b9b;
   transition: 0.8s;
+  letter-spacing: 3px;
+  display: inline-block;
 }
 
 .sidenav a:hover {
@@ -31,10 +36,11 @@ body {
 
 .sidenav .closebtn {
   position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+  top: 35px;
+  left: 41px;
+  margin: 0;
+  padding: 0;
+  font-size: 22px;
 }
 
 #main {
@@ -42,11 +48,170 @@ body {
   padding: 16px;
 }
 
-@media screen and (max-height: 450px) {
+#login-section{
+  background-image: linear-gradient(rgba(33, 71, 53, 0.5), transparent);
+  margin: 0;
+}
+
+.log-in{
+  margin: 10px 0;
+  padding: 0;
+  color: #9b9b9b;
+  min-width: 400px;
+}
+
+.log-in a{
+  padding: 0;
+  display: inline-block;
+}
+
+.log-in span{
+  color: #9b9b9b;
+  font-size: 14px;
+  margin: 0 0px 0 10px;
+}
+#ic{
+  font-size: 19px;
+  padding: 0;
+  margin: 0 0 0 0px;
+  display: inline-block;
+}
+
+.title-nav{
+  font-family: 'Lora', serif;
+  letter-spacing: 2px;
+  color: white !important;
+}
+.title-nav h2{
+  font-size: 15px;
+  text-align: center;
+  font-weight: lighter;
+  display: block !important;
+  text-overflow: clip;
+  margin: 0;
+  padding: 40px 0px 5%;
+  min-width: 400px;
+}
+
+/****** file desplegable.css */
+
+.options{
+  /*margin: 20px 30px 0;*/
+  /*padding: 20px 40px 0;
+  min-width: 380px;*/
+  max-width: 360px;
+  margin: 10px 20px 0;
+  overflow-y: overlay;
+  overflow-x: hidden;
+}
+
+.options li ul {
+max-height: 0;
+overflow: hidden;
+margin: 0;
+padding: 0;
+}
+
+
+
+.boton{
+  color: #9b9b9b;
+  display: block;
+  margin: 12px 20px 0;
+  padding: 0;
+  min-width: 320px;
+}
+
+
+.boton button{
+  background-color: transparent;
+  display: inline-block;
+  float: right;
+  cursor: pointer;
+  border-color: transparent;
+  margin: 0;
+  padding: 0;
+  color: #9b9b9b;
+  position: relative;
+  right: 0px;
+}
+
+
+.boton button:hover, .boton button:active{
+  color: rgba(155, 155, 155, 0.5);
+}
+
+.boton a{
+  display: inline-block;
+}
+
+button:focus{
+  border-color: transparent !important;
+  outline-style: none;
+  outline-color: transparent;
+  outline-width: 0px;
+}
+.dropdown-container {
+  height: 0px;
+  margin: 6px 34px 0;
+  font-size: 14px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  transition: height 0.8s;
+}
+
+.dropdown-container ul{
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-container li{
+  margin: 0;
+  padding: 4px;
+  color: #9b9b9b;
+}
+
+/* Add an active class to the active dropdown button */
+.active a, .active button, .active button:focus{
+  color: rgba(255,255,255, 0.8) !important;
+  border-color: transparent !important;
+  background-color: transparent;
+}
+
+.footer-side{
+  position: absolute;
+  bottom: 8%;
+  width: 100%;
+  padding: 0px 40px 0;
+  overflow-y: visible;
+}
+
+.footer-side a{
+  display: block;
+  margin: 12px 0 0;
+}
+
+
+/*@media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
+*/
+@media only screen and (max-height: 400px){
+  .footer-side{position: static;}
+}
+@media only screen and (min-height: 400px){
+  .footer-side{position: static; margin-top: 8%;}
+}
 
+@media only screen and (min-height: 500px){
+  .footer-side{position: absolute; bottom: 4%; margin-top: 0;}
+  .options{max-height: 55%;}
+}
 
+@media only screen and (min-height: 600px){
+  .footer-side{position: absolute; bottom: 4%; margin-top: 0;}
+  .options{max-height: 390px;}
+}
 
 
 
