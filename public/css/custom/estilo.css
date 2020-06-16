@@ -220,21 +220,26 @@ button:focus{
   .options{max-height: 390px;}
 }*/
 
-@media only screen and (max-width: 900px){
+@media only screen and (min-width: 600px){
   .sidenav a{font-size: 20px;}
   #ic{font-size: 22px;}
   .title-nav h2{font-size: 22px; max-width: 100%;}
   .options{max-width: 100%;}
   .log-in{max-width: 100%;}
   .sidenav .closebtn{font-size: 24px;}
+  .boton button{font-size: 20px;}
 }
 
 
 @media only screen and (max-width: 400px){
-  .sidenav a{font-size: 24px;}
-  #ic{font-size: 26px;}
-  .title-nav h2{font-size: 25px; max-width: 100%;}
-  /*.sidenav .closebtn{font-size: 24px;}*/
+  .options{max-width: 100%;}
+  .log-in{max-width: 100%;}
+  /*.sidenav a{font-size: 16px;}
+  #ic{font-size: 24px;}
+  .title-nav h2{font-size: 18px; max-width: 100%;}
+  .sidenav .closebtn{top: 40px; font-size: 18px;}
+  .boton button{font-size: 16px;}
+  */
 }
 
 
