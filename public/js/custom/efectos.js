@@ -2,7 +2,7 @@ function openNav() {
   var head = document.getElementById("head");
   var wh = document.getElementById("wh-bg");
   var ancho = screen.width;
-  if(ancho<700){
+  if(ancho<900){
     document.getElementById("mySidenav").style.width = "100%";
   }else{
     document.getElementById("mySidenav").style.width = "400px";

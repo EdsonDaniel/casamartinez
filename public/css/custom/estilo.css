@@ -17,7 +17,7 @@ li{
   background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0,0,0, 0.85));
   overflow-x: hidden;
   overflow-y: visible;
-  transition: 1.8s;
+  transition: 0.8s;
   font-size: 14px;
 }
 
@@ -54,7 +54,7 @@ li{
 }
 
 #login-section{
-  background-image: linear-gradient(rgba(33, 71, 53, 0.5), transparent);
+  /*background-image: linear-gradient(rgba(33, 71, 53, 0.5), transparent);*/
   margin: 0;
 }
 
@@ -220,13 +220,21 @@ button:focus{
   .options{max-height: 390px;}
 }*/
 
-@media only screen and (max-width: 800px){
+@media only screen and (max-width: 900px){
   .sidenav a{font-size: 20px;}
+  #ic{font-size: 22px;}
   .title-nav h2{font-size: 22px; max-width: 100%;}
   .options{max-width: 100%;}
   .log-in{max-width: 100%;}
-
 }
 
+
+@media only screen and (max-width: 400px){
+  .sidenav a{font-size: 22px;}
+  #ic{font-size: 24px;}
+  .title-nav h2{font-size: 24px; max-width: 100%;}
+  .options{max-width: 100%;}
+  .log-in{max-width: 100%;}
+}
 
 
