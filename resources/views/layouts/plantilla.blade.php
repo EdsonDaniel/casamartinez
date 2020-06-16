@@ -70,7 +70,7 @@
 
     <!--Sidebar-->
     <div id="mySidenav" class="sidenav" >
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fas fa-times"></i></a>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="far fa-bars"></i></a>
         <div id="login-section">
             <div class="title-nav">
                 <h2>CASA MARTINEZ</h2>
