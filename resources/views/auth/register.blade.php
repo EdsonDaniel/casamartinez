@@ -22,12 +22,12 @@
       
         <div class="contenedor">
 
-            <form action="{{ route('login') }}" method="post">
+            <form method="POST" action="{{ route('register') }}">
             @csrf
             
             <div class="contain">
                 <label for="name"><b>NOMBRE(S):</b></label>
-                <input class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" type="text" id="name" value="{{ old('name') }}" required autocomplete="name" autofocus name="name">
+                <input class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" type="text" id="name" value="{{ old('name') }}" required autocomplete="given-name" autofocus>
 
                 @error('name')
                 <span class="invalid-feedback" role="alert">
@@ -37,8 +37,8 @@
             </div>
             
             <div class="contain">
-                <label for="apellidos"><b>APELLIDOS:</b></label>
-                <input id="apellidos" type="text" name="apellidos" class="form-control" required>
+                <label for="last_name"><b>APELLIDOS:</b></label>
+                <input id="last_name" type="text" name="last_name" class="form-control" required autocomplete="family-name">
             </div>
 
             <div class="contain">
@@ -52,8 +52,8 @@
             </div>
 
             <div class="contain">
-                <label for="pass"><b>CONTRASEÑA:</b></label>
-                <input id="pass" type="password" placeholder="Contraseña" name="pass" class="form-control @error('password') is-invalid @enderror" name="pass" required autocomplete="current-password" >
+                <label for="password"><b>CONTRASEÑA:</b></label>
+                <input id="password" type="password" placeholder="Contraseña" name="password" class="form-control @error('password') is-invalid @enderror" required autocomplete="current-password" >
                 @error('password')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -62,8 +62,8 @@
             </div>
 
             <div class="contain">
-                <label for="pass"><b>CONFIRMAR LA CONTRASEÑA:</b></label>
-                <input id="pass" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Confirma la Contraseña">
+                <label for="password-confirm"><b>CONFIRMAR LA CONTRASEÑA:</b></label>
+                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Confirma la Contraseña">
             </div>
 
             <div class="contain">
@@ -94,8 +94,6 @@
                         <li><a href="">AVISO DE PRIVACIDAD</a></li>
                         <li> | </li>
                         <li><a href="">AYUDA</a></li>
-                        <li> | </li>
-                        <li><a href="">PREGUNTAS FRECUENTES</a></li>
                     </ul>
                 </div>
                 <div>

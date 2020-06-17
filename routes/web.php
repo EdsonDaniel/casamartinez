@@ -45,10 +45,6 @@ Route::get('/catalogo', function () {
 });
 
 
-Route::get('/log', function () {
-    return view('login');
-});
-
 
 
 

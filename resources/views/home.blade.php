@@ -15,6 +15,10 @@
                     @endif
 
                     You are logged in!
+                    @if(Auth::viaRemember())
+                    <span>logueado por recordatorio</span>
+                    @else <span> logueado sin recordatorio</span>
+                    @endif
                 </div>
             </div>
         </div>

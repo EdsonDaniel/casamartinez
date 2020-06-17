@@ -9,7 +9,7 @@
     
     <!-- Stylesheet -->
     <link rel="stylesheet" href="{{ asset('css/custom/bootstrap.css') }}" type="text/css">
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Markazi+Text&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Markazi+Text&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/fonts/style.css">
     <link rel="stylesheet" href="css/custom/login.css">
     <title>Iniciar Sesión - Casa Martínez</title>
@@ -21,7 +21,8 @@
 			@csrf
 			
 			<div class="imgcontainer">
-				<img src="/img/logo-prueba.jpg" alt="Avatar" class="avatar">
+				<h3 style="padding-top: 60px;">INICIAR SESIÓN</h3>
+				<h1 id="home"><a href="/">CASA MARTÍNEZ</a></h1>
 			</div>
 			
 			<div class="container">
@@ -37,7 +38,7 @@
 			
 			<div class="container">
 				<label for="password"><b>CONTRASEÑA</b></label>
-				<input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="contraseña">
+				<input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Contraseña">
 				@error('password')
 				<span class="invalid-feedback" role="alert">
 					<strong>{{ $message }}</strong>
@@ -54,9 +55,9 @@
 			</div>
 
 			<div class="container">
-				<label class="label-text">
-					<input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}> Recordarme
-				</label>
+				<input type="checkbox" name="remember" id="remember">
+				<label class="label-text" for="remember"> Recordarme</label>
+				
 				<span class="psw">
 					@if (Route::has('password.request'))
 					<a href="{{ route('password.request') }}">
@@ -66,7 +67,7 @@
 				</span>
 			</div>
 			
-			<div class="container">
+			<div class="container" style="margin-top: 10px;">
 				<span class="register">¿No tienes cuenta? <a href="/register"> Regístrate.</a></span>
 			</div>
 
@@ -86,7 +87,7 @@
 					</ul>
 				</div>
 				<div>
-					© 2020, casamartinez.mx, Todos los derechos reservados.
+					© 2020, <a href="/">casamartinez.mx,</a> Todos los derechos reservados.
 				</div>
 			</center>	
 		</div>

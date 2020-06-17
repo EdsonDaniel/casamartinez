@@ -149,9 +149,6 @@ for (i = 0; i < dropdown.length; i++) {
   });
 }
 </script>
-<script> 
-alert("La resolución de tu pantalla es: " + screen.width + " x " + screen.height) 
-</script>
   <!--container content-->
   
   <div @yield('id-container')>@yield('content')</div>
