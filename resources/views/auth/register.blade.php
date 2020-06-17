@@ -17,8 +17,11 @@
 <body>
 
     <div class="fondo-produccion">
-      
-        <h3>CREAR CUENTA</h3>    
+
+        <div class="head">
+            <h3 style="padding-top: 35px;">CREAR CUENTA</h3>
+            <h1 id="home"><a href="/">CASA MARTÍNEZ</a></h1>
+        </div>
       
         <div class="contenedor">
 
@@ -74,8 +77,8 @@
             -->
             </div>
 
-            <div class="contain" style="text-align: center;">
-                <span class="psw">
+            <div class="contain">
+                <span class="contain-span">
                     ¿Ya tienes cuenta? 
                     <a href="/login">
                         {{ __('Inicia sesión.') }}
@@ -91,13 +94,13 @@
                     <ul>
                         <li><a href="">CONDICIONES DE USO</a></li>
                         <li> | </li>
-                        <li><a href="">AVISO DE PRIVACIDAD</a></li>
-                        <li> | </li>
                         <li><a href="">AYUDA</a></li>
+                        <li> | </li>
+                        <li><a href="">AVISO DE PRIVACIDAD</a></li>
                     </ul>
                 </div>
                 <div>
-                    © 2020, casamartinez.mx, Todos los derechos reservados.
+                    © 2020, <a href="/">casamartinez.mx,</a> Todos los derechos reservados.
                 </div>
             </center>   
         </div>

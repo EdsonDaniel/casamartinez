@@ -34,6 +34,11 @@ h3{
 
 a{
   color: white;
+  transition: color 0.6s;
+}
+
+a:hover{
+  color: #9b9b9b;
 }
 
 input[type=email], input[type=password], input[type=text] {
@@ -99,10 +104,6 @@ span.psw {
   font-family: sans-serif;
 }
 
-a:hover{
-  color: #9b9b9b;
-}
-
 .register{
 	font-size: 14px;
 }
@@ -126,7 +127,7 @@ label{
 .footer{
 	font-size: 10px;
 	text-align: center;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 }
 
 ul{
@@ -141,8 +142,26 @@ ul{
 
 }
 
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (min-width: 550px) {
+
+@media only screen and (max-width: 550px) {
+  span.psw {
+     display: block;
+     float: none;
+     margin-top: 10px;
+  }
+  .container{
+  	width: 90%;
+  }
+
+  .footer{
+    margin-top: 50px;
+  }
+  h1,h3{
+    font-size: 17px;
+  }
+}
+
+@media only screen and (min-width: 550px) and (max-width: 800px){
   span.psw {
      display: block;
      float: none;
@@ -168,21 +187,11 @@ ul{
     font-size: 13px;
   }
 }
-@media screen and (max-width: 550px) {
-  span.psw {
-     display: block;
-     float: none;
-     margin-top: 10px;
-  }
+
+@media only screen and (min-width: 800px) and (max-width: 1000px){
+  
   .container{
-  	width: 90%;
+    width: 50%;
   }
-
-  .footer{
-    margin-top: 50px;
-  }
-  h1{
-    font-size: 18px;
-  }
-
+  
 }

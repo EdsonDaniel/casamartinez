@@ -5,7 +5,7 @@ body{
 }
 
 .fondo-produccion{
-  background: rgba(0, 0, 0, 0.55) url('/img/produccion1.jpg') no-repeat center;
+  background: rgba(0, 0, 0, 0.55) url('/img/produccion2.jpg') no-repeat center;
   height: 100vh;
     min-height: 350px;
   background-size: cover;
@@ -13,24 +13,39 @@ body{
   /*opacity: 0.6; */
 }
 
+h1{
+  font-size: 20px;
+  font-family: 'Lora', serif;
+  letter-spacing: 2px;
+  color: white;
+  margin: 20px 0 0px;
+  font-weight: 500;
+  text-align: center;
+}
+#home a:hover{
+  text-decoration: none;
+  transition: color 0.6s;
+}
+h3{
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 2px;
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0;
+  text-align: center;
+}
+
 a{
   color: white;
+  transition: color 0.6s;
+}
+a:hover{
+  color: #9b9b9b;
 }
 
-h3{
-  margin: 0;
-  position: relative;
-  top: 5%;
-  text-align: center;
-  font-family: 'Raleway', sans-serif;
-  font-size: 22px;
-  letter-spacing: 3px;
-  font-weight: 500;
-  display: block;
-}
 
 .contenedor{
-  margin: 3.5% auto;
+  margin: 20px auto;
   width: 36%;
 }
 
@@ -54,7 +69,7 @@ label{
 .footer{
   font-size: 10px;
   text-align: center;
-  margin-bottom: 1%;
+  margin-bottom: 20px;
 }
 
 ul{
@@ -87,7 +102,13 @@ input:Focus{
 
 .contain{
   width: 100%;
-  margin: 3% 0 0;
+  margin: 14px 0 0;
+}
+
+.contain-span{
+  display: block;
+  font-size: 16px;
+  text-align: center;
 }
 
 button {
@@ -114,7 +135,7 @@ button:hover {
   font-weight: lighter !important;
 }
 
-/* Change styles for span and cancel button on extra small screens */
+/* Change styles for span and cancel button on extra small screens 
 @media screen and (max-width: 1100px) {
   .contenedor{
     width: 55%;
@@ -155,4 +176,48 @@ button:hover {
    .login{
     margin-top: 0%;
   }
+}
+
+*/
+@media only screen and (max-width: 550px) {
+  
+  .contenedor{
+    width: 90%;
+  }
+
+  .footer{
+    margin-top: 50px;
+  }
+  h1,h3{
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 550px) and (max-width: 800px){
+  .contenedor{
+    width: 70%;
+  }
+
+  h1{
+    font-size: 20px;
+  }
+  h3{
+    padding-top: 80px !important;
+  }
+  label, .contain-span{
+    font-size: 15px;
+  }
+
+  .footer{
+    margin-top: 15%;
+    font-size: 13px;
+  }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1000px){
+  
+  .contenedor{
+    width: 50%;
+  }
+  
 }
