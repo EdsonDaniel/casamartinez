@@ -79,11 +79,9 @@
 					<ul>
 						<li><a href="">CONDICIONES DE USO</a></li>
 						<li> | </li>
-						<li><a href="">AVISO DE PRIVACIDAD</a></li>
-						<li> | </li>
 						<li><a href="">AYUDA</a></li>
 						<li> | </li>
-						<li><a href="">PREGUNTAS FRECUENTES</a></li>
+						<li><a href="">AVISO DE PRIVACIDAD</a></li>												
 					</ul>
 				</div>
 				<div>

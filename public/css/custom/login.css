@@ -146,31 +146,42 @@ ul{
   span.psw {
      display: block;
      float: none;
-     margin-bottom: 0;
+     margin: 5px 3px 2px;
   }
-  img.avatar {
-     width: 16%;
+
+  .container{
+    width: 70%;
+  }
+
+  h1{
+    font-size: 21px;
+  }
+  h3{
+    padding-top: 80px !important;
+  }
+  label, .label-text, .register, span.psw{
+    font-size: 17px;
   }
 
   .footer{
-    margin-top: 10%;
+    margin-top: 15%;
+    font-size: 13px;
   }
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 550px) {
   span.psw {
      display: block;
      float: none;
   }
-  img.avatar {
-     width: 25%;
-  }
-
   .container{
-  	width: 100%;
+  	width: 90%;
   }
 
   .footer{
-    margin-top: 13%;
+    margin-top: 50px;
+  }
+  h1{
+    font-size: 18px;
   }
 
 }
