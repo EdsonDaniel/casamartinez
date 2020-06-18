@@ -231,7 +231,7 @@ button:focus{
 }
 
 
-@media only screen and (max-width: 400px){
+@media only screen and (max-width: 550px){
   .options{max-width: 100%;}
   .log-in{max-width: 100%;}
   .sidenav a{font-size: 15px;}

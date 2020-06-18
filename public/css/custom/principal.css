@@ -43,9 +43,11 @@ nav a{
 	color: white !important;
 }
 
-.nav-font{
+.nav-items{
 	font-family: 'Raleway', sans-serif !important;
 	letter-spacing: 2px;
+	display: flex;
+	flex-direction: row;
 }
 
 /********************* dropdown ****************/
@@ -309,16 +311,30 @@ a:hover{
 	color: inherit;
 }
 
-/*carrito de compras*/
-#cart{
-	font-size: 20px;
-	margin: 10px 10px 0px;
-}
-
-#icon-menu{
-	margin: 10px 6px 0px;
-}
 
 #icon-menu:hover{
 	cursor: pointer;
+}
+
+.ico {
+	transition: color 0.8s;
+	display: block;
+	padding: 16px 0.5rem;
+	font-size: 15px;
+}
+
+.ico:hover{
+	color: #9B9B9B;
+}
+
+
+/*Media querys*/
+
+@media only screen and (max-width: 991px){
+	#list-items{display: none;}
+  
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1000px){
+  
 }

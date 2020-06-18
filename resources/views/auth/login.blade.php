@@ -26,7 +26,7 @@
 			</div>
 			
 			<div class="container">
-				<label for="email"><b>E-MAIL</b></label>
+				<label for="email"><b>E-MAIL:</b></label>
 				<input class="form-control @error('email') is-invalid @enderror" type="email" placeholder="Correo electrónico" id="email" value="{{ old('email') }}" required autocomplete="email" autofocus name="email">
 
 				@error('email')
@@ -37,7 +37,7 @@
 			</div>
 			
 			<div class="container">
-				<label for="password"><b>CONTRASEÑA</b></label>
+				<label for="password"><b>CONTRASEÑA:</b></label>
 				<input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Contraseña">
 				@error('password')
 				<span class="invalid-feedback" role="alert">
