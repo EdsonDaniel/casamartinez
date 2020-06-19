@@ -25,7 +25,7 @@
             <a class="navbar-brand nav-home" href="/">CASA MARTÍNEZ</a>
             <button class="navbar-toggler nav-home" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse nav-font" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse nav-items" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <div class="dropdown">

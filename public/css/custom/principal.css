@@ -45,7 +45,7 @@ nav a{
 
 .nav-items{
 	font-family: 'Raleway', sans-serif !important;
-	letter-spacing: 2px;
+	letter-spacing: 2px !important;
 	display: flex;
 	flex-direction: row;
 }
@@ -72,6 +72,7 @@ nav a{
   	min-width: 180px;
   	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   	z-index: 1;
+  	background-image: linear-gradient(rgba(243, 243, 241, 0.85), rgba(243, 243, 241, 0.95)) !important;
 }
 
 .dropdown-content a {
@@ -89,24 +90,11 @@ nav a{
 
 .dropdown:hover .dropbtn {background-color: transparent;}
 
-/**************************************************************************************/
-
-.expand-icon a{
-	text-align: center;
-	font-size: 25px !important;
-	color: white;
-}
-
-
 
 /************ carousel en header***********************************/
-.header{
+/*.header{
   background-color: transparent !important;
-}
-
-.carousel-header{
-	margin-top: -102px;
-}
+}*/
 
 .carousel-item {
   height: 100vh;
@@ -312,10 +300,6 @@ a:hover{
 }
 
 
-#icon-menu:hover{
-	cursor: pointer;
-}
-
 .ico {
 	transition: color 0.8s;
 	display: block;
@@ -324,6 +308,7 @@ a:hover{
 }
 
 .ico:hover{
+	cursor: pointer;
 	color: #9B9B9B;
 }
 
@@ -332,9 +317,38 @@ a:hover{
 
 @media only screen and (max-width: 991px){
 	#list-items{display: none;}
-  
+	.navbar>.container{padding: 0 15px; }
+	.nav-home{font-size: 14px;}
+	.carousel-item{height: 70vh;} 
 }
 
-@media only screen and (min-width: 800px) and (max-width: 1000px){
-  
+
+
+
+/*@media only screen and (min-width: 550px) and (max-width: 800px){
+  span.psw {
+     display: block;
+     float: none;
+     margin: 5px 3px 2px;
+  }
+
+  .container{
+    width: 70%;
+  }
+
+  h1{
+    font-size: 21px;
+  }
+  h3{
+    padding-top: 80px !important;
+  }
+  label, .label-text, .register, span.psw{
+    font-size: 17px;
+  }
+
+  .footer{
+    margin-top: 15%;
+    font-size: 13px;
+  }
 }
+*/

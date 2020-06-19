@@ -19,7 +19,7 @@
 	
   
 </head>
-<body style="background-color: black;">
+<body>
    <!--NavBar-->
     <nav id="topbar" class="navbar navbar-expand-lg fixed-top nav-trn">
         <div class="container">
@@ -65,57 +65,7 @@
     </nav>
     <!--NavBar-->
 
-    <!--
-    <nav class="nav-bar" id="topbar">
-      <div class="contenedor">
-        <div class="">
-          <a class="navbar-brand nav-home" href="/">CASA MARTÍNEZ</a>
-        </div>
-        
-        <div>
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <div class="dropdown">
-                <a class="nav-link dropbtn" href="/filosofia">FILOSOFÍA</a>
-                <div class="dropdown-content">
-                  <a href="/filosofia">-Introducción</a>
-                  <a href="/historia">-Historia y equipo</a>
-                  <a href="/campos-de-maguey">-Campos de Agave</a>
-                  <a href="/certificaciones">-Certificaciones</a>
-                </div>
-              </div>
-            </li>
-            <li class="nav-item">
-              <div class="dropdown">
-                <a class="nav-link dropbtn" href="/productos">PRODUCTOS</a>
-                <div class="dropdown-content">
-                  <a href="#">-Ignacio Martínez</a>
-                  <a href="/catalogo">-SiNái</a>
-                  <a href="#">-Origen Verde</a>
-                  <a href="#">-Habitante</a>
-                </div>
-              </div>
-            </li>
-            <li class="nav-item">
-              <div class="dropdown">
-                <a class="nav-link dropbtn" href="/login">LOGIN</a>
-                <div class="dropdown-content">
-                  <a href="/register">-Registrarse</a>
-                </div>
-              </div>
-            </li>
-            <li style="margin-top: 5px;">
-              <a href="" class=""><span id="cart" class="fad fa-shopping-cart"></span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" onclick="openNav()"><i class="far fa-bars" id="icon-menu"></i></a> 
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-  -->
+    
 
     <!--Sidebar-->
     <div id="mySidenav" class="sidenav" >
@@ -202,40 +152,40 @@ for (i = 0; i < dropdown.length; i++) {
   
   <div id="wh-bg">
     <header id=head> 
-  <!--Carrusel-
-  <div id="slider" class="carousel slide carousel-fade" data-ride="carousel">
+  <!--Carrusel-->
+  <div id="slider" class="carousel slide carousel-fade" >
     <div class="carousel-inner">
       <div class="carousel-item active" style="background-image: url('img/agave2.jpg')">
         <div class="bottomright">
-          <p class="text-cita"><i>“Mezcal proviene de la estructura náhuatl de la palabra Mezcal: 'Metl' que significa Maguey, en yuxtaposición con la palabra 'Ixcalli' que quiere decir cocido, la traducción formal debería ser 'Maguey Cocido”</i></p>
-          <p class="text-cita">
+          <p class="text-cita">“Mezcal proviene de la estructura náhuatl de la palabra Mezcal: 'Metl' que significa Maguey, en yuxtaposición con la palabra 'Ixcalli' que quiere decir cocido, la traducción formal debería ser 'Maguey Cocido”</p>
+          <p class="ref-cita">
             -Alguien Martínez
           </p>
         </div>
       </div>
       <div class="carousel-item" style="background-image: url('img/maestro3.jpg');">
         <div class="bottomright">
-          <p class="text-cita"><i>“Tenemos claro que es nuestra responsabilidad el cuidado de la tierra y el agave”</i></p>
-          <p class="text-cita">
+          <p class="text-cita">“Tenemos claro que es nuestra responsabilidad el cuidado de la tierra y el agave”</p>
+          <p class="ref-cita">
             -Alguien Martínez
           </p>
         </div>
       </div>
       <div class="carousel-item" style="background-image: url('img/molienda3.jpg');">
         <div class="bottomright">
-          <p class="text-cita"><i>“Involucrarse en cada detalle, puede hacer la diferencia en todo. ”</i></p>
-          <p class="text-cita">
+          <p class="text-cita">“Involucrarse en cada detalle, puede hacer la diferencia en todo. ”</p>
+          <p class="ref-cita">
             -Alguien Martínez
           </p>
         </div>
       </div>
     </div>
   </div>
-  --Fin Carrusel-->
+  <!--Fin Carrusel-->
   </header> 
   </div>
 
-   <!--footer-
+   <!--footer-->
   <footer class="container mb-4 mt-5">
     <div class="row">
         <div class="col-4 justify-content-md-center">
@@ -246,10 +196,10 @@ for (i = 0; i < dropdown.length; i++) {
                 <a href="https://www.google.com/maps/place/San+Dionisio+Ocotepec,+Oax./@16.801013,-96.4114571,14z/data=!3m1!4b1!4m5!3m4!1s0x85c0b57286869a4f:0x26588c69bc264a18!8m2!3d16.7983019!4d-96.3965776">SAN DIONISIO OCOTEPEC, OAXACA<br>16º48'N 96º24'W</a>
             </p>
         </div>
-        <div class="col-4 text-right justify-content-md-center">
+        <!--<div class="col-4 text-right justify-content-md-center">
             <p class="mail"><a href="mailto:info@casamartinez.mx" style="text-decoration: none;">info@casamartinez.mx</a>
             </p> 
-        </div>
+        </div>-->
     </div>
     <div class="row mt-0 mb-0">
         <div class="col-4 justify-content-md-center">
@@ -268,7 +218,7 @@ for (i = 0; i < dropdown.length; i++) {
         </div>
     </div>
   </footer>
-  --footer-->
+  <!--footer-->
 
    <!-- Scripts -->
    <script src="https://kit-pro.fontawesome.com/releases/v5.10.1/js/pro.min.js" data-auto-fetch-svg></script>

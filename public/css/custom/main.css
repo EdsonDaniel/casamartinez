@@ -10,7 +10,6 @@ body{
   position: absolute;
   bottom: 50px;
   right: 60px;
-  font-size: 18px;
   width: 500px;
   color: white;
 }
@@ -76,7 +75,7 @@ body{
 
 .ref-cita{
 	font-family: 'Lora', serif;
-	font-size: 1.1em;
+	font-size: 18px;
 }
 
 .more{
@@ -137,4 +136,15 @@ body{
 .body-transparent{
 	background-color: rgba(153, 153, 153, 0.42) !important;
 	opacity: 0.5 !important;
+}
+
+
+@media only screen and (max-width: 991px){
+	.bottomright{ bottom: 10px; right: 0; width: 100%; display: flex; flex-flow: column nowrap;}
+	.bottomright>p{margin: 0 25px 1em; }
+}
+
+@media only screen and (max-width: 550px){
+	.text-cita{ font-size: 12px; }
+	.ref-cita{font-size: 11px;}
 }

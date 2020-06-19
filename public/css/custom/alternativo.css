@@ -31,3 +31,61 @@
 	display: flex;
 	justify-content: space-between;
 }
+
+
+/*
+
+<!--
+    <nav class="nav-bar" id="topbar">
+      <div class="contenedor">
+        <div class="">
+          <a class="navbar-brand nav-home" href="/">CASA MARTÍNEZ</a>
+        </div>
+        
+        <div>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <div class="dropdown">
+                <a class="nav-link dropbtn" href="/filosofia">FILOSOFÍA</a>
+                <div class="dropdown-content">
+                  <a href="/filosofia">-Introducción</a>
+                  <a href="/historia">-Historia y equipo</a>
+                  <a href="/campos-de-maguey">-Campos de Agave</a>
+                  <a href="/certificaciones">-Certificaciones</a>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <div class="dropdown">
+                <a class="nav-link dropbtn" href="/productos">PRODUCTOS</a>
+                <div class="dropdown-content">
+                  <a href="#">-Ignacio Martínez</a>
+                  <a href="/catalogo">-SiNái</a>
+                  <a href="#">-Origen Verde</a>
+                  <a href="#">-Habitante</a>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <div class="dropdown">
+                <a class="nav-link dropbtn" href="/login">LOGIN</a>
+                <div class="dropdown-content">
+                  <a href="/register">-Registrarse</a>
+                </div>
+              </div>
+            </li>
+            <li style="margin-top: 5px;">
+              <a href="" class=""><span id="cart" class="fad fa-shopping-cart"></span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" onclick="openNav()"><i class="far fa-bars" id="icon-menu"></i></a> 
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  -->
+
+
+*/
