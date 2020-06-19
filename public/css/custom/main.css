@@ -31,7 +31,7 @@ body{
 .header-parrafo a:hover{ color: rgba(111,133,85,0.6); }
 
 .text-home{ font-family: 'Lora', serif; font-size: 18px; }
-.text-home a{font-size: 17px;}
+.text-home span{font-size: 16px;}
 
 /******************Seccion de bebidas***********************************/
 .div-fondo{
@@ -172,10 +172,10 @@ body{
 @media only screen and (max-width: 550px){
 	.text-cita{ font-size: 12px; }
 	.ref-cita{font-size: 11px;}
-	.text-home{font-size: 15px;}
-	.text-home a{font-size: 14px;}
-	.header-parrafo{font-size: 16px;}
-	.title-bebidas{font-size: 17px; padding-top: 0px; margin-bottom: 20px; color: rgba(111,133,85);}
+	.text-home{font-size: 14px;}
+	.text-home span{font-size: 13px;}
+	.header-parrafo{font-size: 14px;}
+	.title-bebidas{font-size: 15px; padding-top: 0px; margin-bottom: 20px; color: rgba(111,133,85);}
 	.text-and-img{margin: 22px 0;}
 	.text-and-img>div{width: 100%; order: 2; margin: 15px 30px;}
 	.div-img{order: 1 !important;}
@@ -186,10 +186,10 @@ body{
 	.div-products>div{height: auto; margin: 10px 15px 25px;}
 	.div-products p{margin: 0 30px;}
 	.div-foot{width: 100%; margin: 0 ;}
-	.div-foot p{margin: 0  0 0.5rem; line-height: 1 !important;}
-	.div-foot>div{width: 100%; margin: 0 15px; text-align: center !important;}
+	.div-foot p{margin: 0  0 0.3rem; line-height: 1 !important;}
+	.div-foot>div{width: 100%; margin: 0 15px; text-align: center !important; font-size: 12px;}
 	.mail, .icons{text-align: center!important;}
 	.icons{font-size: 30px; line-height: 1;}
-	#f1{order: 1;} #f2{order: 2; margin-top: 5px;} #f3{order: 3;} #f4{order: 4;} #f5{order: 5;}
+	#f1{order: 1;} #f2{order: 2; margin-top: 5px; font-size: 13px;} #f3{order: 3;} #f4{order: 4;} #f5{order: 5;}
 
 }

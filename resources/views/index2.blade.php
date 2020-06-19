@@ -201,7 +201,7 @@ for (i = 0; i < dropdown.length; i++) {
      <div>
       <h5 class="text-right header-parrafo"><a href="/filosofía">FILOSOFÍA</a></h5>
       <p class="text-home text-right">Nuestra filosofía empieza con nuestro amor a nuestras raíces buscando siempre cuidar a la tierra, su ecosistema y a las personas que la trabajan. </p>
-      <p class="text-right text-home"><a href="/filosofia">-Leer más...</a></p>
+      <p class="text-right text-home"><span><a href="/filosofia">-Leer más...</a></span></p>
     </div>
     <div class="div-img">
       <img class="img-horizontal" src="img/maguey.jpeg" alt="Generic placeholder image">
@@ -216,7 +216,7 @@ for (i = 0; i < dropdown.length; i++) {
     <div>
       <h5 class="header-parrafo"><a href="/historia">HISTORIA, COLABORADORES</a></h5>
       <p class="text-home">La increíble historia sobre la familia Martínez y todo el equipo de trabajo detrás de nuestras bebidas.</p>
-      <p class="text-home"><a href="/historia">-Leer más...</a></p>
+      <p class="text-home"><span><a href="/historia">-Leer más...</a></span></p>
     </div>
   </div>
 
