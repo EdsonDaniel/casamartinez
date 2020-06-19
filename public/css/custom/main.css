@@ -186,9 +186,10 @@ body{
 	.div-products>div{height: auto; margin: 10px 15px 25px;}
 	.div-products p{margin: 0 30px;}
 	.div-foot{width: 100%; margin: 0 ;}
-	.div-foot>div{width: 100%; margin: 0; text-align: center !important;}
+	.div-foot p{margin: 0  0 0.5rem;}
+	.div-foot>div{width: 100%; margin: 0 15px; text-align: center !important;}
 	.mail, .icons{text-align: center!important;}
 	.icons{font-size: 30px;}
-	#f1{order: 1;} #f2{order: 2;} #f3{order: 3;} #f4{order: 4;} #f5{order: 5;}
+	#f1{order: 1;} #f2{order: 2; margin-top: 10px;} #f3{order: 3;} #f4{order: 4;} #f5{order: 5;}
 
 }
