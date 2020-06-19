@@ -166,16 +166,16 @@ body{
 
 @media only screen and (max-width: 991px){
 	.bottomright{ bottom: 10px; right: 0; width: 100%; display: flex; flex-flow: column nowrap;}
-	.bottomright>p{margin: 0 25px 1em; }
+	.bottomright>p{margin: 0 25px 1em; } /*
 }
 
-@media only screen and (max-width: 550px){
+@media only screen and (max-width: 550px){*/
 	.text-cita{ font-size: 12px; }
 	.ref-cita{font-size: 11px;}
 	.text-home, .header-parrafo, .title-bebidas{font-size: 15px;}
 	.text-home span{font-size: 14px;}
 	/*.header-parrafo{font-size: 15px;}*/
-	.title-bebidas{font-size: 15px; padding-top: 0px; margin-bottom: 20px; color: rgba(111,133,85);}
+	.title-bebidas{padding-top: 0px; margin-bottom: 20px; color: rgba(111,133,85);}
 	.text-and-img{margin: 22px 0;}
 	.text-and-img>div{width: 100%; order: 2; margin: 15px 30px;}
 	.div-img{order: 1 !important;}
