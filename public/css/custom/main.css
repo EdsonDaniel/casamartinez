@@ -1,5 +1,6 @@
 body{
 	background-color: #f2f2f0;
+	color: #4a4a4a;
 }
 
 
@@ -17,71 +18,20 @@ body{
 
 
 /************imagenes************************/
-.img-vertical{
-	height: 450px;
+.img-vertical{width: 330px; height: 450px; }
+.img-horizontal{ width: 390px; height: 250px; }
+.img-bebidas{ text-align: center; height: 350px; }
 
-}
-
-.img-horizontal{
-	width: 390px;
-	height: 250px;
-
-}
-
-.img-bebidas{
-	text-align: center;
-	height: 400px;
-	
-}
-
-/* Animación imagenes*/
-.img-hover-zoom {
-  /*height: 300px !important; */
-  overflow: hidden !important; /* Removing this will break the effects */
-}
-
-
-/* Slow-motion Zoom Container */
-.img-hover-zoom--slowmo img{
-  transform-origin: 50% 65%;
-  transition: transform 1s;
-}
-
-/* The Transformation */
-.img-hover-zoom--slowmo:hover img {
-  transform: scale(1.02);
-}
-/*******************************************/
 
 
 /*Parrafos pagina principal*****************/
 
-.header-parrafo{
-	font-weight: lighter;
-	letter-spacing: 4px;
-	font-size: 19px;
-}
+.header-parrafo{ font-weight: 500; letter-spacing: 4px; font-size: 19px; margin:0 0 1em; }
+.header-parrafo a{ color: rgba(111,133,85);}
+.header-parrafo a:hover{ color: rgba(111,133,85,0.6); }
 
-.text-cita{
-	font-family: 'Lora', serif;
-	font-size: 20px;
-	font-weight: 450;
-}
-
-.text-home{
-	font-family: 'Lora', serif;
-	font-size: 1.1em;
-}
-
-.ref-cita{
-	font-family: 'Lora', serif;
-	font-size: 18px;
-}
-
-.more{
-	font-family: 'Lora', serif;
-	font-size: 1em;
-}
+.text-home{ font-family: 'Lora', serif; font-size: 18px; }
+.text-home a{font-size: 17px;}
 
 /******************Seccion de bebidas***********************************/
 .div-fondo{
@@ -93,9 +43,12 @@ body{
 	
 }
 .title-bebidas{
-	font-size: 1.3em;
-	padding-top: 3%;
+	font-size: 20px;
+	font-weight: 450;
+	padding-top: 60px;
 	letter-spacing: 3px;
+	color: white;
+	margin-bottom: 30px;
 }
 
 /*******************  footer  *******************************************************/
@@ -122,8 +75,20 @@ body{
 	font-weight: lighter;
 	font-size: 15px;
 	letter-spacing: 2px;
-
+	text-align: right !important;
 }
+.redes{
+	font-family: 'Markazi Text', serif;
+	letter-spacing: 1px;
+	color: #9B9B9B;
+	font-size: 17px;
+	margin: 0;
+}
+
+.icons a{ display: inline-block; margin: 0 3px; transition: 0.6s; }
+.icons p{text-align: right;}
+
+
 
 .second-line{
 	font-family: 'Markazi Text', serif;
@@ -138,6 +103,66 @@ body{
 	opacity: 0.5 !important;
 }
 
+/************************************************************************************************************/
+.text-and-img{
+	display: flex;
+	/*height: 100vh;*/
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	margin: 130px 0;
+}
+.text-and-img >div{
+	width: 400px;
+	margin: 0 30px;
+}
+.div-img {width: auto !important;}
+
+.div-products{
+	background-image: url('/img/portada.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: white;
+	display: flex;
+	/*height: 100vh;*/
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.div-products a:hover{ color: #9B9B9B; }
+
+/* Animación imagenes*/
+.div-products > div {
+  height: 350px;
+  overflow: hidden !important; 
+  margin: 20px 30px;
+}
+
+.img-hover-zoom--slowmo img{
+  transform-origin: 50% 65%;
+  transition: transform 1s;
+  overflow: hidden;
+}
+.img-hover-zoom--slowmo:hover img {transform: scale(1.04);}
+
+.div-foot{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	width: 82%;
+	margin: 40px auto 20px;
+}
+
+.div-foot>div{
+	width: 30%;
+	font-family: 'Lora', serif;
+	letter-spacing: 3px;
+	font-size: 13px;
+}
+.div-foot a:hover{color: #9B9B9B;}
+
+.fa-twitter:hover{transition: 0.5s; color: #41b7d8;}
+.fa-facebook-square:hover{transition: 0.5s; color: #3b5997;}
+.fa-instagram:hover{transition: 0.5s; color: #E1306C;}
 
 @media only screen and (max-width: 991px){
 	.bottomright{ bottom: 10px; right: 0; width: 100%; display: flex; flex-flow: column nowrap;}
@@ -147,4 +172,23 @@ body{
 @media only screen and (max-width: 550px){
 	.text-cita{ font-size: 12px; }
 	.ref-cita{font-size: 11px;}
+	.text-home{font-size: 15px;}
+	.text-home a{font-size: 14px;}
+	.header-parrafo{font-size: 16px;}
+	.title-bebidas{font-size: 17px; padding-top: 0px; margin-bottom: 20px; color: rgba(111,133,85);}
+	.text-and-img{margin: 22px 0;}
+	.text-and-img>div{width: 100%; order: 2; margin: 15px 30px;}
+	.div-img{order: 1 !important;};
+	.img-vertical{width: 300px; height: 380px; }
+	.img-horizontal{ width: 300px; height: auto; }
+	.img-bebidas{ height: 200px; width: 130px;}
+	.div-products{background-image: none; color: #4a4a4a;}
+	.div-products>div{height: auto; margin: 10px 15px 25px;}
+	.div-products p{margin: 0 30px;}
+	.div-foot{width: 100%; margin: 0 ;}
+	.div-foot>div{width: 100%; margin: 0; text-align: center !important;}
+	.mail, .icons{text-align: center!important;}
+	.icons{font-size: 30px;}
+	#f1{order: 1;} #f2{order: 2;} #f3{order: 3;} #f4{order: 4;} #f5{order: 5;}
+
 }

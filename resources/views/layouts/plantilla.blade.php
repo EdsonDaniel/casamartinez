@@ -23,10 +23,8 @@
     <nav id="topbar" class="navbar navbar-expand-lg fixed-top nav-trn">
         <div class="container">
             <a class="navbar-brand nav-home" href="/">CASA MARTÍNEZ</a>
-            <button class="navbar-toggler nav-home" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse nav-items" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
+            <div class="nav-items">
+                <ul class="navbar-nav ml-auto" id="list-items">
                     <li class="nav-item">
                         <div class="dropdown">
                             <a class="nav-link dropbtn" href="/filosofia">FILOSOFÍA</a>
@@ -53,17 +51,14 @@
                         <div class="dropdown">
                             <a class="nav-link dropbtn" href="/login">LOGIN</a>
                             <div class="dropdown-content">
-                                <a href="#">-Registrarse</a>
+                                <a href="/register">-Registrarse</a>
                             </div>
                         </div>
                     </li>
-                    <li style="margin-top: 5px;">
-                        <a href="" class=""><span id="cart" class="fad fa-shopping-cart"></span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="openNav()"><i class="far fa-bars" id="icon-menu"></i></a> 
-                    </li>
                 </ul>
+
+                <a href="/" class="ico"><span class="fad fa-shopping-cart" id="cart"></span></a>
+                <a class="ico" onclick="openNav()"><i class="far fa-bars" id="icon-menu"></i></a> 
             </div>
         </div>
     </nav>

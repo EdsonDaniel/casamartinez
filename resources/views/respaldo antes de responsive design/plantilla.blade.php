@@ -6,26 +6,27 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
-  <title>Casa Martínez</title>
-
-   <!-- Stylesheet -->
+    <title>@yield('title')</title>
+    
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="{{ asset('css/custom/bootstrap.css') }}" type="text/css">
     <link href="{{ asset('css/custom/principal.css') }}" rel="stylesheet" type="text/css"/>
     <!--<link href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Markazi+Text&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">-->
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Markazi+Text&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">    
     <link rel="stylesheet" href="css/custom/estilo.css">
-    
-    <link href="css/custom/main.css" rel="stylesheet" type="text/css" />
-	
-  
+    <link rel="stylesheet" href="css/fonts/style.css">
+    @yield('stylesheet')
+
 </head>
 <body>
-   <!--NavBar-->
+    <!--NavBar-->
     <nav id="topbar" class="navbar navbar-expand-lg fixed-top nav-trn">
         <div class="container">
             <a class="navbar-brand nav-home" href="/">CASA MARTÍNEZ</a>
-            <div class="nav-items">
-                <ul class="navbar-nav ml-auto" id="list-items">
+            <button class="navbar-toggler nav-home" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse nav-items" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <div class="dropdown">
                             <a class="nav-link dropbtn" href="/filosofia">FILOSOFÍA</a>
@@ -56,16 +57,17 @@
                             </div>
                         </div>
                     </li>
+                    <li style="margin-top: 5px;">
+                        <a href="" class=""><span id="cart" class="fad fa-shopping-cart"></span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="openNav()"><i class="far fa-bars" id="icon-menu"></i></a> 
+                    </li>
                 </ul>
-
-                <a href="/" class="ico"><span class="fad fa-shopping-cart" id="cart"></span></a>
-                <a class="ico" onclick="openNav()"><i class="far fa-bars" id="icon-menu"></i></a> 
             </div>
         </div>
     </nav>
     <!--NavBar-->
-
-    
 
     <!--Sidebar-->
     <div id="mySidenav" class="sidenav" >
@@ -150,134 +152,10 @@ for (i = 0; i < dropdown.length; i++) {
 </script>
   <!--container content-->
   
-  <div id="wh-bg">
-    <header id=head> 
-  <!--Carrusel-->
-  <div id="slider" class="carousel slide carousel-fade" >
-    <div class="carousel-inner">
-      <div class="carousel-item active" style="background-image: url('img/agave2.jpg')">
-        <div class="bottomright">
-          <p class="text-cita"><i>“Mezcal proviene de la estructura náhuatl de la palabra Mezcal: 'Metl' que significa Maguey, en yuxtaposición con la palabra 'Ixcalli' que quiere decir cocido, la traducción formal debería ser 'Maguey Cocido”</i></p>
-          <p class="ref-cita">
-            -Alguien Martínez
-          </p>
-        </div>
-      </div>
-      <div class="carousel-item" style="background-image: url('img/maestro3.jpg');">
-        <div class="bottomright">
-          <p class="text-cita">“Tenemos claro que es nuestra responsabilidad el cuidado de la tierra y el agave”</p>
-          <p class="ref-cita">
-            -Alguien Martínez
-          </p>
-        </div>
-      </div>
-      <div class="carousel-item" style="background-image: url('img/molienda3.jpg');">
-        <div class="bottomright">
-          <p class="text-cita">“Involucrarse en cada detalle, puede hacer la diferencia en todo. ”</p>
-          <p class="ref-cita">
-            -Alguien Martínez
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--Fin Carrusel-->
-  </header> 
-  </div>
+  <div @yield('id-container')>@yield('content')</div>
+  <!--container content-->
 
-
-  <div class="text-and-img">
-    <div class="div-img">
-        <img src="/img/histori.jpg" class="img-vertical" style="float: right;">
-    </div>
-    <div>
-      <p class="text-home"><i>“El mezcal, la bebida de los dioses, fue concebida por un rayo que cayó sobre un agave que dio origen a la primera tatema, iniciando así la tradición del elixir oaxaqueño por excelencia que hoy cobija la cultura culinaria de los mexicanos y con ello: su identidad.”</i></p>
-      <p class="text-home">-Alguien Martínez</p>
-    </div>
-  </div>
-
-  <!--segundo parrafp-->
-  <div class="text-and-img">
-     <div>
-      <h5 class="text-right header-parrafo"><a href="/filosofía">FILOSOFÍA</a></h5>
-      <p class="text-home text-right">Nuestra filosofía empieza con nuestro amor a nuestras raíces buscando siempre cuidar a la tierra, su ecosistema y a las personas que la trabajan. </p>
-      <p class="text-right text-home"><a href="/filosofia">-Leer más...</a></p>
-    </div>
-    <div class="div-img">
-      <img class="img-horizontal" src="img/maguey.jpeg" alt="Generic placeholder image">
-    </div>
-   </div>
-  <!--segundo parrafo-->
-
-  <div class="text-and-img">
-    <div class="div-img">
-        <img src="/img/corazon-maguey3.jpg" class="img-vertical" style="float: right;">
-    </div>
-    <div>
-      <h5 class="header-parrafo"><a href="/historia">HISTORIA, COLABORADORES</a></h5>
-      <p class="text-home">La increíble historia sobre la familia Martínez y todo el equipo de trabajo detrás de nuestras bebidas.</p>
-      <p class="text-home"><a href="/historia">-Leer más...</a></p>
-    </div>
-  </div>
-
-
-<div class="div-products" >
-  <div style="width: 100%; height: auto;">
-    <h2 class="title-bebidas text-center"><a href="/productos">NUESTROS PRODUCTOS</a></h2>
-    <p class="text-center text-home">Cada ruta que tomamos lleva implícita una botella de mezcal.</p>
-  </div>
-
-  <div class="img-hover-zoom--slowmo">
-    <img class="img-bebidas" src="img/mezcal-joven.jpg" alt="Mezcal joven">
-  </div>
-
-  <div class="img-hover-zoom--slowmo">
-    <img class="img-bebidas" src="img/mezcal-anejo.jpg" alt="Mezcal joven">
-  </div>
-
-  <div class="img-hover-zoom--slowmo">
-    <img class="img-bebidas" src="img/mezcal-reposado.jpg" alt="Mezcal joven">
-  </div>
-
-  <div class="img-hover-zoom--slowmo">
-    <img class="img-bebidas" src="img/reserva.jpg" alt="Mezcal joven">
-  </div>
-
-  <div style="width: 100%; height: auto;">
-    <p class="text-center text-home"><a href="/catalogo">Ver todos los productos</a></p>
-    <br>
-  </div>
-
-</div>
-
-
-<div class="div-foot">
-  <div id="f2"><p>Tel. 951-323-0110</p></div>
-  <div id="f1">
-    <p class="text-center">
-                <a href="https://www.google.com/maps/place/San+Dionisio+Ocotepec,+Oax./@16.801013,-96.4114571,14z/data=!3m1!4b1!4m5!3m4!1s0x85c0b57286869a4f:0x26588c69bc264a18!8m2!3d16.7983019!4d-96.3965776">SAN DIONISIO OCOTEPEC, OAXACA<br>16º48'N 96º24'W</a>
-            </p>
-  </div>
-  <div id="f3">
-    <p class="mail"><a href="mailto:info@casamartinez.mx">info@casamartinez.mx</a></p>
-  </div>
-<div id="f5">
-  <p class="redes"><a>PRIVACY POLICY</a> | <a href="">© 2016 – 2020</a> | <a href="">SITE CREDITS</a>
-            </p> 
-</div>
-
-<div id="f4">
-   <p class="redes icons">
-                <a href="https://twitter.com/MezcalSinai" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.facebook.com/Mezcal.Sinai" target="_blank"><i class="fab fa-facebook-square"></i></a>
-                <a href="https://www.instagram.com/mezcal.sinai" target="_blank"><i class="fab fa-instagram"></i></a>
-            </p>
-
-</div>
-  
-</div>
-
-   <!--footer--
+  <!--footer-->
   <footer class="container mb-4 mt-5">
     <div class="row">
         <div class="col-4 justify-content-md-center">
@@ -288,10 +166,10 @@ for (i = 0; i < dropdown.length; i++) {
                 <a href="https://www.google.com/maps/place/San+Dionisio+Ocotepec,+Oax./@16.801013,-96.4114571,14z/data=!3m1!4b1!4m5!3m4!1s0x85c0b57286869a4f:0x26588c69bc264a18!8m2!3d16.7983019!4d-96.3965776">SAN DIONISIO OCOTEPEC, OAXACA<br>16º48'N 96º24'W</a>
             </p>
         </div>
-        <--<div class="col-4 text-right justify-content-md-center">
+        <div class="col-4 text-right justify-content-md-center">
             <p class="mail"><a href="mailto:info@casamartinez.mx" style="text-decoration: none;">info@casamartinez.mx</a>
             </p> 
-        </div>--
+        </div>
     </div>
     <div class="row mt-0 mb-0">
         <div class="col-4 justify-content-md-center">
@@ -310,7 +188,7 @@ for (i = 0; i < dropdown.length; i++) {
         </div>
     </div>
   </footer>
-  --footer-->
+  <!--footer-->
 
    <!-- Scripts -->
    <script src="https://kit-pro.fontawesome.com/releases/v5.10.1/js/pro.min.js" data-auto-fetch-svg></script>
