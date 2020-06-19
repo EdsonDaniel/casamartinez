@@ -188,7 +188,7 @@ for (i = 0; i < dropdown.length; i++) {
 
   <div class="text-and-img">
     <div class="div-img">
-        <img src="/img/histori.jpg" class="img-vertical" style="float: right;">
+        <img src="/img/histori.jpg" class="img-vertical">
     </div>
     <div>
       <p class="text-home"><i>“El mezcal, la bebida de los dioses, fue concebida por un rayo que cayó sobre un agave que dio origen a la primera tatema, iniciando así la tradición del elixir oaxaqueño por excelencia que hoy cobija la cultura culinaria de los mexicanos y con ello: su identidad.”</i></p>
@@ -211,7 +211,7 @@ for (i = 0; i < dropdown.length; i++) {
 
   <div class="text-and-img">
     <div class="div-img">
-        <img src="/img/corazon-maguey3.jpg" class="img-vertical" style="float: right;">
+        <img src="/img/corazon-maguey3.jpg" class="img-vertical">
     </div>
     <div>
       <h5 class="header-parrafo"><a href="/historia">HISTORIA, COLABORADORES</a></h5>

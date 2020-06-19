@@ -86,7 +86,7 @@ body{
 }
 
 .icons a{ display: inline-block; margin: 0 3px; transition: 0.6s; }
-.icons p{text-align: right;}
+.icons {text-align: right;}
 
 
 
@@ -178,7 +178,7 @@ body{
 	.title-bebidas{font-size: 17px; padding-top: 0px; margin-bottom: 20px; color: rgba(111,133,85);}
 	.text-and-img{margin: 22px 0;}
 	.text-and-img>div{width: 100%; order: 2; margin: 15px 30px;}
-	.div-img{order: 1 !important;};
+	.div-img{order: 1 !important;}
 	.img-vertical{width: 300px; height: 380px; }
 	.img-horizontal{ width: 300px; height: auto; }
 	.img-bebidas{ height: 200px; width: 130px;}
@@ -187,7 +187,6 @@ body{
 	.div-products p{margin: 0 30px;}
 	.div-foot{width: 100%; margin: 0 ;}
 	.div-foot p{margin: 0  0 0.5rem; line-height: 1 !important;}
-
 	.div-foot>div{width: 100%; margin: 0 15px; text-align: center !important;}
 	.mail, .icons{text-align: center!important;}
 	.icons{font-size: 30px; line-height: 1;}
