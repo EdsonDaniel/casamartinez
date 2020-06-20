@@ -18,27 +18,21 @@
   <div id="slider" class="carousel slide carousel-fade" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active" style="background-image: url('img/agave2.jpg')">
-      	<div class="bottomright">
-      		<p class="text-cita">“Mezcal proviene de la estructura náhuatl de la palabra Mezcal: 'Metl' que significa Maguey, en yuxtaposición con la palabra 'Ixcalli' que quiere decir cocido, la traducción formal debería ser 'Maguey Cocido”</p>
-      		<p class="ref-cita">
-      			-Alguien Martínez
-      		</p>
+      	<div class="bottomright text-portada">
+      		<p>“Mezcal proviene de la estructura náhuatl de la palabra Mezcal: 'Metl' que significa Maguey, en yuxtaposición con la palabra 'Ixcalli' que quiere decir cocido, la traducción formal debería ser 'Maguey Cocido”</p>
+      		<p><span>-Alguien Martínez</span></p>
       	</div>
       </div>
       <div class="carousel-item" style="background-image: url('img/maestro3.jpg');">
-        <div class="bottomright">
-      		<p class="text-cita">“Tenemos claro que es nuestra responsabilidad el cuidado de la tierra y el agave”</p>
-      		<p class="ref-cita">
-      			-Alguien Martínez
-      		</p>
+        <div class="bottomright text-portada">
+      		<p>“Tenemos claro que es nuestra responsabilidad el cuidado de la tierra y el agave”</p>
+      		<p><span>-Alguien Martínez</span></p>
       	</div>
       </div>
       <div class="carousel-item" style="background-image: url('img/molienda3.jpg');">
-        <div class="bottomright">
-      		<p class="text-cita">“Involucrarse en cada detalle, puede hacer la diferencia en todo. ”</p>
-      		<p class="ref-cita">
-      			-Alguien Martínez
-      		</p>
+        <div class="bottomright text-portada">
+      		<p>“Involucrarse en cada detalle, puede hacer la diferencia en todo. ”</p>
+      		<p><span>-Alguien Martínez</span></p>
       	</div>
       </div>
     </div>

@@ -16,7 +16,7 @@
 
 <div class="head-philosop fade-scroll"></div>
 	<!-- Segunda imagen de fondo-->
-	<div class="div-img fade-scroll">
+	<div class="portada-fil fade-scroll">
 	</div>
 	<div class="img-source fade-scroll">
 		Ignacio Martínez
@@ -24,7 +24,7 @@
 	<!--Segunda imagen de fondo-->
 
 	<!-- cita -->
-	<div class="block-cita fade-scroll">
+	<div class="block-cita texto fade-scroll">
 		<blockquote >
 			<p class="text-cita fade-scroll">“Con los pies en la tierra, la mirada en el cielo, el corazón en nuestra profesión y el firme deseo de seguir compartiendo en un futuro la bebida mística, ¡EL MEZCAL!”</p>
 		</blockquote>

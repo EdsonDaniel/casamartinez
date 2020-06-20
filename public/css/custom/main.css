@@ -1,4 +1,4 @@
-body{ background-color: #f2f2f0; color: #4a4a4a; }
+body{ background-color: #f2f2f0; color: #4a4a4a;}
 
 .bottomright {
   position: absolute;
@@ -27,16 +27,9 @@ body{ background-color: #f2f2f0; color: #4a4a4a; }
 
 .text-home{ font-family: 'Lora', serif; font-size: 18px; }
 .text-home span{font-size: 16px;}
-
+.text-portada{font-size: 19px;}
+.text-portada span{font-size: 17px;}
 /******************Seccion de bebidas***********************************/
-.div-fondo{
-	margin-top: 150px !important;
-	background-image: url('/img/portada.jpg');
-	background-repeat: no-repeat;
-	background-size: cover;
-	color: white;
-	
-}
 .title-bebidas{
 	font-size: 20px;
 	font-weight: 450;
@@ -44,36 +37,6 @@ body{ background-color: #f2f2f0; color: #4a4a4a; }
 	letter-spacing: 3px;
 	color: white;
 	margin-bottom: 30px;
-}
-
-/*******************  footer  *******************************************************/
-.foot-page{
-	font-family: 'Libre Caslon Text', serif;
-	font-size: 12px;
-	color: #9B9B9B;
-}
-
-.tel-number{
-	font-family: 'Lora', serif;
-	font-size: 13px;
-	letter-spacing: 3px;
-	color: #4a4a4a;
-}
-
-.tel-number a{
-	color: #4a4a4a;
-	text-decoration: none;
-}
-
-
-
-
-.second-line{
-	font-family: 'Markazi Text', serif;
-	letter-spacing: 1px;
-	color: #9B9B9B;
-	text-decoration: none;
-	font-size: 17px;
 }
 
 .body-transparent{
@@ -95,7 +58,6 @@ body{ background-color: #f2f2f0; color: #4a4a4a; }
 	margin: 0 30px;
 }
 .div-img {width: auto !important;}
-
 .div-products{
 	background-image: url('/img/portada.jpg');
 	background-repeat: no-repeat;
@@ -107,14 +69,12 @@ body{ background-color: #f2f2f0; color: #4a4a4a; }
 	justify-content: center;
 }
 .div-products a:hover{ color: #9B9B9B; }
-
 /* Animación imagenes*/
 .div-products > div {
   height: 350px;
   overflow: hidden !important; 
   margin: 20px 30px;
 }
-
 .img-hover-zoom--slowmo img{
   transform-origin: 50% 65%;
   transition: transform 1s;
@@ -129,18 +89,16 @@ body{ background-color: #f2f2f0; color: #4a4a4a; }
 	.title-bebidas{padding-top: 0px; margin-bottom: 20px; color: rgba(111,133,85);}
 	.div-products{background-image: none; color: #4a4a4a;}
 }
-
 @media only screen and (max-width: 760px){
 	.text-and-img>div{ order: 2;}
 	.div-img{order: 1 !important;}
 	.align-text{text-align: left;}
 	.div-products p{margin: 0 30px;}
 }
-
 @media only screen and (max-width: 550px){
 	.bottomright>p{margin: 0 30px 1em; } 
-	.text-cita{ font-size: 12px; }
-	.ref-cita{font-size: 11px;}
+	.text-portada{ font-size: 12px; }
+	.text-portada span{font-size: 11px;}
 	.text-home, .header-parrafo, .title-bebidas{font-size: 15px;}
 	.text-home span{font-size: 14px;}
 	.text-and-img>div{ width: 100%; margin: 15px 30px;}
@@ -152,8 +110,8 @@ body{ background-color: #f2f2f0; color: #4a4a4a; }
 
 @media only screen and (min-width: 550px) and (max-width: 990px){
 	.bottomright>p{margin: 0 50px 1em; } 
-	.text-cita{ font-size: 16px; }
-	.ref-cita{font-size: 14px;}
+	.text-portada{ font-size: 16px; }
+	.text-portada span{font-size: 14px;}
 	.text-home, .header-parrafo, .title-bebidas{font-size: 17px;}
 	.text-home span{font-size: 15px;}
 }

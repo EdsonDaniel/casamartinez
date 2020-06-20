@@ -13,16 +13,17 @@ body{ background-color: black; color: white; font-family: 'Lora', serif;}
 	background-color: black !important;
 	color: white !important;
 }
+
 .head-philosop{
 	background: black url('/img/filosofia.jpg') no-repeat center;
 	height: 100vh;
-  	min-height: 350px;
+  	min-height: 310px;
 	background-size: cover;
 }
-.div-img{
+.portada-fil{
 	background: black url('/img/philosop2.jpg') no-repeat center;
 	height: 95vh;
-  	min-height: 350px;
+  	min-height: 300px;
 	background-size: cover;
 }
 
@@ -34,8 +35,6 @@ body{ background-color: black; color: white; font-family: 'Lora', serif;}
 	font-size: 12px;
 	letter-spacing: 1px;
 }
-
-/************* Cita **********************************/
 
 
 /**********************cOROUSEL */
@@ -99,5 +98,15 @@ body{ background-color: black; color: white; font-family: 'Lora', serif;}
 
 .background-transparent{
 	background-color: rgba(153, 153, 153, 0.42);
+}
+
+/*Media querys*/
+
+@media only screen and (max-width: 550px){
+	.head-philosop{ height: 50vh; }
+	.portada-fil{ height: 70vh; background-position: right;}
+	.block-cita{ width: 80%; }
+	.next{height: 15vh; margin-top: 100px;}
+	.next-text p{font-size: 12px;}.next-text a{font-size: 19px;}
 }
 
