@@ -106,7 +106,7 @@ body{ background-color: black; color: white; font-family: 'Lora', serif;}
 	.head-philosop{ height: 50vh; }
 	.portada-fil{ height: 70vh; background-position: right;}
 	.block-cita{ width: 80%; }
-	.next{height: 15vh; margin-top: 100px;}
-	.next-text p{font-size: 12px;}.next-text a{font-size: 19px;}
+	.next{height: 25vh; margin-top: 100px;}
+	.next-text p{font-size: 12px;}.next-text a{font-size: 16px;}
 }
 

@@ -142,14 +142,14 @@ nav a{color: white !important;}
 }
 
 .next{
-	background: rgba(0, 0, 0, 0.55) no-repeat center;
 	height: 50vh;
   	min-height: 150px;
-	background-size: cover;
 	color: white !important;
 	position: relative;
 	margin: 200px 0 0;
 }
+.next-fondo{background: rgba(0, 0, 0, 0.55) no-repeat center; 
+	background-size: cover; height: inherit; opacity: 0.7; z-index: -1; min-height: 150px;}
 
 .next-text {
   position: absolute;
@@ -160,6 +160,7 @@ nav a{color: white !important;}
   font-family: 'Raleway', sans-serif;
   letter-spacing: 3px;
   color: white;
+  z-index: 2;
 }
 .next-text p{
 	font-size: 15px;

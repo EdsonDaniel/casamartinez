@@ -27,8 +27,8 @@ body{ background-color: #f2f2f0; color: #4a4a4a;}
 
 .text-home{ font-family: 'Lora', serif; font-size: 18px; }
 .text-home span{font-size: 16px;}
-.text-portada{font-size: 19px;}
-.text-portada span{font-size: 17px;}
+.text-portada{font-family: 'Lora', serif; font-size: 19px;}
+.text-portada span{ font-family: 'Lora', serif; font-size: 17px;}
 /******************Seccion de bebidas***********************************/
 .title-bebidas{
 	font-size: 20px;

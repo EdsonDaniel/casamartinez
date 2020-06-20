@@ -373,11 +373,12 @@
 
 
 	<!--next section-->
-	<div class="next" style="background-image: url('img/equipo.jpg');">
+	<div class="next" >
 		<div class="next-text">
 			<p>SIGUIENTE</p>
 			<p><a href="history.html">Historia, Colaboradores</a></p>
 		</div>
+		<div class="next-fondo" style="background-image: url('/img/equipo.jpg');"></div>
 	</div>
 	<!--next section-->
 
