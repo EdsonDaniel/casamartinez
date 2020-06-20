@@ -1,12 +1,6 @@
 
-body{
-	background-color: black;
-	color: white;
-}
-.body-black{
-	background-color: black !important;
-	color: white !important;
-}
+body{ background-color: black; color: white; font-family: 'Lora', serif;}
+.body-black{ background-color: black !important; color: white !important; }
 
 .body-transparent{
 	background-color: rgba(153, 153, 153, 0.42) !important;
@@ -42,11 +36,6 @@ body{
 }
 
 /************* Cita **********************************/
-
-.block-cita{
-	margin: auto;
-	width: 820px;
-}
 
 
 /**********************cOROUSEL */

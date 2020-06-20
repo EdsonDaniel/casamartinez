@@ -15,8 +15,6 @@
 @section('content')
 
 <div class="head-philosop fade-scroll"></div>
-	</header>
-
 	<!-- Segunda imagen de fondo-->
 	<div class="div-img fade-scroll">
 	</div>
@@ -26,11 +24,11 @@
 	<!--Segunda imagen de fondo-->
 
 	<!-- cita -->
-	<div class="block-cita" style="margin-bottom: 120px;">
-		<blockquote style="margin-top: 100px;">
+	<div class="block-cita fade-scroll">
+		<blockquote >
 			<p class="text-cita fade-scroll">“Con los pies en la tierra, la mirada en el cielo, el corazón en nuestra profesión y el firme deseo de seguir compartiendo en un futuro la bebida mística, ¡EL MEZCAL!”</p>
 		</blockquote>
-		<p class="ref-cita">-Alguien Martínez</p>
+		<p class="ref-cita fade-scroll">-Alguien Martínez</p>
 	</div>
 	<!-- cita -->
 	
@@ -361,20 +359,18 @@
 		</div>
 	</div><!-- fin tercer corousel-->
 
-	<div style="margin-top: 250px; margin-bottom: 250px;" class="fade-scroll"></div>
 
 	<!-- cita -->
-	<div class="fade-scroll mt-5">
+	<div class="fade-scroll">
 		<div class="block-cita" >
 		<blockquote class="fade-scroll">
 			<p class="text-cita">“La historia de un Maestro Mezcalero se empieza a contar desde la niñez, etapa en donde empiezan a involucrarse en el trabajo familiar. Desde niño soñaba con ser alguien grande, hoy en día para nosotros lo ha logrado y es un ejemplo de que los sueños de niños se pueden hacer realidad.”</p>
 		</blockquote>
-		<p class="ref-cita pb-0">-Ignacio Martínez</p>
+		<p class="ref-cita">-Ignacio Martínez</p>
 		</div>
 	</div>
 	<!-- cita -->
 
-	<div style="margin-top: 250px; margin-bottom: 250px;"></div>
 
 	<!--next section-->
 	<div class="next" style="background-image: url('img/equipo.jpg');">

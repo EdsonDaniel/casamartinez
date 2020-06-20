@@ -122,32 +122,12 @@ body{ background-color: #f2f2f0; color: #4a4a4a; }
 }
 .img-hover-zoom--slowmo:hover img {transform: scale(1.04);}
 
-.div-foot{
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	width: 82%;
-	margin: 40px auto 20px;
-}
-
-.div-foot>div{
-	width: 30%;
-	font-family: 'Lora', serif;
-	letter-spacing: 3px;
-	font-size: 13px;
-}
-.div-foot a:hover{color: #9B9B9B;}
-
-.fa-twitter:hover{transition: 0.5s; color: #41b7d8;}
-.fa-facebook-square:hover{transition: 0.5s; color: #3b5997;}
-.fa-instagram:hover{transition: 0.5s; color: #E1306C;}
 
 @media only screen and (max-width: 991px){
 	.bottomright{ bottom: 10px; right: 0; width: 100%;}
 	.text-and-img{margin: 25px 0;}
 	.title-bebidas{padding-top: 0px; margin-bottom: 20px; color: rgba(111,133,85);}
 	.div-products{background-image: none; color: #4a4a4a;}
-	.div-foot>div{font-size: 12px;}
 }
 
 @media only screen and (max-width: 760px){
@@ -155,12 +135,6 @@ body{ background-color: #f2f2f0; color: #4a4a4a; }
 	.div-img{order: 1 !important;}
 	.align-text{text-align: left;}
 	.div-products p{margin: 0 30px;}
-	.div-foot{width: 100%; margin: 0 ;}
-	.div-foot p{margin: 0  0 0.5rem; line-height: 1 !important;}
-	.div-foot>div{width: 100%; margin: 0 15px; text-align: center !important; font-size: 12px;}
-	.mail, .icons{text-align: center!important;}
-	.icons{font-size: 30px; line-height: 1;}
-	#f1{order: 1;} #f2{order: 2; margin-top: 5px; font-size: 13px;} #f3{order: 3;} #f4{order: 4;} #f5{order: 5;}
 }
 
 @media only screen and (max-width: 550px){
@@ -174,8 +148,6 @@ body{ background-color: #f2f2f0; color: #4a4a4a; }
 	.img-horizontal{ width: 300px; height: auto; }
 	.img-bebidas{ height: 200px; width: 130px;}
 	.div-products>div{height: auto; margin: 10px 15px 25px;}
-	
-
 }
 
 @media only screen and (min-width: 550px) and (max-width: 990px){
@@ -199,16 +171,10 @@ body{ background-color: #f2f2f0; color: #4a4a4a; }
 	.text-and-img{margin: 60px 0;}
 	.text-and-img>div{width: 300px; margin: 15px 15px;}
 	.align-text{text-align: right;}
-
 	.img-vertical{width: 250px; height: 350px; }
 	.img-horizontal{ width: 300px; height: auto; }
 	.img-bebidas{ height: 230px; width: 150px;}
 	.div-products>div{height: auto; margin: 10px 15px 25px;}
-
-	.div-foot{width: 90%;}
-	#f5{width: 50%;}
-	.redes{font-size: 15px;}
-	.mail{font-size: 14px;}
 }
 
 
