@@ -198,10 +198,10 @@ for (i = 0; i < dropdown.length; i++) {
 
   <!--segundo parrafp-->
   <div class="text-and-img">
-     <div>
-      <h5 class="text-right header-parrafo"><a href="/filosofía">FILOSOFÍA</a></h5>
-      <p class="text-home text-right">Nuestra filosofía empieza con nuestro amor a nuestras raíces buscando siempre cuidar a la tierra, su ecosistema y a las personas que la trabajan. </p>
-      <p class="text-right text-home"><span><a href="/filosofia">-Leer más...</a></span></p>
+     <div id="atr">
+      <h5 class="header-parrafo align-text"><a href="/filosofía">FILOSOFÍA</a></h5>
+      <p class="text-home align-text">Nuestra filosofía empieza con nuestro amor a nuestras raíces buscando siempre cuidar a la tierra, su ecosistema y a las personas que la trabajan. </p>
+      <p class="text-home align-text"><span><a href="/filosofia" id="atra">-Leer más...</a></span></p>
     </div>
     <div class="div-img">
       <img class="img-horizontal" src="img/maguey.jpeg" alt="Generic placeholder image">

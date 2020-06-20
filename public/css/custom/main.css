@@ -30,6 +30,8 @@ body{
 .header-parrafo a{ color: rgba(111,133,85);}
 .header-parrafo a:hover{ color: rgba(111,133,85,0.6); }
 
+.align-text{text-align: right;}
+
 .text-home{ font-family: 'Lora', serif; font-size: 18px; }
 .text-home span{font-size: 16px;}
 
@@ -191,8 +193,8 @@ body{
 	.text-home span{font-size: 14px;}
 	/*.header-parrafo{font-size: 15px;}*/
 	.title-bebidas{padding-top: 0px; margin-bottom: 20px; color: rgba(111,133,85);}
-	.text-and-img>div{width: 100%; order: 2; margin: 15px 30px;}
-	
+	.text-and-img>div{margin: 15px 30px;}
+	.align-text{text-align: left;}
 	.img-vertical{width: 300px; height: 380px; }
 	.img-horizontal{ width: 300px; height: auto; }
 	.img-bebidas{ height: 200px; width: 130px;}
@@ -211,7 +213,9 @@ body{
 	.text-home span{font-size: 15px;}
 	/*.header-parrafo{font-size: 15px;}*/
 
-	.text-and-img>div{width: 100%; order: 2; margin: 15px 70px;}
+	.text-and-img>div{width: 450px; margin: 15px 30px;}
+	.align-text{text-align: left;}
+	.header-parrafo{text-align: center !important;}
 	
 	.img-vertical{width: 340px; height: 420px; }
 	.img-horizontal{ width: 340px; height: auto; }
@@ -221,3 +225,4 @@ body{
 	.div-products p{margin: 0 30px;}
   
 }
+
