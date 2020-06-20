@@ -151,36 +151,30 @@ for (i = 0; i < dropdown.length; i++) {
   <!--container content-->
 
   <!--footer-->
-  <footer class="container mb-4 mt-5">
-    <div class="row">
-        <div class="col-4 justify-content-md-center">
-            <p class="tel-number">Tel. 951-323-0110</p> 
-        </div>
-        <div class="col-4 text-center justify-content-md-center">
-            <p class="tel-number mb-0">
+  <footer>
+    <div class="div-foot">
+        <div id="f2"><p>Tel. 951-323-0110</p></div>
+        <div id="f1">
+            <p class="text-center">
                 <a href="https://www.google.com/maps/place/San+Dionisio+Ocotepec,+Oax./@16.801013,-96.4114571,14z/data=!3m1!4b1!4m5!3m4!1s0x85c0b57286869a4f:0x26588c69bc264a18!8m2!3d16.7983019!4d-96.3965776">SAN DIONISIO OCOTEPEC, OAXACA<br>16º48'N 96º24'W</a>
             </p>
         </div>
-        <div class="col-4 text-right justify-content-md-center">
-            <p class="mail"><a href="mailto:info@casamartinez.mx" style="text-decoration: none;">info@casamartinez.mx</a>
-            </p> 
+        
+        <div id="f3">
+            <p class="mail"><a href="mailto:info@casamartinez.mx">info@casamartinez.mx</a></p>
         </div>
-    </div>
-    <div class="row mt-0 mb-0">
-        <div class="col-4 justify-content-md-center">
-            <p class="second-line mb-0 mt-1"><a>PRIVACY POLICY</a> | <a href="">© 2016 – 2020</a> | <a href="">SITE CREDITS</a>
-            </p> 
-        </div>
-        <div class="col-4 text-center justify-content-md-center">
-            <p class="tel-number"></p> 
-        </div>
-        <div class="col-4 text-right justify-content-md-center">
-            <p class="second-line mb-0 mt-1 icon-redes fs" >
-                <a href="https://twitter.com/MezcalSinai" target="_blank"><span class="icon-twitter1"></span></a>
-                <a href="https://www.facebook.com/Mezcal.Sinai" target="_blank"><span class="icon-facebook-square"></span></a>
-                <a href="https://www.instagram.com/mezcal.sinai" target="_blank"><span class="icon-instagram"><span class="path1"></span><span class="path2"></span></span></a>
+        <div id="f5">
+            <p class="redes"><a>PRIVACY POLICY</a> | <a href="">© 2016 – 2020</a> | <a href="">SITE CREDITS</a>
             </p>
         </div>
+
+        <div id="f4">
+            <p class="redes icons">
+                <a href="https://twitter.com/MezcalSinai" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com/Mezcal.Sinai" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                <a href="https://www.instagram.com/mezcal.sinai" target="_blank"><i class="fab fa-instagram"></i></a>
+            </p>
+        </div>  
     </div>
   </footer>
   <!--footer-->

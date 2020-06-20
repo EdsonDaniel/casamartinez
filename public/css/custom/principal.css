@@ -4,66 +4,41 @@
 	z-index: 99;
 	transition: 500ms ease;
 }
-
 .nav-trn2{
 	background-image: linear-gradient(rgba(243, 243, 241, 0.85), rgba(243, 243, 241, 0.95)) !important;
 	z-index: 99;
 	transition: 500ms ease;
 }
-.nav-trn2 a{
-	color: #4A4A4A !important;
-}
-
+.nav-trn2 a{color: #4A4A4A !important;}
 /********Navbar degradado*/
-.nav-grad {
-  background-image: linear-gradient(rgba(64, 65, 47, 0.47), transparent);
-}
-/****************************/
-
-
+.nav-grad {background-image: linear-gradient(rgba(64, 65, 47, 0.47), transparent);}
 /*change on scroll*/
-
 .nav-trn.scrolled{
 	background-image: linear-gradient(rgba(243, 243, 241, 0.85), rgba(243, 243, 241, 0.95)) !important;
 	color: #4A4A4A !important;
 }
-
-.nav-trn.scrolled a{
-	color: #4A4A4A !important;
-}
+.nav-trn.scrolled a{color: #4A4A4A !important;}
 
 .nav-home{
 	font-size: 15px;
 	font-family: 'Lora', serif;
 	letter-spacing: 2px;
-
 }
-
-nav a{
-	color: white !important;
-}
-
+nav a{color: white !important;}
 .nav-items{
 	font-family: 'Raleway', sans-serif !important;
 	letter-spacing: 2px !important;
 	display: flex;
 	flex-direction: row;
 }
-
 /********************* dropdown ****************/
 
 .dropbtn {
   padding: 16px;
   font-size: 15px !important;
   border: none;
-  /*font-weight: 900;*/
 }
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
+.dropdown { position: relative; display: inline-block;}
 .dropdown-content {
 	margin-top: 0px;
 	display: none;
@@ -74,7 +49,6 @@ nav a{
   	z-index: 1;
   	background-image: linear-gradient(rgba(243, 243, 241, 0.85), rgba(243, 243, 241, 0.95)) !important;
 }
-
 .dropdown-content a {
   color: white;
   padding: 0px 6px 8px 8px;
@@ -85,16 +59,8 @@ nav a{
 }
 
 .dropdown-content a:hover {background-color: transparent;}
-
 .dropdown:hover .dropdown-content {display: block;}
-
 .dropdown:hover .dropbtn {background-color: transparent;}
-
-
-/************ carousel en header***********************************/
-/*.header{
-  background-color: transparent !important;
-}*/
 
 .carousel-item {
   height: 100vh;
@@ -105,7 +71,6 @@ nav a{
   -o-background-size: cover;
   background-size: cover;
 }
-
 
 
 /*Parrafos pagina principal*****************/
@@ -181,22 +146,15 @@ nav a{
   	min-height: 350px;
 	background-size: cover;
 	color: white !important;
-	/*opacity: 0.6;	*/
-	/*comentarios de prueba*/
-	/*otro comentario*/
 }
 
 .next{
-
 	background: rgba(0, 0, 0, 0.55) no-repeat center;
 	height: 50vh;
   	min-height: 250px;
 	background-size: cover;
 	color: white !important;
 	position: relative;
-	/*opacity: 0.6;	*/
-	/*comentarios de prueba*/
-	/*otro comentario*/
 }
 
 .next-text {
@@ -219,46 +177,6 @@ nav a{
 	color: white;
 	font-weight: 500;
 }
-
-/*******************  footer  *******************************************************/
-.foot-page{
-	font-family: 'Libre Caslon Text', serif;
-	font-size: 12px;
-	color: #9B9B9B;
-}
-
-.tel-number{
-	font-family: 'Lora', serif;
-	font-size: 13px;
-	letter-spacing: 3px;
-	color: white;
-}
-
-.mail{
-	font-family: 'Raleway', sans-serif;
-	font-weight: lighter;
-	font-size: 15px;
-	letter-spacing: 2px;
-
-}
-
-.mail a{
-	text-decoration: none;
-}
-
-.second-line{
-	font-family: 'Markazi Text', serif;
-	letter-spacing: 1px;
-	color: #9B9B9B;
-	text-decoration: none;
-	font-size: 17px;
-	padding: 2px 0px 1px;
-}
-
-.second-line a{
-	color: #9B9B9B !important;
-}
-
 .body-transparent{
 	background-color: rgba(153, 153, 153, 0.42) !important;
 	opacity: 0.5 !important;
@@ -275,16 +193,8 @@ nav a{
   font-weight: 500;
 }
 
-.bg-gray{
-	background-color: rgba(134, 136, 124, 0.16);
-
-}
-
-
-.body-white{
-	background-color: #f2f2f0 !important;
-}
-
+.bg-gray{ background-color: rgba(134, 136, 124, 0.16);}
+.body-white{ background-color: #f2f2f0 !important; }
 
 a{ color: inherit; transition: color 0.5s;}
 a:hover{ color: inherit; text-decoration: none;}
@@ -296,11 +206,45 @@ a:hover{ color: inherit; text-decoration: none;}
 	padding: 16px 0.5rem;
 	font-size: 15px;
 }
+.ico:hover{ cursor: pointer; color: #9B9B9B !important; }
 
-.ico:hover{
-	cursor: pointer;
-	color: #9B9B9B !important;
+/**********footer*************************/
+.div-foot{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	width: 82%;
+	margin: 40px auto 20px;
 }
+.div-foot>div{
+	width: 30%;
+	font-family: 'Lora', serif;
+	letter-spacing: 3px;
+	font-size: 13px;
+}
+.div-foot a:hover{color: #9B9B9B;}
+
+.fa-twitter:hover{transition: 0.5s; color: #41b7d8;}
+.fa-facebook-square:hover{transition: 0.5s; color: #3b5997;}
+.fa-instagram:hover{transition: 0.5s; color: #E1306C;}
+
+.mail{
+	font-family: 'Raleway', sans-serif;
+	font-weight: lighter;
+	font-size: 15px;
+	letter-spacing: 2px;
+	text-align: right !important;
+}
+.redes{
+	font-family: 'Markazi Text', serif;
+	letter-spacing: 1px;
+	color: #9B9B9B;
+	font-size: 17px;
+	margin: 0;
+}
+.icons a{ display: inline-block; margin: 0 3px; transition: 0.6s; }
+.icons {text-align: right;}
+
 
 
 /*Media querys*/
