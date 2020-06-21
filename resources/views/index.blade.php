@@ -111,9 +111,19 @@
 @section('scripts')
 <!--change navbar bg color-->
 <script type="text/javascript">
-  $(window).scroll(function(){
+   $(window).scroll(function(){
     var alto = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-    $("nav").toggleClass('scrolled', $(this).scrollTop()>alto);
+    var ancho = screen.width;
+    var portada;
+    if(ancho <= 760){
+      portada = (alto * 70)/100;
+    }else if(ancho > 760 && ancho < 992){
+      portada = alto/2;
+    }else{
+      portada = alto;
+    }
+    $("nav").toggleClass('scrolled', $(this).scrollTop()>portada);
+    $('.dropdown-content').toggleClass('scrolled', $(this).scrollTop()>portada);
   });
 </script>
 @endsection

@@ -8,6 +8,10 @@ body{ background-color: black; color: white; font-family: 'Lora', serif;}
 	opacity: 0.5 !important;
 }
 
+.nav-trn{
+	background-image: linear-gradient(rgba(10,10,10, 0.9), rgba(10, 10, 10, 0.05)) !important;
+}
+
 /****** philosophia*****************************/
 .philosophy{
 	background-color: black !important;
@@ -26,7 +30,6 @@ body{ background-color: black; color: white; font-family: 'Lora', serif;}
   	min-height: 300px;
 	background-size: cover;
 }
-
 .img-source{
 	color: #5C5C5C;
 	margin: 10px 15px;
@@ -36,6 +39,7 @@ body{ background-color: black; color: white; font-family: 'Lora', serif;}
 	letter-spacing: 1px;
 }
 
+.dropdown-content{background-image: linear-gradient(rgba(10, 10, 10, 0.95), rgba(10, 10, 10, 0.5)) !important;}
 
 /**********************cOROUSEL */
 .title-carousel{
@@ -43,6 +47,7 @@ body{ background-color: black; color: white; font-family: 'Lora', serif;}
 	font-family: 'Raleway', sans-serif;
 	font-size: 17px;
 	letter-spacing: 2px;
+	margin: 0 0 15px;
 }
 
 .title-carousel2{
@@ -58,11 +63,7 @@ body{ background-color: black; color: white; font-family: 'Lora', serif;}
 	font-size: 18px;
 }
 
-.img-car{
-	width: 20em;
-	height: 25em;
-
-}
+.img-car{ width: 300px; height: 380px;}
 
 .div-carousel{
 	height: 80vh;
@@ -96,9 +97,24 @@ body{ background-color: black; color: white; font-family: 'Lora', serif;}
 	/*opacity: 0.6;	*/
 }
 
+.text-and-img{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	margin: 30px 0 0;
+}
+.text-and-img >div{	width: 400px; margin: 0 30px;}
+.img-r{ display: block; float: right;}
+.img-l{width: auto !important;}
+
+
 .background-transparent{
 	background-color: rgba(153, 153, 153, 0.42);
 }
+
+.carousel-height{height: 80vh; margin: 0 0 40px;}
 
 /*Media querys*/
 

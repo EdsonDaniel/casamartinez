@@ -8,7 +8,15 @@ body{ background-color: #f2f2f0; color: #4a4a4a;}
   color: white;
 }
 /**********************************************/
-
+.carousel-item {
+  height: 100vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
 /************imagenes************************/
 .img-vertical{width: 330px; height: 450px; }
@@ -94,11 +102,12 @@ body{ background-color: #f2f2f0; color: #4a4a4a;}
 	.div-img{order: 1 !important;}
 	.align-text{text-align: left;}
 	.div-products p{margin: 0 30px;}
+	.carousel-item{height: 70vh;} 
 }
 @media only screen and (max-width: 550px){
 	.bottomright>p{margin: 0 30px 1em; } 
-	.text-portada{ font-size: 12px; }
-	.text-portada span{font-size: 11px;}
+	.text-portada{ font-size: 13px; }
+	.text-portada span{font-size: 12px;}
 	.text-home, .header-parrafo, .title-bebidas{font-size: 15px;}
 	.text-home span{font-size: 14px;}
 	.text-and-img>div{ width: 100%; margin: 15px 30px;}
@@ -133,6 +142,7 @@ body{ background-color: #f2f2f0; color: #4a4a4a;}
 	.img-horizontal{ width: 300px; height: auto; }
 	.img-bebidas{ height: 230px; width: 150px;}
 	.div-products>div{height: auto; margin: 10px 15px 25px;}
+	.carousel-item{height: 50vh;} 
 }
 
 
