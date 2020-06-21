@@ -227,11 +227,12 @@
 		<!-- cita -->
 
 		<!--next section-->
-	<div class="next" style="background-image: url('img/certificaciones.jpg');  margin-top: 150px;">
+	<div class="next" style="background-color: black;">
 		<div class="next-text">
 			<p>SIGUIENTE</p>
-			<p><a href="certificaciones.html">CERTIFICACIONES</a></p>
+			<p><a href="/certificaciones">Certificaciones</a></p>
 		</div>
+    <div class="next-fondo" style="background-image: url('/img/certificaciones.jpg'); opacity: 0.5;"></div>
 	</div>
 	<!--next section-->
 @endsection
@@ -242,7 +243,7 @@
 <script type="text/javascript">
   $(window).scroll(function(){
     var alto = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-    $("nav").toggleClass('scrolled', $(this).scrollTop()>alto);
+    $("nav").toggleClass('scrolled', $(this).scrollTop()>alto/2);
   });
 </script>
 @endsection
