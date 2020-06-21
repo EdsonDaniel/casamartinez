@@ -21,10 +21,11 @@
       		<ul>
       			<li><a href="javascript:saltarA('#slider')">-Origen Casa Martínez</a></li>
       			<li><a href="javascript:saltarA('#slider-2')">-Familia Martínez</a></li>
-      			<li><a href="javascript:saltarA('#slider-3')">-Equipo de trabajo</a></li>
+      			<li><a href="javascript:saltarA('#slider-3')">-Colaboradores</a></li>
       			<li><a href="javascript:saltarA('#slider-4')">-Memorias</a></li>
       		</ul>
       	</div>
+      	<div  class="next-fondo" style="background-image: url('/img/equipo.jpg'); opacity: 0.6"></div>
 	</div>
 	<!--encabezado-->
 
@@ -353,11 +354,12 @@
 	</div><!--fin div img fondo-->
 
 	<!--next section-->
-	<div class="next" style="background-image: url('/img/campos-agave2.jpg');  margin-top: 150px;">
+	<div class="next">
 		<div class="next-text">
 			<p>SIGUIENTE</p>
-			<p><a href="campos.html">Campos de Maguey</a></p>
+			<p><a href="campos-de-maguey">Campos de Maguey</a></p>
 		</div>
+		<div  class="next-fondo" style="background-image: url('/img/campos-agave2.jpg'); opacity: 0.4"></div>
 	</div>
 	<!--next section-->
 
@@ -382,4 +384,5 @@
                 
             });
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 @endsection

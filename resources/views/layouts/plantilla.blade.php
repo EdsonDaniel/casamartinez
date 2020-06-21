@@ -30,8 +30,8 @@
                             <a class="nav-link dropbtn" href="/filosofia">FILOSOFÍA</a>
                             <div class="dropdown-content">
                                 <a href="/filosofia">-Introducción</a>
-                                <a href="/historia">-Historia y equipo</a>
-                                <a href="/campos-de-maguey">-Campos de Agave</a>
+                                <a href="/historia">-Historia, Colaboradores</a>
+                                <a href="/campos-de-maguey">-Campos de Maguey</a>
                                 <a href="/certificaciones">-Certificaciones</a>
                             </div>
                         </div>
