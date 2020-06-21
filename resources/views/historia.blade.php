@@ -25,7 +25,7 @@
       			<li><a href="javascript:saltarA('#slider-4')">-Memorias</a></li>
       		</ul>
       	</div>
-      	<div  class="next-fondo" style="background-image: url('/img/equipo.jpg'); opacity: 0.6"></div>
+      	<div  class="bg-img" style="background-image: url('/img/equipo.jpg'); background-color: black; opacity: 0.6"></div>
 	</div>
 	<!--encabezado-->
 

@@ -13,22 +13,21 @@
 @endsection
 
 @section('content')
-<!--encabezado-->
-		<div class="bg-image container-image fade-scroll"style="background-image: url('/img/campos-agave2.jpg');">
-      		<div class="to-left bg-gray">CAMPOS DE MAGUEY</div>
-      	</div>
-      	<!--encabezado-->
 
-      	<!-- texto -->
-      	<div class="texto">
-      		<p>
-      			George Nakashima descubrió la ladera orientada al sur a lo largo de Aquetong Road en 1945 y persuadió al propietario para que le permitiera comprar tres acres de tierra a cambio de mano de obra. A medida que su negocio creció, compró dos parcelas más de tierra y construyó una docena de edificios más, todos orientados hacia el sur para maximizar la ganancia solar pasiva.
-      		</p>
-      		<p>
-      			George abrazó los principios de construcción tradicionales japoneses de "ki-mon", el respeto por el paisaje natural y el uso de materiales indígenas, al tiempo que experimentó con nuevas innovaciones, como la tecnología de caparazón deformado que permitió abarcar grandes áreas con muy poco material. Él construyó las estructuras por necesidad, con el tiempo y como sus ingresos le permitieron hacerlo.  
-      		</p>
-      	</div>
-      	<!-- texto -->
+  <!--encabezado-->
+  <div class="bg-image container-image fade-scroll" style="background-color: black; height: 50vh; font-weight: 500;">
+    <div class="centered" style="top: 50%;">Campos de Maguey</div>
+    <div class="bg-img" style="background-image: url('/img/campos-agave2.jpg'); opacity: 0.7;"></div>
+  </div>
+  <!--encabezado-->
+
+  <!-- texto -->
+  <div class="texto">
+    <p>
+      George Nakashima descubrió la ladera orientada al sur a lo largo de Aquetong Road en 1945 y persuadió al propietario para que le permitiera comprar tres acres de tierra a cambio de mano de obra. A medida que su negocio creció, compró dos parcelas más de tierra y construyó una docena de edificios más, todos orientados hacia el sur para maximizar la ganancia solar pasiva.
+    </p>
+  </div>
+  <!-- texto -->
 
         <h3>NUESTROS CAMPOS DE MAGUEY</h3>
 

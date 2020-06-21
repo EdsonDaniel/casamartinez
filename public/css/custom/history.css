@@ -16,23 +16,6 @@ body, html {
 }
 
 
-
-.bg-image{
-  /*background: rgba(0, 0, 0, 0.55) url('/img/equipo.jpg') no-repeat center;*/
-  height: 100vh;
-  min-height: 350px;
-  background-size: cover;
-  color: white !important;
-  position: relative;
-  /*filter: opacity(0.5);*/
-}
-
-.container-image {
-  position: relative;
-  text-align: center;
-  color: white;
-}
-
 .centered {
   position: absolute;
   top: 40%;
@@ -42,6 +25,7 @@ body, html {
   letter-spacing: 4px;
   font-size: 23px;
   z-index: 2;
+  text-align: center;
 }
 
 .right {
@@ -65,15 +49,18 @@ body, html {
 }
 .right a:hover{color: rgba(255,255,255,0.6);}
 
+@media only screen and (max-width: 990px){
+  .bg-image{height: 60vh;}
+}
+
 @media only screen and (max-width: 760px){
-  .bg-image{height: 70vh;}
   .centered{top: 25%; font-size: 16px;}
   .right a{display: inline-block; margin: 10px;}
   .right { top: 50%; left: 50%; transform: translate(-50%, -50%); 
     font-size: 12px; text-align: center !important; width: 100%;}
 }
 @media only screen and (min-width: 760px) and (max-width: 1024px){
-  .bg-image{height: 70vh;}
+  .bg-image{height: 50vh;}
   .centered{top: 20%; font-size: 20px;}
   .right a{display: inline-block; margin: 10px;}
   .right { top: 43%; left: 50%; transform: translate(-50%, -50%); font-size: 17px; text-align: center !important; }

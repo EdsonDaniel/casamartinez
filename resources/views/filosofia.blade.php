@@ -24,7 +24,7 @@
 	<!--Segunda imagen de fondo-->
 
 	<!-- cita -->
-	<div class="block-cita texto fade-scroll">
+	<div class="block-cita fade-scroll">
 		<blockquote >
 			<p class="text-cita fade-scroll">“Con los pies en la tierra, la mirada en el cielo, el corazón en nuestra profesión y el firme deseo de seguir compartiendo en un futuro la bebida mística, ¡EL MEZCAL!”</p>
 		</blockquote>
