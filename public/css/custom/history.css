@@ -30,8 +30,9 @@ body, html {
 
 .right {
   position: absolute;
-  top: 47%;
-  left: 73%;
+  top: 38%;
+  left: 67%;
+  /*right: 210px;*/
   font-family: 'Raleway', sans-serif !important;
   letter-spacing: 2px;
   font-size: 18px;
@@ -44,7 +45,7 @@ body, html {
   display: block;
   list-style-type: none;
   color: white;
-  margin: 0;
+  margin: 0 0 10px;
   padding: 0;
 }
 .right a:hover{color: rgba(255,255,255,0.6);}
