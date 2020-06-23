@@ -28,36 +28,50 @@ nav a{
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 40%;
+  width: 510px;
   margin-top: 2%;
 }
 
 .text-head{
 	font-family: 'Lora', serif;
 	font-size: 17px;
+	width: 50%;
+	margin: 20px auto;
 }
 
 .gallery{
 	text-align: center;
-	font-family: 'Raleway', sans-serif !important;
+	font-family: 'Raleway', sans-serif;
 	letter-spacing: 4px;
 	font-size: 16px;
 	margin-top: 15px;
-	font-weight: 500;
+	font-weight: 400;
 }
 
 .gallery a{
 	display: inline-block;
 	text-decoration: none;
+	cursor: pointer;
 	color: #7D7878;
 }
+
+.galeria{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	margin: 50px auto;
+	width: 90%;
+}
+.galeria img{display: block; margin: 0; max-width: 100%;}
+.galeria >div{width: 22%; margin: 0 10px;}
 
 .img-gallery{
 	height: 400px;
 	width: 600px;
 	float: right;
 }
-
+.block-cita{margin: 50px auto 10px; }
 .cita{
 	font-family: 'Lora', serif;
 	font-size: 19px;
@@ -88,7 +102,7 @@ h3{
 	font-family: 'Raleway', sans-serif !important;
 	letter-spacing: 2px;
 	font-size: 15px;
-	margin-top: 150px;
+	margin-top: 100px;
 	font-weight: 600;
 }
 

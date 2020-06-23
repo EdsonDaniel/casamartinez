@@ -33,7 +33,7 @@
 
         <!-- primer corousel-->
         <div id="slider-1" class="carousel slide carousel-fade mt-0" data-ride="carousel" data-interval="7000">
-          <h2 class="carousel-title text-center mt-5 mb-0">SAN DIONICIO OCOTEPEC</h2>
+          <h2 class="carousel-title text-center  mb-0">SAN DIONICIO OCOTEPEC</h2>
           <ol class="carousel-indicators mt-0">
               <li style="background-color: #8F8F8F !important;" data-target="#slider-1" data-slide-to="0" class="active"></li>
               <li style="background-color: #8F8F8F !important;" data-target="#slider-1" data-slide-to="1"></li>
@@ -207,24 +207,21 @@
         <hr style="margin-top: 80px; width: 65%;">
 
 
-        <div class="cita" style="margin-top: 50px; margin-bottom: 200px;">
+        <div class="cita">
           <center>
-            <a href="mailto:info@casamartinez.mx?subject=Agendar%20una%20visita%20al%20palenque." class="body-carousel" style="color: #212529;">Agenda una visita al palenque</a>
+            <a href="mailto:info@casamartinez.mx?subject=Agendar%20una%20visita%20al%20palenque." class="body-carousel" style="color: #212529; text-decoration: underline;">Agenda una visita al palenque</a>
           </center>
         </div>
 
 		<!-- cita -->
-		<div class="container mt-5 mb-5">
-			<div class="row justify-content-center">
-				<div class="col-10">
-					<blockquote>
-						<p class="text-cita">“Compartir experiencias con nuestros clientes y amigos, nos permite comunicar el trabajo que la familia Martínez ha estado realizando por generaciones. ”</p>
-					</blockquote>
-					<p class="ref-cita mb-5">-Alguien Martínez</p>
-				</div>
-			</div>
-		</div>
+		<div class="block-cita">
+      <blockquote>
+        <p class="text-cita">“Compartir experiencias con nuestros clientes y amigos, nos permite comunicar el trabajo que la familia Martínez ha estado realizando por generaciones. ”</p>
+      </blockquote>
+      <p class="ref-cita">-Alguien Martínez</p>
+    </div>
 		<!-- cita -->
+
 
 		<!--next section-->
 	<div class="next" style="background-color: black;">
