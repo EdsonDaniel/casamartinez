@@ -109,30 +109,34 @@ h3{
 .menu ul li{
 	list-style-type: none;
 	display: inline-block;
-	padding: 5px;
 }
-.menu a{
-	color: #4A4A4A;
-}
+.menu-li::after{ content: '|'; }
+.menu li{display: inline-block; margin-right: 10px; padding: 0;}
+.menu a{ color: #4A4A4A; padding-right: 10px; margin-right: 10px;}
 
-.tel-number{
-	font-family: 'Lora', serif;
-	font-size: 13px;
-	letter-spacing: 3px;
-	color: #4a4a4a;
-}
 
-.cita a{
-	margin-top: 50px;
-	color: #4a4a4a;
-	text-decoration: none;
-}
-
+.next{margin: 100px 0 0;}
 /**************************** catalogo ***********************/
+
+.list-products{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 50px auto;
+	width: 80%;
+}
+.img-p{width: auto;}
+.descrip-p{width: 40%; margin: 0 45px;}
+.price-p{width: auto;}
+.price-p p{margin: 5px 5px 10px;}
+.buttons{margin: 5px 0 10px;}
 
 .img-cat{
 	width: 210px;
 	height: 315px;
+	display: block;
+	text-align: center;
+	margin: 0 auto;
 }
 
 .descrip{
@@ -175,9 +179,9 @@ h3{
 	font-family: 'Raleway', sans-serif !important;
 	letter-spacing: 2px;
 	font-size: 25px;
-	margin-top: 30px !important;
-	margin-bottom: 18px !important;
+	margin: 30px 0 18px;
 	font-weight: 400;
+	text-align: center;
 }
 
 .presentacion{
@@ -188,8 +192,48 @@ h3{
 	font-weight: 400;
 	background-color: transparent;
 }
+select {cursor: pointer; }
 
-select {
-	cursor: pointer;
+@media only screen and (max-width: 550px){
+	.img-centered, .text-head{width: 80%;}
+	hr{margin: 20px !important;}
+	h3{font-size: 18px; padding: 0 10px;}
+	.galeria{margin: 30px 10px; }
+	.galeria>div{width: 40%;}
+	.gallery{font-size: 15px; margin-top: 10px; min-height: 3rem;}
+	.block-cita,.menu{margin: 30px auto;}
+	.menu-li::after{content: '';}
+	.menu li{margin: 5px auto; padding: 0;}
+	.menu ul, .menu a{padding: 0; margin: 0 auto;}
+	.next{margin-top: 40px;}
+
+	.list-products{width: 100%; margin: 10px auto 30px;}
+	#pr{margin: 0 auto }
+	.img-p{width: 100%; margin: 20px auto 10px;}
+	.img-cat{height: 250px; margin: 0 auto;}
+	.descrip-p{width: 85%; margin: 10px auto;}
+	br{display: none;}
+	.hr{margin: 10px !important;}
+	.price {margin: 5px auto; font-size: 20px;}
+	.price span{font-size: 14px !important;}
+	.price-p{width: 100%;}
+	.descrip{font-size: 14px; margin-bottom: 5px;}
+	.product-head{margin: 10px auto; text-align: center;}
+	.presentacion{margin: 0 auto; text-align: center;	}
+	p[name="cantidad"]{display: none;}
+	.button{margin: 10px auto; width: 80%;}
 }
 
+@media only screen and (min-width: 550px) and (max-width: 990px){
+	.text-head{width: 70%;}
+	.img-centered{width: 50%;}
+	hr{margin: 20px !important;}
+	h3{font-size: 20px;}
+	.galeria{margin: 30px auto; }
+	.gallery{font-size: 17px; margin-top: 10px; min-height: 3rem;}
+	.block-cita,.menu{margin: 30px auto;}
+	.menu-li::after{content: '';}
+	.menu li{margin: 5px auto; padding: 0; display: block; width: 100%;}
+	.menu ul, .menu a{padding: 0; margin: 0 auto;}
+	.next{margin-top: 40px;}
+}

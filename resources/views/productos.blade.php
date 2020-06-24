@@ -61,10 +61,8 @@
 	<div class="menu">
 		<center>
 			<ul>
-				<li><a href="">PREGUNTAS FRECUENTES (FAQ)</a></li>
-				<li> | </li>
-				<li><a href="">PRODUCTOS CARMELITA</a></li>
-				<li> | </li>
+				<li class="menu-li"><a href="">PREGUNTAS FRECUENTES (FAQ)</a></li>
+				<li class="menu-li"><a href="">PRODUCTOS CARMELITA</a></li>
 				<li><a href="">DISTRIBUIDORES AUTORIZADOS</a></li>
 			</ul>
 		</center>
