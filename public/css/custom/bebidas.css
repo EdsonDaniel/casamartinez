@@ -183,6 +183,7 @@ h3{
 	font-weight: 400;
 	text-align: center;
 }
+.p-h{display: none;}
 
 .presentacion{
 	font-family: 'Raleway', sans-serif !important;
@@ -236,4 +237,22 @@ select {cursor: pointer; }
 	.menu li{margin: 5px auto; padding: 0; display: block; width: 100%;}
 	.menu ul, .menu a{padding: 0; margin: 0 auto;}
 	.next{margin-top: 40px;}
+}
+
+@media only screen and (min-width: 550px) and (max-width: 760px){
+	.list-products{width: 100%; margin: 10px auto 30px; align-items: center; justify-content: center;}
+	#pr{margin: 0 auto }
+	.img-p{width: auto; margin: 20px 10px 10px;}
+	.img-cat{height: 260px; width: auto; margin: 0 auto;}
+	.descrip-p{width: 50%; margin: 10px 15px;}
+	br{display: none;}
+	.hr{margin: 20px !important;}
+	.price {margin: 5px auto; font-size: 20px; text-align: left;}
+	.price span{font-size: 14px !important;}
+	.price-p{width: 100%; margin: 20px auto;}
+	.descrip{font-size: 15px; margin-bottom: 5px;}
+	p[name="cantidad"]{display: none;}
+	h4[name="price1"]{display: none;}
+	.p-h{display: block;}
+	.button{margin: 20px auto; width: 70%;}
 }

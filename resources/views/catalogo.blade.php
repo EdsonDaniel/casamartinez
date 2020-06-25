@@ -29,9 +29,25 @@
 				<option>750 ml</option>
 			</select>
 		</p>
+		<p class="presentacion p-h">
+			<label class="presentacion">CANTIDAD:</label>
+			<select class="presentacion">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+			</select>
+		</p>
+		<h4 class="price p-h">$700.00 <span style="font-size: 16px;">MXN</span></h4>
 	</div>
 	<div class="price-p">
-		<h4 class="price">$700.00 <span style="font-size: 16px;">MXN</span></h4>
+		<h4 class="price" name="price1">$700.00 <span style="font-size: 16px;">MXN</span></h4>
 		<p class="presentacion" name="cantidad">
 			<label class="presentacion">CANTIDAD:</label>
 			<select class="presentacion">
@@ -72,9 +88,25 @@
 				<option>750 ml</option>
 			</select>
 		</p>
+		<p class="presentacion p-h">
+			<label class="presentacion">CANTIDAD:</label>
+			<select class="presentacion">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+			</select>
+		</p>
+		<h4 class="price p-h">$700.00 <span style="font-size: 16px;">MXN</span></h4>
 	</div>
 	<div class="price-p">
-		<h4 class="price">$700.00 <span style="font-size: 16px;">MXN</span></h4>
+		<h4 class="price" name="price1">$700.00 <span style="font-size: 16px;">MXN</span></h4>
 		<p class="presentacion" name="cantidad">
 			<label class="presentacion" >CANTIDAD:</label>
 			<select class="presentacion">
@@ -113,9 +145,25 @@
 				<option>750 ml</option>
 			</select>
 		</p>
+		<p class="presentacion p-h">
+			<label class="presentacion">CANTIDAD:</label>
+			<select class="presentacion">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+			</select>
+		</p>
+		<h4 class="price p-h">$700.00 <span style="font-size: 16px;">MXN</span></h4>
 	</div>
 	<div class="price-p">
-		<h4 class="price">$700.00 <span style="font-size: 16px;">MXN</span></h4>
+		<h4 class="price" name="price1">$700.00 <span style="font-size: 16px;">MXN</span></h4>
 		<p class="presentacion" name ="cantidad">
 			<label class="presentacion">CANTIDAD:</label>
 			<select class="presentacion">
@@ -154,9 +202,25 @@
 				<option>750 ml</option>
 			</select>
 		</p>
+		<p class="presentacion p-h">
+			<label class="presentacion">CANTIDAD:</label>
+			<select class="presentacion">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+			</select>
+		</p>
+		<h4 class="price p-h">$700.00 <span style="font-size: 16px;">MXN</span></h4>
 	</div>
 	<div class="price-p">
-		<h4 class="price">$700.00 <span style="font-size: 16px;">MXN</span></h4>
+		<h4 class="price" name="price1">$700.00 <span style="font-size: 16px;">MXN</span></h4>
 		<p class="presentacion" name="cantidad">
 			<label class="presentacion">CANTIDAD:</label>
 			<select class="presentacion">
