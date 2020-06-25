@@ -33,9 +33,9 @@
     <h2 class="carousel-title text-center">CERTIFICACIÓN ORGÁNICA (NOP-USDA)</h2>
     <div class="text-and-img">
       <div>
-        <p class="body-carousel">Estados Unidos es el primer mercado mundial de Productos Ecológicos y cuenta con sus propias normas de Producción Orgánica creadas por su Ministerio de Agricultura. <a href="https://imocert.bio/?portfolio=national-organic-program-nop-usda" style="text-decoration: underline; color: #212529;" target="_blank"> (USDA-NOP: United States Department of Agriculture - National Organic Program standard).</a>
+        <p class="texto">Estados Unidos es el primer mercado mundial de Productos Ecológicos y cuenta con sus propias normas de Producción Orgánica creadas por su Ministerio de Agricultura. <a href="https://imocert.bio/?portfolio=national-organic-program-nop-usda" style="text-decoration: underline; color: #212529;" target="_blank"> (USDA-NOP: United States Department of Agriculture - National Organic Program standard).</a>
         </p>
-        <p class="body-carousel mb-0">
+        <p class="texto mb-0">
         La certificación orgánica (NOP-USDA) está basada en dichas normas y es sumamente necesaria para clientes que desean exportar su producción orgánica a Estados Unidos, incluso aunque tengan certificados para otros países.</p>
       </div>
       <div class="div-img">
@@ -51,9 +51,9 @@
   <h2 class="carousel-title text-center">CERTIFICACIÓN BIODINÁMICA (DEMETER)</h2>
   <div class="text-and-img">
     <div>
-      <p class="body-carousel"><a href="https://imocert.bio/?portfolio=demeter" style="text-decoration: underline; color: #212529;" target="_blank"> Demeter</a> es una marca de certificación cuyo objetivo es identificar los productos agrícolas o ganaderos producidos conforme a los principios de la agricultura biodinámica, siendo un requisito previo indispensable estar certificado conforme al reglamento europeo de agricultura ecológica.
+      <p class="texto"><a href="https://imocert.bio/?portfolio=demeter" style="text-decoration: underline; color: #212529;" target="_blank"> Demeter</a> es una marca de certificación cuyo objetivo es identificar los productos agrícolas o ganaderos producidos conforme a los principios de la agricultura biodinámica, siendo un requisito previo indispensable estar certificado conforme al reglamento europeo de agricultura ecológica.
       </p>
-      <p class="body-carousel mb-0">
+      <p class="texto mb-0">
         La biodinámica se basa en crear en cada situación particular un agro-eco-sistema único al cual se le denomina organismo agrícola. Este va tomando la fuerza y salud propia en la medida en que se va convirtiendo en una individualidad agrícola completa. 
       </p>
     </div>
@@ -69,9 +69,9 @@
   <h2 class="carousel-title text-center">ENTIDAD REGULADORA (IMOCERT)</h2>
   <div class="text-and-img">
     <div>
-      <p class="body-carousel"><a href="https://imocert.bio/?portfolio=demeter" style="text-decoration: underline; color: #212529;" target="_blank">IMOCERT</a> es una entidad de servicios de inspección y certificación ecológica, para los ámbitos de producción vegetal, de recolección silvestre, producción pecuaria, apicultura, manejo de bosques, artesanía, minería, insumos para la agricultura ecológica entre otros.
+      <p class="texto"><a href="https://imocert.bio/?portfolio=demeter" style="text-decoration: underline; color: #212529;" target="_blank">IMOCERT</a> es una entidad de servicios de inspección y certificación ecológica, para los ámbitos de producción vegetal, de recolección silvestre, producción pecuaria, apicultura, manejo de bosques, artesanía, minería, insumos para la agricultura ecológica entre otros.
       </p>
-      <p class="body-carousel">
+      <p class="texto">
         Nos sentimos orgullosos de contar con el respaldo de ésta institución pionera en Latinoamérica, quién cuenta con gran experiencia en la inspección y certificación.
       </p>
     </div>
