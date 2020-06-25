@@ -199,14 +199,17 @@ select {cursor: pointer; }
 	.img-centered, .text-head{width: 80%;}
 	hr{margin: 20px !important;}
 	h3{font-size: 18px; padding: 0 10px;}
+	.h2{font-size: 19px;}
 	.galeria{margin: 30px 10px; }
 	.galeria>div{width: 40%;}
 	.gallery{font-size: 15px; margin-top: 10px; min-height: 3rem;}
-	.block-cita,.menu{margin: 30px auto;}
+	.block-cita,.menu{margin: 30px auto 50px;}
 	.menu-li::after{content: '';}
 	.menu li{margin: 5px auto; padding: 0;}
-	.menu ul, .menu a{padding: 0; margin: 0 auto;}
+	.menu ul, .menu a{padding: 0; margin: 0 auto; font-size: 14px;}
+	.menu{margin-top: 40px;}
 	.next{margin-top: 40px;}
+	.text-head{font-size: 15px;}
 
 	.list-products{width: 100%; margin: 10px auto 30px;}
 	#pr{margin: 0 auto }
