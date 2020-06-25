@@ -210,7 +210,7 @@ select {cursor: pointer; }
 	.list-products{width: 100%; margin: 10px auto 30px;}
 	#pr{margin: 0 auto }
 	.img-p{width: 100%; margin: 20px auto 10px;}
-	.img-cat{height: 250px; margin: 0 auto;}
+	.img-cat{height: 230px; width: auto; margin: 0 auto;}
 	.descrip-p{width: 85%; margin: 10px auto;}
 	br{display: none;}
 	.hr{margin: 10px !important;}
@@ -218,7 +218,7 @@ select {cursor: pointer; }
 	.price span{font-size: 14px !important;}
 	.price-p{width: 100%;}
 	.descrip{font-size: 14px; margin-bottom: 5px;}
-	.product-head{margin: 10px auto; text-align: center;}
+	.product-head{margin: 0; text-align: center; font-size: 14px;}
 	.presentacion{margin: 0 auto; text-align: center;	}
 	p[name="cantidad"]{display: none;}
 	.button{margin: 10px auto; width: 80%;}
