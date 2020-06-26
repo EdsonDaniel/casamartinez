@@ -72,8 +72,9 @@ body{ background-color: black; color: white; font-family: 'Lora', serif;}
 .carousel-title{
 	font-family: 'Raleway', sans-serif;
 	font-size: 22px;
-	padding-top: 4%;
+	/*padding-top: 4%;*/
 	letter-spacing: 3px;
+	margin: 20px 0;
 	font-weight: lighter !important;
 }
 
@@ -83,10 +84,12 @@ body{ background-color: black; color: white; font-family: 'Lora', serif;}
   	min-height: 350px;
 	background-size: cover;
 	color: white !important;
+	margin: 30px 0;
 	/*opacity: 0.6;	*/
 	/*comentarios de prueba*/
 	/*otro comentario*/
 }
+.fondo-produccion h2, .fondo-mezcal h2{padding-top: 50px;}
 
 .fondo-produccion{
 	background: rgba(0, 0, 0, 0.55) url('/img/produccion1.jpg') no-repeat center;
@@ -94,6 +97,7 @@ body{ background-color: black; color: white; font-family: 'Lora', serif;}
   	min-height: 350px;
 	background-size: cover;
 	color: white !important;
+	margin: 30px 0;
 	/*opacity: 0.6;	*/
 }
 
@@ -103,9 +107,9 @@ body{ background-color: black; color: white; font-family: 'Lora', serif;}
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	margin: 30px 0 0;
+	margin: 30px 0;
 }
-.text-and-img >div{	width: 400px; margin: 0 30px;}
+.text-and-img >div{	width: 400px; margin: 0 25px;}
 .img-r{ display: block; float: right;}
 .img-l{width: auto !important;}
 
@@ -115,6 +119,31 @@ body{ background-color: black; color: white; font-family: 'Lora', serif;}
 }
 
 .carousel-height{height: 80vh; margin: 0 0 40px;}
+
+.btn-expand{
+	font-family: 'Raleway', sans-serif;
+	text-align: right;
+	font-size: 11px;
+	letter-spacing: 3px;
+	margin: 10px;
+	display: none;
+	transition: all 0.8s;
+}
+
+.carousel-container{ width: 85%; margin: 0 auto 100px; }
+
+/*.bg-text{transition: height 0.8s;}*/
+
+:focus{
+	outline-color: transparent;
+    outline-style: auto;
+    outline-width: 0px;
+}
+
+
+
+.slick-dots li button:before{opacity: 0.40; color: white;}
+.slick-dots li.slick-active button:before{opacity: 0.75; color: white;}
 
 /*Media querys*/
 @media only screen and (max-width: 760px){
@@ -126,4 +155,33 @@ body{ background-color: black; color: white; font-family: 'Lora', serif;}
 	.block-cita{ width: 80%; }
 	.next{height: 25vh; margin-top: 100px;}
 	.next-text p{font-size: 12px;}.next-text a{font-size: 16px;}
+}
+
+@media only screen and (max-width: 550px){
+	/****carousel */
+	.text-and-img{width: 100%; margin: 0; height: 100%; position: relative;}
+	.text-and-img>div{width: 100%; margin: 0; overflow: hidden;}
+	.img-r, .img-l{display: block; height: 70vh; width: 100%; margin: 0 auto; float: none; z-index: -1;}
+	.img-car{height: 70vh; width: 100%;}
+	.carousel-container{width: 90%; height: 82vh; margin-bottom: 50px;}
+	.bg-text{background-color: rgba(0,0,0,0.6); position: absolute; left: 0; bottom: 0; margin: 0 0 10px;}
+	/*.bg-text p{height: 0px; overflow-y: hidden; transition: height 0.8s; margin: 0;}*/
+	.parrafos{height: 0px; overflow-y: hidden; transition: height 0.8s; margin: 0;}
+	.title-carousel{margin: 10px 15px 15px; font-size: 13px; line-height: 1;}
+	.carousel-title{font-size: 14px; margin: 10px 0 20px;}
+	.carousel-items{height: 90%;}
+	.body-carousel{font-size: 14px; margin: 0 15px 15px;}
+
+	.btn-expand{display: block;}
+
+	.open::before{content: 'ABRIR';}
+.open::after{content: '';}
+.closed::before{content: 'CERRAR';}
+.closed::after{content: '';}
+
+	
+	#maestro-mezcalero{margin-bottom: 120px;}
+
+
+	.fondo-mezcal{background-image: none;}
 }

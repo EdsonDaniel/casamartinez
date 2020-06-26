@@ -133,7 +133,7 @@ for (i = 0; i < dropdown.length; i++) {
   btn = dropdownContent.firstElementChild;
   var alt = btn.offsetHeight;
   alt += 6;
-  alt = alt+"px"
+  alt = alt+"px";
   /*console.log(alt);
   console.log(dropdownContent.style.height);*/
   if (dropdownContent.style.height === "") {

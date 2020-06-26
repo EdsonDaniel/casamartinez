@@ -194,6 +194,7 @@ h3{
 	background-color: transparent;
 }
 select {cursor: pointer; }
+select:focus, option:focus, option{outline-color: #4A4A4A;}
 
 @media only screen and (max-width: 550px){
 	.img-centered, .text-head{width: 80%;}

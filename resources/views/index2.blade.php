@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="css/custom/estilo.css">
     
     <link href="css/custom/main.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="css/slick/slick-theme.css"/>
+    
 	
   
 </head>
@@ -119,6 +122,9 @@
         </div>
     </div>
     <!--Sidebar-->
+
+
+
     <script>
 /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
 var dropdown = document.getElementsByClassName("boton");
@@ -250,6 +256,58 @@ for (i = 0; i < dropdown.length; i++) {
 
 </div>
 
+<div style="margin: 100px 0 100px" class="text-cita">
+  <div>
+   <p>“111Mezcal proviene de la estructura náhuatl de la palabra Mezcal: 'Metl' que significa Maguey, en yuxtaposición con la palabra 'Ixcalli' que quiere decir cocido, la traducción formal debería ser 'Maguey Cocido”</p>
+ </div>
+ 
+   <div>
+   <p ><i>“2222Mezcal proviene de la estructura náhuatl de la palabra Mezcal: 'Metl' que significa Maguey, en yuxtaposición con la palabra 'Ixcalli' que quiere decir cocido, la traducción formal debería ser 'Maguey Cocido”</i></p>
+ </div>
+ 
+   <div>
+   <p ><i>“3333Mezcal proviene de la estructura náhuatl de la palabra Mezcal: 'Metl' que significa Maguey, en yuxtaposición con la palabra 'Ixcalli' que quiere decir cocido, la traducción formal debería ser 'Maguey Cocido”</i></p>
+ </div>
+ 
+   <div>
+   <p><i>“44444Mezcal proviene de la estructura náhuatl de la palabra Mezcal: 'Metl' que significa Maguey, en yuxtaposición con la palabra 'Ixcalli' que quiere decir cocido, la traducción formal debería ser 'Maguey Cocido”</i></p>
+
+ </div>
+
+</div>
+
+<div class="slide-c">
+  <h2 class="carousel-title text-center fade-scroll">EL MAGUEY</h2>
+
+<div class="carosuel-p">
+
+  <div>
+    <div class="sticky-c">
+      <div class="img-sticky">
+              <img src="/img/cuerpo-maguey2.jpg" class="img-sticky">
+            </div>
+            <div class="sticky-p">
+              <h5 class="header-parrafo">EL CUERPO DEL MAGUEY</h5>
+              <p class="text-home">El mezcal, la bebida de los dioses, fue concebida por un rayo que cayó sobre un agave que dio origen a la primera tatema, iniciando así la tradición del elixir oaxaqueño por excelencia que hoy cobija la cultura culinaria de los mexicanos y con ello: su identidad.</p>
+            </div>
+    </div>
+  </div>
+
+    <div>
+      <div class="sticky-c">
+      <div class="img-sticky"><img src="/img/corazon-maguey3.jpg" class="img-vertical">
+      </div>
+      <div class="sticky-p">
+        <h5 class="header-parrafo">EL DESTINO DEL MAGUEY</h5>
+        <p class="text-home">El mezcal, la bebida de los dioses, fue concebida por un rayo que cayó sobre un agave que dio origen a la primera tatema, iniciando así la tradición del elixir oaxaqueño por excelencia que hoy cobija la cultura culinaria de los mexicanos y con ello: su identidad.</p>
+      </div>
+    </div>
+    </div>
+  
+</div>
+</div>
+
+
 
 <div class="div-foot">
   <div id="f2"><p>Tel. 951-323-0110</p></div>
@@ -318,6 +376,22 @@ for (i = 0; i < dropdown.length; i++) {
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
    <script type="text/javascript" src="js/custom/efectos.js"></script>
+   <script type="text/javascript" src="css/slick/slick.min.js"></script>
+
+
+   <script>
+      
+$(document).ready(function(){
+
+$('.carosuel-p').slick({
+  dots: true,
+  infinite: true,
+  speed: 500,
+  fade: true,
+  cssEase: 'linear'
+});
+});
+    </script>
 
    @yield('scripts')
    
