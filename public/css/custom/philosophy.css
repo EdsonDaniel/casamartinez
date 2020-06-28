@@ -75,9 +75,6 @@ body{ background-color: black; color: white; font-family: 'Lora', serif;}
 	background-size: cover;
 	color: white !important;
 	margin: 30px 0;
-	/*opacity: 0.6;	*/
-	/*comentarios de prueba*/
-	/*otro comentario*/
 }
 .fondo-produccion h2, .fondo-mezcal h2{padding-top: 50px;}
 
@@ -146,8 +143,8 @@ body{ background-color: black; color: white; font-family: 'Lora', serif;}
 
 @media only screen and (max-width: 550px){
 	/****carousel */
-	.text-and-img{width: 100%; margin: 0; height: 100%; position: relative;}
-	.text-and-img>div{width: 100%; margin: 0; overflow: hidden;}
+	.text-and-img-c{width: 100%; margin: 0; height: 100%; position: relative;}
+	.text-and-img-c>div{width: 100%; margin: 0; overflow: hidden;}
 	.img-r, .img-l{display: block; height: 70vh; width: 100%; margin: 0 auto; float: none; z-index: -1;}
 	.img-car{height: 70vh; width: 100%;}
 	.carousel-container{width: 90%; height: 82vh; margin-bottom: 50px;}
@@ -171,10 +168,4 @@ body{ background-color: black; color: white; font-family: 'Lora', serif;}
 
 
 	.fondo-mezcal{background-image: none;}
-}
-
-
-@media only screen and (min-width: 760px) and (max-width: 990px){
-	.head-philosop{ height: 40vh; }
-	.portada-fil{ height: 50vh; background-position: right;}
 }
