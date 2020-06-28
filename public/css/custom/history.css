@@ -15,7 +15,6 @@ body, html {
   opacity: 0.5 !important;
 }
 
-
 .centered {
   position: absolute;
   top: 40%;
@@ -49,6 +48,11 @@ body, html {
   padding: 0;
 }
 .right a:hover{color: rgba(255,255,255,0.6);}
+
+.slick-dots li button:before{opacity: 0.40; color: white;}
+.slick-dots li.slick-active button:before{opacity: 0.75; color: white;}
+.carousel-container{margin: 100px auto;}
+.next{margin-top: 70px;}
 
 @media only screen and (max-width: 990px){
   .bg-image{height: 60vh;}

@@ -20,7 +20,7 @@
 	<div class="descrip-p">
 		<h4 class="product-head">MEZCAL SINÁI (JOVEN) 750 ml</h4>
 		<p class="descrip">Elaborado a partir de agave 100% natural bajo la certificaión biodinámica acreditada en E.U.A</p>
-		<br>
+		<br class="br">
 		<hr class="hr">
 		<p class="presentacion">PRESENTACIÓN: 
 			<select class="presentacion">
@@ -79,7 +79,7 @@
 	<div class="descrip-p">
 		<h4 class="product-head">MEZCAL SINÁI (REPOSADO) 750 ml</h4>
 		<p class="descrip">Elaborado a partir de agave 100% natural bajo la certificaión biodinámica acreditada en E.U.A Añejado por más de un año en barricas de madera.</p>
-		<br>
+		<br class="br">
 		<hr class="hr">  				
 		<p class="presentacion">PRESENTACIÓN: 
 			<select class="presentacion">
@@ -136,7 +136,7 @@
 	<div class="descrip-p">
 		<h4 class="product-head">MEZCAL SINÁI (AÑEJO) 750 ml</h4>
 		<p class="descrip">Elaborado a partir de agave 100% natural bajo la certificaión biodinámica acreditada en E.U.A Añejado por más de un año en barricas de madera.</p>
-		<br>
+		<br class="br">
 		<hr class="hr"> 
 		<p class="presentacion">PRESENTACIÓN: 
 			<select class="presentacion">
@@ -193,7 +193,7 @@
 	<div class="descrip-p">
 		<h4 class="product-head">MEZCAL SINÁI (RESERVA ESPECIAL) 750 ml</h4>
 		<p class="descrip">Elaborado a partir de agave 100% natural bajo la certificaión biodinámica acreditada en E.U.A Añejado por más de un año en barricas de madera.</p>
-		<br>
+		<br class="br">
 		<hr class="hr">
 		<p class="presentacion">PRESENTACIÓN: 
 			<select class="presentacion">

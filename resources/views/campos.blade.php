@@ -5,6 +5,8 @@
 @endsection
 
 @section('stylesheet')
+<link rel="stylesheet" type="text/css" href="css/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="css/slick/slick-theme.css"/>
 <link href="css/custom/campos.css" rel="stylesheet" type="text/css" />
 @endsection
 
@@ -29,201 +31,224 @@
   </div>
   <!-- texto -->
 
-        <h3>NUESTROS CAMPOS DE MAGUEY</h3>
+  <h3>NUESTROS CAMPOS DE MAGUEY</h3>
 
-        <!-- primer corousel-->
-        <div id="slider-1" class="carousel slide carousel-fade mt-0" data-ride="carousel" data-interval="7000">
-          <h2 class="carousel-title text-center  mb-0">SAN DIONICIO OCOTEPEC</h2>
-          <ol class="carousel-indicators mt-0">
-              <li style="background-color: #8F8F8F !important;" data-target="#slider-1" data-slide-to="0" class="active"></li>
-              <li style="background-color: #8F8F8F !important;" data-target="#slider-1" data-slide-to="1"></li>
-              <li style="background-color: #8F8F8F !important;" data-target="#slider-1" data-slide-to="2"></li>
-          </ol>
-            <div class="carousel-inner">
-              <!--primer item-->
-              <div class="carousel-item div-carousel active">
-                <div class="container col-7 mb-0">
-                  <div class="row justify-content-md-center">
-                    <div class="media mt-5">
-                      <div class="media-body align-self-center mt-0">
-                        <h5 class="mr-5 title-carousel">UBICACIÓN</h5>
-                        <p class="body-carousel mr-5">Ubicado en la región de Valles Centrales del estado de Oaxaca a 65 kilómetros de la ciudad capital y es perteneciente al distrito de Tlacolula. Se encuentra entre las coordenadas 16°47'N y 96°23'47.9"W, a una altura de 1,695 m s.n.m..</p>
-                      </div>
-                      <img class="ml-3 img-car" src="img/campos-agave/agave1.jpg" alt="Generic placeholder image">
-                    </div>
-                  </div> 
-                </div>
-              </div>
-              <!--primer item-->
-
-              <!--segundo item-->
-              <div class="carousel-item div-carousel">
-                <div class="container col-7 mb-0">
-                  <div class="row justify-content-md-center">
-                    <div class="media mt-5">
-                      <div class="media-body align-self-center">
-                        <h5 class="mr-5 title-carousel">TIPO DE MAGUEY</h5>
-                        <p class="body-carousel mr-5">Colinda al norte con los municipios de Santiago Matatlán y Tlacolula de Matamoros; al sur con San Pedro Totolapa; al oeste con San Baltazar Chichicapam y Yaxe, Distrito de Ocotlán; y al este con San Pedro Quiatoni.</p>
-                      </div>
-                      <img class="ml-3 img-car" src="img/campos-agave/agave2.jpg" alt="Generic placeholder image">
-                    </div>
-                  </div> 
-                </div>
-              </div>
-              <!--segundo item-->
-              <!--tercer item-->
-              <div class="carousel-item div-carousel">
-                <div class="container col-7 mb-0">
-                  <div class="row justify-content-md-center"><div class="media mt-5">
-                        <div class="media-body align-self-center">
-                          <h5 class="mr-5 title-carousel">EDAD</h5>
-                          <p class="body-carousel mr-5">Los cerros más altos que se ubican dentro del territorio del municipio se llaman: cerro de la Cruz y cerro del Cantarito. Su topografía combina pequeños lomeríos con terrenos planos, además esta rodeado de diversos cerros.</p>
-                        </div>
-                        <img class="ml-3 img-car" src="img/campos-agave/agave3.jpg" alt="Generic placeholder image">
-                    </div>
-                </div> 
-              </div>
+  <!--primer corousel-->
+  <div class="carousel-container fade-scroll">
+    <h2 class="carousel-title text-center">SAN DIONICIO OCOTEPEC</h2>
+    <div class="carousel-items">
+      <!-- primer item-->
+      <div>
+        <div class="text-and-img-c">
+          <div class="bg-text">
+            <div class="btn-expand open"></div>
+            <div>
+              <h5 class="title-carousel">UBICACIÓN</h5>
             </div>
-            <!--tercer item-->
-          </div>
-        </div><!-- fin primer corousel-->
-
-        <hr style="margin-top: 80px; width: 65%;">
-
-        <!-- segundo corousel-->
-      <div id="slider-2" class="carousel slide carousel-fade mt-5 fade-scroll" data-ride="carousel" data-interval="7000">
-        <h2 class="carousel-title text-center mt-5 mb-0">SAN ANDRÉS HUAYAPAM</h2>
-        <ol class="carousel-indicators mt-0">
-            <li style="background-color: #8F8F8F !important;" data-target="#slider-2" data-slide-to="0" class="active"></li>
-            <li style="background-color: #8F8F8F !important;" data-target="#slider-2" data-slide-to="1"></li>
-            <li style="background-color: #8F8F8F !important;" data-target="#slider-2" data-slide-to="2"></li>
-        </ol>
-          <div class="carousel-inner">
-            <!--primer item-->
-            <div class="carousel-item div-carousel active">
-                <div class="container col-7 mb-0">
-                  <div class="row justify-content-md-center">
-                    <div class="media mt-5">
-                      <img class="mr-4 img-car" src="img/campos-agave/agave2.jpg" alt="Generic placeholder image">
-                      <div class="media-body align-self-center mt-0">
-                        <h5 class="ml-5 title-carousel">SAN ANDRÉS HUAYAPAM</h5>
-                        <p class="body-carousel ml-5">Ubicado en la región de Valles Centrales del estado de Oaxaca a 65 kilómetros de la ciudad capital y es perteneciente al distrito de Tlacolula. Se encuentra entre las coordenadas 16°47'N y 96°23'47.9"W, a una altura de 1,695 m s.n.m..</p>
-                      </div>
-                  </div>
-              </div> 
+            <div class="parrafos">
+              <p class="body-carousel">Ubicado en la región de Valles Centrales del estado de Oaxaca a 65 kilómetros de la ciudad capital y es perteneciente al distrito de Tlacolula. Se encuentra entre las coordenadas 16°47'N y 96°23'47.9"W, a una altura de 1,695 m s.n.m..</p>
             </div>
           </div>
-          <!--primer item-->
-
-          <!--segundo item-->
-            <div class="carousel-item div-carousel">
-                <div class="container col-7 mb-0">
-                  <div class="row justify-content-md-center">
-                    <div class="media mt-5">
-                      <img class="mr-4 img-car" src="img/campos-agave/agave3.jpg" alt="Generic placeholder image">
-                      <div class="media-body align-self-center">
-                        <p class="body-carousel ml-5">Colinda al norte con los municipios de Santiago Matatlán y Tlacolula de Matamoros; al sur con San Pedro Totolapa; al oeste con San Baltazar Chichicapam y Yaxe, Distrito de Ocotlán; y al este con San Pedro Quiatoni.</p>
-                      </div>
-                  </div>
-              </div> 
-            </div>
+          <div class="img-l">
+            <img class="img-car" src="img/campos-agave/agave1.jpg" alt="Generic placeholder image">
           </div>
-          <!--segundo item-->
-
-          <!--tercer item-->
-            <div class="carousel-item div-carousel">
-                <div class="container col-7 mb-0">
-                  <div class="row justify-content-md-center">
-                    <div class="media mt-5">
-                      <img class="mr-4 img-car" src="img/campos-agave/agave4.jpg" alt="Generic placeholder image">
-                      <div class="media-body align-self-center">
-                        <p class="body-carousel ml-5">Los cerros más altos que se ubican dentro del territorio del municipio se llaman: cerro de la Cruz y cerro del Cantarito. Su topografía combina pequeños lomeríos con terrenos planos, además esta rodeado de diversos cerros.</p>
-                      </div>
-                  </div>
-              </div> 
-            </div>
-          </div>
-          <!--tercer item-->
         </div>
-      </div><!-- fin segundo corousel-->
+      </div>
+      <!--primer item-->
 
-      <hr style="margin-top: 80px; width: 65%;">
+      <!--SEGUNDO item-->
+      <div>
+        <div class="text-and-img-c">
+          <div class="bg-text">
+            <div class="btn-expand open"></div>
+            <div>
+              <h5 class="title-carousel">TIPO DE MAGUEY</h5>
+            </div>
+            <div class="parrafos">
+              <p class="body-carousel">Colinda al norte con los municipios de Santiago Matatlán y Tlacolula de Matamoros; al sur con San Pedro Totolapa; al oeste con San Baltazar Chichicapam y Yaxe, Distrito de Ocotlán; y al este con San Pedro Quiatoni.</p>
+            </div>
+          </div>
+          <div class="img-l">
+            <img class="img-car" src="img/campos-agave/agave2.jpg" alt="Generic placeholder image">
+          </div>
+        </div>
+      </div>
+      <!--SEGUNDO item-->
 
-      <!-- tercer corousel-->
-        <div id="slider-1" class="carousel slide carousel-fade mt-5" data-ride="carousel" data-interval="7000">
-          <h2 class="carousel-title text-center mt-5 mb-0">SAN MIGUEL GUELACHE</h2>
-          <ol class="carousel-indicators mt-0">
-              <li style="background-color: #8F8F8F !important;" data-target="#slider-1" data-slide-to="0" class="active"></li>
-              <li style="background-color: #8F8F8F !important;" data-target="#slider-1" data-slide-to="1"></li>
-              <li style="background-color: #8F8F8F !important;" data-target="#slider-1" data-slide-to="2"></li>
-          </ol>
-            <div class="carousel-inner">
-              <!--primer item-->
-              <div class="carousel-item div-carousel active">
-                <div class="container col-7 mb-0">
-                  <div class="row justify-content-md-center">
-                    <div class="media mt-5">
-                      <div class="media-body align-self-center mt-0">
-                        <h5 class="mr-5 title-carousel">SAN MIGUEL GUELACHE</h5>
-                        <p class="body-carousel mr-5">Ubicado en la región de Valles Centrales del estado de Oaxaca a 65 kilómetros de la ciudad capital y es perteneciente al distrito de Tlacolula. Se encuentra entre las coordenadas 16°47'N y 96°23'47.9"W, a una altura de 1,695 m s.n.m..</p>
-                      </div>
-                      <img class="ml-3 img-car" src="img/campos-agave/agave1.jpg" alt="Generic placeholder image">
-                    </div>
-                  </div> 
-                </div>
+      <!--TERCER item-->
+      <div>
+        <div class="text-and-img-c">
+          <div class="bg-text">
+            <div class="btn-expand open"></div>
+            <div>
+              <h5 class="title-carousel">EDAD</h5>
+            </div>
+            <div class="parrafos">
+              <p class="body-carousel">Los cerros más altos que se ubican dentro del territorio del municipio se llaman: cerro de la Cruz y cerro del Cantarito. Su topografía combina pequeños lomeríos con terrenos planos, además esta rodeado de diversos cerros.</p>
+            </div>
+          </div>
+          <div class="img-l">
+            <img class="img-car" src="img/campos-agave/agave3.jpg" alt="Generic placeholder image">
+          </div>
+        </div>
+      </div>
+      <!--TERCER item-->
+
+    </div><!-- fin carousel items-->    
+  </div>
+  <!--fin primer corousel-->
+
+  <hr style="margin: 80px 0; width: 65%;">
+
+  <!--segundo corousel-->
+  <div class="carousel-container fade-scroll">
+    <h2 class="carousel-title text-center">SAN MIGUEL GUELACHE</h2>
+    <div class="carousel-items">
+      <!--primer item-->
+        <div>
+          <div class="text-and-img-c">
+            <div>
+              <img src="/img/campos-agave/agave1.jpg" class="img-car img-r">
+            </div>
+            <div class="bg-text">
+              <div class="btn-expand open"></div>
+              <div>
+                <h5 class="title-carousel">UBICACIÓN</h5>
               </div>
-              <!--primer item-->
-
-              <!--segundo item-->
-              <div class="carousel-item div-carousel">
-                <div class="container col-7 mb-0">
-                  <div class="row justify-content-md-center">
-                    <div class="media mt-5">
-                      <div class="media-body align-self-center">
-                        <p class="body-carousel mr-5">Colinda al norte con los municipios de Santiago Matatlán y Tlacolula de Matamoros; al sur con San Pedro Totolapa; al oeste con San Baltazar Chichicapam y Yaxe, Distrito de Ocotlán; y al este con San Pedro Quiatoni.</p>
-                      </div>
-                      <img class="ml-3 img-car" src="img/campos-agave/agave2.jpg" alt="Generic placeholder image">
-                    </div>
-                  </div> 
-                </div>
-              </div>
-              <!--segundo item-->
-              <!--tercer item-->
-              <div class="carousel-item div-carousel">
-                <div class="container col-7 mb-0">
-                  <div class="row justify-content-md-center"><div class="media mt-5">
-                        <div class="media-body align-self-center">
-                          <p class="body-carousel mr-5">Los cerros más altos que se ubican dentro del territorio del municipio se llaman: cerro de la Cruz y cerro del Cantarito. Su topografía combina pequeños lomeríos con terrenos planos, además esta rodeado de diversos cerros.</p>
-                        </div>
-                        <img class="ml-3 img-car" src="img/campos-agave/agave3.jpg" alt="Generic placeholder image">
-                    </div>
-                </div> 
+              <div class="parrafos">
+                <p class="body-carousel">Ubicado en la región de Valles Centrales del estado de Oaxaca a 65 kilómetros de la ciudad capital y es perteneciente al distrito de Tlacolula. Se encuentra entre las coordenadas 16°47'N y 96°23'47.9"W, a una altura de 1,695 m s.n.m..</p>
               </div>
             </div>
-            <!--tercer item-->
           </div>
-        </div><!-- fin tercer corousel-->
-
-        <hr style="margin-top: 80px; width: 65%;">
-
-
-        <div class="cita">
-          <center>
-            <a href="mailto:info@casamartinez.mx?subject=Agendar%20una%20visita%20al%20palenque." class="body-carousel" style="color: #212529; text-decoration: underline;">Agenda una visita al palenque</a>
-          </center>
         </div>
+      <!--primer item-->
 
-		<!-- cita -->
-		<div class="block-cita">
-      <blockquote>
-        <p class="text-cita">“Compartir experiencias con nuestros clientes y amigos, nos permite comunicar el trabajo que la familia Martínez ha estado realizando por generaciones. ”</p>
-      </blockquote>
-      <p class="ref-cita">-Alguien Martínez</p>
-    </div>
-		<!-- cita -->
+      <!--segundo item-->
+        <div>
+          <div class="text-and-img-c">
+            <div>
+              <img src="/img/campos-agave/agave2.jpg" class="img-car img-r">
+            </div>
+            <div class="bg-text">
+              <div class="btn-expand open"></div>
+              <div>
+                <h5 class="title-carousel">TIPO DE MAGUEY</h5>
+              </div>
+              <div class="parrafos">
+                <p class="body-carousel">Ubicado en la región de Valles Centrales del estado de Oaxaca a 65 kilómetros de la ciudad capital y es perteneciente al distrito de Tlacolula. Se encuentra entre las coordenadas 16°47'N y 96°23'47.9"W, a una altura de 1,695 m s.n.m..</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!--segundo item-->
 
+      <!--tercer item-->
+        <div>
+          <div class="text-and-img-c">
+            <div>
+              <img src="/img/campos-agave/agave3.jpg" class="img-car img-r">
+            </div>
+            <div class="bg-text">
+              <div class="btn-expand open"></div>
+              <div>
+                <h5 class="title-carousel">EDAD</h5>
+              </div>
+              <div class="parrafos">
+                <p class="body-carousel">Ubicado en la región de Valles Centrales del estado de Oaxaca a 65 kilómetros de la ciudad capital y es perteneciente al distrito de Tlacolula. Se encuentra entre las coordenadas 16°47'N y 96°23'47.9"W, a una altura de 1,695 m s.n.m..</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!--tercer item-->
+    </div><!-- fin carousel items-->    
+  </div>
+  <!--fin segundo corousel-->
 
-		<!--next section-->
+  <hr style="margin-top: 80px; width: 65%;">
+
+  <!--tercer corousel-->
+  <div class="carousel-container fade-scroll">
+    <h2 class="carousel-title text-center">SAN ANDRES HUAYAPAM</h2>
+    <div class="carousel-items">
+      <!-- primer item-->
+      <div>
+        <div class="text-and-img-c">
+          <div class="bg-text">
+            <div class="btn-expand open"></div>
+            <div>
+              <h5 class="title-carousel">UBICACIÓN</h5>
+            </div>
+            <div class="parrafos">
+              <p class="body-carousel">Ubicado en la región de Valles Centrales del estado de Oaxaca a 65 kilómetros de la ciudad capital y es perteneciente al distrito de Tlacolula. Se encuentra entre las coordenadas 16°47'N y 96°23'47.9"W, a una altura de 1,695 m s.n.m..</p>
+            </div>
+          </div>
+          <div class="img-l">
+            <img class="img-car" src="img/campos-agave/agave1.jpg" alt="Generic placeholder image">
+          </div>
+        </div>
+      </div>
+      <!--primer item-->
+
+      <!--SEGUNDO item-->
+      <div>
+        <div class="text-and-img-c">
+          <div class="bg-text">
+            <div class="btn-expand open"></div>
+            <div>
+              <h5 class="title-carousel">TIPO DE MAGUEY</h5>
+            </div>
+            <div class="parrafos">
+              <p class="body-carousel">Colinda al norte con los municipios de Santiago Matatlán y Tlacolula de Matamoros; al sur con San Pedro Totolapa; al oeste con San Baltazar Chichicapam y Yaxe, Distrito de Ocotlán; y al este con San Pedro Quiatoni.</p>
+            </div>
+          </div>
+          <div class="img-l">
+            <img class="img-car" src="img/campos-agave/agave2.jpg" alt="Generic placeholder image">
+          </div>
+        </div>
+      </div>
+      <!--SEGUNDO item-->
+
+      <!--TERCER item-->
+      <div>
+        <div class="text-and-img-c">
+          <div class="bg-text">
+            <div class="btn-expand open"></div>
+            <div>
+              <h5 class="title-carousel">EDAD</h5>
+            </div>
+            <div class="parrafos">
+              <p class="body-carousel">Los cerros más altos que se ubican dentro del territorio del municipio se llaman: cerro de la Cruz y cerro del Cantarito. Su topografía combina pequeños lomeríos con terrenos planos, además esta rodeado de diversos cerros.</p>
+            </div>
+          </div>
+          <div class="img-l">
+            <img class="img-car" src="img/campos-agave/agave3.jpg" alt="Generic placeholder image">
+          </div>
+        </div>
+      </div>
+      <!--TERCER item-->
+
+    </div><!-- fin carousel items-->    
+  </div>
+  <!--fin tercer corousel-->
+
+  <hr style="margin-top: 80px; width: 65%;">
+
+  <div class="cita">
+    <center>
+      <a href="mailto:info@casamartinez.mx?subject=Agendar%20una%20visita%20al%20palenque." class="body-carousel" style="color: #212529; text-decoration: underline;">Agenda una visita al palenque</a>
+    </center>
+  </div>
+
+  <!-- cita -->
+  <div class="block-cita">
+    <blockquote>
+      <p class="text-cita">“Compartir experiencias con nuestros clientes y amigos, nos permite comunicar el trabajo que la familia Martínez ha estado realizando por generaciones. ”</p>
+    </blockquote>
+    <p class="ref-cita">-Alguien Martínez</p>
+  </div>
+  <!-- cita -->
+
+  <!--next section-->
 	<div class="next" style="background-color: black;">
 		<div class="next-text">
 			<p>SIGUIENTE</p>
@@ -243,4 +268,78 @@
     $("nav").toggleClass('scrolled', $(this).scrollTop()>alto/2);
   });
 </script>
+
+<script type="text/javascript" src="css/slick/slick.min.js"></script>
+<script>
+      
+$(document).ready(function(){
+
+$('.carousel-items').slick({
+  dots: true,
+  infinite: true,
+  speed: 900,
+  fade: true,
+  cssEase: 'linear',
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 550,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+});
+});
+
+  var texto = document.getElementsByClassName("bg-text");
+  var i;
+  var parrafo;
+  var div_p;
+  var btn_open;
+  for (i = 0; i < texto.length; i++) {
+    texto[i].addEventListener("click", function() {
+      /*this.classList.toggle("bg-text-v");*/
+      div_p = this.lastElementChild;
+      parrafo = div_p.lastElementChild;
+      btn_open = this.firstElementChild;
+      btn_open.classList.toggle("open");
+      btn_open.classList.toggle("closed");
+      console.log("altura = "+parrafo.offsetHeight);
+      var alt = parrafo.offsetHeight;
+      alt += 15;
+      alt = alt+"px";
+      /*parrafo.classList.toggle("bg-text-v");*/
+      if (div_p.style.height === "") {
+        div_p.style.height = alt;
+        /*btn_open.innerHTML = "CERRAR";*/
+
+      } else {
+        div_p.style.height = "";
+        /*btn_open.innerHTML = "ABRIR";*/
+      }
+    });
+  }
+  
+ </script>
 @endsection

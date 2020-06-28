@@ -40,7 +40,7 @@
 		<div class="carousel-items">
 			<!--primer item-->
 			<div>
-				<div class="text-and-img">
+				<div class="text-and-img-c">
 					<div>
 						<img src="/img/corazon-maguey3.jpg" class="img-car img-r">
 					</div>
@@ -58,7 +58,7 @@
 
 			<!--segundo item-->
 			<div>
-				<div class="text-and-img">
+				<div class="text-and-img-c">
 	    			<div>
 	    				<img src="/img/cuerpo-maguey2.jpg" class="img-car img-r">
 	    			</div>
@@ -76,13 +76,13 @@
 
 			<!--tercer item-->
 	    	<div>
-		      	<div class="text-and-img">
+		      	<div class="text-and-img-c">
 	    			<div>
 	    				<img src="/img/mezcal-reposado.jpg" class="img-car img-r">
 	    			</div>
 	    			<div class="bg-text">
+	    				<div class="btn-expand open"></div>
 	    				<div>
-	    					<div class="btn-expand open"></div>
 	    					<h5 class="title-carousel">NUEVA VIDA PARA EL MAGUEY</h5>
 	    				</div>
 	    				<div class="parrafos">
@@ -103,7 +103,7 @@
 		<div class="carousel-items">
 			<!--primer item-->
 			<div>
-				<div class="text-and-img">
+				<div class="text-and-img-c">
 					<div class="bg-text">
 						<div class="btn-expand open"></div>
 						<div>
@@ -122,7 +122,7 @@
 
 			<!--segundo item-->
 			<div>
-				<div class="text-and-img">
+				<div class="text-and-img-c">
 					<div class="bg-text">
 						<div class="btn-expand open"></div>
 						<div>
@@ -141,7 +141,7 @@
 
 			<!--tercer item-->
 			<div>
-				<div class="text-and-img">
+				<div class="text-and-img-c">
 					<div class="bg-text">
 						<div class="btn-expand open"></div>
 						<div>
@@ -169,7 +169,7 @@
 		<div class="carousel-items">
 			<!--primer item-->
 	    	<div>
-	    		<div class="text-and-img">
+	    		<div class="text-and-img-c">
 		      		<div class="bg-text">
 		      			<div class="btn-expand open"></div>
 		      			<div>
@@ -188,7 +188,7 @@
 
 			<!--segundo item-->
 	    	<div>
-	    		<div class="text-and-img">
+	    		<div class="text-and-img-c">
 	    			<div class="bg-text">
 	    				<div class="btn-expand open"></div>
 	    				<div>
@@ -207,7 +207,7 @@
 
 			<!--tercer item-->
 	    	<div>
-	    		<div class="text-and-img">
+	    		<div class="text-and-img-c">
 	    			<div class="bg-text">
 	    				<div class="btn-expand open"></div>
 	    				<div>
@@ -226,7 +226,7 @@
 
 			<!--CUARTO item-->
 	    	<div>
-	    		<div class="text-and-img">
+	    		<div class="text-and-img-c">
 	    			<div class="bg-text">
 	    				<div class="btn-expand open"></div>
 	    				<div>
@@ -245,7 +245,7 @@
 
 			<!--QUINTO item-->
 	    	<div>
-	    		<div class="text-and-img">
+	    		<div class="text-and-img-c">
 	    			<div class="bg-text">
 	    				<div class="btn-expand open"></div>
 	    				<div>
@@ -264,7 +264,7 @@
 
 			<!--SEXTO item-->
 	    	<div>
-	    		<div class="text-and-img">
+	    		<div class="text-and-img-c">
 	    			<div class="bg-text">
 	    				<div class="btn-expand open"></div>
 	    				<div>
@@ -291,7 +291,7 @@
 		<div class="carousel-items">
 			<!--primer item-->
 	    	<div>
-	    		<div class="text-and-img">
+	    		<div class="text-and-img-c">
 	    			<div>
 	    				<img src="/img/histori.jpg" class="img-car img-r">
 	    			</div>
@@ -310,7 +310,7 @@
 
 			<!--segundo item-->
 	    	<div>
-	    		<div class="text-and-img">
+	    		<div class="text-and-img-c">
 	    			<div>
 	    				<img class="img-car img-r" src="img/diseno.jpg" alt="Generic placeholder image">
 	    			</div>
@@ -329,7 +329,7 @@
 
 			<!--tercer item-->
 	    	<div>
-	    		<div class="text-and-img">
+	    		<div class="text-and-img-c">
 	    			<div>
 	    				<img class="img-car img-r" src="img/maestro-mezcal.jpg" alt="Generic placeholder image">
 	    			</div>
@@ -348,7 +348,7 @@
 
 			<!--CUARTO item-->
 	    	<div>
-	    		<div class="text-and-img">
+	    		<div class="text-and-img-c">
 	    			<div>
 	    				<img class="img-car img-r" src="img/diseno.jpg" alt="Generic placeholder image">
 	    			</div>
@@ -367,7 +367,7 @@
 
 			<!--Quinto item-->
 	    	<div>
-	    		<div class="text-and-img">
+	    		<div class="text-and-img-c">
 	    			<div>
 	    				<img class="img-car img-r" src="img/maestro-mezcal.jpg" alt="Generic placeholder image">
 	    			</div>
@@ -404,7 +404,7 @@
 	<div class="next" >
 		<div class="next-text">
 			<p>SIGUIENTE</p>
-			<p><a href="/historia">Historia, Colaboradores</a></p>
+			<p><a href="/historia">Historia & Equipo</a></p>
 		</div>
 		<div class="next-fondo" style="background-image: url('/img/equipo.jpg');"></div>
 	</div>
