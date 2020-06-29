@@ -20,7 +20,7 @@
 	<p class="text-center text-head">Nos destacamos por elaborar el mejor mezcal artesanal de la región, además de ser el único producido bajo la certificación de Agricultura Biodinámica, 100% orgánico.</p>
 </div>
 
-<hr style="margin: 50px; width: 70%;">
+<hr style="margin: 50px auto; width: 70%;">
 
 <div>
 	<h3>NUESTRAS MARCAS</h3>

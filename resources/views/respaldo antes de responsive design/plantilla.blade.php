@@ -100,7 +100,7 @@
             </div>
 
             <div class="boton">
-                <a href="#">FILOSOFÍA</a>
+                <a href="">FILOSOFÍA</a>
                 <button><i name="ic" class="fas fa-plus"></i></button>
             </div>
             <div class="dropdown-container">

@@ -58,7 +58,7 @@
                 </ul>
 
                 <a href="/" class="ico"><span class="fad fa-shopping-cart" id="cart"></span></a>
-                <a class="ico" onclick="openNav()"><i class="far fa-bars" id="icon-menu"></i></a> 
+                <a class="ico" id="opened" onclick="openNav()"><i class="far fa-bars" id="icon-menu"></i></a> 
             </div>
         </div>
     </nav>
@@ -89,7 +89,7 @@
                     <li><a href="">-SiNái</a></li>
                     <li><a href="">-Habitante</a></li>
                     <li><a href="">-Origen Verde</a></li>
-                    <li><a href="/catalogo">-Todos los productos</a></li>
+                    <li><a href="/productos">-Todos los productos</a></li>
                 </ul>
             </div>
 

@@ -192,7 +192,7 @@ select:focus, option:focus, option{outline-color: #4A4A4A;}
 
 @media only screen and (max-width: 550px){
 	.img-centered, .text-head{width: 80%;}
-	hr{margin: 20px !important;}
+	hr{margin: 20px auto !important;}
 	h3{font-size: 18px; padding: 0 10px;}
 	.h2{font-size: 19px;}
 	.galeria{margin: 30px 10px; }
@@ -212,7 +212,7 @@ select:focus, option:focus, option{outline-color: #4A4A4A;}
 	.img-cat{height: 230px; width: auto; margin: 0 auto;}
 	.descrip-p{width: 85%; margin: 10px auto;}
 	.br{display: none;}
-	.hr{margin: 10px !important;}
+	.hr{margin: 10px auto !important;}
 	.price {margin: 5px auto; font-size: 20px;}
 	.price span{font-size: 14px !important;}
 	.price-p{width: 100%;}
@@ -220,13 +220,13 @@ select:focus, option:focus, option{outline-color: #4A4A4A;}
 	.product-head{margin: 0; text-align: center; font-size: 14px;}
 	.presentacion{margin: 0 auto; text-align: center;	}
 	p[name="cantidad"]{display: none;}
-	.button{margin: 10px auto; width: 80%;}
+	.button{margin: 20px auto; width: 80%;}
 }
 
 @media only screen and (min-width: 550px) and (max-width: 990px){
 	.text-head{width: 70%;}
 	.img-centered{width: 50%;}
-	hr{margin: 20px !important;}
+	hr{margin: 20px auto !important;}
 	h3{font-size: 20px;}
 	.galeria{margin: 30px auto; }
 	.gallery{font-size: 17px; margin-top: 10px; min-height: 3rem;}
@@ -235,6 +235,9 @@ select:focus, option:focus, option{outline-color: #4A4A4A;}
 	.menu li{margin: 5px auto; padding: 0; display: block; width: 100%;}
 	.menu ul, .menu a{padding: 0; margin: 0 auto;}
 	.next{margin-top: 40px;}
+	.product-head{margin: 0 0 10px;}
+	.descrip-p{margin-bottom: 0; margin-top: 0;}
+	.price{margin: 0 auto;}
 }
 
 @media only screen and (min-width: 550px) and (max-width: 760px){
@@ -244,7 +247,7 @@ select:focus, option:focus, option{outline-color: #4A4A4A;}
 	.img-cat{height: 260px; width: auto; margin: 0 auto;}
 	.descrip-p{width: 50%; margin: 10px 15px;}
 	.br{display: none;}
-	.hr{margin: 20px !important;}
+	.hr{margin: 20px auto !important;}
 	.price {margin: 5px auto; font-size: 20px; text-align: left;}
 	.price span{font-size: 14px !important;}
 	.price-p{width: 100%; margin: 20px auto;}
@@ -264,8 +267,8 @@ select:focus, option:focus, option{outline-color: #4A4A4A;}
 	.list-products{width: 85%; }
 	.img-cat{width: 150px; height: 250px;}
 	.br{display: none;}
-	.hr{margin: 10px !important;}
+	.hr{margin: 10px auto !important;}
 	.descrip-p{margin: 0 30px;}
-	.price{margin: 15px auto;}
+	.price{margin: 0 auto;}
 
 }
