@@ -135,13 +135,37 @@ body{ background-color: black; color: white; font-family: 'Lora', serif;}
 	.portada-fil{ height: 70vh; background-position: right;}
 }
 
-@media only screen and (min-width: 550px) and (max-width: 760px){
+/*@media only screen and (min-width: 550px) and (max-width: 760px){
 	.block-cita{ width: 80%; }
 	.next{height: 25vh; margin-top: 100px;}
 	.next-text p{font-size: 12px;}.next-text a{font-size: 16px;}
-}
 
-@media only screen and (max-width: 550px){
+	/*carousel**
+	.text-and-img-c{width: 100%; margin: 0; height: 100%; position: relative;}
+	.text-and-img-c>div{width: 100%; margin: 0; overflow: hidden;}
+	.img-r, .img-l{display: block; height: 70vh; width: 100%; margin: 0 auto; float: none; z-index: -1;}
+	.img-car{height: 70vh; width: 100%;}
+	.carousel-container{width: 78%; height: 70vh; margin-bottom: 50px;}
+	.bg-text{background-color: rgba(0,0,0,0.6); position: absolute; left: 0; bottom: 0; margin: 0 0 10px;}
+	/*.bg-text p{height: 0px; overflow-y: hidden; transition: height 0.8s; margin: 0;}*
+	.parrafos{height: 0px; overflow-y: hidden; transition: height 0.8s; margin: 0;}
+	.title-carousel{margin: 10px 15px 15px; font-size: 13px; line-height: 1;}
+	.carousel-title{font-size: 14px; margin: 10px 0 20px;}
+	.carousel-items{height: 90%;}
+	.body-carousel{font-size: 14px; margin: 0 15px 15px;}
+
+	.btn-expand{display: block;}
+
+	.open::before{content: 'ABRIR';}
+.open::after{content: '';}
+.closed::before{content: 'CERRAR';}
+.closed::after{content: '';}
+
+	
+	#maestro-mezcalero{margin-bottom: 120px;}
+}*/
+
+@media only screen and (max-width: 760px){
 	/****carousel */
 	.text-and-img-c{width: 100%; margin: 0; height: 100%; position: relative;}
 	.text-and-img-c>div{width: 100%; margin: 0; overflow: hidden;}
