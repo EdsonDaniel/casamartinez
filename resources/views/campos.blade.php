@@ -100,7 +100,7 @@
   </div>
   <!--fin primer corousel-->
 
-  <hr style="margin: 0 auto; width: 65%; border-top-width:3px;">
+  <hr style="margin: 0 auto; width: 65%; border-top-width:2px;">
 
   <!--segundo corousel-->
   <div class="env">
@@ -169,7 +169,7 @@
 
   <!--fin segundo corousel-->
 
-  <hr style="margin: 0 auto; width: 65%; border-top-width:3px;">
+  <hr style="margin: 0 auto; width: 65%; border-top-width:2px;">
 
   <!--tercer corousel-->
   <div class="env">
@@ -238,7 +238,7 @@
   </div>
   <!--fin tercer corousel-->
 
-  <hr style="margin: 0 auto; width: 65%; border-top-width:3px;">
+  <hr style="margin: 0 auto; width: 65%; border-top-width:2px;">
 
   <div class="cita">
     <center>

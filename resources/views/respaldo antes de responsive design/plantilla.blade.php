@@ -61,7 +61,7 @@
                         <a href="" class=""><span id="cart" class="fad fa-shopping-cart"></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" onclick="openNav()"><i class="far fa-bars" id="icon-menu"></i></a> 
+                        <a class="nav-link" id="opened" onclick="openNav()"><i class="far fa-bars" id="icon-menu"></i></a> 
                     </li>
                 </ul>
             </div>
