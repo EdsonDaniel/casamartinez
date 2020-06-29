@@ -111,6 +111,10 @@ body{ background-color: black; color: white; font-family: 'Lora', serif;}
 
 #maestro-mezcalero{margin-bottom: 0px;}
 /*Media querys*/
+
+.slick-dots li button:before{opacity: 0.40; color: white;}
+.slick-dots li.slick-active button:before{opacity: 0.75; color: white;}
+.slick-dots{bottom: -15%;}
 @media only screen and (max-width: 990px){
 	.head-philosop{ height: 50vh; }
 	.portada-fil{ height: 70vh; background-position: right;}
