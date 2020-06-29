@@ -51,7 +51,8 @@ body, html {
 
 .slick-dots li button:before{opacity: 0.40; color: white;}
 .slick-dots li.slick-active button:before{opacity: 0.75; color: white;}
-.carousel-container{margin: 100px auto;}
+.slick-dots{bottom: -50px;}
+/*.carousel-container{margin: 100px auto;}*/
 .next{margin-top: 70px;}
 
 @media only screen and (max-width: 990px){

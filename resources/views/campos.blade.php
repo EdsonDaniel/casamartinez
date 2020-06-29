@@ -34,7 +34,8 @@
   <h3>NUESTROS CAMPOS DE MAGUEY</h3>
 
   <!--primer corousel-->
-  <div class="carousel-container fade-scroll">
+  <div class="env">
+  <div class="carousel-container">
     <h2 class="carousel-title text-center">SAN DIONICIO OCOTEPEC</h2>
     <div class="carousel-items">
       <!-- primer item-->
@@ -96,12 +97,14 @@
 
     </div><!-- fin carousel items-->    
   </div>
+  </div>
   <!--fin primer corousel-->
 
-  <hr style="margin: 80px 0; width: 65%;">
+  <hr style="margin: 0 auto; width: 65%; border-top-width:3px;">
 
   <!--segundo corousel-->
-  <div class="carousel-container fade-scroll">
+  <div class="env">
+  <div class="carousel-container">
     <h2 class="carousel-title text-center">SAN MIGUEL GUELACHE</h2>
     <div class="carousel-items">
       <!--primer item-->
@@ -162,12 +165,15 @@
       <!--tercer item-->
     </div><!-- fin carousel items-->    
   </div>
+  </div>
+
   <!--fin segundo corousel-->
 
-  <hr style="margin-top: 80px; width: 65%;">
+  <hr style="margin: 0 auto; width: 65%; border-top-width:3px;">
 
   <!--tercer corousel-->
-  <div class="carousel-container fade-scroll">
+  <div class="env">
+  <div class="carousel-container">
     <h2 class="carousel-title text-center">SAN ANDRES HUAYAPAM</h2>
     <div class="carousel-items">
       <!-- primer item-->
@@ -229,9 +235,10 @@
 
     </div><!-- fin carousel items-->    
   </div>
+  </div>
   <!--fin tercer corousel-->
 
-  <hr style="margin-top: 80px; width: 65%;">
+  <hr style="margin: 0 auto; width: 65%; border-top-width:3px;">
 
   <div class="cita">
     <center>

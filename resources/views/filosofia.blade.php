@@ -35,7 +35,8 @@
 	<!-- cita -->
 
 	<!-- primer corousel-->
-	<div class="carousel-container fade-scroll">
+	<div class="env">
+	<div class="carousel-container">
 		<h2 class="carousel-title text-center fade-scroll">EL MAGUEY</h2>
 		<div class="carousel-items">
 			<!--primer item-->
@@ -94,11 +95,12 @@
 			<!--tercer item-->
 		</div><!--fin carousel items-->
 	</div>
+	</div>
 	<!--fin primer corousel-->
 
 	<!--segundo  carousel-->
-	<div class="fondo-mezcal fade-scroll">
-	<div class="carousel-container fade-scroll">
+	<div class="fondo-mezcal env fade-scroll">
+	<div class="carousel-container">
 		<h2 class="carousel-title text-center fade-scroll">EL MEZCAL</h2>
 		<div class="carousel-items">
 			<!--primer item-->
@@ -163,8 +165,8 @@
 	</div>
 
 	<!-- tercer carousel-->
-	<div class="fondo-produccion fade-scroll">
-	<div class="carousel-container fade-scroll" id="proceso">
+	<div class="fondo-produccion env fade-scroll">
+	<div class="carousel-container" id="proceso">
 		<h2 class="carousel-title text-center fade-scroll">PROCESO DE PRODUCCIÓN</h2>
 		<div class="carousel-items">
 			<!--primer item-->
@@ -286,6 +288,7 @@
 	</div>
 
 	<!--Cuarto carousel-->
+	<div class="env fade-scroll">
 	<div class="carousel-container" id="maestro-mezcalero">
 		<h2 class="carousel-title text-center fade-scroll">MAESTRO MEZCALERO</h2>
 		<div class="carousel-items">
@@ -385,6 +388,7 @@
 			<!--quinto item-->
 		</div>
 	</div>
+	</div>
 	<!-- fin Cuarto carousel-->
 	
 
@@ -415,22 +419,25 @@
 @section('scripts')
 <script type="text/javascript">
 	$(function() {
-                
-                var documentEl = $(document), 
-                fadeElem = $('.fade-scroll');
-                documentEl.on('scroll', function() {
-                    var currScrollPos = documentEl.scrollTop();
-                    
-                    fadeElem.each(function() {
-                        var $this = $(this),
-                            elemOffsetTop = $this.offset().top;
-                        if (currScrollPos > elemOffsetTop) $this.css('opacity', 1 - (currScrollPos-elemOffsetTop)/400);
-                    }); 
-                });
-                
-            });
+		var alto = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+		var val_fade = 500;
+		if(alto< 450){
+			console.log("ltura es: "+alto);
+			return;
+		}
+		var documentEl = $(document), 
+		fadeElem = $('.fade-scroll');
+		documentEl.on('scroll', function() {
+			var currScrollPos = documentEl.scrollTop();
 
-
+			fadeElem.each(function() {
+				var $this = $(this),
+				elemOffsetTop = $this.offset().top;
+				if (currScrollPos > elemOffsetTop) 
+					$this.css('opacity', 1 - (currScrollPos-elemOffsetTop)/500);
+			}); 
+		});
+	});
 </script>
 <script type="text/javascript" src="css/slick/slick.min.js"></script>
 <script>
@@ -442,6 +449,7 @@ $('.carousel-items').slick({
   infinite: true,
   speed: 900,
   fade: true,
+  arrows: false,
   cssEase: 'linear',
   responsive: [
     {
@@ -454,7 +462,7 @@ $('.carousel-items').slick({
       }
     },
     {
-      breakpoint: 760,
+      breakpoint: 990,
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,

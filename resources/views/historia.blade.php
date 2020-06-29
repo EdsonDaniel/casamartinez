@@ -32,7 +32,8 @@
 	<!--encabezado-->
 
 	<!-- primer corousel-->
-	<div class="carousel-container fade-scroll">
+	<div class="env fade-scroll">
+	<div class="carousel-container">
 		<h2 class="carousel-title text-center">ORIGEN CASA MARTÍNEZ</h2>
 		<div class="carousel-items">
 			<!--primer item-->
@@ -91,10 +92,11 @@
 			<!--tercer item-->
 		</div><!--fin carousel items-->
 	</div>
+	</div>
 	<!--fin primer corousel-->
 
 	<!--segundo corousel-->
-	<div class="fondo-mezcal">
+	<div class="fondo-mezcal env fade-scroll">
 	<div class="carousel-container">
 		<h2 class="carousel-title text-center">FAMILIA MARTÍNEZ</h2>
 		<div class="carousel-items">
@@ -157,11 +159,12 @@
 		</div><!-- fin carousel items-->		
 	</div>
 	</div>
-	<!--segundo  corousel-->
+	<!--fin segundo  corousel-->
 
 
 	<!--tercer corousel-->
-	<div class="carousel-container fade-scroll">
+	<div class="env fade-scroll">
+	<div class="carousel-container">
 		<h2 class="carousel-title text-center">NUESTRO EQUIPO</h2>
 		<div class="carousel-items">
 			<!--primer item-->
@@ -260,10 +263,11 @@
 			<!--quinto item-->
 		</div><!-- fin carousel items-->		
 	</div>
-	<!--tercer corousel-->
+	</div>
+	<!--fin tercer corousel-->
 
 	<!--CUARTO corousel-->
-	<div class="fondo-mezcal fade-scroll">
+	<div class="fondo-mezcal env fade-scroll">
 	<div class="carousel-container">
 		<h2 class="carousel-title text-center">MEMORIAS</h2>
 		<div class="carousel-items">
@@ -389,6 +393,7 @@ $('.carousel-items').slick({
   infinite: true,
   speed: 900,
   fade: true,
+  arrows: false,
   cssEase: 'linear',
   responsive: [
     {
