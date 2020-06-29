@@ -21,10 +21,10 @@
       	<div class="centered">Historia & Equipo</div>
       	<div class="right">
       		<ul>
-      			<li><a href="javascript:saltarA('#slider')">-Origen Casa Martínez</a></li>
-      			<li><a href="javascript:saltarA('#slider-2')">-Familia Martínez</a></li>
-      			<li><a href="javascript:saltarA('#slider-3')">-Nuestro Equipo</a></li>
-      			<li><a href="javascript:saltarA('#slider-4')">-Memorias</a></li>
+      			<li><a href="javascript:saltarA('#origen')">-Origen Casa Martínez</a></li>
+      			<li><a href="javascript:saltarA('#familia')">-Familia Martínez</a></li>
+      			<li><a href="javascript:saltarA('#equipo')">-Nuestro Equipo</a></li>
+      			<li><a href="javascript:saltarA('#memorias')">-Memorias</a></li>
       		</ul>
       	</div>
       	<div  class="bg-img" style="background-image: url('/img/equipo.jpg'); background-color: black; opacity: 0.8"></div>
@@ -32,7 +32,7 @@
 	<!--encabezado-->
 
 	<!-- primer corousel-->
-	<div class="env fade-scroll">
+	<div class="env fade-scroll" id="origen">
 	<div class="carousel-container">
 		<h2 class="carousel-title text-center">ORIGEN CASA MARTÍNEZ</h2>
 		<div class="carousel-items">
@@ -96,7 +96,7 @@
 	<!--fin primer corousel-->
 
 	<!--segundo corousel-->
-	<div class="fondo-mezcal env fade-scroll">
+	<div class="fondo-mezcal env fade-scroll" id="familia">
 	<div class="carousel-container">
 		<h2 class="carousel-title text-center">FAMILIA MARTÍNEZ</h2>
 		<div class="carousel-items">
@@ -163,7 +163,7 @@
 
 
 	<!--tercer corousel-->
-	<div class="env fade-scroll">
+	<div class="env fade-scroll" id="equipo">
 	<div class="carousel-container">
 		<h2 class="carousel-title text-center">NUESTRO EQUIPO</h2>
 		<div class="carousel-items">
@@ -267,7 +267,7 @@
 	<!--fin tercer corousel-->
 
 	<!--CUARTO corousel-->
-	<div class="fondo-mezcal env fade-scroll">
+	<div class="fondo-mezcal env fade-scroll" id="memorias">
 	<div class="carousel-container">
 		<h2 class="carousel-title text-center">MEMORIAS</h2>
 		<div class="carousel-items">
@@ -395,35 +395,7 @@ $('.carousel-items').slick({
   fade: true,
   arrows: false,
   cssEase: 'linear',
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        infinite: true,
-        dots: true
-      }
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2
-      }
-    },
-    {
-      breakpoint: 550,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false
-      }
-    }
-    // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
-  ]
+  arrows: false
 });
 });
 

@@ -44,5 +44,26 @@ function closeNav() {
 
   function saltarA(id, tiempo) {
     var tiempo = tiempo || 1000;
+    var width = screen.width;
+    
+    if(width >760){
       $("html, body").animate({ scrollTop: $(id).offset().top }, tiempo);
+      return;
+    }
+
+    var height = screen.height;
+    if (width < 550) {
+      /*console.log("alto: "+ height);*/
+      var coord = height*0.1;
+      //console.log("coor: "+ coord);
+      //console.log("top: "+$(id).offset().top);
+      $("html, body").animate({ scrollTop: $(id).offset().top - coord }, tiempo);
+      return;
+    }
+
+    if(width >= 550 && width<760){
+      var coord = height*0.12;
+      $("html, body").animate({ scrollTop: $(id).offset().top - coord }, tiempo);
+      return;
+    }
 }
