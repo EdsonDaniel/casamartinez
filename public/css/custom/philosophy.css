@@ -6,12 +6,11 @@ body{ background-color: black; color: white; font-family: 'Lora', serif;}
 	color: white !important;
 	opacity: 0.5 !important;
 }
-
+.background-transparent{ background-color: rgba(153, 153, 153, 0.42); }
 .nav-trn{ background-image: linear-gradient(rgba(10,10,10, 0.9), rgba(10, 10, 10, 0.05)) !important; }
 
 /****** philosophia*****************************/
 .philosophy{ background-color: black !important; color: white !important; }
-
 .head-philosop{
 	background: black url('/img/filosofia.jpg') no-repeat center;
 	height: 100vh;
@@ -35,53 +34,31 @@ body{ background-color: black; color: white; font-family: 'Lora', serif;}
 
 .dropdown-content{background-image: linear-gradient(rgba(10, 10, 10, 0.95), rgba(10, 10, 10, 0.5)) !important;}
 
-/**********************cOROUSEL */
-.title-carousel{
-	font-weight: lighter;
-	font-family: 'Raleway', sans-serif;
-	font-size: 17px;
-	letter-spacing: 2px;
-	margin: 0 0 15px;
+/**********************cOROUSEL 
+
+/*******************************containers**********************************************************
+.env{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100vh;
 }
-
-.body-carousel{
-	font-family: 'Lora', serif;
-	font-size: 18px;
-}
-
-.img-car{ width: 300px; height: 380px;}
-
-.carousel-title{
-	font-family: 'Raleway', sans-serif;
-	font-size: 22px;
-	/*padding-top: 4%;*/
-	letter-spacing: 3px;
-	margin: 0px 0 40px;
-	font-weight: lighter !important;
-}
-
-.slick-dots{bottom: -50px;}
-
 .fondo-mezcal{
 	background: rgba(0, 0, 0, 0.55) url('/img/fondo-mezcal3.jpg') no-repeat center;
 	height: 100vh;
   	min-height: 350px;
 	background-size: cover;
 	color: white !important;
-	/*margin: 30px 0;*/
 }
-/*.fondo-produccion h2, .fondo-mezcal h2{/*padding-top: 50px;}*/
-
 .fondo-produccion{
 	background: rgba(0, 0, 0, 0.55) url('/img/produccion1.jpg') no-repeat center;
 	height: 100vh;
   	min-height: 350px;
 	background-size: cover;
 	color: white !important;
-	/*margin: 30px 0;*/
-	/*opacity: 0.6;	*/
 }
-
+.carousel-container{ width: 100%; margin: 0 auto; height: auto;}
 .text-and-img-c{
 	display: flex;
 	flex-wrap: wrap;
@@ -89,13 +66,7 @@ body{ background-color: black; color: white; font-family: 'Lora', serif;}
 	align-items: center;
 	width: 100%;
 }
-.text-and-img-c >div{	width: 400px; margin: 0 25px;}
-.img-r{ display: block; float: right;}
-.img-l{width: auto;}
-
-
-.background-transparent{ background-color: rgba(153, 153, 153, 0.42); }
-
+.text-and-img-c >div{ margin: 0 25px;}
 .btn-expand{
 	font-family: 'Raleway', sans-serif;
 	text-align: right;
@@ -106,10 +77,27 @@ body{ background-color: black; color: white; font-family: 'Lora', serif;}
 	transition: all 0.8s;
 }
 
-.carousel-container{ width: 100%; margin: 0 auto; height: auto;}
+/******************************************titulos y fuentes************************************************
+.title-carousel{
+	font-weight: lighter;
+	font-family: 'Raleway', sans-serif;
+	font-size: 17px;
+	letter-spacing: 2px;
+	margin: 0 0 15px;
+}
+.carousel-title{
+	font-family: 'Raleway', sans-serif;
+	font-size: 22px;
+	letter-spacing: 3px;
+	margin: 0px 0 4%;
+	font-weight: lighter !important;
+}
+.body-carousel{ font-family: 'Lora', serif; font-size: 18px; }
 
-/*.bg-text{transition: height 0.8s;}*/
-
+/**********************************************************imagenes**********************************
+.img-car{ width: 300px; height: 380px;}
+.img-r{ display: block; float: right;}
+.img-l{width: auto;}
 :focus{
 	outline-color: transparent;
     outline-style: auto;
@@ -118,14 +106,9 @@ body{ background-color: black; color: white; font-family: 'Lora', serif;}
 
 .slick-dots li button:before{opacity: 0.40; color: white;}
 .slick-dots li.slick-active button:before{opacity: 0.75; color: white;}
+.slick-dots{bottom: -15%;}
 
-.env{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-	height: 100vh;
-}
+
 #maestro-mezcalero{margin-bottom: 0px;}
 /*Media querys*/
 @media only screen and (max-width: 990px){
@@ -140,8 +123,8 @@ body{ background-color: black; color: white; font-family: 'Lora', serif;}
 	.slick-dots{bottom: -30px;}
 }
 
-@media only screen and (max-width: 760px){
-	/****carousel */
+/*@media only screen and (max-width: 760px){
+	/****carousel *
 	.env{height: auto; margin: 40px 0; }
 	.carousel-container{width: 90%;}
 	.text-and-img-c{margin: 0; height: 100%; position: relative;}
@@ -151,41 +134,41 @@ body{ background-color: black; color: white; font-family: 'Lora', serif;}
 		
 	.bg-text{background-color: rgba(0,0,0,0.6); position: absolute; left: 0; bottom: 0; margin: 0 0 10px;}
 	.parrafos{height: 0px; overflow-y: hidden; transition: height 0.8s; margin: 0;}
-	.title-carousel{margin: 0 10px 10px; font-size: 13px; line-height: 1;}
+	/*.title-carousel{margin: 0 10px 10px; font-size: 13px; line-height: 1;}*
 	.carousel-title{font-size: 14px; margin: 10px 0 20px;}
 	
 	.carousel-items{height: 90%;}
-	.body-carousel{font-size: 14px; margin: 0 15px 15px;}
+	/*.body-carousel{font-size: 14px; margin: 0 15px 15px;}*
 	.btn-expand{display: block;}
 	.open::before{content: 'ABRIR';}
 	.closed::before{content: 'CERRAR';}
 	.fondo-mezcal, .fondo-produccion{background-image: none;}
-}
+}*/
 
 @media only screen and (min-width: 550px) and (max-width: 760px){
 	.block-cita{ width: 80%; }
 	.next{height: 25vh; margin-top: 100px;}
 	.next-text p{font-size: 12px;}.next-text a{font-size: 16px;}
 
-	/*carousel**/
+	/*carousel**
 	.env{width: 80%; margin: 15% auto;}
 	.slick-dots{bottom: -50px;}
-	/*.text-and-img-c{width: 80%; margin: 0 auto; min-height: 600px;}*/
-	/*.carousel-container{height: 75vh; min-height: 700px; margin: 80px auto;}*/
+	/*.text-and-img-c{width: 80%; margin: 0 auto; min-height: 600px;}*
+	/*.carousel-container{height: 75vh; min-height: 700px; margin: 80px auto;}*
 	.img-r{height: 65vh;}
-	.img-car{height: 65vh; min-height: 450px;}
+	.img-car{height: 65vh; min-height: 450px; width: 100%;}
 	
 	.title-carousel{font-size: 16px; line-height: 1;}	
 	.carousel-title{font-size: 18px; margin: 10px 0 50px;}
 	/*.carousel-items{height: auto; min-height: 630px;}*/
-	/*.fondo-mezcal h2{padding-top: 15%;}*/
+	/*.fondo-mezcal h2{padding-top: 15%;}*
 	.body-carousel{font-size: 16px;}
 	
 	.fondo-mezcal, .fondo-produccion{height: auto; min-height: 600px;}
-	#maestro-mezcalero{margin-bottom: 80px; }
+	#maestro-mezcalero{margin-bottom: 80px; } */
 }
 
-@media only screen and (min-width: 760px) and (max-width: 990px){
+/*@media only screen and (min-width: 760px) and (max-width: 990px){/*
 	.env{width: 100%; margin: 0 auto; height: 100vh; background-color: rgba(0,0,0,0.6);}
 	.text-and-img-c{margin: 0 auto; min-height: 600px; width: 100%;}
 	.text-and-img-c>div{ width: 100%; margin: 20px auto; }
@@ -200,6 +183,11 @@ body{ background-color: black; color: white; font-family: 'Lora', serif;}
 	.block-cita{margin-bottom: 0;}
 	.img-car{margin: 20px auto;}
 	#maestro-mezcalero{margin-bottom: 0; }
-
 }
 
+@media only screen and (min-width: 990px){	
+	.bg-text{width: 30%; min-width: 400px;}
+	.text-and-img-c{width: auto;}
+	.env{margin: 15px auto;}
+	.img-l{width: auto;}
+}*/

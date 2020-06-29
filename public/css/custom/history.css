@@ -66,6 +66,10 @@ body, html {
     font-size: 12px; text-align: center !important; width: 100%;}
 }
 
+@media only screen and (max-width: 550px){
+  .slick-dots{bottom: -30px;}
+}
+
 @media only screen and (min-width: 550px) and (max-width: 760px){
   .centered{top: 20%; font-size: 19px;}
   .right { top: 44%; left: 50%; transform: translate(-50%, -50%); 

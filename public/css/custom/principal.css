@@ -18,7 +18,6 @@
 	color: #4A4A4A !important;
 }
 .nav-trn.scrolled a{color: #4A4A4A !important;}
-
 .nav-home{
 	font-size: 15px;
 	font-family: 'Lora', serif;
@@ -221,8 +220,10 @@ a:hover{ color: inherit; text-decoration: none;}
 .icons a{ display: inline-block; margin: 0 3px; transition: 0.6s; }
 .icons {text-align: right;}
 
-/*****************************************Carousel*/
 
+/**********************cOROUSEL */
+
+/*******************************containers**********************************************************/
 .env{
 	display: flex;
 	align-items: center;
@@ -230,14 +231,21 @@ a:hover{ color: inherit; text-decoration: none;}
 	width: 100%;
 	height: 100vh;
 }
-.carousel-container{ width: 100%; margin: 0 auto; height: auto;}
-
-:focus{
-	outline-color: transparent;
-    outline-style: auto;
-    outline-width: 0px;
+.fondo-mezcal{
+	background: rgba(0, 0, 0, 0.55) url('/img/fondo-mezcal3.jpg') no-repeat center;
+	height: 100vh;
+  	min-height: 350px;
+	background-size: cover;
+	color: white !important;
 }
-
+.fondo-produccion{
+	background: rgba(0, 0, 0, 0.55) url('/img/produccion1.jpg') no-repeat center;
+	height: 100vh;
+  	min-height: 350px;
+	background-size: cover;
+	color: white !important;
+}
+.carousel-container{ width: 100%; margin: 0 auto; height: auto;}
 .text-and-img-c{
 	display: flex;
 	flex-wrap: wrap;
@@ -245,64 +253,63 @@ a:hover{ color: inherit; text-decoration: none;}
 	align-items: center;
 	width: 100%;
 }
-.text-and-img-c >div{	width: 400px; margin: 0 25px;}
-.img-r{ display: block; float: right;}
-.img-l{width: auto;}
-
+.text-and-img-c >div{ margin: 0 25px;}
 .btn-expand{
 	font-family: 'Raleway', sans-serif;
 	text-align: right;
 	font-size: 11px;
 	letter-spacing: 3px;
-	margin: 10px;
+	margin: 10px 10px 0;
 	display: none;
 	transition: all 0.8s;
+	color: white;
 }
 
-/**********************cOROUSEL */
+/******************************************titulos y fuentes************************************************/
 .title-carousel{
 	font-weight: lighter;
 	font-family: 'Raleway', sans-serif;
 	font-size: 17px;
 	letter-spacing: 2px;
 	margin: 0 0 15px;
+	color: white;
 }
-
-.body-carousel{
-	font-family: 'Lora', serif;
-	font-size: 18px;
-}
-
-.img-car{ width: 300px; height: 380px;}
-
 .carousel-title{
 	font-family: 'Raleway', sans-serif;
 	font-size: 22px;
-	/*padding-top: 4%;*/
 	letter-spacing: 3px;
-	margin: 0 0 40px;
+	margin: 0px 0 4%;
 	font-weight: lighter !important;
 }
+.body-carousel{ font-family: 'Lora', serif; font-size: 18px; color: white;}
 
-.slick-dots{bottom: -50px;}
-
-
-.fondo-mezcal{
-	background: rgba(0, 0, 0, 0.55) url('/img/fondo-mezcal3.jpg') no-repeat center;
-	height: 100vh;
-  	min-height: 350px;
-	background-size: cover;
-	color: white !important;
-	margin: 0;
+/**********************************************************imagenes**********************************/
+.img-car{ width: 300px; height: 380px;}
+.img-r{ display: block; float: right;}
+.img-l{width: auto;}
+:focus{
+	outline-color: transparent;
+    outline-style: auto;
+    outline-width: 0px;
 }
 
-/*Media querys*/
-@media only screen and (max-width: 991px){
+.slick-dots li button:before{opacity: 0.40; color: white;}
+.slick-dots li.slick-active button:before{opacity: 0.75; color: white;}
+.slick-dots{bottom: -15%;}
+
+
+#maestro-mezcalero{margin-bottom: 0px;}
+/**************************************************************************************************/
+
+
+@media only screen and (max-width: 990px){
 	#list-items{display: none;}
 	.navbar>.container{padding: 0 9px; }
 	.div-foot>div{font-size: 12px;}	
 	.next{height: 25vh; margin-top: 60px;}
 	.next-text p{font-size: 12px;}.next-text a{font-size: 16px;}
+	.head-philosop{ height: 50vh; }
+	.portada-fil{ height: 70vh; background-position: right;}
 }
 
 @media only screen and (max-width: 760px){
@@ -317,9 +324,45 @@ a:hover{ color: inherit; text-decoration: none;}
 	.text-cita{ font-size: 17px; }
 	.ref-cita{font-size: 15px;}
 	.texto{width: 85%; font-size: 17px; margin-top: 30px;}
+
+	.env{height: auto; margin: 40px 0; }
+	.carousel-container{width: 90%;}
+	.text-and-img-c{margin: 0; height: 100%; position: relative;}
+	.text-and-img-c>div{width: 100%; margin: 0; overflow: hidden;}
+
+	.img-r{display: block; height: 70vh; width: 100%; margin: 0 auto; float: none; z-index: -1;}
+		
+	.bg-text{background-color: rgba(0,0,0,0.6); position: absolute; left: 0; bottom: 0; margin: 0 0 10px;}
+	.parrafos{height: 0px; overflow-y: hidden; transition: height 0.8s; margin: 0;}
+	.title-carousel{margin: 0 15px 15px; font-size: 13px; line-height: 1;}
+	.carousel-title{font-size: 14px; margin: 10px 0 20px;}
+	
+	.carousel-items{height: 90%;}
+	.body-carousel{font-size: 14px; margin: 0 15px 15px;}
+	.btn-expand{display: block;}
+	.open::before{content: 'ABRIR';}
+	.closed::before{content: 'CERRAR';}
+	.fondo-mezcal, .fondo-produccion{background-image: none;}
 }
 
-@media only screen and (min-width: 760px) and (max-width: 991px){
+@media only screen and (min-width: 550px) and (max-width: 760px){
+	/*carousel**/
+	.env{width: 80%; margin: 15% auto;}
+	.slick-dots{bottom: -50px;}
+	.img-r{height: 65vh;}
+	.img-car{height: 65vh; min-height: 450px; width: 100%;}
+	
+	.title-carousel{font-size: 16px; line-height: 1;}	
+	.carousel-title{font-size: 18px; margin: 10px 0 50px;}
+	/*.carousel-items{height: auto; min-height: 630px;}*/
+	/*.fondo-mezcal h2{padding-top: 15%;}*/
+	.body-carousel{font-size: 16px;}
+	
+	.fondo-mezcal, .fondo-produccion{height: auto; min-height: 600px;}
+	#maestro-mezcalero{margin-bottom: 80px; }
+}
+
+@media only screen and (min-width: 760px) and (max-width: 990px){
 	.div-foot{width: 95%;}
 	.redes{font-size: 15px;}
 	.mail{font-size: 14px;}
@@ -328,13 +371,41 @@ a:hover{ color: inherit; text-decoration: none;}
 	.texto{font-size: 16px;}
 	.block-cita, .texto{width: 80%;}
 	.block-cita{margin-top: 70px; margin-bottom: 60px;}
+
+
+	.env{width: 100%; margin: 0 auto; height: 100vh; }
+	.text-and-img-c{margin: 0 auto; min-height: 600px; width: 100%;}
+	.text-and-img-c>div{ width: 100%; margin: 20px auto; }
+	.bg-text{width: 100%; margin: 15px 0;}
+	.carousel-container{min-height: 700px; }
+	.parrafos{margin: 0 10%;}
+	.img-r{float: none; z-index: -1;}
+	.carousel-title{margin-bottom: 30px; text-align: center;}
+	.title-carousel{text-align: center;}
+	.fondo-mezcal{z-index: -20; opacity: 0.6!important;}
+	.slick-dots{bottom: -50px;}
+	.block-cita{margin-bottom: 0;}
+	.img-car{margin: 20px auto;}
+	#maestro-mezcalero{margin-bottom: 0; }
 }
 
 @media only screen and (max-width: 550px){
 	.text-cita{ font-size: 15px; }
 	.ref-cita{font-size: 14px;}
 	.texto{width: 82%; font-size: 15px; margin-top: 30px;}
-}
 
+	.img-r{display: block; height: 70vh; width: 100%; margin: 0 auto; float: none; z-index: -1;}
+	.img-car{height: 70vh; width: 100%;}
+	#maestro-mezcalero{margin-bottom: 20px;}
+	.slick-dots{bottom: -30px;}
+
+	.carousel-body{margin: 0 10px 15px;}
+}
+@media only screen and (min-width: 990px){	
+	.bg-text{width: 30%; min-width: 400px;}
+	.text-and-img-c{width: auto;}
+	.env{margin: 15px auto;}
+	.img-l{width: auto;}
+}
 @media (min-width: 992px){.div-foot { max-width: 960px; } }
 @media (min-width: 1200px){.div-foot { max-width: 1140px;}}
