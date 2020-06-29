@@ -152,7 +152,7 @@ body{ background-color: black; color: white; font-family: 'Lora', serif;}
 	.open::before{content: 'ABRIR';}
 	.closed::before{content: 'CERRAR';}
 	#maestro-mezcalero{margin-bottom: 120px;}
-	.fondo-mezcal{background-image: none;}
+	.fondo-mezcal, .fondo-produccion{background-image: none;}
 }
 
 @media only screen and (min-width: 550px){
@@ -162,14 +162,16 @@ body{ background-color: black; color: white; font-family: 'Lora', serif;}
 
 	/*carousel**/
 	.text-and-img-c{width: 80%; margin: 0 auto;}
-	.carousel-container{width: 90%; height: 75vh; margin: 20px auto 120px;}
+	.carousel-container{width: 90%; height: 75vh; margin: 80px auto;}
 	.img-r, .img-l{height: 65vh;}
 	.img-car{height: 65vh;}
 	.title-carousel{font-size: 16px; line-height: 1;}	
 	.carousel-title{font-size: 18px; margin: 10px 0 50px;}
-	.fondo-mezcal h2{padding-top: 15%;}
+	.carousel-items{height: 70vh;}
+	/*.fondo-mezcal h2{padding-top: 15%;}*/
 	.body-carousel{font-size: 16px;}
-	.fondo-mezcal{background-position: center;}
+	.fondo-mezcal, .fondo-produccion{height: auto; margin-bottom: 140px;}
+	#maestro-mezcalero{margin-bottom: 120px; margin-top: 190px;}
 }
 
 
