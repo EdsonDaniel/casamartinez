@@ -68,7 +68,7 @@
     <div id="mySidenav" class="sidenav" >
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="far fa-bars"></i></a>
         <div class="title-nav">
-          <h2>CASA MARTINEZ</h2>
+          <h2><a href="/">CASA MARTINEZ</a></h2>
         </div>
 
         <div class="log-in">
