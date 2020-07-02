@@ -25,14 +25,14 @@
       </div>
       <div class="carousel-item" style="background-image: url('img/maestro3.jpg');">
         <div class="bottomright text-portada">
-      		<!--<p>“Tenemos claro que es nuestra responsabilidad el cuidado de la tierra y el agave”</p>
-      		<p><span>-Alguien Martínez</span></p>-->
+      		<p><em>“...los dioses dijeron entre sí: “He aquí que el hombre estará aína triste si no le hacemos nosotros algo para regocijarle y a fin de que tome gusto en vivir en la tierra y nos alabe y cante y dance.”</em></p>
+          <p><span>[Historia de México (Histoire du Mechique)]</span></p>
       	</div>
       </div>
       <div class="carousel-item" style="background-image: url('img/molienda3.jpg');">
         <div class="bottomright text-portada">
-      		<!--<p>“Involucrarse en cada detalle, puede hacer la diferencia en todo. ”</p>
-      		<p><span>-Alguien Martínez</span></p>-->
+      		<p><em>“...los dioses dijeron entre sí: “He aquí que el hombre estará aína triste si no le hacemos nosotros algo para regocijarle y a fin de que tome gusto en vivir en la tierra y nos alabe y cante y dance.”</em></p>
+          <p><span>[Historia de México (Histoire du Mechique)]</span></p>
       	</div>
       </div>
     </div>
