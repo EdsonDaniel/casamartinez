@@ -15,7 +15,6 @@
     <title>Iniciar Sesión - Casa Martínez</title>
 </head>
 <body>
-
 	<div class="fondo-produccion">
 		<form action="{{ route('login') }}" method="post">
 			@csrf

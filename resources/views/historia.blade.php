@@ -386,36 +386,41 @@ $('.carousel-items').slick({
 
  </script>
  <script type="text/javascript">
- 	var texto = document.getElementsByClassName("bg-text");
- 	var i;
- 	var parrafo;
- 	var div_p;
- 	var btn_open;
- 	for (i = 0; i < texto.length; i++) {
- 		texto[i].addEventListener("click", function() {
- 			/*this.classList.toggle("bg-text-v");*/
- 			div_p = this.lastElementChild;
- 			parrafo = div_p.lastElementChild;
- 			btn_open = this.firstElementChild;
- 			btn_open.classList.toggle("open");
- 			btn_open.classList.toggle("closed");
- 			console.log("altura = "+parrafo.offsetHeight);
- 			var alt = parrafo.offsetHeight;
- 			alt += 15;
- 			alt = alt+"px";
- 			/*parrafo.classList.toggle("bg-text-v");*/
- 			if (div_p.style.height === "") {
- 				div_p.style.height = alt;
- 				/*btn_open.innerHTML = "CERRAR";*/
-
- 			} else {
- 				div_p.style.height = "";
- 				/*btn_open.innerHTML = "ABRIR";*/
- 			}
- 		});
+ 	<script>
+	var ancho2 = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+ 	if(ancho2<760){
+ 		var texto = document.getElementsByClassName("bg-text");
+ 		var i;
+	 	var parrafo;
+	 	var div_p;
+	 	var btn_open;
+	 	for (i = 0; i < texto.length; i++) {
+	 		texto[i].addEventListener("click", function() {
+	 			/*this.classList.toggle("bg-text-v");*/
+	 			div_p = this.lastElementChild;
+	 			parrafo = div_p.children;
+	 			console.log("numero de parrafos = "+ parrafo.length);
+	 			var altura = 0;
+	 			var j;
+	 			for (j = 0; j < parrafo.length; j++ ) {
+	 				altura += parrafo[j].offsetHeight;
+	 				console.log("altura de parrafo = "+ parrafo[j].offsetHeight);
+	 			}
+	 			btn_open = this.firstElementChild;
+	 			btn_open.classList.toggle("open");
+	 			btn_open.classList.toggle("closed");
+	 			console.log("altura = "+altura);
+	 			altura += parrafo.length*15;
+	 			altura = altura+"px";
+	 			console.log("altura sumada= "+altura);
+	 			if (div_p.style.height === "") {
+	 				div_p.style.height = altura;
+	 			} else {
+	 				div_p.style.height = "";
+	 			}
+	 		});
+	 	}
  	}
-  /*var dropdownContent = this.nextElementSibling;
-}
-}*/
+ </script>
  </script>
 @endsection

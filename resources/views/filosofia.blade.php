@@ -51,8 +51,7 @@
 						</div>
 						<div class="parrafos">
 							<p class="body-carousel">“El árbol de las maravillas es el maguey, de que los nuevos o chapetones (como en Indias lo llaman), suelen escribir milagros, de que de agua y vino, y aceite y vinagre, y miel, y arrope e hilo, y aguja, y otras cien cosas. Él es un árbol que en la Nueva España estiman mucho los indios, y de ordinario tienen en su habitación alguno o algunos de este género para ayuda a su vida, y en los campos se da y le cultivan...”</p>
-							<br>
-							<p class="ref-cita"><i>[Historia natural y moral de las Indias, Cap. 23] José de Acosta</i></p>
+							<p class="body-carousel"><i>[Historia natural y moral de las Indias, Cap. 23] José de Acosta</i></p>
 						</div>
 					</div>
 	    		</div>
@@ -72,9 +71,8 @@
 	    				<div class="parrafos">
 	    					<p class="body-carousel">
 	    						Por su naturaleza de vegetal resistente al desierto pero generoso en sus dádivas para quien las sabe aprovechar; por su vínculo estrecho con la luna, que simbolizaba la totalidad de la vida sacralizada del México antiguo; porque después de la Conquista y el desplome de las civilizaciones mesoamericanas siguió siendo techo, vestido, ayate, comida, vino, medicina y defensa de los mexicanos, el maguey merece ser llamado reverencialmente el Señor Maguey.
-	    						<br>
 	    					</p>
-	    					<p class="ref-cita"><i>[Fernando Benítez, Artes de México, 51]</i></p>
+	    					<p class="body-carousel"><i>[Fernando Benítez, Artes de México, 51]</i></p>
 	    				</div>
 	    			</div>
 	    		</div>
@@ -94,7 +92,7 @@
 	    				<div class="parrafos">
 	    					<p class="body-carousel">Conservar el ecosistema es respetar los tiempos que la naturaleza designa para que una planta alcance la madurez. </p>
 	    					<p class="body-carousel">Como política de sustentabilidad, Casa Martínez aprovecha exclusivamente Magueyes que los mismos Maestros han cultivado. </p>
-	    					<p class="ref-cita">Sólo el 1% de nuestra producción son Agaves Silvestres, de los cuales tuvieron que tener autorización previa por la población para su corte.
+	    					<p class="body-carousel">Sólo el 1% de nuestra producción son Agaves Silvestres, de los cuales tuvieron que tener autorización previa por la población para su corte.
 	    					</p>
 	    				</div>
 	    			</div>
@@ -497,74 +495,52 @@
 </script>
 <script type="text/javascript" src="css/slick/slick.min.js"></script>
 <script>
-      
-$(document).ready(function(){
-
-$('.carousel-items').slick({
-  dots: true,
-  infinite: true,
-  speed: 900,
-  fade: true,
-  arrows: false,
-  cssEase: 'linear',
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        infinite: true,
-        dots: true
-      }
-    },
-    {
-      breakpoint: 990,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false
-      }
-    }
-    // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
-  ]
-});
-});
-
+	var ancho2 = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+ 	if(ancho2<760){
+ 		var texto = document.getElementsByClassName("bg-text");
+ 		var i;
+	 	var parrafo;
+	 	var div_p;
+	 	var btn_open;
+	 	for (i = 0; i < texto.length; i++) {
+	 		texto[i].addEventListener("click", function() {
+	 			/*this.classList.toggle("bg-text-v");*/
+	 			div_p = this.lastElementChild;
+	 			parrafo = div_p.children;
+	 			console.log("numero de parrafos = "+ parrafo.length);
+	 			var altura = 0;
+	 			var j;
+	 			for (j = 0; j < parrafo.length; j++ ) {
+	 				altura += parrafo[j].offsetHeight;
+	 				console.log("altura de parrafo = "+ parrafo[j].offsetHeight);
+	 			}
+	 			btn_open = this.firstElementChild;
+	 			btn_open.classList.toggle("open");
+	 			btn_open.classList.toggle("closed");
+	 			console.log("altura = "+altura);
+	 			altura += parrafo.length*15;
+	 			altura = altura+"px";
+	 			console.log("altura sumada= "+altura);
+	 			if (div_p.style.height === "") {
+	 				div_p.style.height = altura;
+	 			} else {
+	 				div_p.style.height = "";
+	 			}
+	 		});
+	 	}
+ 	}
  </script>
  <script type="text/javascript">
- 	var texto = document.getElementsByClassName("bg-text");
- 	var i;
- 	var parrafo;
- 	var div_p;
- 	var btn_open;
- 	for (i = 0; i < texto.length; i++) {
- 		texto[i].addEventListener("click", function() {
- 			/*this.classList.toggle("bg-text-v");*/
- 			div_p = this.lastElementChild;
- 			parrafo = div_p.lastElementChild;
- 			btn_open = this.firstElementChild;
- 			btn_open.classList.toggle("open");
- 			btn_open.classList.toggle("closed");
- 			console.log("altura = "+parrafo.offsetHeight);
- 			var alt = parrafo.offsetHeight;
- 			alt += 15;
- 			alt = alt+"px";
- 			/*parrafo.classList.toggle("bg-text-v");*/
- 			if (div_p.style.height === "") {
- 				div_p.style.height = alt;
- 				/*btn_open.innerHTML = "CERRAR";*/
-
- 			} else {
- 				div_p.style.height = "";
- 				/*btn_open.innerHTML = "ABRIR";*/
- 			}
+ 	$(document).ready(function(){
+ 		$('.carousel-items').slick({
+ 			dots: true,
+ 			infinite: true,
+ 			speed: 900,
+ 			fade: true,
+ 			arrows: false,
+ 			cssEase: 'linear'
  		});
- 	}
-  /*var dropdownContent = this.nextElementSibling;
-}
-}*/
+ 	});
  </script>
 @endsection
 

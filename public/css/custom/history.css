@@ -14,7 +14,7 @@ body, html {
   background-color: rgba(153, 153, 153, 0.42) !important;
   opacity: 0.5 !important;
 }
-
+.dropdown-content{background-image: linear-gradient(rgba(10, 10, 10, 0.75), rgba(10, 10, 10, 0.75)) !important;}
 .centered {
   position: absolute;
   top: 40%;

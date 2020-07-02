@@ -6,6 +6,8 @@ nav{
 }
 nav a{ color: #4A4A4A !important; }
 
+.dropdown-content{background-image: linear-gradient(rgba(243, 243, 241, 0.85), rgba(243, 243, 241, 0.95)) !important;}
+
 
 .h2{
 	font-family: 'Raleway', sans-serif !important;

@@ -32,7 +32,7 @@ body{ background-color: black; color: white; font-family: 'Lora', serif;}
 	letter-spacing: 1px;
 }
 
-.dropdown-content{background-image: linear-gradient(rgba(10, 10, 10, 0.95), rgba(10, 10, 10, 0.5)) !important;}
+.dropdown-content{background-image: linear-gradient(rgba(10, 10, 10, 0.75), rgba(10, 10, 10, 0.75)) !important;}
 
 /**********************cOROUSEL 
 

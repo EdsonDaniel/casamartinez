@@ -342,6 +342,7 @@ a:hover{ color: inherit; text-decoration: none;}
 	
 	.carousel-items{height: 90%;}
 	.body-carousel{font-size: 14px; margin: 0 15px 15px; color: white;}
+	.parrafos ul>li{font-size: 14px;}
 	.btn-expand{display: block;}
 	.open::before{content: 'ABRIR';}
 	.closed::before{content: 'CERRAR';}
@@ -359,7 +360,7 @@ a:hover{ color: inherit; text-decoration: none;}
 	.carousel-title{font-size: 18px; margin: 10px 0 50px;}
 	/*.carousel-items{height: auto; min-height: 630px;}*/
 	/*.fondo-mezcal h2{padding-top: 15%;}*/
-	.body-carousel{font-size: 16px;}
+	.body-carousel, .parrafos ul>li{font-size: 16px;}
 	
 	.fondo-mezcal, .fondo-produccion{height: auto; min-height: 600px;}
 	#maestro-mezcalero{margin-bottom: 80px; }
