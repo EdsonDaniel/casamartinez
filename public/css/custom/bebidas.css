@@ -200,7 +200,7 @@ select:focus, option:focus, option{outline-color: #4A4A4A;}
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row-reverse;
-	margin: 50px auto 20px;
+	margin: 45px auto 20px;
 	width: 80%;
 	text-align: center;
 	font-size: 18px;
@@ -208,9 +208,9 @@ select:focus, option:focus, option{outline-color: #4A4A4A;}
 	letter-spacing: 3px;
 }
 .nom-prod{width: 35%;}
-.cantidades{width: 20%; text-align: center; font-family: 'Raleway', sans-serif;}
-.img-car{width: 25%; height: auto;}
-.img-car img{width: 50%; margin: 0 auto; display: block;}
+.cantidades, .montos{width: 20%; text-align: center; font-family: 'Raleway', sans-serif;}
+.img-caru{width: 25%; height: auto;}
+.img-caru img{width: 50%; margin: 0 auto; display: block;}
 .total{font-size: 20px; letter-spacing: 2px;}
 .products-car{
 	display: flex;
@@ -227,7 +227,10 @@ select:focus, option:focus, option{outline-color: #4A4A4A;}
 .mensaje{font-family: 'Raleway', sans-serif; font-size: 13px; width: 55%; letter-spacing: 1.2px;}
 .mensaje p{margin: 0;}
 .pago{width: 46%;}
-.pago button{width: 80%; display: block; margin: 20px auto;}
+.pago button{width: 80%; display: block; margin: 30px auto;}
+
+.separador{width: 100%; margin: 20px auto;}
+.st{width: 80%;}
 
 hr{border-top: 2px solid rgba(0, 0, 0, 0.1);}
 
@@ -238,7 +241,7 @@ hr{border-top: 2px solid rgba(0, 0, 0, 0.1);}
 	.img-centered, .text-head{width: 80%;}
 	hr{margin: 20px auto !important;}
 	h3{font-size: 18px; padding: 0 10px;}
-	.h2{font-size: 19px;}
+	.h2{font-size: 18px; padding-top: 50px;}
 	.galeria{margin: 30px 10px; }
 	.galeria>div{width: 40%;}
 	.gallery{font-size: 15px; margin-top: 10px; min-height: 3rem;}
@@ -265,6 +268,24 @@ hr{border-top: 2px solid rgba(0, 0, 0, 0.1);}
 	.presentacion{margin: 0 auto; text-align: center;	}
 	p[name="cantidad"]{display: none;}
 	.button{margin: 20px auto; width: 80%;}
+
+	/**************carrito********************/
+	.head-car{ width: 95%; font-size: 12px; margin: 25px auto 10px;}
+	.cantidades,.montos{width: 23%;}
+	.nom-prod{width: 34%;}
+	.img-caru{width: 10%;}
+	.img-caru img{width: 100%;}
+	.fila{width: 100%;}
+
+	.separador{margin: 10px auto !important;}
+	.st, .products-car{width: 95%;}
+	.total{font-size: 16px;}
+	.tr{text-align: center;}
+	span[name="val-presentacion"]{display: none;}
+	.fs{ text-align: left; font-size: 12px; margin: 10px 0;}
+	p.presentacion.fs{ font-size: 10px; }
+	select.presentacion { margin-top: 5px; }
+
 }
 
 @media only screen and (min-width: 550px) and (max-width: 990px){
