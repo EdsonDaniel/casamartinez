@@ -207,10 +207,10 @@ select:focus, option:focus, option{outline-color: #4A4A4A;}
 	font-family: 'Raleway', sans-serif;
 	letter-spacing: 3px;
 }
-.nom-prod{width: 35%;}
-.cantidades, .montos{width: 20%; text-align: center; font-family: 'Raleway', sans-serif;}
-.img-caru{width: 25%; height: auto;}
-.img-caru img{width: 50%; margin: 0 auto; display: block;}
+.nom-prod{width: 34%; padding-left: 5%;}
+.cantidades, .montos{width: 23%; text-align: center; font-family: 'Raleway', sans-serif;}
+.img-caru{width: 20%; height: auto;}
+.img-caru img{width: 80%; margin: 0 auto; display: block;}
 .total{font-size: 20px; letter-spacing: 2px;}
 .products-car{
 	display: flex;
@@ -243,9 +243,9 @@ hr{border-top: 2px solid rgba(0, 0, 0, 0.1);}
 /******************************carrito******************************************/
 @media only screen and (max-width: 990px){
 	/**************carrito********************/
-	.head-car{ width: 92%; font-size: 11px; margin: 25px auto 10px; letter-spacing: 2px;}
+	.head-car{ width: 92%; margin: 25px auto 30px; letter-spacing: 2px;}
 	.cantidades{width: 23%;}
-	.nom-prod{width: 34%; padding-left: 5px;}
+	.nom-prod{width: 34%;}
 	.img-caru{width: 20%;}
 	.img-caru img{width: 90%;}
 
@@ -268,7 +268,7 @@ hr{border-top: 2px solid rgba(0, 0, 0, 0.1);}
 	.mensaje{width: 47%; font-size: 10px; letter-spacing: 0.5px;}
 	.alig{align-items: start;}
 	.pago{width: 100%; }
-	.pago button{width: 90%; margin: 15px auto 20px;}
+	.pago button{width: 100%; margin: 15px auto 20px;}
 }
 @media only screen and (max-width: 550px){
 	.img-centered, .text-head{width: 80%;}
@@ -304,23 +304,31 @@ hr{border-top: 2px solid rgba(0, 0, 0, 0.1);}
 
 	/**************carrito********************/
 	.head-car{ width: 92%; font-size: 11px; margin: 25px auto 10px; letter-spacing: 2px;}
-	.separador{margin: 15px auto !important;}
+	.cantidades{width: 23%;}
+	.nom-prod{width: 34%; padding-left: 5px;}
+	.img-caru{width: 20%;}
+	.img-caru img{width: 90%;}
+
+	.separador{margin: 15px auto !important; width: 92%;}
 	.st, .products-car{width: 92%;}
 	.products-car{margin-top: 15px;}
 	.total, .font-s {font-size: 15px; letter-spacing: 0.5px;}
-	.fs{ font-size: 11px;}
+	.tr{text-align: center;}
+	span[name="val-presentacion"]{display: none;}
+	.fs{ text-align: left; font-size: 11px;}
 	p.presentacion.fs{ font-size: 10px; }
 	.fs select { margin-top: 5px; }
 	.titulo-carrito{font-size: 16px; letter-spacing: 3px;}
 	h4.fs{margin-top: 0; margin-bottom: 12px;}
-	.trash{font-size: 16px; }
+	.trash{display: block; font-size: 16px; }
+	.div-icon{right: 0;}
 	.subtotal h5{font-size: 11px; letter-spacing:2px;}
 	.subtotal span{font-size: 9px; display: block;}
 	.subtotal{width: 30%; text-align: center;}
 	.mensaje{width: 47%; font-size: 10px; letter-spacing: 0.5px;}
 	.alig{align-items: start;}
 	.pago{width: 100%; }
-	.pago button{width: 90%; margin: 15px auto 20px;}
+	.pago button{width: 100%; margin: 15px auto 20px;}
 
 }
 
@@ -383,10 +391,10 @@ hr{border-top: 2px solid rgba(0, 0, 0, 0.1);}
 	.mensaje{width: 47%; font-size: 12px; letter-spacing: 0.5px;}
 	.alig{align-items: start;}
 	.pago{width: 100%; }
-	.pago button{width: 90%; margin: 20px auto;}
+	.pago button{width: 100%; margin: 20px auto;}
 }
 
-@media only screen and (min-width: 760px) and (max-width: 990px){
+@media only screen and (min-width: 760px) {
 	.list-products{width: 85%; }
 	.img-cat{width: 150px; height: 250px;}
 	.br{display: none;}
@@ -394,5 +402,32 @@ hr{border-top: 2px solid rgba(0, 0, 0, 0.1);}
 	.descrip-p{margin: 0 30px;}
 	.price{margin: 0 auto;}
 
+	/**************carrito********************/
+	.head-car{ width: 80%; font-size: 16px; margin: 30px auto 10px; letter-spacing: 2px;}
+	.separador{margin: 23px auto !important;}
+	.nom-prod{padding-left: 15px;}
+	.st, .products-car{width: 80%;}
+	.products-car{margin-top: 20px;}
+	.total, .font-s {font-size: 18px; letter-spacing: 1px;}
+	.fs{ font-size: 16px;}
+	p.presentacion.fs{ font-size: 14px; }
+	.fs select { margin-top: 10px; }
+	.titulo-carrito{font-size: 20px; letter-spacing: 4px;}
+	h4.fs{margin-top: 0; margin-bottom: 13px;}
+	.trash{font-size: 18px; }
+	.subtotal h5{font-size: 16px; letter-spacing:2px;}
+	.subtotal span{font-size: 14px;}
+	.subtotal{width: 30%; text-align: center;}
+	.mensaje{width: 47%; font-size: 14px; letter-spacing: 0.5px;}
+	.alig{align-items: start;}
+	.pago{width: 100%; }
+	.pago button{width: 100%; margin: 20px auto 25px;}
+}
+
+@media only screen and (min-width: 990px) {
+	.subtotal{letter-spacing: 3px; font-family: 'Raleway', sans-serif; text-align: right;}
+	.subtotal span{font-size: 0.7rem; margin: 0; letter-spacing: 1.5px;}
+	.pago{width: 48%;}
+	.pago button{width: 80%; display: block; margin: 30px auto;}
 }
 
