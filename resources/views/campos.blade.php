@@ -240,6 +240,7 @@
   $(window).scroll(function(){
     var alto = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
     $("nav").toggleClass('scrolled', $(this).scrollTop()>alto/2);
+    $('.dropdown-content').toggleClass('scrolled', $(this).scrollTop()>alto/2);
   });
 </script>
 
