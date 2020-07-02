@@ -13,22 +13,21 @@
 @endsection
 
 @section('content')
-<!--<div>
-	<h2 class="h2 text-center">CARRITO DE COMPRAS</h2>
+<div>
+	<h2 class="h2 text-center titulo-carrito">CARRITO DE COMPRAS</h2>
 	<div class="head-car">
 		
-		<div class="montos">TOTAL</div>
-		<div class="montos">CANTIDAD</div>	
+		<div class="cantidades">TOTAL</div>
+		<div class="cantidades">CANTIDAD</div>	
 		
 		<div class="nom-prod text-left">PRODUCTOS</div>
 	</div>
 	<hr class="separador st">
 </div>
-<!--
+
 <div class="products-car">
-	<!--product1--
-	<div class="fila">
-	<div class="montos total">
+	<!--product1-->
+	<div class="cantidades total">
 		$8000.00		
 	</div>	
 	<div class="cantidades tr">
@@ -57,13 +56,12 @@
 	</div>
 	
 	<div class="img-caru"><img src="img/sinai.png" class=""></div>
-	</div>
-	<!--product 1--
+	<!--product 1-->
 
 	<hr class="separador">
 
-	<!--product1--
-	<div class="montos total">
+	<!--product1-->
+	<div class="cantidades total">
 		$8000.00		
 	</div>	
 	<div class="cantidades tr">
@@ -92,12 +90,11 @@
 	</div>
 	
 	<div class="img-caru"><img src="img/sinai.png" class=""></div>
-	--><!--product 1--
+	<!--product 1-->
 
 	<hr class="separador">
 	</div>
-
-	<!--<div class="products-car">
+	<div class="products-car">
 		<div class="cantidades total"><strong>$5000.00</strong></div>
 		<div class="subtotal"><h5>SUBTOTAL <span> (4 PRODUCTOS)</span>:</h5></div>
 		<div class="mensaje m-0"><p>Procede a la pantalla de pago para calcular gastos de envío e impuestos.</p></div>
@@ -107,8 +104,7 @@
 			<button class="button ">PROCEDER AL PAGO</button>
 			<button class="button">ACTUALIZAR ARTÍCULOS</button>
 		</div>
-	</div>--!
--->
+	</div>
 @endsection
 
 
