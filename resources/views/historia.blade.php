@@ -1,7 +1,7 @@
 @extends('layouts.plantilla')
 
 @section('title')
-	Historia, Colaboradores
+	Historia, Equipo | Casa Martínez
 @endsection
 
 @section('stylesheet')
@@ -45,10 +45,10 @@
 					<div class="bg-text">
 						<div class="btn-expand open"></div>
 						<div>
-							<h5 class="title-carousel">DESDE 1950</h5>
+							<h5 class="title-carousel">DESDE 1942</h5>
 						</div>
 						<div class="parrafos">
-							<p class="body-carousel">En el transcurso del año 1850 Matatlán, Oaxaca, era; tal como hoy día, uno de los principales escenarios del perfeccionamiento en los procesos del mezcal artesanal. La familia Martínez contribuyo a este movimiento a la par que construyó su legado como una de las familias más distinguidas por el cuidado que dan calidad de primer nivel en cada uno de sus procesos.  </p>
+							<p class="body-carousel">El origen de nuestro Mezcal comienza en 1942, por Don Ignacio Martínez Hernández† hasta el día de su fallecimiento en 1983, en la Ranchería “Las Carretas” en el Municipio de San Dionisio Ocotepec, Estado de Oaxaca.</p>
 						</div>
 					</div>
 	    		</div>
@@ -63,10 +63,10 @@
 	    			<div class="bg-text">
 	    				<div class="btn-expand open"></div>
 	    				<div>
-	    					<h5 class="title-carousel">INICIOS</h5>
+	    					<h5 class="title-carousel">INICIOS (1986)</h5>
 	    				</div>
 	    				<div class="parrafos">
-	    					<p class="body-carousel ml-5 mt-3">Con más de 50 años de experiencia, Casa Cortés ha creado tres marcas, que por sus conceptos de selección, maduración y procedencia resaltan diferentes atributos culturales y ambientales transmitidos de generación en generación, de conocimientos adquiridos por sus antepasados.</p>
+	    					<p class="body-carousel">En 1986, retoma el trabajo su hijo, el Sr. Ignacio Martínez García, quien es actualmente nuestro Maestro Mezcalero, especialista en el cultivo de Agave y Producción de Mezcal.</p>
 	    				</div>
 	    			</div>
 	    		</div>
@@ -81,92 +81,62 @@
 	    			<div class="bg-text">
 	    				<div class="btn-expand open"></div>
 	    				<div>
-	    					<h5 class="title-carousel">LEGADO</h5>
+	    					<h5 class="title-carousel">2003</h5>
 	    				</div>
 	    				<div class="parrafos">
-	    					<p class="body-carousel">Actualmente en la 5ta generación de la familia Cortés se ha construido ya una comunidad que disfruta de la reunión de sabores, aromas y texturas de nuestras bebidas tomándolas en ocasiones importantes.</p>
+	    					<p class="body-carousel">Don Ignacio Martínez García, junto con varios productores de la región forman el grupo de trabajo UNIÓN DE PRODUCTORES DE MAGUEY Y MEZCAL DE SAN DIONISIO OCOTEPEC, Formada por Maestros Mezcaleros y Magueyeros de la localidad.</p>
 	    				</div>
 	    			</div>
 	    		</div>
 			</div>
 			<!--tercer item-->
+			<!--cuarto item-->
+	    	<div>
+		      	<div class="text-and-img-c">
+	    			<div>
+	    				<img class="img-car img-r" src="img/legado.jpg" alt="Generic placeholder image">
+	    			</div>
+	    			<div class="bg-text">
+	    				<div class="btn-expand open"></div>
+	    				<div>
+	    					<h5 class="title-carousel">2006</h5>
+	    				</div>
+	    				<div class="parrafos">
+	    					<p class="body-carousel">Año en el que surge nuestra primera marca llamada SI NAI, que en zapoteco signiﬁca “Como Ayer”.</p>
+	    				</div>
+	    			</div>
+	    		</div>
+			</div>
+			<!--cuarto item-->
+			<!--quinto item-->
+	    	<div>
+		      	<div class="text-and-img-c">
+	    			<div>
+	    				<img class="img-car img-r" src="img/legado.jpg" alt="Generic placeholder image">
+	    			</div>
+	    			<div class="bg-text">
+	    				<div class="btn-expand open"></div>
+	    				<div>
+	    					<h5 class="title-carousel">2020</h5>
+	    				</div>
+	    				<div class="parrafos">
+	    					<p class="body-carousel">Surge CASA MARTINEZ, familia que reúne a 4 Marcas de Mezcal Artesanal.</p>
+	    				</div>
+	    			</div>
+	    		</div>
+			</div>
+			<!--quinto item-->
 		</div><!--fin carousel items-->
 	</div>
 	</div>
 	<!--fin primer corousel-->
 
 	<!--segundo corousel-->
-	<div class="fondo-mezcal env fade-scroll" id="familia">
-	<div class="carousel-container">
-		<h2 class="carousel-title text-center">FAMILIA MARTÍNEZ</h2>
-		<div class="carousel-items">
-			<!--primer item-->
-	    	<div>
-	    		<div class="text-and-img-c">
-	    			<div class="bg-text">
-	    				<div class="btn-expand open"></div>
-	    				<div>
-	    					<h5 class="title-carousel">IGNACIO MARTÍNEZ</h5>
-	    				</div>
-	    				<div class="parrafos">
-	    					<p class="body-carousel">Elaborado en base a métodos artesanales y tradicionales, a partir de agaves silvestres o semicultivados, que tardan entre 7 a 10 años para su labrado (cosecha). El proceso continua con el cocimiento, molienda, fermentación y destilación. Pero todas las etapas del proceso deben ser prehispánicas y coloniales, para obtener un mezcal artesanal extraordinario.</p>
-	    				</div>
-	    			</div>
-	    			<div class="img-l">
-	    				<img class="img-car" src="img/envasado.jpg" alt="Generic placeholder image">
-	    			</div>
-	    		</div>
-			</div>
-			<!--primer item-->
-			
-			<!--segundo item-->
-	    	<div>
-	    		<div class="text-and-img-c">
-	    			<div class="bg-text">
-	    				<div class="btn-expand open"></div>
-	    				<div>
-	    					<h5 class="title-carousel">CLAUDIO MARTÍNEZ</h5>
-	    				</div>
-	    				<div class="parrafos">
-	    					<p class="body-carousel">Elaborado en base a métodos artesanales y tradicionales, a partir de agaves silvestres o semicultivados, que tardan entre 7 a 10 años para su labrado (cosecha). El proceso continua con el cocimiento, molienda, fermentación y destilación. Pero todas las etapas del proceso deben ser prehispánicas y coloniales, para obtener un mezcal artesanal extraordinario.</p>
-	    				</div>
-	    			</div>
-	    			<div class="img-l">
-	    				<img class="img-car" src="img/envasado.jpg" alt="Generic placeholder image">
-	    			</div>
-	    		</div>
-			</div>
-			<!--segundo item-->
-
-			<!--TERCER item-->
-	    	<div>
-	    		<div class="text-and-img-c">
-	    			<div class="bg-text">
-	    				<div class="btn-expand open"></div>
-	    				<div>
-	    					<h5 class="title-carousel">FABIÁN MARTINEZ</h5>
-	    				</div>
-	    				<div class="parrafos">
-	    					<p class="body-carousel">Elaborado en base a métodos artesanales y tradicionales, a partir de agaves silvestres o semicultivados, que tardan entre 7 a 10 años para su labrado (cosecha). El proceso continua con el cocimiento, molienda, fermentación y destilación. Pero todas las etapas del proceso deben ser prehispánicas y coloniales, para obtener un mezcal artesanal extraordinario.</p>
-	    				</div>
-	    			</div>
-	    			<div class="img-l">
-	    				<img class="img-car" src="img/envasado.jpg" alt="Generic placeholder image">
-	    			</div>
-	    		</div>
-			</div>
-			<!--TERCER item-->
-		</div><!-- fin carousel items-->		
-	</div>
-	</div>
-	<!--fin segundo  corousel-->
-
-
-	<!--tercer corousel-->
 	<div class="env fade-scroll" id="equipo">
 	<div class="carousel-container">
 		<h2 class="carousel-title text-center">NUESTRO EQUIPO</h2>
 		<div class="carousel-items">
+
 			<!--primer item-->
 	    	<div>
 	    		<div class="text-and-img-c">
@@ -176,10 +146,33 @@
 	    			<div class="bg-text">
 	    				<div class="btn-expand open"></div>
 	    				<div>
-	    					<h5 class="title-carousel">NUESTRO EQUIPO</h5>
+	    					
 	    				</div>
 	    				<div class="parrafos">
-	    					<p class="body-carousel">Cada miembro del equipo aporta una parte importante nuestro trabajo. Desde sembradores del maguey hasta diseñadores, todos están unidos por el amor y respeto compartidos por el trabajo, la técnica de cultivo y la filosofía heredada por Don Ignacio Martínez.</p>
+	    					<p class="body-carousel">Cada miembro del equipo aporta una parte importante nuestro trabajo. Desde sembradores del maguey hasta diseñadores, todos están unidos por el amor y respeto compartidos por el trabajo, la técnica de cultivo y la filosofía heredada por Don Ignacio Martínez</p>
+	    				</div>
+	    			</div>
+	    		</div>
+	    	</div>
+			<!--primer item-->
+
+			<!--primer item-->
+	    	<div>
+	    		<div class="text-and-img-c">
+	    			<div>
+	    				<img src="/img/legado.jpg" class="img-car img-r">
+	    			</div>
+	    			<div class="bg-text">
+	    				<div class="btn-expand open"></div>
+	    				<div>
+	    					<h5 class="title-carousel">MAGUEY</h5>
+	    				</div>
+	    				<div class="parrafos">
+	    					<p class="body-carousel">Maestros magueyeros:</p>
+	    					<ul class="list-masters">
+	    						<li>Gregorio Aragón.</li>
+	    						<li>Neftalí Aragón.</li>
+	    					</ul>
 	    				</div>
 	    			</div>
 	    		</div>
@@ -195,10 +188,15 @@
 	    			<div class="bg-text">
 	    				<div class="btn-expand open"></div>
 	    				<div>
-	    					<h5 class="title-carousel">ALEJANDRO MORALES</h5>
+	    					<h5 class="title-carousel">MEZCAL</h5>
 	    				</div>
 	    				<div class="parrafos">
-	    					<p class="body-carousel">Con más de 50 años de experiencia, Casa Cortés ha creado tres marcas, que por sus conceptos de selección, maduración y procedencia resaltan diferentes atributos culturales y ambientales transmitidos de generación en generación, de conocimientos adquiridos por sus antepasados.</p>
+	    					<p class="body-carousel">Maestros Mezcaleros:</p>
+	    					<ul class="list-masters">
+	    						<li>Carmela Molina e Ignacio Martínez.</li>
+	    						<li>Alejandro Morales.</li>
+	    						<li>Aarón Cruz.</li>
+	    					</ul>
 	    				</div>
 	    			</div>
 	    		</div>
@@ -214,10 +212,13 @@
 	    			<div class="bg-text">
 	    				<div class="btn-expand open"></div>
 	    				<div>
-	    					<h5 class="title-carousel">AARÓN CRUZ</h5>
+	    					<h5 class="title-carousel">MAGUEY Y MAÍZ</h5>
 	    				</div>
 	    				<div class="parrafos">
-	    					<p class="body-carousel">Con más de 50 años de experiencia, Casa Cortés ha creado tres marcas, que por sus conceptos de selección, maduración y procedencia resaltan diferentes atributos culturales y ambientales transmitidos de generación en generación, de conocimientos adquiridos por sus antepasados.</p>
+	    					<p class="body-carousel">Maestro Agricultor:</p>
+	    					<ul class="list-masters">
+	    						<li>Adrián Núñes.</li>	    							
+	    					</ul>
 	    				</div>
 	    			</div>
 	    		</div>
@@ -233,38 +234,22 @@
 	    			<div class="bg-text">
 	    				<div class="btn-expand open"></div>
 	    				<div>
-	    					<h5 class="title-carousel">GREGORIO ARAGÓN</h5>
+	    					<h5 class="title-carousel">APRENDIZ</h5>
 	    				</div>
 	    				<div class="parrafos">
-	    					<p class="body-carousel">Con más de 50 años de experiencia, Casa Cortés ha creado tres marcas, que por sus conceptos de selección, maduración y procedencia resaltan diferentes atributos culturales y ambientales transmitidos de generación en generación, de conocimientos adquiridos por sus antepasados.</p>
+	    					<p class="body-carousel"></p>
+	    					<ul class="list-masters">
+	    						<li>Claudio Martínez.</li>	    							
+	    					</ul>
 	    				</div>
 	    			</div>
 	    		</div>
 	    	</div>
 			<!--cuarto item-->
-
-			<!--quinto item-->
-	    	<div>
-	    		<div class="text-and-img-c">
-	    			<div>
-	    				<img src="/img/histori.jpg" class="img-car img-r">
-	    			</div>
-	    			<div class="bg-text">
-	    				<div class="btn-expand open"></div>
-	    				<div>
-	    					<h5 class="title-carousel">TERESA MARTÍNEZ</h5>
-	    				</div>
-	    				<div class="parrafos">
-	    					<p class="body-carousel">Con más de 50 años de experiencia, Casa Cortés ha creado tres marcas, que por sus conceptos de selección, maduración y procedencia resaltan diferentes atributos culturales y ambientales transmitidos de generación en generación, de conocimientos adquiridos por sus antepasados.</p>
-	    				</div>
-	    			</div>
-	    		</div>
-	    	</div>
-			<!--quinto item-->
 		</div><!-- fin carousel items-->		
 	</div>
 	</div>
-	<!--fin tercer corousel-->
+	<!--fin segundo corousel-->
 
 	<!--CUARTO corousel-->
 	<div class="fondo-mezcal env fade-scroll" id="memorias">

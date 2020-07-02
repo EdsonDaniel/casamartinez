@@ -17,7 +17,7 @@
 @section('content')
 
   <!--encabezado-->
-  <div class="bg-image container-image fade-scroll" style="background-color: black; height: 50vh; font-weight: 500;">
+  <div class="bg-image container-image fade-scroll" style="background-color: black; height: 50vh;">
     <div class="centered" style="top: 50%;">Campos de Maguey</div>
     <div class="bg-img" style="background-image: url('/img/campos-agave2.jpg'); opacity: 0.7;"></div>
   </div>
@@ -26,17 +26,26 @@
   <!-- texto -->
   <div class="texto">
     <p>
-      George Nakashima descubrió la ladera orientada al sur a lo largo de Aquetong Road en 1945 y persuadió al propietario para que le permitiera comprar tres acres de tierra a cambio de mano de obra. A medida que su negocio creció, compró dos parcelas más de tierra y construyó una docena de edificios más, todos orientados hacia el sur para maximizar la ganancia solar pasiva.
+      En una ocasión preguntábamos al Maestro Ignacio Mtz. ¿Qué se necesitaba para hacer un buen Mezcal?, el sabiamente nos respondió:
     </p>
+    <p><i> -Hagamos un ejemplo. Hablemos de la cocina, ¿sabes qué se necesita para que una salsa este bien rica?</i></p>
+    <p><i>Primero: ¡FUNDAMENTAL! Un buen tomate. ¿Qué significa eso? Que el cociner@ debe conocer su materia prima, su jitomate, chile y cebolla. Sus ingredientes deben ser de calidad, de buena tierra, bien cuidados, maduros (ni verdes, ni demasiado rojos) CONOCER SU ORIGEN.</i></p>
+    <p><i>Segundo: ¡AMOR! La sazón es el cariño con el que se hacen las cosas.</i></p> 
+    <p><i>Además, ¡RESPETO!: el tiempo para esperar un buen tomate, el tiempo para elaborarlo, es saber respetar cada proceso, cada elemento.</i></p>
+    <p><i>Entonces aplicándolo al MEZCAL, lo primero sería un buen Maguey. Maduro, de buena tierra, que sepas que se ha cultivado con dedicación, que conozcas su origen, saber si el Maguey se reprodujo por hijuelo, quiote o semilla (por polinización), de que zona viene, que tipo de tierra, quién lo cultivo, de qué manera fue tratado;  y lo segundo: Amor, querer lo que hacemos es lo que nos caracteriza, aquí las cosas se hacen con cariño.</i></p>
+    <p><i>La Dedicación es saber esperar, el Mezcal y Maguey son tan nobles que si tú respetas sus tiempos ellos sabrán compensarte en espíritu.</i></p>
+    <p><i>Prueba el Mezcal y notarás el maguey, notarás el cariño y también notaras el respeto (un mezcal nos trata como uno lo trata).</i></p>
   </div>
   <!-- texto -->
 
   <h3>NUESTROS CAMPOS DE MAGUEY</h3>
 
+  <div class="texto" style="margin-top: 1.5rem; margin-bottom: 1.5rem;"><p>Referenciamos nuestras zonas por la familia con quien colaboramos:</p></div>
+
   <!--primer corousel-->
   <div class="env">
   <div class="carousel-container">
-    <h2 class="carousel-title text-center">SAN DIONICIO OCOTEPEC</h2>
+    <h2 class="carousel-title text-center">ZONA ARAGÓN</h2>
     <div class="carousel-items">
       <!-- primer item-->
       <div>
@@ -44,10 +53,14 @@
           <div class="bg-text">
             <div class="btn-expand open"></div>
             <div>
-              <h5 class="title-carousel">UBICACIÓN</h5>
+              <h5 class="title-carousel">SANTA ANA TAVELA</h5>
             </div>
             <div class="parrafos">
-              <p class="body-carousel">Ubicado en la región de Valles Centrales del estado de Oaxaca a 65 kilómetros de la ciudad capital y es perteneciente al distrito de Tlacolula. Se encuentra entre las coordenadas 16°47'N y 96°23'47.9"W, a una altura de 1,695 m s.n.m..</p>
+              <p class="body-carousel"></p>
+              <ul>
+                <li><strong>Altura:</strong> 700 m s. n. m.</li>
+                <li><strong>Ubicación:</strong> LN 16°39' LO 95°55'</li>
+              </ul>
             </div>
           </div>
           <div class="img-l">
@@ -63,10 +76,14 @@
           <div class="bg-text">
             <div class="btn-expand open"></div>
             <div>
-              <h5 class="title-carousel">TIPO DE MAGUEY</h5>
+              <h5 class="title-carousel">SANTA ANA TAVELA</h5>
             </div>
             <div class="parrafos">
-              <p class="body-carousel">Colinda al norte con los municipios de Santiago Matatlán y Tlacolula de Matamoros; al sur con San Pedro Totolapa; al oeste con San Baltazar Chichicapam y Yaxe, Distrito de Ocotlán; y al este con San Pedro Quiatoni.</p>
+              <p class="body-carousel"></p>
+              <ul>
+                <li><strong>Clima:</strong> Cálido templado.</li>
+                <li><strong>Tipo de tierra:</strong> Robisol eútrico.</li>
+              </ul>
             </div>
           </div>
           <div class="img-l">
@@ -82,10 +99,15 @@
           <div class="bg-text">
             <div class="btn-expand open"></div>
             <div>
-              <h5 class="title-carousel">EDAD</h5>
+              <h5 class="title-carousel">SANTA ANA TAVELA</h5>
             </div>
             <div class="parrafos">
-              <p class="body-carousel">Los cerros más altos que se ubican dentro del territorio del municipio se llaman: cerro de la Cruz y cerro del Cantarito. Su topografía combina pequeños lomeríos con terrenos planos, además esta rodeado de diversos cerros.</p>
+              <p class="body-carousel"></p>
+              <ul>
+                <li><strong>Maestro magueyero:</strong> Gregorio Aragón.</li>
+                <li><strong>Forma de reproducción:</strong> Hijuelo.</li>
+                <li><strong>Tipo de agave:</strong> Espadín.</li>
+              </ul>
             </div>
           </div>
           <div class="img-l">
@@ -105,76 +127,7 @@
   <!--segundo corousel-->
   <div class="env">
   <div class="carousel-container">
-    <h2 class="carousel-title text-center">SAN MIGUEL GUELACHE</h2>
-    <div class="carousel-items">
-      <!--primer item-->
-        <div>
-          <div class="text-and-img-c">
-            <div>
-              <img src="/img/campos-agave/agave1.jpg" class="img-car img-r">
-            </div>
-            <div class="bg-text">
-              <div class="btn-expand open"></div>
-              <div>
-                <h5 class="title-carousel">UBICACIÓN</h5>
-              </div>
-              <div class="parrafos">
-                <p class="body-carousel">Ubicado en la región de Valles Centrales del estado de Oaxaca a 65 kilómetros de la ciudad capital y es perteneciente al distrito de Tlacolula. Se encuentra entre las coordenadas 16°47'N y 96°23'47.9"W, a una altura de 1,695 m s.n.m..</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      <!--primer item-->
-
-      <!--segundo item-->
-        <div>
-          <div class="text-and-img-c">
-            <div>
-              <img src="/img/campos-agave/agave2.jpg" class="img-car img-r">
-            </div>
-            <div class="bg-text">
-              <div class="btn-expand open"></div>
-              <div>
-                <h5 class="title-carousel">TIPO DE MAGUEY</h5>
-              </div>
-              <div class="parrafos">
-                <p class="body-carousel">Ubicado en la región de Valles Centrales del estado de Oaxaca a 65 kilómetros de la ciudad capital y es perteneciente al distrito de Tlacolula. Se encuentra entre las coordenadas 16°47'N y 96°23'47.9"W, a una altura de 1,695 m s.n.m..</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      <!--segundo item-->
-
-      <!--tercer item-->
-        <div>
-          <div class="text-and-img-c">
-            <div>
-              <img src="/img/campos-agave/agave3.jpg" class="img-car img-r">
-            </div>
-            <div class="bg-text">
-              <div class="btn-expand open"></div>
-              <div>
-                <h5 class="title-carousel">EDAD</h5>
-              </div>
-              <div class="parrafos">
-                <p class="body-carousel">Ubicado en la región de Valles Centrales del estado de Oaxaca a 65 kilómetros de la ciudad capital y es perteneciente al distrito de Tlacolula. Se encuentra entre las coordenadas 16°47'N y 96°23'47.9"W, a una altura de 1,695 m s.n.m..</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      <!--tercer item-->
-    </div><!-- fin carousel items-->    
-  </div>
-  </div>
-
-  <!--fin segundo corousel-->
-
-  <hr style="margin: 0 auto; width: 65%; border-top-width:2px;">
-
-  <!--tercer corousel-->
-  <div class="env">
-  <div class="carousel-container">
-    <h2 class="carousel-title text-center">SAN ANDRES HUAYAPAM</h2>
+    <h2 class="carousel-title text-center">ZONA MARTÍNEZ</h2>
     <div class="carousel-items">
       <!-- primer item-->
       <div>
@@ -182,10 +135,14 @@
           <div class="bg-text">
             <div class="btn-expand open"></div>
             <div>
-              <h5 class="title-carousel">UBICACIÓN</h5>
+              <h5 class="title-carousel">SAN DIONICIO OCOTEPEC</h5>
             </div>
             <div class="parrafos">
-              <p class="body-carousel">Ubicado en la región de Valles Centrales del estado de Oaxaca a 65 kilómetros de la ciudad capital y es perteneciente al distrito de Tlacolula. Se encuentra entre las coordenadas 16°47'N y 96°23'47.9"W, a una altura de 1,695 m s.n.m..</p>
+              <p class="body-carousel"></p>
+              <ul>
+                <li><strong>Altura:</strong>  1679 m s. n. m.</li>
+                <li><strong>Ubicación:</strong>  16°48' LN y 96°24' LO</li>
+              </ul>
             </div>
           </div>
           <div class="img-l">
@@ -201,10 +158,14 @@
           <div class="bg-text">
             <div class="btn-expand open"></div>
             <div>
-              <h5 class="title-carousel">TIPO DE MAGUEY</h5>
+              <h5 class="title-carousel">SAN DIONICIO OCOTEPEC</h5>
             </div>
             <div class="parrafos">
-              <p class="body-carousel">Colinda al norte con los municipios de Santiago Matatlán y Tlacolula de Matamoros; al sur con San Pedro Totolapa; al oeste con San Baltazar Chichicapam y Yaxe, Distrito de Ocotlán; y al este con San Pedro Quiatoni.</p>
+              <p class="body-carousel"></p>
+              <ul>
+                <li><strong>Clima:</strong> Templado.</li>
+                <li><strong>Tipo de tierra:</strong> Cambisol cálcico.</li>
+              </ul>
             </div>
           </div>
           <div class="img-l">
@@ -220,10 +181,15 @@
           <div class="bg-text">
             <div class="btn-expand open"></div>
             <div>
-              <h5 class="title-carousel">EDAD</h5>
+              <h5 class="title-carousel">SAN DIONICIO OCOTEPEC</h5>
             </div>
             <div class="parrafos">
-              <p class="body-carousel">Los cerros más altos que se ubican dentro del territorio del municipio se llaman: cerro de la Cruz y cerro del Cantarito. Su topografía combina pequeños lomeríos con terrenos planos, además esta rodeado de diversos cerros.</p>
+              <p class="body-carousel"></p>
+              <ul>
+                <li><strong>Maestro magueyero:</strong> Ignacio Martínez.</li>
+                <li><strong>Forma de reproducción:</strong> Apomixis, Hijuelo, Semilla.</li>
+                <li><strong>Tipo de agave:</strong> Espadín.</li>
+              </ul>
             </div>
           </div>
           <div class="img-l">
@@ -232,14 +198,15 @@
         </div>
       </div>
       <!--TERCER item-->
-
     </div><!-- fin carousel items-->    
   </div>
   </div>
-  <!--fin tercer corousel-->
+
+  <!--fin segundo corousel-->
 
   <hr style="margin: 0 auto; width: 65%; border-top-width:2px;">
 
+  
   <div class="cita">
     <center>
       <a href="mailto:info@casamartinez.mx?subject=Agendar%20una%20visita%20al%20palenque." class="body-carousel" style="color: #212529; text-decoration: underline;">Agenda una visita al palenque</a>

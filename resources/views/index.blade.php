@@ -57,7 +57,7 @@
   <div class="text-and-img">
     <div id="atr">
       <h5 class="header-parrafo align-text"><a href="/filosofía">FILOSOFÍA</a></h5>
-      <p class="text-home align-text">Nuestra filosofía empieza con nuestro amor a nuestras raíces buscando siempre cuidar a la tierra, su ecosistema y a las personas que la trabajan. </p>
+      <p class="text-home align-text">Cuando era niño siempre me preguntaba cuál era mi misión en este mundo, crecí, migré, volví y forme una familia y en ese transcurso aprendí que lo más valioso que tengo es la herencia que mis padres me han dejado y que hoy comparto con mis hijos y con el mundo,<br>¡HACER MEZCAL!.</p>
       <p class="text-home align-text"><span><a href="/filosofia" id="atra">-Leer más...</a></span></p>
     </div>
 
@@ -73,7 +73,12 @@
     </div>
     <div>
       <h5 class="header-parrafo"><a href="/historia">HISTORIA, COLABORADORES</a></h5>
-      <p class="text-home">La increíble historia sobre la familia Martínez y todo el equipo de trabajo detrás de nuestras bebidas.</p>
+      <p class="text-home">
+        El origen de nuestro Mezcal comienza  en 1942, por Don Ignacio Martínez Hernández †, en la Ranchería  “Las Carretas” ubicada en el Municipio de San Dionisio Ocotepec, Estado de Oaxaca.
+      </p>
+      <p class="text-home">
+        En la actualidad nuestros Maestros, Ignacio Martínez, Carmela Molina, Alejandro Morales, Gregorio Aragón son quienes en Mezcal y Maguey nos comparten sus vidas transformadas en extraordinarias experiencias que se disfrutan con Mezcal en Mano.
+      </p>
       <p class="text-home"><span><a href="/historia">-Leer más...</a></span></p>
     </div>
   </div>
