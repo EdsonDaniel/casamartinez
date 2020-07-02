@@ -71,14 +71,41 @@
           <h2><a href="/">CASA MARTINEZ</a></h2>
         </div>
 
+        @guest
         <div class="log-in">
           <center>
             <a href="/login" id="ic"><i class="far fa-user"></i></a>
             <span><a href="/login">INICIAR SESIÓN</a></span>
           </center>
         </div>
+        @else
+        <div class="log-in usuario">
+          <center>
+            <a id="ic"><i class="far fa-user"></i></a>
+            <a><span>BIENVENIDO {{ Auth::user()->name }}</span></a>
+          </center>
+        </div>
+        @endguest
 
         <div class="options">
+          @auth
+          <div class="boton">
+                <a>MI CUENTA</a>
+                <button><i name="ic" class="fas fa-plus"></i></button>                
+            </div>
+            <div class="dropdown-container">
+                <ul>
+                    <li><a href="">-Mis pedidos</a></li>
+                    <li><a href="">-Mis datos</a></li>
+                    <li><a href="">-Configuración de la cuenta</a></li>
+                    <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">{{ __('-Salir') }}</a></li>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                      @csrf
+                    </form>
+                </ul>
+            </div>
+            @endauth
             <div class="boton">
                 <a>PRODUCTOS</a>
                 <button><i name="ic" class="fas fa-plus"></i></button>                

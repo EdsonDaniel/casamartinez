@@ -44,8 +44,8 @@ Route::get('/catalogo', function () {
     return view('catalogo');
 });
 
-Route::get('/a', function () {
-    return view('index2');
+Route::get('/carrito', function () {
+    return view('carrito');
 });
 
 

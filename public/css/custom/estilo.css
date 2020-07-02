@@ -50,6 +50,11 @@ li{ list-style-type: none; }
   display: inline-block;
 }
 
+.usuario{
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
 .log-in span{
   color: #9b9b9b;
   margin: 0 0px 0 10px;
