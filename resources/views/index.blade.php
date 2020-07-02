@@ -48,7 +48,6 @@
     <div>
       <p class="text-home"><i>“El mezcal, la bebida de los dioses, fue concebida por un rayo que cayó sobre un agave que dio origen a la primera tatema, iniciando así la tradición del elixir oaxaqueño por excelencia que hoy cobija la cultura culinaria de los mexicanos y con ello: su identidad.”</i>
       </p>
-      <p class="text-home">-Alguien Martínez</p>
     </div>
   </div>
   <!--primer parrafo-->
