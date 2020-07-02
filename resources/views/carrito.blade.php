@@ -25,8 +25,9 @@
 	<hr class="separador st">
 </div>
 
+<!--product1-->
 <div class="products-car">
-	<!--product1-->
+	<div class="div-icon"><span class="trash"><a><i class="fad fa-trash"></i></a></span></div>
 	<div class="cantidades total">
 		$8000.00		
 	</div>	
@@ -56,11 +57,12 @@
 	</div>
 	
 	<div class="img-caru"><img src="img/sinai.png" class=""></div>
-	<!--product 1-->
-
-	<hr class="separador">
-
-	<!--product1-->
+</div>
+<!--product 1-->
+<hr class="separador">
+<!--product2-->
+<div class="products-car">
+	<div class="div-icon"><span class="trash"><a><i class="fad fa-trash"></i></a></span></div>
 	<div class="cantidades total">
 		$8000.00		
 	</div>	
@@ -90,21 +92,21 @@
 	</div>
 	
 	<div class="img-caru"><img src="img/sinai.png" class=""></div>
-	<!--product 1-->
+</div>
+<!--product 2-->
+<hr class="separador">
 
-	<hr class="separador">
+<div class="products-car alig">
+	<div class="cantidades total"><strong>$5000.00</strong></div>
+	<div class="subtotal"><h5>SUBTOTAL <span> (4 PRODUCTOS)</span>:</h5></div>
+	<div class="mensaje m-0"><p>Procede a la pantalla de pago para calcular gastos de envío e impuestos.</p></div>
+</div>
+<div class="products-car">
+	<div class="pago">
+		<button class="button ">PROCEDER AL PAGO</button>
+		<button class="button">ACTUALIZAR ARTÍCULOS</button>
 	</div>
-	<div class="products-car">
-		<div class="cantidades total"><strong>$5000.00</strong></div>
-		<div class="subtotal"><h5>SUBTOTAL <span> (4 PRODUCTOS)</span>:</h5></div>
-		<div class="mensaje m-0"><p>Procede a la pantalla de pago para calcular gastos de envío e impuestos.</p></div>
-	</div>
-	<div class="products-car">
-		<div class="pago">
-			<button class="button ">PROCEDER AL PAGO</button>
-			<button class="button">ACTUALIZAR ARTÍCULOS</button>
-		</div>
-	</div>
+</div>
 @endsection
 
 
