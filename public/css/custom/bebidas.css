@@ -270,21 +270,23 @@ hr{border-top: 2px solid rgba(0, 0, 0, 0.1);}
 	.button{margin: 20px auto; width: 80%;}
 
 	/**************carrito********************/
-	.head-car{ width: 92%; font-size: 11px; margin: 25px auto 10px;}
-	.cantidades,.montos{width: 23%;}
+	.head-car{ width: 92%; font-size: 11px; margin: 25px auto 10px; letter-spacing: 2px;}
+	.cantidades{width: 23%;}
 	.nom-prod{width: 34%; padding-left: 5px;}
 	.img-caru{width: 20%;}
 	.img-caru img{width: 90%;}
 
 	.separador{margin: 10px auto !important;}
 	.st, .products-car{width: 92%;}
+	.products-car{margin-top: 15px;}
 	.total, .font-s{font-size: 15px; letter-spacing: 0.5px;}
 	.tr{text-align: center;}
 	span[name="val-presentacion"]{display: none;}
-	.fs{ text-align: left; font-size: 11px; margin: 12px 0;}
+	.fs{ text-align: left; font-size: 11px;}
 	p.presentacion.fs{ font-size: 10px; }
 	.fs select { margin-top: 5px; }
-	.titulo-carrito{font-size: 16px;}
+	.titulo-carrito{font-size: 16px; letter-spacing: 3px;}
+	h4.fs{margin-top: 0; margin-bottom: 12px;}
 
 }
 
