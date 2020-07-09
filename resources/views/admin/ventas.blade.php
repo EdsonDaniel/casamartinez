@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section
+
 @section('content')
 	 <!-- Content Header (Page header) -->
     <div class="content-header">

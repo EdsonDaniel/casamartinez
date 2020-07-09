@@ -62,7 +62,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //Grupo de rutas protegidas por un moddleware
-Route::middleware(['auth'])->group(function () {
+/*Route::middleware(['auth'])->group(function () {
    
 /*Route::post('products/store', 'ProductController@store')->name('products.store')
                                                         ->middleware('permission:products.create');
@@ -75,10 +75,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('products/{role}', 'ProductController@show')->name('products.show')
                                                         ->middleware('permission:products.show');
     Route::delete('products/{role}', 'ProductController@destroy')->name('products.destroy')
-                                                        ->middleware('permission:products.destroy'); */
+                                                        ->middleware('permission:products.destroy'); *
     Route::get('products/', 'HomeController@index2')->name('users.edit')
     	->middleware('permission:users.edit');
-});
+});*/
 
 
 //Rutas para el dashboard de administrador
