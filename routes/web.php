@@ -89,9 +89,9 @@ Route::get('/admin', function(){
 
 
 Route::get('/admin/users', function(){
-    return view('admin\usuarios');
+    return view('admin/usuarios');
 })->name('usuarios');
 
 Route::get('/admin/products', function(){
-    return view('admin\productos');
+    return view('admin/productos');
 })->name('productos');
