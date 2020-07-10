@@ -84,7 +84,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Rutas para el dashboard de administrador
 
 Route::get('/admin', function(){
-    return view('admin\ventas');
+    return view('admin/ventas');
 })->name('admin');
 
 
