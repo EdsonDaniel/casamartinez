@@ -92,6 +92,14 @@ Route::get('/admin/users', function(){
     return view('admin/usuarios');
 })->name('usuarios');
 
-Route::get('/admin/products', function(){
-    return view('admin/productos');
-})->name('productos');
+Route::get('/admin/products', 'ProductosController@index');
+//})->name('productos');
+
+
+
+//rutas para agregar caracteristicas adicionales a un producto
+
+Route::post('/admin/caracteristicas/', 'CaracteristicasController@store');
+
+//rutas obtener datos de caracteristicas mediante AJAX
+Route::get('/admin/caracteristicas/ajax', 'CaracteristicasController@get_data_ajax');

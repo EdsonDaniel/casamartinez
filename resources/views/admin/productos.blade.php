@@ -29,7 +29,7 @@
     <!-- Main content -->
     <section class="content">
       <!-- form start -->
-      <form role="form" id="addProduct">
+      <!--<form id="addProduct"> </form>-->
       <div class="container-fluid">
         <div class="row">
           <!-- left column -->
@@ -94,20 +94,25 @@
                       <!--nombre caracteristica1 -->
                       <div class="col-sm-6 mt-2">
                         <div class="form-group">
-                          <label>Seleccione*</label>
+                          <label for="select_caracteristicas">Característica*</label>
                             <div class="input-group">
-                              <select class="form-control" style="padding-left: 3px;">
-                                <option>Maestro mezcalero</option>
+                              <select class="form-control" style="padding-left: 3px;" onchange="listenerSelect(event)" id="select_caracteristicas" name="select_caracteristicas" >
+                                @foreach ($caracteristicas as $caracteristica)
+                                <option>{{ $caracteristica->nombre }}</option>
+                                @endforeach
+                                <!--<option>Maestro mezcalero</option>
                                 <option>% de alcohol</option>
                                 <option>Tiempo de añejado</option>
                                 <option>Origen Verde</option>
+                                <option>Nueva característica</option>-->
+                                <option style="font-weight: bold; border-top: double;" class="bordes">Nueva característica</option>
                               </select>
                             </div> 
                         </div>
                       </div>
                        <!--nombre caracteristica 1-->
 
-                     <!-- val caracteriztica1 -->
+                     <!-- val caracteristica1 -->
                       <div class="col-sm-6 mt-2">
                         <div class="form-group">
                           <label>Valor de característica*</label>
@@ -116,14 +121,14 @@
                             </div> 
                           </div>
                       </div>
-                      <!-- val caracteriztica1-->
+                      <!-- val caracteristica1-->
 
-                      <!-- descricion caracteristica1 -->
+                      <!-- descripcion caracteristica1 -->
                       <div class="col-sm-12">
                         <div class="form-group">
                           <label>Descripción de la característica</label>
                             <div class="input-group">
-                              <textarea class="form-control" id="descripCarac1" rows="2" placeholder="Indica el nombre del maestro mezcalero" disabled></textarea>
+                              <textarea class="form-control" id="descripCarac1" rows="2" placeholder="{{$caracteristica->first()->descripcion}}" disabled></textarea>
                             </div> 
                           </div>
                       </div>
@@ -134,33 +139,37 @@
                   <!--fin card body-->
 
                   <div class="card-footer">
-                    <button type="button" class="btn btn-primary" style="display: block; margin: 0 auto;"  data-toggle="modal" data-target="#modalNewCarac">Agregar nueva característica</button>
+                    <!--<button type="button" class="btn btn-primary" style="display: block; margin: 0 auto;"  data-toggle="modal" data-target="#modalNewCarac">Crear nueva característica</button>-->
 
                     <div class="modal fade" id="modalNewCarac" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
                       <div class="modal-dialog" role="document">
                         <div class="modal-content">
+                          
                           <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Nueva característica de producto</h5>
+                            <h5 class="modal-title">Agregar nueva característica para producto</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                               <span aria-hidden="true">&times;</span>
                             </button>
                           </div>
+
+                          <form action="/admin/caracteristicas/" method="post" id="formModal">
+                          @csrf
                           <div class="modal-body">
-                            <form>
                               <div class="form-group">
-                                <label for="nom_carac" class="col-form-label">Nombre de la característica*:</label>
-                                <input type="text" class="form-control" id="nom_new_carac">
+                                <label for="nombre_caracteristica" class="col-form-label">Nombre de la característica*:</label>
+                                <input type="text" class="form-control" id="nombre_caracteristica" form="formModal" name="nombre_caracteristica">
                               </div>
                               <div class="form-group">
-                                <label for="descrip_new_carac" class="col-form-label">Descripción*:</label>
-                                <textarea class="form-control" id="descrip_new_carac" placeholder="Descripción breve de lo que representa esta característica."></textarea>
+                                <label for="descripcion_caracteristica" class="col-form-label">Descripción*:</label>
+                                <textarea class="form-control" id="descripcion_caracteristica" placeholder="Descripción breve de lo que representa esta característica." form="formModal" name="descripcion_caracteristica"></textarea>
                               </div>
-                            </form>
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                            <button type="button" class="btn btn-primary">Agregar</button>
+                            <button type="button" class="btn btn-primary" id="addCharBtn" onclick="return enviarForm()" data-toggle="tooltip" data-placement="top" title="Agrega una nueva  característica que no ha sido definidia.">Agregar</button>
                           </div>
+
+                        </form>
                         </div>
                       </div>
                     </div><!--fin modal-->
@@ -391,7 +400,7 @@
         </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->
-    </form><!--fin del form-->
+    <!--</form>!--fin del form-->
     </section>
     <!-- /.content -->
     <script>
@@ -445,14 +454,14 @@
         +'</select>'
         +'</div> </div> </div> '
         +'<!--nombre caracteristica'+c+'--> '
-        +'<!-- val caracteriztica'+c+' --> '
+        +'<!-- val caracteristica'+c+' --> '
         +'<div class="col-sm-6 mt-2"> '
         +'<div class="form-group"> '
         +'<label>Valor de característica*</label> '
         +'<div class="input-group">  '
         +'<input type="text" class="form-control" placeholder="Ignacio Martínez" id="valCarac'+c+'"> '
         +'</div> </div>  </div> '
-        +'<!-- val caracteriztica '+c+'--> '
+        +'<!-- val caracteristica '+c+'--> '
         +'<!-- descricion caracteristica '+c+' --> '
         +'<div class="col-sm-12"> '
         +'<div class="form-group"> '
@@ -480,5 +489,62 @@
         setTimeout(function(){div.parentNode.removeChild(div);}, 700);
         c--;
       }
+
+
+      function enviarForm(){
+        var nombre = document.getElementById('nombre_caracteristica').value,
+        var descrip = document.getElementById('descripcion_caracteristica').value,
+        $.post('/admin/caracteristicas', $('form').serialize(), function(data, status, xhr){
+          // do something here with response;
+          console.info(data);
+          console.info(status);
+          console.info(xhr);
+        })
+        .done(function() {
+          // do something here if done ;
+          alert( "Característica agregada satisfactoriamente." );
+          // Set a timeout to hide the element again
+          setTimeout(function(){
+            var select = document.getElementById('select_caracteristicas');
+            var option = document.createElement("option");
+            option.text = nombre;
+            select.add(option);
+            select.selectedIndex = ""+select.length-1;
+            $("#modalNewCarac").modal('toggle');
+          }, 500);
+        })
+        .fail(function() {
+          // do something here if there is an error ;
+          alert( "Ocurrió un error al agregar la característica. \nPor favor, intente agregarla desde la sección de Productos/ Otras Caracaterísticas." );
+        });
+      }
+
+      function listenerSelect(evt){
+        if (evt.target.value === "Nueva característica") {
+          $('#modalNewCarac').modal('show')
+        }
+        else{
+          console.log("No es el q quiero");
+          console.log("El seleccionado es: "+evt.target.value);
+          //falta crear la api para obtener carcateristica by id
+          //poner en value de option id
+        }
+      }
+
+
+      $(function () {
+        $('#select_caracteristicas').on('change', metodo_listar);
+      });
+
+      function metodo_listar(){
+        var charact = document.getElementById("select_caracteristicas").value;
+        $.get('/admin/caracteristicas/ajax', function (data){
+          var html_select = '';
+          for(var i = 0; i<data.length; i++)
+            html_select+='<option value="'+data[i].id_caract+'">'+data[i].nombre+'</option>';
+          $('#select_caracteristicas').html(html_select); 
+        })
+      }
+
     </script>
-@stop
+@endsection
