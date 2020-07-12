@@ -102,4 +102,5 @@ Route::get('/admin/products', 'ProductosController@index');
 Route::post('/admin/caracteristicas/', 'CaracteristicasController@store');
 
 //rutas obtener datos de caracteristicas mediante AJAX
-Route::get('/admin/caracteristicas/ajax', 'CaracteristicasController@get_data_ajax');
+Route::get('/admin/caracteristicas/ajax', 'CaracteristicasController@getDataAjax');
+Route::get('/admin/caracteristicas/ajax/{id_caract}', 'CaracteristicasController@getDataById');

@@ -99,9 +99,19 @@ class CaracteristicasController extends Controller
      * Get all items from storage.
      * @return \Illuminate\Http\Response
      */
-    public function get_data_ajax()
+    public function getDataAjax()
     {
         $caracteristicas = OtrasCaracteristicas::all();
         return response()->json($caracteristicas);
+    }
+
+    /**
+     * Get an item by id from storage.
+     * @return \Illuminate\Http\Response
+     */
+    public function getDataById(Request $request)
+    {
+        $caracteristica = OtrasCaracteristicas::where('id_caract',$request->id_caract)->get();
+        return response()->json($caracteristica);
     }
 }

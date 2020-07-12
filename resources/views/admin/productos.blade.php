@@ -94,11 +94,11 @@
                       <!--nombre caracteristica1 -->
                       <div class="col-sm-6 mt-2">
                         <div class="form-group">
-                          <label for="select_caracteristicas">Característica*</label>
-                            <div class="input-group">
-                              <select class="form-control" style="padding-left: 3px;" onchange="listenerSelect(event)" id="select_caracteristicas" name="select_caracteristicas" >
+                          <label for="select_caracteristicas1">Característica*</label>
+                            <div class="input-group" id="div_select_caracteristicas1">
+                              <select class="form-control" style="padding-left: 3px;" onchange="listenerSelect(event)" id="select_caracteristicas1" name="select_caracteristicas1" >
                                 @foreach ($caracteristicas as $caracteristica)
-                                <option>{{ $caracteristica->nombre }}</option>
+                                <option value="{{$caracteristica->id_caract}}">{{ $caracteristica->nombre }}</option>
                                 @endforeach
                                 <!--<option>Maestro mezcalero</option>
                                 <option>% de alcohol</option>
@@ -117,7 +117,7 @@
                         <div class="form-group">
                           <label>Valor de característica*</label>
                             <div class="input-group">
-                              <input type="text" class="form-control" placeholder="Ignacio Martínez" id="valCarac1">
+                              <input type="text" class="form-control" placeholder="Ignacio Martínez" id="input_val_caract1" name="input_val_caract1">
                             </div> 
                           </div>
                       </div>
@@ -128,11 +128,11 @@
                         <div class="form-group">
                           <label>Descripción de la característica</label>
                             <div class="input-group">
-                              <textarea class="form-control" id="descripCarac1" rows="2" placeholder="{{$caracteristica->first()->descripcion}}" disabled></textarea>
+                              <textarea class="form-control" id="input_descrip_caract1" name="input_descrip_caract1" rows="2" placeholder="{{$caracteristica->first()->descripcion}}" disabled></textarea>
                             </div> 
                           </div>
                       </div>
-                      <!-- descricion caracteristica1-->
+                      <!-- descripcion caracteristica1-->
                     </div>
                     <!--fin row-->
                   </div>
@@ -157,7 +157,7 @@
                           <div class="modal-body">
                               <div class="form-group">
                                 <label for="nombre_caracteristica" class="col-form-label">Nombre de la característica*:</label>
-                                <input type="text" class="form-control" id="nombre_caracteristica" form="formModal" name="nombre_caracteristica">
+                                <input type="text" class="form-control" id="nombre_caracteristica" form="formModal" name="nombre_caracteristica" autofocus="">
                               </div>
                               <div class="form-group">
                                 <label for="descripcion_caracteristica" class="col-form-label">Descripción*:</label>
@@ -445,13 +445,8 @@
         +'<div class="col-sm-6 mt-2">'
         +'<div class="form-group">'
         +'<label>Seleccione*</label>'
-        +'<div class="input-group">'
-        +'<select class="form-control" style="padding-left: 3px;">'
-        +'<option>Maestro mezcalero</option>'
-        +'<option>% de alcohol</option>'
-        +'<option>Tiempo de añejado</option> '
-        +'<option>Origen Verde</option> '
-        +'</select>'
+        +'<div class="input-group" id="div_select_caracteristicas'+c+'">'
+        +'<select class="form-control" style="padding-left: 3px;" name="select_caracteristicas'+c+'" id="select_caracteristicas'+c+'" onchange="listenerSelect(event)"></select>'
         +'</div> </div> </div> '
         +'<!--nombre caracteristica'+c+'--> '
         +'<!-- val caracteristica'+c+' --> '
@@ -459,20 +454,21 @@
         +'<div class="form-group"> '
         +'<label>Valor de característica*</label> '
         +'<div class="input-group">  '
-        +'<input type="text" class="form-control" placeholder="Ignacio Martínez" id="valCarac'+c+'"> '
+        +'<input type="text" class="form-control" placeholder="Ignacio Martínez" id="input_val_caract'+c+'"> '
         +'</div> </div>  </div> '
         +'<!-- val caracteristica '+c+'--> '
-        +'<!-- descricion caracteristica '+c+' --> '
+        +'<!-- descripcion caracteristica '+c+' --> '
         +'<div class="col-sm-12"> '
         +'<div class="form-group"> '
         +'<label>Descripción de la característica</label> '
         +'<div class="input-group"> '
-        +'<textarea class="form-control" id="descripCarac'+c+'" rows="2" placeholder="Indica el nombre del maestro mezcalero" required></textarea> '
+        +'<textarea class="form-control" id="input_descrip_caract'+c+'" rows="2" disabled></textarea> '
         +'</div> </div> </div> '
         +'<!-- descricion caracteristica'+c+'--> '
         +'<!--fin row-->';
 
         document.getElementById('caracteristicas').appendChild(div_row);
+        updateSelect('select_caracteristicas'+c,document.getElementById('input_descrip_caract'+c));
 
       }
 
@@ -490,61 +486,78 @@
         c--;
       }
 
-
       function enviarForm(){
-        var nombre = document.getElementById('nombre_caracteristica').value,
-        var descrip = document.getElementById('descripcion_caracteristica').value,
-        $.post('/admin/caracteristicas', $('form').serialize(), function(data, status, xhr){
-          // do something here with response;
-          console.info(data);
-          console.info(status);
-          console.info(xhr);
-        })
+        $.post('/admin/caracteristicas', $('form').serialize()
         .done(function() {
-          // do something here if done ;
           alert( "Característica agregada satisfactoriamente." );
           // Set a timeout to hide the element again
           setTimeout(function(){
-            var select = document.getElementById('select_caracteristicas');
-            var option = document.createElement("option");
-            option.text = nombre;
-            select.add(option);
-            select.selectedIndex = ""+select.length-1;
             $("#modalNewCarac").modal('toggle');
           }, 500);
         })
         .fail(function() {
           // do something here if there is an error ;
-          alert( "Ocurrió un error al agregar la característica. \nPor favor, intente agregarla desde la sección de Productos/ Otras Caracaterísticas." );
-        });
+          alert( "Ocurrió un error al agregar la característica. \nPor favor, intente agregarla desde la sección de Productos / Otras Caracaterísticas." );
+        }));
       }
 
       function listenerSelect(evt){
+        var id = ""+evt.target.parentNode.getAttribute('id');
+        var id = ""+id.charAt(id.length-1);
+        var textarea = document.getElementById('input_descrip_caract'+id);
+        
         if (evt.target.value === "Nueva característica") {
-          $('#modalNewCarac').modal('show')
+          $('#modalNewCarac').on('hidden.bs.modal', function (e) {
+            //console.log('ID de generador evento char: '+id);
+            updateSelectAndDescrip('select_caracteristicas'+id,textarea);
+          });
+
+          $('#modalNewCarac').on('shown.bs.modal', function () {
+            $('#nombre_caracteristica').focus();
+          });
+
+          $('#modalNewCarac').modal('show');
+          //console.log('ID de generador evento: '+evt.target.parentNode.getAttribute('id'));
         }
         else{
-          console.log("No es el q quiero");
-          console.log("El seleccionado es: "+evt.target.value);
-          //falta crear la api para obtener carcateristica by id
-          //poner en value de option id
+          updateTextArea(evt.target.value,textarea);
         }
       }
 
-
-      $(function () {
-        $('#select_caracteristicas').on('change', metodo_listar);
-      });
-
-      function metodo_listar(){
-        var charact = document.getElementById("select_caracteristicas").value;
+      function updateSelectAndDescrip(id,textarea){
         $.get('/admin/caracteristicas/ajax', function (data){
           var html_select = '';
           for(var i = 0; i<data.length; i++)
             html_select+='<option value="'+data[i].id_caract+'">'+data[i].nombre+'</option>';
-          $('#select_caracteristicas').html(html_select); 
-        })
+          html_select+='<option style="font-weight: bold;">Nueva característica</option>';
+          $('#'+id).html(html_select);
+          textarea.setAttribute('placeholder',data[data.length-1].descripcion);
+          var select = document.getElementById(id);
+          select.selectedIndex = ""+data.length-1;
+        });
       }
 
+      function updateSelect(idselect,textarea){
+        $.get('/admin/caracteristicas/ajax', function (data){
+          var html_select = '';
+          for(var i = 0; i<data.length; i++)
+            html_select+='<option value="'+data[i].id_caract+'">'+data[i].nombre+'</option>';
+          html_select+='<option style="font-weight: bold;">Nueva característica</option>';
+          $('#'+idselect).html(html_select);
+          console.log(idselect);
+          textarea.setAttribute('placeholder',data[0].descripcion);
+        });
+      }
+
+      function updateTextArea(idcarac,textarea){
+        //var textarea = document.getElementById('input_descrip_caract'+id);
+        console.log("id a obtener: "+'input_descrip_caract'+idcarac);
+        var ruta = "/admin/caracteristicas/ajax/"+idcarac;
+        console.log("ruta a visitar: "+ruta);
+        $.get(ruta, function (data){
+          textarea.setAttribute('placeholder',data[0].descripcion);
+          console.log("datos "+data[0].descripcion);
+        });
+      }
     </script>
 @endsection
