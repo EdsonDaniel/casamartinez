@@ -17,19 +17,19 @@
   <!--Carrusel-->
   <div id="slider" class="carousel slide carousel-fade" data-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item active" style="background-image: url('img/agave2.jpg')">
+      <div class="carousel-item active" style="background-image: url('/img/bendecir-mezcal.jpg')">
       	<div class="bottomright text-portada">
       		<p><em>“...los dioses dijeron entre sí: “He aquí que el hombre estará aína triste si no le hacemos nosotros algo para regocijarle y a fin de que tome gusto en vivir en la tierra y nos alabe y cante y dance.”</em></p>
       		<p><span>[Historia de México (Histoire du Mechique)]</span></p>
       	</div>
       </div>
-      <div class="carousel-item" style="background-image: url('img/maestro3.jpg');">
+      <div class="carousel-item" style="background-image: url('/img/campo-agaves.jpg');">
         <div class="bottomright text-portada">
       		<p><em>“...los dioses dijeron entre sí: “He aquí que el hombre estará aína triste si no le hacemos nosotros algo para regocijarle y a fin de que tome gusto en vivir en la tierra y nos alabe y cante y dance.”</em></p>
           <p><span>[Historia de México (Histoire du Mechique)]</span></p>
       	</div>
       </div>
-      <div class="carousel-item" style="background-image: url('img/molienda3.jpg');">
+      <div class="carousel-item" style="background-image: url('/img/pencas-maguey.jpg');">
         <div class="bottomright text-portada">
       		<p><em>“...los dioses dijeron entre sí: “He aquí que el hombre estará aína triste si no le hacemos nosotros algo para regocijarle y a fin de que tome gusto en vivir en la tierra y nos alabe y cante y dance.”</em></p>
           <p><span>[Historia de México (Histoire du Mechique)]</span></p>
@@ -43,7 +43,7 @@
   <!--primer parrafo-->
   <div class="text-and-img">
     <div class="div-img">
-        <img src="/img/histori.jpg" class="img-vertical">
+        <img src="/img/campo-agave-2.jpg" class="img-vertical">
     </div>
     <div>
       <p class="text-home"><i>“El mezcal, la bebida de los dioses, fue concebida por un rayo que cayó sobre un agave que dio origen a la primera tatema, iniciando así la tradición del elixir oaxaqueño por excelencia que hoy cobija la cultura culinaria de los mexicanos y con ello: su identidad.”</i>
@@ -61,14 +61,14 @@
     </div>
 
     <div class="div-img">
-      <img class="img-horizontal" src="img/maguey.jpeg" alt="Generic placeholder image">
+      <img class="img-vertical" src="/img/mama-tobala.jpg" alt="Generic placeholder image">
     </div>
   </div>
   <!--segundo parrafo-->
 
   <div class="text-and-img">
     <div class="div-img">
-        <img src="/img/corazon-maguey3.jpg" class="img-vertical">
+        <img src="/img/Campo-Hisashi.jpg" class="img-horizontal">
     </div>
     <div>
       <h5 class="header-parrafo"><a href="/historia">HISTORIA, COLABORADORES</a></h5>
@@ -89,19 +89,19 @@
     </div>
 
     <div class="img-hover-zoom--slowmo">
-      <img class="img-bebidas" src="img/mezcal-joven.jpg" alt="Mezcal joven">
+      <a href="/productos" title="Mezcal SiNái"><img class="img-bebidas img-circle" src="/img/SINAI_bird2019.jpg" alt="Mezcal joven"></a>
     </div>
 
     <div class="img-hover-zoom--slowmo">
-      <img class="img-bebidas" src="img/mezcal-anejo.jpg" alt="Mezcal joven">
+      <a href="/productos" title="Mezcal Ignacio Martínez"><img class="img-bebidas img-circle" src="img/mezcal-anejo.jpg" alt="Mezcal joven"></a>
     </div>
     
     <div class="img-hover-zoom--slowmo">
-      <img class="img-bebidas" src="img/mezcal-reposado.jpg" alt="Mezcal joven">
+      <a href="/productos" title="Habitante"> <img class="img-bebidas img-circle" src="img/mezcal-reposado.jpg" alt="Mezcal joven"> </a>
     </div>
     
     <div class="img-hover-zoom--slowmo">
-      <img class="img-bebidas" src="img/reserva.jpg" alt="Mezcal joven">
+      <a href="/productos" title="origen Verde"><img class="img-bebidas img-circle" src="img/reserva.jpg" alt="Mezcal joven"></a>
     </div>
     
     <div style="width: 100%; height: auto;">

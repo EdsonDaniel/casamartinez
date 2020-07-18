@@ -22,12 +22,12 @@
       	<div class="right">
       		<ul>
       			<li><a href="javascript:saltarA('#origen')">-Origen Casa Martínez</a></li>
-      			<li><a href="javascript:saltarA('#familia')">-Familia Martínez</a></li>
+      			<!--<li><a href="javascript:saltarA('#familia')">-Familia Martínez</a></li>-->
       			<li><a href="javascript:saltarA('#equipo')">-Nuestro Equipo</a></li>
       			<li><a href="javascript:saltarA('#memorias')">-Memorias</a></li>
       		</ul>
       	</div>
-      	<div  class="bg-img" style="background-image: url('/img/equipo.jpg'); background-color: black; opacity: 0.8"></div>
+      	<div  class="bg-img" style="background-image: url('/img/Campo-Hisashi.jpg'); background-color: black; opacity: 0.6"></div>
 	</div>
 	<!--encabezado-->
 
@@ -40,7 +40,7 @@
 			<div>
 				<div class="text-and-img-c">
 					<div>
-						<img class="img-car img-r" src="img/origen1.jpg" alt="Generic placeholder image">
+						<img class="img-car img-r" src="/img/ABUELOS.jpg" alt="Generic placeholder image">
 					</div>
 					<div class="bg-text">
 						<div class="btn-expand open"></div>
@@ -58,7 +58,7 @@
 			<div>
 				<div class="text-and-img-c">
 	    			<div>
-	    				<img class="img-car img-r" src="img/origen.jpg" alt="Generic placeholder image">
+	    				<img class="img-car img-r" src="/img/IGNACIOYCARMELA.jpg" alt="Generic placeholder image">
 	    			</div>
 	    			<div class="bg-text">
 	    				<div class="btn-expand open"></div>
@@ -141,7 +141,7 @@
 	    	<div>
 	    		<div class="text-and-img-c">
 	    			<div>
-	    				<img src="/img/legado.jpg" class="img-car img-r">
+	    				<img src="/img/MAESTRO-MEZCALERO-.jpg" class="img-car img-r">
 	    			</div>
 	    			<div class="bg-text">
 	    				<div class="btn-expand open"></div>
@@ -160,7 +160,7 @@
 	    	<div>
 	    		<div class="text-and-img-c">
 	    			<div>
-	    				<img src="/img/legado.jpg" class="img-car img-r">
+	    				<img src="/img/Fernado-blanco-y-negro.jpg" class="img-car img-r">
 	    			</div>
 	    			<div class="bg-text">
 	    				<div class="btn-expand open"></div>
@@ -183,7 +183,7 @@
 	    	<div>
 	    		<div class="text-and-img-c">
 	    			<div>
-	    				<img src="/img/histori.jpg" class="img-car img-r">
+	    				<img src="/img/Paco-2.jpg" class="img-car img-r">
 	    			</div>
 	    			<div class="bg-text">
 	    				<div class="btn-expand open"></div>
@@ -207,7 +207,7 @@
 	    	<div>
 	    		<div class="text-and-img-c">
 	    			<div>
-	    				<img src="/img/histori.jpg" class="img-car img-r">
+	    				<img src="/img/Tio Adrian 2.jpg" class="img-car img-r">
 	    			</div>
 	    			<div class="bg-text">
 	    				<div class="btn-expand open"></div>
@@ -342,7 +342,7 @@
 			<p>SIGUIENTE</p>
 			<p><a href="campos-de-maguey">Campos de Maguey</a></p>
 		</div>
-		<div  class="next-fondo" style="background-image: url('/img/campos-agave2.jpg'); opacity: 0.4"></div>
+		<div  class="next-fondo" style="background-image: url('/img/Campo maguey cielo.jpg'); opacity: 0.4"></div>
 	</div>
 	<!--next section-->
 
@@ -386,7 +386,6 @@ $('.carousel-items').slick({
 
  </script>
  <script type="text/javascript">
- 	<script>
 	var ancho2 = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
  	if(ancho2<760){
  		var texto = document.getElementsByClassName("bg-text");
@@ -399,20 +398,20 @@ $('.carousel-items').slick({
 	 			/*this.classList.toggle("bg-text-v");*/
 	 			div_p = this.lastElementChild;
 	 			parrafo = div_p.children;
-	 			console.log("numero de parrafos = "+ parrafo.length);
+	 			/*console.log("numero de parrafos = "+ parrafo.length);*/
 	 			var altura = 0;
 	 			var j;
 	 			for (j = 0; j < parrafo.length; j++ ) {
 	 				altura += parrafo[j].offsetHeight;
-	 				console.log("altura de parrafo = "+ parrafo[j].offsetHeight);
+	 				//console.log("altura de parrafo = "+ parrafo[j].offsetHeight);
 	 			}
 	 			btn_open = this.firstElementChild;
 	 			btn_open.classList.toggle("open");
 	 			btn_open.classList.toggle("closed");
-	 			console.log("altura = "+altura);
+	 			/*console.log("altura = "+altura);*/
 	 			altura += parrafo.length*15;
 	 			altura = altura+"px";
-	 			console.log("altura sumada= "+altura);
+	 			//console.log("altura sumada= "+altura);
 	 			if (div_p.style.height === "") {
 	 				div_p.style.height = altura;
 	 			} else {

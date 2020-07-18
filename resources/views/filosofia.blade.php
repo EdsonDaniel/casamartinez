@@ -17,13 +17,13 @@
 @section('content')
 
 <div class="head-philosop fade-scroll"></div>
-	<!-- Segunda imagen de fondo-->
-	<div class="portada-fil fade-scroll">
+	<!--<div class="portada-fil fade-scroll">
 	</div>
+	<-- Segunda imagen de fondo--
 	<div class="img-source fade-scroll">
 		Ignacio Martínez
 	</div>
-	<!--Segunda imagen de fondo-->
+	<--Segunda imagen de fondo-->
 
 	<!-- cita -->
 	<div class="block-cita fade-scroll">
@@ -42,7 +42,7 @@
 			<div>
 				<div class="text-and-img-c">
 					<div>
-						<img src="/img/corazon-maguey3.jpg" class="img-car img-r">
+						<img src="/img/mama-sembrando.jpg" class="img-car img-r">
 					</div>
 					<div class="bg-text">
 						<div class="btn-expand open"></div>
@@ -61,7 +61,7 @@
 			<div>
 				<div class="text-and-img-c">
 	    			<div>
-	    				<img src="/img/cuerpo-maguey2.jpg" class="img-car img-r">
+	    				<img src="/img/Maguey-vivero-1-año.jpg" class="img-car img-r">
 	    			</div>
 	    			<div class="bg-text">
 	    				<div class="btn-expand open"></div>
@@ -82,7 +82,7 @@
 	    	<div>
 		      	<div class="text-and-img-c">
 	    			<div>
-	    				<img src="/img/mezcal-reposado.jpg" class="img-car img-r">
+	    				<img src="/img/quiote-luz.jpg" class="img-car img-r">
 	    			</div>
 	    			<div class="bg-text">
 	    				<div class="btn-expand open"></div>
@@ -122,7 +122,7 @@
 						</div>
 					</div>
 					<div class="img-l">
-						<img class="img-car" src="img/maestro-mezcalero.jpg" alt="Generic placeholder image">
+						<img class="img-car" src="/img/Ignacio-tomando-mezcal.jpg" alt="Generic placeholder image">
 					</div>
 				</div>
 			</div>
@@ -149,13 +149,13 @@
 						</div>
 					</div>
 					<div class="img-l">
-						<img class="img-car" src="img/diseno.jpg" alt="Generic placeholder image">
+						<img class="img-car" src="/img/Ignacio-tomando-mezcal.jpg" alt="Generic placeholder image">
 					</div>
 				</div>
 			</div>
 			<!--segundo item-->
 
-			<!--segundo item-->
+			<!--tercer item-->
 			<div>
 				<div class="text-and-img-c">
 					<div class="bg-text">
@@ -173,13 +173,13 @@
 						</div>
 					</div>
 					<div class="img-l">
-						<img class="img-car" src="img/diseno.jpg" alt="Generic placeholder image">
+						<img class="img-car" src="/img/Ignacio-tomando-mezcal.jpg" alt="Generic placeholder image">
 					</div>
 				</div>
 			</div>
-			<!--segundo item-->
-
 			<!--tercer item-->
+
+			<!--cuarto item-->
 			<div>
 				<div class="text-and-img-c">
 					<div class="bg-text">
@@ -194,13 +194,13 @@
 						</div>
 					</div>
 					<div class="img-l">
-						<img class="img-car" src="img/maestro-mezcal.jpg" alt="Generic placeholder image">
+						<img class="img-car" src="/img/Ignacio-tomando-mezcal.jpg" alt="Generic placeholder image">
 					</div>
 				</div>
 			</div>
-			<!--tercer item-->
+			<!--cuarto item-->
 
-			<!--tercer item-->
+			<!--quinto item-->
 			<div>
 				<div class="text-and-img-c">
 					<div class="bg-text">
@@ -215,11 +215,11 @@
 						</div>
 					</div>
 					<div class="img-l">
-						<img class="img-car" src="img/maestro-mezcal.jpg" alt="Generic placeholder image">
+						<img class="img-car" src="/img/Ignacio-tomando-mezcal.jpg" alt="Generic placeholder image">
 					</div>
 				</div>
 			</div>
-			<!--tercer item-->
+			<!--quinto item-->
 		</div>
 	</div>
 	<!--fin segundo carousel-->
@@ -243,7 +243,7 @@
 		      			</div>
 		      		</div>
 		      		<div class="img-l">
-		      			<img class="img-car" src="img/corte.jpg" alt="Generic placeholder image">
+		      			<img class="img-car" src="/img/Sembrando.jpg" alt="Generic placeholder image">
 		      		</div>
 		      	</div>
 			</div>
@@ -262,7 +262,7 @@
 	    				</div>
 	    			</div>
 	    			<div class="img-l">
-	    				<img class="img-car" src="img/coccion2.jpg" alt="Generic placeholder image">
+	    				<img class="img-car img-car-hor" src="/img/Ignacio-solo-espalda.jpg" alt="Generic placeholder image">
 	    			</div>
 	    		</div>
 	    	</div>
@@ -281,7 +281,7 @@
 	    				</div>
 	    			</div>
 	    			<div class="img-l">
-	    				<img class="img-car" src="img/molienda.jpg" alt="Generic placeholder image">
+	    				<img class="img-car" src="/img/Maguey-palenque-cielo.jpg" alt="Generic placeholder image">
 	    			</div>
 	    		</div>
 			</div>
@@ -300,7 +300,7 @@
 	    				</div>
 	    			</div>
 	    			<div class="img-l">
-	    				<img class="img-car" src="img/fermentacion.jpg" alt="Generic placeholder image">
+	    				<img class="img-car img-car-hor" src="/img/Horno.jpg" alt="Generic placeholder image">
 	    			</div>
 	    		</div>
 			</div>
@@ -319,7 +319,7 @@
 	    				</div>
 	    			</div>
 	    			<div class="img-l">
-	    				<img class="img-car" src="img/destilacion.jpg" alt="Generic placeholder image">
+	    				<img class="img-car img-car-hor" src="/img/Moler-fernando.jpg" alt="Generic placeholder image">
 	    			</div>
 	    		</div>
 			</div>
@@ -338,7 +338,7 @@
 	    				</div>
 	    			</div>
 	    			<div class="img-l">
-	    				<img class="img-car" src="img/envasado.jpg" alt="Generic placeholder image">
+	    				<img class="img-car" src="/img/Fermentando.jpg" alt="Generic placeholder image">
 	    			</div>
 	    		</div>
 			</div>
@@ -383,7 +383,7 @@
 	    	<div>
 	    		<div class="text-and-img-c">
 	    			<div>
-	    				<img src="/img/histori.jpg" class="img-car img-r">
+	    				<img src="/img/Niño-moliendo.jpg" class="img-car img-r">
 	    			</div>
 	    			<div class="bg-text">
 	    				<div class="btn-expand open"></div>
@@ -403,7 +403,7 @@
 	    	<div>
 	    		<div class="text-and-img-c">
 	    			<div>
-	    				<img class="img-car img-r" src="img/diseno.jpg" alt="Generic placeholder image">
+	    				<img class="img-car img-r img-car-hor" src="/img/Destapando.jpg" alt="Generic placeholder image">
 	    			</div>
 	    			<div class="bg-text">
 	    				<div class="btn-expand open"></div>
@@ -425,7 +425,7 @@
 	    	<div>
 	    		<div class="text-and-img-c">
 	    			<div>
-	    				<img class="img-car img-r" src="img/maestro-mezcal.jpg" alt="Generic placeholder image">
+	    				<img class="img-car img-r" src="/img/pareja.jpg" alt="Generic placeholder image">
 	    			</div>
 	    			<div class="bg-text">
 	    				<div class="btn-expand open"></div>
@@ -464,7 +464,7 @@
 			<p>SIGUIENTE</p>
 			<p><a href="/historia">Historia & Equipo</a></p>
 		</div>
-		<div class="next-fondo" style="background-image: url('/img/equipo.jpg');"></div>
+		<div class="next-fondo" style="background-image: url('/img/Campo-Hisashi.jpg');"></div>
 	</div>
 	<!--next section-->
 
@@ -503,11 +503,26 @@
 	 	var div_p;
 	 	var btn_open;
 	 	for (i = 0; i < texto.length; i++) {
+	 		/*var img = texto[i].nextElementSibling;
+	 		if(img === null)
+	 			img = texto[i].previousElementSibling;
+
+	 		img= img.firstElementChild;
+	 		var img_widht = img.clientWidth;
+	 		console.log("img widt:"+img_widht);
+	 		console.log("img height:"+img.clientHeight);
+	 		console.log("label: "+img.nodeName);
+
+	 		if(img_widht>img.clientHeight)
+	 			img.style.marginLeft = ""+(-1*(img_widht-ancho2)/2)+"px";
+
+	 		*/
+
 	 		texto[i].addEventListener("click", function() {
 	 			/*this.classList.toggle("bg-text-v");*/
 	 			div_p = this.lastElementChild;
 	 			parrafo = div_p.children;
-	 			console.log("numero de parrafos = "+ parrafo.length);
+	 			//console.log("numero de parrafos = "+ parrafo.length);
 	 			var altura = 0;
 	 			var j;
 	 			for (j = 0; j < parrafo.length; j++ ) {
@@ -517,10 +532,10 @@
 	 			btn_open = this.firstElementChild;
 	 			btn_open.classList.toggle("open");
 	 			btn_open.classList.toggle("closed");
-	 			console.log("altura = "+altura);
+	 			/*console.log("altura = "+altura);*/
 	 			altura += parrafo.length*15;
 	 			altura = altura+"px";
-	 			console.log("altura sumada= "+altura);
+	 			//console.log("altura sumada= "+altura);
 	 			if (div_p.style.height === "") {
 	 				div_p.style.height = altura;
 	 			} else {

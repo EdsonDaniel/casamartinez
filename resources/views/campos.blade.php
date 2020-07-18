@@ -19,7 +19,7 @@
   <!--encabezado-->
   <div class="bg-image container-image fade-scroll" style="background-color: black; height: 50vh;">
     <div class="centered" style="top: 50%;">Campos de Maguey</div>
-    <div class="bg-img" style="background-image: url('/img/campos-agave2.jpg'); opacity: 0.7;"></div>
+    <div class="bg-img" style="background-image: url('/img/Campo maguey cielo.jpg'); opacity: 0.7;"></div>
   </div>
   <!--encabezado-->
 
@@ -63,7 +63,7 @@
             </div>
           </div>
           <div class="img-l">
-            <img class="img-car" src="img/campos-agave/agave1.jpg" alt="Generic placeholder image">
+            <img class="img-car" src="/img/Paisaje-con-burro.jpg" alt="Generic placeholder image">
           </div>
         </div>
       </div>
@@ -85,7 +85,7 @@
             </div>
           </div>
           <div class="img-l">
-            <img class="img-car" src="img/campos-agave/agave2.jpg" alt="Generic placeholder image">
+            <img class="img-car" src="/img/Paisaje-con-burro.jpg" alt="Generic placeholder image">
           </div>
         </div>
       </div>
@@ -108,7 +108,7 @@
             </div>
           </div>
           <div class="img-l">
-            <img class="img-car" src="img/campos-agave/agave3.jpg" alt="Generic placeholder image">
+            <img class="img-car" src="/img/Paisaje-con-burro.jpg" alt="Generic placeholder image">
           </div>
         </div>
       </div>
