@@ -114,7 +114,7 @@ body{ background-color: black; color: white; font-family: 'Lora', serif;}
 
 .slick-dots li button:before{opacity: 0.40; color: white;}
 .slick-dots li.slick-active button:before{opacity: 0.75; color: white;}
-.slick-dots{bottom: -15%;}
+/*.slick-dots{bottom: -15%;}*/
 @media only screen and (max-width: 990px){
 	.head-philosop{ height: 50vh; }
 	.portada-fil{ height: 70vh; background-position: right;}
@@ -188,10 +188,12 @@ body{ background-color: black; color: white; font-family: 'Lora', serif;}
 	.img-car{margin: 20px auto;}
 	#maestro-mezcalero{margin-bottom: 0; }
 }
-
+*/
 @media only screen and (min-width: 990px){	
-	.bg-text{width: 30%; min-width: 400px;}
+	/*.bg-text{width: 30%; min-width: 400px;}
 	.text-and-img-c{width: auto;}
 	.env{margin: 15px auto;}
 	.img-l{width: auto;}
-}*/
+	*/
+	.slick-dots{bottom: -15%;}
+}

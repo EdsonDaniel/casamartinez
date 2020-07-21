@@ -261,7 +261,7 @@
 	    					<p class="body-carousel">Antes de producir nuestros Mezcales, lo primero que hacemos  es seleccionar los magueyes que cuentan con la madurez propia para ser aprovechados. Esta labor la realiza nuestros Maestros Ignacio Martínez y Gregorio Aragón.</p>
 	    				</div>
 	    			</div>
-	    			<div class="img-l">
+	    			<div class="img-l" name="div-img-hor">
 	    				<img class="img-car img-car-hor" src="/img/Ignacio-solo-espalda.jpg" alt="Generic placeholder image">
 	    			</div>
 	    		</div>
@@ -299,7 +299,7 @@
 	    					<p class="body-carousel">Cocción en horno cónico bajo tierra durante 48 a 72 hrs.</p>
 	    				</div>
 	    			</div>
-	    			<div class="img-l">
+	    			<div class="img-l" name="div-img-hor">
 	    				<img class="img-car img-car-hor" src="/img/Horno.jpg" alt="Generic placeholder image">
 	    			</div>
 	    		</div>
@@ -318,7 +318,7 @@
 	    					<p class="body-carousel">Machacado en tahona de piedra de rio. </p>
 	    				</div>
 	    			</div>
-	    			<div class="img-l">
+	    			<div class="img-l" name="div-img-hor">
 	    				<img class="img-car img-car-hor" src="/img/Moler-fernando.jpg" alt="Generic placeholder image">
 	    			</div>
 	    		</div>
@@ -383,7 +383,7 @@
 	    	<div>
 	    		<div class="text-and-img-c">
 	    			<div>
-	    				<img src="/img/Niño-moliendo.jpg" class="img-car img-r">
+	    				<img id="img-boy" src="/img/Niño-moliendo.jpg" class="img-car img-r">
 	    			</div>
 	    			<div class="bg-text">
 	    				<div class="btn-expand open"></div>
@@ -402,8 +402,8 @@
 			<!--segundo item-->
 	    	<div>
 	    		<div class="text-and-img-c">
-	    			<div>
-	    				<img class="img-car img-r img-car-hor" src="/img/Destapando.jpg" alt="Generic placeholder image">
+	    			<div name="div-img-hor">
+	    				<img class="img-car img-r" id="img-habilidad" src="/img/Destapando.jpg" alt="Generic placeholder image">
 	    			</div>
 	    			<div class="bg-text">
 	    				<div class="btn-expand open"></div>

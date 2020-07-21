@@ -91,4 +91,5 @@ body, html {
 
 @media only screen and (min-width: 990px){  
   .bg-text{width: 30%; min-width: 390px;}
+  .slick-dots{bottom: -15%;}
 }
