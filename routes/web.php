@@ -92,8 +92,12 @@ Route::get('/admin/users', function(){
     return view('admin/usuarios');
 })->name('usuarios');
 
+
+
+//rutasd Crud productos
 Route::get('/admin/products', 'ProductosController@index');
 //})->name('productos');
+Route::post('/admin/products','ProductosController@store');
 
 
 

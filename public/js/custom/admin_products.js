@@ -1,4 +1,4 @@
-p = 1;
+      p = 1;
       c = 1;
       function addPresentacion(){
         p++;
@@ -28,9 +28,21 @@ p = 1;
         +'<div class="form-group">'
         +'<label>Contenido neto*</label>'
         +'<div class="input-group"> '
-        +'<input type="number" min="100" class="form-control" placeholder="700" id="contenido1">'
-        +'<select class="form-control"> '
+        +'<input type="number" min="100" class="form-control @error(\'products[presentacion'+p+'][contenido]\')'
+        +' is-invalid @enderror" name="products[presentacion'+p+'][contenido]" '
+        +'placeholder="700" id="contenido'+p+'">'
+        +'<select class="form-control @error(\'products[presentacion'+p+'][unidad_c]\') is-invalid @enderror"'
+        +' name="products[presentacion'+p+'][unidad_c]" required > '
         +'<option>ml</option> <option>g</option> <option>l</option><option>kg</option></select>'
+        
+        +'@error(\'products[presentacion'+p+'][contenido]\')'
+        +'<div class="alert alert-danger">{{ $message }}</div>'
+        +'@enderror'
+
+        +'@error(\'products[presentacion'+p+'][unidad_c]\')'
+        +'<div class="alert alert-danger">{{ $message }}</div>'
+        +'@enderror'
+        
         +'</div>'
         +'</div>'
         +'</div>'
@@ -44,7 +56,13 @@ p = 1;
         +'<div class="input-group-prepend">'
         +'<span class="input-group-text"> <i class="fas fa-dollar-sign"></i></span>'
         +'</div>'
-        +'<input type="number" min="100" class="form-control" id="precioC1">'
+        +'<input type="number" min="100" class="form-control @error(\'products[presentacion'+p+'][pre_consu]\')'
+        +' is-invalid @enderror" name="products[presentacion'+p+'][pre_consu]" id="precioC1" >'
+        
+        +'@error(\'products[presentacion'+p+'][pre_consu]\')'
+        +'<div class="alert alert-danger">{{ $message }}</div>'
+        +'@enderror'
+        
         +'</div>'
         +'</div>'
         +'</div>'
@@ -57,7 +75,14 @@ p = 1;
         +'<div class="input-group">'
         +'<div class="input-group-prepend">'
         +'<span class="input-group-text"><i class="fas fa-dollar-sign"></i></span></div>'
-        +'<input type="number" min="100" class="form-control" id="precioD1">'
+        +'<input type="number" min="100" class="form-control @error(\'products[presentacion'+p+'][pre_distri]\')'
+        +' is-invalid @enderror"'
+        +' name="products[presentacion'+p+'][pre_distri]" >'
+        
+        +'@error(\'products[presentacion'+p+'][pre_distri]\')'
+        +'<div class="alert alert-danger">{{ $message }}</div>'
+        +'@enderror'
+        
         +'</div>'
         +'</div>'
         +'</div>'
@@ -70,7 +95,14 @@ p = 1;
         +'<div class="input-group">'
         +'<div class="input-group-prepend">'
         +'<span class="input-group-text"><i class="fas fa-dollar-sign"></i></span></div>'
-        +'<input type="number" min="100" class="form-control" id="precioR1">'
+        +'<input type="number" min="100" class="form-control @error(\'products[presentacion'+p+'][pre_rest]\')'
+        +' is-invalid @enderror"'
+        +' name="products[presentacion'+p+'][pre_rest]">'
+        
+        +'@error(\'products[presentacion'+p+'][pre_rest]\')'
+        +'<div class="alert alert-danger">{{ $message }}</div>'
+        +'@enderror'
+        
         +'</div>'
         +'</div>'
         +'</div>'
@@ -83,7 +115,14 @@ p = 1;
         +'<div class="input-group">'
         +'<div class="input-group-prepend">'
         +'<span class="input-group-text"><i class="fas fa-dollar-sign"></i></span></div>'
-        +'<input type="number" min="100" class="form-control" id="precioP1">'
+        +'<input type="number" min="100" class="form-control @error(\'products[presentacion'+p+'][pre_promo]\')'
+        +' is-invalid @enderror"'
+        +' name="products[presentacion'+p+'][pre_promo]" id="precioP1">'
+        
+        +'@error(\'products[presentacion'+p+'][pre_promo]\')'
+        +'<div class="alert alert-danger">{{ $message }}</div>'
+        +'@enderror'
+        
         +'</div>'
         +'</div>'
         +'</div>'
@@ -96,7 +135,14 @@ p = 1;
         +'<div class="input-group">'
         +'<div class="input-group-prepend">'
         +'<span class="input-group-text"><i class="fas fa-dollar-sign"></i></span></div>'
-        +'<input type="number" class="form-control" id="costo1">'
+        +'<input type="number" class="form-control @error(\'products[presentacion'+p+'][costo]\')"'
+        +' is-invalid @enderror'
+        +' name="products[presentacion'+p+'][costo]">'
+        
+        +'@error(\'products[presentacion'+p+'][costo]\')'
+        +'<div class="alert alert-danger">{{ $message }}</div>'
+        +'@enderror'
+        
         +'</div>'
         +'</div>'
         +'</div>'
@@ -107,7 +153,14 @@ p = 1;
         +'<div class="form-group">'
         +'<label>Existencias*</label>'
         +'<div class="input-group">'
-        +'<input type="number" class="form-control" id="stock1">'
+        +'<input type="number" class="form-control @error(\'products[presentacion'+p+'][stock]\')"'
+        +' is-invalid @enderror '
+        +' name="products[presentacion'+p+'][stock]">'
+        
+        +'@error(\'products[presentacion'+p+'][stock]\')'
+        +'<div class="alert alert-danger">{{ $message }}</div>'
+        +'@enderror'
+        
         +'</div>'
         +'</div>'
         +'</div>'
@@ -118,7 +171,14 @@ p = 1;
         +'<div class="form-group">'
         +'<label>Stock mínimo*</label>'
         +'<div class="input-group">'
-        +'<input type="number" class="form-control" id="stockM1">'
+        +'<input type="number" class="form-control @error(\'products[presentacion'+p+'][stock_min]\')"'
+        +' is-invalid @enderror'
+        +' name="products[presentacion'+p+'][stock_min]">'
+        
+        +'@error(\'products[presentacion'+p+'][stock_min]\')'
+        +'<div class="alert alert-danger">{{ $message }}</div>'
+        +'@enderror'
+        
         +'</div>'
         +'</div>'
         +'</div>'
@@ -129,9 +189,16 @@ p = 1;
         +'<div class="form-group">'
         +'<label>Estado*</label>'
         +'<div class="input-group">'
-        +'<select class="form-control">'
-        +'<option>Disponible</option> <option>Agotado</option> <option>Proximamente</option>'          
+        +'<select class="form-control @error(\'products[presentacion'+p+'][estado]\')"'
+        +' name="pro'
+        +' is-invalid @enderrorducts[presentacion'+p+'][estado]">'
+        +'<option>Disponible</option> <option>No disponible</option> <option>Próximamente</option>'          
         +'</select>'
+        
+        +'@error(\'products[presentacion'+p+'][estado]\')'
+        +'<div class="alert alert-danger">{{ $message }}</div>'
+        +'@enderror'
+        
         +'</div>'
         +'</div>'
         +'</div>'
@@ -150,7 +217,14 @@ p = 1;
         +'<div class="form-group">'
         +'<label>Alto*</label> '
         +'<div class="input-group">'
-        +'<input type="number" class="form-control" id="alto1">'
+        +'<input type="number" class="form-control @error(\'products[presentacion'+p+'][alto]\')"'
+        +' is-invalid @enderror' 
+        +' name="products[presentacion'+p+'][alto]">'
+        
+        +'@error(\'products[presentacion'+p+'][alto]\')'
+        +'<div class="alert alert-danger">{{ $message }}</div>'
+        +'@enderror'
+        
         +'</div>'
         +'</div>'
         +'</div>'
@@ -161,7 +235,14 @@ p = 1;
         +'<div class="form-group"> '
         +'<label>Ancho*</label> '
         +'<div class="input-group"> '
-        +'<input type="number" class="form-control" id="ancho1">'
+        +'<input type="number" class="form-control @error(\'products[presentacion'+p+'][ancho]\')"'
+        +' is-invalid @enderror' 
+        +' name="products[presentacion'+p+'][ancho]">'
+        
+        +'@error(\'products[presentacion'+p+'][ancho]\')'
+        +'<div class="alert alert-danger">{{ $message }}</div>'
+        +'@enderror'
+        
         +'</div>'
         +'</div>'
         +'</div>'
@@ -172,7 +253,14 @@ p = 1;
         +'<div class="form-group">'
         +'<label>Largo*</label>'
         +'<div class="input-group">'
-        +'<input type="number" class="form-control" id="largo1">'
+        +'<input type="number" class="form-control @error(\'products[presentacion'+p+'][largo]\')"'
+        +' is-invalid @enderror' 
+        +' name="products[presentacion'+p+'][largo]" >'
+        
+        +'@error(\'products[presentacion'+p+'][largo]\')'
+        +'<div class="alert alert-danger">{{ $message }}</div>'
+        +'@enderror'
+        
         +'</div>'
         +'</div>'
         +'</div> '
@@ -183,7 +271,14 @@ p = 1;
         +'<div class="form-group">'
         +'<label>Peso (kg)*</label> '
         +'<div class="input-group"> '
-        +'<input type="number" class="form-control" id="peso1">'
+        +'<input type="number" class="form-control @error(\'products[presentacion'+p+'][peso]\')"'
+        +' is-invalid @enderror' 
+        +' name="products[presentacion'+p+'][peso]" >'
+        
+        +'@error(\'products[presentacion'+p+'][peso]\')'
+        +'<div class="alert alert-danger">{{ $message }}</div>'
+        +'@enderror'
+        
         +'</div> '
         +'</div>'
         +'</div>'
@@ -201,6 +296,7 @@ p = 1;
 
         
         document.getElementById('presentaciones').appendChild(div_card);
+        document.getElementById('numPresentaciones').value=p;
 
         saltarA('#pres'+p);
       }
@@ -228,7 +324,7 @@ p = 1;
         +'<div class="form-group">'
         +'<label>Seleccione*</label>'
         +'<div class="input-group" id="div_select_caracteristicas'+c+'">'
-        +'<select class="form-control" style="padding-left: 3px;" name="select_caracteristicas'+c+'" id="select_caracteristicas'+c+'" onchange="listenerSelect(event)"></select>'
+        +'<select class="form-control" style="padding-left: 3px;" name="select_caracteristicas[]" id="select_caracteristicas'+c+'" onchange="listenerSelect(event)"></select>'
         +'</div> </div> </div> '
         +'<!--nombre caracteristica'+c+'--> '
         +'<!-- val caracteristica'+c+' --> '
@@ -236,7 +332,7 @@ p = 1;
         +'<div class="form-group"> '
         +'<label>Valor de característica*</label> '
         +'<div class="input-group">  '
-        +'<input type="text" class="form-control" id="input_val_caract'+c+'"> '
+        +'<input type="text" class="form-control" id="input_val_caract'+c+'" name="input_val_caract[]"> '
         +'</div> </div>  </div> '
         +'<!-- val caracteristica '+c+'--> '
         +'<!-- descripcion caracteristica '+c+' --> '
@@ -250,7 +346,9 @@ p = 1;
         +'<!--fin row-->';
 
         document.getElementById('caracteristicas').appendChild(div_row);
+        document.getElementById('numCaracteristicas').value=c;
         updateSelect('select_caracteristicas'+c,document.getElementById('input_descrip_caract'+c));
+        saltarA('#carac'+c);
 
       }
 
@@ -259,6 +357,7 @@ p = 1;
         div.style.opacity = '0';
         setTimeout(function(){div.parentNode.removeChild(div);}, 700);
         p--;
+        document.getElementById('numPresentaciones').value=p;
       }
 
       function quitarCarac(idboton){
@@ -266,6 +365,7 @@ p = 1;
         div.style.opacity = '0';
         setTimeout(function(){div.parentNode.removeChild(div);}, 700);
         c--;
+        document.getElementById('numCaracteristicas').value=c;
       }
 
       function enviarForm(){

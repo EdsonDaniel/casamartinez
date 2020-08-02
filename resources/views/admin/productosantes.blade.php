@@ -29,7 +29,7 @@
     <!-- Main content -->
     <section class="content">
       <!-- form start -->
-      <form id="addProduct" method="post" action="/admin/products/" name="products">
+      <form id="addProduct">
       <div class="container-fluid">
         <div class="row">
           <!-- left column -->
@@ -43,19 +43,13 @@
               
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="nombre_producto">Nombre del producto*</label>
-                    <input type="text" class="form-control @error('nombre_producto') is-invalid @enderror" id="nombre_producto" name="nombre_producto" placeholder="Nombre" required>
-                    @error('nombre_producto')
-                      <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
+                    <label for="nombre">Nombre del producto*</label>
+                    <input type="text" class="form-control" id="nombre_producto" name="nombre_producto" placeholder="Nombre" required>
                   </div>
                   
                   <div class="form-group">
                     <label for="marca">Marca*</label>
-                    <input type="text" class="form-control @error('marca') is-invalid @enderror" name="marca" id="marca" placeholder="Marca" required>
-                    @error('marca')
-                      <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
+                    <input type="text" class="form-control" name="marca" id="marca" placeholder="Marca" required>
                   </div>
                   
                   <div class="form-group">
@@ -74,10 +68,7 @@
                   <!--descripcion-->
                   <div class="form-group">
                    <label for="descripcion">Breve descripción*</label>
-                    <textarea class="form-control @error('descripcion_producto') is-invalid @enderror" id="descripcion_producto" name="descripcion_producto" rows="2" placeholder="Mezcal joven de alta calidad" required></textarea>
-                    @error('descripcion_producto')
-                      <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
+                    <textarea class="form-control" id="descripcion_producto" name="descripcion_producto" rows="2" placeholder="Mezcal joven de alta calidad" required></textarea>
                   </div>
                   <!--descripcion--->
 
@@ -105,7 +96,7 @@
                         <div class="form-group">
                           <label for="select_caracteristicas1">Característica*</label>
                             <div class="input-group" id="div_select_caracteristicas1">
-                              <select class="form-control" style="padding-left: 3px;" onchange="listenerSelect(event)" id="select_caracteristicas1" name="select_caracteristicas[caract]">
+                              <select class="form-control" style="padding-left: 3px;" onchange="listenerSelect(event)" id="select_caracteristicas1" name="select_caracteristicas1">
                                 <option>SELECCIONE</option>
                                 @foreach ($caracteristicas as $caracteristica)
                                 <option value="{{$caracteristica->id_caract}}">{{ $caracteristica->nombre }}</option>
@@ -127,7 +118,7 @@
                         <div class="form-group">
                           <label>Valor de característica*</label>
                             <div class="input-group">
-                              <input type="text" class="form-control" placeholder="Ignacio Martínez" id="input_val_caract1" name="select_caracteristicas[value]">
+                              <input type="text" class="form-control" placeholder="Ignacio Martínez" id="input_val_caract1" name="input_val_caract1">
                             </div> 
                           </div>
                       </div>
@@ -217,40 +208,33 @@
                     <div class="col-sm-4">
                       <div class="form-group">
                         <label>Contenido neto*</label>
-                        <div class="input-group">
-                          <input type="number"  class="form-control @error('products[presentacion][contenido]') is-invalid @enderror" value="750" id="contenido1" required name="products[presentacion][contenido]">
-                          <select class="form-control @error('products[presentacion][unidad_c]') is-invalid @enderror" required name="products[presentacion][unidad]">
-                            <option>ml</option>
-                            <option>g</option>
-                            <option>l</option>
-                            <option>kg</option>
-                          </select>
-                          @error('products[presentacion][contenido]')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                          @enderror
-                          @error('products[presentacion][unidad]')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                          @enderror
-                        </div> 
-                      </div>
-                    </div>
-                    <!-- Contenido-->
+                          <div class="input-group">
+                        <input type="number"  class="form-control" value="750" id="contenido1" required>
+                        <select class="form-control" required>
+                          <option>ml</option>
+                          <option>g</option>
+                          <option>l</option>
+                          <option>kg</option>
+                        </select>
+                       </div> 
+                        </div>
+                     </div>
+                     <!-- Contenido-->
 
                    <!-- Precio consumidor -->
                     <div class="col-sm-4">
                       <div class="form-group">
                         <label>Precio consumidor*</label>
                           <div class="input-group">
-                            <div class="input-group-prepend"> 
-                              <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
-                            </div>
-                            <input type="number" min="100" class="form-control @error('products[presentacion][pre_consu]') is-invalid  @enderror" id="precioC1" required name="products[presentacion][pre_consu]">
-                            @error('products[presentacion][pre_consu]')
-                              <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-                          </div> 
+                          <div class="input-group-prepend"> 
+                            <span class="input-group-text">
+                             <i class="fas fa-dollar-sign"></i>
+                            </span>
+                          </div>
+                        <input type="number" min="100" class="form-control" id="precioC1" required>
+                       </div> 
                         </div>
-                      </div>
+                    </div>
                     <!-- Precio consumidor-->
 
                      <!-- Precio distribuidor -->
@@ -258,18 +242,15 @@
                       <div class="form-group">
                         <label>Precio distribuidor*</label>
                           <div class="input-group">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text">
-                                <i class="fas fa-dollar-sign"></i>
-                              </span>
-                            </div>
-                            <input type="number" min="100" class="form-control @error('products[presentacion][pre_distri]') is-invalid  @enderror" id="precioD1" required name="products[presentacion][pre_distri]">
-                            @error('products[presentacion][pre_distri]')
-                              <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-                          </div> 
+                          <div class="input-group-prepend"> 
+                            <span class="input-group-text">
+                             <i class="fas fa-dollar-sign"></i>
+                            </span>
+                          </div>
+                        <input type="number" min="100" class="form-control" id="precioD1" required>
+                       </div> 
                         </div>
-                      </div>
+                    </div>
                     <!-- Precio distribuidor-->
 
                     <!-- Precio Restaurant -->
@@ -282,11 +263,7 @@
                              <i class="fas fa-dollar-sign"></i>
                             </span>
                           </div>
-                        <input type="number" min="100" class="form-control @error('products[presentacion][pre_rest]') is-invalid  @enderror" id="precioR1" required name="products[presentacion][pre_rest]">
-
-                        @error('products[presentacion][pre_rest]')
-                              <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
+                        <input type="number" min="100" class="form-control" id="precioR1" required>
                        </div> 
                         </div>
                     </div>
@@ -302,11 +279,7 @@
                              <i class="fas fa-dollar-sign"></i>
                             </span>
                           </div>
-                        <input type="number" min="100" class="form-control @error('products[presentacion][pre_promo]') is-invalid @enderror"id="precioP1" name="products[presentacion][pre_promo]">
-
-                        @error('products[presentacion][pre_promo]')
-                              <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
+                        <input type="number" min="100" class="form-control" id="precioP1">
                        </div> 
                         </div>
                     </div>
@@ -322,10 +295,7 @@
                              <i class="fas fa-dollar-sign"></i>
                             </span>
                           </div>
-                        <input type="number" min="100" class="form-control @error('products[presentacion][costo]') is-invalid  @enderror" id="costo1" required name="products[presentacion][costo]">
-                        @error('products[presentacion][costo]')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                          @enderror
+                        <input type="number" min="100" class="form-control" id="costo1" required>
                        </div> 
                         </div>
                     </div>
@@ -336,10 +306,7 @@
                       <div class="form-group">
                         <label>Existencias*</label>
                           <div class="input-group">
-                        <input type="number" min="100" class="form-control @error('products[presentacion][stock]') is-invalid  @enderror" id="stock1" required name="products[presentacion][stock]">
-                        @error('products[presentacion][stock]')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                          @enderror
+                        <input type="number" min="100" class="form-control" id="stock1" required>
                        </div> 
                         </div>
                     </div>
@@ -349,10 +316,7 @@
                       <div class="form-group">
                         <label>Stock mínimo*</label>
                           <div class="input-group">
-                        <input type="number" min="100" class="form-control @error('products[presentacion][stock_min]') is-invalid  @enderror" id="stockM1" required name="products[presentacion][stock_min]">
-                        @error('products[presentacion][stock_min]')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                          @enderror
+                        <input type="number" min="100" class="form-control" id="stockM1" required>
                        </div> 
                         </div>
                     </div>
@@ -363,15 +327,11 @@
                       <div class="form-group">
                         <label>Estado*</label>
                           <div class="input-group">
-                            <select class="form-control @error('products[presentacion][estado]') is-invalid @enderror" required name="products[presentacion][estado]">
+                            <select class="form-control" required>
                               <option>Disponible</option>
                               <option>Agotado</option>
                               <option>Proximamente</option>
                             </select>
-
-                            @error('products[presentacion][estado]')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                          @enderror
                           </div> 
                         </div>
                     </div>
@@ -390,10 +350,7 @@
                       <div class="form-group">
                         <label>Alto*</label>
                           <div class="input-group">
-                        <input type="number" min="100" class="form-control @error('products[presentacion][alto]') is-invalid @enderror" id="alto1" required name="products[presentacion][alto]">
-                        @error('products[presentacion][alto]')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                          @enderror
+                        <input type="number" min="100" class="form-control" id="alto1" required>
                        </div> 
                         </div>
                     </div>
@@ -404,11 +361,7 @@
                       <div class="form-group">
                         <label>Ancho*</label>
                           <div class="input-group">
-                        <input type="number" min="100" class="form-control @error('products[presentacion][ancho]') is-invalid @enderror" id="ancho1" required name="products[presentacion][ancho]">
-
-                        @error('products[presentacion][ancho]')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                          @enderror
+                        <input type="number" min="100" class="form-control" id="ancho1" required>
                        </div> 
                         </div>
                     </div>
@@ -419,10 +372,7 @@
                       <div class="form-group">
                         <label>Largo*</label>
                           <div class="input-group">
-                        <input type="number" min="100" class="form-control @error('products[presentacion][largo]') is-invalid @enderror" id="largo1" required name="products[presentacion][largo]">
-                        @error('products[presentacion][largo]')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                          @enderror
+                        <input type="number" min="100" class="form-control" id="largo1" required>
                        </div> 
                         </div>
                     </div>
@@ -433,10 +383,7 @@
                       <div class="form-group">
                         <label>Peso (kg)*</label>
                           <div class="input-group">
-                        <input type="number" min="100" class="form-control @error('products[presentacion][peso]') is-invalid @enderror" id="peso1" required name="products[presentacion][peso]">
-                        @error('products[presentacion][peso]')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                          @enderror
+                        <input type="number" min="100" class="form-control" id="peso1" required>
                        </div> 
                         </div>
                     </div>
@@ -463,21 +410,6 @@
           <!--/.col (right) -->
         </div>
         <!-- /.row -->
-
-        <!--seccion de errores-->
-
-        @if ($errors->any())
-        <div class="alert alert-danger">
-          <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-          </ul>
-        </div>
-        @endif
-        <!--seccion de errores-->
-
-
       </div><!-- /.container-fluid -->
     </form><!--fin del form-->
     </section>
