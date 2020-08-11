@@ -72,7 +72,7 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $('#example').DataTable( {
-                "ajax": "/admin/productos/ajax",
+                "ajax": "https://casa-martinez.herokuapp.com/admin/productos/ajax",
                 "columns": [
                     { "data": "nombre" },
                     { "data": "marca" },
