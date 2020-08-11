@@ -26,4 +26,11 @@ class PresentacionesProducto extends Model
      * @var bool
      */
     public $timestamps = false;
+
+    protected $fillable = [
+        'contenido', 'unidad_c', 'precio_consumidor',
+        'precio_distribuidor','precio_restaurant', 'precio_promocion',
+        'costo_adquisicion', 'estado', 'stock', 'stock_min', 'peso', 'alto',
+        'ancho', 'id_product'
+    ];
 }

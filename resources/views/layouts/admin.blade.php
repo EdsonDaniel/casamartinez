@@ -206,8 +206,14 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/admin/productos/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Lista de productos</p>
+                </a>
+              </li>
                <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="/admin/productos/agregar" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Agregar productos</p>
                 </a>
@@ -308,5 +314,7 @@
 <script src="/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="/adminlte/js/adminlte.min.js"></script>
+
+@yield('scripts')
 </body>
 </html>

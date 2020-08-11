@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class StoreProduct extends FormRequest
 {
@@ -48,17 +49,17 @@ class StoreProduct extends FormRequest
             'products.*.largo'      =>['required', 'numeric', 'min:0'],
             'products.*.peso'       =>['required', 'numeric', 'min:0'],
             'products.*.unidad_c'   =>['required', Rule::in(['ml', 'g','l','kg'])],
-            'products.*.estado'     =>['required', 'integer','min:0', 'max:2']
+            'products.*.estado'     =>['required', 'integer','min:0', 'max:2'],
+            'caracteristicas.*.value' => ['max:255']
 
         ];
 
-        $carac = $request->input('numCaracteristicas');
-        if($carac>0){
-            $array_validaciones['select_caracteristicas.*'] = 
-                ['required|exists:App\OtrasCaracteristicas,id_caract'];
-            
-            $array_validaciones['input_val_caract.*'] = 'required|max:255';
-        }
+        /*$num_carac = $request->input('caracteristicas.característica1.id');
+        if($num_carac > 0){
+            $array_validaciones['caracteristicas.*.id'] = 
+                'required|exists:App\OtrasCaracteristicas,id_caract';
+            $array_validaciones['caracteristicas.*.value'] = 'required|max:255';
+        }*/
         return $array_validaciones;
     }
 
@@ -70,7 +71,7 @@ class StoreProduct extends FormRequest
 
     public function messages(){
         return [
-            'required'      => '*Debe llenar este campo',
+            'required'      => '*Debe llenar este campo :attribute',
             'max'           => 'Exedió el límite permitido para este campo',
             'numeric'       => 'Debe insertar un valor numérico',
             'integer'       => 'Debe insertar un valor entero',

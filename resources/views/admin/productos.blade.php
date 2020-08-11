@@ -12,7 +12,7 @@
             <ol class="breadcrumb float-sm-right">
               <li class="">
                 <!--<a href="#">Home</a>-->
-                <button type="submit" class="btn btn-success mr-3">Agregar Producto</button>
+                <button type="submit" form="addProduct" class="btn btn-success mr-3">Agregar Producto</button>
               </li>
               <li class="">
                 <button type="submit" class="btn btn-danger">Cancelar</button>
@@ -44,7 +44,7 @@
                 <div class="card-body">
                   <div class="form-group">
                     <label for="nombre_producto">Nombre del producto*</label>
-                    <input type="text" class="form-control @error('nombre_producto') is-invalid @enderror" id="nombre_producto" name="nombre_producto" placeholder="Nombre" required>
+                    <input type="text" class="form-control @error('nombre_producto') is-invalid @enderror" id="nombre_producto" name="nombre_producto" placeholder="Nombre" required value="{{ old('nombre_producto') }}">
                     @error('nombre_producto')
                       <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
@@ -52,7 +52,7 @@
                   
                   <div class="form-group">
                     <label for="marca">Marca*</label>
-                    <input type="text" class="form-control @error('marca') is-invalid @enderror" name="marca" id="marca" placeholder="Marca" required>
+                    <input type="text" class="form-control @error('marca') is-invalid @enderror" name="marca" id="marca" placeholder="Marca" required value="{{ old('marca') }}">
                     @error('marca')
                       <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
@@ -74,7 +74,7 @@
                   <!--descripcion-->
                   <div class="form-group">
                    <label for="descripcion">Breve descripción*</label>
-                    <textarea class="form-control @error('descripcion_producto') is-invalid @enderror" id="descripcion_producto" name="descripcion_producto" rows="2" placeholder="Mezcal joven de alta calidad" required></textarea>
+                    <textarea class="form-control @error('descripcion_producto') is-invalid @enderror" id="descripcion_producto" name="descripcion_producto" rows="2" placeholder="Mezcal joven de alta calidad" required value="{{ old('descripcion_producto') }}">{{ old('descripcion_producto') }}</textarea>
                     @error('descripcion_producto')
                       <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
@@ -105,8 +105,8 @@
                         <div class="form-group">
                           <label for="select_caracteristicas1">Característica*</label>
                             <div class="input-group" id="div_select_caracteristicas1">
-                              <select class="form-control" style="padding-left: 3px;" onchange="listenerSelect(event)" id="select_caracteristicas1" name="select_caracteristicas[caract]">
-                                <option>SELECCIONE</option>
+                              <select class="form-control" style="padding-left: 3px;" onchange="listenerSelect(event)" id="select_caracteristicas1" name="caracteristicas[caracteristica1][id]">
+                                <option selected="" value="0">SELECCIONE</option>
                                 @foreach ($caracteristicas as $caracteristica)
                                 <option value="{{$caracteristica->id_caract}}">{{ $caracteristica->nombre }}</option>
                                 @endforeach
@@ -127,7 +127,7 @@
                         <div class="form-group">
                           <label>Valor de característica*</label>
                             <div class="input-group">
-                              <input type="text" class="form-control" placeholder="Ignacio Martínez" id="input_val_caract1" name="select_caracteristicas[value]">
+                              <input type="text" class="form-control" placeholder="Ignacio Martínez" id="input_val_caract1" name="caracteristicas[caracteristica1][value]" value="{{ old('select_caracteristicas.value') }}">
                             </div> 
                           </div>
                       </div>
@@ -218,17 +218,17 @@
                       <div class="form-group">
                         <label>Contenido neto*</label>
                         <div class="input-group">
-                          <input type="number"  class="form-control @error('products[presentacion][contenido]') is-invalid @enderror" value="750" id="contenido1" required name="products[presentacion][contenido]">
-                          <select class="form-control @error('products[presentacion][unidad_c]') is-invalid @enderror" required name="products[presentacion][unidad]">
-                            <option>ml</option>
-                            <option>g</option>
-                            <option>l</option>
-                            <option>kg</option>
+                          <input type="number"  class="form-control @error('products.presentacion1.contenido') is-invalid @enderror" value="750" id="contenido1" required name="products[presentacion1][contenido]">
+                          <select class="form-control @error('products.presentacion1.unidad_c') is-invalid @enderror" required name="products[presentacion1][unidad_c]">
+                            <option value="ml" selected="">ml</option>
+                            <option value="g">g</option>
+                            <option value="l">l</option>
+                            <option value="kg">kg</option>
                           </select>
-                          @error('products[presentacion][contenido]')
+                          @error('products.presentacion1.contenido')
                             <div class="alert alert-danger">{{ $message }}</div>
                           @enderror
-                          @error('products[presentacion][unidad]')
+                          @error('products.presentacion1.unidad_c')
                             <div class="alert alert-danger">{{ $message }}</div>
                           @enderror
                         </div> 
@@ -244,8 +244,8 @@
                             <div class="input-group-prepend"> 
                               <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
                             </div>
-                            <input type="number" min="100" class="form-control @error('products[presentacion][pre_consu]') is-invalid  @enderror" id="precioC1" required name="products[presentacion][pre_consu]">
-                            @error('products[presentacion][pre_consu]')
+                            <input type="number"  class="form-control @error('products.presentacion1.pre_consu') is-invalid  @enderror" id="precioC1" required name="products[presentacion1][pre_consu]" value="{{ old('products.presentacion1.pre_consu') }}">
+                            @error('products.presentacion1.pre_consu')
                               <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                           </div> 
@@ -263,8 +263,8 @@
                                 <i class="fas fa-dollar-sign"></i>
                               </span>
                             </div>
-                            <input type="number" min="100" class="form-control @error('products[presentacion][pre_distri]') is-invalid  @enderror" id="precioD1" required name="products[presentacion][pre_distri]">
-                            @error('products[presentacion][pre_distri]')
+                            <input type="number"  class="form-control @error('products.presentacion1.pre_distri') is-invalid  @enderror" id="precioD1" required name="products[presentacion1][pre_distri]" value="{{ old('products.presentacion1.pre_distri') }}">
+                            @error('products.presentacion1.pre_distri')
                               <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                           </div> 
@@ -282,9 +282,9 @@
                              <i class="fas fa-dollar-sign"></i>
                             </span>
                           </div>
-                        <input type="number" min="100" class="form-control @error('products[presentacion][pre_rest]') is-invalid  @enderror" id="precioR1" required name="products[presentacion][pre_rest]">
+                        <input type="number"  class="form-control @error('products.presentacion1.pre_rest') is-invalid  @enderror" id="precioR1" required name="products[presentacion1][pre_rest]" value="{{ old('products.presentacion1.pre_rest') }}">
 
-                        @error('products[presentacion][pre_rest]')
+                        @error('products.presentacion1.pre_rest')
                               <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                        </div> 
@@ -302,9 +302,9 @@
                              <i class="fas fa-dollar-sign"></i>
                             </span>
                           </div>
-                        <input type="number" min="100" class="form-control @error('products[presentacion][pre_promo]') is-invalid @enderror"id="precioP1" name="products[presentacion][pre_promo]">
+                        <input type="number"  class="form-control @error('products.presentacion1.pre_promo') is-invalid @enderror"id="precioP1" name="products[presentacion1][pre_promo]" value="{{ old('products.presentacion1.pre_promo') }}">
 
-                        @error('products[presentacion][pre_promo]')
+                        @error('products.presentacion1.pre_promo')
                               <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                        </div> 
@@ -322,8 +322,8 @@
                              <i class="fas fa-dollar-sign"></i>
                             </span>
                           </div>
-                        <input type="number" min="100" class="form-control @error('products[presentacion][costo]') is-invalid  @enderror" id="costo1" required name="products[presentacion][costo]">
-                        @error('products[presentacion][costo]')
+                        <input type="number"  class="form-control @error('products.presentacion1.costo') is-invalid  @enderror" id="costo1" required name="products[presentacion1][costo]" value="{{ old('products.presentacion1.costo') }}">
+                        @error('products.presentacion1.costo')
                             <div class="alert alert-danger">{{ $message }}</div>
                           @enderror
                        </div> 
@@ -336,8 +336,8 @@
                       <div class="form-group">
                         <label>Existencias*</label>
                           <div class="input-group">
-                        <input type="number" min="100" class="form-control @error('products[presentacion][stock]') is-invalid  @enderror" id="stock1" required name="products[presentacion][stock]">
-                        @error('products[presentacion][stock]')
+                        <input type="number"  class="form-control @error('products.presentacion1.stock') is-invalid  @enderror" id="stock1" required name="products[presentacion1][stock]" value="{{ old('products.presentacion1.stock') }}">
+                        @error('products.presentacion1.stock')
                             <div class="alert alert-danger">{{ $message }}</div>
                           @enderror
                        </div> 
@@ -349,8 +349,8 @@
                       <div class="form-group">
                         <label>Stock mínimo*</label>
                           <div class="input-group">
-                        <input type="number" min="100" class="form-control @error('products[presentacion][stock_min]') is-invalid  @enderror" id="stockM1" required name="products[presentacion][stock_min]">
-                        @error('products[presentacion][stock_min]')
+                        <input type="number"  class="form-control @error('products.presentacion1.stock_min') is-invalid  @enderror" id="stockM1" required name="products[presentacion1][stock_min]" value="{{ old('products.presentacion1.stock_min') }}">
+                        @error('products.presentacion1.stock_min')
                             <div class="alert alert-danger">{{ $message }}</div>
                           @enderror
                        </div> 
@@ -363,13 +363,13 @@
                       <div class="form-group">
                         <label>Estado*</label>
                           <div class="input-group">
-                            <select class="form-control @error('products[presentacion][estado]') is-invalid @enderror" required name="products[presentacion][estado]">
-                              <option>Disponible</option>
-                              <option>Agotado</option>
-                              <option>Proximamente</option>
+                            <select class="form-control @error('products.presentacion1.estado') is-invalid @enderror" required name="products[presentacion1][estado]" >
+                              <option value="1" selected="">Disponible</option>
+                              <option value="0">Agotado</option>
+                              <option value="2">Proximamente</option>
                             </select>
 
-                            @error('products[presentacion][estado]')
+                            @error('products.presentacion1.estado')
                             <div class="alert alert-danger">{{ $message }}</div>
                           @enderror
                           </div> 
@@ -390,8 +390,8 @@
                       <div class="form-group">
                         <label>Alto*</label>
                           <div class="input-group">
-                        <input type="number" min="100" class="form-control @error('products[presentacion][alto]') is-invalid @enderror" id="alto1" required name="products[presentacion][alto]">
-                        @error('products[presentacion][alto]')
+                        <input type="number"  class="form-control @error('products.presentacion1.alto') is-invalid @enderror" id="alto1" required name="products[presentacion1][alto]" value="{{ old('products.presentacion1.alto') }}">
+                        @error('products.presentacion1.alto')
                             <div class="alert alert-danger">{{ $message }}</div>
                           @enderror
                        </div> 
@@ -404,9 +404,9 @@
                       <div class="form-group">
                         <label>Ancho*</label>
                           <div class="input-group">
-                        <input type="number" min="100" class="form-control @error('products[presentacion][ancho]') is-invalid @enderror" id="ancho1" required name="products[presentacion][ancho]">
+                        <input type="number"  class="form-control @error('products.presentacion1.ancho') is-invalid @enderror" id="ancho1" required name="products[presentacion1][ancho]" value="{{ old('products.presentacion1.ancho') }}">
 
-                        @error('products[presentacion][ancho]')
+                        @error('products.presentacion1.ancho')
                             <div class="alert alert-danger">{{ $message }}</div>
                           @enderror
                        </div> 
@@ -419,8 +419,8 @@
                       <div class="form-group">
                         <label>Largo*</label>
                           <div class="input-group">
-                        <input type="number" min="100" class="form-control @error('products[presentacion][largo]') is-invalid @enderror" id="largo1" required name="products[presentacion][largo]">
-                        @error('products[presentacion][largo]')
+                        <input type="number"  class="form-control @error('products.presentacion1.largo') is-invalid @enderror" id="largo1" required name="products[presentacion1][largo]" value="{{ old('products.presentacion1.largo') }}">
+                        @error('products.presentacion1.largo')
                             <div class="alert alert-danger">{{ $message }}</div>
                           @enderror
                        </div> 
@@ -433,8 +433,8 @@
                       <div class="form-group">
                         <label>Peso (kg)*</label>
                           <div class="input-group">
-                        <input type="number" min="100" class="form-control @error('products[presentacion][peso]') is-invalid @enderror" id="peso1" required name="products[presentacion][peso]">
-                        @error('products[presentacion][peso]')
+                        <input type="number"  class="form-control @error('products.presentacion1.peso') is-invalid @enderror" id="peso1" required name="products[presentacion1][peso]" value="{{ old('products.presentacion1.peso') }}">
+                        @error('products.presentacion1.peso')
                             <div class="alert alert-danger">{{ $message }}</div>
                           @enderror
                        </div> 
@@ -469,8 +469,8 @@
         @if ($errors->any())
         <div class="alert alert-danger">
           <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
+            @foreach ($errors->all() as $key => $val)
+                <li>{{ $val." :attribute" }} </li>
             @endforeach
           </ul>
         </div>

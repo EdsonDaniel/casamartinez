@@ -95,9 +95,15 @@ Route::get('/admin/users', function(){
 
 
 //rutasd Crud productos
-Route::get('/admin/products', 'ProductosController@index');
+Route::get('/admin/productos/agregar', 'ProductosController@index');
 //})->name('productos');
 Route::post('/admin/products','ProductosController@store');
+Route::get('/admin/productos',function(){
+    return view('admin.products');
+});
+
+Route::get('/admin/productos/ajax', 'ProductosController@getDataAjax');
+
 
 
 

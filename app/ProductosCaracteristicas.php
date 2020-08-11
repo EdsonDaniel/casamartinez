@@ -11,7 +11,8 @@ class ProductosCaracteristicas extends Model
      *
      * @var string
      */
-    protected $table = 'productos_caracteristicas';
+    protected $table = 'productos_tienen_caracteristicas';
+    
 
      /**
      * The primary key associated with the table.
@@ -26,4 +27,8 @@ class ProductosCaracteristicas extends Model
      * @var bool
      */
     public $timestamps = false;
+
+    protected $fillable = [
+        'id_caract', 'id_product','valor'
+    ];
 }
