@@ -93,6 +93,7 @@ Route::get('/admin/users', function(){
 })->name('usuarios');
 
 
+Route::post('/agregar-al-carrito','UserController@addToCar');
 
 //rutasd Crud productos
 Route::get('/admin/productos/agregar', 'ProductosController@index');
@@ -102,7 +103,10 @@ Route::get('/admin/productos',function(){
     return view('admin.products');
 });
 
+Route::get('/admin/productos/detalles/{id}','ProductosController@show');
 Route::get('/admin/productos/ajax', 'ProductosController@getDataAjax');
+Route::post('/admin/productos/update/{id}','ProductosController@updateProduct');
+Route::post('/admin/productos/update_caracteristicas/{id}','ProductosController@updateCaractProduct');
 
 
 

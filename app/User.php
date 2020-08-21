@@ -38,4 +38,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Get the car record associated with the user.
+     */
+    public function carrito()
+    {
+        return $this->hasOne('App\Carrito', 'id_user');
+    }
 }

@@ -20,5 +20,20 @@ class Productos extends Model
      */
     public $timestamps = false;
 
+    /**
+    * Obtener las caracteristicas adicionales del producto
+    */
+
+    public function caracteristicas()
+    {
+        return $this->belongsToMany(
+            'App\OtrasCaracteristicas', 
+            'productos_tienen_caracteristicas', 
+            'id_product', 
+            'id_caract')
+            ->withPivot('valor');
+        ;
+    }
+
     
 }

@@ -186,8 +186,6 @@
                   </div><!--fin card footer-->
 
                 </div><!-- fin card caracteristicas-->
-
-
                 <!--<div class="card-footer">
                   <button type="submit" class="btn btn-primary">Agregar</button>
                 </div>-->

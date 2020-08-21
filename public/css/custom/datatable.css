@@ -1,0 +1,192 @@
+/*.estado::after{
+    background: url('') no-repeat center center;
+    cursor: pointer;
+}
+*/
+.hidden{
+	visibility: hidden;
+	display: none;
+	padding: 0 !important;
+	margin: 0 !important;
+	width: 0 !important;
+}
+.estado{
+	text-align: center;
+}
+
+.botones{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	margin: 0;
+}
+
+.botones>div{
+	/*margin: 0 5px;*/
+	font-size: 1.19rem;
+}
+.actions{
+	border: none;
+	background-color: transparent;
+	padding: 0;
+	cursor: pointer;
+}
+.data-table th{
+	vertical-align: middle;
+	width: auto !important;
+	font-weight: normal !important;
+}
+
+
+.data-table td{
+	text-align: center;
+}
+
+[data-title]:hover:after {
+    opacity: 1;
+    transition: all 0.1s ease 0.5s;
+    visibility: visible;
+    z-index: 3;
+}
+
+[data-title]:after {
+    content: attr(data-title);
+    background-color: #333;
+    color: #fff;
+    font-size: 14px;
+    font-family: sans-serif;
+    font-weight: normal;
+    position: absolute;
+    padding: 3px 20px;
+    bottom: 1.8em;
+    /*left: -200%;*/
+    right: 5%;
+    white-space: nowrap;
+    box-shadow: 1px 1px 3px #222222;
+    opacity: 0;
+    border: 1px solid #111111;
+    z-index: 99999;
+    visibility: hidden;
+    border-radius: 4px;
+    
+}
+/*[data-title].hover-link:after{
+    /*left: -5% !important;*
+}
+*/
+[data-title] {
+    position: relative;
+    text-align: center;
+}
+
+/*[data-title].help:after, [data-title].btn-carac:after{
+    right: 5%;
+}
+[data-title].help:hover:after{
+    height: auto !important;
+}
+*/
+/*************************************************img**************/
+
+.img-prod{
+    max-width: 100%;
+    text-align: center;
+    height: auto;
+    max-height: 50%;
+    display: block;
+    margin: 0 auto;
+}
+/*
+.img-fluid{
+    max-height: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+*/
+
+.bordered{
+    border: -1px solid #dee2e6 !important;
+}
+
+label{
+    font-weight: 500 !important;
+}
+
+.label-precios{
+    font-size: 0.85rem;
+    font-weight: 200;
+}
+
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+  /*padding: 1% !important;*/
+}
+
+input[type=number] { -moz-appearance:textfield; }
+
+.help{ color: #007bff; position: relative;
+  display: inline-block; }
+.btn-help {border: none; background-color: transparent; color: #3498DB;}
+.btn-help:hover, .btn-help:focus { color: #2980B9; outline: none;}
+
+.btn-carac {border: none; background-color: transparent; }
+.btn-carac:hover, .btn-carac:focus { outline: none;}
+button > * {
+  pointer-events: none;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 5%;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  color: black;
+  padding: 10px;
+}
+.show {display: block;}
+
+/********************************* iconos ******************************/
+
+.icon-edit{
+    --fa-primary-color: #F7F356;
+    --fa-secondary-color: rgba(255,255,255,1) !important;
+    --fa-secondary-opacity:0.8;
+}
+
+.icon-edit2{
+    --fa-primary-color: #F7F356; 
+    --fa-secondary-color: gray !important; 
+    --fa-secondary-opacity:0.8;
+}
+
+.icon-cancel{
+    --fa-primary-color: white;
+    --fa-secondary-color: red !important;
+    --fa-secondary-opacity:1;
+    font-weight: bolder;
+    /*font-size: 1.1rem;*/
+    /*color: red;*/
+}
+
+.icon-save{
+    --fa-primary-color: white;
+    --fa-secondary-color: blue !important;
+    --fa-secondary-opacity:0.6;
+    --fa-primary-opacity:0.85;
+    font-weight: bolder;
+    font-size: 1.17rem;
+}
+
+select:hover{
+    cursor: pointer;
+}

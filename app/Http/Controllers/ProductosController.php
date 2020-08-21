@@ -59,14 +59,21 @@ class ProductosController extends Controller
         for($i=0; $i<$validated['numPresentaciones']; $i++){
             $presentacion = $presentaciones['presentacion'.($i+1)];
             $presentacion = PresentacionesProducto::create([
-            'contenido' => $presentacion['contenido'], 'unidad_c' => $presentacion['unidad_c'], 
-            'precio_consumidor' => $presentacion['pre_consu'], 
-            'precio_distribuidor' => $presentacion['pre_distri'],
-            'precio_restaurant' => $presentacion['pre_rest'], 'precio_promocion' => $presentacion['pre_promo'],
-            'costo_adquisicion' => $presentacion['costo'], 'estado' => $presentacion['estado'], 
-            'stock' => $presentacion['stock'], 'stock_min' => $presentacion['stock_min'], 
-            'peso' => $presentacion['peso'], 'alto' => $presentacion['alto'], 
-            'ancho' => $presentacion['ancho'], 'id_product' => $producto->id_product]);
+                'contenido' => $presentacion['contenido'], 
+                'unidad_c' => $presentacion['unidad_c'], 
+                'precio_consumidor' => $presentacion['pre_consu'], 
+                'precio_distribuidor' => $presentacion['pre_distri'],
+                'precio_restaurant' => $presentacion['pre_rest'], 
+                'precio_promocion' => $presentacion['pre_promo'],
+                'costo_adquisicion' => $presentacion['costo'], 
+                'estado' => $presentacion['estado'], 
+                'stock' => $presentacion['stock'], 
+                'stock_min' => $presentacion['stock_min'], 
+                'peso' => $presentacion['peso'], 
+                'alto' => $presentacion['alto'], 
+                'ancho' => $presentacion['ancho'], 
+                'id_product' => $producto->id_product
+            ]);
         }
 
         //return $presentacion;
@@ -98,7 +105,12 @@ class ProductosController extends Controller
      */
     public function show($id)
     {
-        //
+        $producto = Productos::where('id_product',$id)->take(1)->first();
+        $presentaciones = PresentacionesProducto::where('id_product',$id)->get();
+        $caracteristicas = Productos::find($id)->caracteristicas()->orderBy('nombre')->get();
+        $all_caract = OtrasCaracteristicas::all();
+             return view('admin.detalle_producto',
+            ['producto' => $producto, 'presentaciones' => $presentaciones, 'carac' => $caracteristicas, 'all_caract' => $all_caract]);
     }
 
     /**
@@ -109,7 +121,7 @@ class ProductosController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
@@ -119,10 +131,41 @@ class ProductosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function updateProduct(Request $request, $id)
     {
-        //
+        $producto = Productos::find($id);
+        $producto->nombre = $request->input('nombre_producto');
+        $producto->marca = $request->input('marca');
+        $producto->descripcion = $request->input('descripcion_producto');
+        $producto->save();
+
+        return redirect('/admin/productos/detalles/'.$id);
     }
+
+    public function updateCaractProduct(Request $request, $id)
+    {
+        //$validated = $request->validated();
+        $producto = Productos::find($id);
+
+        $caracteristicas = $request->input();
+        return $caracteristicas;
+        $carac = [];
+        foreach ($caracteristicas as $caracteristica) {
+            $carac[$caracteristica["id"]] = ['valor' => $caracteristica["value"]];
+        }
+        $producto->caracteristicas()->sync($carac);
+
+    }
+
+    public function updatePresentation(StoreProduct $request, $id)
+    {
+        $producto = Productos::find($id);
+        $producto->nombre = $request->input('nombre');
+        $producto->marca = $request->input('marca');
+        $producto->descripcion = $request->input('descripcion_producto');
+        $producto->save();
+    }
+
 
     /**
      * Remove the specified resource from storage.
