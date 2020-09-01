@@ -50,8 +50,13 @@ class ProductosController extends Controller
         $producto->nombre = $validated['nombre_producto'];
         $producto->marca = $validated['marca'];
         $producto->descripcion = $validated['descripcion_producto'];
+        if ($request->hasFile('imagen')) {
+            $producto->foto_url = $request->imagen->store('/img/fotos-productos','public');
+        }else $producto->foto_url = "img/logo-casa-martinez.jpg";
         $producto->save();
         $producto->refresh();
+
+        //return $producto;
         
         $presentaciones = $validated['products'];
         $presentacion;
@@ -72,6 +77,8 @@ class ProductosController extends Controller
                 'peso' => $presentacion['peso'], 
                 'alto' => $presentacion['alto'], 
                 'ancho' => $presentacion['ancho'], 
+                'largo' => $presentacion['largo'],
+                'foto_url' => $presentacion['img'],
                 'id_product' => $producto->id_product
             ]);
         }
@@ -92,7 +99,7 @@ class ProductosController extends Controller
             }
             
         }
-        return redirect('home');
+        return redirect('/admin/productos');
 
 
     }
@@ -146,24 +153,68 @@ class ProductosController extends Controller
     {
         //$validated = $request->validated();
         $producto = Productos::find($id);
+        $carac_actuales= $producto->caracteristicas();
 
-        $caracteristicas = $request->input();
-        return $caracteristicas;
+        $caracteristicas = $request->input('carac_iniciales');//'caracteristicas');
+        if(!is_null($caracteristicas))
+        foreach ($caracteristicas as $carac) {
+            try{
+                if(!is_null($carac["value"]))
+                    $carac_actuales->updateExistingPivot($carac["id"], ['valor' => $carac["value"]] );
+                else $producto->caracteristicas()->detach($carac["id"]);
+            }catch(\Illuminate\Database\QueryException $e){}
+        }
+        $producto->refresh();
+
+        $caracteristicas = $request->input('caracteristicas');
+        $carac_nuevas = $producto->caracteristicas();
+        if(!is_null($caracteristicas))
+        foreach ($caracteristicas as $carac) {
+            try{
+                if(!is_null($carac["value"]))
+                    $carac_nuevas->attach($carac["id"], ['valor' => $carac["value"]] );
+            }catch(\Illuminate\Database\QueryException $e){;}
+        }
+        //return $producto->caracteriticas;
+        //$caract_existentes = $carrito->productos()->where('carrito_productos.id_pres_prod',$presentacion)->get();
+        /*
         $carac = [];
         foreach ($caracteristicas as $caracteristica) {
             $carac[$caracteristica["id"]] = ['valor' => $caracteristica["value"]];
         }
         $producto->caracteristicas()->sync($carac);
+        */
 
     }
 
-    public function updatePresentation(StoreProduct $request, $id)
+    public function deleteCaractProduct(Request $request, $id)
     {
         $producto = Productos::find($id);
-        $producto->nombre = $request->input('nombre');
-        $producto->marca = $request->input('marca');
-        $producto->descripcion = $request->input('descripcion_producto');
-        $producto->save();
+        $producto->caracteristicas()->detach();
+    }
+
+    public function updatePresentacion(Request $request, $id_pres)
+    {
+        $presentacion = PresentacionesProducto::find($id_pres);
+
+        $presentacion->contenido = $request->input('contenido');
+        $presentacion->unidad_c = $request->input('unidad_c');
+        $presentacion->precio_consumidor = $request->input('pre_consu');
+        $presentacion->precio_distribuidor = $request->input('pre_distri');
+        $presentacion->precio_restaurant = $request->input('pre_rest');
+        $presentacion->costo_adquisicion = $request->input('costo_adquisicion');
+        $presentacion->estado = $request->input('estado');
+        $presentacion->stock = $request->input('stock');
+        $presentacion->stock_min = $request->input('stock_min');
+        $presentacion->peso = $request->input('peso');
+        $presentacion->alto = $request->input('alto');
+        $presentacion->ancho = $request->input('ancho');
+        $presentacion->largo = $request->input('largo');
+        if ($request->hasFile('img_presentacion')) {
+            $presentacion->foto_url = $request->img_presentacion->store('/img/fotos-productos','public');
+        }
+        $presentacion->save();
+
     }
 
 
@@ -173,9 +224,14 @@ class ProductosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroyPresentacion($id)
     {
-        //
+        $presentacion = PresentacionesProducto::find($id);
+        $presentacion->delete();
+
+
+        //return redirect('/admin/productos/');
+
     }
 
     public function getDataAjax()

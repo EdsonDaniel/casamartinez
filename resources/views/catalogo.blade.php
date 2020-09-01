@@ -12,9 +12,17 @@
   id="wh-bg"
 @endsection
 
+
 @section('content')
 <h3 style="padding-top: 75px;" id="pr">PRODUCTOS CASA MARTÍNEZ</h3>
 <div class="list-products">
+	<form action="/procesar-pago" method="POST">
+  <script
+   src="https://www.mercadopago.com.mx/integrations/v1/web-payment-checkout.js"
+   data-preference-id="{{$preference->id}}">
+  </script>
+</form>
+
 	<!--product1-->
 	<div class="img-p"><img src="img/sinai.png" class="img-cat"></div>
 	<div class="descrip-p">

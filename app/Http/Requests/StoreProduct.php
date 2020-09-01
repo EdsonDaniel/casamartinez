@@ -50,6 +50,7 @@ class StoreProduct extends FormRequest
             'products.*.peso'       =>['required', 'numeric', 'min:0'],
             'products.*.unidad_c'   =>['required', Rule::in(['ml', 'g','l','kg'])],
             'products.*.estado'     =>['required', 'integer','min:0', 'max:2'],
+            'products.*.img'        =>['required'],
             'caracteristicas.*.value' => ['max:255']
 
         ];

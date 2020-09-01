@@ -31,6 +31,6 @@ class PresentacionesProducto extends Model
         'contenido', 'unidad_c', 'precio_consumidor',
         'precio_distribuidor','precio_restaurant', 'precio_promocion',
         'costo_adquisicion', 'estado', 'stock', 'stock_min', 'peso', 'alto',
-        'ancho', 'largo', 'id_product'
+        'ancho', 'largo', 'foto_url', 'id_product'
     ];
 }

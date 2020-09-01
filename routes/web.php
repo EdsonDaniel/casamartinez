@@ -40,9 +40,7 @@ Route::get('/productos', function () {
 });
 
 
-Route::get('/catalogo', function () {
-    return view('catalogo');
-});
+Route::get('/catalogo', 'UserController@mercadopago');
 
 Route::get('/carrito', function () {
     return view('carrito');
@@ -96,7 +94,7 @@ Route::get('/admin/users', function(){
 Route::post('/agregar-al-carrito','UserController@addToCar');
 
 //rutasd Crud productos
-Route::get('/admin/productos/agregar', 'ProductosController@index');
+Route::get('/admin/productos/agregar', 'ProductosController@index')->name('list_products');
 //})->name('productos');
 Route::post('/admin/products','ProductosController@store');
 Route::get('/admin/productos',function(){
@@ -104,9 +102,13 @@ Route::get('/admin/productos',function(){
 });
 
 Route::get('/admin/productos/detalles/{id}','ProductosController@show');
+Route::get('/admin/productos/delete/{id}','ProductosController@destroy');
 Route::get('/admin/productos/ajax', 'ProductosController@getDataAjax');
 Route::post('/admin/productos/update/{id}','ProductosController@updateProduct');
 Route::post('/admin/productos/update_caracteristicas/{id}','ProductosController@updateCaractProduct');
+Route::post('/admin/productos/delete_caracteristicas/{id}','ProductosController@deleteCaractProduct');
+Route::post('/admin/productos/update_presentacion/{id_pres}','ProductosController@updatePresentacion');
+Route::post('/admin/productos/delete_presentacion/{id_pres}','ProductosController@destroyPresentacion');
 
 
 

@@ -1,5 +1,38 @@
       p = 1;
       c = 1;
+
+      function upload_img(input){
+        var $label = $(input).next();
+        var $div_img   = $(input).closest(".input-group").next();
+        var img = $div_img.find("img")[0];
+        if (input.files && input.files[0]) {
+            $label.text(event.target.files[0].name);
+            var reader = new FileReader();
+            $div_img.removeClass('d-none');
+            
+            reader.onload = function (e) {
+                $(img).attr('src', e.target.result);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+        else {
+            $label.text("Selecciona un archivo");
+            $(input).val("");
+            $(img).attr("src","");
+            $div_img.addClass("d-none");
+        }
+    }
+
+    function cancel_upload(btn){
+        var input = $(btn).closest("div").prev().find("input.custom-file-input");
+        $(input).val("");
+        $(input).next().text("Selecciona un archivo");
+        $(btn).next().attr("src","");
+        $(btn).parent().addClass("d-none");
+    }
+        
+
       function addPresentacion(){
         p++;
         var div_card = document.createElement('div');
@@ -205,6 +238,28 @@
         +'</div>'
         +'</div>'
         +'<!-- peso-->'
+
+        +'<!-- imagen-->'
+        +'<div class="col-sm-8">'
+        +'<div class="form-group">'
+        +'<label >Foto de la presentación*</label>'
+        +'<div class="input-group">'
+        +'<div class="custom-file">'
+        +'<input type="file" class="custom-file-input" name="products[presentacion'+p+'][img]"'
+        +'id="img_presentacion'+p+'" accept="image/*" onchange="upload_img(this);" required>'
+        +'<label class="custom-file-label" for="img_presentacion'+p
+        +'">Selecciona un archivo</label>'
+        +'</div>'
+        +'</div>'
+        +'<div class="d-none border" style="position: relative;">'
+        +'<button type="button" class="close" style="position: absolute; top: 0; right: 0;"  aria-label="Close" title="Cancelar" onclick="cancel_upload(this);">'
+        +'<i class="fas fa-window-close" style="color: red;"></i>'
+        +'</button>'
+        +'<img src="" class="img-upload" >'
+        +'</div>'
+        +'</div>'
+        +'</div>'
+        +'<!-- imagen-->'
         
         +'</div> <!--row-->'
 

@@ -1,5 +1,9 @@
 
 @extends('layouts.admin')
+@section('style')
+<link rel="stylesheet" href="/css/custom/productos_crud.css">
+@endsection
+
 @section('content')
 	 <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -15,7 +19,7 @@
                 <button type="submit" form="addProduct" class="btn btn-success mr-3">Agregar Producto</button>
               </li>
               <li class="">
-                <button type="submit" class="btn btn-danger">Cancelar</button>
+                <button type="button" class="btn btn-danger">Cancelar</button>
               </li>
             </ol>
           </div><!-- /.col -->
@@ -29,7 +33,7 @@
     <!-- Main content -->
     <section class="content">
       <!-- form start -->
-      <form id="addProduct" method="post" action="/admin/products/" name="products">
+      <form id="addProduct" method="post" action="/admin/products/" name="products" enctype="multipart/form-data">
       <div class="container-fluid">
         <div class="row">
           <!-- left column -->
@@ -59,15 +63,26 @@
                   </div>
                   
                   <div class="form-group">
-                    <label >Fotografía principal*</label>
+                    <label >Fotografía principal</label>
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="inputFile">
-                        <label class="custom-file-label" for="inputFile">Selecciona un archivo</label>
+                        <input type="file" class="custom-file-input @error('imagen') is-invalid @enderror" name="imagen"  value="{{ old('imagen') }}"
+                        id="img_principal" accept="image/*" onchange="upload_img(this);">
+                        <label class="custom-file-label" for="img_principal">Selecciona un archivo</label>
+                         @error('imagen')
+                          <div class="alert alert-danger">{{ $message }}</div>
+                         @enderror
                       </div>
-                      <div class="input-group-append">
+                      <!-- <div class="input-group-append">
                         <span class="input-group-text" id="">Subir</span>
                       </div>
+                    -->
+                    </div>
+                    <div class="d-none border" style="position: relative;">
+                      <button type="button" class="close" style="position: absolute; top: 0; right: 0;"  aria-label="Close" title="Cancelar" onclick="cancel_upload(this);">
+                        <i class="fas fa-window-close" style="color: red;"></i>
+                      </button>
+                      <img src="" class="img-upload" >
                     </div>
                   </div>
                   
@@ -439,6 +454,31 @@
                         </div>
                     </div>
                     <!-- peso-->
+
+                    <!-- imagen-->
+                    <div class="col-sm-8">
+                      <div class="form-group">
+                        <label >Foto de la presentación*</label>
+                        <div class="input-group">
+                          <div class="custom-file">
+                            <input type="file" class="custom-file-input @error('products.presentacion1.img') is-invalid @enderror" 
+                            id="img_presentacion1" name="products[presentacion1][img]"
+                            accept="image/*" onchange="upload_img(this);" value="{{ old('products.presentacion1.img') }}" required="true">
+                            <label class="custom-file-label" for="img_presentacion1">Selecciona un archivo</label>
+                             @error('products.presentacion1.img')
+                              <div class="alert alert-danger">{{ $message }}</div>
+                             @enderror
+                          </div>
+                        </div>
+                        <div class="d-none border" style="position: relative;">
+                          <button type="button" class="close" style="position: absolute; top: 0; right: 0;"  aria-label="Close" title="Cancelar" onclick="cancel_upload(this);">
+                            <i class="fas fa-window-close" style="color: red;"></i>
+                          </button>
+                          <img src="" class="img-upload" >
+                        </div>
+                      </div>
+                    </div>
+                    <!-- imagen-->
                   </div>
                  
                 <!--</form>-->

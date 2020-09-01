@@ -100,11 +100,11 @@
                         "defaultContent": 
                         '<div class="botones">'
                         +'<div style="margin-right: 10px;"> <a class="actions" data-title="Ver detalles">'
-                        + '<i class="fad fa-info-circle" style="color:green;"></i></a></div>'
+                        + '<i class="fa fa-info-circle" ></i></a></div>'
                         +'<div style="margin-right: 10px;"> <a class="actions" data-title="Editar">'
-                        + '<i class="fad fa-edit" style="--fa-primary-color: #F7F356; --fa-secondary-color: rgb(218, 41, 28);"></i></a></div>'
-                        +'<div > <button class="actions" data-title="Eliminar">'
-                        + '<i class="fad fa-trash-alt" style="color:red;"></i></button></div>'
+                        + '<i class="fa fa-edit" style="--fa-primary-color: #F7F356; background-color: white !important; color: magenta; --fa-secondary-color: rgb(218, 41, 28);"></i></a></div>'
+                        +'<div > <a class="actions" data-title="Eliminar">'
+                        + '<i class="fa fa-trash-alt" style="color:red;"></i></a></div>'
                         +'</div>'
                     },
                     {
@@ -180,7 +180,7 @@
                     //divs = 
                     $(divs[0]).find('a').attr( "href", "/admin/productos/detalles/"+col_id[i] );
                     $(divs[1]).find('a').attr( "href", col_id[i] );
-                    //$(divs[0]).find('a').attr( "href", col_id[i] );
+                    //$(divs[0]).find('a').attr( "href", "/admin/productos/delete/"+col_id[i]);
 
                     console.log("celda: "+botones[i].tagName);
 

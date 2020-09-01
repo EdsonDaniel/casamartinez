@@ -35,5 +35,9 @@ class Productos extends Model
         ;
     }
 
+    public function presentaciones(){
+        return $this->hasMany('App\PresentacionesProducto', 'id_product', 'id_pres_prod');
+    }
+
     
 }
