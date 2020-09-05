@@ -629,7 +629,7 @@
                                                           <span class="input-group-text p-1 label-precios"><i class="fas fa-file-image"></i></span>
                                                         </div>
                                                         <input type="file" class="custom-file-input" id="img_presentacion{{$loop->iteration}}" name="img_presentacion" accept="image/*" 
-                                                        onchange="upload_img(this);" >
+                                                        onchange="upload_img(this);" campo="Foto de presentación" >
                                                         <label class="custom-file-label" for="img_presentacion{{$loop->iteration}}">Selecciona un archivo</label>
                                                     </div> 
                                                 </div>
@@ -655,10 +655,16 @@
                                 @endforeach
                             </div> <!--endd row-->
                         </div><!--end card body-->
+                        
+                        <div class="card-footer d-none" id="footer-presentaciones">
+                            <div class="d-flex align-items-sm-center justify-content-sm-center">
+                                <button id="btn_add_new_pres" type="submit" form="nueva_presentacion" class="btn btn-success" >Agregar nuevas presentaciones</button>
+                            </div>
+                        </div>
                     </div>
                     <!-- card presentaciones -->
 
-                    <form id="nueva_presentacion" action="/admin/productos/nueva_presentacion/{{$producto->id_product}}" enctype="multipart/form-data" method="post">
+                    <form id="nueva_presentacion" action="/admin/productos/add_presentaciones/{{$producto->id_product}}" enctype="multipart/form-data" method="post">
                         @method('POST')
                         @csrf
                     </form>

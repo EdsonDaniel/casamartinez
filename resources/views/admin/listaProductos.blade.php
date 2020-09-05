@@ -1,4 +1,9 @@
 @extends('layouts.admin')
+@section('style')
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom/datatable.css">
+@endsection
+
 @section('content')
 
 <!-- Content Header (Page header) -->
@@ -10,6 +15,12 @@
             <h1 class="m-0 text-dark">Lista de productos</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+                <li class="">
+                    <!--<a href="#">Home</a>-->
+                    <a href="/admin/productos/agregar" class="btn btn-success mr-3">Agregar Producto</a>
+                </li>
+            </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -70,7 +81,7 @@
     @endsection
 
     @section('scripts')
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 
     <script type="text/javascript">
@@ -158,17 +169,17 @@
                         break;
 
                         case '0': 
-                        $(nodes[i]).html($('<span data-title="No disponible"><i class="fad fa-ban" '
+                        $(nodes[i]).html($('<span data-title="No disponible"><i class="fa fa-ban" '
                             +' style="color:#c82333;"></i></span>'));
                         break;
 
                         case '2': 
-                        $(nodes[i]).html($('<span data-title="Pocas existencias"><i class="fad fa-exclamation-triangle" '
+                        $(nodes[i]).html($('<span data-title="Pocas existencias"><i class="fa fa-exclamation-triangle" '
                             +' style="color:#FFFA4B;"></i></span>'));
                         break;
 
                         case '3': 
-                        $(nodes[i]).html($('<span data-title="Próximamente"><i class="fad fa-clock" '
+                        $(nodes[i]).html($('<span data-title="Próximamente"><i class="fa fa-clock" '
                             +'style="color:black;"></i></span>'));
                         break;
 
@@ -199,9 +210,6 @@
 
     </script>
     <!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/custom/datatable.css">
-
     @endsection
 
 

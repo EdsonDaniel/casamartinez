@@ -170,7 +170,7 @@
           <!-- sección de ventas -->
           <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon fas fa-comment-dollar"></i>
               <p>
                 Ventas
                 <i class="right fas fa-angle-left"></i>
@@ -179,19 +179,19 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="far fa-chart-bar nav-icon"></i>
                   <p>Estadísticas</p>
                 </a>
               </li>
                <li class="nav-item">
                 <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fas fa-box nav-icon"></i>
                   <p>Pedidos</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fas fa-clipboard-list nav-icon"></i>
                   <p>Reportes</p>
                 </a>
               </li>
@@ -201,7 +201,7 @@
           <!-- sección de productos -->
            <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link ">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="fas fa-wine-bottle nav-icon"></i>
               <p>
                 Productos
                 <i class="right fas fa-angle-left"></i>
@@ -210,32 +210,26 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="/admin/productos/" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="far fa-list-alt nav-icon" ></i>
                   <p>Lista de productos</p>
                 </a>
               </li>
                <li class="nav-item">
                 <a href="/admin/productos/agregar" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="far fa-plus-square nav-icon"></i>
                   <p>Agregar productos</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fas fa-chart-line nav-icon"></i>
                   <p>Los más vendidos</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Detalles de productos</p>
-                </a>
-              </li>
                <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Categorías</p>
+                <a href="/admin/caracteristicas" class="nav-link">
+                  <i class="fas fa-stream nav-icon"></i>
+                  <p>Especificaciones</p>
                 </a>
               </li>
             </ul>
@@ -244,7 +238,7 @@
           <!-- sección de usuarios -->
            <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link ">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="fas fa-users nav-icon"></i>
               <p>
                 Roles y Usuarios
                 <i class="right fas fa-angle-left"></i>
@@ -252,20 +246,20 @@
             </a>
             <ul class="nav nav-treeview">
                <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                <a href="/admin/usuarios/" class="nav-link">
+                  <i class="far fa-address-card nav-icon"></i>
                   <p>Lista de usuarios</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fas fa-list nav-icon"></i>
                   <p>Lista de roles</p>
                 </a>
               </li>
                <li class="nav-item">
                 <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fas fa-person-booth nav-icon"></i>
                   <p>Permisos</p>
                 </a>
               </li>

@@ -19,7 +19,7 @@
                 <button type="submit" form="addProduct" class="btn btn-success mr-3">Agregar Producto</button>
               </li>
               <li class="">
-                <button type="button" class="btn btn-danger">Cancelar</button>
+                <a href="/admin/productos/" class="btn btn-danger">Cancelar</a>
               </li>
             </ol>
           </div><!-- /.col -->
@@ -33,7 +33,7 @@
     <!-- Main content -->
     <section class="content">
       <!-- form start -->
-      <form id="addProduct" method="post" action="/admin/products/" name="products" enctype="multipart/form-data">
+      <form id="addProduct" method="post" action="/admin/productos/guardar" name="products" enctype="multipart/form-data">
       <div class="container-fluid">
         <div class="row">
           <!-- left column -->

@@ -4,58 +4,160 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\StoreUser;
 use App\User;
 use MercadoPago;
 
 class UserController extends Controller
 {
+
+    public function index()
+    {
+        return view('admin.listaUsuarios');
+    }
+
+    
+    public function create()
+    {
+        return view('admin.addUsuario');
+    }
+    
+    public function store(Request $request)
+    {
+        $user = new User;
+        $user->name = $request->input('name');
+        $user->last_name = $request->input('last_name');
+        $user->email = $request->input('email');
+        $user->password = Hash::make($request->input('password'));
+        $user->tipo_usuario = $request->input('tipo_usuario');
+        $user->save();
+
+        return redirect('/admin/usuarios');
+    }
+
     /**
-     * Handle the incoming request.
+     * Display the specified resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function addToCar(Request $request)
+    public function show(Request $request, $id)
     {
-        $presentacion = $request->input('id_presentacion');
-        $cantidad = $request->input('cantidad');
-            
-        if (Auth::check()) {
-            $user = Auth::user();
-            $carrito = $user->carrito;
-            $productos = $carrito->productos;
-            $productos = $carrito->productos()->where('carrito_productos.id_pres_prod',$presentacion)->get();
-
-            //return $productos;
-            if($productos->isEmpty()){
-                $carrito->productos()->attach($presentacion, ['cantidad' => $cantidad]);
-            }
-            else{
-                $carrito->productos()->updateExistingPivot($presentacion, ['cantidad' => $cantidad]);
-                return $cantidad;
-            }
-            return $productos;
-            
+        $user = User::find($id);
+        $editable = $request->query('editar', 'disabled');
+        $icon;
+        $color;
+        switch ($user->tipo_usuario) {
+            case 1:
+                $icon = "fas fa-user-tag text-primary";
+                $color = "color:blue;";
+                break;
+            case 2:
+                $icon = "fas fa-user-plus";
+                $color = "color:darkblue;";
+                break;
+            case 3:
+                $icon = "fas fa-dolly";
+                $color = "color:darkgreen;";
+                break;
+            case 4:
+                $icon = "fas fa-user-cog";
+                $color = "color:purple;";
+                break;
+            case 5:
+                $icon = "fas fa-user-shield";
+                $color = "color:darkred;";
+                break;
         }
-        return response()->json("hola y adios");
+        return view('admin.detalleUsuario',
+            ['usuario'=>$user, 'editable'=>$editable, 'icon_class'=>$icon, 'color'=>$color]);
     }
-    public function mercadopago(){
-        //require __DIR__ .  '\vendor\autoload.php';
-        // Agrega credenciales
-MercadoPago\SDK::setAccessToken('APP_USR-1159009372558727-072921-8d0b9980c7494985a5abd19fbe921a3d-617633181');
-//MercadoPago\SDK::setPublicKey('APP_USR-d81f7be9-ee11-4ff0-bf4e-20c36981d7bf');
-MercadoPago\SDK::setIntegratorId('dev_24c65fb163bf11ea96500242ac130004');
-// Crea un objeto de preferencia
-        // Crea un objeto de preferencia
-        $preference = new MercadoPago\Preference();
-        // Crea un ítem en la preferencia
-        $item = new MercadoPago\Item();
-        $item->title = 'Mi producto';
-        $item->quantity = 1;
-        $item->unit_price = 75.56;
-        $preference->items = array($item);
-        $preference->save();
-        return view('catalogo')->with('preference', $preference);
+   
+   
+    public function update(Request $request, $id)
+    {
+        //$validated = $request->validated();
 
+        $usuario = User::find($id);
+
+        /*
+
+        if( $validated['name'] != null && $validated['name'] != $usuario->name ){
+            $usuario->name  = $validated['name'];
+        }
+        if( $validated['last_name'] != null && $validated['last_name'] != $usuario->last_name ){
+            $usuario->last_name = $validated['last_name'];
+        }
+        if( $validated['email'] != null && $validated['email'] != $usuario->email ){
+            $usuario->email = $validated['email'];
+        }
+        if( $validated['tipo_usuario'] != null && $validated['tipo_usuario'] != $usuario->tipo_usuario ){
+            $usuario->tipo_usuario  = $validated['tipo_usuario'];
+        }
+        if( $request->input("password") != null && $request->input("password") != "" ){
+            $usuario->password = $request->input('password');
+        }
+        */
+
+        if( $request->input('name') != null && $request->input('name') != $usuario->name ){
+            $usuario->name  = $request->input('name');
+        }
+        if( $request->input('last_name') != null && $request->input('last_name') != $usuario->last_name ){
+            $usuario->last_name = $request->input('last_name');
+        }
+        if( $request->input('tipo_usuario') != null && $request->input('tipo_usuario') != $usuario->tipo_usuario ){
+            $usuario->tipo_usuario  = $request->input('tipo_usuario');
+        }
+        if( $request->input('email') != null && $request->input('email') != $usuario->email ){
+            $request->validate([
+                'email'=>['unique:users,email','max:100'], 
+            ]);
+            $usuario->email = $request->input('email');
+        }
+        if( $request->input("password") != null && $request->input("password") != "" ){
+            $usuario->password = $request->input('password');
+        }
+        
+        $usuario->save();
     }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function baja($id)
+    {
+        $user = User::find($id);
+        $user->active = 0;
+        $user->save();
+    }
+
+    public function alta($id)
+    {
+        $user = User::find($id);
+        $user->active = 1;
+        $user->save();
+    }
+
+    public function getDataAjaxActive()
+    {
+        $usuarios = User::where('active', 1)->get();
+        return response()->json($usuarios);
+    }
+    public function getDataAjaxInactive()
+    {
+        $usuarios = User::where('active', 0)->get();
+        return response()->json($usuarios);
+    }
+
+   
+    public function getDataById(Request $request, $id)
+    {
+        $usuario = User::find($id);
+        return response()->json($usuario);
+    }
+
 }

@@ -117,10 +117,22 @@
 
         }
 
+        function cancel_add_pres(btn){
+            var div = $(btn).closest("div.card-container")[0];
+            div.style.display = 'none';
+            setTimeout(function(){div.parentNode.removeChild(div);}, 600);
+
+            var $demas_nuevas_pres = $("#lista_presentaciones .card-container:visible");
+            console.log($demas_nuevas_pres);
+            if($demas_nuevas_pres.length == 0){
+                $("#footer-presentaciones").addClass("d-none");
+            }
+        }
+
         function addPresentacion(){
             add_pres++;
             var card = document.createElement('div');
-            card.setAttribute('class', 'col-sm-4 mt-2');
+            card.setAttribute('class', 'col-sm-4 mt-2 card-container');
             //card.setAttribute('id', 'div_campo_car'+id_select_carac);
             //card.setAttribute('new_div_caract', '');
             var html = '<div class="card card-info">'
@@ -129,13 +141,14 @@
             +' class="m-0 p-1"> Nueva presentación </span>'
             +'<span style="float: right; ">'
             +'<button type="button" class="btn  m-0 p-1" data-title="Cancelar" '
-            +' onclick="delete_presentacion(event)">'
+            +' onclick="cancel_add_pres(this);">'
             +'<i class="fa fa-window-close" style="color:red; padding:5%; '
             +' background-color:white;"></i>'
             +'</button>'
-            +'<button class="btn " data-title="Guardar presentación" '
-            +' style="font-size: 1.15em; line-height: 1; color:darkblue; padding-right:0;">'
-            +'<i class="far fa-save " style="background-color: white; padding:5%;"></i>'
+            +'<button class="btn " data-title="Guardar presentación" type="submit"'
+            +' style="font-size: 1.15em; line-height: 1; color:darkblue; padding-right:0;"'
+            +' form="nueva_presentacion" >'
+            +'<i class="fa fa-save " style="background-color: white; padding:5%;"></i>'
             +'</button>'
             +'</span>'
             +'</div> <!--card -header-->'
@@ -366,10 +379,9 @@
             card.innerHTML = html;
             document.getElementById('lista_presentaciones').appendChild(card);
             $('#input_contenido'+add_pres).focus();
-            /*if(!($("#footer-carac").is(":visible"))){
-                $("#footer-carac").removeClass("d-none");
+            if(!($("#footer-presentaciones").is(":visible"))){
+                $("#footer-presentaciones").removeClass("d-none");
             }
-            */
 
         }
         
@@ -527,6 +539,7 @@
                     return this.getAttribute("placeholder");
                 });
                 $(div).find("input,select").attr("disabled", true);
+                //$(div).find(":file").attr("disabled", true);
             }
         });
 
@@ -534,7 +547,7 @@
             $("#save_generales").removeClass("btn-warning").addClass("btn-primary");
             var html = "";
             if (producto.nombre.localeCompare($("#nombre").val()) != 0) {
-                html = "<li><strong>Nombre: </strong>"+$("#nombre").val()+"</li>";
+                html += "<li><strong>Nombre: </strong>"+$("#nombre").val()+"</li>";
             }
             if (producto.marca.localeCompare($("#marca").val()) != 0) {
                 html += "<li><strong>Marca: </strong>"+$("#marca").val()+"</li>";
@@ -722,6 +735,7 @@
             var lista_editados="";
 
             for (var i = 0; i < inputs.length; i++) {
+
                 if(inputs[i].nodeName=='OPTION'){
                     if(inputs[i].parentNode.getAttribute("placeholder") != inputs[i].value){
                         //Si cambiaron los campos
@@ -729,12 +743,22 @@
                         +': </strong>'+ inputs[i].text+'</li>';
                     }
                 }
-                else if (inputs[i].value == ''){
-                    $(inputs[i]).val(inputs[i].placeholder);
-                } else if (inputs[i].value.localeCompare(inputs[i].placeholder) != 0) {
-                    //Si cambiaron los campos
+                
+                if(inputs[i].type == "file" && inputs[i].value != ""){
                     lista_editados += '<li><strong>'+inputs[i].getAttribute("campo")
-                    +': </strong>'+ inputs[i].value+'</li>';
+                    +': </strong>'+ inputs[i].files[0].name+'</li>';
+                }
+                
+                if (inputs[i].type == 'text'){
+                    if(inputs[i].value == ''){
+                        $(inputs[i]).val(inputs[i].placeholder);
+                    }
+
+                    if (inputs[i].value.localeCompare(inputs[i].placeholder) != 0) {
+                        //Si cambiaron los campos
+                        lista_editados += '<li><strong>'+inputs[i].getAttribute("campo")
+                        +': </strong>'+ inputs[i].value+'</li>';
+                    }
                 }
             }
 
@@ -870,15 +894,8 @@
         //boton borrar todas caract
         $("#delete_all_caract").click(function(){
             var modal = $("#new_modal");
-            $("#form_carac")
-                .append('<input id="input_delete_all" type="hidden" name="delete_all" value="1"></input>');
             if(modal.length == 0){
                 modal = create_modal($("#form_carac"));
-                /*
-                $('new_modal').on('hidden.bs.modal', function(e){
-                    $("#input_delete_all").remove();
-                });
-                */
             }
             $("#save_new_modal").attr('form','form_delete_all_caract');
             $("#save_new_modal").attr('type','submit');
@@ -1145,6 +1162,5 @@
             setTimeout(function(){div.parentNode.removeChild(div);}, 700);
             count_carac--;
             $('#count_carac').html("("+count_carac+")");
-
-      }
+        }
         

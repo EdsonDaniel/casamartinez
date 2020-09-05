@@ -26,4 +26,14 @@ class OtrasCaracteristicas extends Model
      * @var bool
      */
     public $timestamps = false;
+
+    public function productos()
+    {
+        return $this->belongsToMany(
+            'App\Productos', 
+            'productos_tienen_caracteristicas', 
+            'id_caract', 
+            'id_product');
+        ;
+    }
 }

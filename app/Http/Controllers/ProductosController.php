@@ -20,8 +20,7 @@ class ProductosController extends Controller
      */
     public function index()
     {
-        $caracteristicas = OtrasCaracteristicas::all();
-        return view('admin.productos')->with('caracteristicas', $caracteristicas);
+        return view('admin.listaProductos');
     }
 
     /**
@@ -31,7 +30,8 @@ class ProductosController extends Controller
      */
     public function create()
     {
-        //
+        $caracteristicas = OtrasCaracteristicas::all();
+        return view('admin.addProductos')->with('caracteristicas', $caracteristicas);
     }
 
     /**
@@ -42,7 +42,6 @@ class ProductosController extends Controller
      */
     public function store(StoreProduct $request)
     {
-       
         $validated = $request->validated();
         //$unidad = $request->input('products');
 
@@ -57,7 +56,6 @@ class ProductosController extends Controller
         $producto->refresh();
 
         //return $producto;
-        
         $presentaciones = $validated['products'];
         $presentacion;
 
@@ -100,8 +98,6 @@ class ProductosController extends Controller
             
         }
         return redirect('/admin/productos');
-
-
     }
 
     /**
@@ -177,7 +173,7 @@ class ProductosController extends Controller
         }
         //return $producto->caracteriticas;
         //$caract_existentes = $carrito->productos()->where('carrito_productos.id_pres_prod',$presentacion)->get();
-        /*
+        /* codigo opcional pero no eficiciente
         $carac = [];
         foreach ($caracteristicas as $caracteristica) {
             $carac[$caracteristica["id"]] = ['valor' => $caracteristica["value"]];
@@ -217,6 +213,36 @@ class ProductosController extends Controller
 
     }
 
+    public function addPresentaciones(Request $request, $id){
+        $producto = Productos::find($id);
+        
+        $presentaciones = $request->input('new_pres');
+        return $presentaciones;
+        $presentacion;
+
+        for($i=0; $i<$validated['numPresentaciones']; $i++){
+            $presentacion = $presentaciones['presentacion'.($i+1)];
+            $presentacion = PresentacionesProducto::create([
+                'contenido' => $presentacion['contenido'], 
+                'unidad_c' => $presentacion['unidad_c'], 
+                'precio_consumidor' => $presentacion['pre_consu'], 
+                'precio_distribuidor' => $presentacion['pre_distri'],
+                'precio_restaurant' => $presentacion['pre_rest'], 
+                'precio_promocion' => $presentacion['pre_promo'],
+                'costo_adquisicion' => $presentacion['costo'], 
+                'estado' => $presentacion['estado'], 
+                'stock' => $presentacion['stock'], 
+                'stock_min' => $presentacion['stock_min'], 
+                'peso' => $presentacion['peso'], 
+                'alto' => $presentacion['alto'], 
+                'ancho' => $presentacion['ancho'], 
+                'largo' => $presentacion['largo'],
+                'foto_url' => $presentacion['img'],
+                'id_product' => $producto->id_product
+            ]);
+        }
+    }
+
 
     /**
      * Remove the specified resource from storage.
@@ -227,10 +253,21 @@ class ProductosController extends Controller
     public function destroyPresentacion($id)
     {
         $presentacion = PresentacionesProducto::find($id);
-        $presentacion->delete();
-
-
+        //$presentacion->delete();
+        //Código de estado para baja de presentaciones
+        $presentacion->estado = -1;
+        $presentacion->save();
         //return redirect('/admin/productos/');
+
+    }
+
+    public function destroyProducto($id)
+    {
+        $producto = Productos::find($id);
+        //$presentacion->delete();
+        //Código de estado para baja de presentaciones
+        $producto->estado = -1;
+        $producto->save();
 
     }
 

@@ -13,9 +13,9 @@ class CaracteristicasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-   /* public function index()
+    public function index()
     {
-        //
+        return view('admin.listaCaracteristicas');
     }
 
     /**
@@ -58,7 +58,7 @@ class CaracteristicasController extends Controller
      */
     public function show($id)
     {
-        //
+        //return view('admin.listaCaracteristicas');
     }
 
     /**
@@ -81,7 +81,10 @@ class CaracteristicasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $caracteristica = OtrasCaracteristicas::find($id);
+        $caracteristica->nombre = $request->input("nombre_caracteristica");
+        $caracteristica->descripcion = $request->input("descripcion_caracteristica");
+        $caracteristica->save();
     }
 
     /**
@@ -92,7 +95,9 @@ class CaracteristicasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $caracteristica = OtrasCaracteristicas::find($id);
+        $caracteristica->productos()->detach();
+        $caracteristica->delete();
     }
 
     /**

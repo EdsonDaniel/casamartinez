@@ -17,4 +17,28 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
+    <!-- Main content -->
+    <section class="content">
+      <!-- container -->
+      <div class="container-fluid">
+        <!-- row -->
+        <div class="row">
+          <!-- left column -->
+          <div class="col-md-5">
+            <!-- card -->
+            <div class="card card-primary">
+              <div class="card-header">
+                
+              </div>
+              <div class="card-body">
+                
+              </div>
+              <div class="card-footer">
+                
+              </div>
+            </div><!-- card -->
+          </div><!-- left column -->
+        </div><!-- row -->
+      </div><!-- container -->
+    </section>
 @stop
