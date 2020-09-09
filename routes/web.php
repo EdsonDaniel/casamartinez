@@ -134,6 +134,8 @@ Route::get('/admin/caracteristicas/ajax/{id_caract}', 'CaracteristicasController
 //*****************************************rutasd Crud caracteristicas***************************/
 
 
+
+
 //*****************************************rutasd Crud usuarios***************************/
 //lista de usuarios
 Route::get('/admin/usuarios', 'UserController@index'); 
@@ -158,3 +160,30 @@ Route::get('/admin/usuarios/inactivos/ajax', 'UserController@getDataAjaxInactive
 Route::get('/admin/usuarios/ajax/{id}', 'UserController@getDataById');
 
 //*****************************************rutasd Crud usuarios***************************/
+
+
+
+
+//*****************************************rutasd Crud roles***************************/
+//lista de roles
+Route::get('/admin/roles', 'RolesController@index'); 
+//Detalles de un rol
+Route::get('/admin/roles/detalles/{id}', 'RolesController@show'); 
+//ruta para crear un rol ****
+Route::get('/admin/roles/agregar', 'RolesController@create'); 
+Route::post('/admin/roles/store', 'RolesController@store');
+//rutas para actualizar un rol especifica
+//Route::get('/admin/usuarios/update/{id}', 'UserController@update');
+Route::post('/admin/roles/update/{id}', 'RolesController@update');
+
+//ruta para eliminar un rol
+Route::post('/admin/roles/delete/{id}', 'RolesController@destroy');
+//Route::post('/admin/roles/baja/{id}', 'RolesController@baja');
+//ruta para alta de roles usuario
+//Route::post('/admin/roles/alta/{id}', 'RolesController@alta');
+
+//rutas obtener datos de roles mediante AJAX
+Route::get('/admin/roles/ajax', 'RolesController@getDataAjax');
+Route::get('/admin/roles/ajax/{id}', 'RolesController@getDataById');
+
+//*****************************************rutasd Crud roles***************************/
