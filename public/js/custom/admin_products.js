@@ -33,7 +33,7 @@
     }
         
 
-      function addPresentacion(){
+    function addPresentacion(){
         p++;
         var div_card = document.createElement('div');
         div_card.setAttribute('class', 'card card-info card-trans');
@@ -278,12 +278,12 @@
         saltarA('#pres'+p);
       }
 
-       function saltarA(id, tiempo) {
+    function saltarA(id, tiempo) {
         var tiempo = tiempo || 200;
         $("html, body").animate({ scrollTop: $(id).offset().top }, tiempo);
-      }
+    }
 
-      function addCarac(){
+    function addCarac(){
         c++;
         var div_row = document.createElement('div');
         div_row.setAttribute('class', 'row bordes mt-4');
@@ -331,7 +331,7 @@
 
       }
 
-      function quitarPres(idcard){
+    function quitarPres(idcard){
         var div = document.getElementById('pres'+idcard);
         div.style.opacity = '0';
         setTimeout(function(){div.parentNode.removeChild(div);}, 700);
@@ -339,7 +339,7 @@
         document.getElementById('numPresentaciones').value=p;
       }
 
-      function quitarCarac(idboton){
+    function quitarCarac(idboton){
         var div = document.getElementById('carac'+idboton);
         div.style.opacity = '0';
         setTimeout(function(){div.parentNode.removeChild(div);}, 700);

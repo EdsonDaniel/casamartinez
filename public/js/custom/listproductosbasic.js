@@ -31,7 +31,7 @@ $(document).ready( function() {
                 +'</div>'
             },
             {
-                "data": "id_product",
+                "data": "producto_id",
                 "className": "hidden"
             }
 
