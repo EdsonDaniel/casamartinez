@@ -116,7 +116,7 @@ class CaracteristicasController extends Controller
      */
     public function getDataById(Request $request)
     {
-        $caracteristica = OtrasCaracteristicas::where('id_caract',$request->id_caract)->get();
+        $caracteristica = OtrasCaracteristicas::find($request->id_caract);
         return response()->json($caracteristica);
     }
 }

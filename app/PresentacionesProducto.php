@@ -11,26 +11,26 @@ class PresentacionesProducto extends Model
      *
      * @var string
      */
-    protected $table = 'presentacion_producto';
+    protected $table = 'presentaciones_producto';
 
      /**
      * The primary key associated with the table.
      *
      * @var string
      */
-    protected $primaryKey = 'id_pres_prod';
+    //protected $primaryKey = 'id_pres_prod';
 
     /**
      * Indicates if the model should be timestamped.
      *
      * @var bool
      */
-    public $timestamps = false;
+    //public $timestamps = false;
 
     protected $fillable = [
         'contenido', 'unidad_c', 'precio_consumidor',
         'precio_distribuidor','precio_restaurant', 'precio_promocion',
         'costo_adquisicion', 'estado', 'stock', 'stock_min', 'peso', 'alto',
-        'ancho', 'largo', 'foto_url', 'id_product'
+        'ancho', 'largo', 'foto_url', 'producto_id'
     ];
 }

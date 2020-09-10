@@ -11,14 +11,14 @@ class Productos extends Model
      *
      * @var string
      */
-    protected $primaryKey = 'id_product';
+    //protected $primaryKey = 'id_product';
 
     /**
      * Indicates if the model should be timestamped.
      *
      * @var bool
      */
-    public $timestamps = false;
+    //public $timestamps = false;
 
     /**
     * Obtener las caracteristicas adicionales del producto
@@ -29,8 +29,8 @@ class Productos extends Model
         return $this->belongsToMany(
             'App\OtrasCaracteristicas', 
             'productos_tienen_caracteristicas', 
-            'id_product', 
-            'id_caract')
+            'prod_id', 
+            'carac_id')
             ->withPivot('valor');
         ;
     }

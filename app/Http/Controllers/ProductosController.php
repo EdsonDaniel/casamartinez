@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\OtrasCaracteristicas;
 use App\ProductosCaracteristicas;
 use App\Productos;
+use App\User;
 use App\PresentacionesProducto;
 use App\TodosProductos;
 use App\Http\Requests\StoreProduct;
@@ -20,7 +21,14 @@ class ProductosController extends Controller
      */
     public function index()
     {
-        return view('admin.listaProductos');
+        //$user = auth()->user();
+        /*$permissions = $user->getPermissionsViaRoles()
+                            ->where('name', 'users.list')
+                            ->first();
+        */
+        //$tiene_permiso = $user->can('users.list');
+        //return $tiene_permiso;
+        return view('admin.listaProductos');//->with('user',$user->can('users.list'));
     }
 
     /**
@@ -77,7 +85,7 @@ class ProductosController extends Controller
                 'ancho' => $presentacion['ancho'], 
                 'largo' => $presentacion['largo'],
                 'foto_url' => $presentacion['img'],
-                'id_product' => $producto->id_product
+                'producto_id' => $producto->id
             ]);
         }
 
@@ -88,8 +96,8 @@ class ProductosController extends Controller
         for($i = 0; $i<$num_c; $i++){
             if($request->input("caracteristicas.caracteristica".($i+1).".id") >0){
                 $prod_caract = new ProductosCaracteristicas;
-                $prod_caract->id_product = $producto->id_product;
-                $prod_caract->id_caract  = $request->input("caracteristicas.caracteristica".($i+1).".id");
+                $prod_caract->prod_id = $producto->id;
+                $prod_caract->carac_id  = $request->input("caracteristicas.caracteristica".($i+1).".id");
                 $prod_caract->valor = $request->input("caracteristicas.caracteristica".($i+1).".value");
                 try{
                     $prod_caract->save();
@@ -108,8 +116,8 @@ class ProductosController extends Controller
      */
     public function show($id)
     {
-        $producto = Productos::where('id_product',$id)->take(1)->first();
-        $presentaciones = PresentacionesProducto::where('id_product',$id)->get();
+        $producto = Productos::find($id);
+        $presentaciones = PresentacionesProducto::where('producto_id',$id)->get();
         $caracteristicas = Productos::find($id)->caracteristicas()->orderBy('nombre')->get();
         $all_caract = OtrasCaracteristicas::all();
              return view('admin.detalle_producto',

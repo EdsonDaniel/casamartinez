@@ -348,7 +348,7 @@
       }
 
       function enviarForm(){
-        $.post('/admin/caracteristicas', $('form').serialize()
+        $.post('/admin/caracteristicas', $('form').serialize())
         .done(function() {
           alert( "Característica agregada satisfactoriamente." );
           // Set a timeout to hide the element again
@@ -359,7 +359,7 @@
         .fail(function() {
           // do something here if there is an error ;
           alert( "Ocurrió un error al agregar la característica. \nPor favor, intente agregarla desde la sección de Productos / Otras Caracaterísticas." );
-        }));
+        });
       }
 
       function listenerSelect(evt){

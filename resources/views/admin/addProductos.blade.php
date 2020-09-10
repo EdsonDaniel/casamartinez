@@ -34,6 +34,8 @@
     <section class="content">
       <!-- form start -->
       <form id="addProduct" method="post" action="/admin/productos/guardar" name="products" enctype="multipart/form-data">
+        @method('POST')
+        @csrf
       <div class="container-fluid">
         <div class="row">
           <!-- left column -->
@@ -176,9 +178,6 @@
                               <span aria-hidden="true">&times;</span>
                             </button>
                           </div>
-
-                          <form action="/admin/caracteristicas/" method="post" id="formModal">
-                          @csrf
                           <div class="modal-body">
                               <div class="form-group">
                                 <label for="nombre_caracteristica" class="col-form-label">Nombre de la característica*:</label>
@@ -519,6 +518,10 @@
       </div><!-- /.container-fluid -->
     </form><!--fin del form-->
     </section>
+    <form action="/admin/caracteristicas/" method="post" id="formModal">
+      @method('POST')
+      @csrf
+    </form>
     <!-- /.content -->
     <script src="/js/custom/admin_products.js"></script>
 @endsection

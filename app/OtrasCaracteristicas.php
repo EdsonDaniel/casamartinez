@@ -18,14 +18,14 @@ class OtrasCaracteristicas extends Model
      *
      * @var string
      */
-    protected $primaryKey = 'id_caract';
+    //protected $primaryKey = 'id_caracteristica';
 
     /**
      * Indicates if the model should be timestamped.
      *
      * @var bool
      */
-    public $timestamps = false;
+    //public $timestamps = false;
 
     public function productos()
     {

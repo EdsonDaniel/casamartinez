@@ -72,7 +72,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
-        $carrito = Carrito::create(['id_user' => $user->id]);
+        $carrito = Carrito::create(['user_id' => $user->id]);
 
         return $user;
     }

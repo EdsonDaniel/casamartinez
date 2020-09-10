@@ -12,21 +12,21 @@ class Carrito extends Model
      * @var string
      */
     protected $table = 'carrito_compras';
-    protected $primaryKey = 'id_carrito';
+    //protected $primaryKey = 'id_carrito';
 
     /**
      * Indicates if the model should be timestamped.
      *
      * @var bool
      */
-    public $timestamps = false;
+    //public $timestamps = false;
 
     /**
     * Obtener los productos del carrito
     */
 
     protected $fillable = [
-        'id_user', 'fecha_actualizacion'
+        'user_id'
     ];
 
     public function productos()
