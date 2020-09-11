@@ -29,6 +29,6 @@ class ProductosCaracteristicas extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'carac_id', 'prod_id','valor'
+        'prod_id', 'carac_id' ,'valor'
     ];
 }

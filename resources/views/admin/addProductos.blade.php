@@ -97,7 +97,7 @@
                     @enderror
                   </div>
                   <!--descripcion--->
-
+                  <span class="text-secondary">*Campos obligatorios</span>
                 </div><!-- /.card-body -->
               </div><!-- fin card datos generales-->
 
@@ -120,12 +120,12 @@
                       <!--nombre caracteristica1 -->
                       <div class="col-sm-6 mt-2">
                         <div class="form-group">
-                          <label for="select_caracteristicas1">Característica*</label>
+                          <label for="select_caracteristicas1">Característica</label>
                             <div class="input-group" id="div_select_caracteristicas1">
                               <select class="form-control" style="padding-left: 3px;" onchange="listenerSelect(event)" id="select_caracteristicas1" name="caracteristicas[caracteristica1][id]">
                                 <option selected="" value="0">SELECCIONE</option>
                                 @foreach ($caracteristicas as $caracteristica)
-                                <option value="{{$caracteristica->id_caract}}">{{ $caracteristica->nombre }}</option>
+                                <option value="{{$caracteristica->id}}">{{ $caracteristica->nombre }}</option>
                                 @endforeach
                                 <!--<option>Maestro mezcalero</option>
                                 <option>% de alcohol</option>
@@ -187,6 +187,7 @@
                                 <label for="descripcion_caracteristica" class="col-form-label">Descripción*:</label>
                                 <textarea class="form-control" id="descripcion_caracteristica" placeholder="Descripción breve de lo que representa esta característica." form="formModal" name="descripcion_caracteristica" required></textarea>
                               </div>
+                              <span class="text-secondary">*Campos obligatorios</span>
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -230,7 +231,7 @@
                       <div class="form-group">
                         <label>Contenido neto*</label>
                         <div class="input-group">
-                          <input type="number"  class="form-control @error('products.presentacion1.contenido') is-invalid @enderror" value="750" id="contenido1" required name="products[presentacion1][contenido]">
+                          <input type="number" step=".01" min="1" class="form-control @error('products.presentacion1.contenido') is-invalid @enderror" value="750" id="contenido1" required name="products[presentacion1][contenido]">
                           <select class="form-control @error('products.presentacion1.unidad_c') is-invalid @enderror" required name="products[presentacion1][unidad_c]">
                             <option value="ml" selected="">ml</option>
                             <option value="g">g</option>
@@ -256,7 +257,7 @@
                             <div class="input-group-prepend"> 
                               <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
                             </div>
-                            <input type="number"  class="form-control @error('products.presentacion1.pre_consu') is-invalid  @enderror" id="precioC1" required name="products[presentacion1][pre_consu]" value="{{ old('products.presentacion1.pre_consu') }}">
+                            <input type="number" step=".01" class="form-control @error('products.presentacion1.pre_consu') is-invalid  @enderror" id="precioC1" required name="products[presentacion1][pre_consu]" value="{{ old('products.presentacion1.pre_consu') }}">
                             @error('products.presentacion1.pre_consu')
                               <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
@@ -275,7 +276,7 @@
                                 <i class="fas fa-dollar-sign"></i>
                               </span>
                             </div>
-                            <input type="number"  class="form-control @error('products.presentacion1.pre_distri') is-invalid  @enderror" id="precioD1" required name="products[presentacion1][pre_distri]" value="{{ old('products.presentacion1.pre_distri') }}">
+                            <input type="number" step=".01" class="form-control @error('products.presentacion1.pre_distri') is-invalid  @enderror" id="precioD1" required name="products[presentacion1][pre_distri]" value="{{ old('products.presentacion1.pre_distri') }}">
                             @error('products.presentacion1.pre_distri')
                               <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
@@ -294,7 +295,7 @@
                              <i class="fas fa-dollar-sign"></i>
                             </span>
                           </div>
-                        <input type="number"  class="form-control @error('products.presentacion1.pre_rest') is-invalid  @enderror" id="precioR1" required name="products[presentacion1][pre_rest]" value="{{ old('products.presentacion1.pre_rest') }}">
+                        <input type="number" step=".01" class="form-control @error('products.presentacion1.pre_rest') is-invalid  @enderror" id="precioR1" required name="products[presentacion1][pre_rest]" value="{{ old('products.presentacion1.pre_rest') }}">
 
                         @error('products.presentacion1.pre_rest')
                               <div class="alert alert-danger">{{ $message }}</div>
@@ -314,7 +315,7 @@
                              <i class="fas fa-dollar-sign"></i>
                             </span>
                           </div>
-                        <input type="number"  class="form-control @error('products.presentacion1.pre_promo') is-invalid @enderror"id="precioP1" name="products[presentacion1][pre_promo]" value="{{ old('products.presentacion1.pre_promo') }}">
+                        <input type="number" step=".01" class="form-control @error('products.presentacion1.pre_promo') is-invalid @enderror"id="precioP1" name="products[presentacion1][pre_promo]" value="{{ old('products.presentacion1.pre_promo') }}">
 
                         @error('products.presentacion1.pre_promo')
                               <div class="alert alert-danger">{{ $message }}</div>
@@ -327,14 +328,14 @@
                     <!-- Costo adquissicion -->
                     <div class="col-sm-4">
                       <div class="form-group">
-                        <label>Costo adquisición*</label>
+                        <label>Costo adquisición</label>
                           <div class="input-group">
                           <div class="input-group-prepend"> 
                             <span class="input-group-text">
                              <i class="fas fa-dollar-sign"></i>
                             </span>
                           </div>
-                        <input type="number"  class="form-control @error('products.presentacion1.costo') is-invalid  @enderror" id="costo1" required name="products[presentacion1][costo]" value="{{ old('products.presentacion1.costo') }}">
+                        <input type="number" step=".01" class="form-control @error('products.presentacion1.costo') is-invalid  @enderror" id="costo1" name="products[presentacion1][costo]" value="{{ old('products.presentacion1.costo') }}">
                         @error('products.presentacion1.costo')
                             <div class="alert alert-danger">{{ $message }}</div>
                           @enderror
@@ -400,9 +401,9 @@
                      <!-- alto-->
                     <div class="col-sm-4">
                       <div class="form-group">
-                        <label>Alto*</label>
+                        <label>Alto</label>
                           <div class="input-group">
-                        <input type="number"  class="form-control @error('products.presentacion1.alto') is-invalid @enderror" id="alto1" required name="products[presentacion1][alto]" value="{{ old('products.presentacion1.alto') }}">
+                        <input type="number" step=".01" class="form-control @error('products.presentacion1.alto') is-invalid @enderror" id="alto1" name="products[presentacion1][alto]" value="{{ old('products.presentacion1.alto') }}">
                         @error('products.presentacion1.alto')
                             <div class="alert alert-danger">{{ $message }}</div>
                           @enderror
@@ -414,9 +415,9 @@
                     <!-- ancho-->
                     <div class="col-sm-4">
                       <div class="form-group">
-                        <label>Ancho*</label>
+                        <label>Ancho</label>
                           <div class="input-group">
-                        <input type="number"  class="form-control @error('products.presentacion1.ancho') is-invalid @enderror" id="ancho1" required name="products[presentacion1][ancho]" value="{{ old('products.presentacion1.ancho') }}">
+                        <input type="number" step=".01" class="form-control @error('products.presentacion1.ancho') is-invalid @enderror" id="ancho1" name="products[presentacion1][ancho]" value="{{ old('products.presentacion1.ancho') }}">
 
                         @error('products.presentacion1.ancho')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -429,9 +430,9 @@
                     <!-- largo-->
                     <div class="col-sm-4">
                       <div class="form-group">
-                        <label>Largo*</label>
+                        <label>Largo</label>
                           <div class="input-group">
-                        <input type="number"  class="form-control @error('products.presentacion1.largo') is-invalid @enderror" id="largo1" required name="products[presentacion1][largo]" value="{{ old('products.presentacion1.largo') }}">
+                        <input type="number" step=".01" class="form-control @error('products.presentacion1.largo') is-invalid @enderror" id="largo1" name="products[presentacion1][largo]" value="{{ old('products.presentacion1.largo') }}">
                         @error('products.presentacion1.largo')
                             <div class="alert alert-danger">{{ $message }}</div>
                           @enderror
@@ -443,9 +444,9 @@
                     <!-- peso-->
                     <div class="col-sm-4">
                       <div class="form-group">
-                        <label>Peso (kg)*</label>
+                        <label>Peso (kg)</label>
                           <div class="input-group">
-                        <input type="number"  class="form-control @error('products.presentacion1.peso') is-invalid @enderror" id="peso1" required name="products[presentacion1][peso]" value="{{ old('products.presentacion1.peso') }}">
+                        <input type="number" step=".01" class="form-control @error('products.presentacion1.peso') is-invalid @enderror" id="peso1" name="products[presentacion1][peso]" value="{{ old('products.presentacion1.peso') }}">
                         @error('products.presentacion1.peso')
                             <div class="alert alert-danger">{{ $message }}</div>
                           @enderror
@@ -478,7 +479,8 @@
                       </div>
                     </div>
                     <!-- imagen-->
-                  </div>
+                  </div><!--row-->
+                  <span class="text-secondary">*Campos obligatorios</span>
                  
                 <!--</form>-->
               </div>
@@ -507,7 +509,7 @@
         <div class="alert alert-danger">
           <ul>
             @foreach ($errors->all() as $key => $val)
-                <li>{{ $val." :attribute" }} </li>
+                <li>{{ $val}} </li>
             @endforeach
           </ul>
         </div>

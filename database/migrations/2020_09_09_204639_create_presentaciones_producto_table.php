@@ -15,7 +15,8 @@ class CreatePresentacionesProductoTable extends Migration
     {
         Schema::create('presentaciones_producto', function (Blueprint $table) {
             $table->id();
-            $table->double('contenido',8,2);
+            //$table->double('contenido',8,2);
+            $table->float('contenido');
             $table->string('unidad_c');
             $table->double('precio_consumidor',8,2);
             $table->double('precio_distribuidor',8,2);

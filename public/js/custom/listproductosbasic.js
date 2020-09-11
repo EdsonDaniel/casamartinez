@@ -1,13 +1,12 @@
 var tabla;
 $(document).ready( function() {
-    var url_ajax;
     tabla = $('#tabla').DataTable( {
         "ajax": {
             url: '/admin/productos/ajax',
             dataSrc: ''
         },
         columns: [
-            { "data": "nombre" },
+            { "data": "nombre", "className": 'text-left'},
             { "data": "marca" },
             { "data": "presentacion" },
             { "data": "precio_consumidor" },
@@ -23,7 +22,7 @@ $(document).ready( function() {
                 "defaultContent": 
                 '<div class="botones">'
                 +'<div style="margin-right: 10px;"> <a class="actions" data-title="Ver detalles">'
-                + '<i class="fa fa-info-circle" ></i></a></div>'
+                + '<i class="fa fa-info-circle text-primary" ></i></a></div>'
                 +'<div style="margin-right: 10px;"> <a class="actions" data-title="Editar">'
                 + '<i class="fa fa-edit" style="--fa-primary-color: #F7F356; background-color: white !important; color: magenta; --fa-secondary-color: rgb(218, 41, 28);"></i></a></div>'
                 +'<div > <a class="actions" data-title="Eliminar">'
@@ -70,8 +69,8 @@ $(document).ready( function() {
            
     $('#tabla').on( 'init.dt', function () {
         var nodes = tabla.column(5).nodes().to$();
-        var col_id = tabla.column(6).data();
-        var botones = tabla.column(7).nodes().to$();
+        var col_id = tabla.column(7).data();
+        var botones = tabla.column(6).nodes().to$();
         
         for (var i = 0; i < nodes.length; i++) {
             switch(nodes[i].innerHTML){

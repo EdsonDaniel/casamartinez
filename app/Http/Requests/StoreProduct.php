@@ -36,20 +36,20 @@ class StoreProduct extends FormRequest
             'numCaracteristicas'    =>['required', 'integer', 'min:0', 'max:10'],
 
             //Validaciones para presentaciones en productos
-            'products.*.costo'      =>['required', 'numeric'],
-            'products.*.contenido'  =>['required', 'numeric'],
+            'products.*.costo'      =>['nullable', 'numeric'],
+            'products.*.contenido'  =>['required', 'numeric', 'min:1'],
             'products.*.pre_consu'  =>['required', 'numeric', 'min:'.$costo],
             'products.*.pre_distri' =>['required', 'numeric', 'min:'.$costo],
             'products.*.pre_rest'   =>['required', 'numeric', 'min:'.$costo],
-            'products.*.pre_promo'  =>['numeric',  'min:'.$costo],
+            'products.*.pre_promo'  =>['nullable', 'numeric',  'min:'.$costo],
             'products.*.stock'      =>['required', 'integer', 'min:0'],
             'products.*.stock_min'  =>['required', 'integer', 'min:0'],
-            'products.*.alto'       =>['required', 'numeric', 'min:0'],
-            'products.*.ancho'      =>['required', 'numeric', 'min:0'],
-            'products.*.largo'      =>['required', 'numeric', 'min:0'],
-            'products.*.peso'       =>['required', 'numeric', 'min:0'],
+            'products.*.alto'       =>['nullable', 'numeric', 'min:0'],
+            'products.*.ancho'      =>['nullable', 'numeric', 'min:0'],
+            'products.*.largo'      =>['nullable', 'numeric', 'min:0'],
+            'products.*.peso'       =>['nullable', 'numeric', 'min:0'],
             'products.*.unidad_c'   =>['required', Rule::in(['ml', 'g','l','kg'])],
-            'products.*.estado'     =>['required', 'integer','min:0', 'max:2'],
+            'products.*.estado'     =>['required', 'integer','min:0', 'max:4'],
             'products.*.img'        =>['required'],
             'caracteristicas.*.value' => ['max:255']
 
@@ -72,7 +72,7 @@ class StoreProduct extends FormRequest
 
     public function messages(){
         return [
-            'required'      => '*Debe llenar este campo :attribute',
+            'required'      => 'Debe llenar este campo.',
             'max'           => 'Exedió el límite permitido para este campo',
             'numeric'       => 'Debe insertar un valor numérico',
             'integer'       => 'Debe insertar un valor entero',

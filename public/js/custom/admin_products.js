@@ -347,7 +347,7 @@
         document.getElementById('numCaracteristicas').value=c;
       }
 
-      function enviarForm(){
+    function enviarForm(){
         $.post('/admin/caracteristicas', $('form').serialize())
         .done(function() {
           alert( "Característica agregada satisfactoriamente." );
@@ -362,7 +362,7 @@
         });
       }
 
-      function listenerSelect(evt){
+    function listenerSelect(evt){
         var id = ""+evt.target.parentNode.getAttribute('id');
         var id = ""+id.charAt(id.length-1);
         var textarea = document.getElementById('input_descrip_caract'+id);
@@ -394,7 +394,7 @@
         $.get('/admin/caracteristicas/ajax', function (data){
           var html_select = '';
           for(var i = 0; i<data.length; i++)
-            html_select+='<option value="'+data[i].id_caract+'">'+data[i].nombre+'</option>';
+            html_select+='<option value="'+data[i].id+'">'+data[i].nombre+'</option>';
           html_select+='<option style="font-weight: bold;">Nueva característica</option>';
           $('#'+id).html(html_select);
           textarea.setAttribute('placeholder',data[data.length-1].descripcion);
@@ -407,7 +407,7 @@
         $.get('/admin/caracteristicas/ajax', function (data){
           var html_select = '<option>SELECCIONE</option>';
           for(var i = 0; i<data.length; i++)
-            html_select+='<option value="'+data[i].id_caract+'">'+data[i].nombre+'</option>';
+            html_select+='<option value="'+data[i].id+'">'+data[i].nombre+'</option>';
           html_select+='<option style="font-weight: bold;">Nueva característica</option>';
           $('#'+idselect).html(html_select);
           textarea.setAttribute('placeholder','Descripción breve de lo que representa esta característica.');
@@ -416,11 +416,11 @@
 
       function updateTextArea(idcarac,textarea){
         //var textarea = document.getElementById('input_descrip_caract'+id);
-        console.log("id a obtener: "+'input_descrip_caract'+idcarac);
+        //console.log("id a obtener: "+'input_descrip_caract'+idcarac);
         var ruta = "/admin/caracteristicas/ajax/"+idcarac;
-        console.log("ruta a visitar: "+ruta);
+        //console.log("ruta a visitar: "+ruta);
         $.get(ruta, function (data){
-          textarea.setAttribute('placeholder',data[0].descripcion);
-          console.log("datos "+data[0].descripcion);
+          textarea.setAttribute('placeholder',data.descripcion);
+          //console.log("datos "+data.descripcion);
         });
       }

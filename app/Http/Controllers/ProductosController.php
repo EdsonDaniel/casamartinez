@@ -51,7 +51,6 @@ class ProductosController extends Controller
     public function store(StoreProduct $request)
     {
         $validated = $request->validated();
-        //$unidad = $request->input('products');
 
         $producto = new Productos;
         $producto->nombre = $validated['nombre_producto'];
@@ -63,7 +62,6 @@ class ProductosController extends Controller
         $producto->save();
         $producto->refresh();
 
-        //return $producto;
         $presentaciones = $validated['products'];
         $presentacion;
 
@@ -90,21 +88,23 @@ class ProductosController extends Controller
         }
 
         //return $presentacion;
-
-        $num_c = $request->input('numCaracteristicas');
-        //return $carac;
-        for($i = 0; $i<$num_c; $i++){
-            if($request->input("caracteristicas.caracteristica".($i+1).".id") >0){
-                $prod_caract = new ProductosCaracteristicas;
-                $prod_caract->prod_id = $producto->id;
-                $prod_caract->carac_id  = $request->input("caracteristicas.caracteristica".($i+1).".id");
-                $prod_caract->valor = $request->input("caracteristicas.caracteristica".($i+1).".value");
-                try{
-                    $prod_caract->save();
-                } catch(Exception $e){}
+        
+        //$num_c = $request->input('numCaracteristicas');
+        $caracteristicas = $request->input('caracteristicas');//'caracteristicas');
+        //return $caracteristicas;
+        if(!is_null($caracteristicas))
+            foreach ($caracteristicas as $carac) {
+                if($carac["id"] != '0' && !is_null($carac["value"])){
+                    $prod_caract = new ProductosCaracteristicas;
+                    //return $carac;
+                    $prod_caract->prod_id  = $producto->id;
+                    $prod_caract->carac_id = $carac["id"];
+                    $prod_caract->valor    = $carac["value"];
+                    try{
+                        $prod_caract->save();
+                        } catch(\Illuminate\Database\QueryException $e){}
+                }
             }
-            
-        }
         return redirect('/admin/productos');
     }
 
