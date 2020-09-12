@@ -9,7 +9,11 @@ $(document).ready( function() {
             { "data": "nombre", "className": 'text-left'},
             { "data": "marca" },
             { "data": "presentacion" },
-            { "data": "precio_consumidor" },
+            { "data": "precio_consumidor",
+              render: function ( data, type, row ) {
+                return "$"+data;
+              }
+            },
             { "data": "stock"},
             { "data": "estado",
                 "className": 'estado',

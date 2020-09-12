@@ -10,10 +10,26 @@ $(document).ready( function() {
             { "data": "nombre" },
             { "data": "marca" },
             { "data": "presentacion" },
-            { "data": "costo_adquisicion" },
-            { "data": "precio_consumidor" },
-            { "data": "precio_distribuidor" },
-            { "data": "precio_restaurant"},
+            { "data": "costo_adquisicion",
+              render: function ( data, type, row ) {
+                return "$"+data;
+              }
+            },
+            { "data": "precio_consumidor",
+              render: function ( data, type, row ) {
+                return "$"+data;
+              }
+            },
+            { "data": "precio_distribuidor",
+              render: function ( data, type, row ) {
+                return "$"+data;
+              }
+            },
+            { "data": "precio_restaurant",
+              render: function ( data, type, row ) {
+                return "$"+data;
+              }
+            },
             { "data": "stock"},
             { "data": "estado",
                 "className": 'estado',

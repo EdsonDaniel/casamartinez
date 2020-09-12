@@ -19,4 +19,50 @@ input[type=checkbox]:hover{
 .element-selected{
 	background-color: #e9ecef;
 }
+.collapsible {
+  background-color: #17a2b8;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  outline: none;
+  border: 1px solid #ced4da;
+  border-right-style: none;
+  border-left-style: none;
+
+}
+
+.border-rad{
+	border-top-right-radius: unset;
+	border-top-left-radius: unset;
+}
+
+.active, .collapsible:hover {
+  background-color: #117a8b !important;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;	
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.contenido {
+  /*padding: 0 18px;*/
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  /*background-color: #f1f1f1;*/
+}
+button.collapsible:focus{
+	outline: none;
+}
 

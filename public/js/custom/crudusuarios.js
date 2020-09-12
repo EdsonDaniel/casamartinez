@@ -33,23 +33,23 @@ var tabla2;
               "orderable": false,
               render: function ( data, type, row ) {
                 switch(data){
-                  case 1:
+                  case "1":
                     return '<span data-title="Cliente">'
                     +'<i class="fas fa-user-tag" style="color: blue;"></i></span>';
                     break;
-                  case 2:
+                  case "2":
                     return '<span data-title="Cliente mayorista">'
                     +'<i class="fas fa-user-plus" style="color: darkblue;"></i></span>';
                     break;
-                  case 3: 
+                  case "3": 
                     return '<span data-title="Distribuidor">'
                     +'<i class="fas fa-dolly" style="color: darkgreen;"></i></span>';
                     break;
-                  case 4:
+                  case "4":
                     return '<span data-title="Empleado">'
                     +'<i class="fas fa-user-cog" style="color: purple;"></i></span>';
                     break;
-                  case 5:
+                  case "5":
                     return '<span data-title="Administrador">'
                     +'<i class="fas fa-user-shield" style="color: darkred;"></i></span>';
                     break;
@@ -100,6 +100,7 @@ var tabla2;
         ],
         "language": configIdioma
       });
+    console.log(tabla.ajax.json());
 
     tabla2 = $('#tabla2').DataTable( {
         "ajax": {
@@ -135,27 +136,29 @@ var tabla2;
               }
             },
             { 
-              "data": "tipo_usuario",
+              "data": 'tipo_usuario',
               "orderable": false,
               render: function ( data, type, row ) {
+                console.log(data);
+                console.log(row);
                 switch(data){
-                  case 1:
+                  case "1":
                     return '<span data-title="Cliente">'
                     +'<i class="fas fa-user-tag" style="color: blue;"></i></span>';
                     break;
-                  case 2:
+                  case "2":
                     return '<span data-title="Cliente mayorista">'
                     +'<i class="fas fa-user-plus" style="color: darkblue;"></i></span>';
                     break;
-                  case 3: 
+                  case "3": 
                     return '<span data-title="Distribuidor">'
                     +'<i class="fas fa-dolly" style="color: darkgreen;"></i></span>';
                     break;
-                  case 4:
+                  case "4":
                     return '<span data-title="Empleado">'
                     +'<i class="fas fa-user-cog" style="color: purple;"></i></span>';
                     break;
-                  case 5:
+                  case "5":
                     return '<span data-title="Administrador">'
                     +'<i class="fas fa-user-shield" style="color: darkred;"></i></span>';
                     break;

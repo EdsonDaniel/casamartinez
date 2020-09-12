@@ -33,7 +33,7 @@ var click_agregar = false;
                   +'</div>'
               },
               {
-                  "data": "id_caract",
+                  "data": "id",
                   "className": "hidden"
               }
 

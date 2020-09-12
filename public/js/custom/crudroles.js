@@ -13,6 +13,7 @@ var tabla;
             },
             { 
               "data": "description",
+              "orderable":false,
               "className": 'text-left'
             },
             { 

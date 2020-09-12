@@ -19,22 +19,22 @@ class PermissionsTableSeeder extends Seeder
         //Permisos sobre usuarios
         //Ver usuarios
         Permission::create([
-        	'name' 			=> 'users.list',
+        	'name' 			=> 'usuarios.list',
         	'description' 	=> 'Ver todos los usuarios del sistema.'
         ]);
         //Crear nuevos usuarios
         Permission::create([
-            'name'          => 'users.create',
+            'name'          => 'usuarios.create',
             'description'   => 'Crear nuevos usuarios del sistema.'
         ]);
         //Editar usuario
         Permission::create([
-        	'name' 			=> 'users.edit',
+        	'name' 			=> 'usuarios.edit',
         	'description' 	=> 'Editar datos seleccionados de usuarios.'
         ]);
         //Dar de baja un usuario
         Permission::create([
-        	'name' 			=> 'users.unsubscribe',
+        	'name' 			=> 'usuarios.unsubscribe',
         	'description' 	=> 'Dar de baja usuarios del sistema.'
         ]);
 
@@ -69,28 +69,28 @@ class PermissionsTableSeeder extends Seeder
         //Permisos para PRODUCTOS
         //Crear PRODUCTOS
         Permission::create([
-            'name'          => 'products.create',
+            'name'          => 'productos.create',
             'description'   => 'Crear nuevos productos en el sistema.'
         ]);
         //Ver productos
         Permission::create([
-            'name'          => 'products.list',
+            'name'          => 'productos.list',
             'description'   => 'Ver todos los productos creados en el sistema.'
         ]);
         //Editar producto
         Permission::create([
-            'name'          => 'products.edit',
+            'name'          => 'productos.edit',
             'description'   => 'Editar datos seleccionados de productos.'
         ]);
         //Dar de baja un producto
         Permission::create([
-            'name'          => 'products.unsubscribe',
+            'name'          => 'productos.unsubscribe',
             'description'   => 'Dar productos de baja del sistema.'
         ]);
         //Eliminar un producto
         Permission::create([
 
-            'name'          => 'products.delete',
+            'name'          => 'productos.delete',
             'description'   => 'Eliminar productos del sistema.'
         ]);
 
@@ -214,12 +214,12 @@ class PermissionsTableSeeder extends Seeder
         //Permisos Especiales
         //Ver precio a distribuidor
         Permission::create([
-            'name'          => 'prices.list',
+            'name'          => 'precios.list',
             'description'   => 'Ver todos los precios para productos.'
         ]);
         //Ver precio a restaurant
         Permission::create([
-            'name'          => 'prices.edit',
+            'name'          => 'precios.edit',
             'description'   => 'Editar todos los precios para productos.'
         ]);
 

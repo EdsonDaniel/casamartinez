@@ -16,8 +16,19 @@ class RolesController extends Controller
     }
     public function create()
     {
-    	$permisos = Permission::all();
-        return view('admin.addRol',["permisos" => $permisos]);
+        $permisos = Permission::all();
+        $categorias_permisos = array();
+        foreach ($permisos as $permiso) {
+            $nombre_permiso = explode(".", $permiso['name']);
+            $categoria      = $nombre_permiso[0];
+            //$accion         = $nombre_permiso[1];
+            if(!isset($categorias_permisos[$categoria])) {
+                $categorias_permisos[$categoria] = array();
+            }
+            $categorias_permisos[$categoria][] = $permiso->toArray();
+        }
+
+        return view('admin.addRol',["categorias_permisos" => $categorias_permisos]);
     }
     
     public function store(Request $request)
@@ -90,6 +101,18 @@ class RolesController extends Controller
     {
         $roles = Role::all();
         return response()->json($roles);
+        /*$permisos = Permission::all();
+        $categorias_permisos = array();
+        foreach ($permisos as $permiso) {
+            $nombre_permiso = explode(".", $permiso['name']);
+            $categoria      = $nombre_permiso[0];
+            //$accion         = $nombre_permiso[1];
+            if(!isset($categorias_permisos[$categoria])) {
+                $categorias_permisos[$categoria] = array();
+            }
+            $categorias_permisos[$categoria][] = $permiso->toArray();
+        }
+        return response()->json($categorias_permisos);*/
     }
 
     public function getDataById(Request $request, $id)
