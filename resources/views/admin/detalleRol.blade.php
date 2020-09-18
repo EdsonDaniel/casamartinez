@@ -1,20 +1,23 @@
 @extends('layouts.admin')
 @section('style')
+  <link rel="stylesheet" href="/css/custom/listaroles.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom/datatable.css">
 @endsection
 @section('content')
-	 <!-- Content Header (Page header) -->
-    <div class="content-header">
+   <!-- Content Header (Page header) -->
+    <div class="content-header" >
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h4 class="ml-2 text-dark">Detalles de usuario</h4>
+            <h4 class="ml-2 mb-0 text-dark" >Detalles Rol {{$rol->name}}</h4>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <button id="btn_editar" type="button" class="btn btn-primary d-none">Editar</button>
-              <button id="btn_actualizar" type="button" class="btn btn-success d-none ml-2">Actualizar</button>
-              <button id="btn_cancelar" type="button" class="btn btn-secondary d-none ml-3">Cancelar</button>
-              <button id="btn_ban" type="button" class="btn btn-danger d-none ml-2">Inhabilitar</button>
+              <a href="/admin/roles/agregar" class="btn btn-success mr-2">Nuevo rol</a>
+              <button type="button" class="btn btn-primary mr-2 edit">Editar Rol</button>
+              <button type="button" class="btn btn-secondary mr-2 cancel d-none">Cancelar</button>
+              <button type="button" class="btn btn-danger delete">Eliminar Rol</button>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -27,123 +30,193 @@
       <!-- container -->
       <div class="container-fluid">
         <!-- row -->
-        <div class="row justify-content-center">
+        <div class="row ">
+          @if (session('error'))
+            <div class="alert alert-danger alert-dismissible fade show col-12" role="alert">
+              {{session('error')}}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="color: white;">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          @endif
           <!-- left column -->
-          <div class="col-md-11">
-            <form id="form_bajaUsuario" method="post" action="/admin/usuarios/baja/">
+          <div class="col-md-5">
+            <div class="row justify-content-center">
+            <form id="form_deleteRol" method="post" action="/admin/roles/delete/{{$rol->id}}" class="col-md-12">
               @method('POST')
               @csrf
             </form>
-            <form id="form_editUsuario" method="post" action="/admin/usuarios/update/{{$usuario->id}}">
-              @method('POST')
-              @csrf
             <!-- card -->
-            <div class="card @if($usuario->active) card-primary
-                  @else card-secondary
-                  @endif" id="card_usuario">
+            <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title ">Datos del usuario</h3>
-                <span style="float: right;">Usuario
-                  @if($usuario->active) habilitado
-                  @else Inhabilitado
-                  @endif
+                <h3 class="card-title ">Datos del rol</h3>
+                <span id="id" class="d-none">{{$rol->id}}</span>
+                <span style="float: right; line-height: 1.2;">
+                  <button type="button" class="btn btn-primary m-0 edit" data-title="Editar" style="line-height: 1.2; padding: 0 0.25rem;">
+                    <i class="fa fa-edit icon-edit" ></i>
+                  </button>
+                  <button type="button" class="btn btn-primary m-0 cancel d-none" data-title="Cancelar" style="line-height: 1.2; padding: 0 0.25rem; font-size: 1.09rem;">
+                    <i class="far fa-window-close" ></i>
+                  </button>
+                  <button type="button" class="btn btn-primary m-0 p-0 delete" data-title="Eliminar" style="line-height: 1.2;">
+                      <i class="fa fa-trash-alt" style="color:red;"></i>
+                  </button>
                 </span>
               </div>
               <div class="card-body">
-                <div class="row row justify-content-center ">
-                  <div class="col-sm-5" style="">
-                    <h1 class="display-1 text-center mt-5 text-primary" style="font-size: 14em;">
-                      <i id="icon_user" class="{{$icon_class}}" style="{{$color}}"></i>
-                    </h1>
-                  </div>
-                  <div class="col-sm-6">
-                  <div class="form-group col-sm-12">
-                    <label for="name">Nombre(s)*</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Nombre" value="{{ $usuario->name }}" {{$editable}}>
-                    <div class="d-none text-danger error">Debe rellenar este campo.</div>
-                  </div>
-                  
-                  <div class="form-group col-sm-12">
-                    <label for="last_name">Apellidos*</label>
-                    <input type="text" class="form-control " name="last_name" id="last_name" placeholder="Apellidos" value="{{ $usuario->last_name }}" {{$editable}}
-                    >
-                    <div class="d-none text-danger error">Debe rellenar este campo.</div>
-                  </div>
-                  
-                  <div class="form-group col-sm-12">
-                    <label for="email">e-mail*</label>
-                    <input type="text" class="form-control " name="email" id="email" placeholder="e-mail" value="{{ $usuario->email }}" {{$editable}}>
-                    <div class="d-none text-danger error">Debe rellenar este campo.</div>
-                  </div>
-
-                  <div class="form-group col-sm-12 d-none" id="div_pass">
-                    <label for="password">Nueva contraseña</label> (Opcional)
-                    <input type="password" class="form-control " name="password" id="password" placeholder="Nueva contraseña" {{$editable}}>
-                  </div>
-                  
-                  <div class="form-group col-sm-12">
-                    <label for="tipo_usuario">Tipo de usuario*</label>
-                    <select class="form-control " name="tipo_usuario" id="tipo_usuario" value="{{ $usuario->tipo_usuario }}" {{$editable}}>
-                      <option value="4">Empleado</option>
-                      <option value="3">Distribuidor</option>
-                      <option value="2">Cliente mayorista</option>
-                      <option value="1">Cliente</option>
-                      <option value="5">Administrador</option>
-                    </select>
-                    <div class="d-none text-danger error">Debe rellenar este campo.</div>
-                  </div>
-                </div>
-                </div>
-              </div>
-              <div class="card-footer d-none" id="card_footer">
+                <form action="/admin/roles/update/{{$rol->id}}" id="form_update_rol" method="post">
+                  @method('POST')
+                  @csrf
                 <div class="row justify-content-end">
-                  <button type="button" id="f-cancel" class="btn btn-secondary">Cancelar</button>
-                  <button type="button" id="f-update" class="btn btn-success ml-3">Actualizar</button>
+                  <div class="form-group col-sm-12">
+                    <label for="name">Nombre*</label>
+                    <input type="text" class="form-control" id="name" disabled value="{{$rol->name}}">
+                  </div>
+                  
+                  <div class="form-group col-sm-12">
+                    <label for="description">Descripción*</label>
+                    <textarea class="form-control" id="description" disabled value="{{ $rol->description }}">{{ $rol->description }}</textarea>
+                  </div>
                 </div>
+                </form>
+              </div><!--card body-->
+              <div class="card-footer d-none" id="footer-update">
+                <button type="submit" class="btn btn-success " style="float: right;">Guardar cambios</button>
+                <button type="button" class="btn btn-danger mr-3" id="f-cancel" style="float: right;">Cancelar</button>
               </div>
             </div><!-- card -->
-          </form>
+
+          </div><!--fin row left column-->
           </div><!-- left column -->
+
+          <!-- right column -->
+          <div class="col-md-7">
+            <!-- card -->
+            <div class="card card-primary" id="card_permisos">
+              <div class="card-header">
+                <h3 class="card-title ">Permisos asignados</h3>
+                <span class="float-right">
+                  <!--
+                  <button type="button" class="btn btn-primary m-0 " id="edit_p" data-title="Editar" style="line-height: 1.2; padding: 0 0.25rem;">
+                    <i class="fa fa-edit icon-edit" ></i>
+                  </button>
+                  <button type="button" id="cancel_p" class="btn btn-primary m-0 p-0" data-title="Eliminar" style="line-height: 1.2;">
+                      <i class="fa fa-trash-alt" style="color:red;"></i>
+                  </button>
+                -->
+                  <button type="button" class="btn btn-primary p-0 ml-1" style="padding: 0 0.3rem; line-height: 1.2;" data-title="Expandir todos" id="collapse" ><i class="fas fa-chevron-circle-down"></i></button>
+                </span>
+                <span class="float-right pr-2">({{$count_permisos}}/26)</span>
+              </div>
+              <div class="card-body">
+                <div class="row ">
+                  @foreach($categorias_permisos as $categoria => $permisos)
+                  <div class="input-group col-sm-12 ">
+                    <button class="collapsible p-2" type="button">
+                      <span class="pl-1">Permisos para {{$categoria}} ({{count($permisos)}})</span>
+                    </button>
+                    <div class="contenido" style="width: 100%;">
+                    @foreach($permisos as $permiso )
+                      <div class="input-group-prepend" style="width: 100%;">
+                        <div class="input-group-text role-element p-0 border-rad" style="width: 100%;">
+                          <label class="form-check-label d-block area-label pl-4"style="width:100%; text-align: left;">
+                            <i class="fas fa-check-square text-primary"></i>
+                            <span class="pl-1">{{$permiso['description']}}</span>
+                          </label>
+                        </div>
+                      </div>
+                    @endforeach
+                    </div>
+                  </div>
+                  @endforeach
+                </div>
+              </div><!--card body-->
+              
+            </div><!-- card -->
+          </div><!-- right column -->
         </div><!-- row -->
+
+        <div class="row">
+          <!-- contenedor 2 -->
+          <div class="col-12 mt-5" id="contenedor">
+            <!-- card data table inactivos-->
+            <div class="card card-lightblue">
+              <div class="card-header">
+                <h3 class="card-title">Usuarios con este rol <span  id="count_users"></span></h3>
+                <span style="float: right;">
+                  <button type="button" class="btn btn-primary m-0 p-1" data-title="Añadir usuarios"  data-toggle="modal" data-target="#modal-mensaje">
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </span>
+              </div>
+              <div class="card-body">
+                <table id="tabla" class="table-striped table-bordered dataTable data-table">
+                  <thead>
+                    <tr>
+                      <th>Nombre</th>
+                      <th>e-mail</th>
+                      <th>Estado</th>
+                      <th>Acciones</th>
+                      <th class="hidden">id</th>
+                    </tr>
+                  </thead>
+                </table>
+              </div>
+            </div><!-- card data table inactivos-->
+          </div><!-- contenedor 2-->
+        </div>
       </div><!-- container -->
-      <!--Modal mensaje -->
+      <form id="form_deleteUsuario" method="post" action="">
+        @method('POST')
+        @csrf
+      </form>
+    </section>
+    <!--Modal mensaje -->
       <div class="modal fade" id="modal-mensaje" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog " role="document">
+        <div class="modal-dialog modal-lg" role="document">
           <div class="modal-content">
-            <div class="modal-header pb-0" >
+            <div class="modal-header " >
               <h5 class="modal-title" >
                 <span icon_title>
-                  <i class="fa fa-exclamation-circle" style="color: red;"></i>
+                  <i class="fa fa-exclamation-circle" style="color: blue;"></i>
                 </span>
-                <span id="title_modal"></span>
+                <span id="title_modal">Usuarios que tienen o pueden tener este rol</span>
               </h5>
 
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             </div>
 
-            <div class="modal-body pt-0 ">
-              <div id="nombre_usuario" class="m-1 p-2 text-primary" style="font-size: 1.2em;">
-                
-              </div>
-              <div id="msg" class="m-1 p-2 " >
-                
-              </div>
+            <div class="modal-body pt-0 " >
+              <!-- card data table inactivos-->
+              <form id="form_addusuarios" method="post" action="/admin/roles/{{$rol->id}}/add_usuarios/">
+                @method('POST')
+                @csrf
+              </form>
+              <div class="card card-lightblue " >
+                <div class="card-body p-0">
+                  <table id="tabla_empleados" class="table-striped table-bordered dataTable data-table">
+                    <thead>
+                      <tr>
+                        <th>Nombre</th>
+                        <th>e-mail</th>
+                        <th>Añadir</th>
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
+              </div><!-- card data table inactivos-->
             </div>
             <div class="modal-footer" id="modal_footer_msg">
-              <button type="button" class="btn btn-primary" 
-              id="btn_cancel_borrar" data-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-secondary" 
+              id="btn_cancel" data-dismiss="modal">Cancelar</button>
 
-              <button type="submit" class="btn "
-              id="btn_borrar" form="form_bajaUsuario">Aceptar</button>
-
-               <button type="button" class="btn btn-secondary d-none"
-              id="btn_secondary" data-dismiss="modal">Aceptar</button>
+              <button type="submit" class="btn btn-success"
+              id="btn_submit" form="form_addusuarios">Aceptar</button>
             </div>
           </div>
         </div>
       </div><!--Modal mensaje -->
-
-          <!-- Modal notify-->
+      <!-- Modal notify-->
           <div class="modal fade" id="modal-notify" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog " role="document">
               <div class="modal-content">
@@ -191,12 +264,11 @@
             </div>
           </div>
       </div><!-- Modal notify-->
-    </section>
 @endsection
 @section('scripts')
   <script type="text/javascript">
-    var editable = {!! json_encode($editable) !!};
-    var usuario = {!! json_encode($usuario) !!}
+    var rol = {!! json_encode($rol) !!};
   </script>
-  <script type="text/javascript" src="/js/custom/detalle_usuario.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="/js/custom/detalle_rol.js"></script>
 @endsection

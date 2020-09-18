@@ -100,7 +100,6 @@ var tabla2;
         ],
         "language": configIdioma
       });
-    console.log(tabla.ajax.json());
 
     tabla2 = $('#tabla2').DataTable( {
         "ajax": {
@@ -139,8 +138,6 @@ var tabla2;
               "data": 'tipo_usuario',
               "orderable": false,
               render: function ( data, type, row ) {
-                console.log(data);
-                console.log(row);
                 switch(data){
                   case "1":
                     return '<span data-title="Cliente">'

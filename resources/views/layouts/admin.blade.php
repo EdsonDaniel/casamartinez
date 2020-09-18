@@ -258,7 +258,7 @@
                 </a>
               </li>
                <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="/admin/permisos" class="nav-link">
                   <i class="fas fa-person-booth nav-icon"></i>
                   <p>Permisos</p>
                 </a>

@@ -40,14 +40,14 @@ var tabla;
                   var html = '<div class="botones">'
                   +'<div style="margin-right: 10px;">'
                   +' <a href="/admin/roles/detalles/'+row.id+'" class="actions"'
-                  +' data-title="Detalles" onclick="editar_rol(this)" >'
+                  +' data-title="Detalles" " >'
                   +'<i class="fas fa-info-circle" style="color: blue;">'
                   +'</i></a></div>'
                   
 
                   +'<div style="margin-right: 10px;">'
-                  +' <a href="/admin/usuarios/detalles/'+row.id+'/?editar" class="actions"'
-                  +' data-title="Editar" onclick="editar_rol(this)" >'
+                  +' <a href="/admin/roles/detalles/'+row.id+'/" class="actions"'
+                  +' data-title="Editar" " >'
                   +'<i class="fa fa-edit" style="background-color: white !important;'
                   +' color: darkblue;"></i></a></div>'
                   

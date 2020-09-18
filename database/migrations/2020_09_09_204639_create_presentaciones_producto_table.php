@@ -26,13 +26,15 @@ class CreatePresentacionesProductoTable extends Migration
             $table->integer('estado');
             $table->integer('stock');
             $table->integer('stock_min');
-            $table->double('peso',8,2)->nullable();
-            $table->double('alto',8,2)->nullable();
-            $table->double('ancho',8,2)->nullable();
-            $table->double('largo',8,2)->nullable();
+            $table->double('peso',8,2);
+            $table->double('alto',8,2);
+            $table->double('ancho',8,2);
+            $table->double('largo',8,2);
             $table->string('foto_url');
             $table->foreignId('producto_id')->constrained('productos');
             $table->timestamps();
+            
+            $table->unique(['contenido','unidad_c','producto_id']);
         });
     }
 

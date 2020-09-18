@@ -212,6 +212,7 @@ $('form').submit(function(event){
         $("#btn_notify").removeClass("btn-success").addClass("btn-secondary");
         $("#modal_footer").removeClass("d-none");
         $("#msg_updating").addClass("d-none");
+        $("#msg_fail").removeClass("d-none");
         var errors = jqXHR.responseJSON.errors;
         
         var lista = '';

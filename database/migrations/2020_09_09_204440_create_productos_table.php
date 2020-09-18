@@ -17,8 +17,8 @@ class CreateProductosTable extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('marca');
-            $table->string('descripcion');
-            $table->string('foto_url');
+            $table->text('descripcion');
+            $table->string('foto_url')->nullable();
             $table->integer('estado')->default('1');
             $table->timestamps();
         });

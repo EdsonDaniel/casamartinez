@@ -7,7 +7,9 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Detalles del producto</h1>
+            <h1 class="m-0 text-dark">Detalles del producto @if($producto->estado < 1)
+                <span class="text-danger">(Dado de baja)</span>
+             @endif</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -25,20 +27,51 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
+                @if ($errors->any())
+                    <div class="alert alert-danger col-12 alert-dismissible fade show" role="alert">
+                        <span class="d-block p-1">No se pudieron agregar la(s) nueva(s) presentacion(es) debido a los siguientes errores: </span>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true" style="color: white; font-size: 1.6em; opacity: 1; ">&times;</span>
+                        </button>
+                    </div>
+                @endif
                 <div class="col-md-6">
                     <!-- card datos generales -->
-                    <form action="/admin/productos/update/{{$producto->id_product}}" method="post" id="form_padre" enctype="multipart/form-data">
+                    <form id="form_delete_producto" class="whit-msg" method="post" action="/admin/productos/delete/{{$producto->id}}">
                         @method('POST')
                         @csrf
-                    <div class="card card-primary" id="card-padre">
+                    </form>
+                    <form id="form_upload_producto" class="whit-msg" method="post" action="/admin/productos/restore/{{$producto->id}}">
+                        @method('POST')
+                        @csrf
+                    </form>
+                    <form action="/admin/productos/update/{{$producto->id}}" method="post" id="form_padre" enctype="multipart/form-data" class="whit-msg">
+                        @method('POST')
+                        @csrf
+                    <div class="card
+                      @if($producto->estado < 1)
+                        card-secondary
+                      @else
+                        card-primary
+                      @endif
+
+                     " id="card-padre">
                         <div class="card-header">
                             <h3 class="card-title m-0 p-1" style="font-size: 1.1em; line-height: 1.3;">Datos generales</h3>
                             <span style="float: right;">
-                                <button type="button" id="btn-edit_padre" class="btn btn-primary m-0 p-0" data-title="Editar" onclick="editar_padre()">
+                                <button type="button" id="btn-edit_padre" class="btn @if($producto->estado == 1) btn-primary @endif m-0 p-0" data-title="Editar" onclick="editar_padre()">
                                     <i class="fa fa-edit icon-edit" ></i>
                                 </button>
-                                <button type="button" id="eliminar_producto" class="btn btn-primary m-0 p-1" data-title="Eliminar">
+                                <button type="button" id="eliminar_producto" class="btn @if($producto->estado == 1) btn-primary @else d-none @endif m-0 p-1" data-title="Dar de baja">
                                     <i class="fa fa-trash-alt" style="color:red;"></i>
+                                </button>
+                                <button type="button" id="upload_producto" class="btn @if($producto->estado == 1) d-none @else btn-success @endif m-0 p-1" data-title="Dar de alta">
+                                    <i class="fa fa-upload" style="color:blanchedalmond;"></i>
                                 </button>
                             </span>
                         </div>
@@ -115,6 +148,8 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-danger" id="cancel_padre" data-dismiss="modal">Cancelar</button>
                                     <button type="button" class="btn btn-primary" id="save_generales">Guardar cambios</button>
+                                    <button type="submit" id="btn_delete_product" class="btn btn-warning d-none" form="form_delete_producto">Dar de Baja</button>
+                                    <button type="submit" id="btn_upload_product" class="btn btn-success d-none" form="form_upload_producto">Dar de Alta</button>
                                 </div>
                             </div>
                         </div>
@@ -126,19 +161,26 @@
 
                 <div class="col-md-6">
                     <!-- card otras caracteristicas -->
-                    <div class="card card-primary" id="card_caracteristicas">
+                    <div class="card
+                     @if($producto->estado < 1)
+                        card-secondary
+                      @else
+                        card-primary
+                      @endif
+
+                     " id="card_caracteristicas">
                         <div class="card-header">
                             <h3 class="card-title m-0 p-1">Otras características
                                 <span id="contador_caract">({{count($carac)}})</span>
                             </h3>
                             <span style="float: right;">
-                                 <button type="button" class="btn btn-primary m-0 p-1" data-title="Nueva característica" onclick="addcaracteristica()">
+                                 <button type="button" class="btn @if($producto->estado == 1) btn-primary @endif m-0 p-1" data-title="Nueva característica" onclick="addcaracteristica()">
                                     <i class="fas fa-plus"></i>
                                 </button>
-                                <button type="button" class="btn btn-primary m-0 p-1" id="edit_carac" data-title="Editar todas" onclick="editar_carac()">
+                                <button type="button" class="btn @if($producto->estado == 1) btn-primary @endif m-0 p-1" id="edit_carac" data-title="Editar todas" onclick="editar_carac()">
                                     <i class="fa fa-edit icon-edit"></i>
                                 </button>
-                                <button id="delete_all_caract" type="button" class="btn btn-primary m-0 p-0" data-title="Eliminar todas" onclick="">
+                                <button id="delete_all_caract" type="button" class="btn @if($producto->estado == 1) btn-primary @endif m-0 p-0" data-title="Eliminar todas" onclick="">
                                     <i class="fas fa-ban pt-2" style="color: red;"></i>
                                 </button>
                             </span>
@@ -147,12 +189,12 @@
                             <div class="container-fluid">
                                 <div class="row " id="fila_caract">
                                     @if(!$carac->isEmpty())
-                                    <form id="form_delete_all_caract" 
-                                    method="POST" action="/admin/productos/delete_caracteristicas/{{$producto->id_product}}" enctype="multipart/form-data">
+                                    <form class="whit-msg" id="form_delete_all_caract" 
+                                    method="POST" action="/admin/productos/delete_caracteristicas/{{$producto->id}}" enctype="multipart/form-data">
                                         @method('POST')
                                         @csrf
                                     </form>
-                                    <form id="form_carac" action="/admin/productos/update_caracteristicas/{{$producto->id_product}}" style="width: 100%;" method="post" enctype="multipart/form-data">
+                                    <form id="form_carac" class="whit-msg" action="/admin/productos/update_caracteristicas/{{$producto->id}}" style="width: 100%;" method="post" enctype="multipart/form-data">
                                         <div class="row " id="fila_caract_input">
                                     @method('POST')
                                     @csrf
@@ -179,7 +221,7 @@
                                                             </div>
                                                         </span>
                                                     </span>
-                                                    <input id_caract name="carac_iniciales[caract{{$loop->iteration}}][id]" value="{{$caracteristica->id_caract}}" type="text" disabled class="d-none"></input>
+                                                    <input id_caract name="carac_iniciales[caract{{$loop->iteration}}][id]" value="{{$caracteristica->id}}" type="text" disabled class="d-none"></input>
                                                     <input type="text" class="form-control mt-1" name="carac_iniciales[caract{{$loop->iteration}}][value]" required disabled value="{{ $caracteristica->pivot->valor }}" placeholder="{{$caracteristica->pivot->valor}}" data-principal>
                                                     <!--<div class="mt-2 d-none">
                                                         <button type="button" class="btn btn-success btn-sm" style="display: block; margin: 0 auto;">Actualizar</button>
@@ -191,7 +233,7 @@
                                     </form>
                                     @else
 
-    <form id="form_add_carac" action="/admin/productos/update_caracteristicas/{{$producto->id_product}}" method="post" enctype="multipart/form-data">
+    <form id="form_add_carac" class="whit-msg" action="/admin/productos/update_caracteristicas/{{$producto->id}}" method="post" enctype="multipart/form-data">
         @method('POST')
         @csrf
         <!-- Modal add carac-->
@@ -240,7 +282,7 @@
                               <select class="form-control" style="padding-left: 3px;" onchange="listenerSelect(event)" id="select_caracteristicas1" name="caracteristicas[caracteristica1][id]">
                                 <option selected="" value="-1">SELECCIONE</option>
                                 @foreach($all_caract as $car)
-                                    <option value="{{$car->id_caract}}">{{$car->nombre}}</option>
+                                    <option value="{{$car->id}}">{{$car->nombre}}</option>
                                 @endforeach
                               </select>
                             </div> 
@@ -313,15 +355,35 @@
                     <!-- card otras caracteristicas -->
                 </div>
 
+                 @if ($errors->any())
+                    <div class="alert alert-danger col-12 alert-dismissible fade show" role="alert">
+                        <span class="d-block p-1">No se pudieron agregar la(s) nueva(s) presentacion(es) debido a los siguientes errores: </span>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true" style="color: white; font-size: 1.6em; opacity: 1; ">&times;</span>
+                        </button>
+                    </div>
+                @endif
+
                 <div class="col-md-12 mt-3">
                     <!-- card presentaciones-->
-                    <div class="card card-info">
+                    <div class="card
+                    @if($producto->estado < 1)
+                        card-secondary
+                      @else
+                        card-info
+                      @endif
+                    ">
                         <div class="card-header">
                             <h3 class="card-title m-0 p-1">
                                 Presentaciones ({{count($presentaciones)}})
                             </h3>
                             <span style="float: right;">
-                                 <button type="button" class="btn btn-primary m-0 p-1" data-title="Nueva presentación" onclick="addPresentacion()">
+                                 <button type="button" class="btn @if($producto->estado == 1) btn-primary @endif m-0 p-1" data-title="Nueva presentación" onclick="addPresentacion()">
                                     <i class="fas fa-plus"></i>
                                 </button>
                             </span>
@@ -331,77 +393,91 @@
                             <div class="row justify-content-center" id="lista_presentaciones">
                                 @foreach ($presentaciones as $presentacion)
                                     <div class="col-sm-4 mt-2">
-                                        <div class="card">
-                                            <form id="form_delete_pres_{{$presentacion->id_pres_prod}}" action="/admin/productos/delete_presentacion/{{$presentacion->id_pres_prod}}" method="post" card-form="card-presentaciones" enctype="multipart/form-data">
+                                        <div class="card" id="card_{{$presentacion->id}}">
+                                            <form class="whit-msg" id="form_upload_pres_{{$presentacion->id}}" action="/admin/productos/upload_presentacion/{{$presentacion->id}}" method="post" card-form="card-presentaciones" enctype="multipart/form-data">
                                                 @method('POST')
                                                 @csrf
                                             </form>
-                                            <form id="form_pres_{{$presentacion->id_pres_prod}}" action="/admin/productos/update_presentacion/{{$presentacion->id_pres_prod}}" method="post" card-form="card-presentaciones" enctype="multipart/form-data">
+                                            <form class="whit-msg" id="form_delete_pres_{{$presentacion->id}}" action="/admin/productos/delete_presentacion/{{$presentacion->id}}" method="post" card-form="card-presentaciones" enctype="multipart/form-data">
                                                 @method('POST')
                                                 @csrf
+                                            </form>
+                                            <form id="form_pres_{{$presentacion->id}}" action="/admin/productos/update_presentacion/{{$presentacion->id}}" method="post" card-form="card-presentaciones" enctype="multipart/form-data">
+                                                @method('POST')
+                                                @csrf
+                                                <span class="d-none id_pres">{{$presentacion->id}}</span>
                                             <div class="card-header"
                                             @switch($presentacion->estado)
                                                 @case(1)
+                                                    @if($presentacion->stock < $presentacion->stock_min)
+                                                    style="background-color: #ffc107;">
+                                                    <span data-title="Pocas existencias" style="display: inline-block;vertical-align: middle; font-size: 1.1rem; line-height: 1.5;" class="m-0 p-1">
+                                                        <a style="color: #343a40; display: inline-block;">
+                                                            Presentación 
+                                                            {{$presentacion->contenido.' '.$presentacion->unidad_c}}
+                                                        </a>
+                                                    </span>
+                                                    <span style="float: right; font-size: 1.1rem;">
+                                                        <span data-title="Pocas existencias" class="btn m-0 p-1">
+                                                            <i class="fa fa-exclamation-triangle"></i>
+                                                        </span>
+                                                    @else
                                                     style="background-color: #28a745;">
                                                     <span data-title="Estado: Disponible" style="display: inline-block;vertical-align: middle; font-size: 1.1rem; line-height: 1.5;" class="m-0 p-1">
-                                                        <a href="" style="color: white; display: inline-block;"  >
+                                                        <a style="color: white; display: inline-block;"  >
                                                             Presentación
                                                             {{$presentacion->contenido.' '.$presentacion->unidad_c}}
                                                         </a>
                                                     </span>
                                                     <span style="float: right; font-size: 1.1rem; ">
                                                         <span data-title="Estado: Disponible" class="btn m-0 p-1">
-                                                            <i class="far fa-check-circle" style="--fa-primary-color:white; --fa-secondary-color: #20E738; color: white;">
-                                                                
-                                                            </i>
+                                                            <i class="far fa-check-circle" style="color: white;"></i>
                                                         </span>
+                                                    @endif
                                                     @break
                                                 @case(0)
                                                     style="background-color: #dc3545;">
-                                                    <span data-title="Estado: No disponible" class="hover-link">
-                                                        <a href="" style="color: white; display: inline-block;">
+                                                    <span data-title="Estado: No disponible" style="display: inline-block;vertical-align: middle; font-size: 1.1rem; line-height: 1.5;" class="m-0 p-1">
+                                                        <a  style="color: white; display: inline-block;">
                                                             Presentación 
                                                             {{$presentacion->contenido.' '.$presentacion->unidad_c}}
                                                         </a>
                                                     </span>
                                                     <span style="float: right; font-size: 1.1rem; ">
-                                                        <span data-title="Estado: No disponible" class="m-0 p-1">
+                                                        <span data-title="Estado: No disponible" class="btn m-0 p-1">
                                                             <i class="fa fa-ban" style="color:white;"></i>
                                                         </span>
                                                     @break
-                                                @case(2)
-                                                    style="background-color: #ffc107;">
-                                                    <span data-title="Estado: Pocas existencias" class="hover-link">
-                                                        <a href="" style="color: white; display: inline-block;">
-                                                            Presentación 
-                                                            {{$presentacion->contenido.' '.$presentacion->unidad_c}}
-                                                        </a>
-                                                    </span>
-                                                    <span style="float: right; font-size: 1.1rem;">
-                                                        <span data-title="Estado: Pocas existencias" class="m-0 p-1">
-                                                            <i class="fa fa-exclamation-triangle" style="<color:white;"></i>
-                                                            <!--
-                                                            <i class="fa fa-exclamation-triangle" style="<color:#FFFA4B;"></i>
-                                                        -->
-                                                        </span>
-                                                    @break
-                                                @case(3)
-                                                    style="background-color: #A1A194;">
-                                                    <span data-title="Estado: Próximamente" class="hover-link">
-                                                        <a href="" style="color: white; display: inline-block;" >
+                                                @case(-1)
+                                                    style="background-color: #d6d8d9;">
+                                                    <span data-title="Estado: Dado de baja" style="display: inline-block;vertical-align: middle; font-size: 1.1rem; line-height: 1.5;" class="m-0 p-1">
+                                                        <a style="color: black; display: inline-block;">
                                                             Presentación 
                                                             {{$presentacion->contenido.' '.$presentacion->unidad_c}}
                                                         </a>
                                                     </span>
                                                     <span style="float: right; font-size: 1.1rem; ">
-                                                        <span data-title="Estado: Próximamente" class="m-0 p-1">
+                                                        <span data-title="Estado: Dado de baja" class="btn m-0 p-1">
+                                                            <i class="fa fa-ban" style="color:black; font-size: 1.14em;"></i>
+                                                        </span>
+                                                    @break
+                                                @case(2)
+                                                    style="background-color: #A1A194;">
+                                                    <span data-title="Estado: Próximamente" style="display: inline-block;vertical-align: middle; font-size: 1.1rem; line-height: 1.5;" class="m-0 p-1">
+                                                        <a style="color: white; display: inline-block;" >
+                                                            Presentación 
+                                                            {{$presentacion->contenido.' '.$presentacion->unidad_c}}
+                                                        </a>
+                                                    </span>
+                                                    <span style="float: right; font-size: 1.1rem; ">
+                                                        <span data-title="Estado: Próximamente" class="btn m-0 p-1">
                                                             <i class="fa fa-clock" style="color:white;"></i>
                                                         </span>
                                                     @break
                                                 @default
                                                     >
                                                     <span style="display: inline-block;vertical-align: middle; font-size: 1.1rem; line-height: 1.5;" class="m-0 p-1">
-                                                        <a href="" style="color: black; display: inline-block;" >
+                                                        <a style="color: black; display: inline-block;" >
                                                             Presentación 
                                                             {{$presentacion->contenido.' '.$presentacion->unidad_c}}
                                                         </a>
@@ -422,9 +498,19 @@
                                                         </span>
                                                     -->
                                                     </button>
-                                                    <button type="button" class="btn  m-0 p-1" data-title="Eliminar" id_pres_prod="{{$presentacion->id_pres_prod}}" onclick="delete_presentacion(event)">
+                                                    @if($presentacion->estado != -1)
+                                                    <button type="button" class="btn  m-0 p-1" data-title="Eliminar" id_pres_prod="{{$presentacion->id}}" onclick="delete_presentacion(event)">
+                                                        @if($presentacion->estado==0)
+                                                        <i class="fa fa-trash-alt" style="color:white;"></i>
+                                                        @else
                                                         <i class="fa fa-trash-alt" style="color:red;"></i>
+                                                        @endif
                                                     </button>
+                                                    @else 
+                                                    <button type="button" class="btn  m-0 p-1" data-title="Dar de alta" id_pres_prod="{{$presentacion->id}}" onclick="upload_presentacion(event)">
+                                                        <i class="fa fa-upload" style="color:green;"></i>
+                                                    </button>
+                                                    @endif
                                                     <button class="btn d-none " data-title="Guardar cambios" style="font-size: 1.15em; line-height: 1; color:darkblue;">
                                                         <i class="far fa-save " style="background-color: darkgray;"></i>
                                                     </button>
@@ -436,18 +522,18 @@
                                                 <div class="col-12 img-wrapper">
                                                     @if($presentacion->foto_url == "")
                                                         <img src="/img/botellas/anejo-sq.jpg" class="img-fluid">
-                                                    @else <img src="/storage/{{$presentacion->foto_url}}" class="img-fluid">
+                                                    @else <img src="/storage/{{$presentacion->foto_url}}" class="img-fluid" style="max-height: 15em; display: block; margin: 0 auto;">
                                                     @endif
                                                 </div>
                                             <div class="col-sm-12 m-0 p-0" >
                                                 <div class="form-group mb-0 d-none ">
                                                     <label class="mb-0">Contenido neto</label>
                                                     <div class="input-group">
-                                                        <input type="number"  class="form-control m-1"
+                                                        <input type="number" step=".01"  class="form-control m-1"
                                                         placeholder="{{$presentacion->contenido}}" value="{{$presentacion->contenido}}"
                                                         required name="contenido" disabled="" 
                                                         campo="Contenido">
-                                                        <select class="form-control m-1" required name="unidad_c" 
+                                                        <select class="form-control m-1 unidad_c" required name="unidad_c" 
                                                         placeholder="{{$presentacion->unidad_c}}" value="{{$presentacion->unidad_c}}"
                                                         disabled campo="Unidad de contenido">
                                                             <option value="ml" >ml</option>
@@ -472,7 +558,7 @@
                                                             <div class="input-group-prepend"> 
                                                               <span class="input-group-text p-1 label-precios"><i class="fas fa-dollar-sign"></i></span>
                                                             </div>
-                                                            <input type="number"  class="form-control p-1" required name="pre_consu" 
+                                                            <input type="number" step=".01"  class="form-control p-1" required name="pre_consu" 
                                                             
                                                             placeholder="{{$presentacion->precio_consumidor}}" value="{{$presentacion->precio_consumidor}}"
 
@@ -492,9 +578,9 @@
                                                             <i class="fas fa-dollar-sign"></i>
                                                           </span>
                                                         </div>
-                                                        <input type="number"  class="form-control p-1" 
+                                                        <input type="number" step=".01" class="form-control p-1" 
                                                         placeholder="{{$presentacion->precio_distribuidor}}" value="{{$presentacion->precio_distribuidor}}" 
-                                                        disabled campo="Precio a distribuidor" name="pre_distri">
+                                                        disabled campo="Precio a distribuidor" name="pre_distri" required>
                                                       </div> 
                                                     </div>
                                                   </div>
@@ -510,7 +596,7 @@
                                                                     <i class="fas fa-dollar-sign"></i>
                                                                 </span>
                                                             </div>
-                                                            <input type="number"  class="form-control p-1" required name="pre_rest" 
+                                                            <input type="number" step=".01"  class="form-control p-1" required name="pre_rest" 
                                                             placeholder="{{$presentacion->precio_restaurant}}" value="{{$presentacion->precio_restaurant}}" 
                                                             disabled campo="Precio a restaurant">
                                                         </div> 
@@ -532,7 +618,7 @@
                                                             <div class="input-group-prepend"> 
                                                               <span class="input-group-text p-1 label-precios"><i class="fas fa-dollar-sign"></i></span>
                                                             </div>
-                                                            <input type="number"  class="form-control p-1" required name="costo_adquisicion" placeholder="{{$presentacion->costo_adquisicion}}" value="{{$presentacion->costo_adquisicion}}"
+                                                            <input type="number" step=".01"  class="form-control p-1" name="costo_adquisicion" placeholder="{{$presentacion->costo_adquisicion}}" value="{{$presentacion->costo_adquisicion}}"
                                                              disabled campo="Costo de adquisición">
                                                         </div> 
                                                     </div>
@@ -543,10 +629,23 @@
                                                 <div class="col-sm-4">
                                                   <div class="form-group mb-1">
                                                     <label class="mb-0 label-precios">Stock</label>
-                                                    <input type="number"  class="form-control " 
+                                                    @if($presentacion->stock < $presentacion->stock_min)
+                                                    <div class="input-group">
+                                                        <input type="number" onchange="on_change_stock(this)" step="1" class="form-control stock" 
                                                     required name="stock" 
                                                     placeholder="{{$presentacion->stock}}" value="{{$presentacion->stock}}"
                                                     disabled campo="Stock actual">
+                                                    <div class="input-group-append" data-title="Pocas existencias"> 
+                                                        <span class="input-group-text p-1 label-precios text-danger"><i class="fa fa-exclamation-triangle"></i>
+                                                        </span>
+                                                    </div>
+                                                    </div>
+                                                    @else 
+                                                    <input type="number" onchange="on_change_stock(this)" step="1" class="form-control stock" 
+                                                    required name="stock" 
+                                                    placeholder="{{$presentacion->stock}}" value="{{$presentacion->stock}}"
+                                                    disabled campo="Stock actual">
+                                                    @endif
                                                    </div>
                                                 </div>
                                                 <!-- stock-->
@@ -555,7 +654,7 @@
                                                 <div class="col-sm-4">
                                                     <div class="form-group mb-1">
                                                         <label class="mb-0 label-precios">Stock min.</label>
-                                                        <input type="number"  class="form-control " required name="stock_min" placeholder="{{$presentacion->stock_min}}" value="{{$presentacion->stock_min}}" disabled campo="Stock mínimo">
+                                                        <input type="number" step="1"  class="form-control " required name="stock_min" placeholder="{{$presentacion->stock_min}}" value="{{$presentacion->stock_min}}" disabled campo="Stock mínimo">
                                                     </div>
                                                 </div>
                                                 <!-- stock min-->
@@ -572,7 +671,7 @@
                                                 <div class="col-sm-4">
                                                     <div class="form-group mb-1">
                                                         <label class="mb-0 label-precios">Largo</label>
-                                                        <input type="number"  class="form-control " required name="largo"  value="{{$presentacion->largo}}"
+                                                        <input type="number" step=".01"  class="form-control "  name="largo"  value="{{$presentacion->largo}}"
                                                             placeholder="{{$presentacion->largo}}" disabled campo="Largo">
                                                     </div> 
                                                 </div>
@@ -582,7 +681,7 @@
                                                 <div class="col-sm-4">
                                                   <div class="form-group mb-1">
                                                     <label class="mb-0 label-precios">Ancho</label>
-                                                      <input type="number"  class="form-control " required name="ancho" placeholder="{{$presentacion->ancho}}" value="{{$presentacion->ancho}}" disabled campo="Ancho" >
+                                                      <input type="number" step=".01"  class="form-control "  name="ancho" placeholder="{{$presentacion->ancho}}" value="{{$presentacion->ancho}}" disabled campo="Ancho" >
                                                    </div>
                                                 </div>
                                                 <!-- ancho-->
@@ -591,7 +690,7 @@
                                                 <div class="col-sm-4">
                                                     <div class="form-group mb-1">
                                                         <label class="mb-0 label-precios">Alto</label>
-                                                        <input type="number"  class="form-control " required name="alto"  value="{{$presentacion->alto}}" placeholder="{{$presentacion->alto}}" disabled campo="Alto">
+                                                        <input type="number" step=".01"  class="form-control " name="alto"  value="{{$presentacion->alto}}" placeholder="{{$presentacion->alto}}" disabled campo="Alto">
                                                     </div>
                                                 </div>
                                                 <!-- alto-->
@@ -599,7 +698,7 @@
                                                 <div class="col-sm-4">
                                                     <div class="form-group mb-1">
                                                         <label class="mb-0 label-precios">Peso(Kg)</label>
-                                                        <input type="number"  class="form-control " required name="peso"  value="{{$presentacion->peso}}" disabled
+                                                        <input type="number" step=".01"  class="form-control "  name="peso"  value="{{$presentacion->peso}}" disabled
                                                             placeholder="{{$presentacion->peso}}" campo="Peso">
                                                     </div>
                                                 </div>
@@ -609,9 +708,10 @@
                                                     <div class="form-group mb-1 form-estado d-none">
                                                         <label class="mb-0 label-precios">Estado*</label>
                                                         <div class="input-group">
-                                                            <select class="form-control p-1" required name="estado" value="{{$presentacion->estado}}" placeholder="{{$presentacion->estado}}" disabled="" campo="Estado">
-                                                                <option value="1">Disponible</option>
+                                                            <select onchange="listener_estado_pres(event)" class="form-control p-1 estado" required name="estado" value="{{$presentacion->estado}}" placeholder="{{$presentacion->estado}}" disabled="" campo="Estado">
+                                                                <option value="-1">Dado de baja</option>
                                                                 <option value="0">Agotado</option>
+                                                                <option value="1">Disponible</option>
                                                                 <option value="2">Proximamente</option>
                                                             </select>
                                                         </div> 
@@ -661,10 +761,11 @@
                                 <button id="btn_add_new_pres" type="submit" form="nueva_presentacion" class="btn btn-success" >Agregar nuevas presentaciones</button>
                             </div>
                         </div>
+                    
                     </div>
                     <!-- card presentaciones -->
 
-                    <form id="nueva_presentacion" action="/admin/productos/add_presentaciones/{{$producto->id_product}}" enctype="multipart/form-data" method="post">
+                    <form id="nueva_presentacion" action="/admin/productos/add_presentaciones/{{$producto->id}}" enctype="multipart/form-data" method="post">
                         @method('POST')
                         @csrf
                     </form>
@@ -706,7 +807,7 @@
         function getIdCaract(obj){
             array_elements = new Array();
             for (var i = 0; i < obj.length; i++) {
-                array_elements.push(obj[i].id_caract);
+                array_elements.push(obj[i].id);
             }
             return array_elements;
         }

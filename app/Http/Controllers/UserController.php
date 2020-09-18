@@ -159,5 +159,9 @@ class UserController extends Controller
         $usuario = User::find($id);
         return response()->json($usuario);
     }
+    public function getUsersEmpleados(){
+        $users = User::where('tipo_usuario', '>', 3)->get();
+        return $users;
+    }
 
 }

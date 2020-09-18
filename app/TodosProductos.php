@@ -21,5 +21,10 @@ class TodosProductos extends Model
      */
     public $timestamps = false;
 
+     protected $casts = [
+        'estado_presentacion' => 'integer',
+        'estado_producto' => 'integer',
+    ];
+
     
 }

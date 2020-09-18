@@ -14,7 +14,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="">
-                <a href="/admin/roles/agregar" id="add_rol" class="btn btn-success mr-3">Agregar Rol</a>
+                <a href="/admin/roles/agregar/" id="add_rol" class="btn btn-success mr-3">Agregar Rol</a>
               </li>
             </ol>
           </div><!-- /.col -->

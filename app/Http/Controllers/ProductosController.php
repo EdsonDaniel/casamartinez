@@ -10,6 +10,9 @@ use App\User;
 use App\PresentacionesProducto;
 use App\TodosProductos;
 use App\Http\Requests\StoreProduct;
+use App\Http\Requests\StorePresentacion;
+use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Validator;
 
 
 class ProductosController extends Controller
@@ -62,34 +65,6 @@ class ProductosController extends Controller
         $producto->save();
         $producto->refresh();
 
-        $presentaciones = $validated['products'];
-        $presentacion;
-
-        for($i=0; $i<$validated['numPresentaciones']; $i++){
-            $presentacion = $presentaciones['presentacion'.($i+1)];
-            $presentacion = PresentacionesProducto::create([
-                'contenido' => $presentacion['contenido'], 
-                'unidad_c' => $presentacion['unidad_c'], 
-                'precio_consumidor' => $presentacion['pre_consu'], 
-                'precio_distribuidor' => $presentacion['pre_distri'],
-                'precio_restaurant' => $presentacion['pre_rest'], 
-                'precio_promocion' => $presentacion['pre_promo'],
-                'costo_adquisicion' => $presentacion['costo'], 
-                'estado' => $presentacion['estado'], 
-                'stock' => $presentacion['stock'], 
-                'stock_min' => $presentacion['stock_min'], 
-                'peso' => $presentacion['peso'], 
-                'alto' => $presentacion['alto'], 
-                'ancho' => $presentacion['ancho'], 
-                'largo' => $presentacion['largo'],
-                'foto_url' => $presentacion['img'],
-                'producto_id' => $producto->id
-            ]);
-        }
-
-        //return $presentacion;
-        
-        //$num_c = $request->input('numCaracteristicas');
         $caracteristicas = $request->input('caracteristicas');//'caracteristicas');
         //return $caracteristicas;
         if(!is_null($caracteristicas))
@@ -105,6 +80,46 @@ class ProductosController extends Controller
                         } catch(\Illuminate\Database\QueryException $e){}
                 }
             }
+
+        $presentaciones = $validated['products'];
+
+        foreach ($presentaciones as $presentacion) {
+            $url_foto;
+            if ($presentacion['img']) {
+                $url_foto = $presentacion['img']->store('/img/fotos-productos','public');
+            }
+            try{
+                $presentacion = PresentacionesProducto::create([
+                    'contenido' => $presentacion['contenido'], 
+                    'unidad_c' => $presentacion['unidad_c'], 
+                    'precio_consumidor' => $presentacion['pre_consu'], 
+                    'precio_distribuidor' => $presentacion['pre_distri'],
+                    'precio_restaurant' => $presentacion['pre_rest'], 
+                    //'precio_promocion' => $presentacion['pre_promo'],
+                    'costo_adquisicion' => $presentacion['costo'], 
+                    'estado' => $presentacion['estado'], 
+                    'stock' => $presentacion['stock'], 
+                    'stock_min' => $presentacion['stock_min'], 
+                    'peso' => $presentacion['peso'], 
+                    'alto' => $presentacion['alto'], 
+                    'ancho' => $presentacion['ancho'], 
+                    'largo' => $presentacion['largo'],
+                    'foto_url' => $url_foto,
+                    'producto_id' => $producto->id
+                ]);
+            }
+            catch(\Illuminate\Database\QueryException $e){
+                $validator->errors()->add('contenido',
+                 'Se intentó agregar una presentación duplicada. (Presentación '
+                 .$presentacion['contenido'].' '
+                 .$presentacion['unidad_c']. ') para el producto ('.$producto->nombre.')');
+                return redirect('/admin/productos/detalles/'.$producto->id)
+                        ->withErrors($validator)
+                        ->withInput();
+            }
+            
+        }
+        
         return redirect('/admin/productos');
     }
 
@@ -144,10 +159,22 @@ class ProductosController extends Controller
      */
     public function updateProduct(Request $request, $id)
     {
-        $producto = Productos::find($id);
-        $producto->nombre = $request->input('nombre_producto');
-        $producto->marca = $request->input('marca');
-        $producto->descripcion = $request->input('descripcion_producto');
+        $producto = Productos::findOrFail($id);
+        $nombre = $request->input('nombre_producto');
+
+        $validate = $request->validate([
+            'descripcion_producto' => ['required','max:255'],
+            'marca'                => ['required'],
+            'nombre'               => ['required']
+        ]);
+        
+        if($nombre != $producto->nombre){
+            $request->validate([
+                'nombre_producto'=>['unique:productos,nombre','max:200'], 
+            ]);
+            $producto->nombre = $nombre;
+        }
+        
         $producto->save();
 
         return redirect('/admin/productos/detalles/'.$id);
@@ -156,7 +183,7 @@ class ProductosController extends Controller
     public function updateCaractProduct(Request $request, $id)
     {
         //$validated = $request->validated();
-        $producto = Productos::find($id);
+        $producto = Productos::findOrFail($id);
         $carac_actuales= $producto->caracteristicas();
 
         $caracteristicas = $request->input('carac_iniciales');//'caracteristicas');
@@ -199,7 +226,30 @@ class ProductosController extends Controller
 
     public function updatePresentacion(Request $request, $id_pres)
     {
-        $presentacion = PresentacionesProducto::find($id_pres);
+        $presentacion = PresentacionesProducto::findOrFail($id_pres);
+        $validator = Validator::make($request->all(), [
+            'costo'      =>['nullable', 'numeric'],
+            'contenido'  =>['required', 'numeric', 'min:1'],
+            'pre_consu'  =>['required', 'numeric', 'min:0'],
+            'pre_distri' =>['required', 'numeric', 'min:0'],
+            'pre_rest'   =>['required', 'numeric', 'min:0'],
+            'stock'      =>['required', 'integer', 'min:0'],
+            'stock_min'  =>['required', 'integer', 'min:0'],
+            'alto'       =>['nullable', 'numeric', 'min:0'],
+            'ancho'      =>['nullable', 'numeric', 'min:0'],
+            'largo'      =>['nullable', 'numeric', 'min:0'],
+            'peso'       =>['nullable', 'numeric', 'min:0'],
+            'unidad_c'   =>['required', Rule::in(['ml', 'g','l','kg'])],
+            'estado'     =>['required', 'integer','min:-1', 'max:3'],
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('/admin/productos/detalles/'.$producto->id)
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+
+        $producto = $presentacion->producto;
 
         $presentacion->contenido = $request->input('contenido');
         $presentacion->unidad_c = $request->input('unidad_c');
@@ -217,38 +267,66 @@ class ProductosController extends Controller
         if ($request->hasFile('img_presentacion')) {
             $presentacion->foto_url = $request->img_presentacion->store('/img/fotos-productos','public');
         }
-        $presentacion->save();
+        
+        try{
+            $presentacion->save();
+        }catch(\Illuminate\Database\QueryException $e){
+            $validator->errors()->add('contenido',
+             'Ya existe la presentación ('.$presentacion->contenido.' '
+                 .$presentacion->unidad_c. ') para el producto ('.$producto->nombre.')');
+            return redirect('/admin/productos/detalles/'.$producto->id)
+                        ->withErrors($validator)
+                        ->withInput();
+
+        }
+        return redirect('/admin/productos/detalles/'.$producto->id);
 
     }
 
-    public function addPresentaciones(Request $request, $id){
+    public function addPresentaciones(StorePresentacion $request, $id){
         $producto = Productos::find($id);
         
-        $presentaciones = $request->input('new_pres');
-        return $presentaciones;
-        $presentacion;
+        $validated = $request->validated();
+        $presentaciones = $validated['new_pres'];
+        $validator = $request->getValidatorInstance();
 
-        for($i=0; $i<$validated['numPresentaciones']; $i++){
-            $presentacion = $presentaciones['presentacion'.($i+1)];
-            $presentacion = PresentacionesProducto::create([
-                'contenido' => $presentacion['contenido'], 
-                'unidad_c' => $presentacion['unidad_c'], 
-                'precio_consumidor' => $presentacion['pre_consu'], 
-                'precio_distribuidor' => $presentacion['pre_distri'],
-                'precio_restaurant' => $presentacion['pre_rest'], 
-                'precio_promocion' => $presentacion['pre_promo'],
-                'costo_adquisicion' => $presentacion['costo'], 
-                'estado' => $presentacion['estado'], 
-                'stock' => $presentacion['stock'], 
-                'stock_min' => $presentacion['stock_min'], 
-                'peso' => $presentacion['peso'], 
-                'alto' => $presentacion['alto'], 
-                'ancho' => $presentacion['ancho'], 
-                'largo' => $presentacion['largo'],
-                'foto_url' => $presentacion['img'],
-                'id_product' => $producto->id_product
-            ]);
+        foreach ($presentaciones as $presentacion) {
+            $url_foto;
+            if ($presentacion['img']) {
+                $url_foto = $presentacion['img']->store('/img/fotos-productos','public');
+            }
+            try{
+                $presentacion = PresentacionesProducto::create([
+                    'contenido' => $presentacion['contenido'], 
+                    'unidad_c' => $presentacion['unidad_c'], 
+                    'precio_consumidor' => $presentacion['pre_consu'], 
+                    'precio_distribuidor' => $presentacion['pre_distri'],
+                    'precio_restaurant' => $presentacion['pre_rest'], 
+                    //'precio_promocion' => $presentacion['pre_promo'],
+                    'costo_adquisicion' => $presentacion['costo'], 
+                    'estado' => $presentacion['estado'], 
+                    'stock' => $presentacion['stock'], 
+                    'stock_min' => $presentacion['stock_min'], 
+                    'peso' => $presentacion['peso'], 
+                    'alto' => $presentacion['alto'], 
+                    'ancho' => $presentacion['ancho'], 
+                    'largo' => $presentacion['largo'],
+                    'foto_url' => $url_foto,
+                    'producto_id' => $producto->id
+                ]);
+            }
+            catch(\Illuminate\Database\QueryException $e){
+                $validator->errors()->add('contenido',
+                 'Ya existe la presentación ('.$presentacion['contenido'].' '
+                 .$presentacion['unidad_c']. ') para el producto ('.$producto->nombre.')');
+                return redirect('/admin/productos/detalles/'.$producto->id)
+                        ->withErrors($validator)
+                        ->withInput();
+            }
+            
         }
+
+        return redirect('/admin/productos/detalles/'.$producto->id);
     }
 
 
@@ -260,8 +338,8 @@ class ProductosController extends Controller
      */
     public function destroyPresentacion($id)
     {
-        $presentacion = PresentacionesProducto::find($id);
-        //$presentacion->delete();
+        $presentacion = PresentacionesProducto::findOrFail($id);
+        //$presentacion->delete();-
         //Código de estado para baja de presentaciones
         $presentacion->estado = -1;
         $presentacion->save();
@@ -269,9 +347,32 @@ class ProductosController extends Controller
 
     }
 
+    public function uploadPresentacion($id)
+    {
+        $presentacion = PresentacionesProducto::findOrFail($id);
+        $producto = Productos::findOrFail($presentacion->producto_id);
+        if($producto->estado == -1){
+            $producto->estado = 1;
+            $producto->save();
+        }
+        //$presentacion->delete();-
+        //Código de estado para baja de presentaciones
+        $presentacion->estado = 1;
+        $presentacion->save();
+        //return redirect('/admin/productos/');
+
+    }
+
     public function destroyProducto($id)
     {
-        $producto = Productos::find($id);
+        $producto = Productos::findOrFail($id);
+        $presentaciones = $producto->presentaciones;
+        foreach ($presentaciones as $presentacion) {
+            if($presentacion->stock > 0){
+                $presentacion->estado = -1;
+                $presentacion->save();
+            }
+        }
         //$presentacion->delete();
         //Código de estado para baja de presentaciones
         $producto->estado = -1;
@@ -279,9 +380,31 @@ class ProductosController extends Controller
 
     }
 
+    public function restoreProducto($id)
+    {
+        $producto = Productos::findOrFail($id);
+        $presentaciones = $producto->presentaciones;
+        foreach ($presentaciones as $presentacion) {
+            if($presentacion->stock > 0){
+                $presentacion->estado = 1;
+                $presentacion->save();
+            }
+        }
+        //$presentacion->delete();
+        //Código de estado para baja de presentaciones
+        $producto->estado = 1;
+        $producto->save();
+
+    }
+
     public function getDataAjax()
     {
-        $productos = TodosProductos::all();
+        $productos = TodosProductos::where('estado_presentacion','>',0)->get();
+        return response()->json($productos);
+    }
+    public function getDataAjaxBaja()
+    {
+        $productos = TodosProductos::where('estado_presentacion', '<', 1)->get();
         return response()->json($productos);
     }
 }

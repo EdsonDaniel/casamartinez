@@ -33,4 +33,8 @@ class PresentacionesProducto extends Model
         'costo_adquisicion', 'estado', 'stock', 'stock_min', 'peso', 'alto',
         'ancho', 'largo', 'foto_url', 'producto_id'
     ];
+
+    public function producto(){
+        return $this->belongsTo('App\Productos');
+    }
 }

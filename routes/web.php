@@ -110,9 +110,12 @@ Route::post('/admin/productos/add_presentaciones/{id}','ProductosController@addP
 Route::post('/admin/productos/delete/{id}','ProductosController@destroyProducto');
 Route::post('/admin/productos/delete_caracteristicas/{id}','ProductosController@deleteCaractProduct');
 Route::post('/admin/productos/delete_presentacion/{id_pres}','ProductosController@destroyPresentacion');
+Route::post('/admin/productos/upload_presentacion/{id_pres}','ProductosController@uploadPresentacion');
+Route::post('/admin/productos/restore/{id}','ProductosController@restoreProducto');
 
 
 Route::get('/admin/productos/ajax', 'ProductosController@getDataAjax');
+Route::get('/admin/productos/baja/ajax', 'ProductosController@getDataAjaxBaja');
 /****************************************** CRUD PRODUCTOS ***************************************/
 
 
@@ -158,6 +161,7 @@ Route::post('/admin/usuarios/alta/{id}', 'UserController@alta');
 Route::get('/admin/usuarios/activos/ajax', 'UserController@getDataAjaxActive');
 Route::get('/admin/usuarios/inactivos/ajax', 'UserController@getDataAjaxInactive');
 Route::get('/admin/usuarios/ajax/{id}', 'UserController@getDataById');
+Route::get('/admin/usuarios/empleados/ajax', 'UserController@getUsersEmpleados');
 
 //*****************************************rutasd Crud usuarios***************************/
 
@@ -172,6 +176,8 @@ Route::get('/admin/roles/detalles/{id}', 'RolesController@show');
 //ruta para crear un rol ****
 Route::get('/admin/roles/agregar', 'RolesController@create'); 
 Route::post('/admin/roles/store', 'RolesController@store');
+Route::post('/admin/roles/{id}/add_usuarios', 'RolesController@add_users');
+Route::post('/admin/roles/{idRol}/delete_usuarios/{idUsuario}', 'RolesController@delete_users');
 //rutas para actualizar un rol especifica
 //Route::get('/admin/usuarios/update/{id}', 'UserController@update');
 Route::post('/admin/roles/update/{id}', 'RolesController@update');
@@ -185,5 +191,10 @@ Route::post('/admin/roles/delete/{id}', 'RolesController@destroy');
 //rutas obtener datos de roles mediante AJAX
 Route::get('/admin/roles/ajax', 'RolesController@getDataAjax');
 Route::get('/admin/roles/ajax/{id}', 'RolesController@getDataById');
+//Route::get('/admin/roles/ajax/{id}', 'RolesController@getDataById');
 
 //*****************************************rutasd Crud roles***************************/
+
+/**************************************rutas permisos ////////////////////////////////*/
+//lista de permisos
+Route::get('/admin/permisos', 'RolesController@indexPermisos'); 
