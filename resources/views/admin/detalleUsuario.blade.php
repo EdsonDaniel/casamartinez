@@ -60,20 +60,20 @@
                   <div class="form-group col-sm-12">
                     <label for="name">Nombre(s)*</label>
                     <input type="text" class="form-control" id="name" name="name" placeholder="Nombre" value="{{ $usuario->name }}" {{$editable}}>
-                    <div class="d-none text-danger error">Debe rellenar este campo.</div>
+                    <div class="d-none text-danger error invalid-feedback">Debe rellenar este campo.</div>
                   </div>
                   
                   <div class="form-group col-sm-12">
                     <label for="last_name">Apellidos*</label>
                     <input type="text" class="form-control " name="last_name" id="last_name" placeholder="Apellidos" value="{{ $usuario->last_name }}" {{$editable}}
                     >
-                    <div class="d-none text-danger error">Debe rellenar este campo.</div>
+                    <div class="d-none text-danger error invalid-feedback">Debe rellenar este campo.</div>
                   </div>
                   
                   <div class="form-group col-sm-12">
                     <label for="email">e-mail*</label>
                     <input type="text" class="form-control " name="email" id="email" placeholder="e-mail" value="{{ $usuario->email }}" {{$editable}}>
-                    <div class="d-none text-danger error">Debe rellenar este campo.</div>
+                    <div class="d-none text-danger error invalid-feedback">Debe rellenar este campo.</div>
                   </div>
 
                   <div class="form-group col-sm-12 d-none" id="div_pass">
@@ -90,7 +90,7 @@
                       <option value="1">Cliente</option>
                       <option value="5">Administrador</option>
                     </select>
-                    <div class="d-none text-danger error">Debe rellenar este campo.</div>
+                    <div class="d-none text-danger error invalid-feedback">Debe rellenar este campo.</div>
                   </div>
                 </div>
                 </div>

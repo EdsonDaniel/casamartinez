@@ -34,6 +34,7 @@ class StoreProduct extends FormRequest
             'descripcion_producto'  =>['required', 'max:700'],
             'numPresentaciones'     =>['required', 'integer', 'min:1', 'max:10'],
             'numCaracteristicas'    =>['required', 'integer', 'min:0', 'max:10'],
+            'imagen'                =>['nullable'],
 
             //Validaciones para presentaciones en productos
             'products.*.costo'      =>['nullable', 'numeric'],
@@ -50,7 +51,7 @@ class StoreProduct extends FormRequest
             'products.*.peso'       =>['nullable', 'numeric', 'min:0'],
             'products.*.unidad_c'   =>['required', Rule::in(['ml', 'g','l','kg'])],
             'products.*.estado'     =>['required', 'integer','min:0', 'max:4'],
-            'products.*.img'        =>['required'],
+            'products.*.img'        =>['required', 'image'],
             'caracteristicas.*.value' => ['max:255']
 
         ];
@@ -94,5 +95,8 @@ class StoreProduct extends FormRequest
             'numCaracteristicas.max'=> 'Máximo número de características alcanzado.',
 
         ];
+    }
+    public function getValidator(){
+        return $this->getValidatorInstance();
     }
 }

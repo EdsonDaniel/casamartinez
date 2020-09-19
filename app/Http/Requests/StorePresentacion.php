@@ -71,4 +71,8 @@ class StorePresentacion extends FormRequest
         ];
     }
 
+    public function getValidator(){
+        return $this->getValidatorInstance();
+    }
+
 }

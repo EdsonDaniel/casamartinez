@@ -1,10 +1,4 @@
-$(window).on('load', function () {
-     $("html, body").css("cursor","wait");
-});
 
-$( document ).ready(function() {
-    $("html, body").css("cursor","default");
-});
     $("button.btn-help").on("click", function (){
         $(this).next().toggleClass("show");
     });
@@ -517,9 +511,9 @@ $( document ).ready(function() {
 
     $("[btn-edit-pres]").on("click", function(){
         var div = $(this).closest('div.card')[0];
-        $(this).prev().toggleClass("d-none m-0 p-1");
-        $(this).next().toggleClass("d-none m-0 p-1");
-        $(this).next().next().toggleClass("d-none m-0 p-1");
+        $(div).find(".ic-estado").toggleClass("d-none");
+        $(this).next().toggleClass("d-none");
+        $(this).next().next().toggleClass("d-none");
         
         $(div).find("div.card-footer").toggleClass("d-none");
         $(div).find("div.img-wrapper").toggleClass("d-none");
@@ -529,9 +523,10 @@ $( document ).ready(function() {
         var btn_update = $(div).find("div.card-footer").find("button");
         
         if($(btn_update).is(":visible")){
-            $(this).find('i').removeClass("fa-edit icon-edit")
-            .addClass("fa-window-close icon-cancel");
-            $(this).attr("data-title", "Cancelar");
+            $(this).find('i').removeClass("fa-edit")
+            .addClass("fa-window-close");
+            $(this).attr("data-title", "Cancelar")
+            .addClass("btn-danger").removeClass("btn-primary");
             //$(div).find(".card-body").first().addClass
             $(div).find("input,select").attr("disabled", false);
             $(div).find("input")[4].focus();
@@ -539,9 +534,10 @@ $( document ).ready(function() {
             enabled_select($(div));
         }
         else{
-            $(this).find('i').removeClass("fa-window-close icon-cancel")
-            .addClass("fa-edit icon-edit");
-            $(this).attr("data-title", "Editar");
+            $(this).find('i').removeClass("fa-window-close")
+            .addClass("fa-edit");
+            $(this).attr("data-title", "Editar")
+            .removeClass("btn-danger").addClass("btn-primary");
 
             $(div).find("input,select").val(function( index, value ) {
                 return this.getAttribute("placeholder");
@@ -1075,9 +1071,9 @@ $( document ).ready(function() {
     });
 
     function disabled_inputs(){
-        $("#btn-edit_padre i").removeClass("fa-window-close icon-cancel")
-            .addClass("fa-edit icon-edit");
-        $("#btn-edit_padre i").attr("data-title","Editar");
+
+        $("#btn-edit_padre").html('<i class="fa fa-edit icon-edit"></i>');
+        $("#btn-edit_padre").attr("data-title","Editar");
         $("#nombre").val(producto.nombre);
         $("#marca").val(producto.marca);
         $("#descripcion_producto").val(producto.descripcion);
@@ -1085,23 +1081,25 @@ $( document ).ready(function() {
         $("#footer-padre").addClass("d-none");
     }
 
+    $('form').submit(function(event){
+        //event.preventDefault();
+        $("div.modal.show").modal('hide');
+        $("body").css("cursor","wait");
+        $("#modal-notify").modal({
+            backdrop: 'static'
+        });
+    });
 
-    $('form.whit-msg').submit(function(event){
+    $('.form.whit-msm').submit(function(event){
         event.preventDefault();
+        $("body").css("cursor","wait");
+        $(".error").remove();
+        $(".form-control").removeClass("is-invalid");
+        
         var $form = $( this ),
         url = $form.attr( "action" ),
-        $modal_notify = $("#modal-notify"),
-        $modal_actual = $("div.modal.show");
-
-        /*
-        if($form.attr("card-form") != 'card-presentaciones'){
-            $form.find(".modal").modal('hide');
-        }
-        else {
-            $form.closest(".row").next().modal('hide');
-        }
-        */
-        $modal_actual.modal('hide');
+        $modal_notify = $("#modal-notify");
+        $("div.modal.show").modal('hide');
 
         $modal_notify.modal({
             backdrop: 'static'
@@ -1112,7 +1110,9 @@ $( document ).ready(function() {
         // Put the results in a div
         posting.done(function( data ) {
             //alert( "Datos actualizados satisfactoriamente." );
-            $modal_notify.find(".modal-header").html('<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>');
+            /*$modal_notify.find(".modal-header").html('<button type="button" class="close" '
+                +' data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;'
+                +'</span></button>');
 
             $modal_notify.find(".modal-body").html(
                 '<div class="container-fluid"><div class="row justify-content-center"><div class="col-4 p-4"><img class="img-fluid" src="/img/success.png" ></div></div>'
@@ -1120,16 +1120,46 @@ $( document ).ready(function() {
             
             $modal_notify.find(".modal-content").append('<div class="modal-footer">'
                 +'<button type="button" class="btn btn-success" style="display:block; margin: 0 auto;" data-dismiss="modal">Aceptar</button></div>');
+                */
+            $("#msg_updating").addClass("d-none");
+            $("#update_success").removeClass("d-none");
+            $("#modal_footer").removeClass("d-none");
+            $("#btn_notify").addClass("btn-success").removeClass("btn-secondary");
+            location.reload();
         });
-        posting.fail(function(){
-            $modal_notify.find(".modal-header").html('<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>');
+        posting.fail(function(jqXHR, textStatus, errorThrown){
+            $("body").css("cursor","default");
+            var errors = jqXHR.responseJSON.errors;
+            var lista = '';
+            for (const prop in errors) {
+                lista += '<li>' + errors[prop][0] + '</li>';
+                $("[name='"+prop+"']").addClass("is-invalid")
+                .closest(".parent")
+                .append('<div class="invalid-feedback error">'+errors[prop][0]+'</div>');
+            }
+            console.log(lista);
+            if(lista != ''){
+                lista = 'Detalles: <ul style="color:red;">' + lista + '</ul>';
+                $("#msg_fail").html(lista);
+            }else{
+                $("#msg_fail").html("Error inesperado. <br>Recarga la página e inténtalo de nuevo.");
+            }
+            /*$modal_notify.find(".modal-header").html('<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>');
             $("#modal-notify .modal-body").html(
                 '<div class="container-fluid"><div class="row justify-content-center"><div class="col-4 p-4"><img class="img-fluid" src="/img/cerrar.png"></div></div>'
                 +'<h5>Ocurrió un error inesperado.<br>Recarga la página e intentalo de nuevo.</h5></div>');
             
             $("#modal-notify").find(".modal-content").append('<div class="modal-footer">'
                 +'<button type="button" class="btn btn-secondary" data-dismiss="modal" style="display:block; margin: 0 auto;">Aceptar</button></div>');
+                */
         });
+    });
+
+    $("#modal-notify").on('hidden.bs.modal', function (e) {
+      $("#modal_footer").addClass("d-none");
+      $("#update_success").addClass("d-none");
+      $("#update_fail").addClass("d-none");
+      $("#msg_updating").removeClass("d-none");
     });
 
 

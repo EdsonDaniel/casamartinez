@@ -54,19 +54,20 @@ class ProductosController extends Controller
     public function store(StoreProduct $request)
     {
         $validated = $request->validated();
-
+        $validator = $request->getValidator();
         $producto = new Productos;
         $producto->nombre = $validated['nombre_producto'];
         $producto->marca = $validated['marca'];
         $producto->descripcion = $validated['descripcion_producto'];
         if ($request->hasFile('imagen')) {
             $producto->foto_url = $request->imagen->store('/img/fotos-productos','public');
-        }else $producto->foto_url = "img/logo-casa-martinez.jpg";
+        }
+        //else $producto->foto_url = "img/logo-casa-martinez.jpg";
         $producto->save();
         $producto->refresh();
 
-        $caracteristicas = $request->input('caracteristicas');//'caracteristicas');
-        //return $caracteristicas;
+        $caracteristicas = $request->input('caracteristicas');
+
         if(!is_null($caracteristicas))
             foreach ($caracteristicas as $carac) {
                 if($carac["id"] != '0' && !is_null($carac["value"])){
@@ -160,13 +161,14 @@ class ProductosController extends Controller
     public function updateProduct(Request $request, $id)
     {
         $producto = Productos::findOrFail($id);
-        $nombre = $request->input('nombre_producto');
 
         $validate = $request->validate([
             'descripcion_producto' => ['required','max:255'],
             'marca'                => ['required'],
-            'nombre'               => ['required']
+            'nombre_producto'      => ['required']
         ]);
+
+        $nombre = $request->input('nombre_producto');
         
         if($nombre != $producto->nombre){
             $request->validate([
@@ -215,6 +217,7 @@ class ProductosController extends Controller
         }
         $producto->caracteristicas()->sync($carac);
         */
+        return redirect('/admin/productos/detalles/'.$id);
 
     }
 
@@ -222,6 +225,7 @@ class ProductosController extends Controller
     {
         $producto = Productos::find($id);
         $producto->caracteristicas()->detach();
+        return redirect('/admin/productos/detalles/'.$id);
     }
 
     public function updatePresentacion(Request $request, $id_pres)
@@ -241,13 +245,7 @@ class ProductosController extends Controller
             'peso'       =>['nullable', 'numeric', 'min:0'],
             'unidad_c'   =>['required', Rule::in(['ml', 'g','l','kg'])],
             'estado'     =>['required', 'integer','min:-1', 'max:3'],
-        ]);
-
-        if ($validator->fails()) {
-            return redirect('/admin/productos/detalles/'.$producto->id)
-                        ->withErrors($validator)
-                        ->withInput();
-        }
+        ])->validate();
 
         $producto = $presentacion->producto;
 
@@ -271,11 +269,12 @@ class ProductosController extends Controller
         try{
             $presentacion->save();
         }catch(\Illuminate\Database\QueryException $e){
-            $validator->errors()->add('contenido',
+            //$validator['contenido']->errors();
+            $error = ['contenido' =>
              'Ya existe la presentación ('.$presentacion->contenido.' '
-                 .$presentacion->unidad_c. ') para el producto ('.$producto->nombre.')');
+                 .$presentacion->unidad_c. ') para el producto ('.$producto->nombre.')'];
             return redirect('/admin/productos/detalles/'.$producto->id)
-                        ->withErrors($validator)
+                        ->withErrors($error)
                         ->withInput();
 
         }
@@ -284,11 +283,14 @@ class ProductosController extends Controller
     }
 
     public function addPresentaciones(StorePresentacion $request, $id){
-        $producto = Productos::find($id);
+        $producto = Productos::findOrFail($id);
         
+        $validator = Validator::make($request->all(), 
+            $request->rules(), $request->messages())->validate();
+                
         $validated = $request->validated();
         $presentaciones = $validated['new_pres'];
-        $validator = $request->getValidatorInstance();
+        $validator = $request->getValidator();
 
         foreach ($presentaciones as $presentacion) {
             $url_foto;
@@ -343,7 +345,7 @@ class ProductosController extends Controller
         //Código de estado para baja de presentaciones
         $presentacion->estado = -1;
         $presentacion->save();
-        //return redirect('/admin/productos/');
+        return redirect('/admin/productos/detalles/'.$id);
 
     }
 
@@ -359,8 +361,7 @@ class ProductosController extends Controller
         //Código de estado para baja de presentaciones
         $presentacion->estado = 1;
         $presentacion->save();
-        //return redirect('/admin/productos/');
-
+        return redirect('/admin/productos/detalles/'.$producto->id);
     }
 
     public function destroyProducto($id)
@@ -377,6 +378,7 @@ class ProductosController extends Controller
         //Código de estado para baja de presentaciones
         $producto->estado = -1;
         $producto->save();
+        return redirect('/admin/productos/detalles/'.$id);
 
     }
 
@@ -394,6 +396,7 @@ class ProductosController extends Controller
         //Código de estado para baja de presentaciones
         $producto->estado = 1;
         $producto->save();
+        return redirect('/admin/productos/detalles/'.$id);
 
     }
 

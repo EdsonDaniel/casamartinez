@@ -204,3 +204,10 @@ select:hover{
     margin: 0.5rem auto;
     padding: 0.2rem;
 }
+
+.btn-headers{
+    font-size: 1em;
+    line-height: 1;
+    vertical-align: middle;
+    margin-right: 0.2em;
+}
