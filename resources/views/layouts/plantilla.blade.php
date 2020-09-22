@@ -9,7 +9,7 @@
     <title>@yield('title')</title>
     
     <!-- Stylesheet -->
-    <!--<link rel="stylesheet" href="/adminlte/plugins/fontawesome-free/css/all.min.css">-->
+    <link rel="stylesheet" href="/adminlte/plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('css/custom/bootstrap.css') }}" type="text/css">
     <link href="{{ asset('css/custom/principal.css') }}" rel="stylesheet" type="text/css"/>
     <!--<script src="https://kit-pro.fontawesome.com/releases/v5.10.1/js/pro.min.js" data-auto-fetch-svg></script>-->
@@ -20,6 +20,7 @@
 
 </head>
 <body>
+    <div id="#app">
     <!--NavBar-->
     <nav id="topbar" class="navbar navbar-expand-lg fixed-top nav-trn">
         <div class="container">
@@ -58,8 +59,8 @@
                     </li>
                 </ul>
 
-                <a href="/" class="ico"><span class="fad fa-shopping-cart" id="cart"></span></a>
-                <a class="ico" id="opened" onclick="openNav()"><i class="far fa-bars" id="icon-menu"></i></a> 
+                <a href="/" class="ico"><span class="fa fa-shopping-cart" id="cart"></span></a>
+                <a class="ico" id="opened" onclick="openNav()"><i class="fa fa-bars" id="icon-menu"></i></a> 
             </div>
         </div>
     </nav>
@@ -67,7 +68,7 @@
 
     <!--Sidebar-->
     <div id="mySidenav" class="sidenav" >
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="far fa-bars"></i></a>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-bars"></i></a>
         <div class="title-nav">
           <h2><a href="/">CASA MARTINEZ</a></h2>
         </div>
@@ -143,38 +144,9 @@
         </div>
     </div>
     <!--Sidebar-->
-    <script>
-/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
-var dropdown = document.getElementsByClassName("boton");
-var i;
-var icon;
-for (i = 0; i < dropdown.length; i++) {
-  dropdown[i].addEventListener("click", function() {
-  this.classList.toggle("active");
-  var btn = this.lastElementChild;
-  icon = btn.firstElementChild;
-  icon.classList.toggle("fa-minus");
-  icon.classList.toggle("fa-plus");
-  
-  var dropdownContent = this.nextElementSibling;
-  btn = dropdownContent.firstElementChild;
-  var alt = btn.offsetHeight;
-  alt += 6;
-  alt = alt+"px";
-  /*console.log(alt);
-  console.log(dropdownContent.style.height);*/
-  if (dropdownContent.style.height === "") {
-    console.log(alt);
-  dropdownContent.style.height = alt;
-  } else {
-  dropdownContent.style.height = "";
-  }
-  });
-}
-</script>
   <!--container content-->
   
-  <div @yield('id-container')>@yield('content')</div>
+  <div @yield('id-container') class="app-container">@yield('content')</div>
   <!--container content-->
 
   <!--footer-->
@@ -206,11 +178,14 @@ for (i = 0; i < dropdown.length; i++) {
   </footer>
   <!--footer-->
 
+  </div>
+
    <!-- Scripts -->
    
    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+ 
    <script type="text/javascript" src="js/custom/efectos.js"></script>
 
    @yield('scripts')

@@ -1,3 +1,33 @@
+/* Loop through all dropdown buttons to toggle between hiding and 
+showing its dropdown content - This allows the user to have multiple 
+dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("boton");
+var i;
+var icon;
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var btn = this.lastElementChild;
+  icon = btn.firstElementChild;
+  icon.classList.toggle("fa-minus");
+  icon.classList.toggle("fa-plus");
+  
+  var dropdownContent = this.nextElementSibling;
+  btn = dropdownContent.firstElementChild;
+  var alt = btn.offsetHeight;
+  alt += 6;
+  alt = alt+"px";
+  /*console.log(alt);
+  console.log(dropdownContent.style.height);*/
+  if (dropdownContent.style.height === "") {
+    console.log(alt);
+  dropdownContent.style.height = alt;
+  } else {
+  dropdownContent.style.height = "";
+  }
+  });
+}
+
 function openNav() {
   var head = document.getElementById("head");
   var wh = document.getElementById("wh-bg");
@@ -16,12 +46,12 @@ function openNav() {
   if(head != null){
     head.className = "body-transparent";
   }
-  //document.body.className = "body-transparent";
-  if(wh != null){
+  document.getElementsByClassName("app-container")[0].className = "app-container body-transparent";
+  /*if(wh){
     wh.className = "body-transparent";
   }else{
     document.getElementById("bl-bg").className = "body-transparent";
-  }     
+  } */    
 }
 
 function closeNav() {
@@ -34,11 +64,12 @@ function closeNav() {
     head.className = "";
   }
   //document.body.className = "body-black";  
-  if(wh != null){
+  document.getElementsByClassName("app-container")[0].className = "app-container";
+  /*if(wh != null){
     wh.className = "";
   }else{
     document.getElementById("bl-bg").className = "";
-  }
+  }*/
 }
 
 
