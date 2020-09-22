@@ -17,10 +17,10 @@
 <h3 style="padding-top: 75px;" id="pr">PRODUCTOS CASA MARTÍNEZ</h3>
 <div class="list-products">
 	<form action="/procesar-pago" method="POST">
-  <script
+  <!--<script
    src="https://www.mercadopago.com.mx/integrations/v1/web-payment-checkout.js"
-   data-preference-id="{{$preference->id}}">
-  </script>
+   data-preference-id="">
+  </script>-->
 </form>
 
 	<!--product1-->

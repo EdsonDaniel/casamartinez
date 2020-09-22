@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
     <title>@yield('title')</title>
+
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    
     
     <!-- Stylesheet -->
-    <!--<link rel="stylesheet" href="/adminlte/plugins/fontawesome-free/css/all.min.css">-->
-    <link rel="stylesheet" href="{{ asset('css/custom/bootstrap.css') }}" type="text/css">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/custom/principal.css') }}" rel="stylesheet" type="text/css"/>
-    <!--<script src="https://kit-pro.fontawesome.com/releases/v5.10.1/js/pro.min.js" data-auto-fetch-svg></script>-->
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Markazi+Text&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">    
     <link rel="stylesheet" href="css/custom/estilo.css">
     <link rel="stylesheet" href="css/fonts/style.css">
@@ -28,38 +29,24 @@
                 <ul class="navbar-nav ml-auto" id="list-items">
                     <li class="nav-item">
                         <div class="dropdown">
-                            <a class="nav-link dropbtn" href="/filosofia">FILOSOFÍA</a>
-                            <div class="dropdown-content">
-                                <a href="/filosofia">-Introducción</a>
-                                <a href="/historia">-Historia, Equipo</a>
-                                <a href="/campos-de-maguey">-Campos de Maguey</a>
-                                <a href="/certificaciones">-Certificaciones</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <div class="dropdown">
-                            <a class="nav-link dropbtn" href="/productos">PRODUCTOS</a>
-                            <div class="dropdown-content">
-                                <a href="#">-Ignacio Martínez</a>
-                                <a href="/catalogo">-SiNái</a>
-                                <a href="#">-Origen Verde</a>
-                                <a href="#">-Habitante</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <div class="dropdown">
                             <a class="nav-link dropbtn" href="/login">LOGIN</a>
                             <div class="dropdown-content">
                                 <a href="/register">-Registrarse</a>
                             </div>
                         </div>
                     </li>
+                    <li class="nav-item">
+                      <a href="/" class="ico btn btn-sm">
+                        <!--<span class="fad fa-shopping-cart" id="cart"></span>-->
+                        <i data-feather="shopping-cart" class="icon-nav" id="cart"></i>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="ico btn btn-sm pr-0" id="opened" onclick="openNav()"><i data-feather="menu" class="icon-nav" id="icon-menu"></i></a> 
+                    </li>
                 </ul>
 
-                <a href="/" class="ico"><span class="fad fa-shopping-cart" id="cart"></span></a>
-                <a class="ico" id="opened" onclick="openNav()"><i class="far fa-bars" id="icon-menu"></i></a> 
+                
             </div>
         </div>
     </nav>
@@ -143,38 +130,9 @@
         </div>
     </div>
     <!--Sidebar-->
-    <script>
-/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
-var dropdown = document.getElementsByClassName("boton");
-var i;
-var icon;
-for (i = 0; i < dropdown.length; i++) {
-  dropdown[i].addEventListener("click", function() {
-  this.classList.toggle("active");
-  var btn = this.lastElementChild;
-  icon = btn.firstElementChild;
-  icon.classList.toggle("fa-minus");
-  icon.classList.toggle("fa-plus");
-  
-  var dropdownContent = this.nextElementSibling;
-  btn = dropdownContent.firstElementChild;
-  var alt = btn.offsetHeight;
-  alt += 6;
-  alt = alt+"px";
-  /*console.log(alt);
-  console.log(dropdownContent.style.height);*/
-  if (dropdownContent.style.height === "") {
-    console.log(alt);
-  dropdownContent.style.height = alt;
-  } else {
-  dropdownContent.style.height = "";
-  }
-  });
-}
-</script>
   <!--container content-->
   
-  <div @yield('id-container')>@yield('content')</div>
+  <div>@yield('content')</div>
   <!--container content-->
 
   <!--footer-->
@@ -206,11 +164,40 @@ for (i = 0; i < dropdown.length; i++) {
   </footer>
   <!--footer-->
 
+
    <!-- Scripts -->
-   
+   <script type="text/javascript">
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("boton");
+var i;
+var icon;
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var btn = this.lastElementChild;
+  icon = btn.firstElementChild;
+  icon.classList.toggle("fa-minus");
+  icon.classList.toggle("fa-plus");
+  
+  var dropdownContent = this.nextElementSibling;
+  btn = dropdownContent.firstElementChild;
+  var alt = btn.offsetHeight;
+  alt += 6;
+  alt = alt+"px";
+  /*console.log(alt);
+  console.log(dropdownContent.style.height);*/
+  if (dropdownContent.style.height === "") {
+    console.log(alt);
+  dropdownContent.style.height = alt;
+  } else {
+  dropdownContent.style.height = "";
+  }
+  });
+}
+</script>
    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+   <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>-->
    <script type="text/javascript" src="js/custom/efectos.js"></script>
 
    @yield('scripts')

@@ -1,0 +1,195 @@
+.nav-trn a{
+	color: #4A4A4A !important;
+}
+
+.nav-white{
+	background-image: linear-gradient(rgba(243, 243, 241, 0.85), rgba(243, 243, 241, 0.95)) !important;
+}
+
+body{
+	padding-top: 1.5rem;
+	font-family: 'Lora', serif;
+	font-size: 1rem;
+    background-color: #fff;
+}
+
+.titulo{
+	font-family: 'Raleway', sans-serif !important;
+	letter-spacing: 5px;
+	font-size: 20px;
+	font-weight: normal;
+	color: rgba(111,133,85);;
+}
+
+.icon-nav{
+    width: 1rem;
+    height: 1rem;
+}
+
+.nav-vertical {
+    flex-direction: column;
+}
+.right{
+	position: absolute;
+    right: 1rem;
+    top: .7rem;
+    transition: all .3s ease-in-out;
+    transform-origin: center center;
+}
+
+
+.dropdown-toggle::after {
+    content: none;
+}
+
+
+.dropdown-toggle[data-toggle=collapse][aria-expanded=true] i.right{
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+
+.text-presentation{
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 1px;
+    color: gray !important;
+    font-size: 0.9rem;
+}
+
+select{
+	transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition-property: border-color, box-shadow;
+    transition-duration: 0.15s, 0.15s;
+    transition-timing-function: ease-in-out, ease-in-out;
+    transition-delay: 0s, 0s;
+}
+
+.font-size-lg{
+	font-size: 1.125rem!important;
+}
+.font-size-md{
+	font-size: 1.07rem!important;
+}
+
+
+.card-img {
+    position: relative;
+}
+.card-img, .card-img-bottom, .card-img-top {
+    flex-shrink: 0;
+    width: 100%;
+}
+
+.card-img-hover {
+    display: block;
+}
+
+.card-img-hover .card-img-back {
+    opacity: 0;
+}
+.card-img-hover .card-img-top {
+    transition: opacity .2s ease-in-out;
+}
+.card-img-hover>* {
+    float: left;
+}
+.card-img-hover .card-img-front {
+    margin-left: -100%;
+}
+.card-img:hover .card-img-hover .card-img-back {
+    opacity: 1;
+}
+.card-img:hover .card-img-hover .card-img-front {
+    opacity: 0;
+}
+.card-actions {
+    position: absolute;
+    bottom: 0;
+    z-index: -1000;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1.25rem;
+    opacity: 0;
+}
+
+.card-img:hover .card-actions, .card-img:hover .card-actions .card-action{
+    opacity: 1;
+    transform: translateY(0);
+    z-index: 1;
+}
+.card-actions .card-action {
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    transform: translateY(.5rem);
+    transition: all .1s ease-in-out;
+    transition-property: transform,opacity;
+}
+.card-action {
+    position: absolute;
+    top: 1.25rem;
+    z-index: 1;
+}
+.card-actions .card-action+.card-action {
+    margin-left: 1rem;
+}
+.card-actions .card-action:nth-child(2) {
+    transition-delay: 75ms;
+}
+
+
+.btn-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(2rem + 2px);
+    height: calc(2rem);
+    border-radius: 50%;
+    white-space: nowrap;
+}
+.btn-white-primary {
+    background-color: white;
+    color: #111;
+}
+.btn-xs {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.7875rem;
+}
+
+.btn-white-primary:focus, .btn-white-primary:hover {
+    background-color: gray;
+    border-color: grey;
+    color: #fff;
+}
+
+.card-badge-left {
+    left: 0;
+}
+.card-badge {
+    position: absolute;
+    top: 1.25rem;
+    z-index: 1;
+}
+.card>* {
+    flex-shrink: 0;
+}
+.badge-white {
+    background-color: #fff;
+    color: #111;
+}
+.badge {
+    letter-spacing: .02em;
+    border-radius: unset;
+}
+
+.card-collapse-parent {
+    position: relative;
+    transition: transform .35s ease;
+}
+.card-collapse {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+}

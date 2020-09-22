@@ -40,7 +40,8 @@ Route::get('/productos', function () {
 });
 
 
-Route::get('/catalogo', 'UserController@mercadopago');
+Route::get('/catalogo', function(){return view('catalogo');});
+Route::get('/tienda', function(){return view('tienda');});
 
 Route::get('/carrito', function () {
     return view('carrito');
@@ -198,3 +199,26 @@ Route::get('/admin/roles/ajax/{id}', 'RolesController@getDataById');
 /**************************************rutas permisos ////////////////////////////////*/
 //lista de permisos
 Route::get('/admin/permisos', 'RolesController@indexPermisos'); 
+/***************************************************************************************/
+
+//*****************************************rutasd Crud entradas***************************/
+//lista de entradas
+Route::get('/admin/entradas', 'EntradasController@index'); 
+//Detalles de una entrada
+Route::get('/admin/entradas/detalles/{id}', 'EntradasController@show'); 
+//ruta para crear un entrada ****
+Route::get('/admin/entradas/agregar', 'EntradasController@create'); 
+Route::post('/admin/entradas/store', 'EntradasController@store');
+
+//rutas para actualizar un entrada especifica
+Route::post('/admin/entradas/update/{id}', 'EntradasController@update');
+
+//ruta para eliminar un entrada
+Route::post('/admin/entradas/delete/{id}', 'EntradasController@destroy');
+
+//rutas obtener datos de entradas mediante AJAX
+Route::get('/admin/entradas/ajax', 'EntradasController@getDataAjax');
+Route::get('/admin/entradas/ajax/{id}', 'EntradasController@getDataById');
+
+
+//*****************************************rutasd Crud entradas***************************/

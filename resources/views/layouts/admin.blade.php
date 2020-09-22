@@ -170,7 +170,7 @@
           <!-- sección de ventas -->
           <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-comment-dollar"></i>
+              <i class="fas fa-file-invoice-dollar"></i>
               <p>
                 Ventas
                 <i class="right fas fa-angle-left"></i>
@@ -191,7 +191,7 @@
               </li>
               <li class="nav-item">
                 <a href="#" class="nav-link">
-                  <i class="fas fa-clipboard-list nav-icon"></i>
+                  <i class="fas fa-file-invoice nav-icon"></i>
                   <p>Reportes</p>
                 </a>
               </li>
@@ -230,6 +230,31 @@
                 <a href="/admin/caracteristicas" class="nav-link">
                   <i class="fas fa-stream nav-icon"></i>
                   <p>Especificaciones</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- sección de entradas -->
+           <li class="nav-item has-treeview menu-open">
+            <a href="#" class="nav-link ">
+              <i class="fas fa-dolly-flatbed nav-icon"></i>
+              <p>
+                Entradas
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/admin/entradas/agregar" class="nav-link">
+                  <i class="fas fa-notes-medical nav-icon"></i>
+                  <p>Registrar entrada</p>
+                </a>
+              </li>
+               <li class="nav-item">
+                <a href="/admin/entradas/" class="nav-link">
+                  <i class="fas fa-clipboard-list nav-icon"></i>
+                  <p>Historial de entradas</p>
                 </a>
               </li>
             </ul>
