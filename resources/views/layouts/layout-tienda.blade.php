@@ -12,9 +12,10 @@
     
     
     <!-- Stylesheet -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/custom/principal.css') }}" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="/adminlte/plugins/fontawesome-free/css/all.min.css">
+    <!--<link href="" rel="stylesheet">-->
+    <link rel="stylesheet" href="{{asset('adminlte/plugins/fontawesome-free/css/all.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/custom/bootstrap.css') }}" type="text/css">
+    <link href="{{ asset('css/custom/principal.css') }}" rel="stylesheet" type="text/css">    
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Markazi+Text&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">    
     <link rel="stylesheet" href="css/custom/estilo.css">
     <!--<link rel="stylesheet" href="css/fonts/style.css">-->

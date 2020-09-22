@@ -6,7 +6,7 @@
 
 @section('stylesheet')
 <link href="css/custom/tienda.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="/adminlte/plugins/fontawesome-free/css/all.min.css">
+
 @endsection
 
 @section('content')
