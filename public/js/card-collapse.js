@@ -1,5 +1,19 @@
 // A $( document ).ready() block.
+function isBreakpoint( alias ) {
+    return $('.device-' + alias).is(':visible');
+}
+
+
 $( document ).ready(function() {
+
+    if( isBreakpoint('xs') || isBreakpoint('sm')) {
+        $('#linkBranchCollapse').attr("aria-expanded",false);
+        $('#branchCollapse').removeClass("show");
+        $('#rowFilters').addClass("no-gutters");
+        $('#collapseFilter').addClass("border pt-2");
+        //quitar borde superior
+        //juntar los dos botones
+    }
     var t = $('[data-toggle="card-collapse"]'),
         e = $(".card-collapse");
     t.on({
@@ -31,3 +45,8 @@ $( document ).ready(function() {
         }
     });
 });
+
+
+function isBreakpoint( alias ) {
+    return $('.device-' + alias).is(':visible');
+}
