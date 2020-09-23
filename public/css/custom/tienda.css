@@ -193,3 +193,7 @@ select{
     top: 100%;
     width: 100%;
 }
+
+.font-product-title-sm{
+    font-weight: 500;
+}

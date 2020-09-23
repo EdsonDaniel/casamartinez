@@ -2,15 +2,20 @@
 function isBreakpoint( alias ) {
     return $('.device-' + alias).is(':visible');
 }
-
+//eventoo de open marcas agregar margen al fondo
 
 $( document ).ready(function() {
 
     if( isBreakpoint('xs') || isBreakpoint('sm')) {
         $('#linkBranchCollapse').attr("aria-expanded",false);
+        $("#listSide").addClass("border rounded");
+        //$("#li-listSide").removeClass("shadow-sm");
         $('#branchCollapse').removeClass("show");
-        $('#rowFilters').addClass("no-gutters");
-        $('#collapseFilter').addClass("border pt-2");
+        $('#rowFilters, #rowProducts').addClass("no-gutters");
+        $('#collapseFilter').addClass("border rounded pt-2");
+        $("#linkCollapseFilter").addClass("font-size-md");
+        $("#filterBar").addClass("border shadow-sm");
+        $("#rowProducts div.col-6").addClass("p-1");
         //quitar borde superior
         //juntar los dos botones
     }

@@ -29,31 +29,31 @@
   <div class="container p-md-0">
     <div class="row ">
       <!--sidebar-->
-      <div class="col-12 col-md-3 col-lg-3 pl-sm-3 pl-md-0 pb-3" id="side-branch">
+      <div class="col-12 col-md-3 col-lg-3 pl-sm-3 pl-md-0 pb-1" id="side-branch">
         <!-- Filters -->
         <form class="mb-10 mb-md-0">
-          <ul class="nav nav-vertical" id="filterNav">
-            <li class="nav-item border">
+          <ul class="nav nav-vertical shadow-sm" id="listSide">
+            <li class="nav-item " id="li-listSide">
               <!-- Toggle -->
-              <a class="nav-link font-weight-bold dropdown-toggle font-size-md border-bottom pl-md-0 position-relative" data-toggle="collapse" aria-expanded="true" href="#branchCollapse" id="linkBranchCollapse">
+              <a class="nav-link shadow-sm font-weight-bold dropdown-toggle font-size-md position-relative" data-toggle="collapse" aria-expanded="true" href="#branchCollapse" id="linkBranchCollapse">
                 Nuestras Marcas
                 <i class="right fas fa-angle-down"></i>
               </a>
 
               <!-- Collapse -->
-              <div class="collapse show mt-1" id="branchCollapse">
-                <div class="form-group">
+              <div class="collapse show shadow shadow-sm" id="branchCollapse">
+                <div class="form-group m-0">
                   <ul class="pl-2 mb-0" id="productsNav">
-                    <li class="p-1">
+                    <li class="px-1 py-2">
                       <a class="" >Sinái</a>
                     </li>
-                    <li class="p-1">
+                    <li class="px-1 py-2">
                       <a class="" >Ignacio Martínez</a>
                     </li>
-                    <li class="p-1">
+                    <li class="px-1 py-2">
                       <a class="" >Origen verde</a>
                     </li>
-                    <li class="p-1">
+                    <li class="px-1 py-2">
                       <a class="" >Habitante</a>
                     </li>
                     
@@ -69,15 +69,15 @@
       
       <!--products-->
       <div class="col-12 col-md-9 col-lg-9 ">
-        <div class="row align-items-center mb-3 " id="rowFilters">
+        <div class="row align-items-center mb-md-3 " id="rowFilters">
           <!--<div class="col-12 col-md-auto text-center">-->
             <!-- Filter -->
-            <div class="col-12 d-flex align-items-center justify-content-end bg-gray rounded-top pr-2 mb-3">
-              <a class="text-body p-2"  data-toggle="collapse" href="#collapseFilter" role="button" aria-expanded="false" aria-controls="collapseFilter">
+            <div class="col-12 d-flex align-items-center justify-content-end bg-gray rounded-top pr-2 " id="filterBar">
+              <a class="text-body p-2 d-block w-100 text-right"  data-toggle="collapse" href="#collapseFilter" role="button" aria-expanded="false" aria-controls="collapseFilter" id="linkCollapseFilter">
                 <i class="fas fa-list-ul mr-2 fa-xs"></i></i>Filtros
               </a>
             </div>
-            <div class="collapse" id="collapseFilter" >
+            <div class="col-12 collapse shadow pt-2" id="collapseFilter" >
               <!--<div class="container-fluid mb-4 border-bottom" >-->
               <form >
                 <div class="container">
@@ -162,7 +162,7 @@
         </div>
 
         <!-- Products -->
-        <div class="row mt-4">
+        <div class="row mt-4" id="rowProducts">
           <div class="col-6 col-md-4 mb-3">
 
             <!-- Card -->
@@ -204,7 +204,7 @@
               </div>
 
               <!-- Body -->
-              <div class="card-body border-top">
+              <div class="card-body pt-0 pt-md-3 border-top">
 
                 <!-- Title -->
                 <div class="font-weight-bold">
@@ -224,50 +224,59 @@
 
           </div>
 
-          <div class="col-6 col-md-3 col-lg">
+          <div class="col-6 col-md-4 mb-3">
 
             <!-- Card -->
-            <div class="card mb-5" data-toggle="card-collapse">
+            <div class="card border-0 mb-5">
 
               <!-- Badge -->
-              <div class="badge badge-dark rounded-right card-badge card-badge-left text-uppercase">New</div>
+              <div class="badge badge-dark rounded-right card-badge card-badge-left text-uppercase">
+                New
+              </div>
 
               <!-- Image -->
-              <a href="product.html">
-                <img src="/img/botellas/anejo-sq.jpg" alt="..." class="card-img-top p-3">
-              </a>
+              <div class="card-img">
 
-              <!-- Collapse -->
-              <div class="card-collapse-parent" style="">
+                <!-- Image -->
+                <a class="card-img-hover" href="product.html">
+                  <img class="card-img-top card-img-back p-3" src="/img/botellas/sinai-sq.jpg" alt="...">
+                  <img class="card-img-top card-img-front p-3" src="/img/botellas/anejo-sq.jpg" alt="...">
+                </a>
 
-                <!-- Body -->
-                <div class="card-body border-top px-0 bg-white text-center pb-1">
-
-                  <!-- Heading -->
-                  <div class="mb-1 font-weight-bold">
-                    <a class="text-body" href="product.html">Mezcal Sinái (Reposado) 250 ml</a>
-                  </div>
-
-                  <!-- Price -->
-                  <div class="mb-1 font-weight-bold text-muted">
-                    $129.00
-                  </div>
-
-                </div>
-
-                <!-- Footer -->
-                <div class="card-collapse collapse" style="">
-                  <div class="card-footer border-top-0 px-0 pt-0 bg-white text-center">
-                    <button class="btn btn-xs btn-circle btn-light border m-1" data-toggle="modal" data-target="#modalProduct">
+                <!-- Actions -->
+                <div class="card-actions">
+                  <span class="card-action">
+                    <button class="btn btn-xs btn-circle btn-light border" data-toggle="modal" data-target="#modalProduct">
                       <i data-feather="eye"></i>
                     </button>
-                    <button class="btn btn-xs btn-circle btn-light border m-1" data-toggle="button">
+                  </span>
+                  <span class="card-action">
+                    <button class="btn btn-xs btn-circle btn-light border" data-toggle="button">
                       <i data-feather="shopping-cart"></i>
                     </button>
-                    <button class="btn btn-xs btn-circle btn-light border m-1" data-toggle="button">
+                  </span>
+                  <span class="card-action">
+                    <button class="btn btn-xs btn-circle btn-light border" data-toggle="button">
                       <i data-feather="heart"></i>
                     </button>
-                  </div>
+                  </span>
+                </div>
+
+              </div>
+
+              <!-- Body -->
+              <div class="card-body pt-0 pt-md-3 border-top">
+
+                <!-- Title -->
+                <div class="font-weight-bold">
+                  <a class="text-body" href="product.html">
+                    Mezcal Sinái (Joven) 750 ml
+                  </a>
+                </div>
+
+                <!-- Price -->
+                <div class="font-weight-bold text-muted">
+                  $129.00
                 </div>
 
               </div>
@@ -276,58 +285,59 @@
 
           </div>
 
-
-          <div class="col-6 col-md-3 col-lg">
+          <div class="col-6 col-md-4 mb-3">
 
             <!-- Card -->
-            <div class="card border-0 mb-5" data-toggle="card-collapse">
+            <div class="card border-0 mb-5">
 
               <!-- Badge -->
-              <div class="badge badge-dark rounded-right card-badge card-badge-left text-uppercase">New</div>
+              <div class="badge badge-dark rounded-right card-badge card-badge-left text-uppercase">
+                New
+              </div>
 
               <!-- Image -->
-              <a href="product.html">
-                <img src="/img/botellas/anejo-sq.jpg" alt="..." class="card-img-top p-3">
-              </a>
+              <div class="card-img">
 
-              <!-- Collapse -->
-              <div class="card-collapse-parent" style="">
+                <!-- Image -->
+                <a class="card-img-hover" href="product.html">
+                  <img class="card-img-top card-img-back p-3" src="/img/botellas/sinai-sq.jpg" alt="...">
+                  <img class="card-img-top card-img-front p-3" src="/img/botellas/anejo-sq.jpg" alt="...">
+                </a>
 
-                <!-- Body -->
-                <div class="card-body border-top px-0 bg-white text-center pb-1">
-
-                  <!-- Heading -->
-                  <div class="mb-1 font-weight-bold">
-                    <a class="text-body" href="product.html">Mezcal Sinái Reserva Especial</a>
-                  </div>
-
-                  <!--presentation-->
-                  <div >
-                    <a class="text-body text-presentation" href="product.html">
-                      Presentación: 750ml
-                    </a>
-                  </div>
-
-                  <!-- Price -->
-                  <div class="mb-1 font-weight-bold text-muted">
-                    $129.00
-                  </div>
-
-                </div>
-
-                <!-- Footer -->
-                <div class="card-collapse collapse" style="">
-                  <div class="card-footer border-top-0 px-0 pt-0 bg-white text-center">
-                    <button class="btn btn-xs btn-circle btn-light border m-1" data-toggle="modal" data-target="#modalProduct">
+                <!-- Actions -->
+                <div class="card-actions">
+                  <span class="card-action">
+                    <button class="btn btn-xs btn-circle btn-light border" data-toggle="modal" data-target="#modalProduct">
                       <i data-feather="eye"></i>
                     </button>
-                    <button class="btn btn-xs btn-circle btn-light border m-1" data-toggle="button">
+                  </span>
+                  <span class="card-action">
+                    <button class="btn btn-xs btn-circle btn-light border" data-toggle="button">
                       <i data-feather="shopping-cart"></i>
                     </button>
-                    <button class="btn btn-xs btn-circle btn-light border m-1" data-toggle="button">
+                  </span>
+                  <span class="card-action">
+                    <button class="btn btn-xs btn-circle btn-light border" data-toggle="button">
                       <i data-feather="heart"></i>
                     </button>
-                  </div>
+                  </span>
+                </div>
+
+              </div>
+
+              <!-- Body -->
+              <div class="card-body pt-0 pt-md-3 border-top">
+
+                <!-- Title -->
+                <div class="font-weight-bold">
+                  <a class="text-body" href="product.html">
+                    Mezcal Sinái (Joven) 750 ml
+                  </a>
+                </div>
+
+                <!-- Price -->
+                <div class="font-weight-bold text-muted">
+                  $129.00
                 </div>
 
               </div>
@@ -335,6 +345,69 @@
             </div>
 
           </div>
+
+          <div class="col-6 col-md-4 mb-3">
+
+            <!-- Card -->
+            <div class="card border-0 mb-5">
+
+              <!-- Badge -->
+              <div class="badge badge-dark rounded-right card-badge card-badge-left text-uppercase">
+                New
+              </div>
+
+              <!-- Image -->
+              <div class="card-img">
+
+                <!-- Image -->
+                <a class="card-img-hover" href="product.html">
+                  <img class="card-img-top card-img-back p-3" src="/img/botellas/sinai-sq.jpg" alt="...">
+                  <img class="card-img-top card-img-front p-3" src="/img/botellas/anejo-sq.jpg" alt="...">
+                </a>
+
+                <!-- Actions -->
+                <div class="card-actions">
+                  <span class="card-action">
+                    <button class="btn btn-xs btn-circle btn-light border" data-toggle="modal" data-target="#modalProduct">
+                      <i data-feather="eye"></i>
+                    </button>
+                  </span>
+                  <span class="card-action">
+                    <button class="btn btn-xs btn-circle btn-light border" data-toggle="button">
+                      <i data-feather="shopping-cart"></i>
+                    </button>
+                  </span>
+                  <span class="card-action">
+                    <button class="btn btn-xs btn-circle btn-light border" data-toggle="button">
+                      <i data-feather="heart"></i>
+                    </button>
+                  </span>
+                </div>
+
+              </div>
+
+              <!-- Body -->
+              <div class="card-body pt-0 pt-md-3 border-top">
+
+                <!-- Title -->
+                <div class="font-weight-bold">
+                  <a class="text-body" href="product.html">
+                    Mezcal Sinái (Joven) 750 ml
+                  </a>
+                </div>
+
+                <!-- Price -->
+                <div class="font-weight-bold text-muted">
+                  $129.00
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          
 
         </div>
 
