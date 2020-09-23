@@ -16,6 +16,7 @@ $( document ).ready(function() {
         $("#linkCollapseFilter").addClass("font-size-md");
         $("#filterBar").addClass("border shadow-sm");
         $("#rowProducts div.col-6").addClass("p-1");
+        //$("#rowProducts div.card-body").addClass("text-center");
         //quitar borde superior
         //juntar los dos botones
     }

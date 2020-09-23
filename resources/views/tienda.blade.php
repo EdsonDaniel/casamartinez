@@ -35,7 +35,7 @@
           <ul class="nav nav-vertical shadow-sm" id="listSide">
             <li class="nav-item " id="li-listSide">
               <!-- Toggle -->
-              <a class="nav-link shadow-sm font-weight-bold dropdown-toggle font-size-md position-relative" data-toggle="collapse" aria-expanded="true" href="#branchCollapse" id="linkBranchCollapse">
+              <a class="nav-link shadow-sm title-product dropdown-toggle font-size-md position-relative" data-toggle="collapse" aria-expanded="true" href="#branchCollapse" id="linkBranchCollapse">
                 Nuestras Marcas
                 <i class="right fas fa-angle-down"></i>
               </a>
@@ -163,10 +163,10 @@
 
         <!-- Products -->
         <div class="row mt-4" id="rowProducts">
-          <div class="col-6 col-md-4 mb-3">
+          <div class="col-6 col-md-4 mb-0">
 
             <!-- Card -->
-            <div class="card border-0 mb-5">
+            <div class="card border-0 mb-0 mb-md-5">
 
               <!-- Badge -->
               <div class="badge badge-dark rounded-right card-badge card-badge-left text-uppercase">
@@ -204,17 +204,17 @@
               </div>
 
               <!-- Body -->
-              <div class="card-body pt-0 pt-md-3 border-top">
+              <div class="card-body text-center py-0 pt-md-3 border-top">
 
                 <!-- Title -->
-                <div class="font-weight-bold">
-                  <a class="text-body" href="product.html">
+                <div class="pb-1">
+                  <a class="text-body title-product" href="product.html">
                     Mezcal Sinái (Joven) 750 ml
                   </a>
                 </div>
 
                 <!-- Price -->
-                <div class="font-weight-bold text-muted">
+                <div class="text-muted price-product">
                   $129.00
                 </div>
 
@@ -224,10 +224,10 @@
 
           </div>
 
-          <div class="col-6 col-md-4 mb-3">
+          <div class="col-6 col-md-4 mb-0">
 
             <!-- Card -->
-            <div class="card border-0 mb-5">
+            <div class="card border-0 mb-0 mb-md-5">
 
               <!-- Badge -->
               <div class="badge badge-dark rounded-right card-badge card-badge-left text-uppercase">
@@ -265,17 +265,17 @@
               </div>
 
               <!-- Body -->
-              <div class="card-body pt-0 pt-md-3 border-top">
+              <div class="card-body text-center py-0 pt-md-3 border-top">
 
                 <!-- Title -->
-                <div class="font-weight-bold">
-                  <a class="text-body" href="product.html">
+                <div class="pb-1">
+                  <a class="text-body title-product" href="product.html">
                     Mezcal Sinái (Joven) 750 ml
                   </a>
                 </div>
 
                 <!-- Price -->
-                <div class="font-weight-bold text-muted">
+                <div class=" text-muted price-product">
                   $129.00
                 </div>
 
@@ -285,10 +285,10 @@
 
           </div>
 
-          <div class="col-6 col-md-4 mb-3">
+          <div class="col-6 col-md-4 mb-0">
 
             <!-- Card -->
-            <div class="card border-0 mb-5">
+            <div class="card border-0 mb-0 mb-md-5">
 
               <!-- Badge -->
               <div class="badge badge-dark rounded-right card-badge card-badge-left text-uppercase">
@@ -326,17 +326,17 @@
               </div>
 
               <!-- Body -->
-              <div class="card-body pt-0 pt-md-3 border-top">
+              <div class="card-body text-center py-0 pt-md-3 border-top">
 
                 <!-- Title -->
-                <div class="font-weight-bold">
-                  <a class="text-body" href="product.html">
+                <div class="pb-1">
+                  <a class="text-body title-product" href="product.html">
                     Mezcal Sinái (Joven) 750 ml
                   </a>
                 </div>
 
                 <!-- Price -->
-                <div class="font-weight-bold text-muted">
+                <div class=" text-muted price-product">
                   $129.00
                 </div>
 
@@ -346,10 +346,10 @@
 
           </div>
 
-          <div class="col-6 col-md-4 mb-3">
+          <div class="col-6 col-md-4 mb-0">
 
             <!-- Card -->
-            <div class="card border-0 mb-5">
+            <div class="card border-0 mb-0 mb-md-5">
 
               <!-- Badge -->
               <div class="badge badge-dark rounded-right card-badge card-badge-left text-uppercase">
@@ -387,17 +387,17 @@
               </div>
 
               <!-- Body -->
-              <div class="card-body pt-0 pt-md-3 border-top">
+              <div class="card-body text-center py-0 pt-md-3 border-top">
 
                 <!-- Title -->
-                <div class="font-weight-bold">
-                  <a class="text-body" href="product.html">
+                <div class="pb-1">
+                  <a class="text-body title-product" href="product.html">
                     Mezcal Sinái (Joven) 750 ml
                   </a>
                 </div>
 
                 <!-- Price -->
-                <div class="font-weight-bold text-muted">
+                <div class=" text-muted price-product">
                   $129.00
                 </div>
 
