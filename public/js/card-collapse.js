@@ -13,7 +13,7 @@ $( document ).ready(function() {
         $('#branchCollapse').removeClass("show");
         $('#rowFilters, #rowProducts').addClass("no-gutters");
         $('#collapseFilter').addClass("border rounded pt-2");
-        $("#linkCollapseFilter").addClass("font-size-md");
+        /*$("#linkCollapseFilter").addClass("font-size-md");*/
         $("#filterBar").addClass("border shadow-sm");
         $("#rowProducts div.col-6").addClass("p-1");
         $("img[img-modal]").addClass("img-product-modal");
