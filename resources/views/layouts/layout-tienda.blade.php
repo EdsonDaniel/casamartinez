@@ -16,14 +16,14 @@
     <link rel="stylesheet" href="/adminlte/plugins/fontawesome-free/css/all.min.css" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/custom/bootstrap.css') }}" type="text/css">
     <link href="{{ asset('css/custom/principal.css') }}" rel="stylesheet" type="text/css">    
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Markazi+Text&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Raleway:wght@300;400;500&family=Spartan:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/custom/estilo.css">
     <!--<link rel="stylesheet" href="css/fonts/style.css">-->
     @yield('stylesheet')
 
 </head>
 <body>
-    <div id="#app">
+    <div id="app">
     <!--NavBar-->
     <nav id="topbar" class="navbar navbar-expand-lg fixed-top nav-trn">
         <div class="container">
@@ -203,6 +203,8 @@ for (i = 0; i < dropdown.length; i++) {
    
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>-->
    <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>-->
+
+   @yield('more-content')
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
    <script type="text/javascript" src="js/custom/efectos.js"></script>
 

@@ -20,7 +20,7 @@
 
 </head>
 <body>
-    <div id="#app">
+    <div id="app">
     <!--NavBar-->
     <nav id="topbar" class="navbar navbar-expand-lg fixed-top nav-trn">
         <div class="container">

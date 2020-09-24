@@ -17,7 +17,7 @@
 <div class="device-lg d-none d-lg-block"></div>
 <div id="head-tienda">
   <div class="row justify-content-center no-gutters">
-    <div class="col-sm-2 row justify-content-center">
+    <div class="col-10 col-md-2 row justify-content-center">
       <div class="col-7 col-md-9 col-lg-10 ">
         <img src="img/logo-casa-martinez-svg.svg" class="img-fluid" alt="Logo Casa Martínez">
       </div>
@@ -67,7 +67,6 @@
       </div>
       <!--sidebar-->
       
-      <!--products-->
       <div class="col-12 col-md-9 col-lg-9 ">
         <div class="row align-items-center mb-md-3 " id="rowFilters">
           <!--<div class="col-12 col-md-auto text-center">-->
@@ -204,7 +203,7 @@
               </div>
 
               <!-- Body -->
-              <div class="card-body text-center py-0 pt-md-3 border-top">
+              <div class="card-body text-center p-0 mx-2 pt-md-3 border-top">
 
                 <!-- Title -->
                 <div class="pb-1">
@@ -265,7 +264,7 @@
               </div>
 
               <!-- Body -->
-              <div class="card-body text-center py-0 pt-md-3 border-top">
+              <div class="card-body text-center p-0 mx-2 pt-md-3 border-top">
 
                 <!-- Title -->
                 <div class="pb-1">
@@ -326,7 +325,7 @@
               </div>
 
               <!-- Body -->
-              <div class="card-body text-center py-0 pt-md-3 border-top">
+              <div class="card-body text-center p-0 mx-2 pt-md-3 border-top">
 
                 <!-- Title -->
                 <div class="pb-1">
@@ -387,7 +386,7 @@
               </div>
 
               <!-- Body -->
-              <div class="card-body text-center py-0 pt-md-3 border-top">
+              <div class="card-body text-center p-0 mx-2 pt-md-3 border-top">
 
                 <!-- Title -->
                 <div class="pb-1">
@@ -406,52 +405,178 @@
             </div>
 
           </div>
-
-          
 
         </div>
+        <!-- row products-->
 
-        <!-- Pagination -->
-        <nav class="d-flex justify-content-center justify-content-md-end">
-          <ul class="pagination pagination-sm text-gray-400">
-            <li class="page-item">
-              <a class="page-link page-link-arrow" href="#">
-                <i class="fa fa-caret-left"></i>
-              </a>
-            </li>
-            <li class="page-item active">
-              <a class="page-link" href="#">1</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">2</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">3</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">4</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">5</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#">6</a>
-            </li>
-            <li class="page-item">
-              <a class="page-link page-link-arrow" href="#">
-                <i class="fa fa-caret-right"></i>
-              </a>
-            </li>
-          </ul>
-        </nav>
+        <!--rowPagination-->
+        <div class="row justify-content-end mt-4" id="rowPagination">
+                  <!-- Pagination -->
+          <nav class="d-flex justify-content-center justify-content-md-end">
+            <ul class="pagination pagination-sm text-gray-400">
+              <li class="page-item">
+                <a class="page-link page-link-arrow" href="#">
+                  <i class="fa fa-caret-left"></i>
+                </a>
+              </li>
+              <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">2</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">3</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">4</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">5</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">6</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link page-link-arrow" href="#">
+                  <i class="fa fa-caret-right"></i>
+                </a>
+              </li>
+            </ul>
+          </nav>
 
+        </div>
+        <!--rowPagination-->
       </div>
     </div>
   </div>
 </section>
 @endsection
 
+@section('more-content')
+  <!--modal-->
+  <div class="modal fade" id="modalProduct" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <!-- Close -->
+        <button type="button" class="close btn-close-modal" data-dismiss="modal" aria-label="Close">
+          <i class="fe fe-x" aria-hidden="true" >&times;</i>
+        </button>
 
+        <!-- Content -->
+        <div class="container-fluid px-xl-0">
+          <div class="row align-items-center mx-xl-0">
+            <div class="col-12 col-lg-6 col-xl-5 py-4 py-xl-0 px-xl-0">
+
+              <!-- Image -->
+              <img class="img-fluid d-block my-5" src="/img/botellas/anejo-sq.jpg" alt="...">
+
+              <!-- Button --
+              <a class="btn btn-sm btn-block btn-primary" href="./product.html">
+                More Product Info <i class="fe fe-info ml-2"></i>
+              </a>-->
+
+            </div>
+            <div class="col-12 col-lg-6 col-xl-7 py-9 px-md-9">
+
+              <!-- Heading -->
+              <h4 class="mb-3">Mezcal Sinái(Joven) 750ml</h4>
+
+              <!-- Price -->
+              <div class=" mb-3">
+                <h4 class="price-product-modal">$850.00 MXN</h4>
+                <span class="product-status">Disponible</span>
+              </div>
+
+              <!-- Form -->
+              <form class="w-100">
+                <!--row form-->
+                <div class="row mx-0">
+
+                  <!--col-left-->
+                  <div class="col-7 px-0">
+                    <div class="form-group">
+
+                      <!-- Label -->
+                      <p>
+                        Presentación: <strong id="modalProductColorCaption">750 ml</strong>
+                      </p>
+
+                      <!-- Radio -->
+                      <div class="align-content-center">
+                        <div class="custom-control custom-control-inline custom-control-img">
+                          <input type="radio" class="custom-control-input" id="modalProductColorOne" name="modalProductColor" data-toggle="form-caption" data-target="#modalProductColorCaption" value="White" checked="">
+                          <label class="custom-control-label pb-1" for="modalProductColorOne">
+                            <span class="embed-responsive embed-responsive-1by1 bg-cover" style="background-image: url(/img/botellas/anejo-sq.jpg);"></span>
+                          </label>
+                        </div>
+                        <div class="custom-control custom-control-inline custom-control-img">
+                          <input type="radio" class="custom-control-input" id="modalProductColorTwo" name="modalProductColor" data-toggle="form-caption" data-target="#modalProductColorCaption" value="Black">
+                          <label class="custom-control-label pb-1" for="modalProductColorTwo">
+                            <span class="embed-responsive embed-responsive-1by1 bg-cover" style="background-image: url(/img/botellas/anejo-sq.jpg);"></span>
+                          </label>
+                        </div>
+                        <div class="custom-control custom-control-inline custom-control-img">
+                          <input type="radio" class="custom-control-input" id="modalProductColorTwo" name="modalProductColor" data-toggle="form-caption" data-target="#modalProductColorCaption" value="Black">
+                          <label class="custom-control-label pb-1" for="modalProductColorTwo">
+                            <span class="embed-responsive embed-responsive-1by1 bg-cover" style="background-image: url(/img/botellas/anejo-sq.jpg);"></span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--col-left-->
+
+                  <!--col-right-->
+                  <div class="col-4 px-0 d-flex justify-content-center">
+                    <div class="mt-3">
+                      <div class="form-group d-flex flex-column">
+                        <label class="text-center" for="inputCantidad">Cantidad:</label>
+                        <div class="input-group mt-1">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text p-0">
+                              <button type="button" class="btn icon-input-number">-</button>
+                            </div>
+                          </div>
+                          <input type="number" class="form-control" id="inputCantidad" placeholder="1" value="1" min="1" max="10">
+                          <div class="input-group-append">
+                            <div class="input-group-text p-0">
+                              <button type="button" class="btn icon-input-number">+</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--col-right-->
+
+                  <div class="col-12 ">
+                    <!-- Submit -->
+                    <button type="submit" class="btn btn-block btn-dark my-2 btn-modals p-2">
+                      Agregar al carrito <i class="fe fe-shopping-cart ml-2"></i>
+                    </button>
+                  </div>
+
+                  <div class="col-12 ">
+                    <!-- Submit -->
+                    <button type="submit" class="btn btn-block btn-dark mb-2 btn-modals p-2">
+                      Comprar ahora<i class="fe fe-shopping-cart ml-2"></i>
+                    </button>
+                  </div>
+                  
+                </div>
+                <!--row form-->
+              </form>
+
+            </div>
+
+          </div>
+        </div><!--container-->
+
+      </div><!--modal-content-->
+    </div>
+  </div>
+@endsection
 @section('scripts')
 <!--change navbar bg color-->
 <script type="text/javascript">

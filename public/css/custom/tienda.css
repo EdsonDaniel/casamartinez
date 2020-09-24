@@ -202,6 +202,158 @@ select{
     font-size: 0.9rem;
 }
 
+.price-product-modal{
+    font-family: 'Spartan', sans-serif;
+    /*letter-spacing: 2px;*/
+    font-size: 1.3rem;
+    font-weight: 400;
+    text-align: left;
+}
+.product-status{
+    font-family: 'Raleway', sans-serif;
+    color: #1b6714;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+h4{ font-size: 1.3rem; margin: 0; font-weight: 400;}
+
+.custom-control-input {
+    left: 0;
+    width: 1.125rem;
+    height: 1.3125rem;
+}
+.custom-control {
+    padding-left: 0 !important;
+}
+.custom-control-inline {
+    margin-right: .5rem !important;
+}
+
+.custom-control-img .custom-control-input:checked~.custom-control-label {
+    opacity: 1;
+    box-shadow: 0 0 10px 0.01rem rgba(118, 118, 118, 0.25);
+}
+.custom-control .custom-control-input:checked~.custom-control-label {
+    color: #111;
+}
+
+.custom-control-input:checked~.custom-control-label::before {
+    border-color: #1f1f1f;
+    background-color: #1f1f1f;
+}
+.custom-control-img .custom-control-label::before {
+    display: none;
+}
+.custom-control .custom-control-label::after, .custom-control .custom-control-label::before {
+    top: calc((1em * 1.5 - 1.125rem)/ 2);
+}
+.custom-control-label::before, .custom-file-label, .custom-select {
+    transition: background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.custom-control-label::before {
+    position: absolute;
+    top: .1875rem;
+    left: -2rem;
+    display: block;
+    width: 1.125rem;
+    height: 1.125rem;
+    pointer-events: none;
+    content: "";
+    background-color: #e5e5e5;
+    border: #525252 solid 0;
+}
+
+.custom-control-img .custom-control-input:checked~.custom-control-label::after {
+    display: block;
+}
+.custom-control-img .custom-control-label::after {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    border-bottom: 2px solid #111;
+}
+.custom-control-label::after {
+    top: .1875rem;
+    left: -2rem;
+    width: 1.125rem;
+    height: 1.125rem;
+    background: no-repeat 50%/10px 8px;
+}
+
+.custom-control-img .custom-control-label {
+    width: 70px;
+    opacity: .6;
+}
+.custom-control .custom-control-label {
+    color: #767676;
+    cursor: pointer;
+}
+.custom-control-label {
+    color: #767676;
+    vertical-align: top;
+}
+
+.bg-cover {
+    background-repeat: no-repeat!important;
+    background-position: center center!important;
+    background-size: cover!important;
+}
+
+.btn-modals{
+    font-family: 'Raleway', sans-serif !important;
+    font-size: 0.84rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.btn-close-modal{
+    position: absolute;
+    right: 0;
+    margin: 0.2rem 0.5rem;
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/**hide arrows on input number¨/
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"].form-control{
+    width: 3em;
+    max-width: 3em;
+    height: auto;
+    text-align: center;
+    padding: 0;
+    vertical-align: middle;
+}
+
+input[type="number"].form-control:focus {
+    background-color: #fff;
+    border-color: #767676;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(118, 118, 118, 0.25);
+}
+
+/* Firefox */
+input[type="number"].form-control {
+  -moz-appearance: textfield;
+}
+
+.icon-input-number{
+    font-size: 1.4rem;
+    padding: 0.125rem 0.5rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
 
 
 /* Small devices (landscape phones, 576px and up) */
@@ -210,7 +362,8 @@ select{
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
     .title-product{font-weight: bold; font-size: 1rem;}
-    .price-product{font-size: 1rem;} }
+    .price-product{font-size: 1rem;}
+    }
 
 /* Large devices (desktops, 992px and up) */
 /*@media (min-width: 992px) { ... }*/
