@@ -35,25 +35,25 @@
           <ul class="nav nav-vertical shadow-sm" id="listSide">
             <li class="nav-item " id="li-listSide">
               <!-- Toggle -->
-              <a class="nav-link shadow-sm dropdown-toggle " data-toggle="collapse" aria-expanded="true" href="#branchCollapse" id="linkBranchCollapse" role="button" aria-controls="branchCollapse" >
+              <a class="nav-link shadow-sm dropdown-toggle position-relative" data-toggle="collapse" aria-expanded="false" href="#branchCollapse" id="linkBranchCollapse" role="button" aria-controls="branchCollapse" >
                 Nuestras Marcas
                 <i class="right fas fa-angle-down"></i>
               </a>
 
               <!-- Collapse -->
-              <div class="collapse show shadow shadow-sm" id="branchCollapse">
-                <div class="form-group m-0">
+              <div class="collapse shadow shadow-sm" id="branchCollapse">
+                <div class="">
                   <ul class="pl-3 pl-md-4 mb-0" id="productsNav">
-                    <li class="px-1 py-2">
+                    <li class="px-1 py-1">
                       <a class="" >Sinái</a>
                     </li>
-                    <li class="px-1 py-2">
+                    <li class="px-1 py-1">
                       <a class="" >Ignacio Martínez</a>
                     </li>
-                    <li class="px-1 py-2">
+                    <li class="px-1 py-1">
                       <a class="" >Origen verde</a>
                     </li>
-                    <li class="px-1 py-2">
+                    <li class="px-1 py-1">
                       <a class="" >Habitante</a>
                     </li>
                     

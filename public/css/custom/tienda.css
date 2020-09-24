@@ -1,3 +1,4 @@
+a{ transition: unset; }
 .nav-trn a{
 	color: #4A4A4A !important;
 }
@@ -358,6 +359,7 @@ input[type="number"].form-control {
 }
 .img-product-modal{ max-height: 27vh; min-height: 150px; margin: 0 auto; }
 .div-img-radio-products{ display: flex; justify-content: space-around; flex-wrap: wrap; }
+
 
 
 
