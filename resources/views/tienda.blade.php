@@ -29,9 +29,9 @@
   <div class="container p-md-0">
     <div class="row ">
       <!--sidebar-->
-      <div class="col-12 col-md-3 col-lg-3 pl-sm-3 pl-md-0 pb-1" id="side-branch">
+      <div class="col-12 col-md-3 col-lg-3 pl-md-0" id="side-branch">
         <!-- Filters -->
-        <form class="mb-10 mb-md-0">
+        <form class="mb-md-0">
           <ul class="nav nav-vertical shadow-sm" id="listSide">
             <li class="nav-item " id="li-listSide">
               <!-- Toggle -->
@@ -42,23 +42,24 @@
 
               <!-- Collapse -->
               <div class="collapse shadow shadow-sm" id="branchCollapse">
-                <div class="">
-                  <ul class="pl-3 pl-md-4 mb-0" id="productsNav">
-                    <li class="px-1 py-1">
-                      <a class="" >Sinái</a>
+                <div class="container">
+                  <ul class="pl-2 py-2 " id="productsNav">
+                    <li>
+                      <a >Sinái</a>
                     </li>
-                    <li class="px-1 py-1">
-                      <a class="" >Ignacio Martínez</a>
+                    <li>
+                      <a >Ignacio Martínez</a>
                     </li>
-                    <li class="px-1 py-1">
-                      <a class="" >Origen verde</a>
+                    <li>
+                      <a >Origen verde</a>
                     </li>
-                    <li class="px-1 py-1">
-                      <a class="" >Habitante</a>
+                    <li>
+                      <a >Habitante</a>
                     </li>
                     
                   </ul>
                 </div>
+                
               </div>
 
             </li>
@@ -78,7 +79,7 @@
             </div>
             <div class="col-12 collapse shadow" id="collapseFilter" >
               <!--<div class="container-fluid mb-4 border-bottom" >-->
-              <form >
+              <form id="formFilter">
                 <div class="container">
                   <div class="row pt-2 justify-content-center">
                     <div class="col-6 col-md-4">

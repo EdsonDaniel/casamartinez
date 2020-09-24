@@ -57,14 +57,10 @@ body{
     font-size: 0.9rem;
 }
 
-/*select{
-	transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-    transition-property: border-color, box-shadow;
-    transition-duration: 0.15s, 0.15s;
-    transition-timing-function: ease-in-out, ease-in-out;
-    transition-delay: 0s, 0s;
+#productsNav li{
+    display: block;
+    padding: 0.25rem 0rem;
 }
-*/
 
 .font-size-lg{
 	font-size: 1.125rem!important;
