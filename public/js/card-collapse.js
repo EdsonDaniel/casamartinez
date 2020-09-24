@@ -12,7 +12,7 @@ $( document ).ready(function() {
         //$("#li-listSide").removeClass("shadow-sm");
         $('#branchCollapse').removeClass("show");
         $('#rowFilters, #rowProducts').addClass("no-gutters");
-        $('#collapseFilter').addClass("border rounded pt-2");
+        $('#collapseFilter').addClass("border rounded");
         /*$("#linkCollapseFilter").addClass("font-size-md");*/
         $("#filterBar").addClass("border shadow-sm");
         $("#rowProducts div.col-6").addClass("p-1");
@@ -20,6 +20,8 @@ $( document ).ready(function() {
         //quitar borde superior
         //juntar los dos botones
     }
+
+    /*
     var t = $('[data-toggle="card-collapse"]'),
         e = $(".card-collapse");
     t.on({
@@ -50,6 +52,7 @@ $( document ).ready(function() {
             })
         }
     });
+    */
 });
 
 

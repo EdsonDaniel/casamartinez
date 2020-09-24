@@ -25,7 +25,7 @@
   </div>
   <h2 class="titulo text-center m-0 p-0">TIENDA EN LÍNEA</h2>
 </div>
-<section class="p-1 pt-4">
+<section class="p-1 pt-2 pt-md-3">
   <div class="container p-md-0">
     <div class="row ">
       <!--sidebar-->
@@ -76,11 +76,11 @@
                 <i class="fas fa-list-ul mr-2 fa-xs"></i></i>Filtros
               </a>
             </div>
-            <div class="col-12 collapse shadow pt-2" id="collapseFilter" >
+            <div class="col-12 collapse shadow" id="collapseFilter" >
               <!--<div class="container-fluid mb-4 border-bottom" >-->
               <form >
                 <div class="container">
-                  <div class="row justify-content-center">
+                  <div class="row pt-2 justify-content-center">
                     <div class="col-6 col-md-4">
                       <!-- Heading -->
                       <p class="">
@@ -136,7 +136,7 @@
                     </p>
 
                     <!-- Form group -->
-                    <div class="form-group form-group-overflow mb-md-0 pl-3 pl-md-4">
+                    <div class="form-group-overflow mb-md-0 pl-3 pl-md-4">
                       <div class="custom-control custom-checkbox mb-3">
                         <input class="custom-control-input" id="seasonOne" name="category" type="checkbox" value="Summer">
                         <label class="custom-control-label" for="seasonOne">Más populares</label>
@@ -161,7 +161,7 @@
         </div>
 
         <!-- Products -->
-        <div class="row mt-4" id="rowProducts">
+        <div class="row" id="rowProducts">
           <div class="col-6 col-md-4 mb-0">
 
             <!-- Card -->
