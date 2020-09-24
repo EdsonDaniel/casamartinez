@@ -34,7 +34,7 @@ body{
 	position: absolute;
     right: 1rem;
     top: .7rem;
-    transition: all .3s ease-in-out;
+    transition: all .15s ease-in-out;
     transform-origin: center center;
 }
 
@@ -56,13 +56,14 @@ body{
     font-size: 0.9rem;
 }
 
-select{
+/*select{
 	transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     transition-property: border-color, box-shadow;
     transition-duration: 0.15s, 0.15s;
     transition-timing-function: ease-in-out, ease-in-out;
     transition-delay: 0s, 0s;
 }
+*/
 
 .font-size-lg{
 	font-size: 1.125rem!important;
