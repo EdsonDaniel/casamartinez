@@ -213,7 +213,7 @@
                 </div>
 
                 <!-- Price -->
-                <div class="text-muted price-product">
+                <div class="text-secpndary price-product">
                   $129.00
                 </div>
 
@@ -274,7 +274,7 @@
                 </div>
 
                 <!-- Price -->
-                <div class=" text-muted price-product">
+                <div class=" text-secpndary price-product">
                   $129.00
                 </div>
 
@@ -335,7 +335,7 @@
                 </div>
 
                 <!-- Price -->
-                <div class=" text-muted price-product">
+                <div class=" text-secpndary price-product">
                   $129.00
                 </div>
 
@@ -396,7 +396,7 @@
                 </div>
 
                 <!-- Price -->
-                <div class=" text-muted price-product">
+                <div class=" text-secpndary price-product">
                   $129.00
                 </div>
 
@@ -460,7 +460,7 @@
       <div class="modal-content">
         <!-- Close -->
         <button type="button" class="close btn-close-modal" data-dismiss="modal" aria-label="Close">
-          <i class="fe fe-x" aria-hidden="true" >&times;</i>
+          <span class="fe fe-x" aria-hidden="true" >&times;</span>
         </button>
 
         <!-- Content -->
@@ -469,7 +469,7 @@
             <div class="col-12 col-lg-6 col-xl-5 py-4 py-xl-0 px-xl-0">
 
               <!-- Image -->
-              <img class="img-fluid d-block my-5" src="/img/botellas/anejo-sq.jpg" alt="...">
+              <img class="img-fluid d-block my-md-5 " img-modal  src="/img/botellas/anejo-sq.jpg" alt="...">
 
               <!-- Button --
               <a class="btn btn-sm btn-block btn-primary" href="./product.html">
@@ -480,7 +480,7 @@
             <div class="col-12 col-lg-6 col-xl-7 py-9 px-md-9">
 
               <!-- Heading -->
-              <h4 class="mb-3">Mezcal Sinái(Joven) 750ml</h4>
+              <h4 class="mb-2 mb-md-3 title-product-modal">Mezcal Sinái(Joven) 750ml</h4>
 
               <!-- Price -->
               <div class=" mb-3">

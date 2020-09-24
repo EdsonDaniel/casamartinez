@@ -11,6 +11,7 @@ body{
 	font-family: 'Lora', serif;
 	font-size: 1rem;
     background-color: #fff;
+    color: #4a4a4a;
 }
 
 .titulo{
@@ -317,7 +318,6 @@ h4{ font-size: 1.3rem; margin: 0; font-weight: 400;}
     font-style: normal;
 }
 
-
 /**hide arrows on input number¨/
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -353,6 +353,7 @@ input[type="number"].form-control {
     font-weight: bold;
     line-height: 1;
 }
+.img-product-modal{ max-height: 30vh; min-height: 150px; margin: 0 auto; }
 
 
 
@@ -362,7 +363,9 @@ input[type="number"].form-control {
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
     .title-product{font-weight: bold; font-size: 1rem;}
-    .price-product{font-size: 1rem;}
+    .price-product{font-size: 1.2rem; letter-spacing: 2px;}
+    .price-product-modal{}
+    /*.img-product-modal{ max-height: 30vh; min-height: 150px; margin: 0 auto; }*/
     }
 
 /* Large devices (desktops, 992px and up) */
