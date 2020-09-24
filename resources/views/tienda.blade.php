@@ -35,7 +35,7 @@
           <ul class="nav nav-vertical shadow-sm" id="listSide">
             <li class="nav-item " id="li-listSide">
               <!-- Toggle -->
-              <a class="nav-link shadow-sm dropdown-toggle position-relative" data-toggle="collapse" aria-expanded="false" href="#branchCollapse" id="linkBranchCollapse" role="button" aria-controls="branchCollapse" >
+              <a class="nav-link shadow-sm position-relative" data-toggle="collapse" aria-expanded="false" href="#branchCollapse" id="linkBranchCollapse" role="button" aria-controls="branchCollapse" >
                 Nuestras Marcas
                 <i class="right fas fa-angle-down"></i>
               </a>
