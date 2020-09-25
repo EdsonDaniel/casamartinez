@@ -29,47 +29,43 @@
   <div class="container p-md-0">
     <div class="row ">
       <!--sidebar-->
-      <div class="col-12 col-md-3 col-lg-3 pl-md-0" id="side-branch">
-        <!-- Filters -->
-        <form class="mb-md-0">
-          <ul class="nav nav-vertical shadow-sm" id="listSide">
-            <li class="nav-item " id="li-listSide">
-              <!-- Toggle -->
-              <a class="nav-link shadow-sm position-relative" data-toggle="collapse" aria-expanded="false" href="#branchCollapse" id="linkBranchCollapse" role="button" aria-controls="branchCollapse" >
-                Nuestras Marcas
-                <i class="right fas fa-angle-down"></i>
-              </a>
+      <div class="col-12 col-md-3 col-lg-3 pl-md-0 pb-1" id="side-branch">
+        <div class="nav-item " id="listSide">
+          <!-- Toggle -->
+          <a class="nav-link border border-bottom-0 position-relative" data-toggle="collapse" aria-expanded="false" href="#branchCollapse" id="linkBranchCollapse" role="button" aria-controls="branchCollapse" >
+            Nuestras Marcas
+            <i class="right fas fa-angle-down"></i>
+          </a>
 
-              <!-- Collapse -->
-              <div class="collapse shadow shadow-sm" id="branchCollapse">
-                <div class="container">
-                  <ul class="pl-2 py-2 " id="productsNav">
-                    <li>
-                      <a >Sinái</a>
-                    </li>
-                    <li>
-                      <a >Ignacio Martínez</a>
-                    </li>
-                    <li>
-                      <a >Origen verde</a>
-                    </li>
-                    <li>
-                      <a >Habitante</a>
-                    </li>
-                    
-                  </ul>
-                </div>
+          <!-- Collapse -->
+          <div class="collapse border shadow shadow-sm" id="branchCollapse">
+            <div class="container">
+              <ul class="pl-2 py-2 mb-0" id="productsNav">
+                <li>
+                  <a >Sinái</a>
+                </li>
+                <li>
+                  <a >Ignacio Martínez</a>
+                </li>
+                <li>
+                  <a >Origen verde</a>
+                </li>
+                <li>
+                  <a >Habitante</a>
+                </li>
                 
-              </div>
+              </ul>
+            </div>
+            
+          </div>
 
-            </li>
-          </ul>
-        </form>
+        </div>
+      
       </div>
       <!--sidebar-->
       
       <div class="col-12 col-md-9 col-lg-9 ">
-        <div class="row align-items-center mb-md-3 " id="rowFilters">
+        <div class="row align-items-center mb-md-3 no-gutters" id="rowFilters">
           <!--<div class="col-12 col-md-auto text-center">-->
             <!-- Filter -->
             <div class="col-12 d-flex align-items-center justify-content-end bg-gray rounded-top pr-2 " id="filterBar">
@@ -162,7 +158,7 @@
         </div>
 
         <!-- Products -->
-        <div class="row" id="rowProducts">
+        <div class="row no-gutters" id="rowProducts">
           <div class="col-6 col-md-4 mb-0">
 
             <!-- Card -->

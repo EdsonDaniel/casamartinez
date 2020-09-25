@@ -3,23 +3,34 @@ function isBreakpoint( alias ) {
     return $('.device-' + alias).is(':visible');
 }
 //eventoo de open marcas agregar margen al fondo
+if( isBreakpoint('xs') || isBreakpoint('sm')) {
+    /*$('#linkBranchCollapse').addClass("shadow-sm");*/
+    
+    /*$("#rowBranch").addClass("border rounded");*/
+    
+    //$("#li-listSide").removeClass("shadow-sm");
+    /*$('#branchCollapse').removeClass("shadow");*/
+    
+    /*$('#rowFilters, #rowProducts').addClass("no-gutters");*/
+
+    /*$('#collapseFilter').addClass("border rounded");*/
+    /*$("#linkCollapseFilter").addClass("font-size-md");*/
+    /*$("#filterBar").addClass("border shadow-sm");*/
+    $("#rowProducts div.col-6").addClass("p-1");
+    $("img[img-modal]").addClass("img-product-modal");
+    //quitar borde superior
+    //juntar los dos botones
+}
+else{
+    /*$("#listSide").addClass("shadow");*/
+    $('#rowFilters, #rowProducts').removeClass("no-gutters");
+    $("#linkBranchCollapse").attr("aria-expanded","true");
+    $("#branchCollapse").addClass("show");
+}
 
 $( document ).ready(function() {
 
-    if( isBreakpoint('xs') || isBreakpoint('sm')) {
-        $('#linkBranchCollapse').attr("aria-expanded",false);
-        $("#listSide").addClass("border rounded");
-        //$("#li-listSide").removeClass("shadow-sm");
-        $('#branchCollapse').removeClass("show");
-        $('#rowFilters, #rowProducts').addClass("no-gutters");
-        $('#collapseFilter').addClass("border rounded");
-        /*$("#linkCollapseFilter").addClass("font-size-md");*/
-        $("#filterBar").addClass("border shadow-sm");
-        $("#rowProducts div.col-6").addClass("p-1");
-        $("img[img-modal]").addClass("img-product-modal");
-        //quitar borde superior
-        //juntar los dos botones
-    }
+
 
     /*
     var t = $('[data-toggle="card-collapse"]'),
@@ -56,6 +67,3 @@ $( document ).ready(function() {
 });
 
 
-function isBreakpoint( alias ) {
-    return $('.device-' + alias).is(':visible');
-}
