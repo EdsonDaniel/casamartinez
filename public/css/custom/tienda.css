@@ -154,7 +154,7 @@ body{
     color: #111;
 }
 .btn-xs {
-    padding: 0.3rem 0.5rem;
+    padding: 0.3rem 0.4rem;
     font-size: 0.7875rem;
 }
 
@@ -203,6 +203,7 @@ body{
     color: rgba(111,133,85,1);
     font-family: 'Spartan', sans-serif;
     font-weight: 500;
+    margin-top: 0.19rem; 
 }
 
 .price-product-modal{
@@ -381,9 +382,14 @@ input[type="number"].form-control {
     .card-img:hover .card-img-hover .card-img-front{ opacity: 1 !important; }*/
     .card-img:hover .card-actions, .card-img:hover .card-actions .card-action {
         opacity: 1; transform: none;}
+    .card-actions{ top: 0; bottom: auto; flex-direction: column; align-items: 
+        flex-end; padding: 0; }
+    .card-actions .card-action{ position: static; margin: 0 0 0.6rem !important;}
 
-    .card-actions, .card-actions .card-action{ z-index: 1; opacity: 1; padding: 0; position: relative; }
-    .card-actions .card-action{transform: none;}
+    .card-actions, .card-actions .card-action{ 
+        z-index: 5; opacity: 1; padding: 0; }
+    /*.card-actions .card-action{transform: none;}
+    .card-actions{position: relative;}*/
     /*#rowFilters, #rowProducts.addClass("no-gutters");*/
 }
 @media (min-width: 768px) { 
