@@ -65,7 +65,7 @@
       <!--sidebar-->
       
       <div class="col-12 col-md-9 col-lg-9 ">
-        <div class="row align-items-center mb-md-3 no-gutters" id="rowFilters">
+        <div class="row align-items-center mb-md-2 no-gutters" id="rowFilters">
           <!--<div class="col-12 col-md-auto text-center">-->
             <!-- Filter -->
             <div class="col-12 d-flex align-items-center justify-content-end bg-gray rounded-top pr-2 " id="filterBar">
@@ -158,7 +158,7 @@
         </div>
 
         <!-- Products -->
-        <div class="row no-gutters" id="rowProducts">
+        <div class="row no-gutters mt-3 mt-md-0" id="rowProducts">
           <div class="col-6 col-md-4 mb-0">
 
             <!-- Card -->
@@ -170,12 +170,12 @@
               </div>
 
               <!-- Image -->
-              <div class="card-img">
+              <div class="card-img mb-1">
 
                 <!-- Image -->
                 <a class="card-img-hover" href="product.html">
-                  <img class="card-img-top card-img-back p-3" src="/img/botellas/sinai-sq.jpg" alt="...">
-                  <img class="card-img-top card-img-front p-3" src="/img/botellas/anejo-sq.jpg" alt="...">
+                  <img class="card-img-top card-img-back p-1 p-md-2" src="/img/botellas/sinai-sq.jpg" alt="...">
+                  <img class="card-img-top card-img-front p-1 p-md-2" src="/img/botellas/anejo-sq.jpg" alt="...">
                 </a>
 
                 <!-- Actions -->
@@ -190,27 +190,22 @@
                       <i data-feather="shopping-cart"></i>
                     </button>
                   </span>
-                  <span class="card-action">
-                    <button class="btn btn-xs btn-circle btn-light border" data-toggle="button">
-                      <i data-feather="heart"></i>
-                    </button>
-                  </span>
                 </div>
 
               </div>
 
               <!-- Body -->
-              <div class="card-body text-center p-0 mx-2 pt-md-3 border-top">
+              <div class="card-body mt-1 p-0 pt-1 text-center mx-2 pt-md-2 border-top">
 
                 <!-- Title -->
-                <div class="pb-1">
+                <div class="pb-1 title-wrapper">
                   <a class="text-body title-product" href="product.html">
                     Mezcal Sinái (Joven) 750 ml
                   </a>
                 </div>
 
                 <!-- Price -->
-                <div class="text-secpndary price-product">
+                <div class="text-secpndary price-product mt-1 mt-md-0">
                   $129.00
                 </div>
 
@@ -235,8 +230,8 @@
 
                 <!-- Image -->
                 <a class="card-img-hover" href="product.html">
-                  <img class="card-img-top card-img-back p-3" src="/img/botellas/sinai-sq.jpg" alt="...">
-                  <img class="card-img-top card-img-front p-3" src="/img/botellas/anejo-sq.jpg" alt="...">
+                  <img class="card-img-top card-img-back p-1 p-md-3" src="/img/botellas/sinai-sq.jpg" alt="...">
+                  <img class="card-img-top card-img-front p-1 p-md-3" src="/img/botellas/anejo-sq.jpg" alt="...">
                 </a>
 
                 <!-- Actions -->
@@ -249,72 +244,6 @@
                   <span class="card-action">
                     <button class="btn btn-xs btn-circle btn-light border" data-toggle="button">
                       <i data-feather="shopping-cart"></i>
-                    </button>
-                  </span>
-                  <span class="card-action">
-                    <button class="btn btn-xs btn-circle btn-light border" data-toggle="button">
-                      <i data-feather="heart"></i>
-                    </button>
-                  </span>
-                </div>
-
-              </div>
-
-              <!-- Body -->
-              <div class="card-body text-center p-0 mx-2 pt-md-3 border-top">
-
-                <!-- Title -->
-                <div class="pb-1">
-                  <a class="text-body title-product" href="product.html">
-                    Mezcal Sinái (Joven) 750 ml
-                  </a>
-                </div>
-
-                <!-- Price -->
-                <div class=" text-secpndary price-product">
-                  $129.00
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="col-6 col-md-4 mb-0">
-
-            <!-- Card -->
-            <div class="card border-0 mb-0 mb-md-5">
-
-              <!-- Badge -->
-              <div class="badge badge-dark rounded-right card-badge card-badge-left text-uppercase">
-                New
-              </div>
-
-              <!-- Image -->
-              <div class="card-img">
-
-                <!-- Image -->
-                <a class="card-img-hover" href="product.html">
-                  <img class="card-img-top card-img-back p-3" src="/img/botellas/sinai-sq.jpg" alt="...">
-                  <img class="card-img-top card-img-front p-3" src="/img/botellas/anejo-sq.jpg" alt="...">
-                </a>
-
-                <!-- Actions -->
-                <div class="card-actions">
-                  <span class="card-action">
-                    <button class="btn btn-xs btn-circle btn-light border" data-toggle="modal" data-target="#modalProduct">
-                      <i data-feather="eye"></i>
-                    </button>
-                  </span>
-                  <span class="card-action">
-                    <button class="btn btn-xs btn-circle btn-light border" data-toggle="button">
-                      <i data-feather="shopping-cart"></i>
-                    </button>
-                  </span>
-                  <span class="card-action">
-                    <button class="btn btn-xs btn-circle btn-light border" data-toggle="button">
-                      <i data-feather="heart"></i>
                     </button>
                   </span>
                 </div>
@@ -357,8 +286,8 @@
 
                 <!-- Image -->
                 <a class="card-img-hover" href="product.html">
-                  <img class="card-img-top card-img-back p-3" src="/img/botellas/sinai-sq.jpg" alt="...">
-                  <img class="card-img-top card-img-front p-3" src="/img/botellas/anejo-sq.jpg" alt="...">
+                  <img class="card-img-top card-img-back p-1 p-md-3" src="/img/botellas/sinai-sq.jpg" alt="...">
+                  <img class="card-img-top card-img-front p-1 p-md-3" src="/img/botellas/anejo-sq.jpg" alt="...">
                 </a>
 
                 <!-- Actions -->
@@ -373,9 +302,60 @@
                       <i data-feather="shopping-cart"></i>
                     </button>
                   </span>
+                </div>
+
+              </div>
+
+              <!-- Body -->
+              <div class="card-body text-center p-0 mx-2 pt-md-3 border-top">
+
+                <!-- Title -->
+                <div class="pb-1">
+                  <a class="text-body title-product" href="product.html">
+                    Mezcal Sinái (Joven) 750 ml
+                  </a>
+                </div>
+
+                <!-- Price -->
+                <div class=" text-secpndary price-product">
+                  $129.00
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-6 col-md-4 mb-0">
+
+            <!-- Card -->
+            <div class="card border-0 mb-0 mb-md-5">
+
+              <!-- Badge -->
+              <div class="badge badge-dark rounded-right card-badge card-badge-left text-uppercase">
+                New
+              </div>
+
+              <!-- Image -->
+              <div class="card-img">
+
+                <!-- Image -->
+                <a class="card-img-hover" href="product.html">
+                  <img class="card-img-top card-img-back p-1 p-md-3" src="/img/botellas/sinai-sq.jpg" alt="...">
+                  <img class="card-img-top card-img-front p-1 p-md-3" src="/img/botellas/anejo-sq.jpg" alt="...">
+                </a>
+
+                <!-- Actions -->
+                <div class="card-actions">
+                  <span class="card-action">
+                    <button class="btn btn-xs btn-circle btn-light border" data-toggle="modal" data-target="#modalProduct">
+                      <i data-feather="eye"></i>
+                    </button>
+                  </span>
                   <span class="card-action">
                     <button class="btn btn-xs btn-circle btn-light border" data-toggle="button">
-                      <i data-feather="heart"></i>
+                      <i data-feather="shopping-cart"></i>
                     </button>
                   </span>
                 </div>
