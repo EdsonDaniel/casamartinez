@@ -1,3 +1,39 @@
+.background{ opacity: 0; transition: opacity 0.25s linear; z-index: 1040;}
+.background.show{ opacity: 1; }
+
+.backdrop{
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: lightgray;
+    opacity: 0.92;
+}
+.loading-wrapper{ 
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001; 
+}
+body{
+    padding-top: 1.5rem;
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    background-color: #fff;
+    color: #4a4a4a;
+}
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+
+
+
 a{ transition: unset; }
 .nav-trn a{
 	color: #4A4A4A !important;
@@ -5,14 +41,6 @@ a{ transition: unset; }
 
 .nav-white{
 	background-image: linear-gradient(rgba(243, 243, 241, 0.85), rgba(243, 243, 241, 0.95)) !important;
-}
-
-body{
-	padding-top: 1.5rem;
-	font-family: 'Lora', serif;
-	font-size: 1rem;
-    background-color: #fff;
-    color: #4a4a4a;
 }
 
 .titulo{
@@ -363,6 +391,8 @@ input[type="number"].form-control {
 .div-img-radio-products{ display: flex; justify-content: space-around; flex-wrap: wrap; }
 
 .title-wrapper{ line-height:  1;}
+
+
 
 
 /* Small devices (landscape phones, 576px and up) */

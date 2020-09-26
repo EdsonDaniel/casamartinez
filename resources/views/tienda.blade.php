@@ -4,13 +4,9 @@
 	Tienda en línea | Casa Martínez
 @endsection
 
-@section('stylesheet')
-<link href="css/custom/tienda.css" rel="stylesheet" type="text/css" />
-
-@endsection
-
 @section('content')
-<!--<div class="device-sm d-none d-md-block"></div>-->
+
+
 <div class="device-xs d-block d-sm-none"></div>
 <div class="device-sm d-none d-sm-block d-md-none"></div>
 <div class="device-md d-none d-md-block d-lg-none"></div>

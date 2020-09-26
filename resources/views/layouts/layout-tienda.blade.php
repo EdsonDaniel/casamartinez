@@ -14,6 +14,7 @@
     <!-- Stylesheet -->
     <!--<link href="" rel="stylesheet">-->
     <link rel="stylesheet" href="/adminlte/plugins/fontawesome-free/css/all.min.css" type="text/css">
+    <link href="/css/custom/tienda.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="{{ asset('css/custom/bootstrap.css') }}" type="text/css">
     <link href="{{ asset('css/custom/principal.css') }}" rel="stylesheet" type="text/css">    
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Raleway:wght@300;400;500&family=Spartan:wght@300;400;500&display=swap" rel="stylesheet">
@@ -22,7 +23,13 @@
     @yield('stylesheet')
 
 </head>
-<body>
+<body onload="hideBackdrop()" class="preload">
+  <div class="background show" id="background">
+  <div class="backdrop"></div>
+  <div class="loading-wrapper">
+    <img src="img/loading2.gif" alt="Cargando">
+  </div>
+</div>
     <div id="app">
     <!--NavBar-->
     <nav id="topbar" class="navbar navbar-expand-lg fixed-top nav-trn">
