@@ -386,6 +386,9 @@ button.icon-input-number:disabled{ cursor: not-allowed; }
 
 .title-wrapper{ line-height:  1;}
 
+.ft-shop{ background-color: #f2f2f0; display: flex; width: 100%;}
+.ft-shop footer{ width: 100%; }
+
 
 /* Small devices (landscape phones, 576px and up) */
 /*@media (min-width: 576px) {  }*/
@@ -412,7 +415,7 @@ button.icon-input-number:disabled{ cursor: not-allowed; }
 }
 @media (min-width: 768px) { 
     .title-product{ font-size: 1.08rem; line-height: 1.5;}
-    .price-product{font-size: 1.2rem; letter-spacing: 2px;}
+    .price-product{font-size: 1.03rem; letter-spacing: 2px;}
     .nav-link{font-weight: 500;}
     #listSide{ box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); }
     h4{ font-size: 1.3rem !important; }

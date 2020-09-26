@@ -7,7 +7,8 @@ body{ background-color: black; color: white; font-family: 'Lora', serif;}
 	opacity: 0.5 !important;
 }
 .background-transparent{ background-color: rgba(153, 153, 153, 0.42); }
-.nav-trn{ background-image: linear-gradient(rgba(10,10,10, 0.9), rgba(10, 10, 10, 0.05)) !important; }
+/*.nav-trn{ background-image: linear-gradient(rgba(10,10,10, 0.9), rgba(10, 10, 10, 0.05)) !important; }*/
+.nav-trn{ background-image: linear-gradient(rgba(10,10,10, 0.9), rgba(10, 10, 10, 0.38)) !important; }
 
 /****** philosophia*****************************/
 .philosophy{ background-color: black !important; color: white !important; }
