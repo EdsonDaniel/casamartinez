@@ -22,10 +22,10 @@
     <!-- Stylesheet -->
     <!--<link href="" rel="stylesheet">-->
     <link rel="stylesheet" href="/adminlte/plugins/fontawesome-free/css/all.min.css" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/custom/bootstrap.css') }}" type="text/css">
-    <link href="{{ asset('css/custom/principal.css') }}" rel="stylesheet" type="text/css">    
+    <link rel="stylesheet" href="{{ asset('/css/custom/bootstrap.css') }}" type="text/css">
+    <link href="{{ asset('/css/custom/principal.css') }}" rel="stylesheet" type="text/css">    
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Raleway:wght@300;400;500&family=Spartan:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/custom/estilo.css">
+    <link rel="stylesheet" href="/css/custom/estilo.css">
     <link href="/css/custom/tienda.css" rel="stylesheet" type="text/css" />
     <!--<link rel="stylesheet" href="css/fonts/style.css">-->
     @yield('stylesheet')
@@ -166,7 +166,7 @@
             <p class="mail"><a href="mailto:info@casamartinez.mx">info@casamartinez.mx</a></p>
         </div>
         <div id="f5">
-            <p class="redes"><a>PRIVACY POLICY</a> | <a href="">© 2016 – 2020</a> | <a href="">SITE CREDITS</a>
+            <p class="links-ref"><a>PRIVACY POLICY</a> | <a href="">© 2016 – 2020</a> | <a href="">SITE CREDITS</a>
             </p>
         </div>
 
