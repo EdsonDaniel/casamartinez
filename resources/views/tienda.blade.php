@@ -177,12 +177,12 @@
                 <!-- Actions -->
                 <div class="card-actions">
                   <div class="card-action">
-                    <button class="btn btn-xs btn-circle btn-light border" data-toggle="modal" data-target="#modalProduct">
+                    <button class="btn-xs btn-circle btn-light border" data-toggle="modal" data-target="#modalProduct">
                       <i data-feather="eye"></i>
                     </button>
                   </div>
                   <div class="card-action">
-                    <button class="btn btn-xs btn-circle btn-light border" data-toggle="button">
+                    <button class="btn-xs btn-circle btn-light border" data-toggle="button">
                       <i data-feather="shopping-cart"></i>
                     </button>
                   </div>
@@ -233,12 +233,12 @@
                 <!-- Actions -->
                 <div class="card-actions">
                   <div class="card-action">
-                    <button class="btn btn-xs btn-circle btn-light border" data-toggle="modal" data-target="#modalProduct">
+                    <button class="btn-xs btn-circle btn-light border" data-toggle="modal" data-target="#modalProduct">
                       <i data-feather="eye"></i>
                     </button>
                   </div>
                   <div class="card-action">
-                    <button class="btn btn-xs btn-circle btn-light border" data-toggle="button">
+                    <button class="btn-xs btn-circle btn-light border" data-toggle="button">
                       <i data-feather="shopping-cart"></i>
                     </button>
                   </div>
@@ -289,12 +289,12 @@
                 <!-- Actions -->
                 <div class="card-actions">
                   <div class="card-action">
-                    <button class="btn btn-xs btn-circle btn-light border" data-toggle="modal" data-target="#modalProduct">
+                    <button class="btn-xs btn-circle btn-light border" data-toggle="modal" data-target="#modalProduct">
                       <i data-feather="eye"></i>
                     </button>
                   </div>
                   <div class="card-action">
-                    <button class="btn btn-xs btn-circle btn-light border" data-toggle="button">
+                    <button class="btn-xs btn-circle btn-light border" data-toggle="button">
                       <i data-feather="shopping-cart"></i>
                     </button>
                   </div>
@@ -345,12 +345,12 @@
                 <!-- Actions -->
                 <div class="card-actions">
                   <div class="card-action">
-                    <button class="btn btn-xs btn-circle btn-light border" data-toggle="modal" data-target="#modalProduct">
+                    <button class="btn-xs btn-circle btn-light border" data-toggle="modal" data-target="#modalProduct">
                       <i data-feather="eye"></i>
                     </button>
                   </div>
                   <div class="card-action">
-                    <button class="btn btn-xs btn-circle btn-light border" data-toggle="button">
+                    <button class="btn-xs btn-circle btn-light border" data-toggle="button">
                       <i data-feather="shopping-cart"></i>
                     </button>
                   </div>
@@ -401,12 +401,12 @@
                 <!-- Actions -->
                 <div class="card-actions">
                   <div class="card-action">
-                    <button class="btn btn-xs btn-circle btn-light border" data-toggle="modal" data-target="#modalProduct">
+                    <button class="btn-xs btn-circle btn-light border" data-toggle="modal" data-target="#modalProduct">
                       <i data-feather="eye"></i>
                     </button>
                   </div>
                   <div class="card-action">
-                    <button class="btn btn-xs btn-circle btn-light border" data-toggle="button">
+                    <button class="btn-xs btn-circle btn-light border" data-toggle="button">
                       <i data-feather="shopping-cart"></i>
                     </button>
                   </div>
@@ -503,7 +503,7 @@
               <img class="img-fluid d-block my-md-5 " img-modal  src="/img/botellas/anejo-sq.jpg" alt="...">
 
               <!-- Button --
-              <a class="btn btn-sm btn-block btn-primary" href="./product.html">
+              <a class="btn-sm btn-block btn-primary" href="./product.html">
                 More Product Info <i class="fe fe-info ml-2"></i>
               </a>-->
 

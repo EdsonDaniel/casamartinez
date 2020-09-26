@@ -15,7 +15,7 @@ else{
 
 function hideBackdrop(){
     $("body").removeClass("preload");
-    $("#background").removeClass("show");
+    $("#background").removeClass("show").addClass("d-none");
 }
 
 $( document ).ready(function() {

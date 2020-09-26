@@ -25,11 +25,12 @@
 </head>
 <body onload="hideBackdrop()" class="preload">
   <div class="background show" id="background">
-  <div class="backdrop"></div>
-  <div class="loading-wrapper">
-    <img src="img/loading2.gif" alt="Cargando">
+    <div class="backdrop" id="backdrop"></div>
+    <div class="loading-wrapper">
+      <img src="img/loading2.gif" alt="Cargando">
+    </div>
   </div>
-</div>
+  
     <div id="app">
     <!--NavBar-->
     <nav id="topbar" class="navbar navbar-expand-lg fixed-top nav-trn">
