@@ -9,16 +9,23 @@
     <title>@yield('title')</title>
 
     <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <style type="text/css">
+      .background{ opacity: 0; transition: opacity 0.45s linear; z-index: 1040;}
+      .background.show{ opacity: 1; }
+      .backdrop{z-index: 1000;position: fixed;top: 0;right: 0;bottom: 0;left: 0;background-color: lightgray;opacity: 0.92;}
+      .loading-wrapper{ position: absolute;top: 40%;left: 50%;transform: translate(-50%, -50%);z-index: 1001; }
+    </style>
     
     
     <!-- Stylesheet -->
     <!--<link href="" rel="stylesheet">-->
     <link rel="stylesheet" href="/adminlte/plugins/fontawesome-free/css/all.min.css" type="text/css">
-    <link href="/css/custom/tienda.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="{{ asset('css/custom/bootstrap.css') }}" type="text/css">
     <link href="{{ asset('css/custom/principal.css') }}" rel="stylesheet" type="text/css">    
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Raleway:wght@300;400;500&family=Spartan:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/custom/estilo.css">
+    <link href="/css/custom/tienda.css" rel="stylesheet" type="text/css" />
     <!--<link rel="stylesheet" href="css/fonts/style.css">-->
     @yield('stylesheet')
 
@@ -49,7 +56,7 @@
                     <li class="nav-item">
                       <a href="/" class="ico btn btn-sm">
                         <!--<span class="fad fa-shopping-cart" id="cart"></span>-->
-                        <i data-feather="shopping-cart" class="icon-nav" id="cart"></i>
+                        <i data-feather="shopping-cart"  id="cart"></i>
                       </a>
                     </li>
                     <li class="nav-item">

@@ -566,13 +566,13 @@
                         <div class="input-group mt-md-2">
                           <div class="input-group-prepend">
                             <div class="input-group-text p-0">
-                              <button type="button" class="btn icon-input-number">-</button>
+                              <button type="button" disabled="true" class="btn icon-input-number" id="buttonMinus">-</button>
                             </div>
                           </div>
                           <input type="number" class="form-control" id="inputCantidad" placeholder="1" value="1" min="1" max="10">
                           <div class="input-group-append">
                             <div class="input-group-text p-0">
-                              <button type="button" class="btn icon-input-number">+</button>
+                              <button type="button" class="btn icon-input-number" id="buttonPlus">+</button>
                             </div>
                           </div>
                         </div>
