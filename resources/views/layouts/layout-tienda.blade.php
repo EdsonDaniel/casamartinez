@@ -11,9 +11,10 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <style type="text/css">
-      .background{ opacity: 0; transition: opacity 0.45s linear; z-index: 1040;}
-      .background.show{ opacity: 1; }
-      .backdrop{z-index: 1000;position: fixed;top: 0;right: 0;bottom: 0;left: 0;background-color: lightgray;opacity: 0.92;}
+      .background { width: 100%; height: 100%; background-color: lightgray;opacity: 0.92; z-index: 1000;}
+      .backdrop.show{ opacity: 1; }
+      .backdrop{ opacity: 0; transition: opacity 0.7s 
+        linear; z-index: 1040;position: fixed;top: 0;right: 0;bottom: 0;left: 0;}
       .loading-wrapper{ position: absolute;top: 40%;left: 50%;transform: translate(-50%, -50%);z-index: 1001; }
     </style>
     
@@ -31,8 +32,8 @@
 
 </head>
 <body onload="hideBackdrop()" class="preload">
-  <div class="background show" id="background">
-    <div class="backdrop" id="backdrop"></div>
+  <div class="backdrop show" id="backdrop">
+    <div class="background" id="background"></div>
     <div class="loading-wrapper">
       <img src="img/loading2.gif" alt="Cargando">
     </div>
@@ -53,18 +54,16 @@
                             </div>
                         </div>
                     </li>
-                    <li class="nav-item">
-                      <a href="/" class="ico btn btn-sm">
-                        <!--<span class="fad fa-shopping-cart" id="cart"></span>-->
-                        <i data-feather="shopping-cart"  id="cart"></i>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="ico btn btn-sm pr-0" id="opened" onclick="openNav()"><i data-feather="menu" class="icon-nav" id="icon-menu"></i></a> 
-                    </li>
                 </ul>
-
-                
+                <div class="d-flex">
+                  <a href="/" class="ico">
+                    <!--<span class="fad fa-shopping-cart" id="cart"></span>-->
+                    <i data-feather="shopping-cart" class="icon-nav" id="cart"></i>
+                  </a>
+                  <a class="ico pr-0" id="opened" onclick="openNav()">
+                    <i data-feather="menu" class="icon-nav" id="icon-menu"></i>
+                  </a> 
+                </div>                
             </div>
         </div>
     </nav>
