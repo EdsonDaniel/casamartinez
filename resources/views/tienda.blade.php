@@ -502,20 +502,15 @@
               <!-- Image -->
               <img class="img-fluid d-block my-md-5 " img-modal  src="/img/botellas/anejo-sq.jpg" alt="...">
 
-              <!-- Button --
-              <a class="btn-sm btn-block btn-primary" href="./product.html">
-                More Product Info <i class="fe fe-info ml-2"></i>
-              </a>-->
-
             </div>
             <div class="col-12 col-lg-6 col-xl-7 py-9 px-md-9">
 
               <!-- Heading -->
-              <h4 class="mb-1 mb-md-2 mb-md-3 title-product-modal">Mezcal Sinái(Joven) 750ml</h4>
+              <h4 class="mb-1 mx-1 mx-md-auto mb-md-2 mb-md-3 title-product-modal">Mezcal Sinái(Joven) 750ml</h4>
 
               <!-- Price -->
-              <div class="mb-1 mb-md-3">
-                <h4 class="price-product-modal">$850.00 MXN</h4>
+              <div class="mb-1 b-md-3 mx-1 mx-md-auto">
+                <h4 class="price-product-modal mb-1 mt-2">$850.00 MXN</h4>
                 <span class="product-status">Disponible</span>
               </div>
 
@@ -529,7 +524,7 @@
                     <div class="form-group">
 
                       <!-- Label -->
-                      <p>
+                      <p class="mx-1 mx-md-auto">
                         Presentación: <strong id="modalProductColorCaption">750 ml</strong>
                       </p>
 
