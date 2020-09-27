@@ -15,7 +15,7 @@
   <div class="row justify-content-center no-gutters">
     <div class="col-10 col-md-2 row justify-content-center">
       <div class="col-7 col-md-9 col-lg-10 ">
-        <img src="img/logo-casa-martinez-svg.svg" class="img-fluid" alt="Logo Casa Martínez">
+        <img src="/img/logo-casa-martinez-svg.svg" class="img-fluid" alt="Logo Casa Martínez">
       </div>
     </div>
   </div>
@@ -66,7 +66,7 @@
             <!-- Filter -->
             <div class="col-12 d-flex align-items-center justify-content-end bg-gray rounded-top pr-2 " id="filterBar">
               <a class="text-body p-2 d-block w-100 text-right"  data-toggle="collapse" href="#collapseFilter" role="button" aria-expanded="false" aria-controls="collapseFilter" id="linkCollapseFilter">
-                <i class="fas fa-list-ul mr-2 fa-xs"></i></i>Filtros
+                <i class="fas fa-list-ul mr-2 fa-xs"></i>Filtros
               </a>
             </div>
             <div class="col-12 collapse shadow" id="collapseFilter" >
@@ -98,59 +98,59 @@
 
                     </div>
 
-                  <div class="col-6 col-md-4">
-                    <!-- Heading -->
-                    <p class="">
-                      <strong>Presentación:</strong>
-                    </p>
+                    <div class="col-6 col-md-4">
+                      <!-- Heading -->
+                      <p class="">
+                        <strong>Presentación:</strong>
+                      </p>
 
-                    <!-- Form group -->
-                    <div class="form-group form-group-overflow mb-md-0 pl-3 pl-md-4">
-                      <div class="custom-control custom-checkbox mb-3">
-                        <input class="custom-control-input" id="seasonOne" name="category" type="checkbox" value="Summer">
-                        <label class="custom-control-label" for="seasonOne">750 ml.</label>
-                      </div>
-                      <div class="custom-control custom-checkbox mb-3">
-                        <input class="custom-control-input" id="seasonTwo" name="category" type="checkbox" value="Winter">
-                        <label class="custom-control-label" for="seasonTwo">500 ml.</label>
-                      </div>
-                      <div class="custom-control custom-checkbox mb-3">
-                        <input class="custom-control-input" id="seasonThree" name="category" type="checkbox" value="Spring &amp; Fall">
-                        <label class="custom-control-label" for="seasonThree">250ml.</label>
+                      <!-- Form group -->
+                      <div class="form-group form-group-overflow mb-md-0 pl-3 pl-md-4">
+                        <div class="custom-control custom-checkbox mb-3">
+                          <input class="custom-control-input" id="seasonOne" name="category" type="checkbox" value="Summer">
+                          <label class="custom-control-label" for="seasonOne">750 ml.</label>
+                        </div>
+                        <div class="custom-control custom-checkbox mb-3">
+                          <input class="custom-control-input" id="seasonTwo" name="category" type="checkbox" value="Winter">
+                          <label class="custom-control-label" for="seasonTwo">500 ml.</label>
+                        </div>
+                        <div class="custom-control custom-checkbox mb-3">
+                          <input class="custom-control-input" id="seasonThree" name="category" type="checkbox" value="Spring &amp; Fall">
+                          <label class="custom-control-label" for="seasonThree">250ml.</label>
+                        </div>
                       </div>
                     </div>
-                  </div>
                 
-                  <div class="col-12 col-md-4">
+                    <div class="col-12 col-md-4">
 
-                    <!-- Heading -->
-                    <p class="">
-                      <strong>Ordenar por:</strong>
-                    </p>
+                      <!-- Heading -->
+                      <p class="">
+                        <strong>Ordenar por:</strong>
+                      </p>
 
-                    <!-- Form group -->
-                    <div class="form-group-overflow mb-md-0 pl-3 pl-md-4">
-                      <div class="custom-control custom-checkbox mb-3">
-                        <input class="custom-control-input" id="seasonOne" name="category" type="checkbox" value="Summer">
-                        <label class="custom-control-label" for="seasonOne">Más populares</label>
+                      <!-- Form group -->
+                      <div class="form-group-overflow mb-md-0 pl-3 pl-md-4">
+                        <div class="custom-control custom-checkbox mb-3">
+                          <input class="custom-control-input" id="seasonOne" name="category" type="checkbox" value="Summer">
+                          <label class="custom-control-label" for="seasonOne">Más populares</label>
+                        </div>
+                        <div class="custom-control custom-checkbox mb-3">
+                          <input class="custom-control-input" id="seasonTwo" name="category" type="checkbox" value="Winter">
+                          <label class="custom-control-label" for="seasonTwo">Precio (Menor a mayor)</label>
+                        </div>
+                        <div class="custom-control custom-checkbox mb-3">
+                          <input class="custom-control-input" id="seasonThree" name="category" type="checkbox" value="Spring &amp; Fall">
+                          <label class="custom-control-label" for="seasonThree">Precio (Mayor a menor)</label>
+                        </div>
                       </div>
-                      <div class="custom-control custom-checkbox mb-3">
-                        <input class="custom-control-input" id="seasonTwo" name="category" type="checkbox" value="Winter">
-                        <label class="custom-control-label" for="seasonTwo">Precio (Menor a mayor)</label>
-                      </div>
-                      <div class="custom-control custom-checkbox mb-3">
-                        <input class="custom-control-input" id="seasonThree" name="category" type="checkbox" value="Spring &amp; Fall">
-                        <label class="custom-control-label" for="seasonThree">Precio (Mayor a menor)</label>
-                      </div>
+
                     </div>
-
                   </div>
-
                 </div>
-              </div>
-            </form>
-            <!--</div>-->
-          </div>            
+
+              </form>
+              <!--</div>-->
+            </div>
         </div>
 
         <!-- Products -->
@@ -442,7 +442,7 @@
 
         <!--rowPagination-->
         <div class="row justify-content-end mt-4" id="rowPagination">
-                  <!-- Pagination -->
+          <!-- Pagination -->
           <nav class="d-flex justify-content-center justify-content-md-end">
             <ul class="pagination pagination-sm text-gray-400">
               <li class="page-item">
@@ -611,5 +611,5 @@
     $("#topbar").toggleClass('nav-white', $(this).scrollTop()>alto);
   });
 </script>
-<script type="text/javascript" src="js/card-collapse.js"></script>
+<script type="text/javascript" src="/js/card-collapse.js"></script>
 @endsection

@@ -35,11 +35,11 @@
   <div class="backdrop show" id="backdrop">
     <div class="background" id="background"></div>
     <div class="loading-wrapper">
-      <img src="img/loading2.gif" alt="Cargando">
+      <img src="/img/loading2.gif" alt="Cargando">
     </div>
   </div>
   
-    <div id="app">
+  <div id="app">
     <!--NavBar-->
     <nav id="topbar" class="navbar navbar-expand-lg fixed-top nav-trn">
         <div class="container">
@@ -147,7 +147,7 @@
         </div>
     </div>
     <!--Sidebar-->
-  <!--container content-->
+    <!--container content-->
   
   <div class="app-container">@yield('content')</div>
   <!--container content-->
@@ -182,7 +182,6 @@
     </footer>
     <!--footer-->
   </div>
-
 </div>
 
 
@@ -194,7 +193,7 @@
 
    @yield('more-content')
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-   <script type="text/javascript" src="js/custom/efectos.js"></script>
+   <script type="text/javascript" src="/js/custom/efectos.js"></script>
 
    @yield('scripts')
    

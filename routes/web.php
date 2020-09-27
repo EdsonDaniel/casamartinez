@@ -42,6 +42,7 @@ Route::get('/productos', function () {
 
 Route::get('/catalogo', function(){return view('catalogo');});
 Route::get('/tienda', function(){return view('tienda');});
+Route::get('/tienda/detalles-producto/', function(){return view('detalleProducto');});
 
 Route::get('/carrito', function () {
     return view('carrito');

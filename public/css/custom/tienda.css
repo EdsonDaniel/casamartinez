@@ -361,7 +361,7 @@ input[type="number"].form-control{
     vertical-align: middle;
 }
 
-input[type="number"].form-control:focus, button.icon-input-number:focus {
+input[type="number"].form-control:focus{
     background-color: #fff;
     border-color: #767676;
     outline: 0;
@@ -374,13 +374,17 @@ input[type="number"].form-control {
 }
 button.icon-input-number:active{ opacity: 0.5; }
 button.icon-input-number:disabled{ cursor: not-allowed; }
+button.icon-input-number:not([disabled]):hover{ color: #fff; background-color: #343a40; border-color: #343a40; }
+button.icon-input-number:focus { border-color: initial; box-shadow: none; }
 .icon-input-number{
     font-size: 1.4rem;
     padding: 0.125rem 0.5rem;
     font-weight: bold;
     line-height: 1;
     transition: opacity 0s;
+    background-color: lightgray;
 }
+
 .img-product-modal{ max-height: 27vh; min-height: 150px; margin: 0 auto; }
 .div-img-radio-products{ display: flex; justify-content: space-around; flex-wrap: wrap; }
 
@@ -388,6 +392,24 @@ button.icon-input-number:disabled{ cursor: not-allowed; }
 
 .ft-shop{ background-color: #f2f2f0; display: flex; width: 100%;}
 .ft-shop footer{ width: 100%; }
+.div-foot{ margin-top: 20px !important; }
+
+.mb-4s{ margin-bottom: 2.5rem !important; }
+.shadow-md{box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.175);}
+
+/*************************************************************************************/
+.nav-overflow {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 1px;
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #ff6f61;
+    background-color: transparent;
+    border-color: #bababa #bababa transparent;
+}
+
 
 
 /* Small devices (landscape phones, 576px and up) */
