@@ -4,7 +4,7 @@ function isBreakpoint( alias ) {
 }
 //eventoo de open marcas agregar margen al fondo
 if( isBreakpoint('xs') || isBreakpoint('sm')) {
-    $("#rowProducts div.col-6").addClass("p-1");
+    $("#rowProducts div.col-6").addClass("p-3");
     $("img[img-modal]").addClass("img-product-modal");
     $("#branchCollapse, #linkBranchCollapse").addClass("border");
 }
