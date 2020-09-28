@@ -26,36 +26,38 @@
     <div class="row ">
       <!--sidebar-->
       <div class="col-12 col-md-3 col-lg-3 pl-md-0 pb-1" id="side-branch">
-        <div class="nav-item " id="listSide">
-          <!-- Toggle -->
-          <a class="nav-link border-bottom-0 position-relative" data-toggle="collapse" aria-expanded="false" href="#branchCollapse" id="linkBranchCollapse" role="button" aria-controls="branchCollapse" >
-            Nuestras Marcas
-            <i class="right fas fa-angle-down"></i>
-          </a>
+        <div class="row no-gutters">
+          <div class="col-12 nav-item " id="listSide">
+            <!-- Toggle -->
+            <a class="nav-link border-bottom-0 position-relative" data-toggle="collapse" aria-expanded="false" href="#branchCollapse" id="linkBranchCollapse" role="button" aria-controls="branchCollapse" ><!--border-->
+              Nuestras Marcas
+              <i class="right fas fa-angle-down"></i>
+            </a>
 
-          <!-- Collapse -->
-          <div class="collapse shadow shadow-sm" id="branchCollapse">
-            <div class="container">
-              <ul class="pl-2 py-2 mb-0" id="productsNav">
-                <li>
-                  <a >Sinái</a>
-                </li>
-                <li>
-                  <a >Ignacio Martínez</a>
-                </li>
-                <li>
-                  <a >Origen verde</a>
-                </li>
-                <li>
-                  <a >Habitante</a>
-                </li>
-                
-              </ul>
+            <!-- Collapse -->
+            <div class="collapse border-top-0 rounded-0 shadow shadow-sm" id="branchCollapse">
+              <div class="container">
+                <ul class="pl-2 py-2 mb-0" id="productsNav">
+                  <li>
+                    <a >Sinái</a>
+                  </li>
+                  <li>
+                    <a >Ignacio Martínez</a>
+                  </li>
+                  <li>
+                    <a >Origen verde</a>
+                  </li>
+                  <li>
+                    <a >Habitante</a>
+                  </li>
+                  
+                </ul>
+              </div>
+              
             </div>
-            
           </div>
-
         </div>
+        
       
       </div>
       <!--sidebar-->
@@ -64,12 +66,12 @@
         <div class="row align-items-center mb-md-2 no-gutters" id="rowFilters">
           <!--<div class="col-12 col-md-auto text-center">-->
             <!-- Filter -->
-            <div class="col-12 d-flex align-items-center justify-content-end bg-dark rounded-top pr-2 " id="filterBar">
+            <div class="col-12 d-flex align-items-center justify-content-end bg-dark rounded-top pr-2 border-0" id="filterBar">
               <a class="text-white p-2 d-block w-100 text-right"  data-toggle="collapse" href="#collapseFilter" role="button" aria-expanded="false" aria-controls="collapseFilter" id="linkCollapseFilter">
                 <i class="fas fa-list-ul mr-2 fa-xs"></i>Filtros
               </a>
             </div>
-            <div class="col-12 collapse shadow" id="collapseFilter" >
+            <div class="col-12 collapse shadow border-0 rounded-0" id="collapseFilter" >
               <!--<div class="container-fluid mb-4 border-bottom" >-->
               <form id="formFilter">
                 <div class="container">

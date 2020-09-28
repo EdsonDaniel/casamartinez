@@ -6,6 +6,7 @@ function isBreakpoint( alias ) {
 if( isBreakpoint('xs') || isBreakpoint('sm')) {
     $("#rowProducts div.col-6").addClass("p-1");
     $("img[img-modal]").addClass("img-product-modal");
+    $("#branchCollapse, #linkBranchCollapse").addClass("border");
 }
 else{
     $('#rowFilters, #rowProducts').removeClass("no-gutters");
