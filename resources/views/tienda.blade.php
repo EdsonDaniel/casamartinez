@@ -28,13 +28,13 @@
       <div class="col-12 col-md-3 col-lg-3 pl-md-0 pb-1" id="side-branch">
         <div class="nav-item " id="listSide">
           <!-- Toggle -->
-          <a class="nav-link border border-bottom-0 position-relative" data-toggle="collapse" aria-expanded="false" href="#branchCollapse" id="linkBranchCollapse" role="button" aria-controls="branchCollapse" >
+          <a class="nav-link border-bottom-0 position-relative" data-toggle="collapse" aria-expanded="false" href="#branchCollapse" id="linkBranchCollapse" role="button" aria-controls="branchCollapse" >
             Nuestras Marcas
             <i class="right fas fa-angle-down"></i>
           </a>
 
           <!-- Collapse -->
-          <div class="collapse border shadow shadow-sm" id="branchCollapse">
+          <div class="collapse shadow shadow-sm" id="branchCollapse">
             <div class="container">
               <ul class="pl-2 py-2 mb-0" id="productsNav">
                 <li>
@@ -64,8 +64,8 @@
         <div class="row align-items-center mb-md-2 no-gutters" id="rowFilters">
           <!--<div class="col-12 col-md-auto text-center">-->
             <!-- Filter -->
-            <div class="col-12 d-flex align-items-center justify-content-end bg-gray rounded-top pr-2 " id="filterBar">
-              <a class="text-body p-2 d-block w-100 text-right"  data-toggle="collapse" href="#collapseFilter" role="button" aria-expanded="false" aria-controls="collapseFilter" id="linkCollapseFilter">
+            <div class="col-12 d-flex align-items-center justify-content-end bg-dark rounded-top pr-2 " id="filterBar">
+              <a class="text-white p-2 d-block w-100 text-right"  data-toggle="collapse" href="#collapseFilter" role="button" aria-expanded="false" aria-controls="collapseFilter" id="linkCollapseFilter">
                 <i class="fas fa-list-ul mr-2 fa-xs"></i>Filtros
               </a>
             </div>
@@ -154,7 +154,7 @@
         </div>
 
         <!-- Products -->
-        <div class="row no-gutters mt-3 mt-md-0" id="rowProducts">
+        <div class="row no-gutters mt-3 mt-md-0 shadow" id="rowProducts">
           <div class="col-6 col-md-4 mb-2 mb-md-0">
 
             <!-- Card -->

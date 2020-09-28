@@ -182,26 +182,27 @@
     </div>
   </div><!--container-->
 
-  <section class="pt-11">
+
+  <section class="pt-5">
       <div class="container">
         <div class="row">
           <div class="col-12">
 
             <!-- Nav -->
-            <div class="nav nav-tabs nav-overflow justify-content-start justify-content-md-center border-bottom">
+            <div class="nav nav-tabs nav-overflow justify-content-start justify-content-md-center border-bottom-0" id="nav-description">
               <a class="nav-link active" data-toggle="tab" href="#descriptionTab">
-                Description
+                Especificaciones
               </a>
               <a class="nav-link" data-toggle="tab" href="#sizeTab">
-                Size &amp; Fit
+                Métodos de Envío
               </a>
               <a class="nav-link" data-toggle="tab" href="#shippingTab">
-                Shipping &amp; Return
+                Métodos de Pago
               </a>
             </div>
 
             <!-- Content -->
-            <div class="tab-content">
+            <div class="tab-content mt-5">
               <div class="tab-pane fade active show" id="descriptionTab">
                 <div class="row justify-content-center py-9">
                   <div class="col-12 col-lg-10 col-xl-8">
@@ -216,33 +217,49 @@
                         </p>
 
                       </div>
-                      <div class="col-12 col-md-6">
+                      <h3>Detalles del producto</h3>
 
-                        <!-- List -->
-                        <ul class="list list-unstyled mb-md-0 text-gray-500">
-                          <li>
-                            <strong class="text-body">SKU</strong>: #61590437
-                          </li>
-                          <li>
-                            <strong class="text-body">Occasion</strong>: Lifestyle, Sport
-                          </li>
-                        </ul>
-
+                      <div class="col-12 ">
+                        <div class="row justify-content-center">
+                          <div class="col-12 col-md-9">
+                            <!-- Table -->
+                            <div class="table-responsive">
+                              <table class="table table-bordered table-sm table-hover">
+                                <tbody>
+                                  <tr>
+                                    <td>Maestro Mezcalero</td>
+                                    <td>Ignacio Martpinez</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Maguey</td>
+                                    <td>Angustifolia, Maguey Espadín</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Edad de maguey</td>
+                                    <td>10 años.</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Destilación</td>
+                                    <td>
+                                      Doble, en ollas de cobre.
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                        
                       </div>
-                      <div class="col-12 col-md-6">
-
-                        <!-- List -->
-                        <ul class="list list-unstyled mb-0">
-                          <li>
-                            <strong>Country</strong>: USA
-                          </li>
-                          <li>
-                            <strong>Meterial</strong>: 96% Cotton, 4% Elastane
-                          </li>
-                        </ul>
-
+                      <div class="col-12">
+                      <!-- Caption -->
+                        <p class="mb-0 text-gray-500">
+                          May, life blessed night so creature likeness their, for. <a class="text-body text-decoration-underline" href="#!">Find out more</a>
+                        </p>
                       </div>
+                      
                     </div>
+
                   </div>
                 </div>
               </div>
@@ -302,53 +319,314 @@
               <div class="tab-pane fade" id="shippingTab">
                 <div class="row justify-content-center py-9">
                   <div class="col-12 col-lg-10 col-xl-8">
+                    <p>Su compra es 100% segura. Puede pagar a través de las siguientes plataformas.</p>
 
-                    <!-- Table -->
-                    <div class="table-responsive">
-                      <table class="table table-bordered table-sm table-hover">
-                        <thead>
-                          <tr>
-                            <th>Shipping Options</th>
-                            <th>Delivery Time</th>
-                            <th>Price</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>Standard Shipping</td>
-                            <td>Delivery in 5 - 7 working days</td>
-                            <td>$8.00</td>
-                          </tr>
-                          <tr>
-                            <td>Express Shipping</td>
-                            <td>Delivery in 3 - 5 working days</td>
-                            <td>$12.00</td>
-                          </tr>
-                          <tr>
-                            <td>1 - 2 day Shipping</td>
-                            <td>Delivery in 1 - 2 working days</td>
-                            <td>$12.00</td>
-                          </tr>
-                          <tr>
-                            <td>Free Shipping</td>
-                            <td>
-                              Living won't the He one every subdue meat replenish
-                              face was you morning firmament darkness.
-                            </td>
-                            <td>$0.00</td>
-                          </tr>
-                        </tbody>
-                      </table>
+                    <div class="d-flex mt-4 justify-content-center">
+                      <div class="mr-4"> <img class="img-fluid icon-payment" src="/img/icons/icono-mp-sm.png"></div>
+                      <div class="mr-4"><img class="img-fluid icon-payment" src="/img/icons/PP_logo_h_100x26.png"></div>
+                      <div><img class="img-fluid icon-payment" src="/img/icons/Stripe-wordmark-blurple_sm.png"></div>
                     </div>
-
-                    <!-- Caption -->
-                    <p class="mb-0 text-gray-500">
-                      May, life blessed night so creature likeness their, for. <a class="text-body text-decoration-underline" href="#!">Find out more</a>
-                    </p>
-
                   </div>
                 </div>
               </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!--recomendaciones-->
+
+  <section class="pt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+
+            <!-- Heading -->
+            <h4 class="mb-5 text-center" style="font-weight: 500;">Nuestras recomendaciones para usted</h4>
+
+            <!-- Products -->
+            <div class="row mt-3 mt-md-0 justify-content-center" id="rowProducts">
+              <div class="col-4 col-md-3 mb-2 mb-md-0">
+
+                <!-- Card -->
+                <div class="card border-0 mb-0 mb-md-5 shadow">
+
+                  <!-- Badge -->
+                  <div class="badge badge-dark rounded-right card-badge card-badge-left text-uppercase">
+                    New
+                  </div>
+
+                  <!-- Image -->
+                  <div class="card-img mb-1">
+
+                    <!-- Image -->
+                    <a class="card-img-hover" href="product.html">
+                      <img class="card-img-top card-img-back p-1 p-md-2" src="/img/botellas/sinai-sq.jpg" alt="...">
+                      <img class="card-img-top card-img-front p-1 p-md-2" src="/img/botellas/anejo-sq.jpg" alt="...">
+                    </a>
+
+                    <!-- Actions -->
+                    <div class="card-actions">
+                      <div class="card-action">
+                        <button class="btn-xs btn-circle btn-light border" data-toggle="modal" data-target="#modalProduct">
+                          <i data-feather="eye"></i>
+                        </button>
+                      </div>
+                      <div class="card-action">
+                        <button class="btn-xs btn-circle btn-light border" data-toggle="button">
+                          <i data-feather="shopping-cart"></i>
+                        </button>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <!-- Body -->
+                  <div class="card-body mb-3 mt-1 p-0 pt-1 text-center mx-2 pt-md-2 border-top">
+
+                    <!-- Title -->
+                    <div class="pb-1 title-wrapper">
+                      <a class="text-body title-product" href="product.html">
+                        Mezcal Sinái (Joven) 750 ml
+                      </a>
+                    </div>
+
+                    <!-- Price -->
+                    <div class="text-secpndary price-product mt-1 mt-md-0">
+                      $129.00
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="col-4 col-md-3 mb-2 mb-md-0">
+
+                <!-- Card -->
+                <div class="card border-0 mb-0 mb-md-5 shadow">
+
+                  <!-- Badge -->
+                  <div class="badge badge-dark rounded-right card-badge card-badge-left text-uppercase">
+                    New
+                  </div>
+
+                  <!-- Image -->
+                  <div class="card-img mb-1">
+
+                    <!-- Image -->
+                    <a class="card-img-hover" href="product.html">
+                      <img class="card-img-top card-img-back p-1 p-md-2" src="/img/botellas/sinai-sq.jpg" alt="...">
+                      <img class="card-img-top card-img-front p-1 p-md-2" src="/img/botellas/anejo-sq.jpg" alt="...">
+                    </a>
+
+                    <!-- Actions -->
+                    <div class="card-actions">
+                      <div class="card-action">
+                        <button class="btn-xs btn-circle btn-light border" data-toggle="modal" data-target="#modalProduct">
+                          <i data-feather="eye"></i>
+                        </button>
+                      </div>
+                      <div class="card-action">
+                        <button class="btn-xs btn-circle btn-light border" data-toggle="button">
+                          <i data-feather="shopping-cart"></i>
+                        </button>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <!-- Body -->
+                  <div class="card-body mb-3 mt-1 p-0 pt-1 text-center mx-2 pt-md-2 border-top">
+
+                    <!-- Title -->
+                    <div class="pb-1 title-wrapper">
+                      <a class="text-body title-product" href="product.html">
+                        Mezcal Sinái (Joven) 750 ml
+                      </a>
+                    </div>
+
+                    <!-- Price -->
+                    <div class="text-secpndary price-product mt-1 mt-md-0">
+                      $129.00
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="col-4 col-md-3 mb-2 mb-md-0">
+
+                <!-- Card -->
+                <div class="card border-0 mb-0 mb-md-5 shadow">
+
+                  <!-- Badge -->
+                  <div class="badge badge-dark rounded-right card-badge card-badge-left text-uppercase">
+                    New
+                  </div>
+
+                  <!-- Image -->
+                  <div class="card-img mb-1">
+
+                    <!-- Image -->
+                    <a class="card-img-hover" href="product.html">
+                      <img class="card-img-top card-img-back p-1 p-md-2" src="/img/botellas/sinai-sq.jpg" alt="...">
+                      <img class="card-img-top card-img-front p-1 p-md-2" src="/img/botellas/anejo-sq.jpg" alt="...">
+                    </a>
+
+                    <!-- Actions -->
+                    <div class="card-actions">
+                      <div class="card-action">
+                        <button class="btn-xs btn-circle btn-light border" data-toggle="modal" data-target="#modalProduct">
+                          <i data-feather="eye"></i>
+                        </button>
+                      </div>
+                      <div class="card-action">
+                        <button class="btn-xs btn-circle btn-light border" data-toggle="button">
+                          <i data-feather="shopping-cart"></i>
+                        </button>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <!-- Body -->
+                  <div class="card-body mb-3 mt-1 p-0 pt-1 text-center mx-2 pt-md-2 border-top">
+
+                    <!-- Title -->
+                    <div class="pb-1 title-wrapper">
+                      <a class="text-body title-product" href="product.html">
+                        Mezcal Sinái (Joven) 750 ml
+                      </a>
+                    </div>
+
+                    <!-- Price -->
+                    <div class="text-secpndary price-product mt-1 mt-md-0">
+                      $129.00
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-light mt-5" id="section-footer-details">
+      <div class="container px-0 py-3">
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-3">
+
+            <!-- Item -->
+            <div class="d-flex mb-6 mb-lg-0">
+
+              <!-- Icon -->
+              <div class="my-1"><i data-feather="help-circle" ></i></div>
+
+              <!-- Body -->
+              <div class="ml-3">
+
+                <!-- Heading -->
+                <h5 class="foot-headers my-1">
+                  ¿Tiene alguna duda?
+                </h5>
+
+                <!-- Text -->
+                <p class="mb-0 foot-text text-muted">
+                  Puede consultar la sección de Preguntas Frecuentes.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+
+            <!-- Item -->
+            <div class="d-flex mb-6 mb-lg-0">
+
+              <!-- Icon -->
+              <div class="my-1"><i data-feather="info"></i></div>
+
+              <!-- Body -->
+              <div class="ml-3">
+
+                <!-- Heading -->
+                <h5 class="foot-headers my-1">
+                  ¿Necesita más información?
+                </h5>
+
+                <!-- Text -->
+                <p class="mb-0 foot-text text-muted">
+                  Puede escribirnos al e-mail <a href="mailto:info@casamartinez.mx">info@casamartinez.mx</a>  
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+
+            <!-- Item -->
+            <div class="d-flex mb-6 mb-md-0">
+
+              <!-- Icon -->
+              <div class="my-1"><i data-feather="lock"></i></div>
+
+              <!-- Body -->
+              <div class="ml-3">
+
+                <!-- Heading -->
+                <h5 class="foot-headers my-1">
+                  ¿Es segura mi compra?
+                </h5>
+
+                <!-- Text -->
+                <p class="mb-0 foot-text text-muted">
+                  Completamente. No se preocupe.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+
+            <!-- Item -->
+            <div class="d-flex">
+
+              <!-- Icon -->
+              <!--<div class="my-1"><i data-feather="meh"></i></div>-->
+              <div class="my-1"><i class="far fa-frown-open" style="font-size: 1.5rem"></i></div>
+
+              <!-- Body -->
+              <div class="ml-3">
+
+                <!-- Heading -->
+                <h5 class="foot-headers my-1">
+                  ¿Tuvo algún problema con su envío?
+                </h5>
+
+                <!-- Text -->
+                <p class="mb-0 foot-text text-muted">
+                  Puede consultar nuestra Políticas de devoluciones
+                </p>
+
+              </div>
+
             </div>
 
           </div>
@@ -481,10 +759,12 @@
 @section('scripts')
 <!--change navbar bg color-->
 <script type="text/javascript">
+  $("#div-footer").removeClass("mt-5");
   $(window).scroll(function(){
     var alto = $("#head-tienda").outerHeight();
     $("#topbar").toggleClass('nav-white', $(this).scrollTop()>alto);
   });
+
 </script>
 <script type="text/javascript" src="/js/card-collapse.js"></script>
 @endsection

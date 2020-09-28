@@ -152,7 +152,7 @@
   <div class="app-container">@yield('content')</div>
   <!--container content-->
 
-  <div class="ft-shop mt-2">
+  <div class="ft-shop mt-5" id="div-footer">
     <!--footer-->
     <footer>
       <div class="div-foot">
