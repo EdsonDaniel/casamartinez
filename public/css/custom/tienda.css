@@ -395,6 +395,7 @@ button.icon-input-number:focus { border-color: initial; box-shadow: none; }
 .div-foot{ margin-top: 20px !important; }
 
 .mb-4s{ margin-bottom: 2.5rem !important; }
+.mt-4s{ margin-top: 2.5rem !important; }
 .shadow-md{box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.175);}
 
 /*************************************************************************************/
@@ -415,6 +416,39 @@ button.icon-input-number:focus { border-color: initial; box-shadow: none; }
 .foot-headers{ font-size: 0.9rem; font-weight: 400; }
 .foot-text{ font-size: 0.8rem; }
 #section-footer-details{ font-family:'Raleway', sans-serif; letter-spacing: 1px;}
+
+.modal.fixed-right {
+    padding-right: 0!important;
+}
+.modal.fixed-right.fade .modal-dialog-vertical {
+    transform: translateX(100%);
+}
+.modal.fixed-right .modal-dialog-vertical {
+    margin-left: auto;
+}
+
+.modal.fixed-right.show .modal-dialog-vertical {
+    transform: translateX(0);
+}
+.modal.show .modal-dialog-vertical {
+    transform: translateX(0);
+}
+.modal.fade .modal-dialog-vertical {
+    transform: translateX(-100%);
+}
+.modal-dialog-vertical {
+    height: 100%;
+    max-width: 470px;
+    margin: 0;
+}
+.modal-dialog-vertical .modal-content {
+    height: inherit;
+    overflow-y: auto;
+}
+
+.modal.show .modal-dialog {
+    transform: none;
+}
 
 
 

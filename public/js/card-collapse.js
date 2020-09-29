@@ -34,6 +34,8 @@ $( document ).ready(function() {
         if (value < 1) {$("#inputCantidad").val("1");}
         $("#buttonMinus").addClass("disabled").prop("disabled",true);
     });
+
+    
 });
 
 

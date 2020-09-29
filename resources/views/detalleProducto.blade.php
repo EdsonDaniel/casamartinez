@@ -4,6 +4,11 @@
   Tienda en línea | Casa Martínez
 @endsection
 
+@section('stylesheet')
+  <link rel="stylesheet" type="text/css" href="/css/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="/css/slick/slick-theme.css"/>
+@endsection
+
 @section('content')
 
 
@@ -20,17 +25,17 @@
         <!-- Image --
         <img class="img-fluid d-block my-md-5 " img-modal  src="/img/botellas/anejo-sq.jpg" alt="...">-->
 
-        <div class="form-row mb-10 mb-md-0">
-          <div class="col-2">
+        <div class="form-row mb-md-0 justify-content-center">
+          <div class="col-3 col-md-2 mr-md-auto ">
             <!-- Radio -->
             <div class="div-img-radio-products mt-md-2">
-              <div class="custom-control custom-control-inline custom-control-img mb-4s">
+              <div class="custom-control custom-control-img mb-3">
                 <input type="radio" class="custom-control-input" id="modalProductColorOne" name="modalProductColor" data-toggle="form-caption" data-target="#modalProductColorCaption" value="White" checked="">
                 <label class="custom-control-label pb-1" for="modalProductColorOne">
                   <span class="embed-responsive embed-responsive-1by1 bg-cover" style="background-image: url(/img/botellas/anejo-sq.jpg);"></span>
                 </label>
               </div>
-              <div class="custom-control custom-control-inline custom-control-img mb-4s">
+              <div class="custom-control custom-control-img mb-3">
                 <input type="radio" class="custom-control-input" id="modalProductColorTwo" name="modalProductColor" data-toggle="form-caption" data-target="#modalProductColorCaption" value="Black">
                 <label class="custom-control-label pb-1" for="modalProductColorTwo">
                   <span class="embed-responsive embed-responsive-1by1 bg-cover" style="background-image: url(/img/botellas/sinai-sq.jpg);"></span>
@@ -38,7 +43,7 @@
               </div>
             </div>
           </div>
-          <div class="col-10">
+          <div class="col-8 col-md-10">
 
             <!-- Card -->
             <div class="card border-0 mb-0 mb-md-5">
@@ -65,14 +70,14 @@
 
       </div>
       
-      <div class="col-12 col-md-6 pl-md-4">
+      <div class="col-12 col-md-6 pl-md-4 mt-4 mt-md-auto">
 
         <!-- Heading -->
-        <h4 class="mb-1 mx-1 mx-md-auto mb-md-2 mb-md-3 title-product-modal">Mezcal Sinái (Joven) 750ml</h4>
+        <h4 class="mb-1 mx-md-auto mb-md-2 mb-md-3 title-product-modal">Mezcal Sinái (Joven) 750ml</h4>
 
         <div class="row mt-3">
           <div class="col-12 description">
-            <p class="">
+            <p class="m-0">
               Mezcal artesanal joven.
               Elaborado a base de agave 100% orgánico certificado. Su agradable aroma y sabor complacen hasta los paladares más exigentes.
             </p>
@@ -147,7 +152,7 @@
           
           <div class="col-12 col-md-6 mt-3 d-flex flex-column justify-content-center">
             <div class="d-flex flex-column ">
-              <div class="col-12 px-0 mb-md-3">
+              <div class="col-12 px-0 mb-2 mb-md-3">
                 <!-- Submit -->
                 <button type="submit" class="btn btn-block rounded-0 btn-modals ">Agregar al carrito <i class="fe fe-shopping-cart ml-2"></i></button>
               </div>
@@ -159,8 +164,8 @@
             </div>
           </div>
           
-          <div class="col-12 col-md-6 mt-2">
-            <p class="mb-0">
+          <div class="col-12 col-md-6 mt-md-2 mt-4">
+            <p class="mb-0 text-center text-md-left">
               <span class="mr-1">Compartir:</span>
               <a class="btn btn-circle btn-light border" href="#!">
                 <i class="fab fa-twitter"></i>
@@ -189,9 +194,9 @@
           <div class="col-12">
 
             <!-- Nav -->
-            <div class="nav nav-tabs nav-overflow justify-content-start justify-content-md-center border-bottom-0" id="nav-description">
+            <div class="nav nav-tabs nav-overflow justify-content-start justify-content-md-center border-bottom-0 text-center" id="nav-description">
               <a class="nav-link active" data-toggle="tab" href="#descriptionTab">
-                Especificaciones
+                Especifica&shy;ciones
               </a>
               <a class="nav-link" data-toggle="tab" href="#sizeTab">
                 Métodos de Envío
@@ -202,22 +207,22 @@
             </div>
 
             <!-- Content -->
-            <div class="tab-content mt-5">
+            <div class="tab-content mt-4 mt-md-5">
               <div class="tab-pane fade active show" id="descriptionTab">
-                <div class="row justify-content-center py-9">
+                <div class="row justify-content-center mx-0 mx-md-auto">
                   <div class="col-12 col-lg-10 col-xl-8">
                     <div class="row">
                       <div class="col-12">
 
                         <!-- Text -->
-                        <p class="text-gray-500">
+                        <p class="">
                           Won't herb first male seas, beast. Let upon, female upon third fifth every. Man subdue rule after years herb after
                           form. And image may, morning. Behold in tree day sea that together cattle whose. Fifth gathering brought
                           bearing. Abundantly creeping whose. Beginning form have void two. A whose.
                         </p>
 
                       </div>
-                      <h3>Detalles del producto</h3>
+                      <h3 class="mx-2 mx-md-auto">Detalles del producto</h3>
 
                       <div class="col-12 ">
                         <div class="row justify-content-center">
@@ -347,8 +352,8 @@
             <h4 class="mb-5 text-center" style="font-weight: 500;">Nuestras recomendaciones para usted</h4>
 
             <!-- Products -->
-            <div class="row mt-3 mt-md-0 justify-content-center" id="rowProducts">
-              <div class="col-4 col-md-3 mb-2 mb-md-0">
+            <div class="row mt-3 mt-md-0 justify-content-center mx-0 mx-md-auto" id="rowProductsRecomend">
+              <div class="col-6 col-md-3 mb-2 mb-md-0">
 
                 <!-- Card -->
                 <div class="card border-0 mb-0 mb-md-5 shadow">
@@ -404,7 +409,7 @@
 
               </div>
 
-              <div class="col-4 col-md-3 mb-2 mb-md-0">
+              <div class="col-6 col-md-3 mb-2 mb-md-0">
 
                 <!-- Card -->
                 <div class="card border-0 mb-0 mb-md-5 shadow">
@@ -522,122 +527,123 @@
         </div>
       </div>
     </section>
-    <section class="bg-light mt-5" id="section-footer-details">
-      <div class="container px-0 py-3">
-        <div class="row">
-          <div class="col-12 col-md-6 col-lg-3">
+  
+  <section class="bg-light mt-5" id="section-footer-details">
+    <div class="container px-0 py-3">
+      <div class="row mx-0 mx-md-auto">
+        <div class="col-12 col-md-6 col-lg-3">
 
-            <!-- Item -->
-            <div class="d-flex mb-6 mb-lg-0">
+          <!-- Item -->
+          <div class="d-flex mb-2 mb-md-0 pb-1 mb-lg-0">
 
-              <!-- Icon -->
-              <div class="my-1"><i data-feather="help-circle" ></i></div>
+            <!-- Icon -->
+            <div class="my-md-1 my-2"><i data-feather="help-circle" ></i></div>
 
-              <!-- Body -->
-              <div class="ml-3">
+            <!-- Body -->
+            <div class="ml-2 pl-1 ml-md-3 pl-md-0">
 
-                <!-- Heading -->
-                <h5 class="foot-headers my-1">
-                  ¿Tiene alguna duda?
-                </h5>
+              <!-- Heading -->
+              <h5 class="foot-headers my-1">
+                ¿Tiene alguna duda?
+              </h5>
 
-                <!-- Text -->
-                <p class="mb-0 foot-text text-muted">
-                  Puede consultar la sección de Preguntas Frecuentes.
-                </p>
-
-              </div>
-
-            </div>
-
-          </div>
-          <div class="col-12 col-md-6 col-lg-3">
-
-            <!-- Item -->
-            <div class="d-flex mb-6 mb-lg-0">
-
-              <!-- Icon -->
-              <div class="my-1"><i data-feather="info"></i></div>
-
-              <!-- Body -->
-              <div class="ml-3">
-
-                <!-- Heading -->
-                <h5 class="foot-headers my-1">
-                  ¿Necesita más información?
-                </h5>
-
-                <!-- Text -->
-                <p class="mb-0 foot-text text-muted">
-                  Puede escribirnos al e-mail <a href="mailto:info@casamartinez.mx">info@casamartinez.mx</a>  
-                </p>
-
-              </div>
+              <!-- Text -->
+              <p class="mb-0 foot-text text-muted">
+                Puede consultar la sección de Preguntas Frecuentes.
+              </p>
 
             </div>
 
           </div>
-          <div class="col-12 col-md-6 col-lg-3">
 
-            <!-- Item -->
-            <div class="d-flex mb-6 mb-md-0">
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
 
-              <!-- Icon -->
-              <div class="my-1"><i data-feather="lock"></i></div>
+          <!-- Item -->
+          <div class="d-flex mb-2 mb-md-0 pb-1 mb-lg-0">
 
-              <!-- Body -->
-              <div class="ml-3">
+            <!-- Icon -->
+            <div class="my-md-1 my-2"><i data-feather="info"></i></div>
 
-                <!-- Heading -->
-                <h5 class="foot-headers my-1">
-                  ¿Es segura mi compra?
-                </h5>
+            <!-- Body -->
+            <div class="ml-2 pl-1 ml-md-3 pl-md-0">
 
-                <!-- Text -->
-                <p class="mb-0 foot-text text-muted">
-                  Completamente. No se preocupe.
-                </p>
+              <!-- Heading -->
+              <h5 class="foot-headers my-1">
+                ¿Necesita más información?
+              </h5>
 
-              </div>
-
-            </div>
-
-          </div>
-          <div class="col-12 col-md-6 col-lg-3">
-
-            <!-- Item -->
-            <div class="d-flex">
-
-              <!-- Icon -->
-              <!--<div class="my-1"><i data-feather="meh"></i></div>-->
-              <div class="my-1"><i class="far fa-frown-open" style="font-size: 1.5rem"></i></div>
-
-              <!-- Body -->
-              <div class="ml-3">
-
-                <!-- Heading -->
-                <h5 class="foot-headers my-1">
-                  ¿Tuvo algún problema con su envío?
-                </h5>
-
-                <!-- Text -->
-                <p class="mb-0 foot-text text-muted">
-                  Puede consultar nuestra Políticas de devoluciones
-                </p>
-
-              </div>
+              <!-- Text -->
+              <p class="mb-0 foot-text text-muted">
+                Puede escribirnos al e-mail <a href="mailto:info@casamartinez.mx">info@casamartinez.mx</a>  
+              </p>
 
             </div>
 
           </div>
+
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+
+          <!-- Item -->
+          <div class="d-flex mb-2 mb-md-0 pb-1 mb-lg-0">
+
+            <!-- Icon -->
+            <div class="my-md-1 my-2"><i data-feather="lock"></i></div>
+
+            <!-- Body -->
+            <div class="ml-2 pl-1 ml-md-3 pl-md-0">
+
+              <!-- Heading -->
+              <h5 class="foot-headers my-1">
+                ¿Es segura mi compra?
+              </h5>
+
+              <!-- Text -->
+              <p class="mb-0 foot-text text-muted">
+                Completamente. No se preocupe.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+
+          <!-- Item -->
+          <div class="d-flex mb-2 mb-md-0 pb-1 mb-lg-0">
+
+            <!-- Icon -->
+            <!--<div class="my-1"><i data-feather="meh"></i></div>-->
+            <div class="my-md-1 my-2"><i class="far fa-frown-open" style="font-size: 1.5rem"></i></div>
+
+            <!-- Body -->
+            <div class="ml-2 pl-1 ml-md-3 pl-md-0">
+
+              <!-- Heading -->
+              <h5 class="foot-headers my-1">
+                ¿Tuvo algún problema con su envío?
+              </h5>
+
+              <!-- Text -->
+              <p class="mb-0 foot-text text-muted">
+                Puede consultar nuestra Políticas de devoluciones
+              </p>
+
+            </div>
+
+          </div>
+
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
 @endsection
 
 @section('more-content')
-  <!--modal-->
+  <!--modal show peoduct-->
   <div class="modal fade" id="modalProduct" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered mx-4 m-md-auto modal-lg" role="document">
       <div class="modal-content">
@@ -755,9 +761,153 @@
     </div>
   </div>
 
+  <!--modal cart shopping-->
+
+  <div class="modal fixed-right fade" id="modalShoppingCart" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-vertical" role="document">
+
+      <!-- Full cart (add `.d-none` to disable it) -->
+      <div class="modal-content">
+
+        <!-- Close -->
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <i class="fe fe-x" aria-hidden="true"></i>
+        </button>
+
+        <!-- Header-->
+        <div class="modal-header line-height-fixed font-size-lg">
+          <strong class="mx-auto">Your Cart (2)</strong>
+        </div>
+
+        <!-- List group -->
+        <ul class="list-group list-group-lg list-group-flush">
+          <li class="list-group-item">
+            <div class="row align-items-center">
+              <div class="col-4">
+
+                <!-- Image -->
+                <a href="./product.html">
+                  <img class="img-fluid" src="./assets/img/products/product-6.jpg" alt="...">
+                </a>
+
+              </div>
+              <div class="col-8">
+
+                <!-- Title -->
+                <p class="font-size-sm font-weight-bold mb-6">
+                  <a class="text-body" href="./product.html">Cotton floral print Dress</a> <br>
+                  <span class="text-muted">$40.00</span>
+                </p>
+
+                <!--Footer -->
+                <div class="d-flex align-items-center">
+
+                  <!-- Select -->
+                  <select class="custom-select custom-select-xxs w-auto">
+                    <option value="1">1</option>
+                    <option value="1">2</option>
+                    <option value="1">3</option>
+                  </select>
+
+                  <!-- Remove -->
+                  <a class="font-size-xs text-gray-400 ml-auto" href="#!">
+                    <i class="fe fe-x"></i> Remove
+                  </a>
+
+                </div>
+
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="row align-items-center">
+              <div class="col-4">
+
+                <!-- Image -->
+                <a href="./product.html">
+                  <img class="img-fluid" src="./assets/img/products/product-10.jpg" alt="...">
+                </a>
+
+              </div>
+              <div class="col-8">
+
+                <!-- Title -->
+                <p class="font-size-sm font-weight-bold mb-6">
+                  <a class="text-body" href="./product.html">Suede cross body Bag</a> <br>
+                  <span class="text-muted">$49.00</span>
+                </p>
+
+                <!--Footer -->
+                <div class="d-flex align-items-center">
+
+                  <!-- Select -->
+                  <select class="custom-select custom-select-xxs w-auto">
+                    <option value="1">1</option>
+                    <option value="1">2</option>
+                    <option value="1">3</option>
+                  </select>
+
+                  <!-- Remove -->
+                  <a class="font-size-xs text-gray-400 ml-auto" href="#!">
+                    <i class="fe fe-x"></i> Remove
+                  </a>
+
+                </div>
+
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Footer -->
+        <div class="modal-footer line-height-fixed font-size-sm bg-light mt-auto">
+          <strong>Subtotal</strong> <strong class="ml-auto">$89.00</strong>
+        </div>
+
+        <!-- Buttons -->
+        <div class="modal-body">
+          <a class="btn btn-block btn-dark" href="./checkout.html">Continue to Checkout</a>
+          <a class="btn btn-block btn-outline-dark" href="./shopping-cart.html">View Cart</a>
+        </div>
+
+      </div>
+
+      <!-- Empty cart (remove `.d-none` to enable it) -->
+      <div class="modal-content d-none">
+
+        <!-- Close -->
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <i class="fe fe-x" aria-hidden="true"></i>
+        </button>
+
+        <!-- Header-->
+        <div class="modal-header line-height-fixed font-size-lg">
+          <strong class="mx-auto">Your Cart (0)</strong>
+        </div>
+
+        <!-- Body -->
+        <div class="modal-body flex-grow-0 my-auto">
+
+          <!-- Heading -->
+          <h6 class="mb-7 text-center">Your cart is empty 😞</h6>
+
+          <!-- Button -->
+          <a class="btn btn-block btn-outline-dark" href="#!">
+            Continue Shopping
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
 @endsection
 @section('scripts')
-<!--change navbar bg color-->
+
+<script type="text/javascript" src="/js/card-collapse.js"></script>
 <script type="text/javascript">
   $("#div-footer").removeClass("mt-5");
   $(window).scroll(function(){
@@ -765,6 +915,10 @@
     $("#topbar").toggleClass('nav-white', $(this).scrollTop()>alto);
   });
 
+  if( isBreakpoint('xs') || isBreakpoint('sm')) {
+   $("#rowProductsRecomend div.col-4:last-child").remove();
+   $(".card-actions").addClass("pt-1 pr-2");
+  }
+
 </script>
-<script type="text/javascript" src="/js/card-collapse.js"></script>
 @endsection

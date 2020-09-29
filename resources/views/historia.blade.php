@@ -421,5 +421,4 @@ $('.carousel-items').slick({
 	 	}
  	}
  </script>
- </script>
 @endsection

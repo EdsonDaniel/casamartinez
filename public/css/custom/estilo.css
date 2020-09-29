@@ -5,7 +5,7 @@ li{ list-style-type: none; }
   height: 100%;
   width: 0;
   position:fixed;
-  z-index: 5;
+  z-index: 1050;
   top: 0;
   right: 0;
   background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0,0,0, 0.85));

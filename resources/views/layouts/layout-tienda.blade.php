@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,11 +34,91 @@
 <body onload="hideBackdrop()" class="preload">
   <div class="backdrop show" id="backdrop">
     <div class="background" id="background"></div>
-    <div class="loading-wrapper">
+    <div class="loading-wrapper" id="loading-wrapper">
       <img src="/img/loading2.gif" alt="Cargando">
     </div>
   </div>
   
+
+  <!--Sidebar-->
+  <div id="mySidenav" class="sidenav" >
+      <a class="closebtn" onclick="closeNav()"><i class="fa fa-bars"></i></a>
+      <div class="title-nav">
+        <h2><a href="/">CASA MARTINEZ</a></h2>
+      </div>
+
+      @guest
+      <div class="log-in">
+        <center>
+          <a href="/login" id="ic"><i class="far fa-user"></i></a>
+          <span><a href="/login">INICIAR SESIÓN</a></span>
+        </center>
+      </div>
+      @else
+      <div class="log-in usuario">
+        <center>
+          <a id="ic"><i class="far fa-user"></i></a>
+          <a><span>BIENVENIDO {{ Auth::user()->name }}</span></a>
+        </center>
+      </div>
+      @endguest
+
+      <div class="options">
+        @auth
+        <div class="boton">
+              <a>MI CUENTA</a>
+              <button><i name="ic" class="fas fa-plus"></i></button>                
+          </div>
+          <div class="dropdown-container">
+              <ul>
+                  <li><a href="">-Mis pedidos</a></li>
+                  <li><a href="">-Mis datos</a></li>
+                  <li><a href="">-Configuración de la cuenta</a></li>
+                  <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
+                  document.getElementById('logout-form').submit();">{{ __('-Salir') }}</a></li>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                  </form>
+              </ul>
+          </div>
+          @endauth
+          <div class="boton">
+              <a>PRODUCTOS</a>
+              <button><i name="ic" class="fas fa-plus"></i></button>                
+          </div>
+          <div class="dropdown-container">
+              <ul>
+                  <li><a href="">-Ignacio Martínez</a></li>
+                  <li><a href="">-SiNái</a></li>
+                  <li><a href="">-Habitante</a></li>
+                  <li><a href="">-Origen Verde</a></li>
+                  <li><a href="/productos">-Todos los productos</a></li>
+              </ul>
+          </div>
+
+          <div class="boton">
+              <a>FILOSOFÍA</a>
+              <button><i name="ic" class="fas fa-plus"></i></button>
+          </div>
+          <div class="dropdown-container">
+              <ul>
+                  <li><a href="/filosofia">-Introducción</a></li>
+                  <li><a href="/historia">-Historia, Equipo</a></li>
+                  <li><a href="/campos-de-maguey">-Campos de maguey</a></li>
+                  <li><a href="/certificaciones">-Certificaciones</a></li>
+              </ul>
+          </div>
+
+      </div>
+
+      <div class="footer-side">
+        <hr class="line">
+        <a href="#">Contacto</a>
+        <a href="#">Ayuda</a>            
+      </div>
+  </div>
+  <!--Sidebar-->
+
   <div id="app">
     <!--NavBar-->
     <nav id="topbar" class="navbar navbar-expand-lg fixed-top nav-trn">
@@ -56,7 +136,7 @@
                     </li>
                 </ul>
                 <div class="d-flex">
-                  <a href="/" class="ico">
+                  <a href="#modalShoppingCart" data-toggle="modal" class="ico">
                     <!--<span class="fad fa-shopping-cart" id="cart"></span>-->
                     <i data-feather="shopping-cart" class="icon-nav" id="cart"></i>
                   </a>
@@ -68,85 +148,6 @@
         </div>
     </nav>
     <!--NavBar-->
-
-    <!--Sidebar-->
-    <div id="mySidenav" class="sidenav" >
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-bars"></i></a>
-        <div class="title-nav">
-          <h2><a href="/">CASA MARTINEZ</a></h2>
-        </div>
-
-        @guest
-        <div class="log-in">
-          <center>
-            <a href="/login" id="ic"><i class="far fa-user"></i></a>
-            <span><a href="/login">INICIAR SESIÓN</a></span>
-          </center>
-        </div>
-        @else
-        <div class="log-in usuario">
-          <center>
-            <a id="ic"><i class="far fa-user"></i></a>
-            <a><span>BIENVENIDO {{ Auth::user()->name }}</span></a>
-          </center>
-        </div>
-        @endguest
-
-        <div class="options">
-          @auth
-          <div class="boton">
-                <a>MI CUENTA</a>
-                <button><i name="ic" class="fas fa-plus"></i></button>                
-            </div>
-            <div class="dropdown-container">
-                <ul>
-                    <li><a href="">-Mis pedidos</a></li>
-                    <li><a href="">-Mis datos</a></li>
-                    <li><a href="">-Configuración de la cuenta</a></li>
-                    <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();">{{ __('-Salir') }}</a></li>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                      @csrf
-                    </form>
-                </ul>
-            </div>
-            @endauth
-            <div class="boton">
-                <a>PRODUCTOS</a>
-                <button><i name="ic" class="fas fa-plus"></i></button>                
-            </div>
-            <div class="dropdown-container">
-                <ul>
-                    <li><a href="">-Ignacio Martínez</a></li>
-                    <li><a href="">-SiNái</a></li>
-                    <li><a href="">-Habitante</a></li>
-                    <li><a href="">-Origen Verde</a></li>
-                    <li><a href="/productos">-Todos los productos</a></li>
-                </ul>
-            </div>
-
-            <div class="boton">
-                <a>FILOSOFÍA</a>
-                <button><i name="ic" class="fas fa-plus"></i></button>
-            </div>
-            <div class="dropdown-container">
-                <ul>
-                    <li><a href="/filosofia">-Introducción</a></li>
-                    <li><a href="/historia">-Historia, Equipo</a></li>
-                    <li><a href="/campos-de-maguey">-Campos de maguey</a></li>
-                    <li><a href="/certificaciones">-Certificaciones</a></li>
-                </ul>
-            </div>
-
-        </div>
-
-        <div class="footer-side">
-          <hr class="line">
-          <a href="#">Contacto</a>
-          <a href="#">Ayuda</a>            
-        </div>
-    </div>
-    <!--Sidebar-->
     <!--container content-->
   
   <div class="app-container">@yield('content')</div>
@@ -193,7 +194,7 @@
 
    @yield('more-content')
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-   <script type="text/javascript" src="/js/custom/efectos.js"></script>
+   <script type="text/javascript" src="/js/custom/efectos2.js"></script>
 
    @yield('scripts')
    
