@@ -20,6 +20,17 @@ function hideBackdrop(){
 }
 
 $( document ).ready(function() {
+
+    $(".input-cantidad").each(function( index ) {
+        var divParent = $(this).closest("div.input-group");
+        if($( this ).val() == 1){
+            $(divParent)
+            /*.find("div.input-group-prepend button.btn-minus").addClass("d-none");*/
+            $(divParent)
+            .find("div.input-group-prepend button.btn-trash").removeClass("d-none");
+        }
+    });
+
     $("#buttonPlus").click( function(){
         $("#buttonMinus").prop("disabled",false).removeClass("disabled");
         var value = $("#inputCantidad").val();
@@ -35,7 +46,51 @@ $( document ).ready(function() {
         $("#buttonMinus").addClass("disabled").prop("disabled",true);
     });
 
+    $(".btn-plus").click( function(){
+        var divParent = $(this).closest("div.input-group");
+        var btnMinus  = $(divParent).find("div.input-group-prepend button.btn-minus");
+        var input = $(divParent).find(".input-cantidad");
+        var value = $(input).val();
+        console.log("value: ",value);
+
+        $(btnMinus).prop("disabled",false).removeClass("disabled");
+
+        if (value < 10) { $(input).val(++value);}
+        if (value >= 10) { 
+            $(input).val("10"); 
+            $(this).addClass("disabled").prop("disabled",true);
+        }
+        
+    });
+
+    $(".btn-minus").click( function(){
+        var divParent = $(this).closest("div.input-group");
+        var btnPlus  = $(divParent).find("div.input-group-append button.btn-plus");
+        var input = $(divParent).find(".input-cantidad");
+        var value = $(input).val();
+        console.log("value: ",value);
+
+        $(btnPlus).prop("disabled",false).removeClass("disabled");
+
+        if (value > 1) { $(input).val(--value);}
+        if (value == 1) { 
+            $(input).val("1"); 
+            $(this).addClass("disabled d-none").prop("disabled",true);
+            $(this).next().removeClass("d-none");
+        }
+        
+    });
+
+    $("#inputCantidadCart").change( function(){
+        console.log("cambie",$(this).val());
+        var value = $(this).val();
+        if (value == 1 ) {
+
+        }
+    });
+
     
 });
+
 
 

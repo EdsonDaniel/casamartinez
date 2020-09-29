@@ -450,7 +450,69 @@ button.icon-input-number:focus { border-color: initial; box-shadow: none; }
     transform: none;
 }
 
-
+.title-modal-cart{
+    font-family: 'Quicksand', sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.price-cart{
+    color: rgba(111,133,85,1);
+    font-family: 'Spartan', sans-serif;
+    font-weight: 500;
+    margin-top: 0.19rem;
+    letter-spacing: 1px;
+}
+.title-product-cart{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+.icon-trash-product{
+    width: 0.95rem;
+    display: block;
+    color: darkred;
+}
+.btn-trash{
+    font-size: 1.2rem;
+    padding: 0.125rem 0.48rem;
+    line-height: 1;
+    transition: opacity 0s;
+    background-color: lightgray;
+}
+.btn-trash:hover{
+    background-color: rgba(220,53,69,0.6);
+    color: white;
+}
+.monto-subtotal{
+    font-family: 'Spartan';
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.subtotal-label{
+    font-family: 'Raleway';
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+.cantidad-label{
+    font-family: 'Quicksand', sans-serif;
+    vertical-align: middle;
+    letter-spacing: 1px;
+}
+.price-cantidad{
+    font-family: 'Spartan';
+    font-size: 0.84rem;
+    font-weight: 500;
+}
+.btn-modal-light{
+    font-family: 'Raleway', sans-serif !important;
+    font-size: 0.84rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    background-color: #fff;
+}
+.btn-modal-light:hover{ font-weight: normal; }
 
 /* Small devices (landscape phones, 576px and up) */
 /*@media (min-width: 576px) {  }*/

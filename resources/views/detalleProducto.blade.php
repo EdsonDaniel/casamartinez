@@ -104,7 +104,7 @@
                       <button type="button" disabled="true" class="btn icon-input-number rounded-0" id="buttonMinus">-</button>
                     </div>
                   </div>
-                  <input type="number" class="form-control" id="inputCantidad" placeholder="1" value="1" min="1" max="10">
+                  <input type="number" class="form-control input-cantidad" id="inputCantidad" placeholder="1" value="1" min="1" max="10">
                   <div class="input-group-append">
                     <div class="input-group-text p-0 rounded-0">
                       <button type="button" class="btn icon-input-number rounded-0" id="buttonPlus">+</button>
@@ -715,17 +715,17 @@
                   <div class="col-12 col-md-4 px-0 d-flex justify-content-center mt-1">
                     <div class="mt-md-3">
                       <div class="form-group d-flex flex-md-column align-items-center">
-                        <label class="text-center mr-3 mr-md-0 my-0" for="inputCantidad">Cantidad:</label>
+                        <label class="text-center mr-3 mr-md-0 my-0">Cantidad:</label>
                         <div class="input-group mt-md-2">
                           <div class="input-group-prepend">
                             <div class="input-group-text p-0">
-                              <button type="button" disabled="true" class="btn icon-input-number" id="buttonMinus">-</button>
+                              <button type="button" disabled="true" class="btn icon-input-number btn-minus" >-</button>
                             </div>
                           </div>
-                          <input type="number" class="form-control" id="inputCantidad" placeholder="1" value="1" min="1" max="10">
+                          <input type="number" class="form-control input-cantidad" placeholder="1" value="1" min="1" max="10">
                           <div class="input-group-append">
                             <div class="input-group-text p-0">
-                              <button type="button" class="btn icon-input-number" id="buttonPlus">+</button>
+                              <button type="button" class="btn icon-input-number btn-plus">+</button>
                             </div>
                           </div>
                         </div>
@@ -776,8 +776,8 @@
         </button>
 
         <!-- Header-->
-        <div class="modal-header line-height-fixed font-size-lg">
-          <strong class="mx-auto">Your Cart (2)</strong>
+        <div class="modal-header title-modal-cart line-height-fixed font-size-lg">
+          <strong class="mx-auto">Tu Carrito (2)</strong>
         </div>
 
         <!-- List group -->
@@ -787,33 +787,43 @@
               <div class="col-4">
 
                 <!-- Image -->
-                <a href="./product.html">
-                  <img class="img-fluid" src="./assets/img/products/product-6.jpg" alt="...">
+                <a href="">
+                  <img class="img-fluid" src="/img/botellas/anejo-sq.jpg" alt="...">
                 </a>
 
               </div>
-              <div class="col-8">
+              <div class="col-8 pl-0">
 
                 <!-- Title -->
                 <p class="font-size-sm font-weight-bold mb-6">
-                  <a class="text-body" href="./product.html">Cotton floral print Dress</a> <br>
-                  <span class="text-muted">$40.00</span>
+                  <a class="text-body title-product-cart" href="">Mezcal Sinái (Joven) 750ml</a> <br>
+                  <span class="price-cart d-block mt-2">$840.00</span>
                 </p>
 
                 <!--Footer -->
                 <div class="d-flex align-items-center">
 
-                  <!-- Select -->
-                  <select class="custom-select custom-select-xxs w-auto">
-                    <option value="1">1</option>
-                    <option value="1">2</option>
-                    <option value="1">3</option>
-                  </select>
+                  <div class="d-flex align-items-center">
+                    <label class="d-block mr-2 my-0 cantidad-label" >Cantidad:</label>
+                    <div class="input-group ">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text p-0 rounded-0">
+                          <button type="button" class="btn icon-input-number rounded-0 btn-minus d-none">-</button>
+                          <button type="button" class="btn rounded-0 btn-trash d-none"><i class="icon-trash-product" data-feather="trash-2"></i></button>
+                        </div>
+                      </div>
+                      <input type="number" class="form-control input-cantidad" id="inputCantidadCart" placeholder="1" value="1" min="1" max="10">
+                      <div class="input-group-append">
+                        <div class="input-group-text p-0 rounded-0">
+                          <button type="button" class="btn icon-input-number rounded-0 btn-plus">+</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
-                  <!-- Remove -->
-                  <a class="font-size-xs text-gray-400 ml-auto" href="#!">
-                    <i class="fe fe-x"></i> Remove
-                  </a>
+                  <span class="price-cantidad text-muted ml-auto" >
+                    $890.00
+                  </span>
 
                 </div>
 
@@ -862,13 +872,13 @@
 
         <!-- Footer -->
         <div class="modal-footer line-height-fixed font-size-sm bg-light mt-auto">
-          <strong>Subtotal</strong> <strong class="ml-auto">$89.00</strong>
+          <span class="subtotal-label">Subtotal</span> <span class="ml-auto monto-subtotal">$89.00</span>
         </div>
 
         <!-- Buttons -->
         <div class="modal-body">
-          <a class="btn btn-block btn-dark" href="./checkout.html">Continue to Checkout</a>
-          <a class="btn btn-block btn-outline-dark" href="./shopping-cart.html">View Cart</a>
+          <a class="btn btn-block btn-modals btn-dark" href="./checkout.html">Proceder al pago</a>
+          <a class="btn btn-block btn-outline-dark btn-modal-light" href="./shopping-cart.html">Ver carrito</a>
         </div>
 
       </div>
