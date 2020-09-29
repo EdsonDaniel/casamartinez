@@ -29,13 +29,13 @@
           <div class="col-3 col-md-2 mr-md-auto ">
             <!-- Radio -->
             <div class="div-img-radio-products mt-md-2">
-              <div class="custom-control custom-control-img mb-3">
+              <div class="custom-control custom-control-img mb-3 mb-md-4">
                 <input type="radio" class="custom-control-input" id="modalProductColorOne" name="modalProductColor" data-toggle="form-caption" data-target="#modalProductColorCaption" value="White" checked="">
                 <label class="custom-control-label pb-1" for="modalProductColorOne">
                   <span class="embed-responsive embed-responsive-1by1 bg-cover" style="background-image: url(/img/botellas/anejo-sq.jpg);"></span>
                 </label>
               </div>
-              <div class="custom-control custom-control-img mb-3">
+              <div class="custom-control custom-control-img mb-3 mb-md-4">
                 <input type="radio" class="custom-control-input" id="modalProductColorTwo" name="modalProductColor" data-toggle="form-caption" data-target="#modalProductColorCaption" value="Black">
                 <label class="custom-control-label pb-1" for="modalProductColorTwo">
                   <span class="embed-responsive embed-responsive-1by1 bg-cover" style="background-image: url(/img/botellas/sinai-sq.jpg);"></span>
@@ -70,7 +70,7 @@
 
       </div>
       
-      <div class="col-12 col-md-6 pl-md-4 mt-4 mt-md-auto">
+      <div class="col-12 col-md-6 pl-md-4 mt-4 mt-md-3 px-4">
 
         <!-- Heading -->
         <h4 class="mb-1 mx-md-auto mb-md-2 mb-md-3 title-product-modal">Mezcal Sinái (Joven) 750ml</h4>
@@ -88,7 +88,7 @@
 
           <div class="col-12 col-md-6">
             <!-- Price -->
-            <div class="mb-1 b-md-3 mx-1 mx-md-auto">
+            <div class="mb-1 b-md-3 mx-md-auto">
               <h4 class="price-product-modal mb-1 ">$850.00 MXN</h4>
               <span class="product-status d-block mt-md-2">Disponible</span>
             </div>
@@ -122,7 +122,7 @@
             <div class="form-group">
 
               <!-- Label -->
-              <p class="mx-1 mx-md-auto mb-4">
+              <p class="mx-md-auto mb-4">
                 Presentación: <strong id="modalProductColorCaption">750 ml</strong>
               </p>
 
@@ -349,11 +349,11 @@
           <div class="col-12">
 
             <!-- Heading -->
-            <h4 class="mb-5 text-center" style="font-weight: 500;">Nuestras recomendaciones para usted</h4>
+            <h4 class="mb-4 mb-md-5 text-center" style="font-weight: 500;">Nuestras recomendaciones para usted</h4>
 
             <!-- Products -->
-            <div class="row mt-3 mt-md-0 justify-content-center mx-0 mx-md-auto" id="rowProductsRecomend">
-              <div class="col-6 col-md-3 mb-2 mb-md-0">
+            <div class="row mt-md-0 justify-content-center mx-0 mx-md-auto" id="rowProductsRecomend">
+              <div class="col-6 col-md-3 mb-2 mb-md-0 px-2 mx-md-3">
 
                 <!-- Card -->
                 <div class="card border-0 mb-0 mb-md-5 shadow">
@@ -409,7 +409,7 @@
 
               </div>
 
-              <div class="col-6 col-md-3 mb-2 mb-md-0">
+              <div class="col-6 col-md-3 mb-2 mb-md-0 px-2 mx-md-3">
 
                 <!-- Card -->
                 <div class="card border-0 mb-0 mb-md-5 shadow">
@@ -465,7 +465,7 @@
 
               </div>
 
-              <div class="col-4 col-md-3 mb-2 mb-md-0">
+              <div class="col-6 col-md-3 mb-2 mb-md-0 px-2 mx-md-3">
 
                 <!-- Card -->
                 <div class="card border-0 mb-0 mb-md-5 shadow">
@@ -916,7 +916,7 @@
   });
 
   if( isBreakpoint('xs') || isBreakpoint('sm')) {
-   $("#rowProductsRecomend div.col-4:last-child").remove();
+   $("#rowProductsRecomend div.col-6:last-child").remove();
    $(".card-actions").addClass("pt-1 pr-2");
   }
 

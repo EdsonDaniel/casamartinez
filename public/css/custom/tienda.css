@@ -475,6 +475,8 @@ button.icon-input-number:focus { border-color: initial; box-shadow: none; }
         z-index: 100; opacity: 1; padding: 0; }
 
     .btn-circle{ width: calc( 1.7rem + 2px ); height: calc( 1.7rem + 2px ); }
+
+    h3{ font-size: 1rem; }
     
 }
 @media (min-width: 768px) { 
