@@ -513,6 +513,7 @@ button.icon-input-number:focus { border-color: initial; box-shadow: none; }
     background-color: #fff;
 }
 .btn-modal-light:hover{ font-weight: normal; }
+.font-sans-serif{ font-family: 'Quicksand', sans-serif !important; }
 
 /* Small devices (landscape phones, 576px and up) */
 /*@media (min-width: 576px) {  }*/
@@ -539,6 +540,9 @@ button.icon-input-number:focus { border-color: initial; box-shadow: none; }
     .btn-circle{ width: calc( 1.7rem + 2px ); height: calc( 1.7rem + 2px ); }
 
     h3{ font-size: 1rem; }
+    .title-product-cart, .price-cart{ font-size: 0.85rem; }
+    .cantidad-label {font-size: 0.9rem;}
+    .monto-subtotal{ font-size: 1rem; }
     
 }
 @media (min-width: 768px) { 

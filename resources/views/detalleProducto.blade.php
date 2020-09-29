@@ -777,14 +777,14 @@
 
         <!-- Header-->
         <div class="modal-header title-modal-cart line-height-fixed font-size-lg">
-          <strong class="mx-auto">Tu Carrito (2)</strong>
+          <span class="mx-auto" style="font-weight: 400;">Tu Carrito (2)</span>
         </div>
 
         <!-- List group -->
         <ul class="list-group list-group-lg list-group-flush">
           <li class="list-group-item">
             <div class="row align-items-center">
-              <div class="col-4">
+              <div class="col-4 pl-0 pl-md-auto">
 
                 <!-- Image -->
                 <a href="">
@@ -795,16 +795,16 @@
               <div class="col-8 pl-0">
 
                 <!-- Title -->
-                <p class="font-size-sm font-weight-bold mb-6">
+                <p class="font-size-sm font-weight-bold mb-2 mb-md-0">
                   <a class="text-body title-product-cart" href="">Mezcal Sinái (Joven) 750ml</a> <br>
                   <span class="price-cart d-block mt-2">$840.00</span>
                 </p>
 
                 <!--Footer -->
-                <div class="d-flex align-items-center">
+                <div class="d-flex align-items-md-center align-items-end">
 
-                  <div class="d-flex align-items-center">
-                    <label class="d-block mr-2 my-0 cantidad-label" >Cantidad:</label>
+                  <div class="d-flex align-items-md-center align-items-start flex-column flex-md-row">
+                    <label class="d-block mr-2 my-0 mb-1 mb-md-0 cantidad-label" >Cantidad:</label>
                     <div class="input-group ">
                       <div class="input-group-prepend">
                         <div class="input-group-text p-0 rounded-0">
@@ -812,7 +812,7 @@
                           <button type="button" class="btn rounded-0 btn-trash d-none"><i class="icon-trash-product" data-feather="trash-2"></i></button>
                         </div>
                       </div>
-                      <input type="number" class="form-control input-cantidad" id="inputCantidadCart" placeholder="1" value="1" min="1" max="10">
+                      <input type="number" class="form-control input-cantidad font-sans-serif" id="inputCantidadCart" placeholder="1" value="1" min="1" max="10">
                       <div class="input-group-append">
                         <div class="input-group-text p-0 rounded-0">
                           <button type="button" class="btn icon-input-number rounded-0 btn-plus">+</button>
