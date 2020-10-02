@@ -408,9 +408,9 @@
 <script type="text/javascript">
   var productos = {!! json_encode($productos) !!};
   var logged = @json(Auth::check());
-
-  if(logged)
+  @if(Auth::check())
   var inCart = {!! json_encode($inCart) !!};
+  @endif
 </script>
 <script type="text/javascript" src="/js/card-collapse.js"></script>
 <script type="text/javascript" src="/js/custom/tiendaEfectos.js"></script>
