@@ -186,6 +186,177 @@
   </div>
 </div>
 
+  <!--modal-->
+  <div class="modal fade" id="modalProduct" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered mx-4 m-md-auto modal-lg" role="document">
+      <div class="modal-content">
+        <!-- Close -->
+        <button style="z-index: 5;" type="button" class="close btn-close-modal" data-dismiss="modal" aria-label="Close">
+          <span class="fe fe-x" aria-hidden="true" >&times;</span>
+        </button>
+
+        <!-- Content -->
+        <div class="container-fluid px-xl-0">
+          <div class="row align-items-center mx-xl-0">
+            <div class="col-12 col-lg-6 col-xl-5 py-3 py-md-4 py-xl-0 px-xl-0" id="modalImgContainer">
+
+              <!-- Image --
+              <img class="img-fluid d-block my-md-5 " id="img-modal"  src="/img/botellas/anejo-sq.jpg" alt="...">-->
+
+            </div>
+            <div class="col-12 col-lg-6 col-xl-7 py-9 px-md-9">
+
+              <!-- Heading -->
+              <h4 class="mb-1 mx-1 mx-md-auto mb-md-2 mb-md-3 title-product-modal">
+                <!--Mezcal Sinái(Joven) 750ml --></h4>
+
+              <!-- Price -->
+              <div class="mb-1 b-md-3 mx-1 mx-md-auto">
+                <h4 class="price-product-modal mb-1 mt-2"><!-- $850.00 MXN --></h4>
+                <span class="product-status">Disponible</span>
+              </div>
+
+              <!-- Form -->
+              <form class="w-100">
+                <!--row form-->
+                <div class="row mx-0">
+
+                  <!--col-left-->
+                  <div class="col-12 col-md-7 px-0">
+                    <div class="form-group">
+
+                      <!-- Label -->
+                      <p class="mx-1 mx-md-auto">
+                        Presentación: <strong id="modalProductPresentationCaption">750 ml</strong>
+                      </p>
+
+                      <!-- Radio -->
+                      <div class="div-img-radio-products" id="div-presentations">
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <!--col-left-->
+
+                  <!--col-right-->
+                  <div class="col-12 col-md-4 px-0 d-flex justify-content-center mt-1">
+                    <div class="mt-md-3">
+                      <div class="form-group d-flex flex-md-column align-items-center">
+                        <label class="text-center mr-3 mr-md-0 my-0">Cantidad:</label>
+                        <div class="input-group mt-md-2">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text p-0 rounded-0">
+                              <button type="button" class="btn icon-input-number h-100 rounded-0 btn-minus " disabled="">-</button>
+                            </div>
+                          </div>
+                          <input type="number" class="form-control input-cantidad" placeholder="1" value="1" min="1" max="10">
+                          <div class="input-group-append">
+                            <div class="input-group-text p-0 rounded-0">
+                              <button type="button" class="btn icon-input-number btn-plus h-100" >+</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--col-right-->
+
+                  <div class="col-12 px-1 px-md-auto">
+                    <!-- Submit -->
+                    <button type="submit" class="btn btn-block rounded-0 my-1 my-md-2 btn-modals p-2">
+                      Agregar al carrito <i class="fe fe-shopping-cart ml-2"></i>
+                    </button>
+                  </div>
+
+                  <div class="col-12 px-1 px-md-auto">
+                    <!-- Submit -->
+                    <button type="submit" class="btn btn-block rounded-0 mb-4 mb-md-auto btn-modals p-2">
+                      Comprar ahora<i class="fe fe-shopping-cart ml-2"></i>
+                    </button>
+                  </div>
+                  
+                </div>
+                <!--row form-->
+              </form>
+
+            </div>
+
+          </div>
+        </div><!--container-->
+
+      </div><!--modal-content-->
+    </div>
+  </div>
+
+  <div class="modal fixed-right fade" id="modalShoppingCart" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-vertical" role="document">
+
+      <!-- Full cart (add `.d-none` to disable it) -->
+      <div class="modal-content">
+        
+
+        <!-- Header-->
+        <div class="modal-header title-modal-cart line-height-fixed font-size-lg">
+          <!-- Close -->
+        <button style="z-index: 5;" type="button" class="close btn-close-modal-right d-flex" data-dismiss="modal" aria-label="Close">
+          <i data-feather="x" aria-hidden="true" >&times;</i>
+        </button>
+          <span class="mx-auto" style="font-weight: 400;">Tu Carrito 
+            <span id="countCart"></span>
+          </span>
+        </div>
+
+        <!-- List group -->
+        <ul class="list-group list-group-lg list-group-flush" id="listProducts">
+         
+        </ul>
+
+        <!-- Footer -->
+        <div class="d-none modal-footer line-height-fixed font-size-sm bg-light mt-auto" id="footer-modal-cart">
+          <span class="subtotal-label">Subtotal:</span>
+          <span id="monto-subtotal" class="ml-auto monto-subtotal">$89.00</span>
+        </div>
+
+        <!-- Buttons -->
+        <div class="modal-body">
+          <a class="btn btn-block btn-modals btn-dark" href="./checkout.html">Proceder al pago</a>
+          <a class="btn btn-block btn-outline-dark btn-modal-light" href="./shopping-cart.html">Ver carrito</a>
+        </div>
+
+      </div>
+
+      <!-- Empty cart (remove `.d-none` to enable it) -->
+      <div class="modal-content d-none">
+
+        <!-- Close -->
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <i class="fe fe-x" aria-hidden="true"></i>
+        </button>
+
+        <!-- Header-->
+        <div class="modal-header line-height-fixed font-size-lg">
+          <strong class="mx-auto">Your Cart (0)</strong>
+        </div>
+
+        <!-- Body -->
+        <div class="modal-body flex-grow-0 my-auto">
+
+          <!-- Heading -->
+          <h6 class="mb-7 text-center">Your cart is empty 😞</h6>
+
+          <!-- Button -->
+          <a class="btn btn-block btn-outline-dark" href="#!">
+            Continue Shopping
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
 
    
    <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
