@@ -17,6 +17,7 @@ class CreateCarritoTieneProductosTable extends Migration
             //$table->id();
             $table->foreignId('carrito_compras_id')->constrained('carrito_compras');
             $table->foreignId('presentacion_producto_id')->constrained('presentaciones_producto');
+            $table->integer('cantidad');
             $table->timestamps();
         });
     }

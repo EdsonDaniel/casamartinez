@@ -38,6 +38,7 @@
       <img src="/img/loading2.gif" alt="Cargando">
     </div>
   </div>
+  <div class="aria-notifications bg-dark" id="ariaNotifications"></div>
   
 
   <!--Sidebar-->

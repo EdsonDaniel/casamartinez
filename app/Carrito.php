@@ -33,9 +33,9 @@ class Carrito extends Model
     {
         return $this->belongsToMany(
             'App\PresentacionesProducto', 
-            'carrito_productos', 
-            'id_carrito', 
-            'id_pres_prod')
+            'carrito_tiene_productos', 
+            'carrito_compras_id', 
+            'presentacion_producto_id')
             ->withPivot('cantidad');
     }
 
@@ -44,5 +44,4 @@ class Carrito extends Model
         return $this->belongsTo('App\User', 'id_user');
     }
 
-    
 }

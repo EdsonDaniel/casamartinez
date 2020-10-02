@@ -44,6 +44,6 @@ class User extends Authenticatable
      */
     public function carrito()
     {
-        return $this->hasOne('App\Carrito', 'id_user');
+        return $this->hasOne('App\Carrito');
     }
 }
