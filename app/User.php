@@ -11,6 +11,7 @@ class User extends Authenticatable
 {
     use Notifiable;
     use HasRoles;
+    use Billable;
 
     /**
      * The attributes that are mass assignable.
@@ -45,5 +46,10 @@ class User extends Authenticatable
     public function carrito()
     {
         return $this->hasOne('App\Carrito');
+    }
+
+    public function direcciones()
+    {
+        return $this->hasMany('App\DireccionesUsuario');
     }
 }

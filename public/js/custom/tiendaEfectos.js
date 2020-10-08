@@ -15,7 +15,6 @@ $( document ).ready(function() {
 	addListeners();
 	fadeNav();
 	loadData();
-	
 });
 
 function loadData() {
@@ -30,7 +29,7 @@ function loadData() {
 	    parents_presentations.parent[ productos[i].producto_id ]
 	      .presentations[productos[i].id_presentacion] = productos[i];
 	}
-	console.log(parents_presentations);
+	//console.log(parents_presentations);
 }
 
 function fadeNav(){

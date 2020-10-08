@@ -85,15 +85,15 @@
                       <!-- Form group -->
                       <div class="form-group form-group-overflow mb-md-0 pl-3 pl-md-4">
                         <div class="custom-control custom-checkbox mb-3">
-                          <input class="custom-control-input" id="seasonOne" name="category" type="checkbox" value="Summer">
+                          <input class="custom-control-input"  name="category" type="checkbox" value="Summer">
                           <label class="custom-control-label" for="seasonOne">Joven</label>
                         </div>
                         <div class="custom-control custom-checkbox mb-3">
-                          <input class="custom-control-input" id="seasonTwo" name="category" type="checkbox" value="Winter">
+                          <input class="custom-control-input"  name="category" type="checkbox" value="Winter">
                           <label class="custom-control-label" for="seasonTwo">Reposado</label>
                         </div>
                         <div class="custom-control custom-checkbox mb-3">
-                          <input class="custom-control-input" id="seasonThree" name="category" type="checkbox" value="Spring &amp; Fall">
+                          <input class="custom-control-input"  name="category" type="checkbox" value="Spring &amp; Fall">
                           <label class="custom-control-label" for="seasonThree">Añejo</label>
                         </div>
                       </div>
@@ -109,15 +109,15 @@
                       <!-- Form group -->
                       <div class="form-group form-group-overflow mb-md-0 pl-3 pl-md-4">
                         <div class="custom-control custom-checkbox mb-3">
-                          <input class="custom-control-input" id="seasonOne" name="category" type="checkbox" value="Summer">
+                          <input class="custom-control-input"  name="category" type="checkbox" value="Summer">
                           <label class="custom-control-label" for="seasonOne">750 ml.</label>
                         </div>
                         <div class="custom-control custom-checkbox mb-3">
-                          <input class="custom-control-input" id="seasonTwo" name="category" type="checkbox" value="Winter">
+                          <input class="custom-control-input"  name="category" type="checkbox" value="Winter">
                           <label class="custom-control-label" for="seasonTwo">500 ml.</label>
                         </div>
                         <div class="custom-control custom-checkbox mb-3">
-                          <input class="custom-control-input" id="seasonThree" name="category" type="checkbox" value="Spring &amp; Fall">
+                          <input class="custom-control-input"  name="category" type="checkbox" value="Spring &amp; Fall">
                           <label class="custom-control-label" for="seasonThree">250ml.</label>
                         </div>
                       </div>
@@ -133,15 +133,15 @@
                       <!-- Form group -->
                       <div class="form-group-overflow mb-md-0 pl-3 pl-md-4">
                         <div class="custom-control custom-checkbox mb-3">
-                          <input class="custom-control-input" id="seasonOne" name="category" type="checkbox" value="Summer">
+                          <input class="custom-control-input"  name="category" type="checkbox" value="Summer">
                           <label class="custom-control-label" for="seasonOne">Más populares</label>
                         </div>
                         <div class="custom-control custom-checkbox mb-3">
-                          <input class="custom-control-input" id="seasonTwo" name="category" type="checkbox" value="Winter">
+                          <input class="custom-control-input"  name="category" type="checkbox" value="Winter">
                           <label class="custom-control-label" for="seasonTwo">Precio (Menor a mayor)</label>
                         </div>
                         <div class="custom-control custom-checkbox mb-3">
-                          <input class="custom-control-input" id="seasonThree" name="category" type="checkbox" value="Spring &amp; Fall">
+                          <input class="custom-control-input"  name="category" type="checkbox" value="Spring &amp; Fall">
                           <label class="custom-control-label" for="seasonThree">Precio (Mayor a menor)</label>
                         </div>
                       </div>
@@ -182,17 +182,18 @@
 
                 <!-- Actions -->
                 <div class="card-actions">
-                  <div class="card-action">
+                  <div class="card-action tooltip">
                     <button class="btn-xs btn-circle btn-light border" data-toggle="modal" data-target="#modalProduct" data-product="{{$producto->producto_id}}" data-presentation="{{$producto->id_presentacion}}">
                       <i data-feather="eye"></i>
                     </button>
+                    <span class="tooltiptext tooltip-left">Ver producto</span>
                   </div>
-                  <div class="card-action">
-                      <button class="btn-xs btn-circle btn-light border toCart" data-presentation="{{$producto->id_presentacion}}" data-toggle="button">
+                  <div class="card-action tooltip">
+                      <button class="btn-xs btn-circle btn-light border toCart" data-presentation="{{$producto->id_presentacion}}" data-toggle="button" >
                         <i data-feather="shopping-cart"></i>
                         <img src="/img/pulse-loading.gif" class="img-fluid">
                       </button>
-                    </form>
+                      <span class="tooltiptext tooltip-left tooltiptext-lg">Agregar al carrito</span>
                   </div>
                 </div>
 
@@ -240,6 +241,5 @@
   var inCart = {!! json_encode($inCart) !!};
   @endif
 </script>
-<script type="text/javascript" src="/js/card-collapse.js"></script>
 <script type="text/javascript" src="/js/custom/tiendaEfectos.js"></script>
 @endsection

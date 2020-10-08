@@ -12,6 +12,7 @@ use App\Carrito;
 use App\CarritoProductos;
 use App\PresentacionesProducto;
 use App\TodosProductos;
+use App\Recomendados;
 use App\ProductosTienda;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Validator;
@@ -33,13 +34,19 @@ class TiendaController extends Controller
         if( Auth::check() ){
             $user = $user = auth()->user();
             $carrito = $user->carrito;
-            $prod = CarritoProductos::where('carrito_compras_id', $carrito->id)->get();
-            return view('tienda')->with(['productos'=>$products, 'inCart' => $prod]);
+            /*$prod = CarritoProductos::where('carrito_compras_id', $carrito->id)->get();*/
+            $prod = CarritoProductos::select('presentacion_producto_id','cantidad')->where('carrito_compras_id', $carrito->id)->get();
+            return view('tienda')
+                    ->with(['productos'=>$products, 'inCart' => $prod]);
         }
        
         return view('tienda')->with('productos',$products);
     }
 
+    public function indexCarrito(){
+        $recomendados = Recomendados::all();
+        //return view 
+    }
     
     public function create()
     {

@@ -7,22 +7,20 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
     <title>@yield('title')</title>
-
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
     <style type="text/css">
       .background { width: 100%; height: 100%; background-color: lightgray;opacity: 0.92; z-index: 1000;}
       .backdrop.show{ opacity: 1; }
       .backdrop{ opacity: 0; transition: opacity 0.7s 
-        linear; z-index: 1040;position: fixed;top: 0;right: 0;bottom: 0;left: 0;}
+        linear; z-index: 1060;position: fixed;top: 0;right: 0;bottom: 0;left: 0;}
       .loading-wrapper{ position: absolute;top: 40%;left: 50%;transform: translate(-50%, -50%);z-index: 1001; }
     </style>
     
     
     <!-- Stylesheet -->
     <!--<link href="" rel="stylesheet">-->
+    <link rel="stylesheet" type="text/css" href="/css/app.css">
     <link rel="stylesheet" href="/adminlte/plugins/fontawesome-free/css/all.min.css" type="text/css">
-    <link rel="stylesheet" href="{{ asset('/css/custom/bootstrap.css') }}" type="text/css">
+    <!--<link rel="stylesheet" href="{{ asset('/css/custom/bootstrap.css') }}" type="text/css">-->
     <link href="{{ asset('/css/custom/principal.css') }}" rel="stylesheet" type="text/css">    
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Raleway:wght@300;400;500;600&family=Spartan:wght@300;400;500&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/custom/estilo.css">
@@ -38,9 +36,7 @@
       <img src="/img/loading2.gif" alt="Cargando">
     </div>
   </div>
-  <div class="aria-notifications bg-dark" id="ariaNotifications"></div>
   
-
   <!--Sidebar-->
   <div id="mySidenav" class="sidenav" >
       <a class="closebtn" onclick="closeNav()"><i class="fa fa-bars"></i></a>
@@ -246,13 +242,13 @@
                         <div class="input-group mt-md-2">
                           <div class="input-group-prepend">
                             <div class="input-group-text p-0 rounded-0">
-                              <button type="button" class="btn icon-input-number h-100 rounded-0 btn-minus " disabled="">-</button>
+                              <button type="button" class="btn icon-input-number h-100 rounded-0 btn-minus " onclick="btnMinus(this)" disabled="">-</button>
                             </div>
                           </div>
-                          <input type="number" class="form-control input-cantidad" placeholder="1" value="1" min="1" max="10">
+                          <input type="number" class="form-control input-cantidad" placeholder="1" value="1" min="1" max="10" onchange="changeCantidad(this)">
                           <div class="input-group-append">
                             <div class="input-group-text p-0 rounded-0">
-                              <button type="button" class="btn icon-input-number btn-plus h-100" >+</button>
+                              <button type="button" onclick="btnPlus(this)" class="btn icon-input-number btn-plus h-100" >+</button>
                             </div>
                           </div>
                         </div>
@@ -299,74 +295,66 @@
         <!-- Header-->
         <div class="modal-header title-modal-cart line-height-fixed font-size-lg">
           <!-- Close -->
-        <button style="z-index: 5;" type="button" class="close btn-close-modal-right d-flex" data-dismiss="modal" aria-label="Close">
-          <i data-feather="x" aria-hidden="true" >&times;</i>
-        </button>
+          <button style="z-index: 5;" type="button" class="close d-flex m-0 p-0" data-dismiss="modal" aria-label="Close">
+            <i data-feather="x" aria-hidden="true" >&times;</i>
+          </button>
           <span class="mx-auto" style="font-weight: 400;">Tu Carrito 
             <span id="countCart"></span>
           </span>
+
+          <!--delete-all-->
+          <div class="tooltip" id="tooltip-cart">
+            <button type="button" id="vaciarCarrito" class="btn d-flex btn-trash-all float-right p-1" >
+              <i aria-hidden="true" class="fa fa-trash-alt" ></i>
+            </button>
+            <span class="tooltiptext tooltip-left">Vaciar Carrito</span>
+          </div>
         </div>
 
-        <!-- List group -->
-        <ul class="list-group list-group-lg list-group-flush" id="listProducts">
-         
-        </ul>
+        <div id="cartContent" class="d-none">
+          <!-- List group -->
+          <ul class="list-group list-group-lg list-group-flush" id="listProducts">
+           
+          </ul>
 
-        <!-- Footer -->
-        <div class="d-none modal-footer line-height-fixed font-size-sm bg-light mt-auto" id="footer-modal-cart">
-          <span class="subtotal-label">Subtotal:</span>
-          <span id="monto-subtotal" class="ml-auto monto-subtotal">$89.00</span>
+          <!-- Footer -->
+          <div class="modal-footer line-height-fixed font-size-sm bg-light mt-auto" id="footer-modal-cart">
+            <span class="subtotal-label">Subtotal:</span>
+            <span id="monto-subtotal" class="ml-auto monto-subtotal">$89.00</span>
+          </div>
+
+          <!-- Buttons -->
+          <form id="validateCart" method="POST" action="/validate-cart"></form>
+          <div class="modal-body " type="button" id="cartButtons">
+            <button id="toCheckout" data-redirect="checkout" class="btn btn-block btn-modals btn-dark">Proceder al pago</button>
+            <button id="toShoppingCart" data-redirect="cartView" type="button" class="btn btn-block btn-outline-dark btn-modal-light" >Ver carrito</button>
+          </div>
         </div>
 
-        <!-- Buttons -->
-        <div class="modal-body">
-          <a class="btn btn-block btn-modals btn-dark" href="./checkout.html">Proceder al pago</a>
-          <a class="btn btn-block btn-outline-dark btn-modal-light" href="./shopping-cart.html">Ver carrito</a>
-        </div>
-
-      </div>
-
-      <!-- Empty cart (remove `.d-none` to enable it) -->
-      <div class="modal-content d-none">
-
-        <!-- Close -->
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <i class="fe fe-x" aria-hidden="true"></i>
-        </button>
-
-        <!-- Header-->
-        <div class="modal-header line-height-fixed font-size-lg">
-          <strong class="mx-auto">Your Cart (0)</strong>
-        </div>
-
-        <!-- Body -->
-        <div class="modal-body flex-grow-0 my-auto">
-
+        <!--cartEmpty-->
+        <div class="modal-body d-none my-5 pb-5" id="cartEmpty">
           <!-- Heading -->
-          <h6 class="mb-7 text-center">Your cart is empty 😞</h6>
-
+          <h5 class="mb-5 pb-5 text-center " id="headEmpty">Tu carrito está vacío 😞</h5>
           <!-- Button -->
-          <a class="btn btn-block btn-outline-dark" href="#!">
-            Continue Shopping
-          </a>
-
+          <button class="btn btn-block btn-modals btn-outline-dark mb-5" data-dismiss="modal" aria-label="Close" >
+            Continua Comprando
+          </button>
         </div>
+        
 
       </div>
 
     </div>
   </div>
 
-
-   
    <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
    
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>-->
    <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>-->
-
-   @yield('more-content')
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+   <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>-->
+   <script src="{{ asset('js/app.js') }}" ></script>
    <script type="text/javascript" src="/js/custom/efectos2.js"></script>
+   <script type="text/javascript" src="/js/card-collapse.js"></script>
 
    @yield('scripts')
    

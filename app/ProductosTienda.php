@@ -9,9 +9,10 @@ class ProductosTienda extends Model
     protected $table = 'productos_tienda';
 
     public $timestamps = false;
+    protected $primaryKey = 'id_presentacion';
 
      protected $casts = [
         'estado_presentacion' => 'integer',
-        'precio_consumidor'	  => 'numeric'
+        'precio_consumidor'	  => 'float',
     ];
 }
