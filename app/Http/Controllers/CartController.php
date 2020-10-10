@@ -9,6 +9,10 @@ use App\ProductosTienda;
 use Illuminate\Support\Facades\Auth;
 use App\Recomendados;
 use App\Http\Requests\StoreDirection;
+use Stripe;
+use App\DireccionesUsuario;
+use App\DireccionesEnvio;
+
 
 class CartController extends Controller
 {
@@ -32,8 +36,31 @@ class CartController extends Controller
     }
 
     public function pagar(){
+        \Stripe\Stripe::setApiKey('sk_test_51HWep7BQhjFyWJ1M2jUFVKFG6rbzJJjLftB49oYsYt8Wc6SZjU9zLnNo2qWzxolaxyIsUSaJiirolAdQayfbQADh00p9zcXU5o');
+
+        $address = $value = session('address', '');
+        if ($address =="") {
+            return redirect("/informacion-de-envio");
+        }
+
+        $addressFac = $value = session('addressFac', '');
+        if ($addressFac == "") { $addressFac = $address; }
+
+        $subtotal = session('subtotal', 0);
+        $count = session('count', 0);
+        if($subtotal < 1 || $count < 1)
+            return redirect ("/tienda");
+
+
+
+        $intent = \Stripe\PaymentIntent::create([
+            'amount' => $subtotal,
+            'currency' => 'mxn',
+            // Verify your integration in this guide by including this parameter
+            'metadata' => ['integration_check' => 'accept_a_payment'],
+        ]);
         $productos = ProductosTienda::all();
-        return view('pay')->with('productos',$productos);
+        return view('pay')->with(['productos' => $productos, 'intent' => $intent]);
     }
 
     public function checkout(StoreDirection $request){
@@ -47,6 +74,8 @@ class CartController extends Controller
         $address = array();
         $address = $validated;
         $request->session()->put('address', $address);
+        $request->session()->put('count', $dataValidated['count']);
+        $request->session()->put('subtotal', $dataValidated['subtotal']);
 
         if(!$request->input('misma_direccion')){
             $array_validaciones = [
@@ -87,7 +116,7 @@ class CartController extends Controller
         //$value = $request->all();
        
 
-        return $value2;
+        return redirect('checkout');
     }
 
     public function envio(){
@@ -244,10 +273,11 @@ class CartController extends Controller
                 }
             }
         }
+        /*$redirect = $request->input('redirect');
         if($redirect == 'cartView'){
             return redirect('/carrito-de-compras');
-        }
-        return redirect('/informacion-de-envio');
+        }*/
+        /*return redirect('/informacion-de-envio');*/
     }
     
     public function updateCart(Request $request){
@@ -279,6 +309,8 @@ class CartController extends Controller
         $productosCart = array();
         $key_array = array();
         $valid_array = array();
+        $subtotal = 0;
+        $count = 0;
         //$idAndCantidad = array();
                 
         $productos = ProductosTienda::all();
@@ -286,13 +318,16 @@ class CartController extends Controller
         $i = 0;
         
         foreach($cart as $item) {
+            $cantidad = $this->validateCantidad($item['cantidad']);
             if (!in_array($item['presentacion_producto_id'], $key_array) &&
-                $this->validateCantidad($item['cantidad']) > 0) {
+                $cantidad > 0) {
                 $presentacion = $productos->find($item['presentacion_producto_id']);
                 if($presentacion != null){
                     $key_array[$i] = $item['presentacion_producto_id'];
                     $valid_array[$i] = $item;
                     $productosCart[$i] = $presentacion;
+                    $count += $cantidad;
+                    $subtotal += $cantidad * $presentacion['precio_consumidor'];
                     //$idAndCantidad[$presentacion->id] = array('cantidad' => $item['cantidad']);
                     $i++;
                 }
@@ -300,7 +335,8 @@ class CartController extends Controller
         }
 
 
-        return ['cart' => $valid_array, 'prods' => $productosCart];
+        return ['cart' => $valid_array, 'prods' => $productosCart, 
+                'subtotal' => $subtotal, 'count' => $count];
 
     }
 }

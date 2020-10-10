@@ -9,6 +9,7 @@ use App\Http\Requests\StoreUser;
 use App\User;
 use MercadoPago;
 
+
 class UserController extends Controller
 {
 

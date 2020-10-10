@@ -337,8 +337,13 @@ function submitCart(redirect){
         $.post('/validate-cart', 
         {
             "_token": $("meta[name='csrf-token']").attr("content"),
-            "updates"  : updates,
-            "redirect":redirect
+            "updates"  : updates
+            //"redirect":redirect
+        })
+        .always(function() {
+            if(redirect=="cartView")
+                window.location.href = '/carrito-de-compras';
+            else window.location.href = '/informacion-de-envio';
         });
     }
     else{
@@ -687,4 +692,11 @@ function onChangeNewAddress(input){
         saltarA($("#form-nueva-direccion"));
         $("#form-nueva-direccion input").first().focus();
     }
+}
+
+function fadeNav(){
+    $(window).scroll(function(){
+        var alto = $("#head-tienda").outerHeight();
+        $("#topbar").toggleClass('nav-white', $(this).scrollTop()>alto);
+    });
 }

@@ -71,45 +71,40 @@ class TiendaController extends Controller
     }
 
     
-    public function updateProduct(Request $request, $id)
-    {
+    public function webhookStripe(Request $request){
+        \Stripe\Stripe::setApiKey('sk_test_51HWep7BQhjFyWJ1M2jUFVKFG6rbzJJjLftB49oYsYt8Wc6SZjU9zLnNo2qWzxolaxyIsUSaJiirolAdQayfbQADh00p9zcXU5o');
+
+        $payload = @file_get_contents('php://input');
+        $event = null;
+
+        try {
+            $event = \Stripe\Event::constructFrom(
+                json_decode($payload, true)
+            );
+        } catch(\UnexpectedValueException $e) {
+            // Invalid payload
+            http_response_code(400);
+            exit();
+        }
+        // Handle the event
+        switch ($event->type) {
+            case 'payment_intent.succeeded':
+                $paymentIntent = $event->data->object; // contains a StripePaymentIntent
+                handlePaymentIntentSucceeded($paymentIntent);
+                break;
+            case 'payment_method.attached':
+                $paymentMethod = $event->data->object; // contains a StripePaymentMethod
+                handlePaymentMethodAttached($paymentMethod);
+                break;
+            // ... handle other event types
+            default:
+                echo 'Received unknown event type ' . $event->type;
+        }
+
+        http_response_code(200);
+    }
+
         
-    }
-
-    public function updateCaractProduct(Request $request, $id)
-    {
-        
-
-    }
-
-    public function deleteCaractProduct(Request $request, $id)
-    {
-
-    }
-
-    public function updatePresentacion(Request $request, $id_pres)
-    {
-        
-
-    }
-
-    public function addPresentaciones(StorePresentacion $request, $id){
-        
-    }
-
-
-    public function destroyPresentacion($id)
-    {
-       
-
-    }
-
-    public function uploadPresentacion($id)
-    {
-        
-    }
-
-    
     public function getDataAjax()
     {
         $productos = TodosProductos::where('estado_presentacion','>',0)->get();

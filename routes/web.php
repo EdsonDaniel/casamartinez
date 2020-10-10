@@ -60,6 +60,8 @@ Route::get('/informacion-de-envio', 'CartController@envio');
 Route::post('/checkout', 'CartController@checkout');
 Route::get('/checkout', 'CartController@pagar');
 
+Route::post('/checkout/end-point/stripe','TiendaController@webhookStripe');
+
 
 
 Route::get('/dash', function () {

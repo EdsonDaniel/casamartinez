@@ -379,7 +379,7 @@
           </div>
 
           <!-- Button -->
-          <button class="btn btn-block btn-dark btn-modals" form="formDireccion" type="button" onclick="toPay()">
+          <button class="btn btn-block btn-dark btn-modals" form="formDireccion" type="submit" >
             Proceder al pago
           </button>
 
@@ -390,6 +390,7 @@
 @endsection
 
 @section('scripts')
+<!--<script src="https://js.stripe.com/v3/"></script>-->
 <script type="text/javascript">
   var productos = {!! json_encode($productos) !!};
   var logged = @json(Auth::check());
@@ -397,6 +398,6 @@
   var inCart = {!! json_encode($inCart) !!};
   @endif
 </script>
-<script type="text/javascript" src="/js/custom/tiendaEfectos.js"></script>
+<!--<script type="text/javascript" src="/js/custom/tiendaEfectos.js"></script>-->
 <script type="text/javascript" src="/js/custom/listCheckout.js"></script>
 @endsection

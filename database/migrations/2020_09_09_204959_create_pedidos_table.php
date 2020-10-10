@@ -18,8 +18,8 @@ class CreatePedidosTable extends Migration
             $table->string('metodo_pago',100);
             $table->timestamp('fecha_envio')->nullable();
             $table->timestamp('fecha_entrega')->nullable();
-            $table->string('id_rastreo');
-            $table->string('paqueteria');
+            $table->string('id_rastreo')->nullable();
+            $table->string('paqueteria')->nullable();
             $table->double('monto_total',8,2);
             $table->double('costo_envio',8,2);
             $table->integer('estado')->default('0');

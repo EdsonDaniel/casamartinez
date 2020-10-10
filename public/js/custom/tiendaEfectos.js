@@ -32,12 +32,7 @@ function loadData() {
 	//console.log(parents_presentations);
 }
 
-function fadeNav(){
-	$(window).scroll(function(){
-		var alto = $("#head-tienda").outerHeight();
-		$("#topbar").toggleClass('nav-white', $(this).scrollTop()>alto);
-	});
-}
+
 
 
  

@@ -1,3 +1,5 @@
+//var stripe = Stripe('pk_test_51HWep7BQhjFyWJ1MECyoekgLuFd9kqS2jVgbbtOX9wlMtCootWROVQui9lAgRzZUB3zCCslYm99EEySZaXJB5obi00JPg6JE36');
+var elements;
 function toPay(){
 
 	var cart = localStorage.getItem("shoppingCart");
@@ -7,12 +9,25 @@ function toPay(){
     if(Object.keys(cart).length && logged ){
     	var data = $('#formDireccion').serializeArray();
     	data.push({name:'cart', value: cart});
-    	console.log(data);
+    	//console.log(data);
     	$.post('/checkout', data);
     }
     
 }
 
+$( document ).ready(function() {
+	addListeners();
+	fadeNav();
+	createInputCart();
+	/*]elements = stripe.elements();
+	var style = {
+		base: {
+			color: "#32325d",
+		}
+	};
+	var card = elements.create("card", { style: style });
+	card.mount("#card-element");*/
+});
 
 function loadInfoCP(input){
 	var terminacion="";
@@ -61,4 +76,10 @@ function invalidCP(input){
 	inputs.prop("disabled");
 	$(input).addClass("is-invalid");
 	$(input).parent().next().addClass("d-block");
+}
+
+function createInputCart(){
+	var cart = localStorage.getItem("shoppingCart");
+	$("#formDireccion").append('<input type="hidden" name="cart" id="cartInput" value=\'' 
+		+ cart +'\'>');
 }
