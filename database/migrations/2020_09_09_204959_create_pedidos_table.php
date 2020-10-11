@@ -23,7 +23,8 @@ class CreatePedidosTable extends Migration
             $table->double('monto_total',8,2);
             $table->double('costo_envio',8,2);
             $table->integer('estado')->default('0');
-            //$table->double('monto_total',8,2);
+            $table->string('id_pago');
+            $table->string('email');
             $table->foreignId('user_id')->nullable()->constrained('users');
             $table->foreignId('direccion_envio_id')->constrained('direcciones_envio');
             $table->foreignId('direccion_facturacion_id')->nullable()->constrained('direcciones_envio');

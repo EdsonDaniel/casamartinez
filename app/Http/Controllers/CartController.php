@@ -48,6 +48,7 @@ class CartController extends Controller
 
         $subtotal = session('subtotal', 0);
         $count = session('count', 0);
+        $cart = json_encode( session('cart'), true );
         if($subtotal < 1 || $count < 1)
             return redirect ("/tienda");
 
@@ -57,7 +58,10 @@ class CartController extends Controller
             'amount' => $subtotal,
             'currency' => 'mxn',
             // Verify your integration in this guide by including this parameter
-            'metadata' => ['integration_check' => 'accept_a_payment'],
+            'metadata' => [
+                'integration_check' => 'accept_a_payment',
+                'products'          => $cart
+            ],
         ]);
         $productos = ProductosTienda::all();
         return view('pay')->with(['productos' => $productos, 'intent' => $intent]);

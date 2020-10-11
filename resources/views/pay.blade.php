@@ -58,7 +58,7 @@
     </div>
   </nav>
 
-  <section style="font-family: 'Nunito', sans-serif;">
+  <section style="font-family: 'Nunito', sans-serif;" id="pageContent">
     <div class="container">
       <div class="row">
         <div class="col-6">
@@ -189,7 +189,8 @@
                     <div class="spinner hidden" id="spinner"></div>
                     <span id="button-text">Pagar</span>
                   </button>
-                  <p id="card-error" role="alert"></p>
+                  <p class="error-msg mt-2" role="alert" id="card-error">
+                  </p>
                   <p class="result-message hidden">
                     Payment succeeded, see the result in your
                     <a href="" target="_blank">Stripe dashboard.</a> Refresh the page to pay again.
@@ -207,7 +208,58 @@
         </div>
       </div>
     </div>
+    <input type="hidden" name="" id="client_secret" value="{{$intent->client_secret}}">
   </section>
+
+
+  <!-- Modal response -->
+  <div class="modal fade" id="modalResponse" tabindex="-1" role="dialog" aria-labelledby="modalResponseLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content" style="font-family: 'Nunito', sans-serif;">
+        
+        <div id="payment-succes" class="d-none">
+          <div class="modal-header">
+            <h5 class="modal-title text-center">Tu pago se ha realizado satisfactoriamente</h5>
+          </div>
+          
+          <div class="modal-body">
+            <div class="d-flex justify-content-center text-success "><i data-feather="check-circle" class="w-25 h-auto"></i>
+            </div>
+            <div class="mt-4 px-2">
+              <p class="text-center" id="ok-mensaje">¡Gracias por tu compra!</p>
+              <p style="font-size: 0.9rem;"> Se ha enviado un e-mail a tu cuenta para ver los detalles del pedido.</p>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success btn-block" data-dismiss="modal">Aceptar</button>
+          </div>
+          
+        </div>
+
+        <div id="payment-fayled" class="d-none">
+          <div class="modal-header">
+            <h5 class="modal-title text-center" id="modalResponseLabelError">Ocurrió un error al procesar tu pago</h5>
+          </div>
+          <div class="modal-body">
+            <div class="d-flex justify-content-center  text-danger">
+              <i data-feather="x-circle" class="w-25 h-auto"></i>
+            </div>
+            <div class="px-2">
+              <p class="text-center mt-3">Lamentamos esta situación.</p>
+              <p style="font-size: 0.9rem;">Intenta utilizar un método de pago diferente o puedes contactarnos para conocer más detalles sobre nuestros métodos de pago.</p>
+              <p class="mt-2 error-msg" ></p>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-dark btn-block" data-dismiss="modal">Aceptar</button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
 
   
 @endsection
@@ -218,24 +270,13 @@
 <!--<script type="text/javascript" src="/js/custom/listCheckout.js"></script>-->
 <script type="text/javascript">
   //var stripe = Stripe('pk_test_51HWep7BQhjFyWJ1MECyoekgLuFd9kqS2jVgbbtOX9wlMtCootWROVQui9lAgRzZUB3zCCslYm99EEySZaXJB5obi00JPg6JE36');
-  var stripe = Stripe('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
+  //var stripe = Stripe('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
+  var stripe = Stripe("pk_test_51HWep7BQhjFyWJ1MECyoekgLuFd9kqS2jVgbbtOX9wlMtCootWROVQui9lAgRzZUB3zCCslYm99EEySZaXJB5obi00JPg6JE36");
+
+  var clientSecret = $("#client_secret").val();
   var elements;
   $( document ).ready(function() {
     fadeNav();
-    /*elements = stripe.elements();
-    var style = {
-      base: {
-        color: "#32325d",
-      }
-    };*/
-    //var card = elements.create("card", { style: style });
-    //card.mount("#card-element");
-    /*var cardNumber = elements.create("cardNumber");
-    cardNumber.mount("#inputCardNumber");
-    var cardExpiry = elements.create("cardExpiry");
-    cardExpiry.mount("#inputCardExpiry");
-    var cardCvc = elements.create("cardCvc");
-    cardCvc.mount("#inputCardCvc");*/
     loadStyles();
   });
 
@@ -245,7 +286,7 @@
   var elements = stripe.elements();
     // Floating labels
     var inputs = document.querySelectorAll('.inputs-card .input');
-    document.querySelector(".button").disabled = true;
+    document.getElementById("submit-strippe").disabled = true;
     Array.prototype.forEach.call(inputs, function(input) {
       input.addEventListener('focus', function() {
         input.classList.add('focused');
@@ -300,15 +341,13 @@
 
     var cardExpiry = elements.create('cardExpiry', {
       style: elementStyles,
-      classes: elementClasses,
-      showIcon:true
+      classes: elementClasses
     });
     cardExpiry.mount('#card-expiry');
 
     var cardCvc = elements.create('cardCvc', {
       style: elementStyles,
-      classes: elementClasses,
-      showIcon:true
+      classes: elementClasses
     });
     cardCvc.mount('#card-cvc');
 
@@ -330,8 +369,7 @@
     var form = document.getElementById("payment-form");
     form.addEventListener("submit", function(event) {
       event.preventDefault();
-      // Complete payment when the submit button is clicked
-      payWithCard(stripe, card, data.clientSecret);
+      payWithCard(stripe, cardNumber, clientSecret);
     });
 
     var payWithCard = function(stripe, card, clientSecret) {
@@ -344,57 +382,67 @@
       })
       .then(function(result) {
         if (result.error) {
-          // Show error to your customer
           showError(result.error.message);
         } else {
-          // The payment succeeded!
           orderComplete(result.paymentIntent.id);
         }
       });
   };
-    /* ------- UI helpers ------- */
-    // Shows a success message when the payment is complete
     var orderComplete = function(paymentIntentId) {
       loading(false);
       document
         .querySelector(".result-message a")
         .setAttribute(
           "href",
-          "https://dashboard.stripe.com/test/payments/" + paymentIntentId
+          "https://dashboard.stripe.com/test/payments/" //+ paymentIntentId
         );
       document.querySelector(".result-message").classList.remove("hidden");
-      document.querySelector("button").disabled = true;
+      $("#pageContent button").prop("disabled", true);
+      launchModal(true);
     };
-    // Show the customer the error from Stripe if their card fails to charge
+    
     var showError = function(errorMsgText) {
       loading(false);
-      var errorMsg = document.querySelector("#card-error");
-      errorMsg.textContent = errorMsgText;
-      setTimeout(function() {
-        errorMsg.textContent = "";
-      }, 4000);
+      //var errorMsg = document.querySelector("#card-error");
+      //errorMsg.textContent = errorMsgText;
+      $(".error-msg").text(errorMsgText);
+      launchModal(false);
     };
-    // Show a spinner on payment submission
+    
     var loading = function(isLoading) {
       if (isLoading) {
-        // Disable the button and show a spinner
-        document.querySelector("button").disabled = true;
+        $("#submit-strippe").addClass("btn-loadding").prop("disabled",true);
+        $(":input").prop("readonly", true);
         document.querySelector("#spinner").classList.remove("hidden");
         document.querySelector("#button-text").classList.add("hidden");
       } else {
-        document.querySelector("button").disabled = false;
+        $(":input").prop("readonly", false);
+        $("#submit-strippe").removeClass("btn-loadding").prop("disabled",false);
         document.querySelector("#spinner").classList.add("hidden");
         document.querySelector("#button-text").classList.remove("hidden");
       }
     };
+
+    $("#modalResponse").on('hidden.bs.modal', function (e) {
+      setTimeout(function() {
+        $("#card-error").text("");
+      }, 6000);
+    });
   }
-  /*cardElement.on('change', function(event) {
-  var displayError = document.getElementById('card-errors');
-  if (event.error) {
-    displayError.textContent = event.error.message;
-  } else {
-    displayError.textContent = '';
+
+  function launchModal(result){
+    if(result){ 
+      $("#payment-succes").removeClass("d-none"); 
+      $("#payment-fayled").addClass("d-none");
+    }
+    else{
+      $("#payment-succes").addClass("d-none");
+      $("#payment-fayled").removeClass("d-none");
+    }
+    $("#modalResponse").modal();
   }
-});*/
+
+
+  
 </script>
 @endsection

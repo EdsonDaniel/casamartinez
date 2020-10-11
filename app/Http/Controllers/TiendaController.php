@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\OtrasCaracteristicas;
-use App\ProductosCaracteristicas;
 use App\Productos;
 use App\User;
 use App\Carrito;
@@ -14,8 +12,12 @@ use App\PresentacionesProducto;
 use App\TodosProductos;
 use App\Recomendados;
 use App\ProductosTienda;
+use App\Pedido;
+use App\DireccionesUsuario;
+use App\DireccionesEnvio;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Validator;
+use App\Notifications\ConfirmacionCompra;
 
 
 class TiendaController extends Controller
@@ -89,14 +91,15 @@ class TiendaController extends Controller
         // Handle the event
         switch ($event->type) {
             case 'payment_intent.succeeded':
-                $paymentIntent = $event->data->object; // contains a StripePaymentIntent
-                handlePaymentIntentSucceeded($paymentIntent);
+                $paymentIntent = $event->data->object;
+                $pedidoId = $this->createPedido($paymentIntent);
+                //handlePaymentIntentSucceeded($paymentIntent);
                 break;
-            case 'payment_method.attached':
+            /*case 'payment_method.attached':
                 $paymentMethod = $event->data->object; // contains a StripePaymentMethod
                 handlePaymentMethodAttached($paymentMethod);
                 break;
-            // ... handle other event types
+            // ... handle other event types*/
             default:
                 echo 'Received unknown event type ' . $event->type;
         }
@@ -104,15 +107,46 @@ class TiendaController extends Controller
         http_response_code(200);
     }
 
+    public function createPedido($data){
+        $metadata = $data['metadata'];
+        $costo_envio = $metadata['costo_envio'];
+        $user = $metadata['id'];
+        $extra_address_info = $metadata['extra_data'];
+        $direccion_envio = $this->createDireccionEnvio($metadata['direccion_envio']);
+
+        $direccion_facturacion = DireccionesEnvio::create([
+            'calle'           => $data['shipping']['address']['line1'],
+            'numero'          => $extra_address_info['numero'],
+            'numero_interior' => $extra_address_info['numero_interior'],
+            'apartamento'     => $data['shipping']['address']['line2'],
+            'colonia'         => $data['shipping']['address']['city'],
+            'municipio'       => $extra_address_info['municipio'],
+            'estado'          => $data['shipping']['address']['state'],
+            'codigo_postal'   => $data['shipping']['address']['postal_code'],
+            'telefono'        => $data['shipping']['phone'],
+            'nombre_residente'=> $data['shipping']['name']
+        ]);
         
-    public function getDataAjax()
-    {
-        $productos = TodosProductos::where('estado_presentacion','>',0)->get();
-        return response()->json($productos);
+
+        $pedido = Pedido::create([
+            'metodo_pago' => 'Tarjeta con Stripe',
+            'monto_total' => $data['amount'],
+            'costo_envio' => $costo_envio,
+            'user_id',    => $user,
+            'direccion_envio_id', => $direccion_envio,
+            'direccion_facturacion_id' => $direccion_facturacion->id;
+            'id_pago'     => $data['id'],
+            'email'       => $data['receipt_email']
+        ]);
+
+        $pedido->notify(new NotificacionCompra());
+
+        return $pedido->id;
+
+
     }
-    public function getDataAjaxBaja()
-    {
-        $productos = TodosProductos::where('estado_presentacion', '<', 1)->get();
-        return response()->json($productos);
+
+    public function sendEmailForPurchase(){
+
     }
 }
