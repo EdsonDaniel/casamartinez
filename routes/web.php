@@ -56,7 +56,7 @@ Route::post('/update-cart', 'CartController@updateCart');
 Route::post('/validate-cart', 'CartController@validateCart');
 
 Route::get('/carrito-de-compras', 'CartController@index');
-Route::get('/informacion-de-envio', 'CartController@envio');
+Route::get('/informacion-de-envio', 'CartController@addInfoEnvio');
 Route::post('/checkout', 'CartController@checkout');
 Route::get('/checkout', 'CartController@pagar');
 

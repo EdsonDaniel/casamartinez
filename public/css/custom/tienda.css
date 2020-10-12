@@ -676,9 +676,17 @@ transition: all .2s ease-in-out;
 }
 .btn-back:focus{ box-shadow: none; }
 
-.icon-edit-input{ width: 1.2rem; opacity: 0; transition: opacity 0.4s ease-in-out;}
+.msg-error{
+  display: block;
+  transition: opacity 0.3s;
+  margin: 0.2rem;
+  font-size: 80%;
+  color: #e3342f;
+}
+.toPrice{ letter-spacing: 1px; }
+.icon-edit-input{ width: 1.2rem; transition: opacity 0.4s ease-in-out;}
 .data-pay{ padding-top: 0.3rem; padding-bottom: 0.3rem;  }
-.data-pay:hover .icon-edit-input{ opacity: 1; }
+/*a .icon-edit-input{ opacity: 1; }*/
 .icon-feather{ width: 1rem; }
 @media(max-width: 768px){
     .custom-control-inline{margin: 0 !important;}

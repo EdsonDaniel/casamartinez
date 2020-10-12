@@ -1,6 +1,6 @@
 var subtotal = 0;
 var count = 0;
-var change = false;
+//var change = false;
 var updates={};
 
 function isBreakpoint( alias ) {
@@ -29,6 +29,7 @@ function addListeners() {
     if ($("#listCheckout").length > 0) {
         loadChecoutItems();
     }
+    fadeNav();
 }
 function btnPlus(btn){
     var divParent = $(btn).closest("div.input-group");
@@ -186,7 +187,7 @@ function listenerModal(){
              .text(presentation.formated_price + " MXN");
 
         createPresentationsModal(product.presentations);
-        addlistenerRadio();
+        //addlistenerRadio();
     });
 
     $('#modalProduct').on('hidden.bs.modal', function(event){
@@ -204,7 +205,6 @@ function listenerModal(){
         var price_cantidad = $("#listProducts span[data-price]");
         
         count = 0;
-        //console.log(typeof count, count, "count");
         subtotal = 0;
         var suma = 0;
         for (var i = inputs.length - 1; i >= 0; i--) {
@@ -221,7 +221,7 @@ function listenerModal(){
 
     });
     $('#modalShoppingCart').on('hide.bs.modal', function(event){
-        if (logged && change)
+        if (logged && Object.keys(updates).length)
             syncCart();
     });
 }
@@ -236,7 +236,6 @@ function createPresentationsModal(presentations){
     //console.log($("#div-presentations").find(":radio").first());
 
 }
-
 function createRadioPresentation(presentacion){
     $("#modalImgContainer").append(
         ' <img class="img-fluid my-md-5 fade transition-img" id="img-'
@@ -250,7 +249,7 @@ function createRadioPresentation(presentacion){
         + 'name="modalProductPresentacion" '
         + 'data-toggle="form-caption" data-target="#img-'
         + presentacion.id_presentacion + '" '
-        + 'value="' + presentacion.presentacion +'" > '
+        + 'value="' + presentacion.presentacion +'" onchange="listenerRadio(this)"> '
         + '<label class="custom-control-label pb-1" for="modalPresentation'
         + presentacion.id_presentacion +'">'
         + '<span class="embed-responsive embed-responsive-1by1 bg-cover" '
@@ -261,13 +260,16 @@ function createRadioPresentation(presentacion){
     return div;
 
 }
-
-function addlistenerRadio(){
-    $('[data-toggle="form-caption"]').change( function(){
+//function addlistenerRadio(){
+function listenerRadio(input){
+    /*$('[data-toggle="form-caption"]').change( function(){
         $("#modalProductPresentationCaption").text($(this).val());
         $("#modalImgContainer img").removeClass("show");
         $($(this).data("target")).addClass("show");
-    });
+    });*/
+    $("#modalProductPresentationCaption").text($(input).val());
+    $("#modalImgContainer img").removeClass("show");
+    $($(input).data("target")).addClass("show");
 }
 
 function getDataProd(id){
@@ -285,7 +287,7 @@ function toPrice(number){
 function loadCantidad(){
     var shoppingCart = localStorage.getItem("shoppingCart");
     shoppingCart = JSON.parse(shoppingCart);
-    console.log(shoppingCart);
+    //console.log(shoppingCart);
     var subtotalProduct = $("#listCarrito .price-cantidad");
     var inputs = $("#listCarrito .input-cantidad").val( function(i, val){
         var monto = shoppingCart[i].cantidad * $(subtotalProduct[i]).data("price");
@@ -299,9 +301,8 @@ function loadCantidad(){
 }
 
 function loadChecoutItems(){
-    $("#formDireccion :input").removeAttr("required");
+    //$("#formDireccion :input").removeAttr("required");
     var productsInCart = localStorage.getItem('shoppingCart');
-    sessionStorage.setItem('shoppingCart',productsInCart);
     if(productsInCart == null || productsInCart == "[]"){
         emptyCart();
         return;
@@ -314,31 +315,36 @@ function loadChecoutItems(){
             productsInCart[i].presentacion_producto_id, 
             productsInCart[i].cantidad );
         countp = countp + productsInCart[i].cantidad;
-        console.log(countp)
-        console.log(subtotall);
+        //console.log(countp)
+        //console.log(subtotall);
     }
     $("#monto-subtotal3").text("$"+toPrice(subtotall));
     $("#countp").text("("+ countp +")");
+    $("#direccionFacturacion :input, #password").prop("required", false);
+    $("#mismaDireccion").change( function(){
+        $("#direccionFacturacion :input").prop("required", $(this).prop("checked"));
+    });
+    $("#registrarse").change( function(){
+        $("#password").prop("required", $(this).prop("checked"));
+    })
 }
 
 function listenerBtnCart(){
-    $("#cartButtons button").click( function(){
+    $("#cartButtons button, #toCheck").click( function(){
         $("#backdrop").removeClass("d-none").addClass("show");
         submitCart($(this).data("redirect"));
     });
     $("#backToShop").click( function(){
+        if (logged)
         syncCart();
     });
 }
 function submitCart(redirect){
-    //var cart = localStorage.getItem("shoppingCart");
-    //cart = JSON.parse(cart);
-    if(Object.keys(updates).length){
+    if(Object.keys(updates).length && logged){
         $.post('/validate-cart', 
         {
             "_token": $("meta[name='csrf-token']").attr("content"),
             "updates"  : updates
-            //"redirect":redirect
         })
         .always(function() {
             if(redirect=="cartView")
@@ -378,16 +384,16 @@ function updateLocalCart(id, cantidad){
                 pushRemoteCart(id,0);
                 delete updates[id];
             }
-            else{
+            else if(cantidad <= 12){
                 localCart[i].cantidad = cantidad;
                 updates[id] = cantidad;
             }
             
             localCart = JSON.stringify(localCart);
             localStorage.setItem("shoppingCart",localCart);
-            console.log(updates);
+            //console.log(updates);
             //pushRemoteCart(id,cantidad);
-            change = true;
+            //change = true;
             return;
         }
     }
@@ -474,7 +480,6 @@ function pushRemoteCart(idPresentation, cantidad){
         "cantidad": cantidad
     })
     .done(function( data ) {
-        console.log(data);
         //inCart = data;
         //loadCart();
     });
@@ -581,8 +586,6 @@ function deleteAll(){
     });
 }
 function syncCart(){
-    //var cart = localStorage.getItem("shoppingCart");
-    //cart = JSON.parse(cart);
     if(Object.keys(updates).length)
     $.post('/update-cart', 
     {
@@ -590,8 +593,7 @@ function syncCart(){
         "updates"  : updates
     })
     .done(function( data ) {
-        console.log(data);
-        change=false;
+        //change=false;
         updates={};
     });
 }
@@ -685,11 +687,16 @@ function createListCheckout(id, cantidad){
 }
 function saltarA(id, tiempo) {
     var tiempo = tiempo || 200;
-    $("html, body").animate({ scrollTop: $(id).offset().top }, tiempo);
+    $("html, body").animate({ scrollTop: $(id).offset().top - 70 }, tiempo);
 }
 function onChangeNewAddress(input){
     if($(input).is(":checked")){
-        saltarA($("#form-nueva-direccion"));
+        var contrario = $($(input).data("relative"));
+        contrario.prop("checked",false);
+        contrario.next().attr("aria-expanded", false);
+        $(contrario.next().data("target")).removeClass("show");
+        saltarA($(input));
+        if ($(input).hasClass("toF"))
         $("#form-nueva-direccion input").first().focus();
     }
 }
@@ -699,4 +706,11 @@ function fadeNav(){
         var alto = $("#head-tienda").outerHeight();
         $("#topbar").toggleClass('nav-white', $(this).scrollTop()>alto);
     });
+}
+
+function changeToPrice(){
+    var prices = $(".toPrice");
+    for (var i = prices.length - 1; i >= 0; i--) {
+        $(prices[i]).text( '$' + toPrice( parseFloat( prices[i].innerText) ) );
+    }
 }

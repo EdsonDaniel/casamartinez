@@ -13,11 +13,13 @@ use App\TodosProductos;
 use App\Recomendados;
 use App\ProductosTienda;
 use App\Pedido;
+use App\Notifications\ConfirmacionCompra;
 use App\DireccionesUsuario;
 use App\DireccionesEnvio;
+
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Validator;
-use App\Notifications\ConfirmacionCompra;
+
 
 
 class TiendaController extends Controller
@@ -47,13 +49,6 @@ class TiendaController extends Controller
 
     public function indexCarrito(){
         $recomendados = Recomendados::all();
-        //return view 
-    }
-    
-    public function create()
-    {
-        $caracteristicas = OtrasCaracteristicas::all();
-        return view('admin.addProductos')->with('caracteristicas', $caracteristicas);
     }
 
     public function store(StoreProduct $request)
@@ -111,42 +106,64 @@ class TiendaController extends Controller
         $metadata = $data['metadata'];
         $costo_envio = $metadata['costo_envio'];
         $user = $metadata['id'];
-        $extra_address_info = $metadata['extra_data'];
-        $direccion_envio = $this->createDireccionEnvio($metadata['direccion_envio']);
+        //$extra_address_info = $metadata['extra_data'];
 
-        $direccion_facturacion = DireccionesEnvio::create([
+        $direccion_envio = DireccionesEnvio::create([
             'calle'           => $data['shipping']['address']['line1'],
-            'numero'          => $extra_address_info['numero'],
-            'numero_interior' => $extra_address_info['numero_interior'],
+            'numero'          => $metadata['no_exterior'],
+            'numero_interior' => $metadata['no_interior'],
             'apartamento'     => $data['shipping']['address']['line2'],
             'colonia'         => $data['shipping']['address']['city'],
-            'municipio'       => $extra_address_info['municipio'],
+            'municipio'       => $metadata['municipio'],
             'estado'          => $data['shipping']['address']['state'],
             'codigo_postal'   => $data['shipping']['address']['postal_code'],
             'telefono'        => $data['shipping']['phone'],
-            'nombre_residente'=> $data['shipping']['name']
+            'nombre_residente' => $data['shipping']['name']
         ]);
-        
+
+        $direccion_facturacion = $metadata['addressFac'];
+        if($direccion_facturacion == '0') $direccion_facturacion = $direccion_envio->id;
+        else $direccion_facturacion = null;//$this->createDireccionEnvio($direccion_facturacion);       
 
         $pedido = Pedido::create([
             'metodo_pago' => 'Tarjeta con Stripe',
             'monto_total' => $data['amount'],
             'costo_envio' => $costo_envio,
-            'user_id',    => $user,
-            'direccion_envio_id', => $direccion_envio,
-            'direccion_facturacion_id' => $direccion_facturacion->id;
+            'user_id'    => $user,
+            'direccion_envio_id' => $direccion_envio->id,
+            'direccion_facturacion_id' => $direccion_facturacion,
             'id_pago'     => $data['id'],
-            'email'       => $data['receipt_email']
+            'email'       => $metadata['email_custom']
         ]);
 
-        $pedido->notify(new NotificacionCompra());
+        $pedido->notify(new ConfirmacionCompra());
 
         return $pedido->id;
 
 
     }
 
-    public function sendEmailForPurchase(){
+    public function createDireccionEnvio($data){
+        $objectData = json_decode($data);
+
+        $direccion_facturacion = DireccionesEnvio::create([
+            'calle'           => $objectData['calle_facturacion'],
+            'numero'          => $objectData['no_exterior_facturacion'],
+            'numero_interior' => $objectData['no_interior_facturacion'],
+            'apartamento'     => $objectData['apartamento_facturacion'],
+            'colonia'         => $objectData['colonia_facturacion'],
+            'municipio'       => $objectData['municipio_facturacion'],
+            'estado'          => $objectData['estado_facturacion'],
+            'codigo_postal'   => $objectData['codigo_postal_facturacion'],
+            'telefono'        => $objectData['telefono_facturacion'],
+            'nombre_residente' => $objectData['nombre_facturacion'].' '.$objectData['apellidos_facturacion'],
+        ]);
+
+        return $direccion_facturacion->id;
+    }
+
+    public function createProductosComprados($data){
 
     }
+
 }

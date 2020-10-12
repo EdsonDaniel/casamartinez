@@ -14,5 +14,6 @@ class ProductosTienda extends Model
      protected $casts = [
         'estado_presentacion' => 'integer',
         'precio_consumidor'	  => 'float',
+        'peso'	  => 'float'
     ];
 }

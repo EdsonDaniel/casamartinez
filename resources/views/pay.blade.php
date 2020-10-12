@@ -61,150 +61,234 @@
   <section style="font-family: 'Nunito', sans-serif;" id="pageContent">
     <div class="container">
       <div class="row">
-        <div class="col-6">
+        <div class="col-8">
           <div class="row">
             <div class="col-12">
-              <div class="card">
-                <div class="card-body px-3 data-pay">
-                  <span class="mr-4">Datos de contacto:</span>
-                  <span class="text-secondary"> edsondaniel@gmail.com</span>
-                  <span class="float-right">
-                    <a href=""><i data-feather="edit" class="icon-edit-input"></i></a>
-                  </span>
+
+              <div class="accordion" id="direccion-envio">
+                <div class="card rounded">
+                  <div class="card-header" id="headEnvio" style="line-height: 1; color: #6c757d;">
+                      <a class="btn-block" role="button" data-toggle="collapse" data-target="#infoEnvio" aria-expanded="true" aria-controls="infoEnvio">
+                        Enviar a: 
+                        <span data-name="{{$direccion['nombre'].' '.$direccion['apellidos']}}" @if($direccionFacturacion == '0') id="customer_name" @endif>
+                          {{$direccion['nombre'].' '.$direccion['apellidos']}}
+                        </span>
+                        <i class="float-right fas fa-angle-down"></i>
+                      </a>
+                  </div>
+
+                  <div id="infoEnvio" class="collapse show" aria-labelledby="headEnvio" data-parent="#direccion-envio">
+                    <div class="card-body py-2">
+                      <p class="m-0">{{$direccion['calle']}} No. {{$direccion['no_exterior']}} 
+                        @if($direccion['no_interior']) No. Interior {{$direccion['no_interior']}} @endif
+                        <span class="float-right">
+                          <a href="">
+                            <i data-feather="edit" class="icon-edit-input"></i>
+                          </a>
+                        </span>
+                      </p>
+                      @if($direccion['apartamento'])
+                        <p class="m-0">{{$direccion['apartamento']}}</p>
+                      @endif
+                      <p class="m-0">{{$direccion['colonia']}}</p>
+                      <p class="m-0" 
+                      @if($direccionFacturacion == '0') id="zip_code" data-code="{{$direccion['codigo_postal']}}" @endif>{{$direccion['municipio']}}, {{$direccion['estado']}}, {{$direccion['codigo_postal']}}</p>
+                      <p class="m-0">Teléfono: {{$direccion['telefono']}}</p>
+                      <p class="m-0"></p>
+                    </div>
+                  </div>
+                
                 </div>
+                
+                @if($direccionFacturacion != '0')
+                  <div class="card rounded">
+                    <div class="card-header" id="headFacturacion" style="line-height: 1;">
+                      <a class="btn-block" role="button" data-toggle="collapse" data-target="#infoFacturacion" aria-expanded="false" aria-controls="infoEnvio">
+                        Nombre en la tarjeta: 
+                        <span data-name="{{$direccionFacturacion['nombre'].' '.$direccion['apellidos']}}" id="customer_name">
+                          {{$direccionFacturacion['nombre'].' '.$direccion['apellidos']}}
+                        </span>
+                        <i class="float-right fas fa-angle-down"></i>
+                      </a>
+                    </div>
+
+                    <div id="infoFacturacion" class="collapse" aria-labelledby="headFacturacion" data-parent="#direccion-envio">
+                      <div class="card-body py-2">
+                        <p class="m-0">
+                          {{$direccionFacturacion['calle_facturacion']}} No. {{$direccionFacturacion['no_exterior_facturacion']}} 
+                          @if($direccionFacturacion['no_interior_facturacion']) No. Interior {{$direccionFacturacion['no_interior_facturacion']}} @endif
+                        </p>
+                        @if($direccion['apartamento_facturacion'])
+                          <p class="m-0">{{$direccionFacturacion['apartamento_facturacion']}}</p>
+                        @endif
+                        <p class="m-0">{{$direccionFacturacion['colonia_facturacion']}}</p>
+                        <p class="m-0" id="zip_code" data-code="{{$direccionFacturacion['codigo_postal_facturacion']}}">{{$direccionFacturacion['municipio_facturacion']}}, {{$direccionFacturacion['estado_facturacion']}}, {{$direccionFacturacion['codigo_postal_facturacion']}}</p>
+                        <p class="m-0">Teléfono: {{$direccionFacturacion['telefono_facturacion']}}</p>
+                        <p class="m-0"></p>
+                      </div>
+                    </div>
+                  </div>
+                @else
+                  <div class="col px-2 mt-3">
+                    <!-- Checkbox -->
+                    <div style="line-height: 2;" class="d-flex align-items-center">
+                      <i class="fas fa-check-square mr-2"></i>
+                        Datos de facturación igual a la dirección de envío.
+                      <span class="ml-2" style="line-height: 1;">
+                        <a href=""> <i data-feather="edit" class="icon-edit-input" style="height: 1rem;"></i></a>
+                      </span>
+                    </div>
+                  </div>
+                @endif
               </div>
-              <div class="card">
-                <div class="card-body px-3 data-pay">
-                  <span class="mr-4">Dirección de envío:</span> 
-                  <span class="text-secondary">cuauhtemoc 7, 68250 Soledad Etla OAX, México</span>
-                  <span class="float-right">
-                    <a href=""> <i data-feather="edit" class="icon-edit-input"></i></a>
-                  </span>
-                </div>
-              </div>
+
+
             </div>
           </div>
 
           <!--pago-->
-          <div class="row mt-4">
+          <div class="row my-4">
             <div class="col-12">
               <h5>Métodos de Pago</h5>
             </div>
-          </div>
 
-          <!--<div class="row">
-            <div class="col-12">
-              <div class="sr-root">
-                <div class="sr-main">
-                  <form id="payment-form" class="sr-payment-form shadow-sm p-1">
-                    <fieldset class="m-1 p-3 border border-secondary rounded">
-                      <legend class="w-auto px-2 font-size-md">Pagar con tarjeta</legend>
-                      <div class="sr-combo-inputs-row">
-                        <div class="sr-input sr-card-element" id="card-element">
-                          <div class="col-12">
-                            <fieldset class="mx-0 p-2 border border-secondary rounded">
-                              <div class="" id="inputCardNumber"></div>
-                            </fieldset>
-                          </div>
-                          <div class="col-5 my-2 ">
-                            <fieldset class="mx-0 p-2 border border-secondary rounded">
-                              <div class="" id="inputCardExpiry"></div>
-                            </fieldset>
-                          </div>
-                          <div class="col-5 my-2 ">
-                            <fieldset class="mx-0 p-2 border border-secondary rounded">
-                              <div class="" id="inputCardCvc"></div>
-                            </fieldset>
-                            
-                          </div>
+            <!-- pay with stripe-->
+            <div class="col-6">
+              <div class="row justify-content-center">
+                <div class="col-12">
+                  <div class="inputs-card" id="example-2">
+                    <form id="payment-form" class="px-3 py-3 shadow">
+                      <fieldset class="m-1 p-3 border rounded" style="border-color: rgba(134, 136, 124, 0.7) !important;">
+                        <legend class="card-only w-auto px-2 my-0" style="font-size: 1rem;">Pagar con tarjeta</legend>
+                        
+                      <div class="rowCard">
+                        <div class="field d-flex align-items-center border border-secondary p-1 rounded">
+                          <div id="card-number" class="input empty"></div>
+                          <label class="m-0 px-1" for="card-number">Número de tarjeta</label>
+                          <div class="baseline"></div>
                         </div>
                       </div>
+                      <div class="row px-2">
+                        <div class="col-12">
+                        <div><p id="error-cardNumber" class="invalid"></p></div></div>
+                      </div>
                       
-                      <div class="sr-field-error" id="card-errors" role="alert"></div>
-                      
-                      <button id="submit" class="my-2">
+                      <div class="rowCard d-flex justify-content-between">
+                        <div class="field d-flex align-items-center half-width border border-secondary p-1 rounded mr-2">
+                          <div id="card-expiry" class="input empty"></div>
+                          <label class="m-0 px-1" for="card-expiry">Vencimiento</label>
+                          <div class="baseline"></div>
+                        </div>
+                        <div class="field d-flex align-items-center half-width border border-secondary p-1 rounded ml-2">
+                          <div id="card-cvc" class="input empty "></div>
+                          <label class="m-0 px-1" for="card-cvc">CVC</label>
+                          <div class="baseline"></div>
+                        </div>
+                      </div>
+                      <div class="row px-2">
+                        <div class="col-6">
+                          <div><p id="error-cardExpiry" class="invalid"></p></div>
+                        </div>
+                        <div class="col-6">
+                          <div><p id="error-cardCvc" class="invalid"></p></div>
+                        </div>
+                      </div>
+                      <button id="submit-strippe" class="button btn btn-modals">
                         <div class="spinner hidden" id="spinner"></div>
-                        <span id="button-text">Pay</span><span id="order-amount"></span>
+                        <span id="button-text">Pagar</span>
                       </button>
+                      <p class="error-msg mt-2" role="alert" id="card-error">
+                      </p>
+                      <p class="result-message hidden">
+                        Payment succeeded, see the result in your
+                        <a href="" target="_blank">Stripe dashboard.</a> Refresh the page to pay again.
+                      </p>
                     </fieldset>
-                  </form>
-                  <div class="sr-result hidden">
-                    <p>Payment completed<br /></p>
-                    <pre>
-                      <code></code>
-                    </pre>
+                    </form>
                   </div>
                 </div>
               </div>
+              
             </div>
-          </div>-->
 
-          <div>
-            <p>
-                <!--<i data-feather="lock" class="icon-feather"></i> -->
-                <i class="fas fa-lock"></i>
-              Compra segura.</p>
-          </div>
-          
-          <div class="row">
-            <div class="col-12">
-              <div class="inputs-card" id="example-2">
-                <form id="payment-form">
-                  <fieldset class="m-1 p-3 border border-secondary rounded">
-                    <legend class="card-only w-auto font-size-md px-2" >Pagar con tarjeta</legend>
-                    
-                  <div class="rowCard">
-                    <div class="field d-flex align-items-center border border-secondary p-2 rounded">
-                      <div id="card-number" class="input empty"></div>
-                      <label class="m-0 px-1" for="card-number">Card number</label>
-                      <div class="baseline"></div>
-                    </div>
-                  </div>
-                  <div class="row px-2">
-                    <div class="col-12">
-                    <div><p id="error-cardNumber" class="invalid"></p></div></div>
-                  </div>
-                  
-                  <div class="rowCard d-flex justify-content-between">
-                    <div class="field d-flex align-items-center half-width border border-secondary p-2 rounded mr-2">
-                      <div id="card-expiry" class="input empty"></div>
-                      <label class="m-0 px-1" for="card-expiry">Vencimiento</label>
-                      <div class="baseline"></div>
-                    </div>
-                    <div class="field d-flex align-items-center half-width border border-secondary p-2 rounded ml-2">
-                      <div id="card-cvc" class="input empty "></div>
-                      <label class="m-0 px-1" for="card-cvc">CVC</label>
-                      <div class="baseline"></div>
-                    </div>
-                  </div>
-                  <div class="row px-2">
-                    <div class="col-6">
-                      <div><p id="error-cardExpiry" class="invalid"></p></div>
-                    </div>
-                    <div class="col-6">
-                      <div><p id="error-cardCvc" class="invalid"></p></div>
-                    </div>
-                  </div>
-                  <button id="submit-strippe" class="button btn btn-modals">
-                    <div class="spinner hidden" id="spinner"></div>
-                    <span id="button-text">Pagar</span>
-                  </button>
-                  <p class="error-msg mt-2" role="alert" id="card-error">
-                  </p>
-                  <p class="result-message hidden">
-                    Payment succeeded, see the result in your
-                    <a href="" target="_blank">Stripe dashboard.</a> Refresh the page to pay again.
-                  </p>
-                </fieldset>
-                </form>
+            <div class="col-6">
+              <!-- pay with mercado pago -->
+              <div class="row">
+                
               </div>
             </div>
+
+
           </div>
+          <!--<div>
+            <p>
+                !--<i data-feather="lock" class="icon-feather"></i> --
+                <i class="fas fa-lock"></i>
+              Compra segura.</p>
+          </div>-->
+          
           
         </div>
 
-        <div class="col-4">
-          
+        <div class="col-12 col-md-4">
+
+          <!-- Heading -->
+          <h5 class="text-center">Productos ({{$count}})</span></h5>
+
+          <!-- Divider -->
+          <hr class="my-7">
+
+          <!-- List group -->
+          <ul class="list-group list-group-lg list-group-flush-y list-group-flush-x mb-7" id="listCheckout">
+            
+          </ul>
+
+          <!-- Card -->
+          <div class="card mb-9 bg-light">
+            <div class="card-body">
+              <ul class="list-group list-group-sm list-group-flush-y list-group-flush-x">
+                @foreach($productos as $p)
+                <li class="list-group-item">
+                  <div class="row align-items-center">
+                    <div class="col-4 p-0">
+                      <!-- Image -->
+                      <span data-cart-items="{{$p['cantidad']}}">
+                        <img src="/storage/{{$p['foto_url']}}" alt="..." class="img-fluid">
+                      </span>
+                    </div>
+                    <div class="col">
+                      <!-- Title -->
+                      <p style="font-size:0.9rem;">
+                        <span>{{$p['nombre']}}</span><br>
+                        <span class="text-muted">{{$p['precio_consumidor']}}</span>
+                      </p>
+                      <!-- Text -->
+                      <div style="font-size:0.9rem;">Presentación: {{$p['presentacion']}}
+                        <br></div>
+                    </div>
+                  </div>
+                </li>
+                @endforeach
+                
+                <li class="list-group-item d-flex">
+                  <span>Subtotal:</span> <span class="ml-auto font-size-sm toPrice">{{$subtotal}}</span>
+                </li>
+                <li class="list-group-item d-flex">
+                  <span>Costo de envío:</span> <span class="ml-auto font-size-sm toPrice">{{$costo_envio}}</span>
+                </li>
+                <li class="list-group-item d-flex">
+                  <span style="font-weight: 500;" class="subtotal-label font-weight-bold">Total:</span> <span class="ml-auto font-size-sm toPrice font-weight-bold monto-subtotal">{{$total}}</span>
+                </li>
+              </ul>
+              <div style="font-size: 0.85rem; text-align: center;">Todos nuestros precios incluyen IVA.</div>
+            </div>
+          </div>
+
+          <!-- Button -->
+          <button class="btn btn-block btn-dark btn-modals" form="formDireccion" type="submit" >
+            Proceder al pago
+          </button>
+
         </div>
       </div>
     </div>
@@ -278,6 +362,7 @@
   $( document ).ready(function() {
     fadeNav();
     loadStyles();
+    changeToPrice();
   });
 
   function loadStyles(){
@@ -374,10 +459,20 @@
 
     var payWithCard = function(stripe, card, clientSecret) {
       loading(true);
+      var name = $("#customer_name").data("name");
+      console.log(name);
+      var zip_code = $("#zip_code").data("code");
       stripe
       .confirmCardPayment(clientSecret, {
         payment_method: {
-          card: card
+          type: 'card',
+          card: card,
+          billing_details: {
+            name: name,
+            address: {
+              postal_code: zip_code
+            }
+          },
         }
       })
       .then(function(result) {

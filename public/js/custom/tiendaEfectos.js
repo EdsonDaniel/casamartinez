@@ -13,7 +13,6 @@ var parents_presentations = { parent:{ } };
 
 $( document ).ready(function() {
 	addListeners();
-	fadeNav();
 	loadData();
 });
 

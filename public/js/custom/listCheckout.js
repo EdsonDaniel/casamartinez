@@ -19,14 +19,6 @@ $( document ).ready(function() {
 	addListeners();
 	fadeNav();
 	createInputCart();
-	/*]elements = stripe.elements();
-	var style = {
-		base: {
-			color: "#32325d",
-		}
-	};
-	var card = elements.create("card", { style: style });
-	card.mount("#card-element");*/
 });
 
 function loadInfoCP(input){

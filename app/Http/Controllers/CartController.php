@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\CarritoProductos;
 use App\ProductosTienda;
+use App\TodosProductos;
 use Illuminate\Support\Facades\Auth;
 use App\Recomendados;
 use App\Http\Requests\StoreDirection;
@@ -43,28 +44,59 @@ class CartController extends Controller
             return redirect("/informacion-de-envio");
         }
 
-        $addressFac = $value = session('addressFac', '');
-        if ($addressFac == "") { $addressFac = $address; }
+        $addressFac = session('addressFac', '0');
+        $addFacEncod = $addressFac;
+        if ($addressFac != '0') { $addressFac = json_encode($addressFac); }
 
         $subtotal = session('subtotal', 0);
         $count = session('count', 0);
-        $cart = json_encode( session('cart'), true );
-        if($subtotal < 1 || $count < 1)
+        $cart = session('cart', "");
+        $costo_envio = session('costo_envio',0);
+        if($cart == "" || $subtotal < 1 || $count < 1 )
             return redirect ("/tienda");
+        $cart = json_encode( $cart, true );
+        $total = round((($subtotal + $costo_envio) * 100),0);
 
-
-
+        $productos = session('prods_instance', "");
+        
         $intent = \Stripe\PaymentIntent::create([
-            'amount' => $subtotal,
+            'amount' => $total,
             'currency' => 'mxn',
-            // Verify your integration in this guide by including this parameter
+            'description' => 'Compra de productos en el sitio CasaMartinez.mx',
+            'shipping' => [
+                'address' => [ 
+                    'line1' => $address['calle'], 
+                    'line2' => $address['apartamento'], 
+                    'city'  => $address['colonia'],
+                    'state' => $address['estado'],
+                    'postal_code' => $address['codigo_postal'],
+                ],
+                'name'  => $address['nombre'].' '.$address['apellidos'],
+                'phone' => $address['telefono']
+            ],
+            
             'metadata' => [
                 'integration_check' => 'accept_a_payment',
-                'products'          => $cart
-            ],
+                'products'          => $cart,
+                'no_exterior'       => $address['no_exterior'],
+                'municipio'         => $address['municipio'],
+                'email_custom'      => $address['email'],
+                'costo_envio'       => $costo_envio,
+                'addressFac'        => $addressFac,
+            ]
         ]);
-        $productos = ProductosTienda::all();
-        return view('pay')->with(['productos' => $productos, 'intent' => $intent]);
+        
+        return view('pay')->with([
+            'productos' => $productos, 
+            'intent' => $intent, 
+            'direccion' => $address,
+            'direccionFacturacion' => $addFacEncod,
+            'carrito' => $cart,
+            'subtotal' => $subtotal,
+            'count'  => $count,
+            'total' => round($total/100, 2),
+            'costo_envio' => $costo_envio,
+        ]);
     }
 
     public function checkout(StoreDirection $request){
@@ -80,7 +112,9 @@ class CartController extends Controller
         $request->session()->put('address', $address);
         $request->session()->put('count', $dataValidated['count']);
         $request->session()->put('subtotal', $dataValidated['subtotal']);
-
+        $request->session()->put('costo_envio', $dataValidated['costo_envio']);
+        $request->session()->put('prods_instance', $productos);
+        
         if(!$request->input('misma_direccion')){
             $array_validaciones = [
             'nombre_facturacion'        => ['required', 'min:1', 'max:190'],
@@ -123,24 +157,20 @@ class CartController extends Controller
         return redirect('checkout');
     }
 
-    public function envio(){
+    public function addInfoEnvio(){
         $productos = ProductosTienda::all();
-        $user = $user = auth()->user();
+        $direccion = null;
+        $prod = null;
+        if( Auth::check() ){
+            $user = $user = auth()->user();
             $carrito = $user->carrito;
-            /*$prod = CarritoProductos::where('carrito_compras_id', $carrito->id)->get();*/
             $prod = CarritoProductos::select('presentacion_producto_id','cantidad')->where('carrito_compras_id', $carrito->id)->get();
-            return view('checkout')
-                    ->with(['productos'=>$productos, 'inCart' => $prod]);
-        /*if( Auth::check() ){
-            $user = auth()->user();
             $direccion = $user->direcciones();
-            if ($direccion ) {
-                return view('checkoutWithData')->with("productos",$productos);
-                return $direccion;
-            }
-        }*/
-        return view('checkout')->with("productos",$productos);
-        return view('checkout')->with("productos",$productos);
+            /*return view('checkout')
+                    ->with(['productos'=>$productos, 'inCart' => $prod]);*/
+        }
+        
+        return view('checkoutWithData')->with(["productos" => $productos, "direccion" => $direccion, "inCart" => $prod]);
     }
     public function push(Request $request, $idPresentacion){
         $user = auth()->user();
@@ -277,6 +307,8 @@ class CartController extends Controller
                 }
             }
         }
+        return response()->json([
+                'message' => 'Datos actualizados'], 200);
         /*$redirect = $request->input('redirect');
         if($redirect == 'cartView'){
             return redirect('/carrito-de-compras');
@@ -309,17 +341,20 @@ class CartController extends Controller
     }
 
     public function validateItems($cart){
-        $productos = ProductosTienda::all();
+        $productos = TodosProductos::all();//where('estado_presentacion', 1);
         $productosCart = array();
         $key_array = array();
         $valid_array = array();
         $subtotal = 0;
         $count = 0;
+        $errores = array();
+        $botellas_250 = 0;
+        $botellas_750 = 0;
         //$idAndCantidad = array();
                 
-        $productos = ProductosTienda::all();
+        //$productos = ProductosTienda::all();
         //$user = auth()->user();
-        $i = 0;
+        //$i = 0;
         
         foreach($cart as $item) {
             $cantidad = $this->validateCantidad($item['cantidad']);
@@ -327,20 +362,69 @@ class CartController extends Controller
                 $cantidad > 0) {
                 $presentacion = $productos->find($item['presentacion_producto_id']);
                 if($presentacion != null){
-                    $key_array[$i] = $item['presentacion_producto_id'];
-                    $valid_array[$i] = $item;
-                    $productosCart[$i] = $presentacion;
+                    //$key_array[$i] = $item['presentacion_producto_id'];
+                    array_push($key_array,$item['presentacion_producto_id']);
+                    if ($cantidad > $presentacion['stock']) {
+                        $cantidad = $presentacion['stock'];
+                        $errores[$presentacion['id_presentacion']] = 1;
+                        //$item['cantidad'] = $cantidad;
+                    }
+                    if($presentacion->presentacion == '750 ml')
+                        $botellas_750 += $cantidad;
+                    else
+                        $botellas_250 += $cantidad;
+                    //$valid_array[$i] = $item;
+                    //$valid_array[$item['presentacion_producto_id']] = $cantidad;
+                    $valid_array[$item['presentacion_producto_id']] = [ 
+                        'cantidad' => $cantidad, 
+                        'precio_unitario' => $presentacion['precio_consumidor']
+                    ];
+                    $newP = $presentacion->toArray();
+                    $newP['cantidad'] = $cantidad;
+                    //$productosCart[$i] = $presentacion;
+                    //$productosCart[$i] = $newP 
+                    array_push($productosCart, $newP);
+                    //$productosCart[$i]['cantidad'] = $cantidad;
                     $count += $cantidad;
                     $subtotal += $cantidad * $presentacion['precio_consumidor'];
                     //$idAndCantidad[$presentacion->id] = array('cantidad' => $item['cantidad']);
-                    $i++;
+                    //$i++;
                 }
             }
         }
+        $costo_envio = $this->costoBotella250($botellas_250) 
+        + $this->costoBotella750($botellas_750);
 
 
         return ['cart' => $valid_array, 'prods' => $productosCart, 
-                'subtotal' => $subtotal, 'count' => $count];
+                'subtotal' => $subtotal, 'count' => $count, 'costo_envio' => $costo_envio];
+
+    }
+
+    public function costoBotella250($cantidad){
+        if( $cantidad == 1 )
+            return 272.28;
+        if( $cantidad == 2 )
+            return 129.59;
+        if( $cantidad > 2 && $cantidad < 6 )
+            return 82.03;
+        if( $cantidad > 5 && $cantidad < 12 )
+            return  34.47;
+        if( $cantidad > 11 && $cantidad < 24 )
+            return 10.69;
+
+        return 0;
+
+    }
+    public function costoBotella750($cantidad){
+        if( $cantidad == 1 )
+            return 209.21;
+        if( $cantidad == 2 )
+            return 66.52;
+        if( $cantidad == 3 )
+            return 18.96;
+        
+        return 0;
 
     }
 }

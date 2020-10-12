@@ -11,7 +11,7 @@ class TodosProductos extends Model
      *
      * @var string
      */
-    //protected $primaryKey = 'id_product';
+    protected $primaryKey = 'id_presentacion';
     protected $table = 'todos_productos';
 
     /**

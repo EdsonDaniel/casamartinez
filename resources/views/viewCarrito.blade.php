@@ -136,7 +136,7 @@
             </div>
 
             <!-- Button -->
-            <a class="btn btn-block btn-dark mb-2 btn-modals" href="checkout.html">Proceder al pago</a>
+            <button type="button" class="btn btn-block btn-dark mb-2 btn-modals" id="toCheck" data-redirect="checkout">Proceder al pago</button>
 
             <!-- Link -->
             <a class="btn btn-back btn-block" href="/tienda" id="backToShop">
