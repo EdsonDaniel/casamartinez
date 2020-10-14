@@ -19,7 +19,7 @@
 |  | | |
 | :- | - | -: |
 @foreach($productos as $p)
-| <img class="img-sm" src="/storage/{{$p['img_url']}}"> | <span class="span" style="vertical-align: middle;">{{$p['cantidad']}}x {{$p['name']}} </span> | <span> {{$p['precio_unitario']}} </span> |
+| <img class="img-sm" src="/storage1/{{$p['img_url']}}"> | <span class="span" style="vertical-align: middle;">{{$p['cantidad']}}x {{$p['name']}} </span> | <span> {{$p['precio_unitario']}} </span> |
 @endforeach
 | | <p>Subtotal:</p> | <span>${{$total - $costo_envio}}</span> |
 | | <p>Costo de envío:</p> | <span>${{$costo_envio}}</span> |
