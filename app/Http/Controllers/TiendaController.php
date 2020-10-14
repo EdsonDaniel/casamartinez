@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Support\Facades\Auth;
 use App\Productos;
 use App\User;
@@ -16,6 +17,7 @@ use App\Pedido;
 use App\Notifications\ConfirmacionCompra;
 use App\DireccionesUsuario;
 use App\DireccionesEnvio;
+use App\ProductosComprados;
 
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Validator;
@@ -123,11 +125,12 @@ class TiendaController extends Controller
 
         $direccion_facturacion = $metadata['addressFac'];
         if($direccion_facturacion == '0') $direccion_facturacion = $direccion_envio->id;
-        else $direccion_facturacion = null;//$this->createDireccionEnvio($direccion_facturacion);       
+        else $direccion_facturacion = null;//$this->createDireccionEnvio($direccion_facturacion);    
+        $total = $data['amount']/100;   
 
         $pedido = Pedido::create([
             'metodo_pago' => 'Tarjeta con Stripe',
-            'monto_total' => $data['amount'],
+            'monto_total' => $total,
             'costo_envio' => $costo_envio,
             'user_id'    => $user,
             'direccion_envio_id' => $direccion_envio->id,
@@ -136,9 +139,31 @@ class TiendaController extends Controller
             'email'       => $metadata['email_custom']
         ]);
 
-        $pedido->notify(new ConfirmacionCompra());
+        $productos_comprados = json_decode( $metadata['products'], true);
 
-        return $pedido->id;
+        $this-> createProductosComprados($productos_comprados, $pedido->id);
+        //return $pedido->id;
+
+        $user = User::find($user);
+        $url;
+        $nombre;
+        if($user != null){
+            $nombre = $user->name;
+            $url = '/mi-cuenta/mis-pedidos/' . $pedido->id;
+        }
+        else {
+            $nombre = $data['shipping']['name'];
+            $url = '';
+        } 
+        $pedido->notify(
+            new ConfirmacionCompra(
+                $productos_comprados, 
+                $nombre, 
+                $url,
+                $total,
+                $costo_envio
+            )
+        );
 
 
     }
@@ -162,8 +187,43 @@ class TiendaController extends Controller
         return $direccion_facturacion->id;
     }
 
-    public function createProductosComprados($data){
+    public function createProductosComprados($data, $idPedido){
+        //$productos = json_decode($data);
 
+        foreach ($data as $datos) {
+            $comprado = ProductosComprados::create([
+                'presentacion_producto_id' => $datos['id'],
+                'cantidad'   => $datos['cantidad'],
+                'precio_unitario' => $datos['precio_unitario'],
+                'pedido_id' => $idPedido
+            ]);
+        }
+    }
+
+
+    public function previewEmail(){
+        $productos = [ //'productos' => [
+                                'uno' => [
+                                    'url' => '/storage/img/fotos-productos/aA27tVRS9nTVJj8st48x4V7z8rthlQxdb5gsTy0y.jpeg',
+                                    'nombre' => '2 x Mezcal Sinahi (Reposado)',
+                                    'precio' => '$599.00'
+                                ],
+                                'dos' => [
+                                    'url' => '/storage/img/fotos-productos/zSFYqLOhrO4igZL8199txYOLm680RPKJlwzAxZUM.jpeg',
+                                    'nombre' => '1 x Mezcal Sinahi Reserva Especial',
+                                    'precio' => '$488.99',
+                                ]
+                            //]
+                        ];
+        return ((new MailMessage)
+                        ->greeting('¡Hola Edson!')
+                        ->line('Comenzaremos a preparar tu pedido y te haremos saber en cuanto lo tengamos listo y lo hallamos enviado.')
+                        ->line('También te compartiremos el número de rastreo de tu paquete para que puedas estar informado sobre su seguimiento.')
+
+                        ->action('Ver pedido', url('/'))
+                        ->line('¡Gracias por comprar en Casa Martínez!')
+                        ->markdown('mail.compras.compraExitosa', ['productos' => $productos])
+                    );
     }
 
 }

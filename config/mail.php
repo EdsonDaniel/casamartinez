@@ -34,7 +34,7 @@ return [
     */
 
     'mailers' => [
-        'smtp' => [
+        /*'smtp' => [
             'transport' => 'smtp',
             //'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
             'host' => env('MAIL_HOST', 'smtp.gmail.com'),
@@ -44,7 +44,7 @@ return [
             'username' => 'edsondanyel3.0@gmail.com',
             //'password' => env('MAIL_PASSWORD'),
             'password' => 'jrfrqdllrwekgxkw',
-        ],/*
+        ],*/
 
         'smtp' => [
             'transport' => 'smtp',
@@ -53,7 +53,7 @@ return [
             'encryption' => env('MAIL_ENCRYPTION', 'tls'),
             'username' => env('MAIL_USERNAME'),
             'password' => env('MAIL_PASSWORD'),
-        ],*/
+        ],
 
         'ses' => [
             'transport' => 'ses',

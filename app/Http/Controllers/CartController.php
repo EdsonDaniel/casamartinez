@@ -377,7 +377,12 @@ class CartController extends Controller
                     //$valid_array[$item['presentacion_producto_id']] = $cantidad;
                     $valid_array[$item['presentacion_producto_id']] = [ 
                         'cantidad' => $cantidad, 
-                        'precio_unitario' => $presentacion['precio_consumidor']
+                        'precio_unitario' => $presentacion['precio_consumidor'],
+                        'img_url'   => $presentacion['foto_url'],
+                        //'precio_unitario' => $presentacion->precio_consumidor,
+                        //'img_url'   => $presentacion->foto_url,
+                        'id'        => $presentacion['id_presentacion'],
+                        'name'      => $presentacion['nombre'].' '.$presentacion['presentacion']
                     ];
                     $newP = $presentacion->toArray();
                     $newP['cantidad'] = $cantidad;

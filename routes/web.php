@@ -62,6 +62,8 @@ Route::get('/checkout', 'CartController@pagar');
 
 Route::post('/checkout/end-point/stripe','TiendaController@webhookStripe');
 
+Route::get('/mail-view', 'TiendaController@previewEmail');
+
 
 
 Route::get('/dash', function () {
