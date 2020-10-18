@@ -15,11 +15,11 @@ function toPay(){
     
 }
 
-$( document ).ready(function() {
+/*$( document ).ready(function() {
 	addListeners();
 	fadeNav();
 	createInputCart();
-});
+});*/
 
 function loadInfoCP(input){
 	var terminacion="";

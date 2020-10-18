@@ -397,6 +397,11 @@
   @if(Auth::check())
   var inCart = {!! json_encode($inCart) !!};
   @endif
+  $( document ).ready(function() {
+  addListeners();
+  fadeNav();
+  createInputCart();
+});
 </script>
 <!--<script type="text/javascript" src="/js/custom/tiendaEfectos.js"></script>-->
 <script type="text/javascript" src="/js/custom/listCheckout.js"></script>

@@ -66,6 +66,16 @@ Route::get('/mail-view', 'TiendaController@previewEmail');
 
 
 
+/*****************Rutas con middleware ////////////////////////////////*/
+
+Route::get('/mi-cuenta', 'UserController@micuenta')
+->middleware('auth');
+Route::post('/nueva-direccion', 'UserController@addDireccion')->middleware('auth');
+Route::post('/update-user', 'UserController@updateUser')->middleware('auth');
+Route::post('/delete-direccion', 'UserController@deleteDireccion')->middleware('auth');
+Route::post('/update-direccion', 'UserController@updateDireccion')->middleware('auth');
+
+
 Route::get('/dash', function () {
     return view('dashboard');
 });
@@ -236,3 +246,33 @@ Route::get('/admin/entradas/ajax/{id}', 'EntradasController@getDataById');
 
 
 //*****************************************rutasd Crud entradas***************************/
+
+Route::get('/admin/preview', function (){ return view('admin.usuarios');}); 
+
+//*****************************************rutasd Crud pedidos***************************/
+//lista de pedidos
+Route::get('/admin/pedidos', 'PedidoController@index'); 
+//Detalles de un pedido
+Route::get('/admin/pedidos/detalles/{id}', 'PedidoController@show'); 
+//ruta para crear un pedido ****
+Route::get('/admin/pedidos/agregar', 'PedidoController@create'); 
+Route::post('/admin/pedidos/enviar/{id}', 'PedidoController@enviar');
+//rutas para actualizar una pedido especifica
+//Route::get('/admin/pedidos/update/{id}', 'PedidoController@update');
+Route::post('/admin/pedidos/update/{id}', 'PedidoController@update');
+
+//ruta para baja de un pedido
+//Route::post('/admin/pedidos/delete/{id}', 'PedidoController@destroy');
+Route::post('/admin/pedidos/baja/{id}', 'PedidoController@baja');
+//ruta para alta de un pedido
+Route::post('/admin/pedidos/alta/{id}', 'PedidoController@alta');
+
+//rutas obtener datos de pedido mediante AJAX
+Route::get('/admin/pedidos/activos/ajax', 'PedidoController@getDataAjaxActive');
+Route::get('/admin/pedidos/inactivos/ajax', 'PedidoController@getDataAjaxInactive');
+Route::get('/admin/pedidos/ajax/{id}', 'PedidoController@getDataById');
+Route::get('/admin/pedidos/ajax/', 'PedidoController@getDataAjax');
+Route::get('/admin/pedidos/empleados/ajax', 'PedidoController@getUsersEmpleados');
+
+//*****************************************rutasd Crud pedidos***************************/
+

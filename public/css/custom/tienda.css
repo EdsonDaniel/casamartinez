@@ -158,6 +158,10 @@ a{ transition: unset; }
     transition-delay: 75ms;
 }
 
+.card-action-right {
+    right: 1.25rem;
+}
+
 
 .btn-circle {
     display: inline-flex;
@@ -667,7 +671,28 @@ hr{ border-top: 1px solid rgba(52,58,64,0.5) }
     background-color: #fff;
     color: #343a40; border-color: #343a40; 
     transition: all .2s ease-in-out; transition-property: transform; }
-.btn-back:hover > .fas{
+.btn-next{ 
+    font-family: 'Raleway', sans-serif !important;
+    font-size: 0.84rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    background-color: #fff;
+    color: #343a40; border-color: #343a40; 
+    transition: all .2s ease-in-out; transition-property: transform; 
+}
+
+.btn-next:hover > .fas{
+    transform: translateX(.25rem);
+}
+.btn-next > .fas{
+transition: all .2s ease-in-out;
+    transition-property: transform;    
+}
+.btn-next:focus{ box-shadow: none; }
+
+
+.btn-back.next-a:hover > .fas{
     transform: translateX(-.25rem);
 }
 .btn-back > .fas{
@@ -683,6 +708,8 @@ transition: all .2s ease-in-out;
   font-size: 80%;
   color: #e3342f;
 }
+
+.btn-validate{ font-size: 0.65rem; padding-top: 0.1rem; }
 .toPrice{ letter-spacing: 1px; }
 .icon-edit-input{ width: 1.2rem; transition: opacity 0.4s ease-in-out;}
 .data-pay{ padding-top: 0.3rem; padding-bottom: 0.3rem;  }

@@ -359,6 +359,16 @@ function submitCart(redirect){
     }
 }
 
+/***********************************************account*///////////////////////
+
+function validarCP(btn){
+    $(btn).prop('disabled', true);
+    var input = $(btn).data('input');
+    $(input).change();
+
+    setTimeout( function(){ $(btn).prop('disabled', false);} , 400);
+}
+
 
 /*********************************cart*****************************************/
 function emptyCart(){

@@ -1,0 +1,18 @@
+body{ padding-top: 0; }
+.list-group-item{
+	font-family: 'Raleway';
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    color: rgba(111,133,85,1) !important;
+}
+
+.list-group-item.active{
+	background-color: #f8f9fa !important;
+	border-color: gainsboro;
+	font-weight: 500;
+}
+
+.btn-sm.ls{
+	letter-spacing: 2px !important;
+	font-size: 0.7rem;
+}

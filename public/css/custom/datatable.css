@@ -211,3 +211,19 @@ select:hover{
     vertical-align: middle;
     margin-right: 0.2em;
 }
+
+
+.row-warning{ background-color: #ffeeba; border-color: #ffdf7e !important;}
+/*.row-warning td { border-color: #ffdf7e; }*/
+
+.row-danger{ background-color: #f5c6cb; border-color: #ed969e !important;}
+/*.row-danger td { border-color: #ed969e; }*/
+
+.row-success{ /*background-color: #f5c6cb;*/ border-color: #28a745 !important;}
+/*.row-success td { border-color: #28a745; }*/
+
+.row-secondary{ background-color: #d6d8db; border-color: #b3b7bb !important;}
+/*.row-secondary td{ border-color: #b3b7bb; }*/
+
+.row-primary{ /*background-color: #b8daff;*/ border-color: #7abaff !important;}
+/*.row-primary td { border-color: #7abaff; }*/

@@ -153,9 +153,10 @@ button:focus{ border-color: transparent !important; outline-style: none; outline
 }
 
 /* Add an active class to the active dropdown button */
-.active a, .active button, .active button:focus{
-  color: rgba(255,255,255, 0.8) !important;
-  border-color: transparent !important;
+.active a:not(.btn), .active button:not(.btn), .active button:focus :not(.btn){
+  /*!important*/
+  color: rgba(255,255,255, 0.8);
+  border-color: transparent;
   background-color: transparent;
 }
 

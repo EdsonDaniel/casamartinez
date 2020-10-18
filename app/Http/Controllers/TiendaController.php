@@ -27,7 +27,7 @@ use Illuminate\Support\Facades\Validator;
 class TiendaController extends Controller
 {
    
-   public function index()
+   public function index(Request $request)
     {
         //$user = auth()->user();
         /*$permissions = $user->getPermissionsViaRoles()
@@ -36,6 +36,9 @@ class TiendaController extends Controller
         */
         //$tiene_permiso = $user->can('users.list');
         //return $tiene_permiso;
+        $request->session()->forget('subtotal');
+        $request->session()->forget('count');
+        $request->session()->forget('cart');
         $products = ProductosTienda::all();
         if( Auth::check() ){
             $user = $user = auth()->user();

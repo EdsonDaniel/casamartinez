@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>@yield('title')</title>
     <style type="text/css">
       .background { width: 100%; height: 100%; background-color: lightgray;opacity: 0.92; z-index: 1000;}
@@ -352,9 +352,11 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>-->
    <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>-->
    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>-->
-   <script src="{{ asset('js/app.js') }}" ></script>
+   <!--<script src="{{ asset('js/app.js') }}" ></script>-->
+   <script type="text/javascript" src="/js/app.js"></script>
    <script type="text/javascript" src="/js/custom/efectos2.js"></script>
    <script type="text/javascript" src="/js/card-collapse.js"></script>
+
 
    @yield('scripts')
    
