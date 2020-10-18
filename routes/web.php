@@ -72,7 +72,7 @@ Route::get('/mi-cuenta', 'UserController@micuenta')
 ->middleware('auth');
 Route::post('/nueva-direccion', 'UserController@addDireccion')->middleware('auth');
 Route::post('/update-user', 'UserController@updateUser')->middleware('auth');
-Route::post('/delete-direccion', 'UserController@deleteDireccion')->middleware('auth');
+Route::post('/delete-direccion/{id}', 'UserController@deleteDireccion')->middleware('auth');
 Route::post('/update-direccion', 'UserController@updateDireccion')->middleware('auth');
 
 

@@ -36,6 +36,7 @@ function deleteDireccion(btn){
 	$("#modal_colonia").text(data.find("span.colonia").text());
 	$("#modal_municipio").text(data.find("span.municipio").text());
 	$("#modal_codigo_postal").text(data.find("span.cod_postal").text());
+	$("#modal_telefono").text(data.find("span.telefono").text());
 	$("#modalDeleteDir").modal();
 
 }

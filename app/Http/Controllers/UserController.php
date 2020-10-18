@@ -46,7 +46,8 @@ class UserController extends Controller
             'nombre_residente' => $direccion['nombre'].' '.$direccion['apellidos'],
             'user_id'         => $user->id
         ]);
-        return redirect('/mi-cuenta');
+        return redirect('/mi-cuenta')->with('status', 
+            ['msg' => 'Datos actualizados correctamente', 'value' => true]);
     }
 
     public function updateDireccion(Request $request){
@@ -125,14 +126,27 @@ class UserController extends Controller
             return redirect('/mi-cuenta')->with('status', 
             ['msg' => 'Datos actualizados correctamente', 'value' => true]);
         }
-
+        $user->save();
         return redirect('/mi-cuenta')->with('status', 
             ['msg' => 'Datos actualizados correctamente', 'value' => true]);
         
     }
 
-    public function deleteDireccion(Request $request){
-        
+    public function deleteDireccion(Request $request, $id){
+        if (!Auth::check()) return redirect('/');
+        $user = Auth::user();
+        $direccion = DireccionesUsuario::findOrFail($id);
+
+        if($direccion->user_id == $user->id){
+            $direccion->delete();
+            return redirect('/mi-cuenta')->with('status', 
+            ['msg' => 'Datos actualizados correctamente', 'value' => true]);
+        }
+        else
+            return redirect('/mi-cuenta')->with('status', 
+            ['msg' => 'Ocurrió un error al actualizar los datos.', 'value' => false]);
+
+
     }
 
     public function index()

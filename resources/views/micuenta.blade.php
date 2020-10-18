@@ -748,7 +748,7 @@
         </div>
           
         <div class="modal-body">
-          <div class="mt-4 px-2">
+          <div class="px-2">
             <!-- Text -->
             <p class="text-muted mb-0" id="data_modal">
               <span id="modal_name" ></span> <br>
@@ -765,7 +765,7 @@
 
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-          <button type="submit" form="delete_dir" class="btn btn-success" data-dismiss="modal">Aceptar</button>
+          <button type="submit" form="delete_dir" class="btn btn-success" >Aceptar</button>
         </div>
         
       </div>
