@@ -84,18 +84,18 @@
         <div class="log-in usuario">
           <center>
             <a id="ic"><i class="far fa-user"></i></a>
-            <a><span>BIENVENIDO {{ Auth::user()->name }}</span></a>
+            <a href="/mi-cuenta"><span>{{ Auth::user()->name }}</span></a>
           </center>
         </div>
         @endguest
 
         <div class="options">
           @auth
-          <div class="boton">
-                <a>MI CUENTA</a>
-                <button><i name="ic" class="fas fa-plus"></i></button>                
+          <div style="margin: 12px 20px 0; display: block; min-width: 320px;">
+                <a href="/mi-cuenta">MI CUENTA</a>
+                </a>
             </div>
-            <div class="dropdown-container">
+            <!--<div class="dropdown-container">
                 <ul>
                     <li><a href="">-Mis pedidos</a></li>
                     <li><a href="">-Mis datos</a></li>
@@ -106,7 +106,7 @@
                       @csrf
                     </form>
                 </ul>
-            </div>
+            </div>-->
             @endauth
             <div class="boton">
                 <a>PRODUCTOS</a>

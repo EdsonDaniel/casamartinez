@@ -13,6 +13,7 @@ use App\Http\Requests\StoreDirection;
 use Stripe;
 use App\DireccionesUsuario;
 use App\DireccionesEnvio;
+use MercadoPago;
 
 
 class CartController extends Controller
@@ -85,6 +86,9 @@ class CartController extends Controller
                 'addressFac'        => $addressFac,
             ]
         ]);
+
+        $preferenceMP = $this->crearPreferencia($productos, $address,$costo_envio);
+
         
         return view('pay')->with([
             'productos' => $productos, 
@@ -96,8 +100,10 @@ class CartController extends Controller
             'count'  => $count,
             'total' => round($total/100, 2),
             'costo_envio' => $costo_envio,
+            'preferenceMP' => $preferenceMP
         ]);
     }
+
 
     public function checkout(StoreDirection $request){
         $validated = $request->validated();
@@ -155,6 +161,80 @@ class CartController extends Controller
        
 
         return redirect('checkout');
+    }
+
+    public function crearPreferencia($productos, $address, $costo_envio){
+        //require __DIR__ .  '\vendor\autoload.php';
+        // Agrega credenciales
+        MercadoPago\SDK::setAccessToken('TEST-7945488261032685-081220-d0ff5f8b361b5cfaca0d6cbafa90cd80-197994591');
+        //MercadoPago\SDK::setIntegratorId('dev_f510b794d75e11ea8ee70242ac130004');
+
+        // Crea un objeto de preferencia
+        $preference = new MercadoPago\Preference();
+        // Crea un ítem en la preferencia
+        $items = array();
+        foreach ($productos as $p) {
+            $item = new MercadoPago\Item();
+            $item->id = $p['id_presentacion'];
+            $item->title = $p['nombre']." ".$p['presentacion'];
+            $item->description = $p['descripcion'];
+            $item->picture_url = $p['foto_url'];
+            $item->quantity = $p['cantidad'];
+            $item->currency_id = "MXN";
+            $item->unit_price = $p['precio_consumidor'];
+            $item->category_id = "others";
+            array_push($items, $item);
+        }
+
+        $payer = new MercadoPago\Payer();
+        $payer->name = $address['nombre'];
+        $payer->surname = $address['apellidos'];
+        $payer->email = $address['email'];
+        //$payer->date_created = "2018-06-02T12:58:41.425-04:00";
+        $payer->phone = array(
+            "area_code" => "52",
+            "number" => $address['telefono']
+        );
+        $payer->address = array(
+            "street_name" => $address['calle'],
+            "street_number" => $address['no_exterior'],
+            "zip_code" => $address['codigo_postal']
+        );
+        $payer->shipments = array(
+            "mode" => 'not_specified',
+            "cost" => $costo_envio,
+            "receiver_address" => array(
+                "zip_code" => $address['codigo_postal'],
+                "street_name" => $address['calle'],
+                "street_number" => $address['no_exterior'],
+                "city_name" => $address['colonia'],
+                "state_name" => $address['estado'],
+                "floor"      => $address['municipio'],
+                "apartment"  => $address['apartamento'],
+            ),
+        );
+
+        
+        $preference->payment_methods = array(
+            "excluded_payment_types" => array(
+                array("id" => "atm")
+            ),
+            "installments" => 1
+        );
+
+        /*$preference->back_urls = array(
+            "success" => "https://edsonperez-mp-commerce-php.herokuapp.com/success.php",
+            "failure" => "https://edsonperez-mp-commerce-php.herokuapp.com/failure.php",
+            "pending" => "https://edsonperez-mp-commerce-php.herokuapp.com/pending.php"
+        );*/
+        /*$preference->auto_return = "approved";
+        $preference->notification_url = "https://edsonperez-mp-commerce-php.herokuapp.com/notifications.php";
+        */
+        $preference->items = $items;
+        $preference->payer = $payer;
+        $preference->save();
+        return $preference;
+
     }
 
     public function addInfoEnvio(){

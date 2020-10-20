@@ -84,10 +84,13 @@
                 MIS DIRECCIONES
                 <i class="fas fa-angle-right"></i>
               </a>
-              <a class="d-flex align-items-center justify-content-between  list-group-item list-group-item-action dropright-toggle" data-toggle="list" href="#list-cerrar" role="tab">
+              <button class="d-flex align-items-center justify-content-between  list-group-item list-group-item-action" type="submit" form="logout-form" >
                 CERRAR SESIÓN
                 <i class="fas fa-angle-right"></i>
-              </a>
+              </button>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+              </form>
             </div>
           </nav>
 

@@ -179,6 +179,8 @@ function listenerModal(){
         var idPresentation = button.data('presentation');
         var product = parents_presentations.parent[idProduct];
         var presentation = product.presentations[idPresentation];
+
+        $("#btn-toCart").data("presentation", idPresentation);
         
         var modal = $(this);
         modal.find('h4.title-product-modal')
@@ -188,6 +190,49 @@ function listenerModal(){
 
         createPresentationsModal(product.presentations);
         //addlistenerRadio();
+    });
+
+    $("#btn-toCart").click( function(){
+        var idPresentation = $(this).data("presentation");
+        var productsInCart = localStorage.getItem('shoppingCart');
+        var cantidad = $("#inputCantidadModal").val();
+        $("#cartContent, #tooltip-cart").removeClass("d-none");
+        $("#cartEmpty").addClass("d-none");
+        if(productsInCart == null){
+            productsInCart = '[{"presentacion_producto_id":'
+                           + idPresentation +', "cantidad":'+cantidad+'}]';
+            createProductCart(idPresentation, cantidad);
+        }
+        else{
+            productsInCart = JSON.parse(productsInCart);
+            var exist = false;
+            for (var i = productsInCart.length - 1; i >= 0; i--) {
+                if (productsInCart[i].presentacion_producto_id == idPresentation){
+                    if(productsInCart[i].cantidad < 12){
+                        cantidad = productsInCart[i].cantidad + cantidad;
+                        productsInCart[i].cantidad = cantidad;
+                        updateCartItems(idPresentation, cantidad);
+                    }
+                    exist = true;
+                    break;
+                }
+            }
+            if(!exist){
+                productsInCart.push(
+                    {
+                        presentacion_producto_id: idPresentation,
+                        cantidad: cantidad
+                    });
+                createProductCart(idPresentation, cantidad);
+            }
+            productsInCart = JSON.stringify(productsInCart);
+
+        }
+        localStorage.setItem("shoppingCart",productsInCart);
+        
+        if(logged)pushRemoteCart(idPresentation, cantidad);
+        $("#modalProduct").modal('hide');
+        $("#modalShoppingCart").modal();
     });
 
     $('#modalProduct').on('hidden.bs.modal', function(event){
@@ -430,6 +475,7 @@ function loadCart(){
     var shoppingCart = JSON.stringify(inCart);
     localStorage.setItem("shoppingCart",shoppingCart);
 }
+
 
 function pushToLocalCart(){
     $("button.toCart").click( function(){

@@ -229,4 +229,11 @@ class TiendaController extends Controller
                     );
     }
 
+    public function pagoExitoso(){
+        return view('pagoexitoso');
+    }
+    public function pagoRechazado(){
+        return view('pagorechazado');
+    }
+
 }

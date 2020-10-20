@@ -37,9 +37,9 @@
     </div>
   </div>
   
-  <!--Sidebar-->
+ <!--Sidebar-->
   <div id="mySidenav" class="sidenav" >
-      <a class="closebtn" onclick="closeNav()"><i class="fa fa-bars"></i></a>
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-bars"></i></a>
       <div class="title-nav">
         <h2><a href="/">CASA MARTINEZ</a></h2>
       </div>
@@ -55,18 +55,18 @@
       <div class="log-in usuario">
         <center>
           <a id="ic"><i class="far fa-user"></i></a>
-          <a><span>BIENVENIDO {{ Auth::user()->name }}</span></a>
+          <a href="/mi-cuenta"><span>{{ Auth::user()->name }}</span></a>
         </center>
       </div>
       @endguest
 
       <div class="options">
         @auth
-        <div class="boton">
-              <a>MI CUENTA</a>
-              <button><i name="ic" class="fas fa-plus"></i></button>                
+        <div style="margin: 12px 20px 0; display: block; min-width: 320px;">
+              <a href="/mi-cuenta">MI CUENTA</a>
+              </a>
           </div>
-          <div class="dropdown-container">
+          <!--<div class="dropdown-container">
               <ul>
                   <li><a href="">-Mis pedidos</a></li>
                   <li><a href="">-Mis datos</a></li>
@@ -77,7 +77,7 @@
                     @csrf
                   </form>
               </ul>
-          </div>
+          </div>-->
           @endauth
           <div class="boton">
               <a>PRODUCTOS</a>
@@ -245,7 +245,7 @@
                               <button type="button" class="btn icon-input-number h-100 rounded-0 btn-minus " onclick="btnMinus(this)" disabled="">-</button>
                             </div>
                           </div>
-                          <input type="number" class="form-control input-cantidad" placeholder="1" value="1" min="1" max="10" onchange="changeCantidad(this)">
+                          <input type="number" class="form-control input-cantidad" placeholder="1" value="1" min="1" max="10" onchange="changeCantidad(this)" id="inputCantidadModal">
                           <div class="input-group-append">
                             <div class="input-group-text p-0 rounded-0">
                               <button type="button" onclick="btnPlus(this)" class="btn icon-input-number btn-plus h-100" >+</button>
@@ -259,7 +259,7 @@
 
                   <div class="col-12 px-1 px-md-auto">
                     <!-- Submit -->
-                    <button type="submit" class="btn btn-block rounded-0 my-1 my-md-2 btn-modals p-2">
+                    <button type="button" class="btn btn-block rounded-0 my-1 my-md-2 btn-modals p-2 " id="btn-toCart" data-presentation="">
                       Agregar al carrito <i class="fe fe-shopping-cart ml-2"></i>
                     </button>
                   </div>

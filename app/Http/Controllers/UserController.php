@@ -114,7 +114,7 @@ class UserController extends Controller
 
             if (Hash::check($request->input('password'), $user->password)) { 
                 $request->validate(['password' => ['required', 'min:1', 'max:190']]);
-                $user->password = $request->input('nueva_contraseña');
+                $user->password = Hash::make($request->input('nueva_contraseña'));
             }
             else{
                 return redirect('/mi-cuenta')->with('status', 

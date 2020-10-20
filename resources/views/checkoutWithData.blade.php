@@ -486,12 +486,17 @@
 @endsection
 
 @section('scripts')
+<script type="text/javascript" src="/js/custom/listCheckout.js"></script>
 <script type="text/javascript">
   var productos = {!! json_encode($productos) !!};
   var logged = @json(Auth::check());
   @if(Auth::check())
   var inCart = {!! json_encode($inCart) !!};
   @endif
+  $( document ).ready(function() {
+  addListeners();
+  fadeNav();
+  createInputCart();
+});
 </script>
-<script type="text/javascript" src="/js/custom/listCheckout.js"></script>
 @endsection

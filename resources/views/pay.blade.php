@@ -213,8 +213,10 @@
 
             <div class="col-6">
               <!-- pay with mercado pago -->
-              <div class="row">
-                
+              <div class="row justify-content-center">
+                <div class="col-12">
+                  <a class="btn btn-success" href="{{$preferenceMP->init_point}}">Pagar con Mercado Pago</a>
+                </div>
               </div>
             </div>
 
