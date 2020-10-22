@@ -2,6 +2,8 @@ var datos, datosMasVendidos;
 var dataGrafica1, dataGrafica2, labelsGrafica2, dataGrafica3, dias;
 var now = new Date();
 var days = daysInMonth( now.getMonth() + 1, now.getFullYear());
+var mes = now.toLocaleString('default', { month: 'long' });
+console.log(mes);
 inicializarArrays();
 loadDatos();
 loadDatos2();
@@ -13,33 +15,35 @@ $( document ).ready(function() {
 function dibujarGrafica1(){
 	var ctx = document.getElementById('ventas').getContext('2d');
 	var ventas = new Chart(ctx, {
-	  type: 'line',
-	  data: {
-	      //labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-	      labels: dias,
-	      datasets: [{
-	          label: '$ Monto total',
-	          //data: [12, 19, 3, 5, 2, 3],
-	          data: getDataGrafica1(),
-	          backgroundColor: [
-	              'rgba(75, 192, 192, 0.2)'
-	          ],
-	          borderColor: [
-	              'rgba(75, 192, 192, 1)',
-	          ],
-	          borderWidth: 1
-	      }]
-	  },
-	  options: {
-	      scales: {
-	          yAxes: [{
-	              ticks: {
-	                  beginAtZero: true
-	              }
-	          }]
-	      }
-	  },
-	  backgroundColor:'rgba(75, 192, 192, 0.2)'
+		type: 'line',
+		data: {
+			//labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+			labels: dias,
+			datasets: [{
+				label: '$ Monto total',
+				//data: [12, 19, 3, 5, 2, 3],
+				data: getDataGrafica1(),
+				backgroundColor: [ 'rgba(75, 192, 192, 0.2)' ],
+				borderColor: [ 'rgba(75, 192, 192, 1)', ],
+				borderWidth: 1
+			}]
+		},
+		options: {
+			scales: {
+				yAxes: [{
+					ticks: { beginAtZero: true }
+				}]
+			},
+			tooltips: {
+				callbacks: {
+					title: function(data, object){
+						return data[0].xLabel + " de " + mes ;
+					}
+				}
+			},
+		},
+
+		backgroundColor:'rgba(75, 192, 192, 0.2)'
 	});
 }
 
@@ -48,7 +52,7 @@ function dibujarGrafica2(){
 	var ventas = new Chart(ctx, {
 	  type: 'bar',
 	  data: {
-	      labels: ['No. 5 Mezcal Sinahi Reposado 750 ml', 'No. 4', 'No. 3', 'No.2', 'No. 1'],
+	      labels: ['No. 5', 'No. 4', 'No. 3', 'No.2', 'No. 1'],
 	      datasets: [{
 	          label: '# Botellas compradas',
 	          //data: [12, 19, 3, 5, 2, 3],
@@ -80,14 +84,14 @@ function dibujarGrafica2(){
 	  			}
 	  		}]
 	  	},
-	  	/*
 	  	tooltips: {
 	  		callbacks: {
-	  			label: function(ttitem, data) {
-	  				return ttitem.xLabel + ": " + ttitem.yLabel
+	  			title: function(data, object){
+	  				return data[0].xLabel + " " + labelsGrafica2[data[0].index];
 	  			}
 	  		}
-	  	}*/
+	  	}
+	  	
 	  }
 	});
 }
@@ -98,7 +102,7 @@ function getDataGrafica1() {
 		dataGrafica1[datos[i].dia-1] = datos[i].suma;
 		//datosGrafica[data[i].dia-1] = data[i].suma;
 	}
-	console.log(dataGrafica1);
+	//console.log(dataGrafica1);
 	//console.log(data);
 	return dataGrafica1;
 }
@@ -114,8 +118,8 @@ function getDataGrafica2() {
 		labelsGrafica2[i] = datosMasVendidos[i].nombre + " " 
 							+ datosMasVendidos[i].presentacion;
 	}
-	console.log(dataGrafica2);
-	console.log(labelsGrafica2);
+	//console.log(dataGrafica2);
+	//console.log(labelsGrafica2);
 	//console.log(data);
 	return dataGrafica2;
 }
@@ -146,9 +150,9 @@ function loadDatos(){
 		{"_token": $("meta[name='csrf-token']").attr("content")})
 	.done(function(data) {
 	//alert( "second success" );
-	  console.log("success");
+	  //console.log("success");
 	  datos = data;
-	  console.log(datos);
+	  //console.log(datos);
 	  dibujarGrafica1();
 	})
 	.fail(function() {
@@ -160,9 +164,9 @@ function loadDatos2(){
 		{"_token": $("meta[name='csrf-token']").attr("content")})
 	.done(function(data) {
 	//alert( "second success" );
-	  console.log("success");
+	  //console.log("success");
 	  datosMasVendidos = data;
-	  console.log(datosMasVendidos);
+	  //console.log(datosMasVendidos);
 	  dibujarGrafica2();
 	})
 	.fail(function() {
