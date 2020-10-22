@@ -77,7 +77,7 @@
                 <div class="form-group">
                   <label>ID rastreo:*</label>
                   <div class="input-group" >
-                    <input form="form_pedidos" class="form-control" name="id_rastreo" id="id_rastreo" required>
+                    <input form="form_pedidos" class="form-control" name="id_rastreo" id="id_rastreo" >
                   </div>
                 </div>
               </div> 
@@ -86,7 +86,7 @@
                 <div class="form-group"> 
                   <label>Paqueteria:</label> 
                   <div class="input-group"> 
-                    <input form="form_pedidos" class="form-control" name="paqueteria" id="paqueteria" required>
+                    <input form="form_pedidos" class="form-control" name="paqueteria" id="paqueteria" >
                   </div>
                 </div>
               </div> 

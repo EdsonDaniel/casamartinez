@@ -4,9 +4,9 @@
 	 <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
-        <div class="row mb-2">
+        <div class="row ">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Ventas</h1>
+            <h4 class="m-0 text-dark">Estadísticas</h4>
           </div><!-- /.col -->
           <div class="col-sm-6">
           </div><!-- /.col -->
@@ -32,6 +32,16 @@
                 <canvas id="masVendidos" width="400" height="200"></canvas>
               </div>
             </div>
+          </div>
+
+          <div class="col-6">
+            <div class="card">
+              <div class="card-header w-100 text-center">Ventas del presente año agrupadas por mes</div>
+              <div class="card-body">
+                <canvas id="ventasAnio" width="400" height="200"></canvas>
+              </div>
+            </div>
+            
           </div>
         </div>
       </div>

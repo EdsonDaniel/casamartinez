@@ -182,7 +182,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="/admin" class="nav-link">
                   <i class="far fa-chart-bar nav-icon"></i>
                   <p>Estadísticas</p>
                 </a>
@@ -224,12 +224,12 @@
                   <p>Agregar productos</p>
                 </a>
               </li>
-              <li class="nav-item">
+              <!--<li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="fas fa-chart-line nav-icon"></i>
                   <p>Los más vendidos</p>
                 </a>
-              </li>
+              </li>-->
                <li class="nav-item">
                 <a href="/admin/caracteristicas" class="nav-link">
                   <i class="fas fa-stream nav-icon"></i>

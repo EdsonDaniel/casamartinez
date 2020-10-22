@@ -1,12 +1,14 @@
-var datos, datosMasVendidos;
+var datos, datosMasVendidos, datosAnio;
 var dataGrafica1, dataGrafica2, labelsGrafica2, dataGrafica3, dias;
 var now = new Date();
 var days = daysInMonth( now.getMonth() + 1, now.getFullYear());
 var mes = now.toLocaleString('default', { month: 'long' });
-console.log(mes);
+var meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 
+			'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
 inicializarArrays();
 loadDatos();
 loadDatos2();
+loadDatos3();
 $( document ).ready(function() {
 
 });
@@ -96,14 +98,37 @@ function dibujarGrafica2(){
 	});
 }
 
+function dibujarGrafica3(){
+	var ctx = document.getElementById('ventasAnio').getContext('2d');
+	var ventas = new Chart(ctx, {
+		type: 'line',
+		data: {
+			labels: meses,
+			datasets: [{
+				label: '$ Monto total',
+				data: getDataGrafica3(),
+				backgroundColor: [ 'rgba(75, 192, 192, 0.2)' ],
+				borderColor: [ 'rgba(75, 192, 192, 1)', ],
+				borderWidth: 1
+			}]
+		},
+		options: {
+			scales: {
+				yAxes: [{
+					ticks: { beginAtZero: true }
+				}]
+			},
+		},
+
+		backgroundColor:'rgba(75, 192, 192, 0.2)'
+	});
+}
+
+
 function getDataGrafica1() {
 	for (var i = 0; i < datos.length; i++) {
-		//console.log( data[i]);
 		dataGrafica1[datos[i].dia-1] = datos[i].suma;
-		//datosGrafica[data[i].dia-1] = data[i].suma;
 	}
-	//console.log(dataGrafica1);
-	//console.log(data);
 	return dataGrafica1;
 }
 function getDataGrafica2() {
@@ -123,6 +148,13 @@ function getDataGrafica2() {
 	//console.log(data);
 	return dataGrafica2;
 }
+function getDataGrafica3() {
+	dataGrafica3 = iniciarArray(12);
+	for (var i = 0; i < datosAnio.length; i++) {		
+		dataGrafica3[datosAnio[i].mes-1] = datosAnio[i].suma;
+	}
+	return dataGrafica3;
+}
 function iniciarArray(dias){
 	var arreglo = [];
 	for (var i = 0; i < dias; i++) {
@@ -139,8 +171,6 @@ function inicializarArrays(){
 	dias = [];
 	for (var i = 0; i < days; i++) {
 		dataGrafica1[i] = 0;
-		//dataGrafica2[i] = 0;
-		dataGrafica3[i] = 0;
 		dias[i] = i;
 	}
 }
@@ -149,25 +179,31 @@ function loadDatos(){
 	$.get( "/admin/ventas/ajax",
 		{"_token": $("meta[name='csrf-token']").attr("content")})
 	.done(function(data) {
-	//alert( "second success" );
-	  //console.log("success");
 	  datos = data;
-	  //console.log(datos);
 	  dibujarGrafica1();
 	})
 	.fail(function() {
-	  alert( "Error al cargar los datos" );
+		alert( "Error al cargar los datos" );
 	});
 }
 function loadDatos2(){
 	$.get( "/admin/mas-vendidos/ajax",
 		{"_token": $("meta[name='csrf-token']").attr("content")})
 	.done(function(data) {
-	//alert( "second success" );
-	  //console.log("success");
-	  datosMasVendidos = data;
-	  //console.log(datosMasVendidos);
-	  dibujarGrafica2();
+		datosMasVendidos = data;
+		dibujarGrafica2();
+	})
+	.fail(function() {
+	  alert( "Error al cargar los datos" );
+	});
+}
+function loadDatos3(){
+	$.get( "/admin/ventas-anio/ajax",
+		{"_token": $("meta[name='csrf-token']").attr("content")})
+	.done(function(data) {
+		datosAnio = data;
+		console.log(datosAnio);
+		dibujarGrafica3();
 	})
 	.fail(function() {
 	  alert( "Error al cargar los datos" );
@@ -176,10 +212,3 @@ function loadDatos2(){
 function daysInMonth (month, year) { 
 	return new Date(year, month, 0).getDate();
 }
-
-/*function generaEtiquetas(){
-	var item = 
-	{
-		text: 
-	}
-}*/

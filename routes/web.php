@@ -260,6 +260,9 @@ Route::get('/admin/pedidos/detalles/{id}', 'PedidoController@show');
 //ruta para crear un pedido ****
 Route::get('/admin/pedidos/agregar', 'PedidoController@create'); 
 Route::post('/admin/pedidos/enviar/{id}', 'PedidoController@enviar');
+Route::post('/admin/pedidos/entregado/{id}', 'PedidoController@entregado');
+Route::post('/admin/pedidos/cancelado/{id}', 'PedidoController@cancelado');
+
 //rutas para actualizar una pedido especifica
 //Route::get('/admin/pedidos/update/{id}', 'PedidoController@update');
 Route::post('/admin/pedidos/update/{id}', 'PedidoController@update');
@@ -282,5 +285,6 @@ Route::get('/admin/pedidos/empleados/ajax', 'PedidoController@getUsersEmpleados'
 
 /***********************rutas estadisticas *///////////////////////////
 Route::get('/admin/ventas/ajax', 'PedidoController@getVentasAjax');
+Route::get('/admin/ventas-anio/ajax', 'PedidoController@getVentasAnioAjax');
 Route::get('/admin/mas-vendidos/ajax', 'PedidoController@getVendidosAjax');
 

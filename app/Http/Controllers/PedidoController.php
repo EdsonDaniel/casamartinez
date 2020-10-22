@@ -8,8 +8,9 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\StoreUser;
 use App\Pedido;
 use App\VentasMes;
+use App\VentasAnio;
 use App\MasVendidos;
-use MercadoPago;
+use App\DireccionesEnvio;
 
 
 class PedidoController extends Controller
@@ -36,51 +37,40 @@ class PedidoController extends Controller
         return response('Datos actualizados correctamente.', 200);
     }
 
-    
-    public function create()
-    {
-        return view('admin.addUsuario');
+    public function entregado(Request $request, $id){
+        $pedido = Pedido::findOrFail($id);
+        if ($pedido == null) {
+            return response('-Error al actualizar los datos.' 
+                    + '\nNo se encontró el pedido seleccionado.'
+                    , 422);
+        }
+        $pedido->estado = 2;
+        $pedido->fecha_entrega = now();
+        $pedido->save();
+        return response('Datos actualizados correctamente.', 200);
     }
-    
-    public function store(Request $request)
-    {
-        $user = new User;
-        $user->name = $request->input('name');
-        $user->last_name = $request->input('last_name');
-        $user->email = $request->input('email');
-        $user->password = Hash::make($request->input('password'));
-        $user->tipo_usuario = $request->input('tipo_usuario');
-        $user->save();
-
-        return redirect('/admin/usuarios');
+    public function cancelado(Request $request, $id){
+        $pedido = Pedido::findOrFail($id);
+        if ($pedido == null) {
+            return response('-Error al actualizar los datos.' 
+                    + '\nNo se encontró el pedido seleccionado.'
+                    , 422);
+        }
+        $pedido->estado = -1;
+        $pedido->save();
+        return response('Datos actualizados correctamente.', 200);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function show(Request $request, $id)
     {
-        $pedido = User::findOrFail($id);
+        $pedido = Pedido::findOrFail($id);
+        $productos = $pedido->productos;
+        $direccion = DireccionesEnvio::findOrFail($pedido->direccion_envio_id);
         return view('admin.detallePedido',
-            ['usuario'=>$user, 'editable'=>$editable, 'icon_class'=>$icon, 'color'=>$color]);
+            ['pedido'=>$pedido, 'productos'=>$productos, 'direccion'=>$direccion]);
     }
-   
-   
-    public function update(Request $request, $id)
-    {
-        
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    
+       
     public function getDataAjax()
     {
         $pedidos = Pedido::all();
@@ -98,6 +88,10 @@ class PedidoController extends Controller
 
     public function getVentasAjax(){
         $data = VentasMes::all();
+        return response()->json($data);
+    }
+    public function getVentasAnioAjax(){
+        $data = VentasAnio::all();
         return response()->json($data);
     }
     public function getVendidosAjax(){
