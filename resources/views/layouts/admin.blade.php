@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="/adminlte/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
   @yield('style')
   <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <script src="https://kit-pro.fontawesome.com/releases/v5.10.1/js/pro.min.js" data-auto-fetch-svg></script>-->
@@ -187,17 +188,17 @@
                 </a>
               </li>
                <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="/admin/pedidos" class="nav-link">
                   <i class="fas fa-box nav-icon"></i>
                   <p>Pedidos</p>
                 </a>
               </li>
-              <li class="nav-item">
+              <!--<li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="fas fa-file-invoice nav-icon"></i>
                   <p>Reportes</p>
                 </a>
-              </li>
+              </li>-->
             </ul>
           </li>
 
@@ -340,6 +341,7 @@
 
 <!-- AdminLTE App -->
 <script src="/adminlte/js/adminlte.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
 
 @yield('scripts')
 </body>

@@ -6,16 +6,39 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Ventas del mes</h1>
+            <h1 class="m-0 text-dark">Ventas</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Starter Page</li>
-            </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-@stop
+
+    <div class="container">
+      <div class="card">
+        <div class="card-header w-100 text-center">Ventas del presente mes agrupadas por día.</div>
+        <div class="card-body">
+          <canvas id="ventas" width="400" height="100"></canvas>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <div class="card">
+              <div class="card-header w-100 text-center">Top 5 Productos más vendidos en los últimos días</div>
+              <div class="card-body">
+                <canvas id="masVendidos" width="400" height="200"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+@endsection
+
+@section('scripts')
+<script type="text/javascript" src="/js/custom/loadVentas.js">
+</script>
+@endsection

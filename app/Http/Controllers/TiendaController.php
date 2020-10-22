@@ -107,10 +107,29 @@ class TiendaController extends Controller
         http_response_code(200);
     }
 
+    public function webhookMP(Request $request){
+        $payload = @file_get_contents('php://input');
+        $eventJson = json_decode($input, true);
+        $direccion_envio = DireccionesEnvio::create([
+            'calle'           => 'pagoexitoso',
+            'numero'          => 4,
+            'numero_interior' => 3,
+            'apartamento'     => null,
+            'colonia'         => 'city',
+            'municipio'       => 'municipio',
+            'estado'          => 'state',
+            'codigo_postal'   => '60000',
+            'telefono'        => '9513230110',
+            'nombre_residente' => 'name'
+        ]);
+        http_response_code(200);
+    }
+
     public function createPedido($data){
         $metadata = $data['metadata'];
         $costo_envio = $metadata['costo_envio'];
-        $user = $metadata['id'];
+        $user = $metadata['user_id'];
+        if($user == -1) $user = null;
         //$extra_address_info = $metadata['extra_data'];
 
         $direccion_envio = DireccionesEnvio::create([
@@ -129,7 +148,9 @@ class TiendaController extends Controller
         $direccion_facturacion = $metadata['addressFac'];
         if($direccion_facturacion == '0') $direccion_facturacion = $direccion_envio->id;
         else $direccion_facturacion = null;//$this->createDireccionEnvio($direccion_facturacion);    
-        $total = $data['amount']/100;   
+        $total = $data['amount']/100;  
+        //$user_id = null;
+        //if($data['id'] == -1 || $data['id'] == "-1") $data['id'] = null;
 
         $pedido = Pedido::create([
             'metodo_pago' => 'Tarjeta con Stripe',

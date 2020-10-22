@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\StoreUser;
 use App\Pedido;
+use App\VentasMes;
+use App\MasVendidos;
 use MercadoPago;
 
 
@@ -69,49 +71,7 @@ class PedidoController extends Controller
    
     public function update(Request $request, $id)
     {
-        //$validated = $request->validated();
-
-        $usuario = User::find($id);
-
-        /*
-
-        if( $validated['name'] != null && $validated['name'] != $usuario->name ){
-            $usuario->name  = $validated['name'];
-        }
-        if( $validated['last_name'] != null && $validated['last_name'] != $usuario->last_name ){
-            $usuario->last_name = $validated['last_name'];
-        }
-        if( $validated['email'] != null && $validated['email'] != $usuario->email ){
-            $usuario->email = $validated['email'];
-        }
-        if( $validated['tipo_usuario'] != null && $validated['tipo_usuario'] != $usuario->tipo_usuario ){
-            $usuario->tipo_usuario  = $validated['tipo_usuario'];
-        }
-        if( $request->input("password") != null && $request->input("password") != "" ){
-            $usuario->password = $request->input('password');
-        }
-        */
-
-        if( $request->input('name') != null && $request->input('name') != $usuario->name ){
-            $usuario->name  = $request->input('name');
-        }
-        if( $request->input('last_name') != null && $request->input('last_name') != $usuario->last_name ){
-            $usuario->last_name = $request->input('last_name');
-        }
-        if( $request->input('tipo_usuario') != null && $request->input('tipo_usuario') != $usuario->tipo_usuario ){
-            $usuario->tipo_usuario  = $request->input('tipo_usuario');
-        }
-        if( $request->input('email') != null && $request->input('email') != $usuario->email ){
-            $request->validate([
-                'email'=>['unique:users,email','max:100'], 
-            ]);
-            $usuario->email = $request->input('email');
-        }
-        if( $request->input("password") != null && $request->input("password") != "" ){
-            $usuario->password = $request->input('password');
-        }
         
-        $usuario->save();
     }
 
     /**
@@ -120,31 +80,7 @@ class PedidoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function baja($id)
-    {
-        $user = User::find($id);
-        $user->active = 0;
-        $user->save();
-    }
-
-    public function alta($id)
-    {
-        $user = User::find($id);
-        $user->active = 1;
-        $user->save();
-    }
-
-    public function getDataAjaxActive()
-    {
-        $usuarios = User::where('active', 1)->get();
-        return response()->json($usuarios);
-    }
-    public function getDataAjaxInactive()
-    {
-        $usuarios = User::where('active', 0)->get();
-        return response()->json($usuarios);
-    }
-
+    
     public function getDataAjax()
     {
         $pedidos = Pedido::all();
@@ -158,6 +94,15 @@ class PedidoController extends Controller
     public function getUsersEmpleados(){
         $users = User::where('tipo_usuario', '>', 3)->get();
         return $users;
+    }
+
+    public function getVentasAjax(){
+        $data = VentasMes::all();
+        return response()->json($data);
+    }
+    public function getVendidosAjax(){
+        $data = MasVendidos::all();
+        return response()->json($data);
     }
 
 }

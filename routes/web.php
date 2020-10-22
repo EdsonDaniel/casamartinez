@@ -61,6 +61,7 @@ Route::post('/checkout', 'CartController@checkout');
 Route::get('/checkout', 'CartController@pagar');
 
 Route::post('/checkout/end-point/stripe','TiendaController@webhookStripe');
+Route::post('/checkout/end-point/mercado-pago','TiendaController@webhookMP');
 
 Route::get('/mail-view', 'TiendaController@previewEmail');
 Route::get('/pago-exitoso', 'TiendaController@pagoExitoso');
@@ -277,4 +278,9 @@ Route::get('/admin/pedidos/ajax/', 'PedidoController@getDataAjax');
 Route::get('/admin/pedidos/empleados/ajax', 'PedidoController@getUsersEmpleados');
 
 //*****************************************rutasd Crud pedidos***************************/
+
+
+/***********************rutas estadisticas *///////////////////////////
+Route::get('/admin/ventas/ajax', 'PedidoController@getVentasAjax');
+Route::get('/admin/mas-vendidos/ajax', 'PedidoController@getVendidosAjax');
 

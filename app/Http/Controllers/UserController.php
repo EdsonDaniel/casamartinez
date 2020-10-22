@@ -21,6 +21,7 @@ class UserController extends Controller
         $user = Auth::user();
         $pedidos = Pedido::where('user_id', $user->id)->get();
         $direcciones = DireccionesUsuario::where('user_id', $user->id)->get();
+        //$productos = 
         return view('micuenta')->with([
             'pedidos'=>$pedidos,
             'direcciones' =>$direcciones,
@@ -43,6 +44,7 @@ class UserController extends Controller
             'estado'          => $direccion['estado'],
             'codigo_postal'   => $direccion['codigo_postal'],
             'telefono'        => $direccion['telefono'],
+            'email'           => $direccion['email'],
             'nombre_residente' => $direccion['nombre'].' '.$direccion['apellidos'],
             'user_id'         => $user->id
         ]);
@@ -84,6 +86,7 @@ class UserController extends Controller
         $old_dir->estado          = $direccion['estado'];
         $old_dir->codigo_postal   = $direccion['codigo_postal'];
         $old_dir->telefono        = $direccion['telefono'];
+        $old_dir->email        = $direccion['email'];
         $old_dir->nombre_residente = $direccion['nombre'];
 
         $old_dir->save();

@@ -752,8 +752,15 @@ function onChangeNewAddress(input){
         contrario.next().attr("aria-expanded", false);
         $(contrario.next().data("target")).removeClass("show");
         saltarA($(input));
-        if ($(input).hasClass("toF"))
-        $("#form-nueva-direccion input").first().focus();
+        if ($(input).hasClass("toF")){
+            $("#form-nueva-direccion input").first().focus();
+            /*$("#form-nueva-direccion input").prop("required", true);*/
+            $("#direccionExistente").prop("disabled", 1);
+        }
+        else{
+            $("#form-nueva-direccion input").prop("required", false);
+            $("#direccionExistente").prop("disabled", 0);
+        }
     }
 }
 

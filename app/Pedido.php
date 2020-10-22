@@ -18,8 +18,14 @@ class Pedido extends Model
         'estado' => 'integer',
     ];
 
-    /**
-    * Obtener las direcciones del usuario
-    */
+    public function productos()
+    {
+        return $this->belongsToMany(
+            'App\PresentacionesProducto', 
+            'productos_comprados', 
+            'pedido_id', 
+            'presentacion_producto_id')
+            ->withPivot('cantidad', 'precio_unitario');
+    }
        
 }

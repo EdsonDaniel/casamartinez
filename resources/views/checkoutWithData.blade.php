@@ -63,7 +63,7 @@
         <div class="alert-light mb-3 p-2 px-3 row">
           <!-- Checkbox -->
           <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" id="direccionRegistrada" type="checkbox" onchange="onChangeNewAddress(this)" checked="" name="address" data-relative="#nuevaDireccion">
+            <input class="custom-control-input" id="direccionRegistrada" type="checkbox" onchange="onChangeNewAddress(this)" checked="" name="addressExistente" data-relative="#nuevaDireccion" form="formDireccion" value="{{$direccion->id}}">
             <label class="custom-control-label font-size-sm" data-target="#dataDirReg" for="direccionRegistrada" data-toggle="collapse" aria-expanded="true" id="label-vieja">
               Entregar en esta direccion
             </label>
@@ -74,13 +74,13 @@
         <div class="row mb-4 collapse show" id="dataDirReg">
           <div class="col-12 col-md-6">
             <h5>Dirección de envío</h5>
-            <p class="m-0" style="font-weight: 500;">{{$direccion->nombre_residente}}</p>
+            <!--<p class="m-0" style="font-weight: 500;">{{$direccion->nombre_residente}}-</p>-->
             <p class="m-0">{{$direccion->calle}} No. {{$direccion->numero}} 
               @if($direccion->numero_interior) No. Interior {{$direccion->numero_interior}} @endif
             </p>
             @if($direccion->apartamento)<p class="m-0">{{$direccion->apartamento}}</p>@endif
             <p class="m-0">{{$direccion->colonia}}</p>
-            <p class="m-0">{{$direccion->municipio}}, {{$direccion->estado}}, {$direccion->codigo_postal}}</p>
+            <p class="m-0">{{$direccion->municipio}}, {{$direccion->estado}}, {{$direccion->codigo_postal}}</p>
             <p class="m-0">Teléfono: {{$direccion->telefono}}</p>
             <p class="m-0"></p>
           </div>
@@ -102,6 +102,9 @@
             <!-- Form -->
             <form id="formDireccion" method="post" action="/checkout">
               @csrf
+              @if(Auth::check() && $direccion)
+                <input type="hidden" name="direccionExistente" id="direccionExistente" data-check="1"  value="{{$direccion->id}}">
+              @endif
               <!-- Heading -->
               <h5 class="mb-3">Datos de envío</h5>
 
@@ -210,7 +213,10 @@
 
                   <!-- ZIP / Postcode -->
                   <div class="form-group mb-0">
-                    <label for="codigo_postal">Código postal *</label>
+                    <span>
+                      <label for="codigo_postal">Código postal *</label>
+                    <button class="btn btn-sm btn-outline-dark float-right btn-validate" onclick="validarCP(this)" data-input="#codigo_postal" type="button">Validar CP</button>
+                    </span>
                     <input class="form-control form-control-sm address @error('codigo_postal') is-invalid @enderror" id="codigo_postal" type="number" placeholder="68000" required="" onchange="loadInfoCP(this)" name="codigo_postal" value="{{ old('codigo_postal') }}">
                   </div>
                   <div class="invalid-feedback">
@@ -286,7 +292,7 @@
                     <!-- Last Name -->
                     <div class="form-group">
                       <label for="lastnamef">Apellidos*</label>
-                      <input class="form-control form-control-sm @error('apellidos') is-invalid @enderror" id="lastnamef" type="text" placeholder="Apellidos" required="" name="apellidos_facturacion">
+                      <input class="form-control form-control-sm @error('apellidos') is-invalid @enderror" id="lastnamef" type="text" placeholder="Apellidos"  name="apellidos_facturacion">
                     </div>
                     @error('apellidos')
                       <div class="msg-error">{{ $message }}</div>
@@ -376,7 +382,8 @@
 
                     <!-- ZIP / Postcode -->
                     <div class="form-group">
-                      <label for="codigo_postalf">Código postal *</label>
+                      <span><label for="codigo_postalf">Código postal *</label>
+                      <button class="btn btn-sm btn-outline-dark float-right btn-validate" onclick="validarCP(this)" data-input="#codigo_postalf" type="button">Validar CP</button></span> 
                       <input class="form-control form-control-sm address @error('codigo_postal_facturacion') is-invalid @enderror" id="codigo_postalf" type="number" placeholder="68000" required="" onchange="loadInfoCP(this)" name="codigo_postal_facturacion">
                     </div>
                     @error('codigo_postal_facturacion')
@@ -497,6 +504,9 @@
   addListeners();
   fadeNav();
   createInputCart();
+  if(logged){
+    $("#formDireccion input").prop("required", false);
+  }
 });
 </script>
 @endsection

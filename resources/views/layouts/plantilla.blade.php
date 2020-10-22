@@ -59,7 +59,7 @@
                     </li>
                 </ul>
 
-                <a href="/" class="ico"><span class="fa fa-shopping-cart" id="cart"></span></a>
+                <a href="/tienda" class="ico"><span class="fa fa-shopping-bag" id="cart"></span></a>
                 <a class="ico" id="opened" onclick="openNav()"><i class="fa fa-bars" id="icon-menu"></i></a> 
             </div>
         </div>

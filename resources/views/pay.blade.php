@@ -199,7 +199,7 @@
                       </button>
                       <p class="error-msg mt-2" role="alert" id="card-error">
                       </p>
-                      <p class="result-message hidden">
+                      <p class="result-message hidden d-none">
                         Payment succeeded, see the result in your
                         <a href="" target="_blank">Stripe dashboard.</a> Refresh the page to pay again.
                       </p>

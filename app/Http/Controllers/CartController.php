@@ -45,6 +45,15 @@ class CartController extends Controller
             return redirect("/informacion-de-envio");
         }
 
+        $user = -1;
+        if (Auth::check()) {
+            $user = Auth::user();
+            if(!is_array($address)){
+                $address = $this->transformDireccion($address, $user->id);
+            }
+            $user = $user->id;
+        }
+
         $addressFac = session('addressFac', '0');
         $addFacEncod = $addressFac;
         if ($addressFac != '0') { $addressFac = json_encode($addressFac); }
@@ -84,6 +93,7 @@ class CartController extends Controller
                 'email_custom'      => $address['email'],
                 'costo_envio'       => $costo_envio,
                 'addressFac'        => $addressFac,
+                'user_id'           => $user
             ]
         ]);
 
@@ -104,17 +114,60 @@ class CartController extends Controller
         ]);
     }
 
+    public function transformDireccion($dir, $user_id){
+        $direccion = DireccionesUsuario::findOrFail($dir);
+        $nuevaDir = array();
+        $nuevaDir['nombre']        = $direccion['nombre_residente'];
+        $nuevaDir['apellidos']     = "";
+        $nuevaDir['email']         = $direccion['email'];
+        $nuevaDir['telefono']      = $direccion['telefono'];
+        $nuevaDir['calle']         = $direccion['calle'];
+        $nuevaDir['no_exterior']   = $direccion['numero'];
+        $nuevaDir['no_interior']   = $direccion['numero_interior'];
+        $nuevaDir['apartamento']   = $direccion['apartamento'];
+        $nuevaDir['codigo_postal'] = $direccion['codigo_postal'];
+        $nuevaDir['colonia']       = $direccion['colonia'];
+        $nuevaDir['municipio']     = $direccion['municipio'];
+        $nuevaDir['estado']        = $direccion['estado'];
 
-    public function checkout(StoreDirection $request){
-        $validated = $request->validated();
+        return $nuevaDir;
+    }
+
+
+    public function checkout(Request $request){
+        $address = "";
+        //return $request->input('direccionExistente');
+        if (Auth::check() && $request->input('direccionExistente')){
+            $address = $request->input('direccionExistente');
+        }
+        else{
+            $array_valid = [
+                'nombre'        => ['required', 'min:1', 'max:190'],
+                'apellidos'     => ['required', 'min:1', 'max:190'],
+                'email'         => ['required', 'email', 'min:1', 'max:190'],
+                'telefono'      => ['required', 'size:10'],
+                'calle'         => ['required', 'min:1', 'max:190'],
+                'no_exterior'   => ['required', 'min:1', 'max:190'],
+                'no_interior'   => ['nullable', 'min:1', 'max:190'],
+                'apartamento'   => ['nullable','min:1', 'max:190'],
+                'codigo_postal' => ['required', 'min:1', 'max:5'],
+                'colonia'       => ['required', 'min:1', 'max:190'],
+                'municipio'     => ['required', 'min:1', 'max:190'],
+                'estado'        => ['required', 'min:1', 'max:190'],
+            ];
+            $validated = $request->validate($array_valid);
+            $address = $validated;
+        }
+        
+        //$validated = $request->validated();
         $cart = $request->input('cart');
         $cart = json_decode($cart,true);
         $dataValidated = $this->validateItems($cart);
         $cartValidated = $dataValidated['cart'];
         $productos  = $dataValidated['prods'];
         $request->session()->put('cart', $cartValidated);
-        $address = array();
-        $address = $validated;
+        //$address = array();
+        
         $request->session()->put('address', $address);
         $request->session()->put('count', $dataValidated['count']);
         $request->session()->put('subtotal', $dataValidated['subtotal']);
@@ -138,6 +191,10 @@ class CartController extends Controller
         ];
             $validSecondData = $request->validate($array_validaciones);
             $request->session()->put('addressFac', $validSecondData);
+        }
+        if (Auth::check() && is_array($address)){
+            $user = Auth::user();
+            $this->crearDireccion($address, $user->id);
         }
 
         if($request->input('registrarse') && $request->input("password") != null){
@@ -166,7 +223,7 @@ class CartController extends Controller
     public function crearPreferencia($productos, $address, $costo_envio){
         //require __DIR__ .  '\vendor\autoload.php';
         // Agrega credenciales
-        MercadoPago\SDK::setAccessToken('TEST-7945488261032685-081220-d0ff5f8b361b5cfaca0d6cbafa90cd80-197994591');
+        MercadoPago\SDK::setAccessToken('APP_USR-1159009372558727-072921-8d0b9980c7494985a5abd19fbe921a3d-617633181');
         //MercadoPago\SDK::setIntegratorId('dev_f510b794d75e11ea8ee70242ac130004');
 
         // Crea un objeto de preferencia
@@ -222,14 +279,14 @@ class CartController extends Controller
             "installments" => 1
         );
 
-        /*$preference->back_urls = array(
-            "success" => "https://edsonperez-mp-commerce-php.herokuapp.com/success.php",
-            "failure" => "https://edsonperez-mp-commerce-php.herokuapp.com/failure.php",
-            "pending" => "https://edsonperez-mp-commerce-php.herokuapp.com/pending.php"
-        );*/
-        /*$preference->auto_return = "approved";
-        $preference->notification_url = "https://edsonperez-mp-commerce-php.herokuapp.com/notifications.php";
-        */
+        $preference->back_urls = array(
+            "success" => "https://casa-martinez.herokuapp.com/pago-exitoso",
+            "failure" => "https://casa-martinez.herokuapp.com/pago-rechazado",
+            "pending" => "https://casa-martinez.herokuapp.com/pago-rechazado"
+        );
+        $preference->auto_return = "approved";
+        $preference->notification_url = "https://casa-martinez.herokuapp.com/checkout/end-point/mercado-pago";
+        
         $preference->items = $items;
         $preference->payer = $payer;
         $preference->save();
@@ -245,7 +302,8 @@ class CartController extends Controller
             $user = $user = auth()->user();
             $carrito = $user->carrito;
             $prod = CarritoProductos::select('presentacion_producto_id','cantidad')->where('carrito_compras_id', $carrito->id)->get();
-            $direccion = $user->direcciones();
+            //$direccion = $user->direcciones;
+            $direccion = DireccionesUsuario::where('user_id', $user->id)->first();
             /*return view('checkout')
                     ->with(['productos'=>$productos, 'inCart' => $prod]);*/
         }
@@ -297,6 +355,26 @@ class CartController extends Controller
         $carrito->productos()->detach();
         return response()->json([
                 'message' => 'Carrito vaciado'], 200);
+    }
+
+    public function crearDireccion($direccion, $user_id){
+
+        $direccion_facturacion = DireccionesUsuario::create([
+            'calle'           => $direccion['calle'],
+            'numero'          => $direccion['no_exterior'],
+            'numero_interior' => $direccion['no_interior'],
+            'apartamento'     => $direccion['apartamento'],
+            'colonia'         => $direccion['colonia'],
+            'municipio'       => $direccion['municipio'],
+            'estado'          => $direccion['estado'],
+            'codigo_postal'   => $direccion['codigo_postal'],
+            'telefono'        => $direccion['telefono'],
+            'email'           => $direccion['email'],
+            'nombre_residente' => $direccion['nombre'].' '.$direccion['apellidos'],
+            'user_id'         => $user_id
+        ]);
+
+        return $direccion_facturacion->id;
     }
 
     public function syncData(Request $request){

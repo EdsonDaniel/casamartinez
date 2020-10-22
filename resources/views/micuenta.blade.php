@@ -115,7 +115,7 @@
 
                                 <!-- Text -->
                                 <p class="mb-lg-0 font-size-sm font-weight-bold">
-                                  673290789
+                                  {{$p->id}}
                                 </p>
 
                               </div>
@@ -126,9 +126,9 @@
 
                                 <!-- Text -->
                                 <p class="mb-lg-0 font-size-sm font-weight-bold">
-                                  <time datetime="2019-10-01">
-                                    01 Oct, 2019
-                                  </time>
+                                  <!--<time datetime="2019-10-01">-->
+                                    {{$p->created_at}}
+                                  <!--</time>-->
                                 </p>
 
                               </div>
@@ -139,7 +139,18 @@
 
                                 <!-- Text -->
                                 <p class="mb-0 font-size-sm font-weight-bold">
-                                  Awating Delivery
+                                  @switch($p->estado)
+                                    @case(0) Preparando el pedido
+                                    @break;
+                                    @case(1) En camino
+                                    @break;
+                                    @case(2) Entregado
+                                    @break;
+                                    @case(3) Reemplazo solicitado
+                                    @break;
+                                    @case(-1) Cancelado
+                                    @break;
+                                  @endswitch
                                 </p>
 
                               </div>
@@ -150,7 +161,7 @@
 
                                 <!-- Text -->
                                 <p class="mb-0 font-size-sm font-weight-bold">
-                                  $259.00
+                                  ${{$p->monto_total}}
                                 </p>
 
                               </div>
@@ -163,50 +174,47 @@
                         <div class="row align-items-center justify-content-between">
                           <div class="col-12 col-lg-6">
                             <div class="form-row mb-4 mb-lg-0">
-                              <div class="col-3">
+                              @foreach ($p->productos as $pr)
+                                @break($loop->index == 4)
+
+                                <div class="col-3">
 
                                 <!-- Image -->
-                                <div class="embed-responsive embed-responsive-1by1 bg-cover" style="background-image: url(/storage/img/fotos-productos/aA27tVRS9nTVJj8st48x4V7z8rthlQxdb5gsTy0y.jpeg);"></div>
+                                <div class="embed-responsive embed-responsive-1by1 bg-cover" style="background-image: url(/storage/{{$pr->foto_url}});">
+                                </div>
 
                               </div>
-                              <div class="col-3">
-
-                                <!-- Image -->
-                                <div class="embed-responsive embed-responsive-1by1 bg-cover" style="background-image: url(/storage/img/fotos-productos/aA27tVRS9nTVJj8st48x4V7z8rthlQxdb5gsTy0y.jpeg);"></div>
-
-                              </div>
-                              <div class="col-3">
-
-                                <!-- Image -->
-                                <div class="embed-responsive embed-responsive-1by1 bg-cover" style="background-image: url(/storage/img/fotos-productos/aA27tVRS9nTVJj8st48x4V7z8rthlQxdb5gsTy0y.jpeg);"></div>
-
-                              </div>
+                              @endforeach
+                              
+                              @if(count($p->productos) > 3)
+                              
                               <div class="col-3">
 
                                 <!-- Image -->
                                 <div class="embed-responsive embed-responsive-1by1">
                                   <a class="embed-responsive-item embed-responsive-item-text text-reset" href="#!">
                                     <div class="font-size-xxs font-weight-bold d-flex justify-content-center align-items-center h-100 bg-white text-center text-dark">
-                                      +2 <br> more
+                                      +{{count($p->productos) - 3}} <br> más
                                     </div>
                                   </a>
                                 </div>
 
                               </div>
+                              @endif
                             </div>
                           </div>
                           <div class="col-12 col-lg-4">
                             <div class="form-row justify-content-center">
                               <div class="col-12">
                                 <!-- Button -->
-                                <a class="btn btn-outline-dark btn-sm ls btn-block " href="account-order.html">
+                                <a class="btn btn-outline-dark btn-sm ls btn-block " >
                                   DETALLES DEL PEDIDO
                                 </a>
 
                               </div>
                               <div class="col-12 mt-2">
                                 <!-- Button -->
-                                <a class="btn btn-outline-dark ls btn-sm btn-block " href="account-order.html">
+                                <a class="btn btn-outline-dark ls btn-sm btn-block " >
                                   COMPRAR DE NUEVO
                                 </a>
 

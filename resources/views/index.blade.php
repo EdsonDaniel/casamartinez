@@ -55,7 +55,7 @@
   <!--segundo parrafp-->
   <div class="text-and-img">
     <div id="atr">
-      <h5 class="header-parrafo align-text"><a href="/filosofía">FILOSOFÍA</a></h5>
+      <h5 class="header-parrafo align-text"><a href="/filosofia">FILOSOFÍA</a></h5>
       <p class="text-home align-text">Cuando era niño siempre me preguntaba cuál era mi misión en este mundo, crecí, migré, volví y forme una familia y en ese transcurso aprendí que lo más valioso que tengo es la herencia que mis padres me han dejado y que hoy comparto con mis hijos y con el mundo,<br>¡HACER MEZCAL!.</p>
       <p class="text-home align-text"><span><a href="/filosofia" id="atra">-Leer más...</a></span></p>
     </div>
