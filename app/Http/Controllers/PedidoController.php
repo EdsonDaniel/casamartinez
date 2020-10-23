@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\StoreUser;
 use App\Pedido;
+use App\Productos;
 use App\VentasMes;
 use App\VentasAnio;
 use App\MasVendidos;
@@ -66,6 +67,7 @@ class PedidoController extends Controller
     {
         $pedido = Pedido::findOrFail($id);
         $productos = $pedido->productos;
+        //return $productos;
         $direccion = DireccionesEnvio::findOrFail($pedido->direccion_envio_id);
         return view('admin.detallePedido',
             ['pedido'=>$pedido, 'productos'=>$productos, 'direccion'=>$direccion]);
