@@ -1,7 +1,7 @@
 @extends('layouts.layout-tienda')
 
 @section('title')
-  Tienda en línea | Casa Martínez
+  Productos | Casa Martínez
 @endsection
 
 @section('stylesheet')
@@ -32,7 +32,7 @@
               <div class="custom-control custom-control-img mb-3 mb-md-4">
                 <input type="radio" class="custom-control-input" id="modalProductColorOne" name="modalProductColor" data-toggle="form-caption" data-target="#modalProductColorCaption" value="White" checked="">
                 <label class="custom-control-label pb-1" for="modalProductColorOne">
-                  <span class="embed-responsive embed-responsive-1by1 bg-cover" style="background-image: url(/img/botellas/anejo-sq.jpg);"></span>
+                  <span class="embed-responsive embed-responsive-1by1 bg-cover" style="background-image: url(/storage/{{$presentacion->foto_url}});"></span>
                 </label>
               </div>
               <div class="custom-control custom-control-img mb-3 mb-md-4">
@@ -57,7 +57,7 @@
               <div class="wrapper shadow-md">
 
                 <!-- Image -->
-                <img class="card-img-top card-img-back p-1 p-md-2" src="/img/botellas/anejo-sq.jpg" alt="...">
+                <img class="card-img-top card-img-back p-1 p-md-2" src="/storage/{{$presentacion->foto_url}}" alt="...">
 
               </div>
 
@@ -73,13 +73,17 @@
       <div class="col-12 col-md-6 pl-md-4 mt-4 mt-md-3 px-4">
 
         <!-- Heading -->
-        <h4 class="mb-1 mx-md-auto mb-md-2 mb-md-3 title-product-modal">Mezcal Sinái (Joven) 750ml</h4>
+        <h4 class="mb-1 mx-md-auto mb-md-2 mb-md-3 title-product-modal">{{$producto->nombre . " " . $presentacion->contenido . " " . $presentacion->unidad_c }}</h4>
 
         <div class="row mt-3">
           <div class="col-12 description">
-            <p class="m-0">
+            <!--<p class="m-0">
               Mezcal artesanal joven.
               Elaborado a base de agave 100% orgánico certificado. Su agradable aroma y sabor complacen hasta los paladares más exigentes.
+            </p>
+          -->
+            <p class="m-0">
+              {{$producto->descripcion}}
             </p>
           </div>
         </div>
@@ -89,11 +93,24 @@
           <div class="col-12 col-md-6">
             <!-- Price -->
             <div class="mb-1 b-md-3 mx-md-auto">
-              <h4 class="price-product-modal mb-1 ">$850.00 MXN</h4>
-              <span class="product-status d-block mt-md-2">Disponible</span>
+              <h4 class="price-product-modal mb-1 ">$ {{$presentacion->precio_consumidor}} MXN</h4>
+              @switch($presentacion->estado)
+                @case(-1)
+                @case(0)
+                  <span class="product-status d-block mt-md-2 text-danger">
+                  No Disponible por el momento</span>
+                  @break
+                @case(1)
+                  <span class="product-status d-block mt-md-2">Disponible</span>
+                  @break
+                @case(2)
+                  <span class="product-status d-block mt-md-2 text-muted">Próximamente</span>
+                  @break
+              @endswitch
             </div>
           </div>
 
+          @if($presentacion->estado == 1)
           <div class="col-12 col-md-6 d-flex align-items-end">
             <div class="w-100">
               <div class="d-flex">
@@ -114,6 +131,7 @@
               </div>
             </div>
           </div>
+          @endif
         </div>
 
         <div class="row mt-3">
@@ -123,33 +141,25 @@
 
               <!-- Label -->
               <p class="mx-md-auto mb-4">
-                Presentación: <strong id="modalProductColorCaption">750 ml</strong>
+                Presentación: <strong id="modalProductColorCaption">{{$presentacion->contenido. " ". $presentacion->unidad_c}}</strong>
               </p>
 
               <!-- Radio -->
               <div class="div-img-radio-products">
+                @foreach($producto->presentaciones as $p)
                 <div class="custom-control custom-control-inline custom-control-img">
-                  <input type="radio" class="custom-control-input" id="modalProductColorOne" name="modalProductColor" data-toggle="form-caption" data-target="#modalProductColorCaption" value="White" checked="">
+                  <input type="radio" class="custom-control-input" name="modalProductColor" data-toggle="form-caption" data-target="#modalProductColorCaption" value="White"
+                   @if ($loop->first)checked=""@endif >
                   <label class="custom-control-label pb-1" for="modalProductColorOne">
-                    <span class="embed-responsive embed-responsive-1by1 bg-cover" style="background-image: url(/img/botellas/anejo-sq.jpg);"></span>
+                    <span class="embed-responsive embed-responsive-1by1 bg-cover" style="background-image: url(/storage/{{$p->foto_url}});"></span>
                   </label>
                 </div>
-                <div class="custom-control custom-control-inline custom-control-img">
-                  <input type="radio" class="custom-control-input" id="modalProductColorTwo" name="modalProductColor" data-toggle="form-caption" data-target="#modalProductColorCaption" value="Black">
-                  <label class="custom-control-label pb-1" for="modalProductColorTwo">
-                    <span class="embed-responsive embed-responsive-1by1 bg-cover" style="background-image: url(/img/botellas/anejo-sq.jpg);"></span>
-                  </label>
-                </div>
-                <div class="custom-control custom-control-inline custom-control-img">
-                  <input type="radio" class="custom-control-input" id="modalProductColorTwo" name="modalProductColor" data-toggle="form-caption" data-target="#modalProductColorCaption" value="Black">
-                  <label class="custom-control-label pb-1" for="modalProductColorTwo">
-                    <span class="embed-responsive embed-responsive-1by1 bg-cover" style="background-image: url(/img/botellas/anejo-sq.jpg);"></span>
-                  </label>
-                </div>
+                @endforeach
+                
               </div>
             </div>
           </div>
-          
+          @if($presentacion->estado == 1)
           <div class="col-12 col-md-6 mt-3 d-flex flex-column justify-content-center">
             <div class="d-flex flex-column ">
               <div class="col-12 px-0 mb-2 mb-md-3">
@@ -163,7 +173,7 @@
               </div>
             </div>
           </div>
-          
+          @endif
           <div class="col-12 col-md-6 mt-md-2 mt-4">
             <p class="mb-0 text-center text-md-left">
               <span class="mr-1">Compartir:</span>
@@ -193,146 +203,53 @@
         <div class="row">
           <div class="col-12">
 
-            <!-- Nav -->
-            <div class="nav nav-tabs nav-overflow justify-content-start justify-content-md-center border-bottom-0 text-center" id="nav-description">
-              <a class="nav-link active" data-toggle="tab" href="#descriptionTab">
-                Especifica&shy;ciones
-              </a>
-              <a class="nav-link" data-toggle="tab" href="#sizeTab">
-                Métodos de Envío
-              </a>
-              <a class="nav-link" data-toggle="tab" href="#shippingTab">
-                Métodos de Pago
-              </a>
-            </div>
+            <h4 class="text-verde text-center letter-sp-1 mb-5">Especificaciones del producto</h4>
 
             <!-- Content -->
-            <div class="tab-content mt-4 mt-md-5">
-              <div class="tab-pane fade active show" id="descriptionTab">
-                <div class="row justify-content-center mx-0 mx-md-auto">
-                  <div class="col-12 col-lg-10 col-xl-8">
-                    <div class="row">
-                      <div class="col-12">
+            <div class="row justify-content-center mx-0 mx-md-auto">
+              <div class="col-12 col-lg-10 col-xl-8">
+                <div class="row">
+                  <div class="col-12">
 
-                        <!-- Text -->
-                        <p class="">
-                          Won't herb first male seas, beast. Let upon, female upon third fifth every. Man subdue rule after years herb after
-                          form. And image may, morning. Behold in tree day sea that together cattle whose. Fifth gathering brought
-                          bearing. Abundantly creeping whose. Beginning form have void two. A whose.
-                        </p>
+                    <!-- Text --
+                    <p class="">
+                      Won't herb first male seas, beast. Let upon, female upon third fifth every. Man subdue rule after years herb after
+                      form. And image may, morning. Behold in tree day sea that together cattle whose. Fifth gathering brought
+                      bearing. Abundantly creeping whose. Beginning form have void two. A whose.
+                    </p>-->
 
-                      </div>
-                      <h3 class="mx-2 mx-md-auto">Detalles del producto</h3>
+                  </div>
 
+                  <div class="col-12 ">
+                    <div class="row justify-content-center">
                       <div class="col-12 ">
-                        <div class="row justify-content-center">
-                          <div class="col-12 col-md-9">
-                            <!-- Table -->
-                            <div class="table-responsive">
-                              <table class="table table-bordered table-sm table-hover">
-                                <tbody>
-                                  <tr>
-                                    <td>Maestro Mezcalero</td>
-                                    <td>Ignacio Martpinez</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Maguey</td>
-                                    <td>Angustifolia, Maguey Espadín</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Edad de maguey</td>
-                                    <td>10 años.</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Destilación</td>
-                                    <td>
-                                      Doble, en ollas de cobre.
-                                    </td>
-                                  </tr>
-                                </tbody>
-                              </table>
-                            </div>
-                          </div>
+                        <!-- Table -->
+                        <div class="table-responsive">
+                          <table class="table table-bordered table-sm table-hover">
+                            <tbody>
+                              @foreach($producto->caracteristicas as $c)
+                                <tr>
+                                  <td class="px-2">{{$c->nombre}}</td>
+                                  <td class="px-2">{{$c->pivot->valor}}</td>
+                                </tr>
+                              @endforeach
+                            </tbody>
+                          </table>
                         </div>
-                        
-                      </div>
-                      <div class="col-12">
-                      <!-- Caption -->
-                        <p class="mb-0 text-gray-500">
-                          May, life blessed night so creature likeness their, for. <a class="text-body text-decoration-underline" href="#!">Find out more</a>
-                        </p>
-                      </div>
-                      
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane fade" id="sizeTab">
-                <div class="row justify-content-center py-9">
-                  <div class="col-12 col-lg-10 col-xl-8">
-                    <div class="row">
-                      <div class="col-12 col-md-6">
-
-                        <!-- Text -->
-                        <p class="mb-4">
-                          <strong>Fitting information:</strong>
-                        </p>
-
-                        <!-- List -->
-                        <ul class="mb-md-0 text-gray-500">
-                          <li>
-                            Upon seas hath every years have whose
-                            subdue creeping they're it were.
-                          </li>
-                          <li>
-                            Make great day bearing.
-                          </li>
-                          <li>
-                            For the moveth is days don't said days.
-                          </li>
-                        </ul>
-
-                      </div>
-                      <div class="col-12 col-md-6">
-
-                        <!-- Text -->
-                        <p class="mb-4">
-                          <strong>Model measurements:</strong>
-                        </p>
-
-                        <!-- List -->
-                        <ul class="list-unstyled text-gray-500">
-                          <li>Height: 1.80 m</li>
-                          <li>Bust/Chest: 89 cm</li>
-                          <li>Hips: 91 cm</li>
-                          <li>Waist: 65 cm</li>
-                          <li>Model size: M</li>
-                        </ul>
-
-                        <!-- Size -->
-                        <p class="mb-0">
-                          <img src="assets/img/icons/icon-ruler.svg" alt="..." class="img-fluid">
-                          <a class="text-reset text-decoration-underline ml-3" data-toggle="modal" href="#modalSizeChart">Size chart</a>
-                        </p>
-
                       </div>
                     </div>
+                    
                   </div>
+                  <!--
+                  <div class="col-12">
+                  <!- Caption ->
+                    <p class="mb-0 text-gray-500">
+                      May, life blessed night so creature likeness their, for. <a class="text-body text-decoration-underline" href="#!">Find out more</a>
+                    </p>
+                  </div>
+                  -->
                 </div>
-              </div>
-              <div class="tab-pane fade" id="shippingTab">
-                <div class="row justify-content-center py-9">
-                  <div class="col-12 col-lg-10 col-xl-8">
-                    <p>Su compra es 100% segura. Puede pagar a través de las siguientes plataformas.</p>
 
-                    <div class="d-flex mt-4 justify-content-center">
-                      <div class="mr-4"> <img class="img-fluid icon-payment" src="/img/icons/icono-mp-sm.png"></div>
-                      <div class="mr-4"><img class="img-fluid icon-payment" src="/img/icons/PP_logo_h_100x26.png"></div>
-                      <div><img class="img-fluid icon-payment" src="/img/icons/Stripe-wordmark-blurple_sm.png"></div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -349,177 +266,68 @@
           <div class="col-12">
 
             <!-- Heading -->
-            <h4 class="mb-4 mb-md-5 text-center" style="font-weight: 500;">Nuestras recomendaciones para usted</h4>
+            <h4 class="mb-4 mb-md-5 text-center text-verde" style="font-weight: 500;">Nuestras recomendaciones para usted</h4>
 
             <!-- Products -->
             <div class="row mt-md-0 justify-content-center mx-0 mx-md-auto" id="rowProductsRecomend">
-              <div class="col-6 col-md-3 mb-2 mb-md-0 px-2 mx-md-3">
+              @foreach($recomendados as $r)
+                <div class="col-6 col-md-3 mb-2 mb-md-0 px-2 mx-md-3">
 
-                <!-- Card -->
-                <div class="card border-0 mb-0 mb-md-5 shadow">
+                  <!-- Card -->
+                  <div class="card border-0 mb-0 mb-md-5 shadow">
 
-                  <!-- Badge -->
-                  <div class="badge badge-dark rounded-right card-badge card-badge-left text-uppercase">
-                    New
-                  </div>
-
-                  <!-- Image -->
-                  <div class="card-img mb-1">
+                    <!-- Badge -->
+                    <div class="badge badge-dark rounded-right card-badge card-badge-left text-uppercase">
+                      New
+                    </div>
 
                     <!-- Image -->
-                    <a class="card-img-hover" href="product.html">
-                      <img class="card-img-top card-img-back p-1 p-md-2" src="/img/botellas/sinai-sq.jpg" alt="...">
-                      <img class="card-img-top card-img-front p-1 p-md-2" src="/img/botellas/anejo-sq.jpg" alt="...">
-                    </a>
+                    <div class="card-img mb-1">
 
-                    <!-- Actions -->
-                    <div class="card-actions">
-                      <div class="card-action">
-                        <button class="btn-xs btn-circle btn-light border" data-toggle="modal" data-target="#modalProduct">
-                          <i data-feather="eye"></i>
-                        </button>
-                      </div>
-                      <div class="card-action">
-                        <button class="btn-xs btn-circle btn-light border" data-toggle="button">
-                          <i data-feather="shopping-cart"></i>
-                        </button>
-                      </div>
-                    </div>
-
-                  </div>
-
-                  <!-- Body -->
-                  <div class="card-body mb-3 mt-1 p-0 pt-1 text-center mx-2 pt-md-2 border-top">
-
-                    <!-- Title -->
-                    <div class="pb-1 title-wrapper">
-                      <a class="text-body title-product" href="product.html">
-                        Mezcal Sinái (Joven) 750 ml
+                      <!-- Image -->
+                      <a class="card-img-hover" href="/tienda/detalles-producto?product={{$r->producto_id."_".$r->id_presentacion}}">
+                        <img class="card-img-top card-img-back p-1 p-md-2" src="/img/botellas/sinai-sq.jpg" alt="...">
+                        <img class="card-img-top card-img-front p-1 p-md-2" src="/storage/{{$r->foto_url}}" alt="...">
                       </a>
+
+                      <!-- Actions -->
+                      <div class="card-actions">
+                        <div class="card-action">
+                          <button class="btn-xs btn-circle btn-light border" data-toggle="modal" data-target="#modalProduct">
+                            <i data-feather="eye"></i>
+                          </button>
+                        </div>
+                        <div class="card-action">
+                          <button class="btn-xs btn-circle btn-light border" data-toggle="button">
+                            <i data-feather="shopping-cart"></i>
+                          </button>
+                        </div>
+                      </div>
+
                     </div>
 
-                    <!-- Price -->
-                    <div class="text-secpndary price-product mt-1 mt-md-0">
-                      $129.00
+                    <!-- Body -->
+                    <div class="card-body mb-3 mt-1 p-0 pt-1 text-center mx-2 pt-md-2 border-top">
+
+                      <!-- Title -->
+                      <div class="pb-1 title-wrapper">
+                        <a class="text-body title-product" href="/tienda/detalles-producto?product={{$r->producto_id."_".$r->id_presentacion}}">
+                          {{$r->nombre}}
+                          <span class="d-block">{{$r->presentacion}}</span>
+                        </a>
+                      </div>
+
+                      <!-- Price -->
+                      <div class="text-secpndary price-product mt-1 mt-md-0">
+                        {{$r->formated_price}}
+                      </div>
+
                     </div>
 
                   </div>
 
                 </div>
-
-              </div>
-
-              <div class="col-6 col-md-3 mb-2 mb-md-0 px-2 mx-md-3">
-
-                <!-- Card -->
-                <div class="card border-0 mb-0 mb-md-5 shadow">
-
-                  <!-- Badge -->
-                  <div class="badge badge-dark rounded-right card-badge card-badge-left text-uppercase">
-                    New
-                  </div>
-
-                  <!-- Image -->
-                  <div class="card-img mb-1">
-
-                    <!-- Image -->
-                    <a class="card-img-hover" href="product.html">
-                      <img class="card-img-top card-img-back p-1 p-md-2" src="/img/botellas/sinai-sq.jpg" alt="...">
-                      <img class="card-img-top card-img-front p-1 p-md-2" src="/img/botellas/anejo-sq.jpg" alt="...">
-                    </a>
-
-                    <!-- Actions -->
-                    <div class="card-actions">
-                      <div class="card-action">
-                        <button class="btn-xs btn-circle btn-light border" data-toggle="modal" data-target="#modalProduct">
-                          <i data-feather="eye"></i>
-                        </button>
-                      </div>
-                      <div class="card-action">
-                        <button class="btn-xs btn-circle btn-light border" data-toggle="button">
-                          <i data-feather="shopping-cart"></i>
-                        </button>
-                      </div>
-                    </div>
-
-                  </div>
-
-                  <!-- Body -->
-                  <div class="card-body mb-3 mt-1 p-0 pt-1 text-center mx-2 pt-md-2 border-top">
-
-                    <!-- Title -->
-                    <div class="pb-1 title-wrapper">
-                      <a class="text-body title-product" href="product.html">
-                        Mezcal Sinái (Joven) 750 ml
-                      </a>
-                    </div>
-
-                    <!-- Price -->
-                    <div class="text-secpndary price-product mt-1 mt-md-0">
-                      $129.00
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-              <div class="col-6 col-md-3 mb-2 mb-md-0 px-2 mx-md-3">
-
-                <!-- Card -->
-                <div class="card border-0 mb-0 mb-md-5 shadow">
-
-                  <!-- Badge -->
-                  <div class="badge badge-dark rounded-right card-badge card-badge-left text-uppercase">
-                    New
-                  </div>
-
-                  <!-- Image -->
-                  <div class="card-img mb-1">
-
-                    <!-- Image -->
-                    <a class="card-img-hover" href="product.html">
-                      <img class="card-img-top card-img-back p-1 p-md-2" src="/img/botellas/sinai-sq.jpg" alt="...">
-                      <img class="card-img-top card-img-front p-1 p-md-2" src="/img/botellas/anejo-sq.jpg" alt="...">
-                    </a>
-
-                    <!-- Actions -->
-                    <div class="card-actions">
-                      <div class="card-action">
-                        <button class="btn-xs btn-circle btn-light border" data-toggle="modal" data-target="#modalProduct">
-                          <i data-feather="eye"></i>
-                        </button>
-                      </div>
-                      <div class="card-action">
-                        <button class="btn-xs btn-circle btn-light border" data-toggle="button">
-                          <i data-feather="shopping-cart"></i>
-                        </button>
-                      </div>
-                    </div>
-
-                  </div>
-
-                  <!-- Body -->
-                  <div class="card-body mb-3 mt-1 p-0 pt-1 text-center mx-2 pt-md-2 border-top">
-
-                    <!-- Title -->
-                    <div class="pb-1 title-wrapper">
-                      <a class="text-body title-product" href="product.html">
-                        Mezcal Sinái (Joven) 750 ml
-                      </a>
-                    </div>
-
-                    <!-- Price -->
-                    <div class="text-secpndary price-product mt-1 mt-md-0">
-                      $129.00
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </div>
+              @endforeach
 
             </div>
 

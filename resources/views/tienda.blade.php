@@ -175,7 +175,7 @@
               <div class="card-img mb-1">
 
                 <!-- Image -->
-                <a class="card-img-hover" href="product.html">
+                <a class="card-img-hover" href="/tienda/detalles-producto?product={{$producto->producto_id."_".$producto->id_presentacion}}">
                   <img class="card-img-top card-img-back p-1 p-md-2" src="/img/botellas/sinai-sq.jpg" alt="...">
                   <img class="card-img-top card-img-front p-1 p-md-2" src="/storage/{{$producto->foto_url}}" alt="...">
                 </a>
@@ -204,7 +204,7 @@
 
                 <!-- Title -->
                 <div class="pb-1 title-wrapper">
-                  <a class="text-body title-product" href="product.html">
+                  <a class="text-body title-product" href="/tienda/detalles-producto?product={{$producto->producto_id."_".$producto->id_presentacion}}">
                     {{$producto->nombre }}
                     <span class="d-block">{{ $producto->presentacion }}</span>
                   </a>

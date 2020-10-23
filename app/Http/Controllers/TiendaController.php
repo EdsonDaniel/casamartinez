@@ -29,13 +29,7 @@ class TiendaController extends Controller
    
    public function index(Request $request)
     {
-        //$user = auth()->user();
-        /*$permissions = $user->getPermissionsViaRoles()
-                            ->where('name', 'users.list')
-                            ->first();
-        */
-        //$tiene_permiso = $user->can('users.list');
-        //return $tiene_permiso;
+        
         $request->session()->forget('subtotal');
         $request->session()->forget('count');
         $request->session()->forget('cart');
@@ -56,23 +50,6 @@ class TiendaController extends Controller
         $recomendados = Recomendados::all();
     }
 
-    public function store(StoreProduct $request)
-    {
-        
-    }
-
-    public function show($id)
-    {
-        
-    }
-
-    
-    public function edit($id)
-    {
-        
-    }
-
-    
     public function webhookStripe(Request $request){
         \Stripe\Stripe::setApiKey('sk_test_51HWep7BQhjFyWJ1M2jUFVKFG6rbzJJjLftB49oYsYt8Wc6SZjU9zLnNo2qWzxolaxyIsUSaJiirolAdQayfbQADh00p9zcXU5o');
 
@@ -221,6 +198,9 @@ class TiendaController extends Controller
                 'precio_unitario' => $datos['precio_unitario'],
                 'pedido_id' => $idPedido
             ]);
+            $producto = PresentacionesProducto::find($datos['id']);
+            $producto->stock = $producto->stock - $datos['cantidad'];
+            $producto->save();
         }
     }
 
@@ -248,6 +228,20 @@ class TiendaController extends Controller
                         ->line('¡Gracias por comprar en Casa Martínez!')
                         ->markdown('mail.compras.compraExitosa', ['productos' => $productos])
                     );
+    }
+
+    public function detalleProducto(Request $request){
+        $ids = $request->query('product', '-1');
+        $ids = explode("_", $ids);
+        $producto = Productos::findOrFail($ids[0]);
+        $presentacion = PresentacionesProducto::findOrFail($ids[1]);
+        $recomendados = Recomendados::all();
+        return view('detalleProducto')
+                    ->with([
+                        'producto' => $producto, 
+                        'presentacion' => $presentacion,
+                        'recomendados' => $recomendados
+                    ]);
     }
 
     public function pagoExitoso(){
