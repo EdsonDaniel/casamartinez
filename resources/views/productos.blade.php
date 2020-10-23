@@ -55,7 +55,7 @@
 	<!-- cita -->
 	
 	<div class="text-cita mt-2">
-		<center><a href="/catalogo" style="text-decoration: underline;">Ver todo el catálogo de productos</a></center>
+		<center><a href="/tienda" style="text-decoration: underline;">Ver todo el catálogo de productos</a></center>
 	</div>
 	
 	<div class="menu">
