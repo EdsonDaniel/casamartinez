@@ -242,13 +242,14 @@
           <!-- sección de entradas -->
            <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link ">
-              <i class="fas fa-dolly-flatbed nav-icon"></i>
+              <i class="fas fa-sort-amount-up-alt nav-icon"></i>
               <p>
-                Entradas
+                Producción
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
+              
               <li class="nav-item">
                 <a href="/admin/entradas/agregar" class="nav-link">
                   <i class="fas fa-notes-medical nav-icon"></i>
