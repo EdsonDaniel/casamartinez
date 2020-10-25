@@ -97,15 +97,15 @@
     </div>
 
     <div class="img-hover-zoom--slowmo">
-      <a href="/productos" title="Ignacio Martínez"><img class="img-bebidas img-circle" src="/img/logo.jpg" alt="Logo Casa Martínez"></a>
+      <a href="/productos" title="Ignacio Martínez"><img class="img-bebidas img-circle" src="/img/logo-casa-martinez-sq.jpg" alt="Logo Casa Martínez"></a>
     </div>
     
     <div class="img-hover-zoom--slowmo">
-      <a href="/productos" title="Habitente"> <img class="img-bebidas img-circle" src="/img/logo.jpg" alt="Logo Casa Martínez"> </a>
+      <a href="/productos" title="Habitente"> <img class="img-bebidas img-circle" src="/img/logo-casa-martinez-sq.jpg" alt="Logo Casa Martínez"> </a>
     </div>
     
     <div class="img-hover-zoom--slowmo">
-      <a href="/productos" title="Origen Verde"><img class="img-bebidas img-circle" src="/img/logo.jpg" alt="Logo Casa Martínez"></a>
+      <a href="/productos" title="Origen Verde"><img class="img-bebidas img-circle" src="/img/logo-casa-martinez-sq.jpg" alt="Logo Casa Martínez"></a>
     </div>
     
     <div style="width: 100%; height: auto;">
