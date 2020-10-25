@@ -70,6 +70,8 @@ Route::get('/pago-rechazado', 'TiendaController@pagoRechazado');
 
 
 
+Route::get('/info-producto/', 'EntradasController@detalleProducto');
+
 /*****************Rutas con middleware ////////////////////////////////*/
 
 Route::get('/mi-cuenta', 'UserController@micuenta')

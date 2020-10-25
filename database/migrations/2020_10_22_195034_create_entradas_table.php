@@ -51,6 +51,8 @@ class CreateEntradasTable extends Migration
 
             $table->foreignId('producto_id')->constrained('productos');
             $table->foreignId('presentacion_id')->constrained('presentaciones_producto');
+
+            $table->timestamps();
         });
     }
 

@@ -50,6 +50,13 @@ h3 {
 
 .texto ul>li{padding: 10px;}
 
+.img-hover-zoom--slowmo img{
+  transform-origin: 50% 65%;
+  transition: transform 1s;
+  /*overflow: visible;*/
+}
+.img-hover-zoom--slowmo:hover img {transform: scale(1.04);}
+
 @media only screen and (max-width: 760px){
 	.body-carousel, .parrafos{color: white;}
 }

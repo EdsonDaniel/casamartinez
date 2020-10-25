@@ -15,24 +15,22 @@
 @section('content')
 
 <div>
-	<h2 class="h2 text-center">MEZCAL</h2>
-	<img src="img/portada-mezcal2.jpg" class="img-centered">
-	<p class="text-center text-head">Nos destacamos por elaborar el mejor mezcal artesanal de la región, además de ser el único producido bajo la certificación de Agricultura Biodinámica, 100% orgánico.</p>
+	<h2 class="h2 text-center pt-5 mb-0">MEZCAL</h2>
+	<img src="img/logo-casa-martinez.png" class="img-centered mt-0" style="max-width: 200px;">
+	<!--<p class="text-center text-head">Nos destacamos por elaborar el mejor mezcal artesanal de la región, además de ser el único producido bajo la certificación de Agricultura Biodinámica, 100% orgánico.</p>-->
 </div>
 
-<hr style="margin: 50px auto; width: 70%;">
-
 <div>
-	<h3>NUESTRAS MARCAS</h3>
-	<div class="galeria">
+	<h2 class="h2 text-center pt-0">NUESTRAS MARCAS</h2>
+	<div class="galeria my-3">
 		<div>
 			<a href=""><img src="img/m-joven.jpg"></a>
-			<p class="gallery"> <a>ignacio Martínez</a></p>
+			<p class="gallery"> <a>Ignacio Martínez</a></p>
 		</div>
 		
 		<div>
 			<a href=""><img src="img/m-reposado.jpg"></a>
-			<p class="gallery">SiNái</a></p>
+			<p class="gallery"><a>SiNái</a></p>
 		</div>
 
 		<div>
@@ -46,17 +44,18 @@
 		</div>
 	</div>
 
+	<div class="text-cita mt-2">
+		<center> <h2 class="h2 pt-0 text-uppercase"> <a href="/tienda" style="text-decoration: underline;">Ver todo el catálogo de productos</a> </h2> </center>
+	</div>
+
 	<div class="block-cita">
 		<blockquote>
 			<p class="text-cita">“Compartir experiencias con nuestros clientes y amigos, nos permite comunicar el trabajo que la familia Martínez ha estado realizando por generaciones. ”</p>
 		</blockquote>
-		<p class="ref-cita">-Alguien Martínez</p>
 	</div>
 	<!-- cita -->
 	
-	<div class="text-cita mt-2">
-		<center><a href="/tienda" style="text-decoration: underline;">Ver todo el catálogo de productos</a></center>
-	</div>
+	
 	
 	<div class="menu">
 		<center>

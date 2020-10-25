@@ -42,7 +42,7 @@
 			<div>
 				<div class="text-and-img-c">
 					<div>
-						<img src="/img/mama-sembrando.jpg" class="img-car img-r">
+						<img src="/img/quiote-de-agave.jpg" class="img-car img-r">
 					</div>
 					<div class="bg-text">
 						<div class="btn-expand open"></div>
@@ -82,7 +82,7 @@
 	    	<div>
 		      	<div class="text-and-img-c">
 	    			<div>
-	    				<img src="/img/quiote-luz.jpg" class="img-car img-r">
+	    				<img src="/img/mama-sembrando.jpg" class="img-car img-r">
 	    			</div>
 	    			<div class="bg-text">
 	    				<div class="btn-expand open"></div>
@@ -122,7 +122,7 @@
 						</div>
 					</div>
 					<div class="img-l">
-						<img class="img-car" src="/img/Ignacio-tomando-mezcal.jpg" alt="Generic placeholder image">
+						<img class="img-car" src="/img/maguey-cocido.jpg" alt="Generic placeholder image">
 					</div>
 				</div>
 			</div>
@@ -134,7 +134,7 @@
 					<div class="bg-text">
 						<div class="btn-expand open"></div>
 						<div>
-							<h5 class="title-carousel">CLASES DE MEZCAL</h5>
+							<h5 class="title-carousel">CATEGORÍAS DE MEZCAL</h5>
 						</div>
 						<div class="parrafos">
 							<p class="body-carousel">
@@ -149,7 +149,7 @@
 						</div>
 					</div>
 					<div class="img-l">
-						<img class="img-car" src="/img/Ignacio-tomando-mezcal.jpg" alt="Generic placeholder image">
+						<img class="img-car" src="/img/copa-clases.jpg" alt="Generic placeholder image">
 					</div>
 				</div>
 			</div>
@@ -172,8 +172,8 @@
 							</p>
 						</div>
 					</div>
-					<div class="img-l">
-						<img class="img-car" src="/img/Ignacio-tomando-mezcal.jpg" alt="Generic placeholder image">
+					<div class="img-l" name="div-img-hor">
+						<img class="img-car img-car-hor" src="/img/manos-mezcal-artesanal.jpg" alt="">
 					</div>
 				</div>
 			</div>
@@ -188,13 +188,13 @@
 							<h5 class="title-carousel">CULTURA DEL MEZCAL</h5>
 						</div>
 						<div class="parrafos">
-							<p class="body-carousel">En Oaxaca tenemos un dicho popular que dice:</p>
-							<p class="body-carousel"><i>“Para todo mal Mezcal y para todo bien, también.”</i></p>
+							<p class="body-carousel">El Mezcal es parte de nuestras tradiciones, de nuestra vida, cuando alguien nace brindamos con Mezcal, de igual manera cuando alguien parte de este mundo, también brindamos con Mezcal. En cada acontecimiento el Mezcal nos acompaña. </p>
+							<p class="body-carousel">En Casa Martínez buscamos conservar la cosmológico de este espíritu.
 							</p>
 						</div>
 					</div>
 					<div class="img-l">
-						<img class="img-car" src="/img/Ignacio-tomando-mezcal.jpg" alt="Generic placeholder image">
+						<img class="img-car" src="/img/altar-cultura.jpg" alt="">
 					</div>
 				</div>
 			</div>
@@ -209,13 +209,13 @@
 							<h5 class="title-carousel">CULTURA DEL MEZCAL</h5>
 						</div>
 						<div class="parrafos">
-							<p class="body-carousel">El Mezcal es parte de nuestras tradiciones, de nuestra vida, cuando alguien nace brindamos con Mezcal, de igual manera cuando alguien parte de este mundo, también brindamos con Mezcal. En cada acontecimiento el Mezcal nos acompaña. </p>
-							<p class="body-carousel">En Casa Martínez buscamos conservar la cosmológico de este espíritu.
+							<p class="body-carousel">En Oaxaca tenemos un dicho popular que dice:</p>
+							<p class="body-carousel"><i>“Para todo mal Mezcal y para todo bien, también.”</i></p>
 							</p>
 						</div>
 					</div>
-					<div class="img-l">
-						<img class="img-car" src="/img/Ignacio-tomando-mezcal.jpg" alt="Generic placeholder image">
+					<div class="img-l" name="div-img-hor">
+						<img class="img-car img-car-hor" src="/img/bendicion-cultura.jpg" alt="Generic placeholder image">
 					</div>
 				</div>
 			</div>
@@ -243,7 +243,7 @@
 		      			</div>
 		      		</div>
 		      		<div class="img-l">
-		      			<img class="img-car" src="/img/Sembrando.jpg" alt="Generic placeholder image">
+		      			<img class="img-car" src="/img/rep-cultivo.jpg" alt="Generic placeholder image">
 		      		</div>
 		      	</div>
 			</div>
@@ -281,7 +281,7 @@
 	    				</div>
 	    			</div>
 	    			<div class="img-l">
-	    				<img class="img-car" src="/img/Maguey-palenque-cielo.jpg" alt="Generic placeholder image">
+	    				<img class="img-car" src="/img/corte.jpg" alt="Generic placeholder image">
 	    			</div>
 	    		</div>
 			</div>
@@ -300,7 +300,7 @@
 	    				</div>
 	    			</div>
 	    			<div class="img-l" name="div-img-hor">
-	    				<img class="img-car img-car-hor" src="/img/Horno.jpg" alt="Generic placeholder image">
+	    				<img class="img-car img-car-hor" src="/img/coccion.jpg" alt="Generic placeholder image">
 	    			</div>
 	    		</div>
 			</div>
@@ -319,11 +319,30 @@
 	    				</div>
 	    			</div>
 	    			<div class="img-l" name="div-img-hor">
-	    				<img class="img-car img-car-hor" src="/img/Moler-fernando.jpg" alt="Generic placeholder image">
+	    				<img class="img-car img-car-hor" src="/img/molienda.jpg" alt="Generic placeholder image">
 	    			</div>
 	    		</div>
 			</div>
 			<!--QUINTO item-->
+
+			<!--sexto item-->
+	    	<div>
+	    		<div class="text-and-img-c">
+	    			<div class="bg-text">
+	    				<div class="btn-expand open"></div>
+	    				<div>
+	    					<h5 class="title-carousel">6. FERMENTACIÓN</h5>
+	    				</div>
+	    				<div class="parrafos">
+	    					<p class="body-carousel">Fermentación natural en tinas de madera durante 15 dias aproximadamente.</p>
+	    				</div>
+	    			</div>
+	    			<div class="img-l" name="div-img-hor">
+	    				<img class="img-car img-car-hor" src="/img/fermentacion2.jpg" alt="Generic placeholder image">
+	    			</div>
+	    		</div>
+			</div>
+			<!--sexto item-->
 
 			<!--SEPTIMO item-->
 	    	<div>
@@ -338,7 +357,7 @@
 	    				</div>
 	    			</div>
 	    			<div class="img-l">
-	    				<img class="img-car" src="/img/Fermentando.jpg" alt="Generic placeholder image">
+	    				<img class="img-car" src="/img/destilacion.jpg" alt="Generic placeholder image">
 	    			</div>
 	    		</div>
 			</div>
@@ -357,14 +376,14 @@
 	    						Madurado en barricas de roble blanco Americano en cava subterránea. 
 	    					</p>
 	    					<ul>
-	    						<li>Para Mezcal reposado se madura durante 6 y 9 meses.</li>
-	    						<li>Para Mezcales añejos se madura durante 3 años. </li>
-	    						<li>Las reservas especiales superan los 8 años.</li>
+	    						<li>Mezcal Reposado madurado durante 6 a 9 meses.</li>
+	    						<li>Mezcal Añejo madurado durante 3 años. </li>
+	    						<li>Nuestra Reserva Especial supera los 8 años de añejamiento.</li>
 	    					</ul>
 	    				</div>
 	    			</div>
-	    			<div class="img-l">
-	    				<img class="img-car" src="img/envasado.jpg" alt="Generic placeholder image">
+	    			<div class="img-l" name="div-img-hor">
+	    				<img class="img-car img-car-hor" src="/img/maduracion.jpg" alt="Generic placeholder image">
 	    			</div>
 	    		</div>
 			</div>
@@ -403,7 +422,7 @@
 	    	<div>
 	    		<div class="text-and-img-c">
 	    			<div name="div-img-hor">
-	    				<img class="img-car img-r" id="img-habilidad" src="/img/Destapando.jpg" alt="Generic placeholder image">
+	    				<img class="img-car img-r" id="img-habilidad" src="/img/futuro-maestro.png" alt="Generic placeholder image">
 	    			</div>
 	    			<div class="bg-text">
 	    				<div class="btn-expand open"></div>
@@ -413,7 +432,7 @@
 	    				<div class="parrafos">
 	    					<p class="body-carousel">
 	    						Las habilidades que l&#64;s Maestr@s tienen, son a partir de los conocimientos que en el transcurso de su vida van adquiriendo. </p>
-	    						<p class="body-carousel">Como (por ejemplo): El punto adecuado del calentamiento de un horno para comenzar a ingresar Maguey, otro punto muy importante es conocer el momento exacto en el que una tina de fermentación está lista, y los  tiempos para la segunda destilación (separación del corazón o cuerpo de las colas).
+	    						<p class="body-carousel">Por ejemplo, el punto adecuado del calentamiento de un horno para comenzar a ingresar Maguey, otro punto muy importante es conocer el momento exacto en el que una tina de fermentación está lista, y los  tiempos para la segunda destilación (separación del corazón o cuerpo de las colas).
 	    					</p>
 	    				</div>
 	    			</div>
@@ -425,7 +444,7 @@
 	    	<div>
 	    		<div class="text-and-img-c">
 	    			<div>
-	    				<img class="img-car img-r" src="/img/pareja.jpg" alt="Generic placeholder image">
+	    				<img class="img-car img-r" src="/img/pareja-maestros.jpg" alt="Generic placeholder image">
 	    			</div>
 	    			<div class="bg-text">
 	    				<div class="btn-expand open"></div>
@@ -433,7 +452,7 @@
 	    					<h5 class="title-carousel">CARMELA MOLINA E IGNACIO MARTÍNEZ</h5>
 	    				</div>
 	    				<div class="parrafos">
-	    					<p class="body-carousel">Desde el fallecimiento de Don Ignacio Mtz. Hernández, Don Ignacio (2.ª generación) y Doña Carmela comenzaron esta grandiosa experiencia de continuar con el legado familiar, cultivando, produciendo y comercializando un Mezcal Familiar.</p>
+	    					<p class="body-carousel">Desde el fallecimiento de Don Ignacio Mtz. Hernández, Don Ignacio y Doña Carmela comenzaron esta grandiosa experiencia de continuar con el legado familiar, cultivando, produciendo y comercializando un Mezcal Familiar.</p>
 	    					<p class="body-carousel">Sus enseñanzas han forjado a que sus hijos amen y conserven la tradición Mezcalera.</p>
 	    				</div>
 	    			</div>
@@ -450,9 +469,8 @@
 	<div class="fade-scroll">
 		<div class="block-cita" >
 		<blockquote class="fade-scroll">
-			<p class="text-cita">“La historia de un Maestro Mezcalero se empieza a contar desde la niñez, etapa en donde empiezan a involucrarse en el trabajo familiar. Desde niño soñaba con ser alguien grande, hoy en día para nosotros lo ha logrado y es un ejemplo de que los sueños de niños se pueden hacer realidad.”</p>
-		</blockquote>
-		<p class="ref-cita">-Ignacio Martínez</p>
+			<p class="text-cita">“La historia de un Maestro Mezcalero se empieza a contar desde la niñez, etapa en donde empiezan a involucrarse en el trabajo familiar. Don Ignacio siempre nos ha cntado que desde niño soñaba con ser alguien grande, hoy en día para nosotros lo ha logrado y es un ejemplo de que los sueños de niños se pueden hacer realidad.”</p>
+		</blockquote>		
 		</div>
 	</div>
 	<!-- cita -->

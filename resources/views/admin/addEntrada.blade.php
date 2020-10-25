@@ -93,7 +93,7 @@
 
                     <div class="form-group col-sm-4">
                       <label for="kilogramos">Kilogramos*</label>
-                      <input type="number" class="form-control @error('kilogramos') is-invalid @enderror" name="kilogramos" id="kilogramos" required value="{{ old('kilogramos') }}">
+                      <input type="number" class="form-control @error('kilogramos') is-invalid @enderror" name="kilogramos" id="kilogramos" required value="{{ old('kilogramos') }}" step=".01">
                       @error('kilogramos')
                         <div class="alert alert-danger">{{ $message }}</div>
                       @enderror
@@ -174,7 +174,7 @@
                     
                     <div class="form-group col-sm-4">
                       <label for="tinas_molienda">Número de tinas*</label>
-                      <input type="number" class="form-control @error('tinas_molienda') is-invalid @enderror" name="tinas_molienda" id="tinas_molienda" required value="{{ old('tinas_molienda') }}">
+                      <input type="number" class="form-control @error('tinas_molienda') is-invalid @enderror" name="tinas_molienda" id="tinas_molienda" required value="{{ old('tinas_molienda') }}" step="1">
                       @error('tinas_molienda')
                         <div class="alert alert-danger">{{ $message }}</div>
                       @enderror
@@ -210,7 +210,7 @@
 
                     <div class="form-group col-sm-4">
                       <label for="volumen_fermentacion">Volumen(litros)*</label>
-                      <input type="number" class="form-control @error('volumen_fermentacion') is-invalid @enderror" name="volumen_fermentacion" id="volumen_fermentacion" required value="{{ old('volumen_fermentacion') }}">
+                      <input type="number" class="form-control @error('volumen_fermentacion') is-invalid @enderror" name="volumen_fermentacion" id="volumen_fermentacion" required value="{{ old('volumen_fermentacion') }}" step=".01">
                       @error('volumen_fermentacion')
                         <div class="alert alert-danger">{{ $message }}</div>
                       @enderror
@@ -238,7 +238,7 @@
 
                       <div class="form-group col-sm-4">
                         <label for="volumen_destilacion1">Volumen(litros)*</label>
-                        <input type="number" class="form-control @error('volumen_destilacion1') is-invalid @enderror" name="volumen_destilacion1" id="volumen_destilacion1" required value="{{ old('volumen_destilacion1') }}">
+                        <input type="number" class="form-control @error('volumen_destilacion1') is-invalid @enderror" name="volumen_destilacion1" id="volumen_destilacion1" required value="{{ old('volumen_destilacion1') }}" step=".01">
                         @error('volumen_destilacion1')
                           <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -246,7 +246,7 @@
 
                       <div class="form-group col-sm-4">
                         <label for="alcohol_destilacion1">Porcentaje de alcohol*</label>
-                        <input type="number" class="form-control @error('alcohol_destilacion1') is-invalid @enderror" name="alcohol_destilacion1" id="alcohol_destilacion1" required value="{{ old('alcohol_destilacion1') }}">
+                        <input type="number" class="form-control @error('alcohol_destilacion1') is-invalid @enderror" name="alcohol_destilacion1" step=".01" id="alcohol_destilacion1" required value="{{ old('alcohol_destilacion1') }}" step=".01">
                         @error('alcohol_destilacion1')
                           <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -267,7 +267,7 @@
 
                       <div class="form-group col-sm-4">
                         <label for="volumen_destilacion2">Volumen(litros)</label>
-                        <input type="number" class="form-control @error('volumen_destilacion2') is-invalid @enderror" name="volumen_destilacion2" id="volumen_destilacion2"  value="{{ old('volumen_destilacion2') }}">
+                        <input type="number" class="form-control @error('volumen_destilacion2') is-invalid @enderror" name="volumen_destilacion2" id="volumen_destilacion2"  value="{{ old('volumen_destilacion2') }}" step=".01">
                         @error('volumen_destilacion2')
                           <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -275,7 +275,7 @@
 
                       <div class="form-group col-sm-4">
                         <label for="alcohol_destilacion2">Porcentaje de alcohol</label>
-                        <input type="number" class="form-control @error('alcohol_destilacion2') is-invalid @enderror" name="alcohol_destilacion2" id="alcohol_destilacion2"  value="{{ old('alcohol_destilacion2') }}">
+                        <input type="number" class="form-control @error('alcohol_destilacion2') is-invalid @enderror" name="alcohol_destilacion2" id="alcohol_destilacion2"  value="{{ old('alcohol_destilacion2') }}" step=".01">
                         @error('alcohol_destilacion2')
                           <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -295,7 +295,7 @@
                 </div>
                 <div class="card-body">
                   <div class="row row justify-content-end">
-                    <div class="form-group col-sm-3">
+                    <div class="form-group col-sm-4">
                       <label for="traslado_envasadora">Fecha de traslado*</label>
                       <input type="date" class="form-control @error('traslado_envasadora') is-invalid @enderror" id="traslado_envasadora" name="traslado_envasadora" required value="{{ old('traslado_envasadora') }}">
                       @error('traslado_envasadora')
@@ -303,7 +303,7 @@
                       @enderror
                     </div>
                     
-                    <div class="form-group col-sm-3">
+                    <div class="form-group col-sm-4">
                       <label for="lote_granel">Lote a granel*</label>
                       <input type="text" class="form-control @error('lote_granel') is-invalid @enderror" name="lote_granel" id="lote_granel" required value="{{ old('lote_granel') }}">
                       @error('lote_granel')
@@ -311,7 +311,7 @@
                       @enderror
                     </div>
 
-                    <div class="form-group col-sm-3">
+                    <div class="form-group col-sm-4">
                       <label for="lote_envasado">Lote de envasado*</label>
                       <input type="text" class="form-control @error('lote_envasado') is-invalid @enderror" name="lote_envasado" id="lote_envasado" required value="{{ old('lote_envasado') }}">
                       @error('lote_envasado')
@@ -319,24 +319,15 @@
                       @enderror
                     </div>
 
-                    <div class="form-group col-sm-3">
+                     <div class="form-group col-sm-3">
                       <label for="analisis">Análisis*</label>
                       <input type="text" class="form-control @error('analisis') is-invalid @enderror" name="analisis" id="analisis" required value="{{ old('analisis') }}">
                       @error('analisis')
                         <div class="alert alert-danger">{{ $message }}</div>
                       @enderror
                     </div>
-                    
-                    <div class="form-group col-sm-2">
-                      <label for="botellas_envasadas">Número de botellas*</label>
-                      <input type="number" class="form-control @error('botellas_envasadas') is-invalid @enderror" name="botellas_envasadas" id="botellas_envasadas" required value="{{ old('botellas_envasadas') }}">
-                      @error('botellas_envasadas')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                      @enderror
-                    </div>
-                    
 
-                    <div class="form-group col-sm-2">
+                    <div class="form-group col-sm-3">
                       <label for="clase_mezcal">Clase Mezcal*</label>
                       <select class="form-control @error('clase_mezcal') is-invalid @enderror" name="clase_mezcal" id="clase_mezcal" required value="{{ old('clase_mezcal') }}">
                         <option value="Joven" selected>Joven</option>
@@ -348,28 +339,35 @@
                       @enderror
                     </div>
 
+                    <div class="form-group col-sm-3">
+                      <label for="botellas_envasadas">Número de botellas*</label>
+                      <input type="number" class="form-control @error('botellas_envasadas') is-invalid @enderror" name="botellas_envasadas" id="botellas_envasadas" required value="{{ old('botellas_envasadas') }}" step="1">
+                      @error('botellas_envasadas')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                      @enderror
+                    </div>
                    
-                    <div class="form-group col-sm-2">
+                    <div class="form-group col-sm-3">
                       <label for="porcentaje_alc_env">% Alcohol al envasar*</label>
-                      <input type="text" class="form-control @error('porcentaje_alc_env') is-invalid @enderror" name="porcentaje_alc_env" id="porcentaje_alc_env" required value="{{ old('porcentaje_alc_env') }}">
+                      <input type="text" class="form-control @error('porcentaje_alc_env') is-invalid @enderror" name="porcentaje_alc_env" id="porcentaje_alc_env" required value="{{ old('porcentaje_alc_env') }}" step=".01">
                       @error('porcentaje_alc_env')
                         <div class="alert alert-danger">{{ $message }}</div>
                       @enderror
                     </div>
 
-                    <div class="form-group col-sm-3">
+                    <div class="form-group col-sm-6">
                       <label for="clase_mezcal">Nombre del producto*</label>
                       <select class="form-control @error('clase_mezcal') is-invalid @enderror" name="clase_mezcal" id="clase_mezcal" required value="{{ old('clase_mezcal') }}">
-                        <option value="Joven" selected>Joven</option>
-                        <option value="Reposado">Reposado</option>
-                        <option value="Añejo">Añejo</option>
+                        @foreach($productos as $p)
+                          <option value="{{$p->id}}">{{$p->nombre}}</option>
+                        @endforeach
                       </select>
                       @error('clase_mezcal')
                         <div class="alert alert-danger">{{ $message }}</div>
                       @enderror
                     </div>
 
-                    <div class="form-group col-sm-3">
+                    <div class="form-group col-sm-6">
                       <label for="clase_mezcal">Presentación*</label>
                       <select class="form-control @error('clase_mezcal') is-invalid @enderror" name="clase_mezcal" id="clase_mezcal" required value="{{ old('clase_mezcal') }}">
                         <option value="Joven" selected>Joven</option>
@@ -391,30 +389,6 @@
 
 
               </div><!-- card card envasado-->
-
-
-              <!-- card codigo qr-->
-              <div class="card card-primary">
-                <div class="card-header">
-                  <h3 class="card-title ">Generar Código QR</h3>
-                </div>
-                <div class="card-body">
-                  <div class="row row justify-content-center">
-                    
-                    <div class="col-6">
-                      
-                    </div>
-                    
-                  </div>
-                </div>
-
-                <div class="d-flex justify-content-end">
-                  <a href="/admin" class="btn btn-secondary mr-3">Cancelar</a>
-                  <button type="submit" class="btn btn-success">Registrar</button>
-                </div>
-
-
-              </div><!-- card codigo qr-->
 
             </form>
           

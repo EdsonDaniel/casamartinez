@@ -17,8 +17,8 @@
 @section('content')
 
   <!--encabezado-->
-  <div class="bg-image container-image fade-scroll" style="background-color: black; height: 50vh;">
-    <div class="centered" style="top: 50%;">Campos de Maguey</div>
+  <div class="bg-image container-image fade-scroll" style="background-color: black; height: 100vh;">
+    <!--<div class="centered" style="top: 50%;">Campos de Maguey</div>-->
     <div class="bg-img" style="background-image: url('/img/Campo maguey cielo.jpg'); opacity: 0.7;"></div>
   </div>
   <!--encabezado-->
@@ -45,7 +45,7 @@
   <!--primer corousel-->
   <div class="env">
   <div class="carousel-container">
-    <h2 class="carousel-title text-center">ZONA ARAGÓN</h2>
+    <h2 class="carousel-title text-center">FAM ARAGÓN</h2>
     <div class="carousel-items">
       <!-- primer item-->
       <div>
@@ -84,8 +84,8 @@
               </ul>
             </div>
           </div>
-          <div class="img-l">
-            <img class="img-car" src="/img/Paisaje-con-burro.jpg" alt="Generic placeholder image">
+          <div class="img-l" name="div-img-hor">
+            <img class="img-car img-car-hor" src="/img/campo-tavela.jpg" alt="Generic placeholder image">
           </div>
         </div>
       </div>
@@ -107,8 +107,8 @@
               </ul>
             </div>
           </div>
-          <div class="img-l">
-            <img class="img-car" src="/img/Paisaje-con-burro.jpg" alt="Generic placeholder image">
+          <div class="img-l" name="div-img-hor">
+            <img class="img-car img-car-hor" src="/img/campo-tavela2.jpg" alt="Generic placeholder image">
           </div>
         </div>
       </div>
@@ -124,7 +124,7 @@
   <!--segundo corousel-->
   <div class="env">
   <div class="carousel-container">
-    <h2 class="carousel-title text-center">ZONA MARTÍNEZ</h2>
+    <h2 class="carousel-title text-center">FAM MARTÍNEZ</h2>
     <div class="carousel-items">
       <!-- primer item-->
       <div>
@@ -141,8 +141,8 @@
               </ul>
             </div>
           </div>
-          <div class="img-l">
-            <img class="img-car" src="img/campos-agave/agave1.jpg" alt="Generic placeholder image">
+          <div class="img-l" name="div-img-hor">
+            <img class="img-car img-car-hor" src="/img/campos-agave/agave2.jpg" alt="Generic placeholder image">
           </div>
         </div>
       </div>
@@ -163,8 +163,8 @@
               </ul>
             </div>
           </div>
-          <div class="img-l">
-            <img class="img-car" src="img/campos-agave/agave2.jpg" alt="Generic placeholder image">
+          <div class="img-l" name="div-img-hor">
+            <img class="img-car img-car-hor" src="/img/campos-agave.jpg" alt="Generic placeholder image">
           </div>
         </div>
       </div>
@@ -186,8 +186,8 @@
               </ul>
             </div>
           </div>
-          <div class="img-l">
-            <img class="img-car" src="img/campos-agave/agave3.jpg" alt="Generic placeholder image">
+          <div class="img-l" name="div-img-hor">
+            <img class="img-car img-car-hor" src="/img/campos-agave-2.jpg" alt="Generic placeholder image">
           </div>
         </div>
       </div>
@@ -212,7 +212,6 @@
     <blockquote>
       <p class="text-cita">“Compartir experiencias con nuestros clientes y amigos, nos permite comunicar el trabajo que la familia Martínez ha estado realizando por generaciones. ”</p>
     </blockquote>
-    <p class="ref-cita">-Alguien Martínez</p>
   </div>
   <!-- cita -->
 
@@ -222,7 +221,7 @@
 			<p>SIGUIENTE</p>
 			<p><a href="/certificaciones">Certificaciones</a></p>
 		</div>
-    <div class="next-fondo" style="background-image: url('/img/certificaciones.jpg'); opacity: 0.5;"></div>
+    <div class="next-fondo" style="background-image: url('/img/portada-certificaciones.jpg'); opacity: 0.5;"></div>
 	</div>
 	<!--next section-->
 @endsection

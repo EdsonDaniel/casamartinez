@@ -14,9 +14,9 @@
 
 @section('content')
 <!--encabezado-->
-  <div class="bg-image container-image fade-scroll"style="background-color: black; height: 50vh;">
-    <div class="centered" style="top: 50%;">Certificaciones</div>
-    <div class="bg-img" style="background-image: url('img/certificaciones.jpg');"></div>
+  <div class="bg-image container-image fade-scroll"style="background-color: black; height: 100vh;">
+    <!--<div class="centered" style="top: 50%;">Certificaciones</div>-->
+    <div class="bg-img" style="background-image: url('img/portada-certificaciones.jpg');"></div>
   </div>
   <!--encabezado-->
 
@@ -25,64 +25,36 @@
     <h3>CERTIFICACIONES</h3>
     <p>El respeto a la tierra es lo que le enseñamos a nuestros hijos. Nuestro producto Origen Verde es la única marca en el mercado completamente ecológica.</p>
     <p>Somos la única familia Mezcalera en contar con certificación <b>ORGÁNICA</b> y <b>BIODINÁMICA</b>.</p>
-    <p>Certificación Orgánica bajo las normas NOP de EEUU y EU y la NOM Mexicana.</p>
-    <p>Actualmente somos la primera marca de Mezcal en contar con Certificación Biodinámica. En la agricultura biodinámica se pretende respetar ciertos principios para asegurar la salud de la tierra y de las plantas, y para procurar una nutrición sana para los animales y el ser humano.</p>
+    <p><b>Certificación Orgánica </b> bajo las normas NOP de EEUU y EU y la NOM Mexicana.</p>
+    <p><b>Actualmente somos la primera marca de Mezcal en contar con Certificación Biodinámica.</b></p>
+    <p>En la agricultura biodinámica respetamos principios para asegurar la salud de la tierra, las plantas, los animales y las personas.</p>
     <p>Certificados por <a href="https://imocert.bio/" style="color: #212529; text-decoration: underline;">IMOCert</a></p>
   </div>
   <!-- texto -->
 
-  <!--certificacion NOP-->
-  <div>
-    <h2 class="carousel-title text-center">CERTIFICACIÓN ORGÁNICA (NOP-USDA)</h2>
-    <div class="text-and-img">
-      <div class="div-texto">
-        <p class="body-carousel" style="color: #4a4a4a;">Estados Unidos es el primer mercado mundial de Productos Ecológicos y cuenta con sus propias normas de Producción Orgánica creadas por su Ministerio de Agricultura. <a href="https://imocert.bio/?portfolio=national-organic-program-nop-usda" style="text-decoration: underline; color: #212529;" target="_blank"> (USDA-NOP: United States Department of Agriculture - National Organic Program standard).</a>
-        </p>
-        <p class="body-carousel mb-0" style="color: #4a4a4a;">
-        La certificación orgánica (NOP-USDA) está basada en dichas normas y es sumamente necesaria para clientes que desean exportar su producción orgánica a Estados Unidos, incluso aunque tengan certificados para otros países.</p>
+  <div class="container">
+    <div class="row">
+      
+      <div class="col-6 col-md-3">
+        <a  title="Logo SAGARPA"><img class="img-fluid p-4" src="/img/logo-sagarpa-organico.png" alt="Logo Sagarpa Orgánico"></a>
       </div>
-      <div>
-        <img src="/img/usda-organic.png" class="logos" alt="Generic placeholder image">
+
+      <div class="col-6 col-md-3">
+        <a  title="Logo USDA"><img class="img-fluid p-4" src="/img/usda-organic.png" alt="Logo USDA Organic"></a>
       </div>
+
+      <div class="col-6 col-md-3 d-flex align-items-center">
+        <a  title="Logo EU Organic"><img class="img-fluid" src="/img/eu-organic-logo.png" alt="Logo EU Organic"></a>
+      </div>
+
+      <div class="col-6 col-md-3 d-flex align-items-center">
+        <a  title="Logo DEMETER"><img class="img-fluid" src="/img/logo-demeter.png" alt="Logo DEMETER"></a>
+      </div>
+
     </div>
+   
   </div>
-  <!--certificacion NOP-->
 
- <hr style="margin: 80px auto; width: 80%;" >
-
-  <!--certificacion Biodinamica -->
-  <h2 class="carousel-title text-center">CERTIFICACIÓN BIODINÁMICA (DEMETER)</h2>
-  <div class="text-and-img">
-    <div class="div-texto">
-      <p class="body-carousel" style="color: #4a4a4a;"><a href="https://imocert.bio/?portfolio=demeter" style="text-decoration: underline; color: #212529;" target="_blank"> Demeter</a> es una marca de certificación cuyo objetivo es identificar los productos agrícolas o ganaderos producidos conforme a los principios de la agricultura biodinámica, siendo un requisito previo indispensable estar certificado conforme al reglamento europeo de agricultura ecológica.
-      </p>
-      <p class="body-carousel mb-0" style="color: #4a4a4a;">
-        La biodinámica se basa en crear en cada situación particular un agro-eco-sistema único al cual se le denomina organismo agrícola. Este va tomando la fuerza y salud propia en la medida en que se va convirtiendo en una individualidad agrícola completa. 
-      </p>
-    </div>
-    <div>
-      <img src="/img/logo-demeter.png" class="logos" alt="Generic placeholder image">
-    </div>
-  </div> 
-  <!--certificacion Biodinamica -->
-
-  <hr style="margin: 80px auto; width: 80%;" >
-
-  <!--imocert -->
-  <h2 class="carousel-title text-center">ENTIDAD REGULADORA (IMOCERT)</h2>
-  <div class="text-and-img">
-    <div class="div-texto">
-      <p class="body-carousel" style="color: #4a4a4a;"><a href="https://imocert.bio/?portfolio=demeter" style="text-decoration: underline; color: #212529;" target="_blank">IMOCERT</a> es una entidad de servicios de inspección y certificación ecológica, para los ámbitos de producción vegetal, de recolección silvestre, producción pecuaria, apicultura, manejo de bosques, artesanía, minería, insumos para la agricultura ecológica entre otros.
-      </p>
-      <p class="body-carousel" style="color: #4a4a4a;">
-        Nos sentimos orgullosos de contar con el respaldo de ésta institución pionera en Latinoamérica, quién cuenta con gran experiencia en la inspección y certificación.
-      </p>
-    </div>
-    <div>
-      <img class="logos" src="/img/imocert-logo.png" alt="Generic placeholder image">
-    </div>
-  </div> 
-  <!--imocert -->
 
  <hr style="margin: 80px auto; width: 80%;" >
 
@@ -94,8 +66,8 @@
       <li><strong>AgaVerde:</strong> Programa de responsabilidad ambiental. 
         <br> Basado en el cultivo sustentables y la aplicación de los principios orgánicos y biodinámicas en nuestro cultivo y producción.
       </li>
-      <li><strong>Bin Dop:</strong>(Señor maguey en zapoteco): Programa de responsabilidad social. 
-        <br>Programa en donde buscamos el respeto a nuestra gente, nuestra cultura, nuestra lengua y con el Señor Maguey.
+      <li><strong>Bin Dob:</strong> Programa de responsabilidad social. 
+        <br>Programa en donde buscamos enaltecer a nuestra gente, nuestra cultura, nuestra lengua y con el Señor Maguey.
       </li>
     </ul>
   </div>

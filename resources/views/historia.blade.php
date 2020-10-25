@@ -18,15 +18,15 @@
 
 <!--encabezado-->
 	<div class="bg-image container-image fade-scroll">
-      	<div class="centered">Historia & Equipo</div>
+      	<!--<div class="centered">Historia & Equipo</div>
       	<div class="right">
       		<ul>
       			<li><a href="javascript:saltarA('#origen')">-Origen Casa Martínez</a></li>
-      			<!--<li><a href="javascript:saltarA('#familia')">-Familia Martínez</a></li>-->
+      			!--<li><a href="javascript:saltarA('#familia')">-Familia Martínez</a></li>--
       			<li><a href="javascript:saltarA('#equipo')">-Nuestro Equipo</a></li>
       			<li><a href="javascript:saltarA('#memorias')">-Memorias</a></li>
       		</ul>
-      	</div>
+      	</div>-->
       	<div  class="bg-img" style="background-image: url('/img/Campo-Hisashi.jpg'); background-color: black; opacity: 0.6"></div>
 	</div>
 	<!--encabezado-->
@@ -45,10 +45,14 @@
 					<div class="bg-text">
 						<div class="btn-expand open"></div>
 						<div>
-							<h5 class="title-carousel">DESDE 1942</h5>
+							<!--<h5 class="title-carousel">DESDE 1942</h5>-->
 						</div>
 						<div class="parrafos">
-							<p class="body-carousel">El origen de nuestro Mezcal comienza en 1942, por Don Ignacio Martínez Hernández† hasta el día de su fallecimiento en 1983, en la Ranchería “Las Carretas” en el Municipio de San Dionisio Ocotepec, Estado de Oaxaca.</p>
+							<p class="body-carousel">
+								Casa Martínez surge del deseo de compartir y transmitir la herencia cultural aprendida del abuelo y padre de Don Ignacio Martínez García que tuvo origen en la Racheria “Las Carretas” en el Municipio de San Dionisio Ocotepec, Estado de Oaxaca.
+								
+							</p>
+							<!--<p class="body-carousel">El origen de nuestro Mezcal comienza en 1942, por Don Ignacio Martínez Hernández† hasta el día de su fallecimiento en 1983, en la Ranchería “Las Carretas” en el Municipio de San Dionisio Ocotepec, Estado de Oaxaca.</p>-->
 						</div>
 					</div>
 	    		</div>
@@ -58,15 +62,15 @@
 			<div>
 				<div class="text-and-img-c">
 	    			<div>
-	    				<img class="img-car img-r" src="/img/IGNACIOYCARMELA.jpg" alt="Generic placeholder image">
+	    				<img class="img-car img-r" src="/img/ABUELOS.jpg" alt="Generic placeholder image">
 	    			</div>
 	    			<div class="bg-text">
 	    				<div class="btn-expand open"></div>
 	    				<div>
-	    					<h5 class="title-carousel">INICIOS (1986)</h5>
+	    					<h5 class="title-carousel">SEBASTÍAN MARTÍNEZ</h5>
 	    				</div>
 	    				<div class="parrafos">
-	    					<p class="body-carousel">En 1986, retoma el trabajo su hijo, el Sr. Ignacio Martínez García, quien es actualmente nuestro Maestro Mezcalero, especialista en el cultivo de Agave y Producción de Mezcal.</p>
+	    					<p class="body-carousel">Empezó a producir Mezcal a base de agaves silvestres de la región como, Tobalá y Tepextate, utilizando técnicas ancestrales.</p>
 	    				</div>
 	    			</div>
 	    		</div>
@@ -76,15 +80,15 @@
 	    	<div>
 		      	<div class="text-and-img-c">
 	    			<div>
-	    				<img class="img-car img-r" src="img/legado.jpg" alt="Generic placeholder image">
+	    				<img class="img-car img-r" src="/img/ABUELOS.jpg" alt="Generic placeholder image">
 	    			</div>
 	    			<div class="bg-text">
 	    				<div class="btn-expand open"></div>
 	    				<div>
-	    					<h5 class="title-carousel">2003</h5>
+	    					<h5 class="title-carousel">IGNACIO MARTÍNEZ HERNÁNDEZ</h5>
 	    				</div>
 	    				<div class="parrafos">
-	    					<p class="body-carousel">Don Ignacio Martínez García, junto con varios productores de la región forman el grupo de trabajo UNIÓN DE PRODUCTORES DE MAGUEY Y MEZCAL DE SAN DIONISIO OCOTEPEC, Formada por Maestros Mezcaleros y Magueyeros de la localidad.</p>
+	    					<p class="body-carousel">Aprendió de su padre el arte de producir mezcal, con las mismas técnicas ancestrales.</p>
 	    				</div>
 	    			</div>
 	    		</div>
@@ -94,15 +98,15 @@
 	    	<div>
 		      	<div class="text-and-img-c">
 	    			<div>
-	    				<img class="img-car img-r" src="img/legado.jpg" alt="Generic placeholder image">
+	    				<img class="img-car img-r" src="/img/ABUELOS.jpg" alt="Generic placeholder image">
 	    			</div>
 	    			<div class="bg-text">
 	    				<div class="btn-expand open"></div>
 	    				<div>
-	    					<h5 class="title-carousel">2006</h5>
+	    					<h5 class="title-carousel">IGNACIO MARTÍNEZ GARCÍA</h5>
 	    				</div>
 	    				<div class="parrafos">
-	    					<p class="body-carousel">Año en el que surge nuestra primera marca llamada SI NAI, que en zapoteco signiﬁca “Como Ayer”.</p>
+	    					<p class="body-carousel">Fundador de Casa Martínez, sigue conservando las raíces y conocimientos heredados de su abuelo y padre, compartiendo con nosotros un inigualable Mezcal.</p>
 	    				</div>
 	    			</div>
 	    		</div>
@@ -112,15 +116,15 @@
 	    	<div>
 		      	<div class="text-and-img-c">
 	    			<div>
-	    				<img class="img-car img-r" src="img/legado.jpg" alt="Generic placeholder image">
+	    				<img class="img-car img-r" src="/img/ABUELOS.jpg" alt="Generic placeholder image">
 	    			</div>
 	    			<div class="bg-text">
 	    				<div class="btn-expand open"></div>
 	    				<div>
-	    					<h5 class="title-carousel">2020</h5>
+	    					<h5 class="title-carousel">CARMELA MOLINA</h5>
 	    				</div>
 	    				<div class="parrafos">
-	    					<p class="body-carousel">Surge CASA MARTINEZ, familia que reúne a 4 Marcas de Mezcal Artesanal.</p>
+	    					<p class="body-carousel">Una Mujer guerrera quien sigue siendo uno de los eslabones principales dentro de Casa Martínez, al lado de su esposo ha aprendido el arte de producción de mezcal.</p>
 	    				</div>
 	    			</div>
 	    		</div>
@@ -140,8 +144,8 @@
 			<!--primer item-->
 	    	<div>
 	    		<div class="text-and-img-c">
-	    			<div>
-	    				<img src="/img/MAESTRO-MEZCALERO-.jpg" class="img-car img-r">
+	    			<div name="div-img-hor">
+	    				<img src="/img/equipo-cm.jpg" class="img-car img-r img-car-hor">
 	    			</div>
 	    			<div class="bg-text">
 	    				<div class="btn-expand open"></div>
@@ -159,8 +163,8 @@
 			<!--primer item-->
 	    	<div>
 	    		<div class="text-and-img-c">
-	    			<div>
-	    				<img src="/img/Fernado-blanco-y-negro.jpg" class="img-car img-r">
+	    			<div name="div-img-hor">
+	    				<img src="/img/maestro-magueyero.jpg" class="img-car img-r img-car-hor">
 	    			</div>
 	    			<div class="bg-text">
 	    				<div class="btn-expand open"></div>
@@ -183,7 +187,7 @@
 	    	<div>
 	    		<div class="text-and-img-c">
 	    			<div>
-	    				<img src="/img/Paco-2.jpg" class="img-car img-r">
+	    				<img src="/img/fernando.jpg" class="img-car img-r">
 	    			</div>
 	    			<div class="bg-text">
 	    				<div class="btn-expand open"></div>
@@ -207,7 +211,7 @@
 	    	<div>
 	    		<div class="text-and-img-c">
 	    			<div>
-	    				<img src="/img/Tio Adrian 2.jpg" class="img-car img-r">
+	    				<img src="/img/adrian.jpeg" class="img-car img-r">
 	    			</div>
 	    			<div class="bg-text">
 	    				<div class="btn-expand open"></div>
@@ -229,7 +233,7 @@
 	    	<div>
 	    		<div class="text-and-img-c">
 	    			<div>
-	    				<img src="/img/histori.jpg" class="img-car img-r">
+	    				<img src="/img/aprendiz.jpg" class="img-car img-r">
 	    			</div>
 	    			<div class="bg-text">
 	    				<div class="btn-expand open"></div>
@@ -250,91 +254,6 @@
 	</div>
 	</div>
 	<!--fin segundo corousel-->
-
-	<!--CUARTO corousel-->
-	<div class="fondo-mezcal env fade-scroll" id="memorias">
-	<div class="carousel-container">
-		<h2 class="carousel-title text-center">MEMORIAS</h2>
-		<div class="carousel-items">
-			<!--primer item-->
-	    	<div>
-	    		<div class="text-and-img-c">
-	    			<div class="bg-text">
-	    				<div class="btn-expand open"></div>
-	    				<div>
-	    					<h5 class="title-carousel">SEBASTIÁN MARTÍNEZ† (1.ª GENERACIÓN)</h5>
-	    				</div>
-	    				<div class="parrafos">
-	    					<p class="body-carousel">Elaborado en base a métodos artesanales y tradicionales, a partir de agaves silvestres o semicultivados, que tardan entre 7 a 10 años para su labrado (cosecha). El proceso continua con el cocimiento, molienda, fermentación y destilación. Pero todas las etapas del proceso deben ser prehispánicas y coloniales, para obtener un mezcal artesanal extraordinario.</p>
-	    				</div>
-	    			</div>
-	    			<div class="img-l">
-	    				<img class="img-car" src="img/maestro-mezcalero.jpg" alt="Generic placeholder image">
-	    			</div>
-	    		</div>
-			</div>
-			<!--primer item-->
-
-			<!--segundo item-->
-	    	<div>
-	    		<div class="text-and-img-c">
-	    			<div class="bg-text">
-	    				<div class="btn-expand open"></div>
-	    				<div>
-	    					<h5 class="title-carousel">IGNACIO MARTÍNEZ HERNÁNDEZ (2.ª GENERACIÓN)</h5>
-	    				</div>
-	    				<div class="parrafos">
-	    					<p class="body-carousel">El mezcal, la bebida de los dioses, fue concebida por un rayo que cayó sobre un agave que dio origen a la primera tatema, iniciando así la tradición del elixir oaxaqueño. por excelencia que hoy cobija la cultura culinaria de los mexicanos y con ello: su identidad.</p>
-	    				</div>
-	    			</div>
-	    			<div class="img-l">
-	    				<img class="img-car" src="img/envasado.jpg" alt="Generic placeholder image">
-	    			</div>
-	    		</div>
-			</div>
-			<!--segundo item-->
-
-			<!--tercer item-->
-	    	<div>
-	    		<div class="text-and-img-c">
-	    			<div class="bg-text">
-	    				<div class="btn-expand open"></div>
-	    				<div>
-	    					<h5 class="title-carousel">IGNACIO MARTÍNEZ (3.ª GENERACIÓN)</h5>
-	    				</div>
-	    				<div class="parrafos">
-	    					<p class="body-carousel">El mezcal, la bebida de los dioses, fue concebida por un rayo que cayó sobre un agave que dio origen a la primera tatema, iniciando así la tradición del elixir oaxaqueño. por excelencia que hoy cobija la cultura culinaria de los mexicanos y con ello: su identidad.</p>
-	    				</div>
-	    			</div>
-	    			<div class="img-l">
-	    				<img class="img-car" src="img/envasado.jpg" alt="Generic placeholder image">
-	    			</div>
-	    		</div>
-			</div>
-			<!--tercer item-->
-
-			<!--cuarto item-->
-	    	<div>
-	    		<div class="text-and-img-c">
-	    			<div class="bg-text">
-	    				<div class="btn-expand open"></div>
-	    				<div>
-	    					<h5 class="title-carousel">CARMELA MOLINA</h5>
-	    				</div>
-	    				<div class="parrafos">
-	    					<p class="body-carousel">El mezcal, la bebida de los dioses, fue concebida por un rayo que cayó sobre un agave que dio origen a la primera tatema, iniciando así la tradición del elixir oaxaqueño. por excelencia que hoy cobija la cultura culinaria de los mexicanos y con ello: su identidad.</p>
-	    				</div>
-	    			</div>
-	    			<div class="img-l">
-	    				<img class="img-car" src="img/envasado.jpg" alt="Generic placeholder image">
-	    			</div>
-	    		</div>
-			</div>
-			<!--cuarto item-->
-		</div><!-- fin carousel items-->		
-	</div>
-	</div>
-	<!--fin CUARTO corousel-->
 
 	<!--next section-->
 	<div class="next">
