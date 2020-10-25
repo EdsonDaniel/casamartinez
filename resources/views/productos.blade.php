@@ -24,22 +24,22 @@
 	<h2 class="h2 text-center pt-0">NUESTRAS MARCAS</h2>
 	<div class="galeria my-3">
 		<div>
-			<a href=""><img src="img/m-joven.jpg"></a>
-			<p class="gallery"> <a>Ignacio Martínez</a></p>
-		</div>
-		
-		<div>
-			<a href=""><img src="img/m-reposado.jpg"></a>
+			<a href=""><img src="/img/m-joven.jpg"></a>
 			<p class="gallery"><a>SiNái</a></p>
 		</div>
 
 		<div>
-			<a href=""><img src="img/m-anejo.jpg"></a>
+			<a href=""><img src="/img/logo.jpg" class="px-5 pb-0"></a>
+			<p class="gallery"> <a>Ignacio Martínez</a></p>
+		</div>
+
+		<div>
+			<a href=""><img src="/img/logo.jpg" class="px-5 pb-0"></a>
 			<p class="gallery"><a href="">Origen Verde</a></p>
 		</div>
 
 		<div>
-			<a href=""><img src="img/m-anejo.jpg"></a>
+			<a href=""><img src="/img/logo.jpg" class="px-5 pb-0"></a>
 			<p class="gallery"><a href="">Habitante</a></p>
 		</div>
 	</div>
@@ -72,7 +72,7 @@
 	<div class="next" style="background-color: black;">
 		<div class="next-text">
 			<p>APRENDE</p>
-			<p><a href="/historia">PROCESO DE ELABORACIÓN</a></p>
+			<p><a href="/filosofia">PROCESO DE ELABORACIÓN</a></p>
 		</div>
 		<div class="next-fondo" style="background-image: url('img/proceso.jpg');"></div>
 	</div>
