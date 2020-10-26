@@ -316,7 +316,7 @@ a:hover{ color: inherit; text-decoration: none;}
 
 .slick-dots li button:before{opacity: 0.40; color: white;}
 .slick-dots li.slick-active button:before{opacity: 0.75; color: white;}
-.slick-dots{bottom: -15%;}
+/*.slick-dots{bottom: -15%;}*()
 
 
 #maestro-mezcalero{margin-bottom: 0px;}
@@ -378,7 +378,7 @@ a:hover{ color: inherit; text-decoration: none;}
 @media only screen and (min-width: 550px) and (max-width: 760px){
 	/*carousel**/
 	.env{width: 80%; margin: 15% auto;}
-	.slick-dots{bottom: -50px;}
+	/*.slick-dots{bottom: -50px;}*/
 	.img-r{height: 65vh;}
 	.img-car{height: 65vh; min-height: 450px; width: 100%;}
 	
@@ -414,7 +414,7 @@ a:hover{ color: inherit; text-decoration: none;}
 	.carousel-title{margin-bottom: 30px; text-align: center;}
 	.title-carousel{text-align: center;}
 	.fondo-mezcal{z-index: -20; opacity: 0.6!important;}
-	.slick-dots{bottom: 0;}
+	/*.slick-dots{bottom: 0;}*/
 	.block-cita{margin-bottom: 0;}
 	.img-car{margin: 20px auto; width: auto;}
 	#maestro-mezcalero{margin-bottom: 0; }
@@ -428,7 +428,7 @@ a:hover{ color: inherit; text-decoration: none;}
 	.img-r{display: block; height: 70vh; width: 100%; margin: 0 auto; float: none; z-index: -1;}
 	.img-car{height: 70vh; width: auto; overflow: hidden;}
 	#maestro-mezcalero{margin-bottom: 20px;}
-	.slick-dots{bottom: -30px;}
+	/*.slick-dots{bottom: -30px;}*/
 
 	#topbar{padding-top: 0; padding-bottom: 0;}
 	.ico, .navbar-brand{padding-top: 12px; padding-bottom: 12px;}
@@ -446,7 +446,7 @@ a:hover{ color: inherit; text-decoration: none;}
 	.img-l{width: auto; float: none;}
 	.img-r{float: none;}
 	#img-boy{width: auto;}
-	.slick-dots{bottom: -15%;}
+	.slick-dots{/*bottom: -15%;*/ position: relative !important;}
 	div[name="div-img-hor"]{width: auto; max-width: 40%; overflow: hidden;}
 	.img-car-hor, #img-habilidad{width: auto;}
 	#img-habilidad{margin-left: -10%;}

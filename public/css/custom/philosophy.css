@@ -125,7 +125,7 @@ body{ background-color: black; color: white; font-family: 'Lora', serif;}
 	.img-r{display: block; height: 70vh; width: 100%; margin: 0 auto; float: none; z-index: -1;}
 	/*.img-car{height: 70vh; width: 100%;}*/
 	#maestro-mezcalero{margin-bottom: 20px;}
-	.slick-dots{bottom: -30px;}
+	/*.slick-dots{bottom: -30px;}*/
 }
 
 /*@media only screen and (max-width: 760px){
@@ -190,11 +190,11 @@ body{ background-color: black; color: white; font-family: 'Lora', serif;}
 	#maestro-mezcalero{margin-bottom: 0; }
 }
 */
-@media only screen and (min-width: 990px){	
+/*@media only screen and (min-width: 990px){	
 	/*.bg-text{width: 30%; min-width: 400px;}
 	.text-and-img-c{width: auto;}
 	.env{margin: 15px auto;}
 	.img-l{width: auto;}
 	*/
-	/*.slick-dots{bottom: -15%;}*/
-}
+	/*.slick-dots{bottom: -15%;}*
+}*/

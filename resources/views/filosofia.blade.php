@@ -26,7 +26,7 @@
 	<--Segunda imagen de fondo-->
 
 	<!-- cita -->
-	<div class="block-cita fade-scroll my-md-5 py-md-4">
+	<div class="block-cita fade-scroll my-md-5 py-md-4 my-lg-5">
 		<blockquote >
 			<p class="text-cita fade-scroll">“Con los pies en la tierra, la mirada en el cielo, el corazón en nuestra profesión y el firme deseo de seguir compartiendo en un futuro la bebida mística, ¡EL MEZCAL!”</p>
 		</blockquote>
@@ -35,7 +35,7 @@
 
 	<!-- primer corousel--
 	<div class="env">-->
-	<div class="carousel-container">
+	<div class="carousel-container py-3 my-4">
 		<h2 class="carousel-title text-center fade-scroll">EL MAGUEY</h2>
 		<div class="carousel-items">
 			<!--primer item-->
@@ -106,7 +106,7 @@
 
 	<!--segundo  carousel--
 	<div class="fondo-mezcal env fade-scroll">-->
-	<div class="carousel-container fondo-mezcal">
+	<div class="carousel-container fondo-mezcal py-3 my-4 my-lg-5">
 		<h2 class="carousel-title text-center fade-scroll">EL MEZCAL</h2>
 		<div class="carousel-items">
 			<!--primer item-->
@@ -227,7 +227,7 @@
 
 	<!-- tercer carousel--
 	<div class="fondo-produccion env fade-scroll">-->
-	<div class="carousel-container fondo-produccion fade-scroll" id="proceso">
+	<div class="carousel-container fondo-produccion fade-scroll py-3 my-4 my-lg-5" id="proceso">
 		<h2 class="carousel-title text-center fade-scroll">PROCESO DE PRODUCCIÓN</h2>
 		<div class="carousel-items">
 			<!--primer item-->
@@ -337,8 +337,8 @@
 	    					<p class="body-carousel">Fermentación natural en tinas de madera durante 15 dias aproximadamente.</p>
 	    				</div>
 	    			</div>
-	    			<div class="img-l" name="div-img-hor">
-	    				<img class="img-car img-car-hor" src="/img/fermentacion2.jpg" alt="Generic placeholder image">
+	    			<div class="img-l" >
+	    				<img class="img-car " src="/img/fermentacion2.jpg" >
 	    			</div>
 	    		</div>
 			</div>
@@ -395,7 +395,7 @@
 
 	<!--Cuarto carousel--
 	<div class="env fade-scroll">-->
-	<div class="carousel-container fade-scroll" id="maestro-mezcalero">
+	<div class="carousel-container fade-scroll py-3 my-4 my-lg-5" id="maestro-mezcalero">
 		<h2 class="carousel-title text-center fade-scroll">MAESTRO MEZCALERO</h2>
 		<div class="carousel-items">
 			<!--primer item-->
@@ -466,12 +466,10 @@
 	
 
 	<!-- cita -->
-	<div class="fade-scroll">
-		<div class="block-cita" >
+	<div class="block-cita fade-scroll my-md-5 py-md-4 my-lg-5" >
 		<blockquote class="fade-scroll">
 			<p class="text-cita">“La historia de un Maestro Mezcalero se empieza a contar desde la niñez, etapa en donde empiezan a involucrarse en el trabajo familiar. Don Ignacio siempre nos ha cntado que desde niño soñaba con ser alguien grande, hoy en día para nosotros lo ha logrado y es un ejemplo de que los sueños de niños se pueden hacer realidad.”</p>
 		</blockquote>		
-		</div>
 	</div>
 	<!-- cita -->
 
