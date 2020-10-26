@@ -26,15 +26,15 @@
 	<--Segunda imagen de fondo-->
 
 	<!-- cita -->
-	<div class="block-cita fade-scroll">
+	<div class="block-cita fade-scroll my-md-5 py-md-4">
 		<blockquote >
 			<p class="text-cita fade-scroll">“Con los pies en la tierra, la mirada en el cielo, el corazón en nuestra profesión y el firme deseo de seguir compartiendo en un futuro la bebida mística, ¡EL MEZCAL!”</p>
 		</blockquote>
 	</div>
 	<!-- cita -->
 
-	<!-- primer corousel-->
-	<div class="env">
+	<!-- primer corousel--
+	<div class="env">-->
 	<div class="carousel-container">
 		<h2 class="carousel-title text-center fade-scroll">EL MAGUEY</h2>
 		<div class="carousel-items">
@@ -101,12 +101,12 @@
 			<!--tercer item-->
 		</div><!--fin carousel items-->
 	</div>
-	</div>
+	<!--</div>-->
 	<!--fin primer corousel-->
 
-	<!--segundo  carousel-->
-	<div class="fondo-mezcal env fade-scroll">
-	<div class="carousel-container">
+	<!--segundo  carousel--
+	<div class="fondo-mezcal env fade-scroll">-->
+	<div class="carousel-container fondo-mezcal">
 		<h2 class="carousel-title text-center fade-scroll">EL MEZCAL</h2>
 		<div class="carousel-items">
 			<!--primer item-->
@@ -223,11 +223,11 @@
 		</div>
 	</div>
 	<!--fin segundo carousel-->
-	</div>
+	<!--</div>-->
 
-	<!-- tercer carousel-->
-	<div class="fondo-produccion env fade-scroll">
-	<div class="carousel-container" id="proceso">
+	<!-- tercer carousel--
+	<div class="fondo-produccion env fade-scroll">-->
+	<div class="carousel-container fondo-produccion fade-scroll" id="proceso">
 		<h2 class="carousel-title text-center fade-scroll">PROCESO DE PRODUCCIÓN</h2>
 		<div class="carousel-items">
 			<!--primer item-->
@@ -391,11 +391,11 @@
 		</div>
 	</div>
 	<!--fin tercer carousel-->
-	</div>
+	<!--</div>-->
 
-	<!--Cuarto carousel-->
-	<div class="env fade-scroll">
-	<div class="carousel-container" id="maestro-mezcalero">
+	<!--Cuarto carousel--
+	<div class="env fade-scroll">-->
+	<div class="carousel-container fade-scroll" id="maestro-mezcalero">
 		<h2 class="carousel-title text-center fade-scroll">MAESTRO MEZCALERO</h2>
 		<div class="carousel-items">
 			<!--primer item-->
@@ -461,7 +461,7 @@
 			<!--tercer item-->
 		</div>
 	</div>
-	</div>
+	<!--</div>-->
 	<!-- fin Cuarto carousel-->
 	
 

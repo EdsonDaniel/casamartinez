@@ -42,7 +42,7 @@ class EntradasController extends Controller
         $configQR['eyeBall'] = 'ball15';
         //recuperando logo para QR
         
-        $configQR[]
+        //$configQR[];
     }
     public function uploadLogoQr(){
         $url_api = 'https://www.qrcode-monkey.com/qr/uploadImage';
