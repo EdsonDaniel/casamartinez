@@ -72,7 +72,7 @@
 	<div class="next" style="background-color: black;">
 		<div class="next-text">
 			<p>APRENDE</p>
-			<p><a href="/filosofia">PROCESO DE ELABORACIÓN</a></p>
+			<p><a href="/filosofia#proceso">PROCESO DE ELABORACIÓN</a></p>
 		</div>
 		<div class="next-fondo" style="background-image: url('img/proceso.jpg');"></div>
 	</div>

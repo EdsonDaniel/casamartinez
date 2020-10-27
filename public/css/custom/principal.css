@@ -243,7 +243,7 @@ a:hover{ color: inherit; text-decoration: none;}
 
 /**********************cOROUSEL */
 
-/*******************************containers**********************************************************/
+/*******************************containers*******************************************************/
 .env{
 	display: flex;
 	align-items: center;
@@ -285,7 +285,7 @@ a:hover{ color: inherit; text-decoration: none;}
 	color: white;
 }
 
-/******************************************titulos y fuentes************************************************/
+/******************************************titulos y fuentes*******************************************/
 .title-carousel{
 	font-weight: lighter;
 	font-family: 'Raleway', sans-serif;
@@ -323,6 +323,19 @@ a:hover{ color: inherit; text-decoration: none;}
 /**************************************************************************************************/
 
 
+.modal-backdrop.show{ opacity: 0.95; background-image: url(/img/tobala.jpg); background-position: center;}
+.bg-trans-md{ background-color: rgb(0,0,0,0.5); }
+.text-modalhome{ color: white; font-family: 'Lora', serif; }
+
+.btn-modalhome{ 
+	background-color: transparent; 
+	font-family: 'Raleway', sans-serif !important; 
+	letter-spacing: 2px; 
+	color: white;
+    font-size: 0.8rem;
+}
+
+.btn-modalhome:hover{ background-color: rgba(0,0,0,0.6) !important;}
 
 
 @media only screen and (max-width: 990px){

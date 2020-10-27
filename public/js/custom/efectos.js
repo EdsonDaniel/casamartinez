@@ -1,6 +1,6 @@
-/* Loop through all dropdown buttons to toggle between hiding and 
-showing its dropdown content - This allows the user to have multiple 
-dropdowns without any conflict */
+showHomeModal();
+
+
 var dropdown = document.getElementsByClassName("boton");
 var i;
 var icon;
@@ -26,6 +26,15 @@ for (i = 0; i < dropdown.length; i++) {
   dropdownContent.style.height = "";
   }
   });
+}
+
+function showHomeModal(){
+  if (!localStorage.getItem('mayorEdad')) {
+    $("#modalHome").modal({
+      keyboard: false,
+      backdrop: 'static'
+    });
+  }
 }
 
 function openNav() {
@@ -98,3 +107,4 @@ function closeNav() {
       return;
     }
 }
+
