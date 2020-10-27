@@ -106,7 +106,7 @@
 
 	<!--segundo  carousel--
 	<div class="fondo-mezcal env fade-scroll">-->
-	<div class="carousel-container fondo-mezcal py-3 my-4 my-lg-5">
+	<div class="carousel-container fondo-mezcal py-3 py-md-5 ">
 		<h2 class="carousel-title text-center fade-scroll">EL MEZCAL</h2>
 		<div class="carousel-items">
 			<!--primer item-->
@@ -227,7 +227,7 @@
 
 	<!-- tercer carousel--
 	<div class="fondo-produccion env fade-scroll">-->
-	<div class="carousel-container fondo-produccion fade-scroll py-3 my-4 my-lg-5" id="proceso">
+	<div class="carousel-container fondo-produccion fade-scroll py-3 py-md-5" id="proceso">
 		<h2 class="carousel-title text-center fade-scroll">PROCESO DE PRODUCCIÓN</h2>
 		<div class="carousel-items">
 			<!--primer item-->
