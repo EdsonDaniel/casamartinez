@@ -37,6 +37,11 @@ function showHomeModal(){
   }
 }
 
+$("#btn-confirm-edad").click( function(){
+  localStorage.setItem("mayorEdad", "true");
+  $("#modalHome").modal('hide');
+});
+
 function openNav() {
   var head = document.getElementById("head");
   var wh = document.getElementById("wh-bg");

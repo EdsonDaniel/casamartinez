@@ -116,6 +116,41 @@
   </div>
   <!--Sidebar-->
 
+   <!-- Modal -->
+  <div class="modal fade" id="modalHome" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content bg-trans-md ">
+              <div class="modal-header border-0">
+                  <div class="container">
+                      <div class="row justify-content-center">
+                          <div class="col-5">
+                              <img src="/img/logo-casa-martinez-wh.svg" class="img-fluid">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="modal-body border-0 px-5 text-modalhome">
+                  <div class="row">
+                      <div class="col-12">
+                          <p class="m-0">Debe tener la mayoría de edad para poder navegar en este sitio web.</p>
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="modal-footer border-0 px-5 ">
+                  <div class="w-100">
+                      <button type="button" id="btn-confirm-edad" class="btn btn-block rounded-0 btn-modalhome btn-outline-secondary" >SOY MAYOR DE EDAD</button>
+                      
+                      <a href="https://google.com" class="btn btn-block rounded-0 btn-modalhome btn-outline-secondary mt-3">NO SOY MAYOR DE EDAD</a>
+
+                      <p class="mt-4 text-modalhome text-center">Beba responsablemente.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
   <div id="app">
     <!--NavBar-->
     <nav id="topbar" class="navbar navbar-expand-lg fixed-top nav-trn">
