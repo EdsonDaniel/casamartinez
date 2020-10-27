@@ -5,9 +5,9 @@
 @endsection
 
 @section('stylesheet')
-<link rel="stylesheet" type="text/css" href="css/slick/slick.css"/>
-<link rel="stylesheet" type="text/css" href="css/slick/slick-theme.css"/>
-<link href="css/custom/history.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/css/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="/css/slick/slick-theme.css"/>
+<link href="/css/custom/history.css" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('id-container')
@@ -31,9 +31,9 @@
 	</div>
 	<!--encabezado-->
 
-	<!-- primer corousel-->
-	<div class="env fade-scroll" id="origen">
-	<div class="carousel-container">
+	<!-- primer corousel--
+	<div class="env fade-scroll" id="origen">-->
+	<div class="carousel-container fade-scroll py-3 my-4">
 		<h2 class="carousel-title text-center">ORIGEN CASA MARTÍNEZ</h2>
 		<div class="carousel-items">
 			<!--primer item-->
@@ -132,12 +132,12 @@
 			<!--quinto item-->
 		</div><!--fin carousel items-->
 	</div>
-	</div>
+	<!--</div>-->
 	<!--fin primer corousel-->
 
-	<!--segundo corousel-->
-	<div class="env fade-scroll" id="equipo">
-	<div class="carousel-container">
+	<!--segundo corousel--
+	<div class="env fade-scroll" id="equipo">-->
+	<div class="carousel-container fade-scroll py-md-3 my-md-4">
 		<h2 class="carousel-title text-center">NUESTRO EQUIPO</h2>
 		<div class="carousel-items">
 
@@ -252,7 +252,7 @@
 			<!--cuarto item-->
 		</div><!-- fin carousel items-->		
 	</div>
-	</div>
+	<!--</div>-->
 	<!--fin segundo corousel-->
 
 	<!--next section-->

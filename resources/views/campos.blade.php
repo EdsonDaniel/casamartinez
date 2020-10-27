@@ -42,9 +42,9 @@
 
   <div class="texto" style="margin-top: 1.5rem; margin-bottom: 1.5rem;"><p>Referenciamos nuestras zonas por la familia con quien colaboramos:</p></div>
 
-  <!--primer corousel-->
-  <div class="env">
-  <div class="carousel-container">
+  <!--primer corousel--
+  <div class="env">-->
+  <div class="carousel-container  py-3 my-4">
     <h2 class="carousel-title text-center">FAM ARAGÓN</h2>
     <div class="carousel-items">
       <!-- primer item-->
@@ -116,14 +116,14 @@
 
     </div><!-- fin carousel items-->    
   </div>
-  </div>
+  <!--</div>-->
   <!--fin primer corousel-->
 
-  <hr style="margin: 0 auto; width: 65%; border-top-width:2px;">
+  <!--<hr style="margin: 0 auto; width: 65%; border-top-width:2px;">-->
 
-  <!--segundo corousel-->
-  <div class="env">
-  <div class="carousel-container">
+  <!--segundo corousel--
+  <div class="env">-->
+  <div class="carousel-container py-md-3 my-md-4">
     <h2 class="carousel-title text-center">FAM MARTÍNEZ</h2>
     <div class="carousel-items">
       <!-- primer item-->
@@ -194,11 +194,11 @@
       <!--TERCER item-->
     </div><!-- fin carousel items-->    
   </div>
-  </div>
+  <!--</div>-->
 
   <!--fin segundo corousel-->
 
-  <hr style="margin: 0 auto; width: 65%; border-top-width:2px;">
+  <!--<hr style="margin: 0 auto; width: 65%; border-top-width:2px;">-->
 
   
   <div class="cita">

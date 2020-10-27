@@ -43,7 +43,7 @@ h3 {
 }
 .div-img {width: auto !important; margin-top: 50px !important;}
 
-.slick-dots{bottom: -50px;}
+/*.slick-dots{bottom: -50px;}*/
 
 .cita{ margin: 30px auto; }
 .div-texto{width: 35%; min-width: 300px;}
@@ -105,7 +105,7 @@ h3 {
 	.div-texto{width: 35%; min-width: 300px;}
 	.text-and-img img{max-width: 380px;}
 	
-	.slick-dots{bottom: -15%;}
+	/*.slick-dots{bottom: -15%;}*/
 }
 
 @media only screen and (min-width: 1200px){	

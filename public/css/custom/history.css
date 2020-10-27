@@ -59,7 +59,7 @@ body, html {
 
 .slick-dots li button:before{opacity: 0.40; color: white;}
 .slick-dots li.slick-active button:before{opacity: 0.75; color: white;}
-.slick-dots{bottom: -50px;}
+/*.slick-dots{bottom: -50px;}*/
 /*.carousel-container{margin: 100px auto;}*/
 .next{margin-top: 70px;}
 
@@ -74,9 +74,9 @@ body, html {
     font-size: 12px; text-align: center !important; width: 100%;}
 }
 
-@media only screen and (max-width: 550px){
+/*@media only screen and (max-width: 550px){
   .slick-dots{bottom: -30px;}
-}
+}*/
 
 @media only screen and (min-width: 550px) and (max-width: 760px){
   .centered{top: 20%; font-size: 19px;}
@@ -91,5 +91,5 @@ body, html {
 
 @media only screen and (min-width: 990px){  
   .bg-text{width: 30%; min-width: 390px;}
-  .slick-dots{bottom: -15%;}
+  /*.slick-dots{bottom: -15%;}*/
 }
