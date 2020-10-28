@@ -24,27 +24,27 @@
 	<h2 class="h2 text-center pt-0">NUESTRAS MARCAS</h2>
 	<div class="galeria my-3">
 		<div>
-			<a href=""><img src="/img/m-joven.jpg"></a>
+			<a href="/tienda"><img src="/img/m-joven.jpg"></a>
 			<p class="gallery"><a>SiNái</a></p>
 		</div>
 
 		<div>
-			<a href=""><img src="/img/logo.jpg" class="px-5 pb-0"></a>
+			<a href="/proximamente"><img src="/img/logo.jpg" class="px-md-5 pb-0"></a>
 			<p class="gallery"> <a>Ignacio Martínez</a></p>
 		</div>
 
 		<div>
-			<a href=""><img src="/img/logo.jpg" class="px-5 pb-0"></a>
+			<a href="/proximamente"><img src="/img/logo.jpg" class="px-md-5 pb-0"></a>
 			<p class="gallery"><a href="">Origen Verde</a></p>
 		</div>
 
 		<div>
-			<a href=""><img src="/img/logo.jpg" class="px-5 pb-0"></a>
+			<a href="/proximamente"><img src="/img/logo.jpg" class="px-md-5 pb-0"></a>
 			<p class="gallery"><a href="">Habitante</a></p>
 		</div>
 	</div>
 
-	<div class="text-cita mt-2">
+	<div class="text-cita mt-2 px-3">
 		<center> <h2 class="h2 pt-0 text-uppercase"> <a href="/tienda" style="text-decoration: underline;">Ver todo el catálogo de productos</a> </h2> </center>
 	</div>
 
@@ -60,9 +60,9 @@
 	<div class="menu">
 		<center>
 			<ul>
-				<li class="menu-li"><a href="/">PREGUNTAS FRECUENTES (FAQ)</a></li>
-				<li class="menu-li"><a href="/">PRODUCTOS CARMELITA</a></li>
-				<li><a href="/">DISTRIBUIDORES AUTORIZADOS</a></li>
+				<li class="menu-li"><a href="/proximamente">PREGUNTAS FRECUENTES (FAQ)</a></li>
+				<li class="menu-li"><a href="/proximamente">PRODUCTOS CARMELITA</a></li>
+				<li><a href="/proximamente">DISTRIBUIDORES AUTORIZADOS</a></li>
 			</ul>
 		</center>
 	</div>

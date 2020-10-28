@@ -36,19 +36,19 @@
     <div class="row">
       
       <div class="col-6 col-md-3">
-        <a  title="Logo SAGARPA"><img class="img-fluid p-4" src="/img/logo-sagarpa-organico.png" alt="Logo Sagarpa Orgánico"></a>
+        <a href="https://www.gob.mx/agricultura/es/articulos/certificacion-de-productos-organicos"  title="Logo SAGARPA"><img class="img-fluid p-4" src="/img/logo-sagarpa-organico.png" alt="Logo Sagarpa Orgánico"></a>
       </div>
 
       <div class="col-6 col-md-3">
-        <a  title="Logo USDA"><img class="img-fluid p-4" src="/img/usda-organic.png" alt="Logo USDA Organic"></a>
+        <a href="https://certifications.controlunion.com/es/certification-programs/certification-programs/usda-normativa-organica-de-nop-para-eeuu"  title="Logo USDA"><img class="img-fluid p-4" src="/img/usda-organic.png" alt="Logo USDA Organic"></a>
       </div>
 
       <div class="col-6 col-md-3 d-flex align-items-center">
-        <a  title="Logo EU Organic"><img class="img-fluid" src="/img/eu-organic-logo.png" alt="Logo EU Organic"></a>
+        <a href="https://ec.europa.eu/info/food-farming-fisheries/farming/organic-farming/organic-logo_es"  title="Logo EU Organic"><img class="img-fluid" src="/img/eu-organic-logo.png" alt="Logo EU Organic"></a>
       </div>
 
       <div class="col-6 col-md-3 d-flex align-items-center">
-        <a  title="Logo DEMETER"><img class="img-fluid" src="/img/logo-demeter.png" alt="Logo DEMETER"></a>
+        <a href="https://www.demeter-usa.org/certification/"  title="Logo DEMETER"><img class="img-fluid" src="/img/logo-demeter.png" alt="Logo DEMETER"></a>
       </div>
 
     </div>

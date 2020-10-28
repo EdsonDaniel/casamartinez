@@ -85,10 +85,10 @@
           </div>
           <div class="dropdown-container">
               <ul>
-                  <li><a href="">-Ignacio Martínez</a></li>
-                  <li><a href="">-SiNái</a></li>
-                  <li><a href="">-Habitante</a></li>
-                  <li><a href="">-Origen Verde</a></li>
+                  <li><a href="/proximamente">-Ignacio Martínez</a></li>
+                  <li><a href="/tienda">-SiNái</a></li>
+                  <li><a href="/proximamente">-Habitante</a></li>
+                  <li><a href="/proximamente">-Origen Verde</a></li>
                   <li><a href="/productos">-Todos los productos</a></li>
               </ul>
           </div>
@@ -158,6 +158,7 @@
             <a class="navbar-brand nav-home" href="/">CASA MARTÍNEZ</a>
             <div class="nav-items">
                 <ul class="navbar-nav ml-auto" id="list-items">
+                  @guest
                     <li class="nav-item">
                         <div class="dropdown">
                             <a class="nav-link dropbtn" href="/login">LOGIN</a>
@@ -166,8 +167,20 @@
                             </div>
                         </div>
                     </li>
+                  @endguest
                 </ul>
                 <div class="d-flex">
+                  @auth
+                    <div class="dropdown">
+                      <a class="ico" href="/mi-cuenta"><i class="fas fa-user"></i></a>
+                      <div class="dropdown-content">
+                        <a href="/mi-cuenta">-Mi cuenta</a>
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">-Cerrar sesión</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;"> @csrf </form>
+                      </div>
+                    </div>
+                  @endauth
+
                   <a href="#modalShoppingCart" data-toggle="modal" class="ico">
                     <!--<span class="fad fa-shopping-cart" id="cart"></span>-->
                     <i data-feather="shopping-cart" class="icon-nav" id="cart"></i>
@@ -188,7 +201,7 @@
   <div class="ft-shop mt-5" id="div-footer">
     <!--footer-->
     <footer>
-      <div class="div-foot">
+      <div class="div-foot" id="div-foot">
           <div id="f2"><p>Tel. 951-323-0110</p></div>
           <div id="f1">
               <p class="text-center">

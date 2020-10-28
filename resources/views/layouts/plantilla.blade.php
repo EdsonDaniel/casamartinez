@@ -78,13 +78,14 @@
                         <div class="dropdown">
                             <a class="nav-link dropbtn" href="/productos">PRODUCTOS</a>
                             <div class="dropdown-content">
-                                <a href="#">-Ignacio Martínez</a>
+                                <a href="/proximamente">-Ignacio Martínez</a>
                                 <a href="/catalogo">-SiNái</a>
-                                <a href="#">-Origen Verde</a>
-                                <a href="#">-Habitante</a>
+                                <a href="/proximamente">-Origen Verde</a>
+                                <a href="/proximamente">-Habitante</a>
                             </div>
                         </div>
                     </li>
+                    @guest
                     <li class="nav-item">
                         <div class="dropdown">
                             <a class="nav-link dropbtn" href="/login">LOGIN</a>
@@ -93,6 +94,22 @@
                             </div>
                         </div>
                     </li>
+                    @else
+                     <li class="nav-item">
+                        <div class="dropdown">
+                            <a class="nav-link dropbtn" href="/mi-cuenta"><i class="fas fa-user"></i></a>
+                            <div class="dropdown-content">
+                                <a href="/mi-cuenta">-Mi cuenta</a>
+                                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                   -Cerrar sesión
+                                </a>
+                                
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;"> @csrf </form>
+                            </div>
+                        </div>
+                    </li>
+                    @endguest
+
                 </ul>
 
                 <a href="/tienda" class="ico"><span class="fa fa-shopping-bag" id="cart"></span></a>
@@ -150,10 +167,10 @@
             </div>
             <div class="dropdown-container">
                 <ul>
-                    <li><a href="">-Ignacio Martínez</a></li>
-                    <li><a href="">-SiNái</a></li>
-                    <li><a href="">-Habitante</a></li>
-                    <li><a href="">-Origen Verde</a></li>
+                    <li><a href="/proximamente">-Ignacio Martínez</a></li>
+                    <li><a href="/tienda">-SiNái</a></li>
+                    <li><a href="/proximamente">-Habitante</a></li>
+                    <li><a href="/proximamente">-Origen Verde</a></li>
                     <li><a href="/productos">-Todos los productos</a></li>
                 </ul>
             </div>
@@ -187,7 +204,7 @@
 
   <!--footer-->
   <footer>
-    <div class="div-foot">
+    <div class="div-foot" id="div-foot">
         <div id="f2"><p>Tel. 951-323-0110</p></div>
         <div id="f1">
             <p class="text-center">

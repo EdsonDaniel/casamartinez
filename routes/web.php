@@ -71,6 +71,7 @@ Route::get('/pago-rechazado', 'TiendaController@pagoRechazado');
 
 
 Route::get('/info-producto/', 'EntradasController@detalleProducto');
+Route::get('/proximamente', function(){ return view('enconstruccion'); });
 
 /*****************Rutas con middleware ////////////////////////////////*/
 
