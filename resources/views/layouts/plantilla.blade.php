@@ -143,23 +143,21 @@
         @endguest
 
         <div class="options">
-          @auth
-          <div style="margin: 12px 20px 0; display: block; min-width: 320px;">
-                <a href="/mi-cuenta">MI CUENTA</a>
-                </a>
+            @auth
+            <div class="boton">
+                <a >MI CUENTA</a>
+                <button><i name="ic" class="fas fa-plus"></i></button>
             </div>
-            <!--<div class="dropdown-container">
+            <div class="dropdown-container">
                 <ul>
-                    <li><a href="">-Mis pedidos</a></li>
-                    <li><a href="">-Mis datos</a></li>
-                    <li><a href="">-Configuración de la cuenta</a></li>
+                    <li><a href="/mi-cuenta">-Mis pedidos</a></li>
                     <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();">{{ __('-Salir') }}</a></li>
+                    document.getElementById('logout-form').submit();">-Cerrar sesión</a></li>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                       @csrf
                     </form>
                 </ul>
-            </div>-->
+            </div>
             @endauth
             <div class="boton">
                 <a>PRODUCTOS</a>
@@ -192,8 +190,8 @@
 
         <div class="footer-side">
           <hr class="line">
-          <a href="#">Contacto</a>
-          <a href="#">Ayuda</a>            
+          <a href="/contacto">Contacto</a>
+          <a href="/preguntas-frecuentes">Ayuda</a>            
         </div>
     </div>
     <!--Sidebar-->
