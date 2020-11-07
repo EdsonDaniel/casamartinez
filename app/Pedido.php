@@ -24,7 +24,7 @@ class Pedido extends Model
             'App\PresentacionesProducto', 
             'productos_comprados', 
             'pedido_id', 
-            'presentacion_producto_id')
+            'id')
             ->withPivot('cantidad', 'precio_unitario');
     }
        

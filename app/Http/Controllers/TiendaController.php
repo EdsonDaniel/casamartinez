@@ -38,7 +38,7 @@ class TiendaController extends Controller
             $user = $user = auth()->user();
             $carrito = $user->carrito;
             /*$prod = CarritoProductos::where('carrito_compras_id', $carrito->id)->get();*/
-            $prod = CarritoProductos::select('presentacion_producto_id','cantidad')->where('carrito_compras_id', $carrito->id)->get();
+            $prod = CarritoProductos::select('id','cantidad')->where('carrito_compras_id', $carrito->id)->get();
             return view('tienda')
                     ->with(['productos'=>$products, 'inCart' => $prod]);
         }
@@ -72,11 +72,6 @@ class TiendaController extends Controller
                 $pedidoId = $this->createPedido($paymentIntent);
                 //handlePaymentIntentSucceeded($paymentIntent);
                 break;
-            /*case 'payment_method.attached':
-                $paymentMethod = $event->data->object; // contains a StripePaymentMethod
-                handlePaymentMethodAttached($paymentMethod);
-                break;
-            // ... handle other event types*/
             default:
                 echo 'Received unknown event type ' . $event->type;
         }
@@ -140,9 +135,9 @@ class TiendaController extends Controller
             'email'       => $metadata['email_custom']
         ]);
 
-        $productos_comprados = json_decode( $metadata['products'], true);
+        $productos_comprados = json_decode( $metadata['id'], true);
 
-        $this-> createProductosComprados($productos_comprados, $pedido->id);
+        $productos_comprados = $this-> createProductosComprados($productos_comprados, $pedido->id);
         //return $pedido->id;
 
         $user = User::find($user);
@@ -188,12 +183,12 @@ class TiendaController extends Controller
         return $direccion_facturacion->id;
     }
 
-    public function createProductosComprados($data, $idPedido){
+    /*public function createProductosComprados($data, $idPedido){
         //$productos = json_decode($data);
 
         foreach ($data as $datos) {
             $comprado = ProductosComprados::create([
-                'presentacion_producto_id' => $datos['id'],
+                'id' => $datos['id'],
                 'cantidad'   => $datos['cantidad'],
                 'precio_unitario' => $datos['precio_unitario'],
                 'pedido_id' => $idPedido
@@ -202,6 +197,36 @@ class TiendaController extends Controller
             $producto->stock = $producto->stock - $datos['cantidad'];
             $producto->save();
         }
+    }*/
+
+    public function createProductosComprados($data, $idPedido){
+        //$productos = json_decode($data);
+        $cart = array();
+        foreach ($data as $key => $value) {
+            $id = $key;
+            $producto = PresentacionesProducto::find($id);
+            $producto->stock = $producto->stock - $value;
+            $producto->save();
+            
+            $comprado = ProductosComprados::create([
+                'id'        => $id,
+                'cantidad'  => $value,
+                'precio_unitario' => $producto->precio_consumidor,
+                'pedido_id' => $idPedido
+            ]);
+
+            $cart[$key] = array(
+                'cantidad' => $value, 
+                'precio_unitario' => $comprado->precio_unitario,
+                'img_url' => $producto->foto_url,
+                'id' => $producto->id,
+                'name' => $producto->producto->nombre . ' ' . $producto->contenido.' ' .$producto->unidad_c
+            );
+
+        }
+
+        return $cart;
+
     }
 
 

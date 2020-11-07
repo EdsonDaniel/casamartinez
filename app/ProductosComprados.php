@@ -10,6 +10,6 @@ class ProductosComprados extends Model
     //protected $primaryKey = 'id_presentacion';
     public $timestamps = false;
     protected $fillable = [
-    	'presentacion_producto_id', 'cantidad', 'precio_unitario', 'pedido_id'
+    	'id', 'cantidad', 'precio_unitario', 'pedido_id'
     ];
 }

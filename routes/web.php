@@ -75,6 +75,10 @@ Route::get('/preguntas-frecuentes', function(){ return view('preguntas'); });
 Route::get('/proximamente', function(){ return view('enconstruccion'); });
 Route::get('/contacto', function(){ return view('contacto'); });
 
+/*Route::get('/ho', function(){
+    return  App\PresentacionesProducto::find(26)->producto;
+});*/
+
 /*****************Rutas con middleware ////////////////////////////////*/
 
 Route::get('/mi-cuenta', 'UserController@micuenta')

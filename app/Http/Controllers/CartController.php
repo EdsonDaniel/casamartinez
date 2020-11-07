@@ -20,14 +20,14 @@ class CartController extends Controller
 {
     public function index(){
         $user = auth()->user();
-        //$recomendados = Recomendados::all();
         $productos = ProductosTienda::all();
         if (!is_null($user)){
             $carrito = $user->carrito;
-            $prod = CarritoProductos::select('presentacion_producto_id','cantidad')->where('carrito_compras_id', $carrito->id)->get();
+            $prod = CarritoProductos::select('id','cantidad')
+                        ->where('carrito_compras_id', $carrito->id)->get();
             $ids = array();
             foreach ($prod as $item) {
-                array_push($ids, $item['presentacion_producto_id']);
+                array_push($ids, $item['id']);
             }
             $productos = $productos->find($ids)->values();
             
@@ -65,6 +65,7 @@ class CartController extends Controller
         if($cart == "" || $subtotal < 1 || $count < 1 )
             return redirect ("/tienda");
         $cart = json_encode( $cart, true );
+        $ids = json_encode(session('ids',0), true);
         $total = round((($subtotal + $costo_envio) * 100),0);
 
         $productos = session('prods_instance', "");
@@ -86,8 +87,8 @@ class CartController extends Controller
             ],
             
             'metadata' => [
-                'integration_check' => 'accept_a_payment',
-                'products'          => $cart,
+                //'products'          => $cart,
+                'id'                => $ids,
                 'no_exterior'       => $address['no_exterior'],
                 'municipio'         => $address['municipio'],
                 'email_custom'      => $address['email'],
@@ -166,6 +167,7 @@ class CartController extends Controller
         $cartValidated = $dataValidated['cart'];
         $productos  = $dataValidated['prods'];
         $request->session()->put('cart', $cartValidated);
+        $request->session()->put('ids', $dataValidated['ids']);
         //$address = array();
         
         $request->session()->put('address', $address);
@@ -301,7 +303,8 @@ class CartController extends Controller
         if( Auth::check() ){
             $user = $user = auth()->user();
             $carrito = $user->carrito;
-            $prod = CarritoProductos::select('presentacion_producto_id','cantidad')->where('carrito_compras_id', $carrito->id)->get();
+            $prod = CarritoProductos::select('id','cantidad')
+                        ->where('carrito_compras_id', $carrito->id)->get();
             //$direccion = $user->direcciones;
             $direccion = DireccionesUsuario::where('user_id', $user->id)->first();
             /*return view('checkout')
@@ -340,7 +343,7 @@ class CartController extends Controller
     				->updateExistingPivot($idPresentacion, ['cantidad'=>$cantidad]);
     		//$carrito->refresh();
     	}
-    	$prod = CarritoProductos::select('presentacion_producto_id','cantidad')->where('carrito_compras_id', $carrito->id)->get();
+    	$prod = CarritoProductos::select('id','cantidad')->where('carrito_compras_id', $carrito->id)->get();
     	
     	return response()->json($prod, 200);
     }
@@ -391,7 +394,7 @@ class CartController extends Controller
                 try{
                     $carrito
                         ->productos()
-                        ->attach($item['presentacion_producto_id'], 
+                        ->attach($item['id'], 
                             ['cantidad' => $item["cantidad"]]);
                     }
                 catch(\Illuminate\Database\QueryException $e){;}
@@ -414,11 +417,11 @@ class CartController extends Controller
         $i = 0;
         
         foreach($cart as $item) {
-            if (!in_array($item['presentacion_producto_id'], $key_array) &&
+            if (!in_array($item['id'], $key_array) &&
                 $this->validateCantidad($item['cantidad']) > 0) {
-                $presentacion = $productos->find($item['presentacion_producto_id']);
+                $presentacion = $productos->find($item['id']);
                 if($presentacion != null){
-                    $key_array[$i] = $item['presentacion_producto_id'];
+                    $key_array[$i] = $item['id'];
                     $valid_array[$i] = $item;
                     $productosCart[$i] = $presentacion;
                     $idAndCantidad[$presentacion->id] = array('cantidad' => $item['cantidad']);
@@ -503,25 +506,25 @@ class CartController extends Controller
         $productosCart = array();
         $key_array = array();
         $valid_array = array();
+        $prods_id = array();
         $subtotal = 0;
         $count = 0;
         $errores = array();
         $botellas_250 = 0;
         $botellas_750 = 0;
         //$idAndCantidad = array();
-                
         //$productos = ProductosTienda::all();
         //$user = auth()->user();
         //$i = 0;
         
         foreach($cart as $item) {
             $cantidad = $this->validateCantidad($item['cantidad']);
-            if (!in_array($item['presentacion_producto_id'], $key_array) &&
+            if (!in_array($item['id'], $key_array) &&
                 $cantidad > 0) {
-                $presentacion = $productos->find($item['presentacion_producto_id']);
+                $presentacion = $productos->find($item['id']);
                 if($presentacion != null){
-                    //$key_array[$i] = $item['presentacion_producto_id'];
-                    array_push($key_array,$item['presentacion_producto_id']);
+                    //$key_array[$i] = $item['id'];
+                    array_push($key_array,$item['id']);
                     if ($cantidad > $presentacion['stock']) {
                         $cantidad = $presentacion['stock'];
                         $errores[$presentacion['id_presentacion']] = 1;
@@ -532,8 +535,8 @@ class CartController extends Controller
                     else
                         $botellas_250 += $cantidad;
                     //$valid_array[$i] = $item;
-                    //$valid_array[$item['presentacion_producto_id']] = $cantidad;
-                    $valid_array[$item['presentacion_producto_id']] = [ 
+                    //$valid_array[$item['id']] = $cantidad;
+                    $valid_array[$item['id']] = [ 
                         'cantidad' => $cantidad, 
                         'precio_unitario' => $presentacion['precio_consumidor'],
                         'img_url'   => $presentacion['foto_url'],
@@ -550,6 +553,8 @@ class CartController extends Controller
                     //$productosCart[$i]['cantidad'] = $cantidad;
                     $count += $cantidad;
                     $subtotal += $cantidad * $presentacion['precio_consumidor'];
+                    //$prods_id[$item['id']] = [ 'cantidad' => $cantidad ];
+                    $prods_id[$item['id']] = $cantidad;
                     //$idAndCantidad[$presentacion->id] = array('cantidad' => $item['cantidad']);
                     //$i++;
                 }
@@ -559,7 +564,7 @@ class CartController extends Controller
         + $this->costoBotella750($botellas_750);
 
 
-        return ['cart' => $valid_array, 'prods' => $productosCart, 
+        return ['cart' => $valid_array, 'prods' => $productosCart, 'ids' => $prods_id,
                 'subtotal' => $subtotal, 'count' => $count, 'costo_envio' => $costo_envio];
 
     }

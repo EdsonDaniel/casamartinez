@@ -35,7 +35,7 @@ class Carrito extends Model
             'App\PresentacionesProducto', 
             'carrito_tiene_productos', 
             'carrito_compras_id', 
-            'presentacion_producto_id')
+            'id')
             ->withPivot('cantidad');
     }
 
