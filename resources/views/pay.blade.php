@@ -16,7 +16,7 @@
 	<div class="device-sm d-none d-sm-block d-md-none"></div>
 	<div class="device-md d-none d-md-block d-lg-none"></div>
 	<div class="device-lg d-none d-lg-block"></div>
-	<div id="head-tienda">
+	<div id="head-tienda" class="pt-4 mt-3 mt-md-0 px-2 mx-2">
 	  <div class="row justify-content-center no-gutters">
 	    <div class="col-10 col-md-2 row justify-content-center mb-2">
 	      <div class="col-4 col-md-6 col-lg-7">
@@ -24,14 +24,7 @@
 	      </div>
 	    </div>
 	  </div>
-	  <h2 class="titulo text-center m-0 p-0">INFORMACIÓN DE ENVÍO</h2>
-    @guest
-      <div class="row no-gutters justify-content-center">
-        <p class="text-secondary mt-1" style="font-family: sans-serif; letter-spacing: 1px; font-size: 0.9rem;">¿Ya tienes una cuenta? Puedes iniciar sesión <a style="text-decoration: underline" href="/login"> aquí.</a>
-      </div>
-    </p>
-    @endguest
-    
+	  <h2 class="titulo text-center m-0 p-0">CONFIRMAR COMPRA</h2>
 	</div>
 
 	<nav class="py-3">
@@ -45,10 +38,10 @@
               <a class="link-breadcrumb" href="/tienda">Home</a>
             </li>
             <li class="breadcrumb-item">
-              <a href="/carito-de-compras" class="link-breadcrumb">Carrito de compras</a>
+              <a href="/carito-de-compras" class="link-breadcrumb">Carrito</a>
             </li>
             <li class="breadcrumb-item">
-              <a class="link-breadcrumb" href="/informacion-de-envio">INFORMACIÓN DE envío</a>
+              <a class="link-breadcrumb" href="/informacion-de-envio">INFO envío</a>
             </li>
             <li class="breadcrumb-item active">finaliza tu compra</li>
           </ol>
@@ -61,7 +54,7 @@
   <section style="font-family: 'Nunito', sans-serif;" id="pageContent">
     <div class="container">
       <div class="row">
-        <div class="col-8">
+        <div class="col-12 col-md-8">
           <div class="row">
             <div class="col-12">
 
@@ -131,7 +124,7 @@
                 @else
                   <div class="col px-2 mt-3">
                     <!-- Checkbox -->
-                    <div style="line-height: 2;" class="d-flex align-items-center">
+                    <div class="d-flex align-items-center">
                       <i class="fas fa-check-square mr-2"></i>
                         Datos de facturación igual a la dirección de envío.
                       <span class="ml-2" style="line-height: 1;">
@@ -153,7 +146,7 @@
             </div>
 
             <!-- pay with stripe-->
-            <div class="col-6">
+            <div class="col-12 col-md-6">
               <div class="row justify-content-center">
                 <div class="col-12">
                   <div class="inputs-card" id="example-2">
@@ -211,11 +204,11 @@
               
             </div>
 
-            <div class="col-6">
+            <div class="my-5 my-md-0 col-12 col-md-6">
               <!-- pay with mercado pago -->
               <div class="row justify-content-center">
-                <div class="col-12">
-                  <a class="btn btn-success" href="{{$preferenceMP->init_point}}">Pagar con Mercado Pago</a>
+                <div >
+                  <a class="btn btn-lg btn-mp" href="{{$preferenceMP->init_point}}">Pagar con Mercado Pago</a>
                 </div>
               </div>
             </div>
@@ -294,7 +287,7 @@
 
   <!-- Modal response -->
   <div class="modal fade" id="modalResponse" tabindex="-1" role="dialog" aria-labelledby="modalResponseLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-dialog modal-sm mt-5 mt-md-0" role="document">
       <div class="modal-content" style="font-family: 'Nunito', sans-serif;">
         
         <div id="payment-succes" class="d-none">

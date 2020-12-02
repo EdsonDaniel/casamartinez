@@ -14,7 +14,7 @@
 	<div class="device-sm d-none d-sm-block d-md-none"></div>
 	<div class="device-md d-none d-md-block d-lg-none"></div>
 	<div class="device-lg d-none d-lg-block"></div>
-	<div id="head-tienda">
+	<div id="head-tienda" class="pt-4 mt-3 mt-md-0 px-2 mx-2">
 	  <div class="row justify-content-center no-gutters">
 	    <div class="col-10 col-md-2 row justify-content-center mb-2">
 	      <div class="col-4 col-md-6 col-lg-7">
@@ -22,13 +22,13 @@
 	      </div>
 	    </div>
 	  </div>
-	  <h2 class="titulo text-center m-0 p-0">INFORMACIÓN DE ENVÍO</h2>
-    @guest
+	  <h2 class="titulo text-center ">INFORMACIÓN DE ENVÍO</h2>
+    {{--@guest
       <div class="row no-gutters justify-content-center">
-        <p class="text-secondary mt-1" style="font-family: sans-serif; letter-spacing: 1px; font-size: 0.9rem;">¿Ya tienes una cuenta? Puedes iniciar sesión <a style="text-decoration: underline" href="/login"> aquí.</a>
+        <p class="text-secondary mt-1 text-center" style="font-family: sans-serif; letter-spacing: 1px; font-size: 0.9rem;">¿Ya tienes una cuenta? Puedes iniciar sesión <a style="text-decoration: underline" href="/login"> aquí.</a>
         </p>
       </div>
-    @endguest
+    @endguest --}}
     
 	</div>
 
@@ -43,7 +43,7 @@
                 <a class="link-breadcrumb" href="/tienda">Home</a>
               </li>
               <li class="breadcrumb-item">
-                <a href="/carito-de-compras" class="link-breadcrumb">Carrito de compras</a>
+                <a href="/carrito-de-compras" class="link-breadcrumb">Carrito de compras</a>
               </li>
               <li class="breadcrumb-item active">
                 INFORMACIÓN DE envío
@@ -456,7 +456,7 @@
       </div><!--fin row col-8 -->
       
 
-      <div class="col-12 col-md-4">
+      <div class="col-12 col-md-4 my-5 my-md-0">
 
           <!-- Heading -->
           <h5 class="text-center">Productos <span id="countp"></span></h5>

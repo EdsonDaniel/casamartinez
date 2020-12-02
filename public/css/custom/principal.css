@@ -84,7 +84,7 @@ nav a{color: white !important;}
 .texto{font-family: 'Lora', serif; font-size: 19px; width: 70%; margin: 50px auto;}
 .texto p{margin: 1rem 0; }
 
-
+/*background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)) !important;*/
 /**********************************************************************/
 .bg-image{
   /*background: rgba(0, 0, 0, 0.55) url('/img/equipo.jpg') no-repeat center;*/

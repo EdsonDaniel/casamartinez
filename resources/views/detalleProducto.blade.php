@@ -203,23 +203,12 @@
         <div class="row">
           <div class="col-12">
 
-            <h4 class="text-verde text-center letter-sp-1 mb-5">Especificaciones del producto</h4>
+            <h4 class="text-verde text-center letter-sp-1 mb-4 mb-md-5">Especificaciones del producto</h4>
 
             <!-- Content -->
             <div class="row justify-content-center mx-0 mx-md-auto">
               <div class="col-12 col-lg-10 col-xl-8">
                 <div class="row">
-                  <div class="col-12">
-
-                    <!-- Text --
-                    <p class="">
-                      Won't herb first male seas, beast. Let upon, female upon third fifth every. Man subdue rule after years herb after
-                      form. And image may, morning. Behold in tree day sea that together cattle whose. Fifth gathering brought
-                      bearing. Abundantly creeping whose. Beginning form have void two. A whose.
-                    </p>-->
-
-                  </div>
-
                   <div class="col-12 ">
                     <div class="row justify-content-center">
                       <div class="col-12 ">
@@ -240,14 +229,6 @@
                     </div>
                     
                   </div>
-                  <!--
-                  <div class="col-12">
-                  <!- Caption ->
-                    <p class="mb-0 text-gray-500">
-                      May, life blessed night so creature likeness their, for. <a class="text-body text-decoration-underline" href="#!">Find out more</a>
-                    </p>
-                  </div>
-                  -->
                 </div>
 
               </div>

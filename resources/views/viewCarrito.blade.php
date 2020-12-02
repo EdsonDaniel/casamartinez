@@ -1,7 +1,7 @@
 @extends('layouts.layout-tienda')
 
 @section('title')
-	Tienda en línea | Casa Martínez
+	Tu Carrito de Compras | Casa Martínez
 @endsection
 
 @section('stylesheet')
@@ -14,7 +14,7 @@
 	<div class="device-sm d-none d-sm-block d-md-none"></div>
 	<div class="device-md d-none d-md-block d-lg-none"></div>
 	<div class="device-lg d-none d-lg-block"></div>
-	<div id="head-tienda">
+	<div id="head-tienda" class="pt-4 mt-3 mt-md-0">
 	  <div class="row justify-content-center no-gutters">
 	    <div class="col-10 col-md-2 row justify-content-center mb-2">
 	      <div class="col-4 col-md-6 col-lg-7">
@@ -22,7 +22,7 @@
 	      </div>
 	    </div>
 	  </div>
-	  <h2 class="titulo text-center m-0 p-0">TU CARRITO DE COMPRAS</h2>
+	  <h2 class="titulo text-center my-0 px-2 py-0">TU CARRITO DE COMPRAS</h2>
 	</div>
 
 	<nav class="py-3">
@@ -44,7 +44,7 @@
         </div>
       </div>
     </nav>
-    <section class="pt-7 pb-12">
+    <section>
       <div class="container">
         <div class="row d-none justify-content-center" id="cartEmpty">
           <div class="d-flex">

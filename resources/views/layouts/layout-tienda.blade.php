@@ -87,7 +87,7 @@
                   <li><a href="/tienda">-SiNái</a></li>
                   <li><a href="/proximamente">-Habitante</a></li>
                   <li><a href="/proximamente">-Origen Verde</a></li>
-                  <li><a href="/productos">-Todos los productos</a></li>
+                  <li><a href="/tienda">-Todos los productos</a></li>
               </ul>
           </div>
 

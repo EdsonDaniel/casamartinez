@@ -42,7 +42,7 @@ body{ background-color: #f2f2f0; color: #4a4a4a;}
 .title-bebidas{
 	font-size: 20px;
 	font-weight: 450;
-	padding-top: 60px;
+	/*padding-top: 60px;*/
 	letter-spacing: 3px;
 	color: white;
 	margin-bottom: 30px;
@@ -95,8 +95,8 @@ body{ background-color: #f2f2f0; color: #4a4a4a;}
 @media only screen and (max-width: 991px){
 	.bottomright{ bottom: 10px; right: 0; width: 100%;}
 	.text-and-img{margin: 25px 0;}
-	.title-bebidas{padding-top: 0px; margin-bottom: 20px; color: rgba(111,133,85);}
-	.div-products{background-image: none; color: #4a4a4a;}
+	.title-bebidas{padding-top: 0px; margin-bottom: 20px; /*color: rgba(111,133,85);*/}
+	/*.div-products{background-image: none; color: #4a4a4a;}*/
 }
 @media only screen and (max-width: 760px){
 	.text-and-img>div{ order: 2;}

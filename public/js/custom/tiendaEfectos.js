@@ -14,6 +14,7 @@ var parents_presentations = { parent:{ } };
 $( document ).ready(function() {
 	addListeners();
 	loadData();
+	firstLI();
 });
 
 function loadData() {
@@ -29,6 +30,14 @@ function loadData() {
 	      .presentations[productos[i].id_presentacion] = productos[i];
 	}
 	//console.log(parents_presentations);
+}
+
+function firstLI(){
+	if( isBreakpoint('xs') || isBreakpoint('sm')) {
+		let li = $("#listCarrito li:first-child");
+		li.addClass("pt-0");
+		li.find('hr').addClass("mt-0");
+	}
 }
 
 

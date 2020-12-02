@@ -41,7 +41,7 @@
 </header>
 
   <!--primer parrafo-->
-  <div class="container align-items-center mt-5 pt-5 ">
+  <div class="container align-items-center mt-md-5 pt-4 pt-md-4 px-4 ">
     <div class="row justify-content-center">
       <div class="col-12 col-md-6">
         <p class="text-home"><i>“El mezcal, la bebida de los dioses, fue concebida por un rayo que cayó sobre un agave que dio origen a la primera tatema, iniciando así la tradición del elixir oaxaqueño por excelencia que hoy cobija la cultura culinaria de los mexicanos y con ello: su identidad.”</i>
@@ -86,9 +86,9 @@
     </div>
   </div>
 
-  <div class="div-products" style="background-image: url(/img/tobala.jpg);">
-    <div style="width: 100%; height: auto;">
-      <h2 class="title-bebidas text-center"><a href="/productos">NUESTROS PRODUCTOS</a></h2>
+  <div class="div-products" style="background-image: url(/img/tobala.jpg); background-position: center;">
+    <div style="width: 100%; height: auto; background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)) !important;" class="m-0 py-3">
+      <h2 class="title-bebidas text-center pt-2 pt-md-3"><a href="/productos">NUESTROS PRODUCTOS</a></h2>
       <p class="text-center text-home">Cada ruta que tomamos lleva implícita una botella de mezcal.</p>
     </div>
 
@@ -109,7 +109,7 @@
     </div>
     
     <div style="width: 100%; height: auto;">
-      <p class="text-center text-home"><a href="/tienda" class="p-2 px-3" style="font-size: 1.1rem; background-color: rgba(0,0,0, 0.5);">Ver todos los productos</a></p>
+      <p class="text-center text-home"><a href="/tienda" class="p-2 px-3 btn" style="font-size: 1.1rem; background-color: rgba(0,0,0, 0.5);">Ver todos los productos</a></p>
       <br>
     </div>
   </div>

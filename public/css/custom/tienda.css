@@ -719,6 +719,8 @@ transition: all .2s ease-in-out;
 
 .modal-backdrop.show{ opacity: 0.5 !important; background-image: unset !important; }
 .icon-feather{ width: 1rem; }
+
+.btn-mp{ background-color: #009EE3; color: white; letter-spacing: 1px; }
 @media(max-width: 768px){
     .custom-control-inline{margin: 0 !important;}
     .modal{ line-height: 1.3; }

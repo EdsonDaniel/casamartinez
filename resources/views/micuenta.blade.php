@@ -14,7 +14,7 @@
 	<div class="device-sm d-none d-sm-block d-md-none"></div>
 	<div class="device-md d-none d-md-block d-lg-none"></div>
 	<div class="device-lg d-none d-lg-block"></div>-->
-	<div id="head-tienda">
+	<div id="head-tienda" class="pt-4 mt-3 mt-md-0 px-2 mx-2">
 	  <div class="row justify-content-center no-gutters">
 	    <div class="col-10 col-md-2 row justify-content-center mb-2">
 	      <div class="col-4 col-md-6 col-lg-7">
@@ -95,7 +95,7 @@
           </nav>
 
         </div>
-        <div class="col-12 col-md-8">
+        <div class="col-12 col-md-8 mt-5 mt-md-0">
           <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show active" id="list-pedidos" role="tabpanel">
               <div class="row">
