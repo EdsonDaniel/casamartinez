@@ -164,7 +164,7 @@
 @section('scripts')
   <script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 
-  <script type="text/javascript" src="/js/custom/crudpedidos.js"></script>
+  <script type="text/javascript" src="/js/custom/crudPedidos.js"></script>
 @endsection
 
 
